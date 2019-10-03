@@ -1,0 +1,7 @@
+data/com.github.ImCompressor.desktop.in
+data/com.github.ImCompressor.appdata.xml.in
+data/com.github.ImCompressor.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+
