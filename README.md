@@ -1,0 +1,2 @@
+# ImCompressor
+GTK Image Compressor
