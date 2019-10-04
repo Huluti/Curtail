@@ -26,6 +26,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'ImCompressorWindow'
 
     headerbar = Gtk.Template.Child()
+    back_button = Gtk.Template.Child()
+    menu_button = Gtk.Template.Child()
+    homebox = Gtk.Template.Child()
+    treeview = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -33,12 +37,20 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
         self.build_ui()
         self.create_actions()
+        self.show_treeview(False)
 
     def build_ui(self):
+        # Headerbar
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
-        menu_button = self.headerbar.get_children()[0]
-        menu_button.set_menu_model(window_menu)
+        self.menu_button.set_menu_model(window_menu)
+
+        # Treeview
+        self.store = Gtk.ListStore(str)
+        self.treeview.set_model(self.store)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Filename"), renderer, text=0)
+        self.treeview.append_column(column)
 
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
@@ -48,8 +60,21 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.app.add_accelerator(shortcut, 'win.' + action_name, None)
 
     def create_actions(self):
+        self.create_simple_action('back', self.back)
         self.create_simple_action('select_file', self.select_file)
         self.create_simple_action('about', self.about_window)
+
+    def show_treeview(self, show=True):
+        if show:
+            self.homebox.hide()
+            self.treeview.show_all()
+        else:
+            self.treeview.hide()
+            self.homebox.show_all()
+        self.back_button.set_sensitive(show)
+
+    def back(self, *args):
+        self.show_treeview(False)
 
     def select_file(self, *args):
         file_chooser = Gtk.FileChooserNative()
@@ -65,7 +90,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         return None
 
     def compress_image(self, filename):
-        print(filename)
+        self.show_treeview(True)
+
+        treeiter = self.store.append([filename])
 
     def add_filechooser_filters(self, filechooser_filters):
         all_images = Gtk.FileFilter()
