@@ -1,8 +1,8 @@
 # ImCompressor
 
-
 ## Simple & useful image compressor.
 
+ImCompressor is a lossless image compressor.
 
 ### Supported formats
 
