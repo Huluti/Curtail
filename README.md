@@ -1,2 +1,39 @@
 # ImCompressor
-GTK Image Compressor
+
+
+## Simple & useful image compressor.
+
+
+### Supported formats
+
+PNG, JPEG
+
+## Installation instructions
+
+### Build from source (nightly)
+
+Build and install by running:
+
+    git clone https://github.com/Huluti/ImCompressor.git
+    cd ImCompressor
+    meson _build
+    cd _build
+    ninja
+    sudo ninja install
+
+The app can then be removed with:
+
+    sudo ninja uninstall
+
+## Tech
+
+ImEditor uses a number of open source projects to work properly:
+
+- [GTK 3](https://www.gtk.org)
+- [Python 3](https://www.python.org)
+
+## License
+
+GNU GENERAL PUBLIC LICENSE (v3)
+
+**Free Software, Hell Yeah!**
