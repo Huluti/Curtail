@@ -102,30 +102,37 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         if filename:
             self.compress_image(filename)
 
+    def parse_filename(self, filename):
+        parse_filename = path.split(filename)
+        parse_name = parse_filename[1].split('.')
+        pfilename = {
+            "folder": parse_filename[0],
+            "full_name": parse_filename[1],
+            "name": parse_name[0],
+            "ext": parse_name[1].lower()
+        }
+        return pfilename
+
     def compress_image(self, filename):
         # Show tree view if hidden
         if not self.treeview.get_visible():
             self.show_treeview(True)
 
+        pfilename = self.parse_filename(filename)
+
         # Current size
         size = path.getsize(filename)
         size_str = self.sizeof_fmt(size)
 
-        # Filename
-        parse_filename = path.split(filename)
-        folder = parse_filename[0]
-        full_name = parse_filename[1]
-        parse_name = full_name.split('.')
-        name = parse_name[0]
-        ext = parse_name[1].lower()
-
-        new_filename = '{}/{}-min.{}'.format(folder, name, ext)
+        # New filename
+        new_filename = '{}/{}-min.{}'.format(pfilename["folder"],
+            pfilename["name"], pfilename["ext"])
 
          # Create tree iter
         treeiter = self.store.append([filename, size_str, "", ""])
 
         # Compress image
-        self.call_compressor(filename, new_filename, ext)
+        self.call_compressor(filename, new_filename, pfilename["ext"])
 
         # Update tree iter
         new_size = path.getsize(new_filename)
@@ -138,9 +145,11 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def call_compressor(self, filename, new_filename, ext):
         if ext == 'png':
-            subprocess.call(["optipng", "-clobber", "-o2", "-strip", "all", filename, "-out", new_filename])
+            subprocess.call(["optipng", "-clobber", "-o2", "-strip", "all", \
+                             filename, "-out", new_filename])
         elif ext == 'jpeg' or ext == 'jpg':
-            subprocess.call(["jpegtran", "-optimize", "-progressive", "-outfile", new_filename, filename])
+            subprocess.call(["jpegtran", "-optimize", "-progressive", \
+                             "-outfile", new_filename, filename])
 
     def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()
