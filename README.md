@@ -31,6 +31,8 @@ ImEditor uses a number of open source projects to work properly:
 
 - [GTK 3](https://www.gtk.org)
 - [Python 3](https://www.python.org)
+- [MozJPEG](https://github.com/mozilla/mozjpeg)
+- [Jpegoptim](https://github.com/tjko/jpegoptim)
 
 ## License
 

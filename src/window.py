@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import subprocess
 from gi.repository import Gtk, Gio
 from os import path
 
@@ -89,17 +90,17 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.show_treeview(False)
 
     def select_file(self, *args):
-        file_chooser = Gtk.FileChooserNative()
-        file_chooser.set_transient_for(self)
-        file_chooser.set_action(Gtk.FileChooserAction.OPEN)
-        self.add_filechooser_filters(file_chooser)
-
-        response = file_chooser.run()
-        if response == Gtk.ResponseType.ACCEPT:
-            filename = file_chooser.get_filename()
+        dialog = Gtk.FileChooserDialog(_("Please choose a file"), self,
+            Gtk.FileChooserAction.OPEN,
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+        self.add_filechooser_filters(dialog)
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
+            filename = dialog.get_filename()
+        dialog.destroy()
+        if filename:
             self.compress_image(filename)
-        file_chooser.destroy()
-        return None
 
     def compress_image(self, filename):
         # Show tree view if hidden
@@ -110,14 +111,24 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         size = path.getsize(filename)
         size_str = self.sizeof_fmt(size)
 
-        # Create tree iter
+        # Filename
+        parse_filename = path.split(filename)
+        folder = parse_filename[0]
+        full_name = parse_filename[1]
+        parse_name = full_name.split('.')
+        name = parse_name[0]
+        ext = parse_name[1].lower()
+
+        new_filename = '{}/{}-min.{}'.format(folder, name, ext)
+
+         # Create tree iter
         treeiter = self.store.append([filename, size_str, "", ""])
 
         # Compress image
-
+        self.call_compressor(filename, new_filename, ext)
 
         # Update tree iter
-        new_size = path.getsize(filename)
+        new_size = path.getsize(new_filename)
         new_size_str = self.sizeof_fmt(new_size)
         self.store.set_value(treeiter, 2, new_size_str)
 
@@ -125,7 +136,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         savings = '{}%'.format(str(savings))
         self.store.set_value(treeiter, 3, savings)
 
-    def add_filechooser_filters(self, filechooser_filters):
+    def call_compressor(self, filename, new_filename, ext):
+        if ext == 'png':
+            subprocess.call(["optipng", "-clobber", "-o2", "-strip", "all", filename, "-out", new_filename])
+        elif ext == 'jpeg' or ext == 'jpg':
+            subprocess.call(["jpegtran", "-optimize", "-progressive", "-outfile", new_filename, filename])
+
+    def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()
         all_images.set_name(_("All images"))
         all_images.add_mime_type('image/jpeg')
@@ -139,9 +156,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         jpeg_images.set_name(_("JPEG images"))
         jpeg_images.add_mime_type('image/jpeg')
 
-        filechooser_filters.add_filter(all_images)
-        filechooser_filters.add_filter(png_images)
-        filechooser_filters.add_filter(jpeg_images)
+        dialog.add_filter(all_images)
+        dialog.add_filter(png_images)
+        dialog.add_filter(jpeg_images)
 
     def sizeof_fmt(self, num):
         for unit in ['','Kb','Mb']:
