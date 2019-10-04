@@ -16,6 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk, Gio
+from os import path
 
 
 UI_PATH = '/com/github/ImCompressor/ui/'
@@ -46,11 +47,22 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.menu_button.set_menu_model(window_menu)
 
         # Treeview
-        self.store = Gtk.ListStore(str)
+        self.store = Gtk.ListStore(str, str, str, str)
         self.treeview.set_model(self.store)
-        renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Filename"), renderer, text=0)
-        self.treeview.append_column(column)
+        self.renderer = Gtk.CellRendererText()
+
+        self.add_column_to_treeview(_("Filename"), 0)
+        self.add_column_to_treeview(_("Size"), 1)
+        self.add_column_to_treeview(_("New Size"), 2)
+        self.add_column_to_treeview(_("Savings"), 3)
+
+    def add_column_to_treeview(self, title, id):
+        treeviewcolumn = Gtk.TreeViewColumn(title)
+        treeviewcolumn.set_spacing(10)
+        treeviewcolumn.set_resizable(True)
+        treeviewcolumn.pack_start(self.renderer, False)
+        treeviewcolumn.add_attribute(self.renderer, "text", id)
+        self.treeview.append_column(treeviewcolumn)
 
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
@@ -92,7 +104,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def compress_image(self, filename):
         self.show_treeview(True)
 
-        treeiter = self.store.append([filename])
+        size = path.getsize(filename)
+        size = self.sizeof_fmt(size)
+
+        treeiter = self.store.append([filename, size, "", ""])
 
     def add_filechooser_filters(self, filechooser_filters):
         all_images = Gtk.FileFilter()
@@ -111,6 +126,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         filechooser_filters.add_filter(all_images)
         filechooser_filters.add_filter(png_images)
         filechooser_filters.add_filter(jpeg_images)
+
+    def sizeof_fmt(self, num):
+        for unit in ['','Kb','Mb']:
+            if abs(num) < 1024.0:
+                return "%3.1f %s" % (num, unit)
+            num /= 1024.0
+        return "%.1f %s" % (num, 'Yb')
 
     def about_window(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
