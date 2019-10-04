@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<interface domain="imeditor">
+  <menu id="window-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">About ImCompressor</attribute>
+        <attribute name="action">win.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

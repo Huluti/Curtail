@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=imcompressor
+Name=ImCompressor
 Exec=imcompressor
 Terminal=false
 Type=Application
