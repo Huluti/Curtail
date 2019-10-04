@@ -102,12 +102,28 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         return None
 
     def compress_image(self, filename):
-        self.show_treeview(True)
+        # Show tree view if hidden
+        if not self.treeview.get_visible():
+            self.show_treeview(True)
 
+        # Current size
         size = path.getsize(filename)
-        size = self.sizeof_fmt(size)
+        size_str = self.sizeof_fmt(size)
 
-        treeiter = self.store.append([filename, size, "", ""])
+        # Create tree iter
+        treeiter = self.store.append([filename, size_str, "", ""])
+
+        # Compress image
+
+
+        # Update tree iter
+        new_size = path.getsize(filename)
+        new_size_str = self.sizeof_fmt(new_size)
+        self.store.set_value(treeiter, 2, new_size_str)
+
+        savings = round(100 - (new_size * 100 / size), 2)
+        savings = '{}%'.format(str(savings))
+        self.store.set_value(treeiter, 3, savings)
 
     def add_filechooser_filters(self, filechooser_filters):
         all_images = Gtk.FileFilter()
