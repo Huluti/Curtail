@@ -26,6 +26,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'ImCompressorWindow'
 
     headerbar = Gtk.Template.Child()
+    filechooser_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -47,7 +48,42 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.app.add_accelerator(shortcut, 'win.' + action_name, None)
 
     def create_actions(self):
+        self.create_simple_action('select_file', self.select_file)
         self.create_simple_action('about', self.about_window)
+
+    def select_file(self, *args):
+        file_chooser = Gtk.FileChooserNative()
+        file_chooser.set_transient_for(self)
+        file_chooser.set_action(Gtk.FileChooserAction.OPEN)
+        self.add_filechooser_filters(file_chooser)
+
+        response = file_chooser.run()
+        if response == Gtk.ResponseType.ACCEPT:
+            filename = file_chooser.get_filename()
+            self.compress_image(filename)
+        file_chooser.destroy()
+        return None
+
+    def compress_image(self, filename):
+        print(filename)
+
+    def add_filechooser_filters(self, filechooser_filters):
+        all_images = Gtk.FileFilter()
+        all_images.set_name(_("All images"))
+        all_images.add_mime_type('image/jpeg')
+        all_images.add_mime_type('image/png')
+
+        png_images = Gtk.FileFilter()
+        png_images.set_name(_("PNG images"))
+        png_images.add_mime_type('image/png')
+
+        jpeg_images = Gtk.FileFilter()
+        jpeg_images.set_name(_("JPEG images"))
+        jpeg_images.add_mime_type('image/jpeg')
+
+        filechooser_filters.add_filter(all_images)
+        filechooser_filters.add_filter(png_images)
+        filechooser_filters.add_filter(jpeg_images)
 
     def about_window(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
