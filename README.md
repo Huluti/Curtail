@@ -27,7 +27,7 @@ The app can then be removed with:
 
 ## Tech
 
-ImEditor uses a number of open source projects to work properly:
+ImCompressor uses a number of open source projects to work properly:
 
 - [GTK 3](https://www.gtk.org)
 - [Python 3](https://www.python.org)
