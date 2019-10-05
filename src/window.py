@@ -98,6 +98,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
             filename = dialog.get_filename()
+        else:
+            filename = None
         dialog.destroy()
         if filename:
             self.compress_image(filename)
@@ -116,7 +118,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
-                Gtk.ButtonsType.OK, _("Does'nt exist"))
+                Gtk.ButtonsType.OK, _("Doesn't exist"))
             dialog.format_secondary_text(
                 "This image doesn't exist.")
             dialog.run()

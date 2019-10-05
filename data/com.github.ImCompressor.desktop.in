@@ -1,7 +1,12 @@
 [Desktop Entry]
 Name=ImCompressor
-Exec=imcompressor
+Exec=imcompressor %U
+Comment=Simple & useful image compressor.
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GNOME;GTK;Graphics;
+# Icon name, do not translate
+Icon=com.github.ImCompressor
+StartupWMClass=imcompressor
+MimeType=image/jpeg;image/png;
 StartupNotify=true

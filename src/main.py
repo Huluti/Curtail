@@ -25,16 +25,29 @@ from gi.repository import Gtk, Gio
 from .window import ImCompressorWindow
 
 
+APP_ID = 'com.github.ImCompressor'
+
+
 class Application(Gtk.Application):
     def __init__(self):
-        super().__init__(application_id='com.github.ImCompressor',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(application_id=APP_ID,
+                         flags=Gio.ApplicationFlags.HANDLES_OPEN)
+        self.win = None
+
+    def do_startup(self):
+        Gtk.Application.do_startup(self)
+
+        self.connect('open', self.file_open_handler)
 
     def do_activate(self):
-        win = self.props.active_window
-        if not win:
-            win = ImCompressorWindow(application=self)
-        win.present()
+        if not self.win:
+            self.win = ImCompressorWindow(application=self)
+        self.win.present()
+
+    def file_open_handler(self, app, g_file_list, amount, ukwn):
+        self.do_activate()
+        for g_file in g_file_list:
+            self.win.compress_image(filename=g_file.get_path())
 
 
 def main(version):
