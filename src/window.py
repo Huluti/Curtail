@@ -113,20 +113,57 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         }
         return pfilename
 
+    def check_filename(self, filename):
+        if not path.exists(filename):  # if path doesn't exist
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
+                Gtk.ButtonsType.OK, _("Does'nt exist"))
+            dialog.format_secondary_text(
+                "This image doesn't exist.")
+            dialog.run()
+            dialog.destroy()
+            return
+
+        # New filename
+        pfilename = self.parse_filename(filename)
+
+        if pfilename["ext"] not in ('png', 'jpg', 'jpeg'):
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
+                Gtk.ButtonsType.OK, _("Format not supported"))
+            dialog.format_secondary_text(
+                "This format of image is not supported.")
+            dialog.run()
+            dialog.destroy()
+            return
+
+        new_filename = '{}/{}-min.{}'.format(pfilename["folder"],
+            pfilename["name"], pfilename["ext"])
+
+        if path.exists(new_filename):  # already minimized
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
+                Gtk.ButtonsType.OK, _("Already minimized"))
+            dialog.format_secondary_text(
+                "This image is already minimized.")
+            dialog.run()
+            dialog.destroy()
+            return
+
+        return filename, new_filename, pfilename
+
+
     def compress_image(self, filename):
+        checks = self.check_filename(filename)
+        if checks is not None:
+            filename, new_filename, pfilename = checks
+        else:
+            return
+
         # Show tree view if hidden
         if not self.treeview.get_visible():
             self.show_treeview(True)
 
-        pfilename = self.parse_filename(filename)
-
         # Current size
         size = path.getsize(filename)
         size_str = self.sizeof_fmt(size)
-
-        # New filename
-        new_filename = '{}/{}-min.{}'.format(pfilename["folder"],
-            pfilename["name"], pfilename["ext"])
 
          # Create tree iter
         treeiter = self.store.append([filename, size_str, "", ""])
@@ -145,11 +182,20 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def call_compressor(self, filename, new_filename, ext):
         if ext == 'png':
-            subprocess.call(["optipng", "-clobber", "-o2", "-strip", "all", \
-                             filename, "-out", new_filename])
+            command = ["optipng", "-clobber", "-o2", "-strip", "all", \
+                       filename, "-out", new_filename]
         elif ext == 'jpeg' or ext == 'jpg':
-            subprocess.call(["jpegtran", "-optimize", "-progressive", \
-                             "-outfile", new_filename, filename])
+            command = ["jpegtran", "-optimize", "-progressive", \
+                       "-outfile", new_filename, filename]
+        ret = subprocess.call(command)
+        if ret != 0:
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
+                Gtk.ButtonsType.OK, _("Error"))
+            dialog.format_secondary_text(
+                "This image has not been minimized.")
+            dialog.run()
+            dialog.destroy()
+            return
 
     def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()

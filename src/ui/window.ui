@@ -52,6 +52,7 @@
           </object>
           <packing>
             <property name="pack_type">end</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </object>
@@ -103,7 +104,7 @@
             </child>
             <child>
               <object class="GtkButton" id="filechooser_button">
-                <property name="label" translatable="yes">Select a file</property>
+                <property name="label" translatable="yes">Select an image</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
