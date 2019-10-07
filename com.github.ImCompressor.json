@@ -5,14 +5,11 @@
     "sdk": "org.gnome.Sdk",
     "command": "imcompressor",
     "finish-args": [
-        "--share=network",
         "--share=ipc",
+        "--share=network",
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=home"
     ],
     "modules": [
         {
