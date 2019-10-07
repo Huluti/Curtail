@@ -90,19 +90,22 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.show_treeview(False)
 
     def select_file(self, *args):
-        dialog = Gtk.FileChooserDialog(_("Please choose a file"), self,
+        dialog = Gtk.FileChooserDialog(_("Please choose file(s)"), self,
             Gtk.FileChooserAction.OPEN,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+        dialog.set_select_multiple(True)
         self.add_filechooser_filters(dialog)
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
-            filename = dialog.get_filename()
+            filenames = dialog.get_filenames()
         else:
-            filename = None
+            filenames = None
         dialog.destroy()
-        if filename:
-            self.compress_image(filename)
+
+        if filenames:
+            for filename in filenames:
+                self.compress_image(filename)
 
     def parse_filename(self, filename):
         parse_filename = path.split(filename)
