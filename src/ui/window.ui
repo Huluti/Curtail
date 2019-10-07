@@ -58,7 +58,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkBox" id="main_box">
+      <object class="GtkBox" id="mainbox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -68,6 +68,7 @@
             <property name="can_focus">False</property>
             <property name="halign">center</property>
             <property name="valign">center</property>
+            <property name="hexpand">True</property>
             <property name="vexpand">True</property>
             <property name="orientation">vertical</property>
             <property name="spacing">5</property>

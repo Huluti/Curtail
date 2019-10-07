@@ -16,7 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gdk, Gio
+from urllib.parse import unquote
 from os import path
 
 
@@ -30,6 +31,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     headerbar = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
+    mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
     treeview = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
@@ -46,6 +48,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
         self.menu_button.set_menu_model(window_menu)
+
+        # Mainbox - drag&drop
+        enforce_target = Gtk.TargetEntry.new('text/plain',
+                                             Gtk.TargetFlags(4), 0)
+        self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
+                                   Gdk.DragAction.COPY)
+        self.mainbox.connect("drag-data-received", self.received_file)
 
         # Treeview
         self.store = Gtk.ListStore(str, str, str, str)
@@ -98,13 +107,23 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_filechooser_filters(dialog)
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
-            filenames = dialog.get_filenames()
+            filenames = dialog.get_filenames()  # we may have several files
         else:
             filenames = None
         dialog.destroy()
 
         if filenames:
             for filename in filenames:
+                self.compress_image(filename)
+
+    def received_file(self, widget, drag_context, x, y, data, info, time):
+        filenames = data.get_text()
+        filenames = filenames.split()  # we may have several files
+        for filename in filenames:
+            if filename.startswith('file://'):
+                filename = filename[7:]  # 7 is len('file://')
+                filename = unquote(filename)  # remove %20
+                filename = filename.strip('\r\n\x00')  # remove spaces
                 self.compress_image(filename)
 
     def parse_filename(self, filename):
