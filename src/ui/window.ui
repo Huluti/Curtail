@@ -26,7 +26,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="title">ImCompressor</property>
-        <property name="subtitle" translatable="yes">Simple &amp; useful image compressor</property>
+        <property name="subtitle" translatable="yes">Simple & lossless image compressor</property>
         <property name="show_close_button">True</property>
         <child>
           <object class="GtkButton" id="back_button">
