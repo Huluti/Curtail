@@ -37,6 +37,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     menu_button = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
+    treeview_box = Gtk.Template.Child()
     treeview = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
 
@@ -72,12 +73,14 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_column_to_treeview(_("New Size"), 2)
         self.add_column_to_treeview(_("Savings"), 3)
 
-    def add_column_to_treeview(self, title, id):
+    def add_column_to_treeview(self, title, column_id):
         treeviewcolumn = Gtk.TreeViewColumn(title)
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
         treeviewcolumn.pack_start(self.renderer, False)
-        treeviewcolumn.add_attribute(self.renderer, 'text', id)
+        treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
+        if column_id == 0:
+            treeviewcolumn.set_expand(True)
         self.treeview.append_column(treeviewcolumn)
 
     def create_simple_action(self, action_name, callback, shortcut=None):
@@ -97,11 +100,11 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def show_treeview(self, show=True):
         if show:
             self.homebox.hide()
-            self.treeview.show_all()
+            self.treeview_box.show_all()
             self.back_button.set_sensitive(True)
             self.forward_button.set_sensitive(False)
         else:
-            self.treeview.hide()
+            self.treeview_box.hide()
             self.homebox.show_all()
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)

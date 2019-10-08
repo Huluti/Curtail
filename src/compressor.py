@@ -35,7 +35,7 @@ class Compressor(Thread):
         filename, new_filename, pfilename = self.data
 
         # Show tree view if hidden
-        if not self.win.treeview.get_visible():
+        if not self.win.treeview_box.get_visible():
             self.win.show_treeview(True)
 
         # Current size
