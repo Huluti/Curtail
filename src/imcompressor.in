@@ -21,10 +21,12 @@ import os
 import sys
 import signal
 import gettext
+import locale
 
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
+locale.bindtextdomain('imcompressor', localedir)
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
