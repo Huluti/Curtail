@@ -63,6 +63,7 @@ class Compressor(Thread):
                        '-outfile', new_filename, filename]
         ret = subprocess.call(command)
         if ret != 0:
-            message_dialog(self, 'error', _("Error"),
-                           _("This image has not been minimized."))
+            message_dialog(self, 'error', _("An error has occured"),
+                           _("\"{}\" has not been minimized.") \
+                           .format(pfilename['full_name']))
             return

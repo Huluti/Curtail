@@ -151,8 +151,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
-            message_dialog(self, 'error', _("Doesn't exist"),
-                           _("This image doesn't exist."))
+            message_dialog(self, 'error', _("Path not valid"),
+                           _("\"{}\" doesn't exist.") \
+                           .format(filename))
             return
 
         # New filename
@@ -160,25 +161,28 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
         if pfilename['ext'] not in ('png', 'jpg', 'jpeg'):
             message_dialog(self, 'error', _("Format not supported"),
-                           _("This format of image is not supported."))
+                        _("The format of \"{}\" is not supported.") \
+                        .format(pfilename['full_name']))
             return
 
         new_filename = '{}/{}-min.{}'.format(pfilename['folder'],
             pfilename['name'], pfilename['ext'])
 
-        if path.exists(new_filename):  # already minimized
-            message_dialog(self, 'info', _("Already minimized"),
-                           _("This image is already minimized."))
+        if path.exists(new_filename):  # already compressed
+            message_dialog(self, 'info', _("Already compressed"),
+                           _("\"{}\" is already compressed.") \
+                           .format(pfilename['full_name']))
             return
 
         return filename, new_filename, pfilename
 
     def compress_image(self, filename):
         data = self.check_filename(filename)
-        # Show tree view if hidden
-        if not self.treeview_box.get_visible():
-            self.show_treeview(True)
         if data is not None:
+            # Show tree view if hidden
+            if not self.treeview_box.get_visible():
+                self.show_treeview(True)
+            # Call a new thread
             compressor = Compressor(self, data)
             compressor.start()
             compressor.join()
