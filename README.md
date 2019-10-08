@@ -1,6 +1,6 @@
 # ImCompressor
 
-## Simple & useful image compressor.
+## Simple & lossless image compressor.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/aae63e7ac1c54526dc9c/maintainability)](https://codeclimate.com/github/Huluti/ImCompressor/maintainability)
 
@@ -45,7 +45,7 @@ ImCompressor uses a number of open source projects to work properly:
 
 ## Donations
 
-Do you like the app? Would you like to support its development? Feel free to donate
+Do you like the app? Would you like to support its development? Feel free to donate.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/hposnic)
 
