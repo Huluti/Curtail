@@ -3,6 +3,22 @@
 	<id>com.github.ImCompressor.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
+	<content_rating type="oars-1.1" />
+	<name>ImCompressor</name>
+	<summary>Simple &amp; useful image compressor</summary>
 	<description>
+		<p>ImCompressor is a lossless image compressor, supporting PNG and JPEG file types.</p>
 	</description>
+
+	<developer_name>Hugo Posnic</developer_name>
+	<update_contact>hugo.posnic@gmail.com</update_contact>
+	<url type="bugtracker">https://github.com/Huluti/ImCompressor/issues</url>
+	<url type="homepage">https://github.com/Huluti/ImCompressor</url>
+
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+	<translation type="gettext">imcompressor</translation>
+	<launchable type="desktop-id">com.github.ImCompressor.desktop</launchable>
 </component>
