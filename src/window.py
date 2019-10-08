@@ -60,7 +60,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                                              Gtk.TargetFlags(4), 0)
         self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
                                    Gdk.DragAction.COPY)
-        self.mainbox.connect("drag-data-received", self.receive_file)
+        self.mainbox.connect('drag-data-received', self.receive_file)
 
         # Treeview
         self.store = Gtk.ListStore(str, str, str, str)
@@ -77,7 +77,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
         treeviewcolumn.pack_start(self.renderer, False)
-        treeviewcolumn.add_attribute(self.renderer, "text", id)
+        treeviewcolumn.add_attribute(self.renderer, 'text', id)
         self.treeview.append_column(treeviewcolumn)
 
     def create_simple_action(self, action_name, callback, shortcut=None):
@@ -144,33 +144,33 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         parse_filename = path.split(filename)
         parse_name = parse_filename[1].split('.')
         pfilename = {
-            "folder": parse_filename[0],
-            "full_name": parse_filename[1],
-            "name": parse_name[0],
-            "ext": parse_name[1].lower()
+            'folder': parse_filename[0],
+            'full_name': parse_filename[1],
+            'name': parse_name[0],
+            'ext': parse_name[1].lower()
         }
         return pfilename
 
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
             message_dialog(self, 'error', _("Doesn't exist"),
-                           "This image doesn't exist.")
+                           _("This image doesn't exist."))
             return
 
         # New filename
         pfilename = self.parse_filename(filename)
 
-        if pfilename["ext"] not in ('png', 'jpg', 'jpeg'):
+        if pfilename['ext'] not in ('png', 'jpg', 'jpeg'):
             message_dialog(self, 'error', _("Format not supported"),
-                           "This format of image is not supported.")
+                           _("This format of image is not supported."))
             return
 
-        new_filename = '{}/{}-min.{}'.format(pfilename["folder"],
-            pfilename["name"], pfilename["ext"])
+        new_filename = '{}/{}-min.{}'.format(pfilename['folder'],
+            pfilename['name'], pfilename['ext'])
 
         if path.exists(new_filename):  # already minimized
             message_dialog(self, 'info', _("Already minimized"),
-                           "This image is already minimized.")
+                           _("This image is already minimized."))
             return
 
         return filename, new_filename, pfilename

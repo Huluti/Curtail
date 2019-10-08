@@ -43,10 +43,10 @@ class Compressor(Thread):
         size_str = sizeof_fmt(size)
 
          # Create tree iter
-        treeiter = self.win.store.append([filename, size_str, "", ""])
+        treeiter = self.win.store.append([filename, size_str, '', ''])
 
         # Compress image
-        self.call_compressor(filename, new_filename, pfilename["ext"])
+        self.call_compressor(filename, new_filename, pfilename['ext'])
 
         # Update tree iter
         new_size = path.getsize(new_filename)
@@ -59,13 +59,13 @@ class Compressor(Thread):
 
     def call_compressor(self, filename, new_filename, ext):
         if ext == 'png':
-            command = ["optipng", "-clobber", "-o2", "-strip", "all", \
-                       filename, "-out", new_filename]
+            command = ['optipng', '-clobber', '-o2', '-strip', 'all', \
+                       filename, '-out', new_filename]
         elif ext == 'jpeg' or ext == 'jpg':
-            command = ["jpegtran", "-optimize", "-progressive", \
-                       "-outfile", new_filename, filename]
+            command = ['jpegtran', '-optimize', '-progressive', \
+                       '-outfile', new_filename, filename]
         ret = subprocess.call(command)
         if ret != 0:
             message_dialog(self, 'error', _("Error"),
-                           "This image has not been minimized.")
+                           _("This image has not been minimized."))
             return
