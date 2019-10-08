@@ -1,6 +1,6 @@
-data/com.github.ImCompressor.desktop.in
-data/com.github.ImCompressor.appdata.xml.in
-data/com.github.ImCompressor.gschema.xml
+data/com.github.huluti.ImCompressor.desktop.in
+data/com.github.huluti.ImCompressor.appdata.xml.in
+data/com.github.huluti.ImCompressor.gschema.xml
 src/ui/window.ui
 src/ui/menu.ui
 src/main.py

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>com.github.ImCompressor.desktop</id>
+  <id>com.github.huluti.ImCompressor.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <content_rating type="oars-1.1" />
@@ -30,7 +30,7 @@
   </screenshots>
 
   <translation type="gettext">imcompressor</translation>
-  <launchable type="desktop-id">com.github.ImCompressor.desktop</launchable>
+  <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
     <release version="0.2" date="2019-10-08">

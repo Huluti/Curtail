@@ -25,7 +25,7 @@ from gi.repository import Gtk, Gio
 from .window import ImCompressorWindow
 
 
-APP_ID = 'com.github.ImCompressor'
+APP_ID = 'com.github.huluti.ImCompressor'
 
 
 class Application(Gtk.Application):

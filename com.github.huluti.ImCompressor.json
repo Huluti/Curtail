@@ -1,5 +1,5 @@
 {
-    "app-id": "com.github.ImCompressor",
+    "app-id": "com.github.huluti.ImCompressor",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",

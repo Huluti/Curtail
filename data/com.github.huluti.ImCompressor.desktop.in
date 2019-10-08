@@ -6,7 +6,7 @@ Terminal=false
 Type=Application
 Categories=GNOME;GTK;Graphics;
 # Icon name, do not translate
-Icon=com.github.ImCompressor
+Icon=com.github.huluti.ImCompressor
 StartupWMClass=imcompressor
 MimeType=image/jpeg;image/png;
 StartupNotify=true

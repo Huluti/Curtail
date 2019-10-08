@@ -207,7 +207,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def about_window(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
-        dialog.set_logo_icon_name('com.github.ImCompressor')
+        dialog.set_logo_icon_name('com.github.huluti.ImCompressor')
         dialog.set_program_name('ImCompressor')
         dialog.set_version('0.2')
         dialog.set_website('https://github.com/Huluti/ImCompressor')

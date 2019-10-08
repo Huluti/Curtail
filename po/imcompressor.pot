@@ -17,31 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.ImCompressor.desktop.in:3
-#: data/com.github.ImCompressor.appdata.xml.in:7
+#: data/com.github.huluti.ImCompressor.desktop.in:3
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:7
 msgid "ImCompressor"
 msgstr ""
 
-#: data/com.github.ImCompressor.desktop.in:5
+#: data/com.github.huluti.ImCompressor.desktop.in:5
 msgid "Simple & lossless image compressor."
 msgstr ""
 
 #. Icon name, do not translate
-#: data/com.github.ImCompressor.desktop.in:10
-msgid "com.github.ImCompressor"
+#: data/com.github.huluti.ImCompressor.desktop.in:10
+msgid "com.github.huluti.ImCompressor"
 msgstr ""
 
-#: data/com.github.ImCompressor.appdata.xml.in:8
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:8
 msgid "Simple &amp; lossless image compressor"
 msgstr ""
 
-#: data/com.github.ImCompressor.appdata.xml.in:10
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:10
 msgid ""
 "ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
 
-#: data/com.github.ImCompressor.appdata.xml.in:14
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr ""
 
