@@ -34,10 +34,6 @@ class Compressor(Thread):
     def compress_image(self):
         filename, new_filename, pfilename = self.data
 
-        # Show tree view if hidden
-        if not self.win.treeview_box.get_visible():
-            self.win.show_treeview(True)
-
         # Current size
         size = path.getsize(filename)
         size_str = sizeof_fmt(size)

@@ -77,9 +77,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         treeviewcolumn = Gtk.TreeViewColumn(title)
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
+        treeviewcolumn.set_expand(True)
         treeviewcolumn.pack_start(self.renderer, False)
         treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
-        treeviewcolumn.set_expand(True)
         self.treeview.append_column(treeviewcolumn)
 
     def create_simple_action(self, action_name, callback, shortcut=None):
@@ -96,7 +96,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.create_simple_action('about', self.about_window)
         self.create_simple_action('quit', self.quit_app, '<Primary>q')
 
-    def show_treeview(self, show=True):
+    def show_treeview(self, show):
         if show:
             self.homebox.hide()
             self.treeview_box.show_all()
@@ -124,13 +124,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
             filenames = dialog.get_filenames()  # we may have several files
-        else:
-            filenames = None
-        dialog.destroy()
-
-        if filenames:
             for filename in filenames:
                 self.compress_image(filename)
+        dialog.destroy()
 
     def receive_file(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_text()
@@ -179,6 +175,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def compress_image(self, filename):
         data = self.check_filename(filename)
+        # Show tree view if hidden
+        if not self.treeview_box.get_visible():
+            self.show_treeview(True)
         if data is not None:
             compressor = Compressor(self, data)
             compressor.start()
