@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 16:08+0200\n"
-"PO-Revision-Date: 2019-10-08 16:14+0200\n"
+"POT-Creation-Date: 2019-10-08 18:33+0200\n"
+"PO-Revision-Date: 2019-10-08 18:38+0200\n"
+"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.3\n"
-"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
 #: data/com.github.ImCompressor.desktop.in:3
 #: data/com.github.ImCompressor.appdata.xml.in:7
@@ -24,8 +24,8 @@ msgid "ImCompressor"
 msgstr ""
 
 #: data/com.github.ImCompressor.desktop.in:5
-msgid "Simple & useful image compressor."
-msgstr "Compresseur d'images simple et utile."
+msgid "Simple & lossless image compressor."
+msgstr "Compresseur d'image simple et sans-perte."
 
 #. Icon name, do not translate
 #: data/com.github.ImCompressor.desktop.in:10
@@ -33,34 +33,36 @@ msgid "com.github.ImCompressor"
 msgstr ""
 
 #: data/com.github.ImCompressor.appdata.xml.in:8
-msgid "Simple &amp; useful image compressor"
-msgstr "Compresseur d'images simple &amp; utile"
+msgid "Simple &amp; lossless image compressor"
+msgstr "Compresseur d'image simple &amp; sans-perte"
 
 #: data/com.github.ImCompressor.appdata.xml.in:10
 msgid ""
 "ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
+"ImCompressor est un compresseur d'image sans-perte qui supporte les "
+"formats PNG et JPG."
 
 #: data/com.github.ImCompressor.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr ""
 
-#: src/ui/window.ui:29 src/window.py:212
-msgid "Simple & useful image compressor"
-msgstr "Compresseur d'images simple et utile"
+#: src/ui/window.ui:29 src/window.py:215
+msgid "Simple & lossless image compressor"
+msgstr "Compresseur d'image simple et sans-perte"
 
 #: src/ui/window.ui:99
-msgid "Drag and drop your images here!"
-msgstr "Faites glisser des images ici !"
+msgid "Drag and drop your images here..."
+msgstr "Faites glisser vos images ici..."
 
 #: src/ui/window.ui:114
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:127
-msgid "Select file(s)"
-msgstr "Sélectionner des fichiers"
+#: src/ui/window.ui:127 src/window.py:118
+msgid "Browse your files"
+msgstr "Parcourez vos fichiers"
 
 #: src/ui/menu.ui:6
 msgid "About ImCompressor"
@@ -82,56 +84,52 @@ msgstr "Nouveau poids"
 msgid "Savings"
 msgstr "Gains"
 
-#: src/window.py:118
-msgid "Please choose file(s)"
-msgstr "Veuillez sélectionner des fichiers"
-
 #. if path doesn't exist
-#: src/window.py:158
-msgid "Doesn't exist"
-msgstr "N'existe pas"
+#: src/window.py:154
+msgid "Path not valid"
+msgstr "Chemin non-valide"
 
-#: src/window.py:159
-msgid "This image doesn't exist."
-msgstr "Cette image n'existe pas."
+#: src/window.py:155
+msgid "\"{}\" doesn't exist."
+msgstr "\"{}\" n'existe pas."
 
-#: src/window.py:166
+#: src/window.py:163
 msgid "Format not supported"
 msgstr "Format non-supporté"
 
-#: src/window.py:167
-msgid "This format of image is not supported."
-msgstr "Le format de cette image n'est pas supporté."
+#: src/window.py:164
+msgid "The format of \"{}\" is not supported."
+msgstr "Le format de \"{}\" n'est pas supporté."
 
-#. already minimized
-#: src/window.py:174
-msgid "Already minimized"
-msgstr "Déjà compressé"
+#. already compressed
+#: src/window.py:172
+msgid "Already compressed"
+msgstr "Déjà compressée"
 
-#: src/window.py:175
-msgid "This image is already minimized."
-msgstr "Cette image est déjà compressée."
+#: src/window.py:173
+msgid "\"{}\" is already compressed."
+msgstr "\"{}\" est déjà compressée."
 
-#: src/window.py:189
+#: src/window.py:192
 msgid "All images"
 msgstr "Toutes les images"
 
-#: src/window.py:194
+#: src/window.py:197
 msgid "PNG images"
 msgstr "Images PNG"
 
-#: src/window.py:198
+#: src/window.py:201
 msgid "JPEG images"
 msgstr "Images JPEG"
 
-#: src/window.py:213
+#: src/window.py:216
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:70
-msgid "Error"
-msgstr "Erreur"
+#: src/compressor.py:66
+msgid "An error has occured"
+msgstr "Une erreur est survenue"
 
-#: src/compressor.py:71
-msgid "This image has not been minimized."
-msgstr "Cette image n'a pas été compressée."
+#: src/compressor.py:67
+msgid "\"{}\" has not been minimized."
+msgstr "\"{}\" n'a pas été compressée."

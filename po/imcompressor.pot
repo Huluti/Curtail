@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 16:08+0200\n"
+"POT-Creation-Date: 2019-10-08 18:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
 
 #: data/com.github.ImCompressor.desktop.in:3
 #: data/com.github.ImCompressor.appdata.xml.in:7
@@ -23,7 +23,7 @@ msgid "ImCompressor"
 msgstr ""
 
 #: data/com.github.ImCompressor.desktop.in:5
-msgid "Simple & useful image compressor."
+msgid "Simple & lossless image compressor."
 msgstr ""
 
 #. Icon name, do not translate
@@ -32,7 +32,7 @@ msgid "com.github.ImCompressor"
 msgstr ""
 
 #: data/com.github.ImCompressor.appdata.xml.in:8
-msgid "Simple &amp; useful image compressor"
+msgid "Simple &amp; lossless image compressor"
 msgstr ""
 
 #: data/com.github.ImCompressor.appdata.xml.in:10
@@ -45,20 +45,20 @@ msgstr ""
 msgid "Hugo Posnic"
 msgstr ""
 
-#: src/ui/window.ui:29 src/window.py:212
-msgid "Simple & useful image compressor"
+#: src/ui/window.ui:29 src/window.py:215
+msgid "Simple & lossless image compressor"
 msgstr ""
 
 #: src/ui/window.ui:99
-msgid "Drag and drop your images here!"
+msgid "Drag and drop your images here..."
 msgstr ""
 
 #: src/ui/window.ui:114
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:127
-msgid "Select file(s)"
+#: src/ui/window.ui:127 src/window.py:118
+msgid "Browse your files"
 msgstr ""
 
 #: src/ui/menu.ui:6
@@ -81,56 +81,52 @@ msgstr ""
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:118
-msgid "Please choose file(s)"
-msgstr ""
-
 #. if path doesn't exist
-#: src/window.py:158
-msgid "Doesn't exist"
+#: src/window.py:154
+msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:159
-msgid "This image doesn't exist."
+#: src/window.py:155
+msgid "\"{}\" doesn't exist."
 msgstr ""
 
-#: src/window.py:166
+#: src/window.py:163
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:167
-msgid "This format of image is not supported."
+#: src/window.py:164
+msgid "The format of \"{}\" is not supported."
 msgstr ""
 
-#. already minimized
-#: src/window.py:174
-msgid "Already minimized"
+#. already compressed
+#: src/window.py:172
+msgid "Already compressed"
 msgstr ""
 
-#: src/window.py:175
-msgid "This image is already minimized."
+#: src/window.py:173
+msgid "\"{}\" is already compressed."
 msgstr ""
 
-#: src/window.py:189
+#: src/window.py:192
 msgid "All images"
 msgstr ""
 
-#: src/window.py:194
+#: src/window.py:197
 msgid "PNG images"
 msgstr ""
 
-#: src/window.py:198
+#: src/window.py:201
 msgid "JPEG images"
 msgstr ""
 
-#: src/window.py:213
+#: src/window.py:216
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
-#: src/compressor.py:70
-msgid "Error"
+#: src/compressor.py:66
+msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:71
-msgid "This image has not been minimized."
+#: src/compressor.py:67
+msgid "\"{}\" has not been minimized."
 msgstr ""
