@@ -42,6 +42,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.app = kwargs['application']
 
         self.build_ui()
         self.create_actions()
@@ -91,6 +92,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.create_simple_action('forward', self.forward)
         self.create_simple_action('select_file', self.select_file)
         self.create_simple_action('about', self.about_window)
+        self.create_simple_action('quit', self.quit_app, '<Primary>q')
 
     def show_treeview(self, show=True):
         if show:
@@ -211,3 +213,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.set_license(text)
         dialog.run()
         dialog.destroy()
+
+    def quit_app(self, *args):
+        self.app.quit()
