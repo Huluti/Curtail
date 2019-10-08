@@ -24,7 +24,7 @@ from .compressor import Compressor
 from .tools import message_dialog
 
 
-UI_PATH = '/com/github/ImCompressor/ui/'
+UI_PATH = '/com/github/Huluti/ImCompressor/ui/'
 
 
 @Gtk.Template(resource_path=UI_PATH + 'window.ui')
