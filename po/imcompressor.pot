@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the imcompressor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: imcompressor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-08 16:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#: data/com.github.ImCompressor.desktop.in:3
+#: data/com.github.ImCompressor.appdata.xml.in:7
+msgid "ImCompressor"
+msgstr ""
+
+#: data/com.github.ImCompressor.desktop.in:5
+msgid "Simple & useful image compressor."
+msgstr ""
+
+#. Icon name, do not translate
+#: data/com.github.ImCompressor.desktop.in:10
+msgid "com.github.ImCompressor"
+msgstr ""
+
+#: data/com.github.ImCompressor.appdata.xml.in:8
+msgid "Simple &amp; useful image compressor"
+msgstr ""
+
+#: data/com.github.ImCompressor.appdata.xml.in:10
+msgid ""
+"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
+"types."
+msgstr ""
+
+#: data/com.github.ImCompressor.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr ""
+
+#: src/ui/window.ui:29 src/window.py:212
+msgid "Simple & useful image compressor"
+msgstr ""
+
+#: src/ui/window.ui:99
+msgid "Drag and drop your images here!"
+msgstr ""
+
+#: src/ui/window.ui:114
+msgid "or"
+msgstr ""
+
+#: src/ui/window.ui:127
+msgid "Select file(s)"
+msgstr ""
+
+#: src/ui/menu.ui:6
+msgid "About ImCompressor"
+msgstr ""
+
+#: src/window.py:71
+msgid "Filename"
+msgstr ""
+
+#: src/window.py:72
+msgid "Size"
+msgstr ""
+
+#: src/window.py:73
+msgid "New Size"
+msgstr ""
+
+#: src/window.py:74
+msgid "Savings"
+msgstr ""
+
+#: src/window.py:118
+msgid "Please choose file(s)"
+msgstr ""
+
+#. if path doesn't exist
+#: src/window.py:158
+msgid "Doesn't exist"
+msgstr ""
+
+#: src/window.py:159
+msgid "This image doesn't exist."
+msgstr ""
+
+#: src/window.py:166
+msgid "Format not supported"
+msgstr ""
+
+#: src/window.py:167
+msgid "This format of image is not supported."
+msgstr ""
+
+#. already minimized
+#: src/window.py:174
+msgid "Already minimized"
+msgstr ""
+
+#: src/window.py:175
+msgid "This image is already minimized."
+msgstr ""
+
+#: src/window.py:189
+msgid "All images"
+msgstr ""
+
+#: src/window.py:194
+msgid "PNG images"
+msgstr ""
+
+#: src/window.py:198
+msgid "JPEG images"
+msgstr ""
+
+#: src/window.py:213
+msgid "Distributed under the GNU GPL(v3) license.\n"
+msgstr ""
+
+#: src/compressor.py:70
+msgid "Error"
+msgstr ""
+
+#: src/compressor.py:71
+msgid "This image has not been minimized."
+msgstr ""

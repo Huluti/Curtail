@@ -49,7 +49,6 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
 
 # Django stuff:
 *.log
@@ -105,3 +104,6 @@ venv.bak/
 
 # glade files
 *~
+
+# meson/ninja
+_build
