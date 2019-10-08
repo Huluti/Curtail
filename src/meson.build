@@ -28,7 +28,9 @@ configure_file(
 imcompressor_sources = [
   '__init__.py',
   'main.py',
-  'window.py'
+  'window.py',
+  'compressor.py',
+  'tools.py'
 ]
 
 install_data(imcompressor_sources, install_dir: moduledir)

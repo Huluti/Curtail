@@ -20,6 +20,9 @@ from gi.repository import Gtk, Gdk, Gio
 from urllib.parse import unquote
 from os import path
 
+from .compressor import Compressor
+from .tools import message_dialog
+
 
 UI_PATH = '/com/github/ImCompressor/ui/'
 
@@ -148,87 +151,34 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
-                Gtk.ButtonsType.OK, _("Doesn't exist"))
-            dialog.format_secondary_text(
-                "This image doesn't exist.")
-            dialog.run()
-            dialog.destroy()
+            message_dialog(self, 'error', _("Doesn't exist"),
+                           "This image doesn't exist.")
             return
 
         # New filename
         pfilename = self.parse_filename(filename)
 
         if pfilename["ext"] not in ('png', 'jpg', 'jpeg'):
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
-                Gtk.ButtonsType.OK, _("Format not supported"))
-            dialog.format_secondary_text(
-                "This format of image is not supported.")
-            dialog.run()
-            dialog.destroy()
+            message_dialog(self, 'error', _("Format not supported"),
+                           "This format of image is not supported.")
             return
 
         new_filename = '{}/{}-min.{}'.format(pfilename["folder"],
             pfilename["name"], pfilename["ext"])
 
         if path.exists(new_filename):  # already minimized
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, _("Already minimized"))
-            dialog.format_secondary_text(
-                "This image is already minimized.")
-            dialog.run()
-            dialog.destroy()
+            message_dialog(self, 'info', _("Already minimized"),
+                           "This image is already minimized.")
             return
 
         return filename, new_filename, pfilename
 
-
     def compress_image(self, filename):
-        checks = self.check_filename(filename)
-        if checks is not None:
-            filename, new_filename, pfilename = checks
-        else:
-            return
-
-        # Show tree view if hidden
-        if not self.treeview.get_visible():
-            self.show_treeview(True)
-
-        # Current size
-        size = path.getsize(filename)
-        size_str = self.sizeof_fmt(size)
-
-         # Create tree iter
-        treeiter = self.store.append([filename, size_str, "", ""])
-
-        # Compress image
-        self.call_compressor(filename, new_filename, pfilename["ext"])
-
-        # Update tree iter
-        new_size = path.getsize(new_filename)
-        new_size_str = self.sizeof_fmt(new_size)
-        self.store.set_value(treeiter, 2, new_size_str)
-
-        savings = round(100 - (new_size * 100 / size), 2)
-        savings = '{}%'.format(str(savings))
-        self.store.set_value(treeiter, 3, savings)
-
-    def call_compressor(self, filename, new_filename, ext):
-        if ext == 'png':
-            command = ["optipng", "-clobber", "-o2", "-strip", "all", \
-                       filename, "-out", new_filename]
-        elif ext == 'jpeg' or ext == 'jpg':
-            command = ["jpegtran", "-optimize", "-progressive", \
-                       "-outfile", new_filename, filename]
-        ret = subprocess.call(command)
-        if ret != 0:
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.ERROR,
-                Gtk.ButtonsType.OK, _("Error"))
-            dialog.format_secondary_text(
-                "This image has not been minimized.")
-            dialog.run()
-            dialog.destroy()
-            return
+        data = self.check_filename(filename)
+        if data is not None:
+            compressor = Compressor(self, data)
+            compressor.start()
+            compressor.join()
 
     def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()
@@ -247,13 +197,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.add_filter(all_images)
         dialog.add_filter(png_images)
         dialog.add_filter(jpeg_images)
-
-    def sizeof_fmt(self, num):
-        for unit in ['','Kb','Mb']:
-            if abs(num) < 1024.0:
-                return "%3.1f %s" % (num, unit)
-            num /= 1024.0
-        return "%.1f %s" % (num, 'Yb')
 
     def about_window(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
