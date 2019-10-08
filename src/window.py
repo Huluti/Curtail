@@ -79,8 +79,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         treeviewcolumn.set_resizable(True)
         treeviewcolumn.pack_start(self.renderer, False)
         treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
-        if column_id == 0:
-            treeviewcolumn.set_expand(True)
+        treeviewcolumn.set_expand(True)
         self.treeview.append_column(treeviewcolumn)
 
     def create_simple_action(self, action_name, callback, shortcut=None):

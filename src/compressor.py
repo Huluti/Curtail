@@ -43,7 +43,8 @@ class Compressor(Thread):
         size_str = sizeof_fmt(size)
 
          # Create tree iter
-        treeiter = self.win.store.append([filename, size_str, '', ''])
+        treeiter = self.win.store.append([pfilename['full_name'],
+                                         size_str, '', ''])
 
         # Compress image
         self.call_compressor(filename, new_filename, pfilename['ext'])
