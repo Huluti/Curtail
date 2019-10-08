@@ -30,6 +30,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     headerbar = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
+    forward_button = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
@@ -42,6 +43,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.build_ui()
         self.create_actions()
         self.show_treeview(False)
+        self.forward_button.set_sensitive(False)
 
     def build_ui(self):
         # Headerbar
@@ -54,7 +56,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                                              Gtk.TargetFlags(4), 0)
         self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
                                    Gdk.DragAction.COPY)
-        self.mainbox.connect("drag-data-received", self.received_file)
+        self.mainbox.connect("drag-data-received", self.receive_file)
 
         # Treeview
         self.store = Gtk.ListStore(str, str, str, str)
@@ -83,6 +85,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def create_actions(self):
         self.create_simple_action('back', self.back)
+        self.create_simple_action('forward', self.forward)
         self.create_simple_action('select_file', self.select_file)
         self.create_simple_action('about', self.about_window)
 
@@ -90,13 +93,19 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         if show:
             self.homebox.hide()
             self.treeview.show_all()
+            self.back_button.set_sensitive(True)
+            self.forward_button.set_sensitive(False)
         else:
             self.treeview.hide()
             self.homebox.show_all()
-        self.back_button.set_sensitive(show)
+            self.back_button.set_sensitive(False)
+            self.forward_button.set_sensitive(True)
 
     def back(self, *args):
         self.show_treeview(False)
+
+    def forward(self, *args):
+        self.show_treeview(True)
 
     def select_file(self, *args):
         dialog = Gtk.FileChooserDialog(_("Please choose file(s)"), self,
@@ -116,7 +125,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             for filename in filenames:
                 self.compress_image(filename)
 
-    def received_file(self, widget, drag_context, x, y, data, info, time):
+    def receive_file(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_text()
         filenames = filenames.split()  # we may have several files
         for filename in filenames:
