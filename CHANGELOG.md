@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.2] - DEV
+## [0.2] - 2019-10-08
 ### Changed
 - Various optimizations.
 - Improve error messages.
