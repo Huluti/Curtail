@@ -96,7 +96,7 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Drag and drop your images here!</property>
+                <property name="label" translatable="yes">Drag and drop your images here...</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>
                 </attributes>
@@ -124,7 +124,7 @@
             </child>
             <child>
               <object class="GtkButton" id="filechooser_button">
-                <property name="label" translatable="yes">Select file(s)</property>
+                <property name="label" translatable="yes">Browse your files</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
