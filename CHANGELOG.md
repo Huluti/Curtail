@@ -1,10 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.2.1] - DEV
+## [0.2.1] - 2019-10-09
 ### Changed
 - Stick back and forward buttons.
-- APP id.
+- Change APP id.
 
 ## [0.2] - 2019-10-08
 ### Changed
