@@ -140,7 +140,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def parse_filename(self, filename):
         parse_filename = path.split(filename)
-        parse_name = parse_filename[1].split('.')
+        parse_name = parse_filename[1].rsplit('.', 1)
         pfilename = {
             'folder': parse_filename[0],
             'full_name': parse_filename[1],

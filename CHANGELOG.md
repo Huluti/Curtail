@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0..3] - DEV
+### Fixed
+- Fix a crash when compressing an image with dots in its name.
+
 ## [0.2.1] - 2019-10-09
 ### Changed
 - Stick back and forward buttons.
