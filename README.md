@@ -19,6 +19,16 @@ PNG, JPEG
 
 ## Installation instructions
 
+### Universal package for Linux (recommended)
+
+ImCompressor is available as a flatpak package.
+
+<a href='https://flathub.org/apps/details/com.github.huluti.ImCompressor'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
+You can also install it by using the following command-line:
+
+    flatpak install flathub com.github.huluti.ImCompressor
+
 ### Build from source (nightly)
 
 Build and install by running:
