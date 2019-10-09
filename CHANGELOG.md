@@ -1,7 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0..3] - DEV
+## [0.3] - DEV
+### Added
+- Permit to sort results by name or saving ratio.
+
 ### Fixed
 - Fix a crash when compressing an image with dots in its name.
 

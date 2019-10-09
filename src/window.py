@@ -75,6 +75,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def add_column_to_treeview(self, title, column_id):
         treeviewcolumn = Gtk.TreeViewColumn(title)
+        if column_id in (0, 3):
+            treeviewcolumn.set_sort_column_id(column_id)
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
         treeviewcolumn.set_expand(True)
