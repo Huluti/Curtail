@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/Huluti/ImCompressor">
+  <gresource prefix="/com/github/huluti/ImCompressor">
     <file>ui/window.ui</file>
     <file>ui/menu.ui</file>
   </gresource>
