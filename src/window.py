@@ -173,15 +173,17 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                         _("The format of \"{}\" is not supported.") \
                         .format(pfilename['full_name']))
             return
-
-        new_filename = '{}/{}-min.{}'.format(pfilename['folder'],
-            pfilename['name'], pfilename['ext'])
-
-        if path.exists(new_filename):  # already compressed
-            message_dialog(self, 'info', _("Already compressed"),
-                           _("\"{}\" is already compressed.") \
-                           .format(pfilename['full_name']))
-            return
+        # Use new file or not
+        if self._settings.get_boolean('new-file'):
+            new_filename = '{}/{}-min.{}'.format(pfilename['folder'],
+                pfilename['name'], pfilename['ext'])
+            if path.exists(new_filename):  # already compressed
+                message_dialog(self, 'info', _("Already compressed"),
+                               ("\"{}\" is already compressed.") \
+                               .format(pfilename['full_name']))
+                return
+        else :
+            new_filename = filename
 
         return filename, new_filename, pfilename
 
