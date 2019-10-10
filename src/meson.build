@@ -30,6 +30,7 @@ imcompressor_sources = [
   'main.py',
   'window.py',
   'compressor.py',
+  'preferences.py',
   'tools.py'
 ]
 

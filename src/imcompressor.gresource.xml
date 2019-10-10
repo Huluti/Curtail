@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/com/github/huluti/ImCompressor">
     <file>ui/window.ui</file>
+    <file>ui/preferences.ui</file>
     <file>ui/menu.ui</file>
   </gresource>
 </gresources>

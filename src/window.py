@@ -20,16 +20,22 @@ from gi.repository import Gtk, Gdk, Gio
 from urllib.parse import unquote
 from os import path
 
+from .preferences import ImCompressorPrefsWindow
 from .compressor import Compressor
 from .tools import message_dialog
 
 
 UI_PATH = '/com/github/huluti/ImCompressor/ui/'
+SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
 
 
 @Gtk.Template(resource_path=UI_PATH + 'window.ui')
 class ImCompressorWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'ImCompressorWindow'
+
+    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
+
+    prefs_window = None
 
     headerbar = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
@@ -95,6 +101,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.create_simple_action('back', self.back)
         self.create_simple_action('forward', self.forward)
         self.create_simple_action('select_file', self.select_file)
+        self.create_simple_action('preferences', self.on_preferences)
         self.create_simple_action('about', self.about_window)
         self.create_simple_action('quit', self.quit_app, '<Primary>q')
 
@@ -206,6 +213,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.add_filter(all_images)
         dialog.add_filter(png_images)
         dialog.add_filter(jpeg_images)
+
+    def on_preferences(self, *args):
+        if self.prefs_window is not None:
+            self.prefs_window.destroy()
+        self.prefs_window = ImCompressorPrefsWindow()
+        self.prefs_window.present()
 
     def about_window(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
