@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 12:31+0200\n"
-"PO-Revision-Date: 2019-10-10 12:32+0200\n"
+"POT-Creation-Date: 2019-10-10 14:54+0200\n"
+"PO-Revision-Date: 2019-10-10 14:55+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -64,7 +64,7 @@ msgstr "Activer le mode sombre"
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
-#: src/ui/window.ui:24 src/window.py:241
+#: src/ui/window.ui:24 src/window.py:240
 msgid "Simple & lossless image compressor"
 msgstr "Compresseur d'image simple et sans-perte"
 
@@ -97,12 +97,12 @@ msgid "Filename"
 msgstr "Fichier"
 
 #: src/window.py:83
-msgid "Size"
-msgstr "Poids"
+msgid "Old Size"
+msgstr "Ancienne taille"
 
 #: src/window.py:84
 msgid "New Size"
-msgstr "Nouveau poids"
+msgstr "Nouvelle taille"
 
 #: src/window.py:85
 msgid "Savings"
@@ -117,39 +117,39 @@ msgstr "Chemin non-valide"
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
-#: src/window.py:177
+#: src/window.py:176
 msgid "Format not supported"
 msgstr "Format non-supporté"
 
-#: src/window.py:178
+#: src/window.py:177
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
 #. already compressed
-#: src/window.py:186
+#: src/window.py:185
 msgid "Already compressed"
 msgstr "Déjà compressée"
 
-#: src/window.py:208
+#: src/window.py:207
 msgid "All images"
 msgstr "Toutes les images"
 
-#: src/window.py:213
+#: src/window.py:212
 msgid "PNG images"
 msgstr "Images PNG"
 
-#: src/window.py:217
+#: src/window.py:216
 msgid "JPEG images"
 msgstr "Images JPEG"
 
-#: src/window.py:242
+#: src/window.py:241
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:66
+#: src/compressor.py:70
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:67
+#: src/compressor.py:71
 msgid "\"{}\" has not been minimized."
 msgstr "\"{}\" n'a pas été compressée."

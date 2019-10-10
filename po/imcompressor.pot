@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 12:31+0200\n"
+"POT-Creation-Date: 2019-10-10 14:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Use dark theme for the windows."
 msgstr ""
 
-#: src/ui/window.ui:24 src/window.py:241
+#: src/ui/window.ui:24 src/window.py:240
 msgid "Simple & lossless image compressor"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgid "Filename"
 msgstr ""
 
 #: src/window.py:83
-msgid "Size"
+msgid "Old Size"
 msgstr ""
 
 #: src/window.py:84
@@ -114,39 +114,39 @@ msgstr ""
 msgid "\"{}\" doesn't exist."
 msgstr ""
 
-#: src/window.py:177
+#: src/window.py:176
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:178
+#: src/window.py:177
 msgid "The format of \"{}\" is not supported."
 msgstr ""
 
 #. already compressed
-#: src/window.py:186
+#: src/window.py:185
 msgid "Already compressed"
 msgstr ""
 
-#: src/window.py:208
+#: src/window.py:207
 msgid "All images"
 msgstr ""
 
-#: src/window.py:213
+#: src/window.py:212
 msgid "PNG images"
 msgstr ""
 
-#: src/window.py:217
+#: src/window.py:216
 msgid "JPEG images"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:241
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
-#: src/compressor.py:66
+#: src/compressor.py:70
 msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:67
+#: src/compressor.py:71
 msgid "\"{}\" has not been minimized."
 msgstr ""

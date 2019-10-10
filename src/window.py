@@ -80,7 +80,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.renderer = Gtk.CellRendererText()
 
         self.add_column_to_treeview(_("Filename"), 0)
-        self.add_column_to_treeview(_("Size"), 1)
+        self.add_column_to_treeview(_("Old Size"), 1)
         self.add_column_to_treeview(_("New Size"), 2)
         self.add_column_to_treeview(_("Savings"), 3)
 
