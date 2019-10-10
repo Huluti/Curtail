@@ -32,18 +32,22 @@ class Compressor(Thread):
         self.compress_image()
 
     def compress_image(self):
-        filename, new_filename, pfilename = self.data
+        filename, new_filename, file_data = self.data
 
         # Current size
         size = path.getsize(filename)
         size_str = sizeof_fmt(size)
 
-         # Create tree iter
-        treeiter = self.win.store.append([pfilename['full_name'],
-                                         size_str, '', ''])
+        # Create tree iter
+        if filename != new_filename:
+            file_data2 = self.win.parse_filename(new_filename)
+            full_name = file_data2['full_name']
+        else:
+            full_name = file_data['full_name']
+        treeiter = self.win.store.append([full_name, size_str, '', ''])
 
         # Compress image
-        self.call_compressor(filename, new_filename, pfilename['ext'])
+        self.call_compressor(filename, new_filename, file_data['ext'])
 
         # Update tree iter
         new_size = path.getsize(new_filename)

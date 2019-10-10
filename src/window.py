@@ -155,13 +155,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def parse_filename(self, filename):
         parse_filename = path.split(filename)
         parse_name = parse_filename[1].rsplit('.', 1)
-        pfilename = {
+        file_data = {
             'folder': parse_filename[0],
             'full_name': parse_filename[1],
             'name': parse_name[0],
             'ext': parse_name[1].lower()
         }
-        return pfilename
+        return file_data
 
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
@@ -170,27 +170,26 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                            .format(filename))
             return
 
-        # New filename
-        pfilename = self.parse_filename(filename)
+        file_data = self.parse_filename(filename)
 
-        if pfilename['ext'] not in ('png', 'jpg', 'jpeg'):
+        if file_data['ext'] not in ('png', 'jpg', 'jpeg'):
             message_dialog(self, 'error', _("Format not supported"),
                         _("The format of \"{}\" is not supported.") \
-                        .format(pfilename['full_name']))
+                        .format(file_data['full_name']))
             return
         # Use new file or not
         if self._settings.get_boolean('new-file'):
-            new_filename = '{}/{}-min.{}'.format(pfilename['folder'],
-                pfilename['name'], pfilename['ext'])
+            new_filename = '{}/{}-min.{}'.format(file_data['folder'],
+                file_data['name'], file_data['ext'])
             if path.exists(new_filename):  # already compressed
                 message_dialog(self, 'info', _("Already compressed"),
                                ("\"{}\" is already compressed.") \
-                               .format(pfilename['full_name']))
+                               .format(file_data['full_name']))
                 return
         else :
             new_filename = filename
 
-        return filename, new_filename, pfilename
+        return filename, new_filename, file_data
 
     def compress_image(self, filename):
         data = self.check_filename(filename)
