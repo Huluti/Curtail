@@ -22,7 +22,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image type="source">hhttps://raw.githubusercontent.com/Huluti/ImCompressor/master/data/screenshots/screen1.png</image>
+      <image type="source">https://raw.githubusercontent.com/Huluti/ImCompressor/master/data/screenshots/screen1.png</image>
     </screenshot>
     <screenshot>
       <image type="source">https://raw.githubusercontent.com/Huluti/ImCompressor/master/data/screenshots/screen2.png</image>
