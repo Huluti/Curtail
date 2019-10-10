@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.3] - DEV
+## [0.2.2] - 2019-10-10
 ### Added
 - Permit to sort results by name or saving ratio.
 
