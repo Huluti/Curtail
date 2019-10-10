@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Add a preferences window with new-file and dark-theme options.
 
+### Changed
+- Various UI changes.
+
 ## [0.2.2] - 2019-10-10
 ### Added
 - Permit to sort results by name or saving ratio.
