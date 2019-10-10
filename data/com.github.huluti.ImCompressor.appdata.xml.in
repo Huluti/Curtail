@@ -32,6 +32,14 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.3" date="2019-10-10">
+      <description>
+        <ul>
+          <li>Add a preferences window with new-file and dark-theme options</li>
+          <li>Various UI changes</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.2.2" date="2019-10-10">
       <description>
         <ul>
