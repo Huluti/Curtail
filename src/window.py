@@ -34,6 +34,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'ImCompressorWindow'
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
+    settings = Gtk.Settings.get_default()
 
     prefs_window = None
 
@@ -57,6 +58,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.forward_button.set_sensitive(False)
 
     def build_ui(self):
+        # Dark theme at start
+        if self._settings.get_boolean('dark-theme'):
+            self.toggle_dark_theme(True)
+
         # Headerbar
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
@@ -216,10 +221,14 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.add_filter(png_images)
         dialog.add_filter(jpeg_images)
 
+    def toggle_dark_theme(self, value):
+        self.settings.set_property('gtk-application-prefer-dark-theme',
+                                       value)
+
     def on_preferences(self, *args):
         if self.prefs_window is not None:
             self.prefs_window.destroy()
-        self.prefs_window = ImCompressorPrefsWindow()
+        self.prefs_window = ImCompressorPrefsWindow(self)
         self.prefs_window.present()
 
     def on_about(self, *args):

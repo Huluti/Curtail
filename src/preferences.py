@@ -34,8 +34,10 @@ class ImCompressorPrefsWindow(Gtk.Window):
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
-    def __init__(self, **kwargs):
+    def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
+
+        self.parent = parent
 
         self.build_ui()
 
@@ -51,3 +53,5 @@ class ImCompressorPrefsWindow(Gtk.Window):
 
     def on_bool_changed(self, switch, state, key):
         self._settings.set_boolean(key, switch.get_active())
+        if key == 'dark-theme':
+            self.parent.toggle_dark_theme(switch.get_active())
