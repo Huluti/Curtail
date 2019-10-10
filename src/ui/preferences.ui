@@ -52,7 +52,7 @@
             <property name="can_focus">False</property>
             <property name="halign">start</property>
             <property name="valign">center</property>
-            <property name="label" translatable="yes">Toggle dark theme</property>
+            <property name="label" translatable="yes">Enable dark theme</property>
           </object>
           <packing>
             <property name="left_attach">0</property>

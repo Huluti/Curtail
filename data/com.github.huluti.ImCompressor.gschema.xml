@@ -3,13 +3,13 @@
 	<schema id="com.github.huluti.ImCompressor" path="/com/github/huluti/ImCompressor/">
 	  <key type="b" name="new-file">
       <default>true</default>
-      <summary>Enable automatic zoom</summary>
-      <description>Whether or not save the compressed image into a new file.</description>
+      <summary>Save into a new file</summary>
+      <description>Save the compressed image into a new file.</description>
     </key>
 	  <key type="b" name="dark-theme">
       <default>false</default>
       <summary>Enable dark theme</summary>
-      <description>Use dark theme for the window.</description>
+      <description>Use dark theme for the windows.</description>
     </key>
 	</schema>
 </schemalist>

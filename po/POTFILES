@@ -2,8 +2,10 @@ data/com.github.huluti.ImCompressor.desktop.in
 data/com.github.huluti.ImCompressor.appdata.xml.in
 data/com.github.huluti.ImCompressor.gschema.xml
 src/ui/window.ui
+src/ui/preferences.ui
 src/ui/menu.ui
 src/main.py
 src/window.py
 src/compressor.py
+src/preferences.py
 src/tools.py

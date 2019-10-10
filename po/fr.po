@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 18:33+0200\n"
-"PO-Revision-Date: 2019-10-08 18:38+0200\n"
+"POT-Creation-Date: 2019-10-10 12:31+0200\n"
+"PO-Revision-Date: 2019-10-10 12:32+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -41,88 +41,108 @@ msgid ""
 "ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor est un compresseur d'image sans-perte qui supporte les "
-"formats PNG et JPG."
+"ImCompressor est un compresseur d'image sans-perte qui supporte les formats "
+"PNG et JPG."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
 msgstr ""
 
-#: src/ui/window.ui:29 src/window.py:215
+#: data/com.github.huluti.ImCompressor.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Sauvegarder dans un nouveau fichier"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Sauvegarder l'image compressée dans un nouveau fichier."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:55
+msgid "Enable dark theme"
+msgstr "Activer le mode sombre"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "Use dark theme for the windows."
+msgstr "Utiliser le thème sombre pour les fenêtres."
+
+#: src/ui/window.ui:24 src/window.py:241
 msgid "Simple & lossless image compressor"
 msgstr "Compresseur d'image simple et sans-perte"
 
-#: src/ui/window.ui:99
+#: src/ui/window.ui:109
 msgid "Drag and drop your images here..."
 msgstr "Faites glisser vos images ici..."
 
-#: src/ui/window.ui:114
+#: src/ui/window.ui:124
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:127 src/window.py:118
+#: src/ui/window.ui:137 src/window.py:132
 msgid "Browse your files"
 msgstr "Parcourez vos fichiers"
 
-#: src/ui/menu.ui:6
+#: src/ui/preferences.ui:7 src/ui/menu.ui:6
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/ui/preferences.ui:29
+msgid "Save the compressed image into a new file"
+msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
+
+#: src/ui/menu.ui:10
 msgid "About ImCompressor"
 msgstr "À propos de ImCompressor"
 
-#: src/window.py:71
+#: src/window.py:82
 msgid "Filename"
 msgstr "Fichier"
 
-#: src/window.py:72
+#: src/window.py:83
 msgid "Size"
 msgstr "Poids"
 
-#: src/window.py:73
+#: src/window.py:84
 msgid "New Size"
 msgstr "Nouveau poids"
 
-#: src/window.py:74
+#: src/window.py:85
 msgid "Savings"
 msgstr "Gains"
 
 #. if path doesn't exist
-#: src/window.py:154
+#: src/window.py:168
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:155
+#: src/window.py:169
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
-#: src/window.py:163
+#: src/window.py:177
 msgid "Format not supported"
 msgstr "Format non-supporté"
 
-#: src/window.py:164
+#: src/window.py:178
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
 #. already compressed
-#: src/window.py:172
+#: src/window.py:186
 msgid "Already compressed"
 msgstr "Déjà compressée"
 
-#: src/window.py:173
-msgid "\"{}\" is already compressed."
-msgstr "\"{}\" est déjà compressée."
-
-#: src/window.py:192
+#: src/window.py:208
 msgid "All images"
 msgstr "Toutes les images"
 
-#: src/window.py:197
+#: src/window.py:213
 msgid "PNG images"
 msgstr "Images PNG"
 
-#: src/window.py:201
+#: src/window.py:217
 msgid "JPEG images"
 msgstr "Images JPEG"
 
-#: src/window.py:216
+#: src/window.py:242
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 

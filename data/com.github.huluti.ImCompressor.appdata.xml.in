@@ -8,7 +8,6 @@
   <summary>Simple &amp; lossless image compressor</summary>
   <description>
     <p>ImCompressor is a lossless image compressor, supporting PNG and JPEG file types.</p>
-
   </description>
 
   <developer_name>Hugo Posnic</developer_name>
