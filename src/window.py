@@ -67,7 +67,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                                              Gtk.TargetFlags(4), 0)
         self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
                                    Gdk.DragAction.COPY)
-        self.mainbox.connect('drag-data-received', self.receive_file)
+        self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
         self.store = Gtk.ListStore(str, str, str, str)
@@ -98,12 +98,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.app.add_accelerator(shortcut, 'win.' + action_name, None)
 
     def create_actions(self):
-        self.create_simple_action('back', self.back)
-        self.create_simple_action('forward', self.forward)
-        self.create_simple_action('select_file', self.select_file)
+        self.create_simple_action('back', self.on_back)
+        self.create_simple_action('forward', self.on_forward)
+        self.create_simple_action('select_file', self.on_select)
         self.create_simple_action('preferences', self.on_preferences)
-        self.create_simple_action('about', self.about_window)
-        self.create_simple_action('quit', self.quit_app, '<Primary>q')
+        self.create_simple_action('about', self.on_about)
+        self.create_simple_action('quit', self.on_quit, '<Primary>q')
 
     def show_treeview(self, show):
         if show:
@@ -117,13 +117,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
 
-    def back(self, *args):
+    def on_back(self, *args):
         self.show_treeview(False)
 
-    def forward(self, *args):
+    def on_forward(self, *args):
         self.show_treeview(True)
 
-    def select_file(self, *args):
+    def on_select(self, *args):
         dialog = Gtk.FileChooserDialog(_("Browse your files"), self,
             Gtk.FileChooserAction.OPEN,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -137,7 +137,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                 self.compress_image(filename)
         dialog.destroy()
 
-    def receive_file(self, widget, drag_context, x, y, data, info, time):
+    def on_receive(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_text()
         filenames = filenames.split()  # we may have several files
         for filename in filenames:
@@ -222,7 +222,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.prefs_window = ImCompressorPrefsWindow()
         self.prefs_window.present()
 
-    def about_window(self, *args):
+    def on_about(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
         dialog.set_logo_icon_name('com.github.huluti.ImCompressor')
         dialog.set_program_name('ImCompressor')
@@ -236,5 +236,5 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.run()
         dialog.destroy()
 
-    def quit_app(self, *args):
+    def on_quit(self, *args):
         self.app.quit()
