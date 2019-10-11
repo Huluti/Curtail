@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Don't block the UI anymore when performing compression.
 
+### Fixed
+- Fix size of the preferences window.
+
 ## [0.3] - 2019-10-10
 ### Added
 - Add a preferences window with new-file and dark-theme options.
