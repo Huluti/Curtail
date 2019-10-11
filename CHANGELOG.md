@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.4] - DEV
+### Added
+- Add dutch and german translations.
+
 ## [0.3] - 2019-10-10
 ### Added
 - Add a preferences window with new-file and dark-theme options.
