@@ -50,10 +50,11 @@ class Compressor():
             # Update tree iter
             new_size = path.getsize(new_filename)
             new_size_str = sizeof_fmt(new_size)
-            self.win.store.set_value(treeiter, 2, new_size_str)
 
             savings = round(100 - (new_size * 100 / size), 2)
             savings = '{}%'.format(str(savings))
+
+            self.win.store.set_value(treeiter, 2, new_size_str)
             self.win.store.set_value(treeiter, 3, savings)
         else:
             message_dialog(self.win, 'error', _("An error has occured"),
