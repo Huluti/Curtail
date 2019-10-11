@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.4] - DEV
 ### Added
+- Add Ctrl+O shortcut to open files.
 - Add dutch and german translations.
 - Display translators names in about dialog.
 

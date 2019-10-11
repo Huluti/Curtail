@@ -147,7 +147,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="action_name">win.select_file</property>
+                <property name="action_name">win.select-file</property>
                 <property name="image">filechooser_image</property>
                 <property name="always_show_image">True</property>
               </object>

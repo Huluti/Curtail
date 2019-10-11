@@ -105,7 +105,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def create_actions(self):
         self.create_simple_action('back', self.on_back)
         self.create_simple_action('forward', self.on_forward)
-        self.create_simple_action('select_file', self.on_select)
+        self.create_simple_action('select-file', self.on_select, '<Primary>o')
         self.create_simple_action('preferences', self.on_preferences)
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
