@@ -55,3 +55,5 @@ class ImCompressorPrefsWindow(Gtk.Window):
         self._settings.set_boolean(key, switch.get_active())
         if key == 'dark-theme':
             self.parent.toggle_dark_theme(switch.get_active())
+        elif key == 'new-file':
+            self.parent.change_treeview_label()
