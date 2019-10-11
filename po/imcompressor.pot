@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-11 16:01+0200\n"
+"POT-Creation-Date: 2019-10-11 17:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Use dark theme for the windows."
 msgstr ""
 
-#: src/ui/window.ui:29 src/window.py:241
+#: src/ui/window.ui:29 src/window.py:259
 msgid "Simple & lossless image compressor"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:146 src/window.py:132
+#: src/ui/window.ui:146 src/window.py:142
 msgid "Browse your files"
 msgstr ""
 
@@ -89,61 +89,69 @@ msgstr ""
 msgid "About ImCompressor"
 msgstr ""
 
-#: src/window.py:82
+#: src/window.py:83
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:83
+#: src/window.py:84
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:84
+#: src/window.py:85
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:85
+#: src/window.py:86
 msgid "Savings"
 msgstr ""
 
+#: src/window.py:93
+msgid "Images are saved with <b>'-min' suffix</b>."
+msgstr ""
+
+#: src/window.py:95
+msgid "Images are <b>overwritten</b>."
+msgstr ""
+
 #. if path doesn't exist
-#: src/window.py:168
+#: src/window.py:186
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:169
+#: src/window.py:187
 msgid "\"{}\" doesn't exist."
 msgstr ""
 
-#: src/window.py:176
+#: src/window.py:194
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:177
+#: src/window.py:195
 msgid "The format of \"{}\" is not supported."
 msgstr ""
 
 #. already compressed
-#: src/window.py:185
+#: src/window.py:203
 msgid "Already compressed"
 msgstr ""
 
-#: src/window.py:207
+#: src/window.py:225
 msgid "All images"
 msgstr ""
 
-#: src/window.py:212
+#: src/window.py:230
 msgid "PNG images"
 msgstr ""
 
-#: src/window.py:216
+#: src/window.py:234
 msgid "JPEG images"
 msgstr ""
 
-#: src/window.py:240
+#: src/window.py:258
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:260
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
