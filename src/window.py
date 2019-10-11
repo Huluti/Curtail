@@ -46,7 +46,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     homebox = Gtk.Template.Child()
     treeview_box = Gtk.Template.Child()
     treeview = Gtk.Template.Child()
-    treeview_info = Gtk.Template.Child()
+    save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -85,15 +85,16 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_column_to_treeview(_("New Size"), 2)
         self.add_column_to_treeview(_("Savings"), 3)
 
-        self.change_treeview_label()
+        self.change_save_info_label()
 
-    def change_treeview_label(self):
+    def change_save_info_label(self):
+        label = '<span size="small">{}</span>'
         if self._settings.get_boolean('new-file'):
-            self.treeview_info.set_markup(
-                _("Images are saved with <b>'{}' suffix</b>.") \
-                .format(self._settings.get_string('suffix')))
+            label = label.format(_("Images are saved with <b>'{}' suffix</b>.") \
+                                 .format(self._settings.get_string('suffix')))
         else:
-            self.treeview_info.set_markup(_("Images are <b>overwritten</b>."))
+            label = label.format(_("Images are <b>overwritten</b>."))
+        self.save_info_label.set_markup(label)
 
     def add_column_to_treeview(self, title, column_id):
         treeviewcolumn = Gtk.TreeViewColumn(title)

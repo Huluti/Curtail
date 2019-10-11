@@ -63,9 +63,9 @@ class ImCompressorPrefsWindow(Gtk.Window):
         if key == 'dark-theme':
             self.parent.toggle_dark_theme(switch.get_active())
         elif key == 'new-file':
-            self.parent.change_treeview_label()
+            self.parent.change_save_info_label()
 
     def on_string_changed(self, entry, key):
         self._settings.set_string(key, entry.get_text())
         if key == 'suffix':
-            self.parent.change_treeview_label()
+            self.parent.change_save_info_label()
