@@ -44,8 +44,7 @@ class Compressor():
         treeiter = self.win.store.append([full_name, size_str, '', ''])
 
         # Compress image
-        ret = self.call_compressor(filename, new_filename, file_data['ext'],
-                                   file_data['full_name'])
+        ret = self.call_compressor(filename, new_filename, file_data['ext'])
         if ret == 0:
             # Update tree iter
             new_size = path.getsize(new_filename)
