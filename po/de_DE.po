@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the imcompressor package.
+# Onno Giesmann <nutzer3105@gmail.com>, 2019 (first Author).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: imcompressor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-10 14:54+0200\n"
+"PO-Revision-Date: 2019-10-11 13:55+0200\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"Language-Team: German - Germany <>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#: data/com.github.huluti.ImCompressor.desktop.in:3
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:7
+msgid "ImCompressor"
+msgstr "ImCompressor"
+
+#: data/com.github.huluti.ImCompressor.desktop.in:5
+msgid "Simple & lossless image compressor."
+msgstr "Einfacher &amp; verlustfreier Bild-Kompressor."
+
+#. Icon name, do not translate
+#: data/com.github.huluti.ImCompressor.desktop.in:10
+msgid "com.github.huluti.ImCompressor"
+msgstr ""
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:8
+msgid "Simple &amp; lossless image compressor"
+msgstr "Einfacher &amp; verlustfreier Bild-Kompressor"
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:10
+msgid ""
+"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
+"types."
+msgstr ""
+"ImCompressor ist ein verlustfreier Bild-Kompressor für PNG- und JPEG-"
+"Dateien."
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:13
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Als neue Datei speichern"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Komprimiertes Bild als neue Datei speichern."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:55
+msgid "Enable dark theme"
+msgstr "Dunkles Thema verwenden"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "Use dark theme for the windows."
+msgstr "Dunkles Thema für Fenster verwenden."
+
+#: src/ui/window.ui:24 src/window.py:240
+msgid "Simple & lossless image compressor"
+msgstr "Einfacher & verlustfreier Kompressor für Bilder"
+
+#: src/ui/window.ui:109
+msgid "Drag and drop your images here..."
+msgstr "Bilder durch Ziehen und Ablegen hier hinzufügen…"
+
+#: src/ui/window.ui:124
+msgid "or"
+msgstr "oder"
+
+#: src/ui/window.ui:137 src/window.py:132
+msgid "Browse your files"
+msgstr "Dateien durchsuchen"
+
+#: src/ui/preferences.ui:7 src/ui/menu.ui:6
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: src/ui/preferences.ui:29
+msgid "Save the compressed image into a new file"
+msgstr "Komprimiertes Bild als neue Datei speichern"
+
+#: src/ui/menu.ui:10
+msgid "About ImCompressor"
+msgstr "Info zu ImCompressor"
+
+#: src/window.py:82
+msgid "Filename"
+msgstr "Dateiname"
+
+#: src/window.py:83
+msgid "Old Size"
+msgstr "Bisherige Größe"
+
+#: src/window.py:84
+msgid "New Size"
+msgstr "Neue Größe"
+
+#: src/window.py:85
+msgid "Savings"
+msgstr "Einsparung"
+
+#. if path doesn't exist
+#: src/window.py:168
+msgid "Path not valid"
+msgstr "Ungültiger Pfad"
+
+#: src/window.py:169
+msgid "\"{}\" doesn't exist."
+msgstr "\"{}\" existiert nicht."
+
+#: src/window.py:176
+msgid "Format not supported"
+msgstr "Nicht unterstütztes Format"
+
+#: src/window.py:177
+msgid "The format of \"{}\" is not supported."
+msgstr "Das Format von \"{}\" wird nicht unterstützt."
+
+#. already compressed
+#: src/window.py:185
+msgid "Already compressed"
+msgstr "Bereits komprimiert"
+
+#: src/window.py:207
+msgid "All images"
+msgstr "Alle Bilder"
+
+#: src/window.py:212
+msgid "PNG images"
+msgstr "PNG-Bilder"
+
+#: src/window.py:216
+msgid "JPEG images"
+msgstr "JPEG-Bilder"
+
+#: src/window.py:241
+msgid "Distributed under the GNU GPL(v3) license.\n"
+msgstr "Veröffentlicht unter der Lizenz GNU GPL(v3).\n"
+
+#: src/compressor.py:70
+msgid "An error has occured"
+msgstr "Es ist ein Fehler aufgetreten"
+
+#: src/compressor.py:71
+msgid "\"{}\" has not been minimized."
+msgstr "\"{}\" wurde nicht verkleinert."
