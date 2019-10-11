@@ -138,7 +138,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
             filenames = dialog.get_filenames()  # we may have several files
-            dialog.destroy()
+        else:
+            filenames = None
+        dialog.destroy()
+
         if filenames:
             for filename in filenames:
                 self.compress_image(filename)
