@@ -6,6 +6,11 @@
       <summary>Save into a new file</summary>
       <description>Save the compressed image into a new file.</description>
     </key>
+	  <key type="s" name="suffix">
+      <default>'-min'</default>
+      <summary>Suffix to append at end of new file</summary>
+      <description>Suffix to append at end of new file</description>
+    </key>
 	  <key type="b" name="dark-theme">
       <default>false</default>
       <summary>Enable dark theme</summary>

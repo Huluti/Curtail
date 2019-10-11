@@ -48,6 +48,19 @@
           </packing>
         </child>
         <child>
+          <object class="GtkSwitch" id="toggle_dark_theme">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="hexpand">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -57,16 +70,27 @@
           </object>
           <packing>
             <property name="left_attach">0</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Suffix to append at end of new file</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
             <property name="top_attach">1</property>
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="toggle_dark_theme">
+          <object class="GtkEntry" id="entry_suffix">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="halign">end</property>
-            <property name="valign">center</property>
-            <property name="hexpand">True</property>
+            <property name="max_length">32</property>
           </object>
           <packing>
             <property name="left_attach">1</property>

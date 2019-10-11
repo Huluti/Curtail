@@ -90,7 +90,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def change_treeview_label(self):
         if self._settings.get_boolean('new-file'):
             self.treeview_info.set_markup(
-                _("Images are saved with <b>'-min' suffix</b>."))
+                _("Images are saved with <b>'{}' suffix</b>.") \
+                .format(self._settings.get_string('suffix')))
         else:
             self.treeview_info.set_markup(_("Images are <b>overwritten</b>."))
 
@@ -197,8 +198,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             return
         # Use new file or not
         if self._settings.get_boolean('new-file'):
-            new_filename = '{}/{}-min.{}'.format(file_data['folder'],
-                file_data['name'], file_data['ext'])
+            new_filename = '{}/{}{}.{}'.format(file_data['folder'],
+                file_data['name'], self._settings.get_string('suffix'),
+                file_data['ext'])
             if path.exists(new_filename):  # already compressed
                 message_dialog(self, 'info', _("Already compressed"),
                                ("\"{}\" is already compressed.") \
