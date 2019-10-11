@@ -226,7 +226,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             # Show tree view if hidden
             if not self.treeview_box.get_visible():
                 self.show_treeview(True)
-            # Call a new thread
+            # Call compressor
             compressor = Compressor(self, data)
             compressor.compress_image()
 

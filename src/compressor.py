@@ -61,7 +61,7 @@ class Compressor():
                            _("\"{}\" has not been minimized.") \
                            .format(full_name))
 
-    def call_compressor(self, filename, new_filename, ext, full_name):
+    def call_compressor(self, filename, new_filename, ext):
         if ext == 'png':
             command = ['optipng', '-clobber', '-o2', '-strip', 'all', \
                        filename, '-out', new_filename]
