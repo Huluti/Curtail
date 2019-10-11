@@ -7,7 +7,7 @@
 ImCompressor is a lossless image compressor.
 It is inspired by [Trimage](https://github.com/Kilian/Trimage) and [Image-Optimizer](https://github.com/GijsGoudzwaard/Image-Optimizer).
 
-By the same developer as [ImEditor](https://github.com/ImEditor/ImEditor)
+By the same developer as [ImEditor](https://github.com/ImEditor/ImEditor).
 
 ### Supported formats
 
