@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [0.5] - DEV
+### Added
+- Scroll automatically to last compressed image in the list.
+
 ### Changed
 - Add save info label also on homepage and displace it at bottom.
 

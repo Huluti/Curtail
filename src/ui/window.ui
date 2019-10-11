@@ -175,7 +175,7 @@
             <property name="margin_bottom">20</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkScrolledWindow">
+              <object class="GtkScrolledWindow" id="treeview_scrolled_window">
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
                 <child>

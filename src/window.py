@@ -45,6 +45,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
     treeview_box = Gtk.Template.Child()
+    treeview_scrolled_window = Gtk.Template.Child()
     treeview = Gtk.Template.Child()
     save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
@@ -85,16 +86,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_column_to_treeview(_("New Size"), 2)
         self.add_column_to_treeview(_("Savings"), 3)
 
-        self.change_save_info_label()
+        self.treeview.connect('size-allocate', self.on_treeview_changed)
 
-    def change_save_info_label(self):
-        label = '<span size="small">{}</span>'
-        if self._settings.get_boolean('new-file'):
-            label = label.format(_("Images are saved with <b>'{}' suffix</b>.") \
-                                 .format(self._settings.get_string('suffix')))
-        else:
-            label = label.format(_("Images are <b>overwritten</b>."))
-        self.save_info_label.set_markup(label)
+        # Info label
+        self.change_save_info_label()
 
     def add_column_to_treeview(self, title, column_id):
         treeviewcolumn = Gtk.TreeViewColumn(title)
@@ -133,6 +128,19 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.homebox.show_all()
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
+
+    def change_save_info_label(self):
+        label = '<span size="small">{}</span>'
+        if self._settings.get_boolean('new-file'):
+            label = label.format(_("Images are saved with <b>'{}' suffix</b>.")\
+                                 .format(self._settings.get_string('suffix')))
+        else:
+            label = label.format(_("Images are <b>overwritten</b>."))
+        self.save_info_label.set_markup(label)
+
+    def on_treeview_changed(self, widget, event, data=None):
+        adj = self.treeview_scrolled_window.get_vadjustment()
+        adj.set_value(adj.get_upper() - adj.get_page_size())
 
     def on_back(self, *args):
         self.show_treeview(False)
