@@ -22,7 +22,7 @@ from os import path
 
 from .preferences import ImCompressorPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog
+from .tools import message_dialog, parse_filename
 
 
 UI_PATH = '/com/github/huluti/ImCompressor/ui/'
@@ -163,72 +163,74 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.destroy()
 
         if filenames:
-            for filename in filenames:
-                self.compress_image(filename)
-                while Gtk.events_pending():
-                    Gtk.main_iteration()
+           self.handle_filenames(filenames)
 
     def on_receive(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_text()
-        filenames = filenames.split()  # we may have several files
-        for filename in filenames:
-            if filename.startswith('file://'):
-                filename = filename[7:]  # 7 is len('file://')
-                filename = unquote(filename)  # remove %20
-                filename = filename.strip('\r\n\x00')  # remove spaces
-                self.compress_image(filename)
-                while Gtk.events_pending():
-                    Gtk.main_iteration()
+        filenames = filenames.split()  # we may have several paths
+        self.handle_filenames(filenames)
 
-    def parse_filename(self, filename):
-        parse_filename = path.split(filename)
-        parse_name = parse_filename[1].rsplit('.', 1)
-        file_data = {
-            'folder': parse_filename[0],
-            'full_name': parse_filename[1],
-            'name': parse_name[0],
-            'ext': parse_name[1].lower()
-        }
-        return file_data
+    def handle_filenames(self, filenames):
+        final_filenames = []
+        # Clean filenames
+        for filename in filenames:
+            filename = self.clean_filename(filename)
+            to_add = self.check_filename(filename)
+            if to_add:
+                final_filenames.append(filename)
+        # Do operations
+        for filename in final_filenames:
+            new_filename = self.create_new_filename(filename)
+            self.compress_image(filename, new_filename)
+            while Gtk.events_pending():
+                Gtk.main_iteration()
+
+    def clean_filename(self, filename):
+        if filename.startswith('file://'):  # drag&drop
+            filename = filename[7:]  # remove 'file://'
+            filename = unquote(filename)  # remove %20
+            filename = filename.strip('\r\n\x00')  # remove spaces
+        return filename
 
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
             message_dialog(self, 'error', _("Path not valid"),
                            _("\"{}\" doesn't exist.") \
                            .format(filename))
-            return
+            return False
 
-        file_data = self.parse_filename(filename)
+        if not path.isfile(filename):  # don't allow folders for now
+            message_dialog(self, 'error', _("Operation not supported"),
+                           _("Discovery of images in folders is not yet supported."))
+            return False
+
+        file_data = parse_filename(filename)
 
         if file_data['ext'] not in ('png', 'jpg', 'jpeg'):
             message_dialog(self, 'error', _("Format not supported"),
                         _("The format of \"{}\" is not supported.") \
                         .format(file_data['full_name']))
-            return
+            return False
+        return True
+
+    def create_new_filename(self, filename):
+        file_data = parse_filename(filename)
         # Use new file or not
         if self._settings.get_boolean('new-file'):
             new_filename = '{}/{}{}.{}'.format(file_data['folder'],
                 file_data['name'], self._settings.get_string('suffix'),
                 file_data['ext'])
-            if path.exists(new_filename):  # already compressed
-                message_dialog(self, 'info', _("Already compressed"),
-                               ("\"{}\" is already compressed.") \
-                               .format(file_data['full_name']))
-                return
         else :
             new_filename = filename
+        return new_filename
 
-        return filename, new_filename, file_data
-
-    def compress_image(self, filename):
-        data = self.check_filename(filename)
-        if data is not None:
-            # Show tree view if hidden
-            if not self.treeview_box.get_visible():
-                self.show_treeview(True)
-            # Call compressor
-            compressor = Compressor(self, data)
-            compressor.compress_image()
+    def compress_image(self, filename, new_filename):
+        # Show tree view if hidden
+        if not self.treeview_box.get_visible():
+            self.show_treeview(True)
+        # Call compressor
+        compressor = Compressor(self, filename, new_filename)
+        compressor.compress_image()
 
     def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()

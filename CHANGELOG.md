@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Add save info label also on homepage and displace it at bottom.
 
+### Fixed
+- Improve handling of filenames to avoid some errors (e.g., folders).
+
 ## [0.4] - 2019-10-11
 ### Added
 - Add a setting to change the '-min' suffix.

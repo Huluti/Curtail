@@ -18,36 +18,38 @@
 import subprocess
 from os import path
 
-from .tools import sizeof_fmt, message_dialog
+from .tools import sizeof_fmt, message_dialog, parse_filename
 
 
 class Compressor():
-    def __init__(self, win, data):
+    def __init__(self, win, filename, new_filename):
         super().__init__()
 
         self.win = win
-        self.data = data
+        self.filename = filename
+        self.new_filename = new_filename
 
     def compress_image(self):
-        filename, new_filename, file_data = self.data
+        # File data
+        file_data = parse_filename(self.filename)
 
         # Current size
-        size = path.getsize(filename)
+        size = path.getsize(self.filename)
         size_str = sizeof_fmt(size)
 
         # Create tree iter
-        if filename != new_filename:
-            file_data2 = self.win.parse_filename(new_filename)
+        if self.filename != self.new_filename:
+            file_data2 = parse_filename(self.new_filename)
             full_name = file_data2['full_name']
         else:
             full_name = file_data['full_name']
         treeiter = self.win.store.append([full_name, size_str, '', ''])
 
         # Compress image
-        ret = self.call_compressor(filename, new_filename, file_data['ext'])
+        ret = self.call_compressor(file_data['ext'])
         if ret == 0:
             # Update tree iter
-            new_size = path.getsize(new_filename)
+            new_size = path.getsize(self.new_filename)
             new_size_str = sizeof_fmt(new_size)
 
             savings = round(100 - (new_size * 100 / size), 2)
@@ -60,12 +62,12 @@ class Compressor():
                            _("\"{}\" has not been minimized.") \
                            .format(full_name))
 
-    def call_compressor(self, filename, new_filename, ext):
+    def call_compressor(self, ext):
         if ext == 'png':
             command = ['optipng', '-clobber', '-o2', '-strip', 'all', \
-                       filename, '-out', new_filename]
+                       self.filename, '-out', self.new_filename]
         elif ext == 'jpeg' or ext == 'jpg':
             command = ['jpegtran', '-optimize', '-progressive', \
-                       '-outfile', new_filename, filename]
+                       '-outfile', self.new_filename, self.filename]
         ret = subprocess.call(command)
         return ret

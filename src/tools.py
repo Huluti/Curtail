@@ -16,6 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk
+from os import path
 
 
 def sizeof_fmt(num):
@@ -43,3 +44,15 @@ def message_dialog(parent, dialog_type, title, text):
     response = dialog.run()
     dialog.destroy()
     return response
+
+
+def parse_filename(filename):
+    parse_filename = path.split(filename)
+    parse_name = parse_filename[1].rsplit('.', 1)
+    file_data = {
+        'folder': parse_filename[0],
+        'full_name': parse_filename[1],
+        'name': parse_name[0],
+        'ext': parse_name[1].lower()
+    }
+    return file_data
