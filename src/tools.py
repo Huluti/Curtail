@@ -56,3 +56,22 @@ def parse_filename(filename):
         'ext': parse_name[1].lower()
     }
     return file_data
+
+
+def add_filechooser_filters(dialog):
+    all_images = Gtk.FileFilter()
+    all_images.set_name(_("All images"))
+    all_images.add_mime_type('image/jpeg')
+    all_images.add_mime_type('image/png')
+
+    png_images = Gtk.FileFilter()
+    png_images.set_name(_("PNG images"))
+    png_images.add_mime_type('image/png')
+
+    jpeg_images = Gtk.FileFilter()
+    jpeg_images.set_name(_("JPEG images"))
+    jpeg_images.add_mime_type('image/jpeg')
+
+    dialog.add_filter(all_images)
+    dialog.add_filter(png_images)
+    dialog.add_filter(jpeg_images)

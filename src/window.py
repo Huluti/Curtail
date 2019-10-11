@@ -22,7 +22,7 @@ from os import path
 
 from .preferences import ImCompressorPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog, parse_filename
+from .tools import message_dialog, parse_filename, add_filechooser_filters
 
 
 UI_PATH = '/com/github/huluti/ImCompressor/ui/'
@@ -154,7 +154,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
         dialog.set_select_multiple(True)
-        self.add_filechooser_filters(dialog)
+        add_filechooser_filters(dialog)
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
             filenames = dialog.get_filenames()  # we may have several files
@@ -231,24 +231,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Call compressor
         compressor = Compressor(self, filename, new_filename)
         compressor.compress_image()
-
-    def add_filechooser_filters(self, dialog):
-        all_images = Gtk.FileFilter()
-        all_images.set_name(_("All images"))
-        all_images.add_mime_type('image/jpeg')
-        all_images.add_mime_type('image/png')
-
-        png_images = Gtk.FileFilter()
-        png_images.set_name(_("PNG images"))
-        png_images.add_mime_type('image/png')
-
-        jpeg_images = Gtk.FileFilter()
-        jpeg_images.set_name(_("JPEG images"))
-        jpeg_images.add_mime_type('image/jpeg')
-
-        dialog.add_filter(all_images)
-        dialog.add_filter(png_images)
-        dialog.add_filter(jpeg_images)
 
     def toggle_dark_theme(self, value):
         self.settings.set_property('gtk-application-prefer-dark-theme',
