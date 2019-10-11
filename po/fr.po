@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-11 16:01+0200\n"
-"PO-Revision-Date: 2019-10-11 16:01+0200\n"
+"POT-Creation-Date: 2019-10-11 17:14+0200\n"
+"PO-Revision-Date: 2019-10-11 17:15+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -64,7 +64,7 @@ msgstr "Activer le mode sombre"
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
-#: src/ui/window.ui:29 src/window.py:241
+#: src/ui/window.ui:29 src/window.py:259
 msgid "Simple & lossless image compressor"
 msgstr "Compresseur d'image simple et sans-perte"
 
@@ -76,7 +76,7 @@ msgstr "Faites glisser vos images ici..."
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:146 src/window.py:132
+#: src/ui/window.ui:146 src/window.py:142
 msgid "Browse your files"
 msgstr "Parcourez vos fichiers"
 
@@ -92,61 +92,69 @@ msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
 msgid "About ImCompressor"
 msgstr "À propos de ImCompressor"
 
-#: src/window.py:82
+#: src/window.py:83
 msgid "Filename"
 msgstr "Fichier"
 
-#: src/window.py:83
+#: src/window.py:84
 msgid "Old Size"
 msgstr "Ancienne taille"
 
-#: src/window.py:84
+#: src/window.py:85
 msgid "New Size"
 msgstr "Nouvelle taille"
 
-#: src/window.py:85
+#: src/window.py:86
 msgid "Savings"
 msgstr "Gains"
 
+#: src/window.py:93
+msgid "Images are saved with <b>'-min' suffix</b>."
+msgstr "Les images sont sauvegardées avec le suffixe <b>'-min'</b>."
+
+#: src/window.py:95
+msgid "Images are <b>overwritten</b>."
+msgstr "Les images sont <b>écrasées</b>."
+
 #. if path doesn't exist
-#: src/window.py:168
+#: src/window.py:186
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:169
+#: src/window.py:187
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
-#: src/window.py:176
+#: src/window.py:194
 msgid "Format not supported"
 msgstr "Format non-supporté"
 
-#: src/window.py:177
+#: src/window.py:195
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
 #. already compressed
-#: src/window.py:185
+#: src/window.py:203
 msgid "Already compressed"
 msgstr "Déjà compressée"
 
-#: src/window.py:207
+#: src/window.py:225
 msgid "All images"
 msgstr "Toutes les images"
 
-#: src/window.py:212
+#: src/window.py:230
 msgid "PNG images"
 msgstr "Images PNG"
 
-#: src/window.py:216
+#: src/window.py:234
 msgid "JPEG images"
 msgstr "Images JPEG"
 
-#: src/window.py:240
+#: src/window.py:258
 msgid "translator-credits"
 msgstr "Hugo Posnic"
 
-#: src/window.py:242
+#: src/window.py:260
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
