@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-11 17:14+0200\n"
-"PO-Revision-Date: 2019-10-11 17:15+0200\n"
+"POT-Creation-Date: 2019-10-11 17:47+0200\n"
+"PO-Revision-Date: 2019-10-11 17:52+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -56,15 +56,20 @@ msgstr "Sauvegarder dans un nouveau fichier"
 msgid "Save the compressed image into a new file."
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:55
+#: data/com.github.huluti.ImCompressor.gschema.xml:11
+#: data/com.github.huluti.ImCompressor.gschema.xml:12 src/ui/preferences.ui:82
+msgid "Suffix to append at end of new file"
+msgstr "Suffixe à ajouter à la fin d'un nouveau fichier"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:69
 msgid "Enable dark theme"
 msgstr "Activer le mode sombre"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:12
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
-#: src/ui/window.ui:29 src/window.py:259
+#: src/ui/window.ui:29 src/window.py:261
 msgid "Simple & lossless image compressor"
 msgstr "Compresseur d'image simple et sans-perte"
 
@@ -76,7 +81,7 @@ msgstr "Faites glisser vos images ici..."
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:146 src/window.py:142
+#: src/ui/window.ui:146 src/window.py:143
 msgid "Browse your files"
 msgstr "Parcourez vos fichiers"
 
@@ -84,7 +89,7 @@ msgstr "Parcourez vos fichiers"
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/ui/preferences.ui:29
+#: src/ui/preferences.ui:30
 msgid "Save the compressed image into a new file"
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
 
@@ -109,52 +114,52 @@ msgid "Savings"
 msgstr "Gains"
 
 #: src/window.py:93
-msgid "Images are saved with <b>'-min' suffix</b>."
-msgstr "Les images sont sauvegardées avec le suffixe <b>'-min'</b>."
+msgid "Images are saved with <b>'{}' suffix</b>."
+msgstr "Les images sont sauvegardées avec le suffixe <b>'{}'</b>."
 
-#: src/window.py:95
+#: src/window.py:96
 msgid "Images are <b>overwritten</b>."
 msgstr "Les images sont <b>écrasées</b>."
 
 #. if path doesn't exist
-#: src/window.py:186
+#: src/window.py:187
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:187
+#: src/window.py:188
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
-#: src/window.py:194
+#: src/window.py:195
 msgid "Format not supported"
 msgstr "Format non-supporté"
 
-#: src/window.py:195
+#: src/window.py:196
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
 #. already compressed
-#: src/window.py:203
+#: src/window.py:205
 msgid "Already compressed"
 msgstr "Déjà compressée"
 
-#: src/window.py:225
+#: src/window.py:227
 msgid "All images"
 msgstr "Toutes les images"
 
-#: src/window.py:230
+#: src/window.py:232
 msgid "PNG images"
 msgstr "Images PNG"
 
-#: src/window.py:234
+#: src/window.py:236
 msgid "JPEG images"
 msgstr "Images JPEG"
 
-#: src/window.py:258
+#: src/window.py:260
 msgid "translator-credits"
 msgstr "Hugo Posnic"
 
-#: src/window.py:260
+#: src/window.py:262
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
