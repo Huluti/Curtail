@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.4] - DEV
+## [0.4] - 2019-10-11
 ### Added
 - Add a setting to change the '-min' suffix.
 - Add some explanations of applied settings.
