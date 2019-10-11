@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 14:54+0200\n"
+"POT-Creation-Date: 2019-10-11 16:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,19 +61,19 @@ msgstr ""
 msgid "Use dark theme for the windows."
 msgstr ""
 
-#: src/ui/window.ui:24 src/window.py:240
+#: src/ui/window.ui:29 src/window.py:241
 msgid "Simple & lossless image compressor"
 msgstr ""
 
-#: src/ui/window.ui:109
+#: src/ui/window.ui:118
 msgid "Drag and drop your images here..."
 msgstr ""
 
-#: src/ui/window.ui:124
+#: src/ui/window.ui:133
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:137 src/window.py:132
+#: src/ui/window.ui:146 src/window.py:132
 msgid "Browse your files"
 msgstr ""
 
@@ -139,7 +139,11 @@ msgstr ""
 msgid "JPEG images"
 msgstr ""
 
-#: src/window.py:241
+#: src/window.py:240
+msgid "translator-credits"
+msgstr ""
+
+#: src/window.py:242
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 

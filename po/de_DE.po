@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 14:54+0200\n"
-"PO-Revision-Date: 2019-10-11 13:55+0200\n"
-"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"POT-Creation-Date: 2019-10-11 16:01+0200\n"
+"PO-Revision-Date: 2019-10-11 16:02+0200\n"
+"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: German - Germany <>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,7 @@ msgid ""
 "ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor ist ein verlustfreier Bild-Kompressor für PNG- und JPEG-"
-"Dateien."
+"ImCompressor ist ein verlustfreier Bild-Kompressor für PNG- und JPEG-Dateien."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
@@ -64,19 +63,19 @@ msgstr "Dunkles Thema verwenden"
 msgid "Use dark theme for the windows."
 msgstr "Dunkles Thema für Fenster verwenden."
 
-#: src/ui/window.ui:24 src/window.py:240
+#: src/ui/window.ui:29 src/window.py:241
 msgid "Simple & lossless image compressor"
 msgstr "Einfacher & verlustfreier Kompressor für Bilder"
 
-#: src/ui/window.ui:109
+#: src/ui/window.ui:118
 msgid "Drag and drop your images here..."
 msgstr "Bilder durch Ziehen und Ablegen hier hinzufügen…"
 
-#: src/ui/window.ui:124
+#: src/ui/window.ui:133
 msgid "or"
 msgstr "oder"
 
-#: src/ui/window.ui:137 src/window.py:132
+#: src/ui/window.ui:146 src/window.py:132
 msgid "Browse your files"
 msgstr "Dateien durchsuchen"
 
@@ -142,7 +141,11 @@ msgstr "PNG-Bilder"
 msgid "JPEG images"
 msgstr "JPEG-Bilder"
 
-#: src/window.py:241
+#: src/window.py:240
+msgid "translator-credits"
+msgstr "Etamuk"
+
+#: src/window.py:242
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Veröffentlicht unter der Lizenz GNU GPL(v3).\n"
 

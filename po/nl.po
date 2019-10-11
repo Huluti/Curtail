@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 14:54+0200\n"
-"PO-Revision-Date: 2019-10-10 18:30+0200\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"POT-Creation-Date: 2019-10-11 16:01+0200\n"
+"PO-Revision-Date: 2019-10-11 16:03+0200\n"
+"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: data/com.github.huluti.ImCompressor.desktop.in:3
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:7
@@ -40,9 +40,8 @@ msgid ""
 "ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor kan afbeeldingen comprimeren zonder kwaliteitsverlies, en"
-" ondersteunt "
-"zowel PNG als JPEG."
+"ImCompressor kan afbeeldingen comprimeren zonder kwaliteitsverlies, en "
+"ondersteunt zowel PNG als JPEG."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
@@ -64,19 +63,19 @@ msgstr "Donker thema gebruiken"
 msgid "Use dark theme for the windows."
 msgstr "Voorzie de vensters van een donkere kleur."
 
-#: src/ui/window.ui:24 src/window.py:240
+#: src/ui/window.ui:29 src/window.py:241
 msgid "Simple & lossless image compressor"
 msgstr "Eenvoudige afbeeldingscompressie zonder kwaliteitsverlies"
 
-#: src/ui/window.ui:109
+#: src/ui/window.ui:118
 msgid "Drag and drop your images here..."
 msgstr "Sleep je afbeeldingen hierheen..."
 
-#: src/ui/window.ui:124
+#: src/ui/window.ui:133
 msgid "or"
 msgstr "of"
 
-#: src/ui/window.ui:137 src/window.py:132
+#: src/ui/window.ui:146 src/window.py:132
 msgid "Browse your files"
 msgstr "Verken je bestanden"
 
@@ -142,7 +141,11 @@ msgstr "PNG-afbeeldingen"
 msgid "JPEG images"
 msgstr "JPEG-afbeeldingen"
 
-#: src/window.py:241
+#: src/window.py:240
+msgid "translator-credits"
+msgstr "Heimen Stoffels"
+
+#: src/window.py:242
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Uitgebracht onder de GNU GPL(v3)-licentie.\n"
 
