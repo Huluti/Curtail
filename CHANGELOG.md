@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.5] - DEV
 ### Added
+- Toggle the suffix entry according to new file option.
 - Scroll automatically to last compressed image in the list.
 
 ### Changed

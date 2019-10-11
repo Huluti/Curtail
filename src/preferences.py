@@ -30,6 +30,7 @@ class ImCompressorPrefsWindow(Gtk.Window):
 
     grid = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
+    new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
     toggle_dark_theme = Gtk.Template.Child()
 
@@ -49,6 +50,7 @@ class ImCompressorPrefsWindow(Gtk.Window):
                                      'new-file')
 
         # Suffix
+        self.enable_suffix_section()
         self.entry_suffix.set_text(self._settings.get_string('suffix'))
         self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
 
@@ -64,8 +66,14 @@ class ImCompressorPrefsWindow(Gtk.Window):
             self.parent.toggle_dark_theme(switch.get_active())
         elif key == 'new-file':
             self.parent.change_save_info_label()
+            self.enable_suffix_section()
 
     def on_string_changed(self, entry, key):
         self._settings.set_string(key, entry.get_text())
         if key == 'suffix':
             self.parent.change_save_info_label()
+
+    def enable_suffix_section(self):
+        boolean = self._settings.get_boolean('new-file')
+        self.new_file_label.set_sensitive(boolean)
+        self.entry_suffix.set_sensitive(boolean)
