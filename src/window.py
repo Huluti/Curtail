@@ -228,8 +228,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                 self.show_treeview(True)
             # Call a new thread
             compressor = Compressor(self, data)
-            compressor.start()
-            compressor.join()
+            compressor.compress_image()
 
     def add_filechooser_filters(self, dialog):
         all_images = Gtk.FileFilter()

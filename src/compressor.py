@@ -16,20 +16,17 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from threading import Thread
 from os import path
 
 from .tools import sizeof_fmt, message_dialog
 
 
-class Compressor(Thread):
+class Compressor():
     def __init__(self, win, data):
-        Thread.__init__(self)
+        super().__init__()
+
         self.win = win
         self.data = data
-
-    def run(self):
-        self.compress_image()
 
     def compress_image(self):
         filename, new_filename, file_data = self.data
@@ -47,18 +44,23 @@ class Compressor(Thread):
         treeiter = self.win.store.append([full_name, size_str, '', ''])
 
         # Compress image
-        self.call_compressor(filename, new_filename, file_data['ext'])
+        ret = self.call_compressor(filename, new_filename, file_data['ext'],
+                                   file_data['full_name'])
+        if ret == 0:
+            # Update tree iter
+            new_size = path.getsize(new_filename)
+            new_size_str = sizeof_fmt(new_size)
+            self.win.store.set_value(treeiter, 2, new_size_str)
 
-        # Update tree iter
-        new_size = path.getsize(new_filename)
-        new_size_str = sizeof_fmt(new_size)
-        self.win.store.set_value(treeiter, 2, new_size_str)
+            savings = round(100 - (new_size * 100 / size), 2)
+            savings = '{}%'.format(str(savings))
+            self.win.store.set_value(treeiter, 3, savings)
+        else:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           _("\"{}\" has not been minimized.") \
+                           .format(full_name))
 
-        savings = round(100 - (new_size * 100 / size), 2)
-        savings = '{}%'.format(str(savings))
-        self.win.store.set_value(treeiter, 3, savings)
-
-    def call_compressor(self, filename, new_filename, ext):
+    def call_compressor(self, filename, new_filename, ext, full_name):
         if ext == 'png':
             command = ['optipng', '-clobber', '-o2', '-strip', 'all', \
                        filename, '-out', new_filename]
@@ -66,8 +68,4 @@ class Compressor(Thread):
             command = ['jpegtran', '-optimize', '-progressive', \
                        '-outfile', new_filename, filename]
         ret = subprocess.call(command)
-        if ret != 0:
-            message_dialog(self, 'error', _("An error has occured"),
-                           _("\"{}\" has not been minimized.") \
-                           .format(pfilename['full_name']))
-            return
+        return ret
