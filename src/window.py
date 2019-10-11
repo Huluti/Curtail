@@ -138,9 +138,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
             filenames = dialog.get_filenames()  # we may have several files
+            dialog.destroy()
+        if filenames:
             for filename in filenames:
                 self.compress_image(filename)
-        dialog.destroy()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
     def on_receive(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_text()
@@ -151,6 +154,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
                 filename = unquote(filename)  # remove %20
                 filename = filename.strip('\r\n\x00')  # remove spaces
                 self.compress_image(filename)
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
     def parse_filename(self, filename):
         parse_filename = path.split(filename)
