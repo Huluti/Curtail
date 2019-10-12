@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.5] - DEV
+## [0.5] - 2019-10-12
 ### Added
 - Toggle the suffix entry according to new file option.
 - Scroll automatically to last compressed image in the list.
@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Improve handling of filenames to avoid some errors (e.g., folders).
+- Various fixes.
 
 ## [0.4] - 2019-10-11
 ### Added

@@ -32,6 +32,17 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.5" date="2019-10-12">
+      <description>
+        <ul>
+          <li>Toggle the suffix entry according to new file option</li>
+          <li>Scroll automatically to last compressed image in the list</li>
+          <li>Add save info label also on homepage and displace it at bottom</li>
+          <li>Improve handling of filenames to avoid some errors (e.g., folders)</li>
+          <li>Various fixes</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4" date="2019-10-11">
       <description>
         <ul>
