@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the imcompressor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: imcompressor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-12 01:13+0200\n"
+"PO-Revision-Date: 2019-10-12 13:MI+0200\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.huluti.ImCompressor.desktop.in:3
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:7
+msgid "ImCompressor"
+msgstr "ImCompressor"
+
+#: data/com.github.huluti.ImCompressor.desktop.in:5
+msgid "Simple & lossless image compressor."
+msgstr "Semplice compressore di immagini e senza perdita di dati."
+
+#. Icon name, do not translate
+#: data/com.github.huluti.ImCompressor.desktop.in:10
+msgid "com.github.huluti.ImCompressor"
+msgstr "com.github.huluti.ImCompressor"
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:8
+msgid "Simple &amp; lossless image compressor"
+msgstr "Compressore di immagine semplice &amp; senza perdite"
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:10
+msgid ""
+"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
+"types."
+msgstr ""
+"ImCompressor è un compressore di immagini senza perdita di dati, che supporta i formati"
+"PNG e JPG."
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:13
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Salva in un nuovo file"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Salva l'immagine compressa in un nuovo file."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:11
+#: data/com.github.huluti.ImCompressor.gschema.xml:12 src/ui/preferences.ui:82
+msgid "Suffix to append at end of new file"
+msgstr "Suffisso da aggiungere alla fine del nuovo file"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:69
+msgid "Enable dark theme"
+msgstr "Abilita tema scuro"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
+msgid "Use dark theme for the windows."
+msgstr "Usa un tema scuro per le finestre."
+
+#: src/ui/window.ui:29 src/window.py:253
+msgid "Simple & lossless image compressor"
+msgstr "Semplice compressore di immagini e senza perdite"
+
+#: src/ui/window.ui:118
+msgid "Drag and drop your images here..."
+msgstr "Trascina e rilascia le tue immagini qui ..."
+
+#: src/ui/window.ui:133
+msgid "or"
+msgstr "o"
+
+#: src/ui/window.ui:146 src/window.py:152
+msgid "Browse your files"
+msgstr "Sfoglia i tuoi file"
+
+#: src/ui/preferences.ui:7 src/ui/menu.ui:6
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: src/ui/preferences.ui:30
+msgid "Save the compressed image into a new file"
+msgstr "Salva l'immagine compressa in un nuovo file"
+
+#: src/ui/menu.ui:10
+msgid "About ImCompressor"
+msgstr "Informazioni su ImCompressor"
+
+#: src/window.py:84
+msgid "Filename"
+msgstr "Nome File"
+
+#: src/window.py:85
+msgid "Old Size"
+msgstr "Vecchia Dimensione"
+
+#: src/window.py:86
+msgid "New Size"
+msgstr "Nuova Dimensione"
+
+#: src/window.py:87
+msgid "Savings"
+msgstr "Risparmio"
+
+#: src/window.py:135
+msgid " Images are saved with <b>'{}'suffix</b>."
+msgstr "Le immagini vengono salvate con <b>'{}'suffisso</b>."
+
+#: src/window.py:138
+msgid "Images are <b>overwritten</b>."
+msgstr "Le immagini sono <b>sovrascritte</b>."
+
+#. if path doesn't exist
+#: src/window.py:197
+msgid "Path not valid"
+msgstr "Percorso non valido"
+
+#: src/window.py:198
+msgid "\"{}\" doesn't exist."
+msgstr "\"{}\" non esiste."
+
+#. don't allow folders for now
+#: src/window.py:203
+msgid "Operation not supported"
+msgstr "Operazione non supportata"
+
+#: src/window.py:204
+msgid "Discovery of images in folders is not yet supported."
+msgstr "Il rilevamento delle immagini nelle cartelle non è ancora supportato."
+
+#: src/window.py:210
+msgid "Format not supported"
+msgstr "Formato non supportato"
+
+#: src/window.py:211
+msgid "The format of \"{}\" is not supported."
+msgstr "IL formato di \"{}\" non è supportato."
+
+#: src/window.py:252
+msgid "translator-credits"
+msgstr "Albano Battistella"
+
+#: src/window.py:254
+msgid "Distributed under the GNU GPL(v3) license.\n"
+msgstr "Distribuito sotto licenza GNU GPL (v3).\n"
+
+#: src/compressor.py:61
+msgid "An error has occured"
+msgstr "Si è verificato un errore"
+
+#: src/compressor.py:62
+msgid "\"{}\" has not been minimized."
+msgstr "\"{}\" non è stato minimizzato."
+
+#: src/tools.py:63
+msgid "All images"
+msgstr "Tutte le immagini"
+
+#: src/tools.py:68
+msgid "PNG images"
+msgstr "Immagini PNG"
+
+#: src/tools.py:72
+msgid "JPEG images"
+msgstr "Immagini JPEG"
