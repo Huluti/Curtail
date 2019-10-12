@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.6] - DEV
+### Added
+- Add Italian translation.
+
+### Changed
+- Update translations.
+
 ## [0.5] - 2019-10-12
 ### Added
 - Toggle the suffix entry according to new file option.
