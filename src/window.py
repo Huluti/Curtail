@@ -86,7 +86,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_column_to_treeview(_("New Size"), 2)
         self.add_column_to_treeview(_("Savings"), 3)
 
-        self.treeview.connect('size-allocate', self.on_treeview_changed)
+        self.adjustment = self.treeview_scrolled_window.get_vadjustment()
 
         # Info label
         self.change_save_info_label()
@@ -129,6 +129,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
 
+    def go_end_treeview(self):
+        self.adjustment.set_value(self.adjustment.get_upper())
+
     def change_save_info_label(self):
         label = '<span size="small">{}</span>'
         if self._settings.get_boolean('new-file'):
@@ -137,10 +140,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         else:
             label = label.format(_("Images are <b>overwritten</b>."))
         self.save_info_label.set_markup(label)
-
-    def on_treeview_changed(self, widget, event, data=None):
-        adj = self.treeview_scrolled_window.get_vadjustment()
-        adj.set_value(adj.get_upper() - adj.get_page_size())
 
     def on_back(self, *args):
         self.show_treeview(False)
@@ -231,6 +230,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Call compressor
         compressor = Compressor(self, filename, new_filename)
         compressor.compress_image()
+        self.go_end_treeview()  # scroll to enf of treeview
 
     def toggle_dark_theme(self, value):
         self.settings.set_property('gtk-application-prefer-dark-theme',
