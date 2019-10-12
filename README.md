@@ -28,7 +28,11 @@ ImCompressor is available as a flatpak package.
 You can also install it by using the following command-line:
 
     flatpak install flathub com.github.huluti.ImCompressor
+    
+### Distro packages
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/imcompressor.svg)](https://repology.org/project/imcompressor/versions)
+    
 ### Build from source (nightly)
 
 Build and install by running:
