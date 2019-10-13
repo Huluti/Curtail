@@ -170,6 +170,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.handle_filenames(filenames)
 
     def handle_filenames(self, filenames):
+        if not filenames:
+            return
         final_filenames = []
         # Clean filenames
         for filename in filenames:

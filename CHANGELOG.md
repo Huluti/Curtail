@@ -1,12 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.6] - DEV
+## [0.5.1] - DEV
 ### Added
 - Add Italian translation.
 
 ### Changed
 - Update translations.
+
+### Fixed
+- Fix opening files from file managers.
 
 ## [0.5] - 2019-10-12
 ### Added

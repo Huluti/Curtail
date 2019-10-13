@@ -46,8 +46,10 @@ class Application(Gtk.Application):
 
     def file_open_handler(self, app, g_file_list, amount, ukwn):
         self.do_activate()
+        filenames = []
         for g_file in g_file_list:
-            self.win.compress_image(filename=g_file.get_path())
+            filenames.append(g_file.get_path())
+        self.win.handle_filenames(filenames)
 
 
 def main(version):
