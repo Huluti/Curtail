@@ -248,7 +248,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog = Gtk.AboutDialog(transient_for=self)
         dialog.set_logo_icon_name('com.github.huluti.ImCompressor')
         dialog.set_program_name('ImCompressor')
-        dialog.set_version('0.5')
+        dialog.set_version('0.5.1')
         dialog.set_website('https://github.com/Huluti/ImCompressor')
         dialog.set_authors(['Hugo Posnic'])
         dialog.set_translator_credits(_("translator-credits"))
