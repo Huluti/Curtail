@@ -69,5 +69,10 @@ class Compressor():
         elif ext == 'jpeg' or ext == 'jpg':
             command = ['jpegtran', '-optimize', '-progressive', \
                        '-outfile', self.new_filename, self.filename]
-        ret = subprocess.call(command)
+        try:
+            ret = subprocess.call(command)
+        except Exception as err:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           str(err))
+            ret = None
         return ret
