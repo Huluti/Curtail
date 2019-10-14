@@ -114,7 +114,7 @@ msgstr "Einsparung"
 
 #: src/window.py:135
 msgid "Images are saved with <b>'{}' suffix</b>."
-msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert ."
+msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert."
 
 #: src/window.py:138
 msgid "Images are <b>overwritten</b>."
