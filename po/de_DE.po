@@ -1,5 +1,5 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# imcompressor.pot
+# Copyright 2019 Hugo Posnic
 # This file is distributed under the same license as the imcompressor package.
 # Onno Giesmann <nutzer3105@gmail.com>, 2019 (first Author).
 #
@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-12 17:11+0200\n"
-"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"PO-Revision-Date: 2019-10-15 11:52+0200\n"
+"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: German - Germany <>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -173,6 +173,3 @@ msgstr "PNG-Bilder"
 #: src/tools.py:72
 msgid "JPEG images"
 msgstr "JPEG-Bilder"
-
-#~ msgid "Already compressed"
-#~ msgstr "Bereits komprimiert"

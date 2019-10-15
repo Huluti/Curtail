@@ -1,13 +1,14 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# nl.po
+# Copyright 2019 Hugo Posnic
 # This file is distributed under the same license as the imcompressor package.
+# Heimen Stoffels <vistausss@outlook.com>, 2019 (first Author).
 #
-# Heimen Stoffels <vistausss@outlook.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-12 17:48+0200\n"
+"PO-Revision-Date: 2019-10-15 11:54+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: nl\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/com.github.huluti.ImCompressor.desktop.in:3
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:7
@@ -173,6 +174,3 @@ msgstr "PNG-afbeeldingen"
 #: src/tools.py:72
 msgid "JPEG images"
 msgstr "JPEG-afbeeldingen"
-
-#~ msgid "Already compressed"
-#~ msgstr "Reeds gecomprimeerd"

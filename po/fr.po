@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# fr.po
+# Copyright 2019 Hugo Posnic
 # This file is distributed under the same license as the imcompressor package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hugo Posnic <hugo.posnic@gmail.com>, 2019 (first Author).
 #
 msgid ""
 msgstr ""
