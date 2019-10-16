@@ -16,12 +16,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
+from gi.repository import Gio
 from os import path
+
 
 from .tools import sizeof_fmt, message_dialog, parse_filename
 
 
+SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
+
+
 class Compressor():
+    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
+
     def __init__(self, win, filename, new_filename):
         super().__init__()
 
@@ -63,9 +70,13 @@ class Compressor():
                            .format(full_name))
 
     def call_compressor(self, ext):
+        # OptiPNG
         if ext == 'png':
-            command = ['optipng', '-clobber', '-o2', '-strip', 'all', \
+            png_level = self._settings.get_int('png-level')
+            png_level_str = '-o{}'.format(png_level)
+            command = ['optipng', '-clobber', png_level_str, '-strip', 'all', \
                        self.filename, '-out', self.new_filename]
+        # MozJPEG
         elif ext == 'jpeg' or ext == 'jpg':
             command = ['jpegtran', '-optimize', '-progressive', \
                        '-outfile', self.new_filename, self.filename]

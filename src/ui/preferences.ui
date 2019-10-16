@@ -2,6 +2,11 @@
 <!-- Generated with glade 3.22.1 -->
 <interface domain="imcompressor">
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAdjustment" id="png_adj">
+    <property name="upper">6</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <template class="ImCompressorPrefsWindow" parent="GtkWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Preferences</property>
@@ -39,6 +44,19 @@
             <property name="row_spacing">20</property>
             <property name="column_spacing">20</property>
             <child>
+              <object class="GtkSwitch" id="toggle_new_file">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">end</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -52,16 +70,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="toggle_new_file">
+              <object class="GtkEntry" id="entry_suffix">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="halign">end</property>
-                <property name="valign">center</property>
-                <property name="hexpand">True</property>
+                <property name="max_length">32</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
+                <property name="top_attach">1</property>
               </packing>
             </child>
             <child>
@@ -78,14 +94,28 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="entry_suffix">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">PNG Compression Level
+(the higher it is, the slower it is)</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="spin_png_level">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="max_length">32</property>
+                <property name="adjustment">png_adj</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
+                <property name="top_attach">2</property>
               </packing>
             </child>
           </object>

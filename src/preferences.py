@@ -32,6 +32,7 @@ class ImCompressorPrefsWindow(Gtk.Window):
     toggle_new_file = Gtk.Template.Child()
     new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
+    spin_png_level = Gtk.Template.Child()
     toggle_dark_theme = Gtk.Template.Child()
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
@@ -44,6 +45,8 @@ class ImCompressorPrefsWindow(Gtk.Window):
         self.build_ui()
 
     def build_ui(self):
+        # Compression settings
+
         # Use new file
         self.toggle_new_file.set_active(self._settings.get_boolean('new-file'))
         self.toggle_new_file.connect('notify::active', self.on_bool_changed,
@@ -53,6 +56,12 @@ class ImCompressorPrefsWindow(Gtk.Window):
         self.enable_suffix_section()
         self.entry_suffix.set_text(self._settings.get_string('suffix'))
         self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
+
+        # PNG Compression Level
+        self.spin_png_level.set_value(self._settings.get_int('png-level'))
+        self.spin_png_level.connect('changed', self.on_int_changed, 'png-level')
+
+        # Advanced settings
 
         # Toggle dark theme
         self.toggle_dark_theme.connect('notify::active', self.on_bool_changed,
@@ -72,6 +81,9 @@ class ImCompressorPrefsWindow(Gtk.Window):
         self._settings.set_string(key, entry.get_text())
         if key == 'suffix':
             self.parent.change_save_info_label()
+
+    def on_int_changed(self, spin, key):
+        self._settings.set_int(key, spin.get_value())
 
     def enable_suffix_section(self):
         boolean = self._settings.get_boolean('new-file')

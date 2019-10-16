@@ -9,7 +9,12 @@
 	  <key type="s" name="suffix">
       <default>'-min'</default>
       <summary>Suffix to append at end of new file</summary>
-      <description>Suffix to append at end of new file</description>
+      <description>Suffix to append at end of new file.</description>
+    </key>
+	  <key type="i" name="png-level">
+      <default>0</default>
+      <summary>PNG Compression Level</summary>
+      <description>Compression level to use for PNG images.</description>
     </key>
 	  <key type="b" name="dark-theme">
       <default>false</default>
