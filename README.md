@@ -1,10 +1,10 @@
 # ImCompressor
 
-## Simple & lossless image compressor.
+## Simple & useful image compressor.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/aae63e7ac1c54526dc9c/maintainability)](https://codeclimate.com/github/Huluti/ImCompressor/maintainability)
 
-ImCompressor is a lossless image compressor.
+ImCompressor is a useful image compressor.
 It is inspired by [Trimage](https://github.com/Kilian/Trimage) and [Image-Optimizer](https://github.com/GijsGoudzwaard/Image-Optimizer).
 
 By the same developer as [ImEditor](https://github.com/ImEditor/ImEditor).

@@ -252,7 +252,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         dialog.set_website('https://github.com/Huluti/ImCompressor')
         dialog.set_authors(['Hugo Posnic'])
         dialog.set_translator_credits(_("translator-credits"))
-        dialog.set_comments(_("Simple & lossless image compressor"))
+        dialog.set_comments(_("Simple & useful image compressor"))
         text = _("Distributed under the GNU GPL(v3) license.\n")
         text += 'https://github.com/Huluti/ImCompressor/blob/master/COPYING\n'
         dialog.set_license(text)
