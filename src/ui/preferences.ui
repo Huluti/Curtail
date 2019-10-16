@@ -2,11 +2,6 @@
 <!-- Generated with glade 3.22.1 -->
 <interface domain="imcompressor">
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkAdjustment" id="png_adj">
-    <property name="upper">7</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
   <template class="ImCompressorPrefsWindow" parent="GtkWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Preferences</property>
@@ -35,7 +30,7 @@
         <property name="margin_top">20</property>
         <property name="margin_bottom">20</property>
         <child>
-          <object class="GtkGrid" id="grid">
+          <object class="GtkGrid" id="grid1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="valign">start</property>
@@ -94,6 +89,41 @@
               </packing>
             </child>
             <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="name">images</property>
+            <property name="title" translatable="yes">Images</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">start</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+            <property name="row_spacing">20</property>
+            <property name="column_spacing">20</property>
+            <child>
+              <object class="GtkSpinButton" id="spin_png_level">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">end</property>
+                <property name="hexpand">True</property>
+                <property name="text" translatable="yes">0</property>
+                <property name="adjustment">png_adj</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -104,28 +134,18 @@
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSpinButton" id="spin_png_level">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="adjustment">png_adj</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">0</property>
               </packing>
             </child>
           </object>
           <packing>
-            <property name="name">compression</property>
-            <property name="title" translatable="yes">Compression</property>
+            <property name="name">png</property>
+            <property name="title" translatable="yes">PNG</property>
+            <property name="position">1</property>
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="grid1">
+          <object class="GtkGrid" id="grid3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="valign">start</property>
@@ -163,10 +183,15 @@
           <packing>
             <property name="name">advanced</property>
             <property name="title" translatable="yes">Advanced</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </object>
     </child>
   </template>
+  <object class="GtkAdjustment" id="png_adj">
+    <property name="upper">7</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
 </interface>
