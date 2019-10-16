@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.6] - DEV
+### Added
+- Better displaying of the drag area.
+
+### Changed
+- Update translations.
+
+### Fixed
+- Catch errors in subprocess to avoid crashing the app.
+
 ## [0.5.2] - 2019-10-13
 ### Fixed
 - Fix build.
