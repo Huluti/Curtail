@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [0.6] - DEV
 ### Added
 - Better displaying of the drag area.
+- New layout for the preferences dialog.
 
 ### Changed
 - Update translations.
