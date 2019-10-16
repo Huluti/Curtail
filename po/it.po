@@ -41,7 +41,7 @@ msgid ""
 "types."
 msgstr ""
 "ImCompressor è un compressore di immagini senza perdita di dati, che "
-"supporta i formatiPNG e JPG."
+"supporta i formati PNG e JPG."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
