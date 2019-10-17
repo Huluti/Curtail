@@ -74,7 +74,7 @@ class Compressor():
 
         pngquant = 'pngquant -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
-        cjpeg = 'cjpeg -quality 75 "{}" > "{}"'
+        cjpeg = 'cjpeg -quality {} "{}" > "{}"'
         jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
 
         # PNG
@@ -90,8 +90,10 @@ class Compressor():
                                           self.new_filename)
         # JPEG
         elif ext in('jpeg', 'jpg'):
+            jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
             if lossy:  # lossy compression
-                command = cjpeg.format(self.filename, self.new_filename)
+                command = cjpeg.format(jpg_lossy_level, self.filename,
+                                       self.new_filename,)
             else: # lossless compression
                 command = jpegtran.format(self.new_filename, self.filename)
 

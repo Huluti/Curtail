@@ -32,7 +32,8 @@ class ImCompressorPrefsWindow(Gtk.Window):
     toggle_new_file = Gtk.Template.Child()
     new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
-    spin_png_level = Gtk.Template.Child()
+    spin_png_lossless_level = Gtk.Template.Child()
+    spin_jpg_lossy_level = Gtk.Template.Child()
     toggle_dark_theme = Gtk.Template.Child()
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
@@ -57,9 +58,13 @@ class ImCompressorPrefsWindow(Gtk.Window):
         self.entry_suffix.set_text(self._settings.get_string('suffix'))
         self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
 
-        # PNG Compression Level
-        self.spin_png_level.set_value(self._settings.get_int('png-level'))
-        self.spin_png_level.connect('changed', self.on_int_changed, 'png-level')
+        # PNG Lossless Compression Level
+        self.spin_png_lossless_level.set_value(self._settings.get_int('png-lossless-level'))
+        self.spin_png_lossless_level.connect('changed', self.on_int_changed, 'png-lossless-level')
+
+        # JPG Lossy Compression Level
+        self.spin_jpg_lossy_level.set_value(self._settings.get_int('jpg-lossy-level'))
+        self.spin_jpg_lossy_level.connect('changed', self.on_int_changed, 'jpg-lossy-level')
 
         # Advanced settings
 
