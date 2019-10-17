@@ -49,6 +49,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     treeview = Gtk.Template.Child()
     save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
+    toggle_lossy = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -87,6 +88,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.add_column_to_treeview(_("Savings"), 3)
 
         self.adjustment = self.treeview_scrolled_window.get_vadjustment()
+
+        # Lossy toggle
+        self.toggle_lossy.set_active(self._settings.get_boolean('lossy'))
+        self.toggle_lossy.connect('notify::active', self.on_lossy_changed)
 
         # Info label
         self.change_save_info_label()
@@ -237,6 +242,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def toggle_dark_theme(self, value):
         self.settings.set_property('gtk-application-prefer-dark-theme',
                                        value)
+
+    def on_lossy_changed(self, switch, state):
+        self._settings.set_boolean('lossy', switch.get_active())
 
     def on_preferences(self, *args):
         if self.prefs_window is not None:
