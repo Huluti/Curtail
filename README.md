@@ -56,6 +56,7 @@ ImCompressor uses a number of open source projects to work properly:
 - [Python 3](https://www.python.org)
 - [OptiPNG](http://optipng.sourceforge.net)
 - [MozJPEG](https://github.com/mozilla/mozjpeg)
+- [pngquant](https://pngquant.org)
 
 ## Donations
 

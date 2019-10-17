@@ -70,18 +70,29 @@ class Compressor():
                            .format(full_name))
 
     def call_compressor(self, ext):
-        # OptiPNG
+        lossy = self._settings.get_boolean('lossy')
+
+        pngquant = 'pngquant -f "{}" --output "{}"'
+        optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
+        mozjpeg = 'jpegtran -optimize -progressive-outfile "{}" "{}"'
+
+        # PNG
         if ext == 'png':
             png_level = self._settings.get_int('png-level')
-            png_level_str = '-o{}'.format(png_level)
-            command = ['optipng', '-clobber', png_level_str, '-strip', 'all', \
-                       self.filename, '-out', self.new_filename]
-        # MozJPEG
+            if lossy:  # lossy compression
+                command = pngquant.format(self.filename, self.new_filename)
+                command += ' && '
+                command += optipng.format(png_level, self.new_filename,
+                                          self.new_filename)
+            else: # lossless compression
+                command = optipng.format(png_level, self.filename,
+                                          self.new_filename)
+        # JPEG
         elif ext == 'jpeg' or ext == 'jpg':
-            command = ['jpegtran', '-optimize', '-progressive', \
-                       '-outfile', self.new_filename, self.filename]
+            command = mozjpeg.format(self.new_filename, self.filename)
+
         try:
-            ret = subprocess.call(command)
+            ret = subprocess.call(command, shell=True)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))

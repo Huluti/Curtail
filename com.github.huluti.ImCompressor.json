@@ -45,6 +45,22 @@
             ]
         },
         {
+            "name": "pngquant",
+            "buildsystem": "simple",
+            "build-commands": [
+                "sh configure --prefix=/app",
+                "make",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://pngquant.org/pngquant-2.12.5-src.tar.gz",
+                    "sha256": "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b140808"
+                }
+            ]
+        },
+        {
             "name": "imcompressor",
             "builddir": true,
             "buildsystem": "meson",
