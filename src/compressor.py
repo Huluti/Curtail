@@ -74,7 +74,8 @@ class Compressor():
 
         pngquant = 'pngquant -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
-        mozjpeg = 'jpegtran -optimize -progressive-outfile "{}" "{}"'
+        cjpeg = 'cjpeg -quality 75 "{}" > "{}"'
+        jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
 
         # PNG
         if ext == 'png':
@@ -88,8 +89,11 @@ class Compressor():
                 command = optipng.format(png_level, self.filename,
                                           self.new_filename)
         # JPEG
-        elif ext == 'jpeg' or ext == 'jpg':
-            command = mozjpeg.format(self.new_filename, self.filename)
+        elif ext in('jpeg', 'jpg'):
+            if lossy:  # lossy compression
+                command = cjpeg.format(self.filename, self.new_filename)
+            else: # lossless compression
+                command = jpegtran.format(self.new_filename, self.filename)
 
         try:
             ret = subprocess.call(command, shell=True)
