@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-12 01:15+0200\n"
+"POT-Creation-Date: 2019-10-17 23:17+0200\n"
+"PO-Revision-Date: 2019-10-17 23:22+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,8 +24,8 @@ msgid "ImCompressor"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.desktop.in:5
-msgid "Simple & lossless image compressor."
-msgstr "Compresseur d'image simple et sans-perte."
+msgid "Simple & useful image compressor."
+msgstr "Compresseur d'image simple et utile."
 
 #. Icon name, do not translate
 #: data/com.github.huluti.ImCompressor.desktop.in:10
@@ -33,16 +33,16 @@ msgid "com.github.huluti.ImCompressor"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:8
-msgid "Simple &amp; lossless image compressor"
-msgstr "Compresseur d'image simple &amp; sans-perte"
+msgid "Simple &amp; useful image compressor"
+msgstr "Compresseur d'image simple &amp; utile"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:10
 msgid ""
-"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
+"ImCompressor is an useful image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor est un compresseur d'image sans-perte qui supporte les formats "
-"PNG et JPG."
+"ImCompressor est un compresseur d'image sans et avec perte qui supporte les "
+"formats PNG et JPG."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
@@ -57,109 +57,172 @@ msgid "Save the compressed image into a new file."
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier."
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:11
-#: data/com.github.huluti.ImCompressor.gschema.xml:12 src/ui/preferences.ui:82
+msgid "Enable lossy mode"
+msgstr "Activer le mode avec-perte"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "Use lossy mode to compress images."
+msgstr "Utilise le mode avec-perte pour compresser les images."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:99
 msgid "Suffix to append at end of new file"
 msgstr "Suffixe à ajouter à la fin d'un nouveau fichier"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:69
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
+msgid "Suffix to append at end of new file."
+msgstr "Suffixe à ajouter à la fin d'un nouveau fichier."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:153
+msgid "PNG Lossy Compression Level"
+msgstr "Niveau de compression avec-perte des PNG"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:22
+msgid "Lossy compression level to use for PNG images."
+msgstr "Niveau de compression avec-perte à utiliser pour les images PNG."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:26
+msgid "PNG Lossless Compression Level"
+msgstr "Niveau de compression sans-perte des PNG"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:27
+msgid "Lossless compression level to use for PNG images."
+msgstr "Niveau de compression sans-perte à utiliser pour les images PNG."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:180
+msgid "JPG Lossy Compression Level"
+msgstr "Niveau de compression avec-perte des JPG"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:32
+msgid "Lossy compression level to use for JPG images."
+msgstr "Niveau de compression avec-perte à utiliser pour les images JPG."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:112
 msgid "Enable dark theme"
 msgstr "Activer le mode sombre"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:17
+#: data/com.github.huluti.ImCompressor.gschema.xml:37
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
-#: src/ui/window.ui:29 src/window.py:253
-msgid "Simple & lossless image compressor"
-msgstr "Compresseur d'image simple et sans-perte"
+#: src/ui/window.ui:29 src/window.py:263
+msgid "Simple & useful image compressor"
+msgstr "Compresseur d'image simple et utile"
 
-#: src/ui/window.ui:118
+#: src/ui/window.ui:117
 msgid "Drag and drop your images here..."
 msgstr "Faites glisser vos images ici..."
 
-#: src/ui/window.ui:133
+#: src/ui/window.ui:132
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:146 src/window.py:152
+#: src/ui/window.ui:145 src/window.py:156
 msgid "Browse your files"
 msgstr "Parcourez vos fichiers"
 
-#: src/ui/preferences.ui:7 src/ui/menu.ui:6
+#: src/ui/window.ui:170
+msgid "Lossless"
+msgstr "Sans-perte"
+
+#: src/ui/window.ui:199
+msgid "Lossy"
+msgstr "Avec-perte"
+
+#: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/ui/preferences.ui:30
+#: src/ui/preferences.ui:75
 msgid "Save the compressed image into a new file"
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
+
+#: src/ui/preferences.ui:135
+msgid "General"
+msgstr "Général"
+
+#: src/ui/preferences.ui:204
+msgid "Compression"
+msgstr "Compression"
+
+#: src/ui/preferences.ui:235
+msgid ""
+"PNG Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+"Niveau de compression sans-perte des PNG\n"
+"(plus c'est haut, plus c'est lent)"
+
+#: src/ui/preferences.ui:246
+msgid "Advanced"
+msgstr "Avancé"
 
 #: src/ui/menu.ui:10
 msgid "About ImCompressor"
 msgstr "À propos de ImCompressor"
 
-#: src/window.py:84
+#: src/window.py:85
 msgid "Filename"
 msgstr "Fichier"
 
-#: src/window.py:85
+#: src/window.py:86
 msgid "Old Size"
 msgstr "Ancienne taille"
 
-#: src/window.py:86
+#: src/window.py:87
 msgid "New Size"
 msgstr "Nouvelle taille"
 
-#: src/window.py:87
+#: src/window.py:88
 msgid "Savings"
 msgstr "Gains"
 
-#: src/window.py:135
+#: src/window.py:143
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Les images sont sauvegardées avec le suffixe <b>'{}'</b>."
 
-#: src/window.py:138
+#: src/window.py:146
 msgid "Images are <b>overwritten</b>."
 msgstr "Les images sont <b>écrasées</b>."
 
 #. if path doesn't exist
-#: src/window.py:197
+#: src/window.py:203
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:198
+#: src/window.py:204
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
 #. don't allow folders for now
-#: src/window.py:203
+#: src/window.py:209
 msgid "Operation not supported"
 msgstr "Opération non supportée"
 
-#: src/window.py:204
+#: src/window.py:210
 msgid "Discovery of images in folders is not yet supported."
 msgstr "La découverte d'images dans des dossiers n'est pas encore supportée."
 
-#: src/window.py:210
+#: src/window.py:216
 msgid "Format not supported"
 msgstr "Format non supporté"
 
-#: src/window.py:211
+#: src/window.py:217
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
-#: src/window.py:252
+#: src/window.py:262
 msgid "translator-credits"
 msgstr "Hugo Posnic"
 
-#: src/window.py:254
+#: src/window.py:264
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:61
+#: src/compressor.py:68 src/compressor.py:107
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:62
+#: src/compressor.py:69
 msgid "\"{}\" has not been minimized."
 msgstr "\"{}\" n'a pas été compressée."
 

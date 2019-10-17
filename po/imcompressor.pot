@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 23:10+0200\n"
+"POT-Creation-Date: 2019-10-17 23:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:166
+#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:153
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:153
+#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:180
 msgid "JPG Lossy Compression Level"
 msgstr ""
 
@@ -137,22 +137,17 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/ui/preferences.ui:179 src/ui/preferences.ui:193
-#: src/ui/preferences.ui:229
-msgid "0"
-msgstr ""
-
-#: src/ui/preferences.ui:210
+#: src/ui/preferences.ui:204
 msgid "Compression"
 msgstr ""
 
-#: src/ui/preferences.ui:241
+#: src/ui/preferences.ui:235
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:252
+#: src/ui/preferences.ui:246
 msgid "Advanced"
 msgstr ""
 

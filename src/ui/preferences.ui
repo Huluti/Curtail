@@ -150,19 +150,6 @@
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
                 <property name="valign">center</property>
-                <property name="label" translatable="yes">JPG Lossy Compression Level</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="halign">start</property>
-                <property name="valign">center</property>
                 <property name="label" translatable="yes">PNG Lossy Compression Level</property>
               </object>
               <packing>
@@ -171,26 +158,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="spin_jpg_lossy_level">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="halign">end</property>
-                <property name="hexpand">True</property>
-                <property name="text" translatable="yes">0</property>
-                <property name="adjustment">jpg_lossy_adj</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkSpinButton" id="spin_png_lossy_level">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">end</property>
                 <property name="hexpand">True</property>
-                <property name="text" translatable="yes">0</property>
+                <property name="text">0</property>
                 <property name="adjustment">png_lossy_adj</property>
               </object>
               <packing>
@@ -199,10 +172,31 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">JPG Lossy Compression Level</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkSpinButton" id="spin_jpg_lossy_level">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">end</property>
+                <property name="hexpand">True</property>
+                <property name="text">0</property>
+                <property name="adjustment">jpg_lossy_adj</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -226,7 +220,7 @@
                 <property name="can_focus">True</property>
                 <property name="halign">end</property>
                 <property name="hexpand">True</property>
-                <property name="text" translatable="yes">0</property>
+                <property name="text">0</property>
                 <property name="adjustment">png_lossless_adj</property>
               </object>
               <packing>
