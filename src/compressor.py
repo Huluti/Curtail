@@ -72,21 +72,23 @@ class Compressor():
     def call_compressor(self, ext):
         lossy = self._settings.get_boolean('lossy')
 
-        pngquant = 'pngquant -f "{}" --output "{}"'
+        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
         cjpeg = 'cjpeg -quality {} "{}" > "{}"'
         jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
 
         # PNG
         if ext == 'png':
-            png_level = self._settings.get_int('png-level')
+            png_lossy_level = self._settings.get_int('png-lossy-level')
+            png_lossless_level = self._settings.get_int('png-lossless-level')
             if lossy:  # lossy compression
-                command = pngquant.format(self.filename, self.new_filename)
+                command = pngquant.format(png_lossy_level, self.filename,
+                                          self.new_filename)
                 command += ' && '
-                command += optipng.format(png_level, self.new_filename,
+                command += optipng.format(png_lossless_level, self.new_filename,
                                           self.new_filename)
             else: # lossless compression
-                command = optipng.format(png_level, self.filename,
+                command = optipng.format(png_lossless_level, self.filename,
                                           self.new_filename)
         # JPEG
         elif ext in('jpeg', 'jpg'):
