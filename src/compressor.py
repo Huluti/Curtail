@@ -98,7 +98,9 @@ class Compressor():
                                        self.new_filename,)
             else: # lossless compression
                 command = jpegtran.format(self.new_filename, self.filename)
+        return self.run_command(command)
 
+    def run_command(self, command):
         try:
             ret = subprocess.call(command, shell=True)
         except Exception as err:
