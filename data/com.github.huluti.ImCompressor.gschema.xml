@@ -16,6 +16,11 @@
       <summary>Suffix to append at end of new file</summary>
       <description>Suffix to append at end of new file.</description>
     </key>
+	  <key type="i" name="png-lossy-level">
+      <default>80</default>
+      <summary>PNG Lossy Compression Level</summary>
+      <description>Lossy compression level to use for PNG images.</description>
+    </key>
 	  <key type="i" name="png-lossless-level">
       <default>2</default>
       <summary>PNG Lossless Compression Level</summary>
