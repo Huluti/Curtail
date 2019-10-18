@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-15 11:54+0200\n"
+"POT-Creation-Date: 2019-10-17 23:17+0200\n"
+"PO-Revision-Date: 2019-10-18 13:15+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/com.github.huluti.ImCompressor.desktop.in:3
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:7
@@ -24,8 +24,8 @@ msgid "ImCompressor"
 msgstr "ImCompressor"
 
 #: data/com.github.huluti.ImCompressor.desktop.in:5
-msgid "Simple & lossless image compressor."
-msgstr "Eenvoudige afbeeldingscompressie zonder kwaliteitsverlies."
+msgid "Simple & useful image compressor."
+msgstr "Eenvoudig programma voor afbeeldingscompressie."
 
 #. Icon name, do not translate
 #: data/com.github.huluti.ImCompressor.desktop.in:10
@@ -33,15 +33,15 @@ msgid "com.github.huluti.ImCompressor"
 msgstr "com.github.huluti.ImCompressor"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:8
-msgid "Simple &amp; lossless image compressor"
-msgstr "Eenvoudige afbeeldingscompressie zonder kwaliteitsverlies"
+msgid "Simple &amp; useful image compressor"
+msgstr "Eenvoudig programma voor afbeeldingscompressie"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:10
 msgid ""
-"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
+"ImCompressor is an useful image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor kan afbeeldingen comprimeren zonder kwaliteitsverlies, en "
+"ImCompressor is een eenvoudig programma voor afbeeldingscompressie, en "
 "ondersteunt zowel PNG als JPEG."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
@@ -57,109 +57,172 @@ msgid "Save the compressed image into a new file."
 msgstr "Sla de gecomprimeerde afbeelding op als een nieuw bestand."
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:11
-#: data/com.github.huluti.ImCompressor.gschema.xml:12 src/ui/preferences.ui:82
+msgid "Enable lossy mode"
+msgstr "Kwaliteitsmodus inschakelen"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "Use lossy mode to compress images."
+msgstr "Comprimeer afbeeldingen zonder kwaliteitsverlies."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:99
 msgid "Suffix to append at end of new file"
 msgstr "Bestandsextensie achter bestandsnaam"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:69
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
+msgid "Suffix to append at end of new file."
+msgstr "Bestandsextensie achter de bestandsnaam."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:153
+msgid "PNG Lossy Compression Level"
+msgstr "PNG-compressieniveau"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:22
+msgid "Lossy compression level to use for PNG images."
+msgstr "Het te gebruiken PNG-compressieniveau."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:26
+msgid "PNG Lossless Compression Level"
+msgstr "PNG-compressieniveau (zonder kwaliteitsverlies)"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:27
+msgid "Lossless compression level to use for PNG images."
+msgstr "Het te gebruiken PNG-compressieniveau (zonder kwaliteitsverlies)."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:180
+msgid "JPG Lossy Compression Level"
+msgstr "JPG-compressieniveau"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:32
+msgid "Lossy compression level to use for JPG images."
+msgstr "Het te gebruiken JPG-compressieniveau."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:112
 msgid "Enable dark theme"
 msgstr "Donker thema gebruiken"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:17
+#: data/com.github.huluti.ImCompressor.gschema.xml:37
 msgid "Use dark theme for the windows."
 msgstr "Voorzie de vensters van een donkere kleur."
 
-#: src/ui/window.ui:29 src/window.py:253
-msgid "Simple & lossless image compressor"
-msgstr "Eenvoudige afbeeldingscompressie zonder kwaliteitsverlies"
+#: src/ui/window.ui:29 src/window.py:263
+msgid "Simple & useful image compressor"
+msgstr "Eenvoudig programma voor afbeeldingscompressie"
 
-#: src/ui/window.ui:118
+#: src/ui/window.ui:117
 msgid "Drag and drop your images here..."
 msgstr "Sleep je afbeeldingen hierheen..."
 
-#: src/ui/window.ui:133
+#: src/ui/window.ui:132
 msgid "or"
 msgstr "of"
 
-#: src/ui/window.ui:146 src/window.py:152
+#: src/ui/window.ui:145 src/window.py:156
 msgid "Browse your files"
 msgstr "Verken je bestanden"
 
-#: src/ui/preferences.ui:7 src/ui/menu.ui:6
+#: src/ui/window.ui:170
+msgid "Lossless"
+msgstr "Zonder kwaliteitsverlies"
+
+#: src/ui/window.ui:199
+msgid "Lossy"
+msgstr "Enigszins kwaliteitsverlies"
+
+#: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: src/ui/preferences.ui:30
+#: src/ui/preferences.ui:75
 msgid "Save the compressed image into a new file"
 msgstr "Sla de gecomprimeerde afbeelding op als een nieuw bestand"
+
+#: src/ui/preferences.ui:135
+msgid "General"
+msgstr "Algemeen"
+
+#: src/ui/preferences.ui:204
+msgid "Compression"
+msgstr "Compressie"
+
+#: src/ui/preferences.ui:235
+msgid ""
+"PNG Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+"Het te gebruiken PNG-compressieniveau (zonder kwaliteitsverlies)\n"
+"Hoe hoger, hoe langzamer."
+
+#: src/ui/preferences.ui:246
+msgid "Advanced"
+msgstr "Geavanceerd"
 
 #: src/ui/menu.ui:10
 msgid "About ImCompressor"
 msgstr "Over ImCompressor"
 
-#: src/window.py:84
+#: src/window.py:85
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: src/window.py:85
+#: src/window.py:86
 msgid "Old Size"
 msgstr "Oorspronkelijke grootte"
 
-#: src/window.py:86
+#: src/window.py:87
 msgid "New Size"
 msgstr "Nieuwe grootte"
 
-#: src/window.py:87
+#: src/window.py:88
 msgid "Savings"
 msgstr "Opslaan"
 
-#: src/window.py:135
+#: src/window.py:143
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Opgeslagen afbeeldingen worden voorzien van de extensie <b>'{}'</b>."
 
-#: src/window.py:138
+#: src/window.py:146
 msgid "Images are <b>overwritten</b>."
 msgstr "Afbeeldingen worden <b>overschreven</b>."
 
 #. if path doesn't exist
-#: src/window.py:197
+#: src/window.py:203
 msgid "Path not valid"
 msgstr "Ongeldig pad"
 
-#: src/window.py:198
+#: src/window.py:204
 msgid "\"{}\" doesn't exist."
 msgstr "'{}' bestaat niet."
 
 #. don't allow folders for now
-#: src/window.py:203
+#: src/window.py:209
 msgid "Operation not supported"
 msgstr "Geen ondersteuning"
 
-#: src/window.py:204
+#: src/window.py:210
 msgid "Discovery of images in folders is not yet supported."
 msgstr "Het ophalen van afbeeldingen uit mappen wordt nog niet ondersteund."
 
-#: src/window.py:210
+#: src/window.py:216
 msgid "Format not supported"
 msgstr "Geen ondersteuning"
 
-#: src/window.py:211
+#: src/window.py:217
 msgid "The format of \"{}\" is not supported."
 msgstr "Het formaat '{}' wordt niet ondersteund."
 
-#: src/window.py:252
+#: src/window.py:262
 msgid "translator-credits"
 msgstr "Heimen Stoffels"
 
-#: src/window.py:254
+#: src/window.py:264
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Uitgebracht onder de GNU GPL(v3)-licentie.\n"
 
-#: src/compressor.py:61
+#: src/compressor.py:68 src/compressor.py:107
 msgid "An error has occured"
 msgstr "Er is een fout opgetreden"
 
-#: src/compressor.py:62
+#: src/compressor.py:69
 msgid "\"{}\" has not been minimized."
 msgstr "'{}' is niet geminimaliseerd."
 
