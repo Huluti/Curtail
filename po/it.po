@@ -33,7 +33,7 @@ msgstr "com.github.huluti.ImCompressor"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:8
 msgid "Simple &amp; lossless image compressor"
-msgstr "Compressore di immagine semplice &amp; senza perdite"
+msgstr "Compressore di immagine semplice & senza perdite"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:10
 msgid ""
