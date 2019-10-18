@@ -34,7 +34,7 @@ msgstr ""
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:8
 msgid "Simple &amp; useful image compressor"
-msgstr "Compresseur d'image simple et utile"
+msgstr "Compresseur d'image simple & utile"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:10
 msgid ""
