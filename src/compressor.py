@@ -43,36 +43,39 @@ class Compressor():
 
         self.backup_filename  = '{}/.{}.{}'.format(self.file_data['folder'],
             self.file_data['name'], self.file_data['ext'])
+        # to fix https://github.com/mozilla/mozjpeg/issues/248
+        self.tmp_filename  = '{}/.{}-tmp.{}'.format(self.file_data['folder'],
+            self.file_data['name'], self.file_data['ext'])
 
         # Sizes
         self.size = path.getsize(self.filename)
         self.new_size = 0
 
-    def create_backup_file(self):
+    def create_backup_file(self, filename, backup_filename):
         # Do a backup of the original file
         try:
-            copy2(self.filename, self.backup_filename)
+            copy2(filename, backup_filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
             return False
         return True
 
-    def delete_backup_file(self):
+    def delete_backup_file(self, backup_filename):
         # Delete backup file
         try:
-            remove(self.backup_filename)
+            remove(backup_filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
             return False
         return True
 
-    def restore_backup_file(self):
+    def restore_backup_file(self, filename, new_filename, backup_filename):
         # Restore original backup
         try:
-            remove(self.new_filename)
-            copy2(self.backup_filename, self.filename)
+            remove(new_filename)
+            copy2(backup_filename, filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
@@ -80,7 +83,7 @@ class Compressor():
         return True
 
     def compress_image(self):
-        keep_going = self.create_backup_file()  # create backup
+        keep_going = self.create_backup_file(self.filename, self.backup_filename)
         if not keep_going:
             return
 
@@ -89,10 +92,12 @@ class Compressor():
         is_minus = True
         if self.new_size >= self.size:  # new size is equal or higher than the old one
             is_minus = False
-            keep_going = self.restore_backup_file()  # restore backup if needed
+            keep_going = self.restore_backup_file(self.filename,
+                                                  self.new_filename,
+                                                  self.backup_filename)
             if not keep_going:
                 return
-        keep_going = self.delete_backup_file()  # delete backup
+        keep_going = self.delete_backup_file(self.backup_filename)
         if not keep_going:
             return
 
@@ -113,6 +118,7 @@ class Compressor():
                                      savings)
 
     def call_compressor(self, ext):
+        fix_weird_bug = False
         lossy = self._settings.get_boolean('lossy')
 
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
@@ -137,11 +143,31 @@ class Compressor():
         elif ext in('jpeg', 'jpg'):
             jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
             if lossy:  # lossy compression
+                if not self._settings.get_boolean('new-file'):  # not using suffix
+                    # to fix https://github.com/mozilla/mozjpeg/issues/248
+                    keep_going = self.create_backup_file(self.filename,
+                                                         self.tmp_filename)
+                    if not keep_going:
+                        return
+                    new_filename = self.tmp_filename
+                    fix_weird_bug = True
+                else:
+                    new_filename = self.new_filename
                 command = cjpeg.format(jpg_lossy_level, self.filename,
-                                       self.new_filename,)
+                                        new_filename)
             else: # lossless compression
                 command = jpegtran.format(self.new_filename, self.filename)
-        return self.run_command(command)
+        ret = self.run_command(command)
+
+        if fix_weird_bug:
+            keep_going = self.restore_backup_file(self.filename, self.filename,
+                                                  self.tmp_filename)
+            if not keep_going:
+                return
+            keep_going = self.delete_backup_file(self.tmp_filename)
+            if not keep_going:
+                return
+        return ret
 
     def run_command(self, command):
         try:
