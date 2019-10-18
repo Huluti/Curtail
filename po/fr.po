@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 23:17+0200\n"
-"PO-Revision-Date: 2019-10-17 23:22+0200\n"
+"POT-Creation-Date: 2019-10-18 14:45+0200\n"
+"PO-Revision-Date: 2019-10-18 14:46+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -104,7 +104,7 @@ msgstr "Activer le mode sombre"
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
-#: src/ui/window.ui:29 src/window.py:263
+#: src/ui/window.ui:29 src/window.py:267
 msgid "Simple & useful image compressor"
 msgstr "Compresseur d'image simple et utile"
 
@@ -116,7 +116,7 @@ msgstr "Faites glisser vos images ici..."
 msgid "or"
 msgstr "ou"
 
-#: src/ui/window.ui:145 src/window.py:156
+#: src/ui/window.ui:145 src/window.py:160
 msgid "Browse your files"
 msgstr "Parcourez vos fichiers"
 
@@ -176,55 +176,67 @@ msgstr "Nouvelle taille"
 msgid "Savings"
 msgstr "Gains"
 
-#: src/window.py:143
+#: src/window.py:147
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Les images sont sauvegardées avec le suffixe <b>'{}'</b>."
 
-#: src/window.py:146
+#: src/window.py:150
 msgid "Images are <b>overwritten</b>."
 msgstr "Les images sont <b>écrasées</b>."
 
 #. if path doesn't exist
-#: src/window.py:203
+#: src/window.py:207
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:204
+#: src/window.py:208
 msgid "\"{}\" doesn't exist."
 msgstr "\"{}\" n'existe pas."
 
 #. don't allow folders for now
-#: src/window.py:209
+#: src/window.py:213
 msgid "Operation not supported"
 msgstr "Opération non supportée"
 
-#: src/window.py:210
+#: src/window.py:214
 msgid "Discovery of images in folders is not yet supported."
 msgstr "La découverte d'images dans des dossiers n'est pas encore supportée."
 
-#: src/window.py:216
+#: src/window.py:220
 msgid "Format not supported"
 msgstr "Format non supporté"
 
-#: src/window.py:217
+#: src/window.py:221
 msgid "The format of \"{}\" is not supported."
 msgstr "Le format de \"{}\" n'est pas supporté."
 
-#: src/window.py:262
+#: src/window.py:266
 msgid "translator-credits"
 msgstr "Hugo Posnic"
 
-#: src/window.py:264
+#: src/window.py:268
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:68 src/compressor.py:107
+#: src/compressor.py:56 src/compressor.py:66 src/compressor.py:77
+#: src/compressor.py:100 src/compressor.py:150
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:69
+#: src/compressor.py:101
 msgid "\"{}\" has not been minimized."
 msgstr "\"{}\" n'a pas été compressée."
+
+#: src/compressor.py:105
+msgid "Compression not useful"
+msgstr "Compression inutile"
+
+#: src/compressor.py:106
+msgid ""
+"\"{}\": the size of the compressed image is larger than the original size."
+msgstr ""
+"\"{}\": la taille de l'image compressée est plus grande que celle de "
+"l'originale."
 
 #: src/tools.py:63
 msgid "All images"

@@ -17,10 +17,10 @@
 
 import subprocess
 from gi.repository import Gio
-from os import path
+from os import path, remove
+from shutil import copy2
 
-
-from .tools import sizeof_fmt, message_dialog, parse_filename
+from .tools import message_dialog, parse_filename
 
 
 SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
@@ -33,41 +33,84 @@ class Compressor():
         super().__init__()
 
         self.win = win
+
+        # Filenames
         self.filename = filename
         self.new_filename = new_filename
 
+        self.file_data = parse_filename(self.filename)
+        self.full_name = self.file_data['full_name']
+
+        self.backup_filename  = '{}/.{}.{}'.format(self.file_data['folder'],
+            self.file_data['name'], self.file_data['ext'])
+
+        # Sizes
+        self.size = path.getsize(self.filename)
+        self.new_size = 0
+
+    def create_backup_file(self):
+        # Do a backup of the original file
+        try:
+            copy2(self.filename, self.backup_filename)
+        except Exception as err:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           str(err))
+            return False
+        return True
+
+    def delete_backup_file(self):
+        # Delete backup file
+        try:
+            remove(self.backup_filename)
+        except Exception as err:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           str(err))
+            return False
+        return True
+
+    def restore_backup_file(self):
+        # Restore original backup
+        try:
+            remove(self.new_filename)
+            copy2(self.backup_filename, self.filename)
+        except Exception as err:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           str(err))
+            return False
+        return True
+
     def compress_image(self):
-        # File data
-        file_data = parse_filename(self.filename)
+        keep_going = self.create_backup_file()  # create backup
+        if not keep_going:
+            return
 
-        # Current size
-        size = path.getsize(self.filename)
-        size_str = sizeof_fmt(size)
+        ret = self.call_compressor(self.file_data['ext'])  # compress image
+        self.new_size = path.getsize(self.new_filename)
+        is_minus = True
+        if self.new_size >= self.size:  # new size is equal or higher than the old one
+            is_minus = False
+            keep_going = self.restore_backup_file()  # restore backup if needed
+            if not keep_going:
+                return
+        keep_going = self.delete_backup_file()  # delete backup
+        if not keep_going:
+            return
 
-        # Create tree iter
-        if self.filename != self.new_filename:
-            file_data2 = parse_filename(self.new_filename)
-            full_name = file_data2['full_name']
-        else:
-            full_name = file_data['full_name']
-        treeiter = self.win.store.append([full_name, size_str, '', ''])
-
-        # Compress image
-        ret = self.call_compressor(file_data['ext'])
-        if ret == 0:
-            # Update tree iter
-            new_size = path.getsize(self.new_filename)
-            new_size_str = sizeof_fmt(new_size)
-
-            savings = round(100 - (new_size * 100 / size), 2)
-            savings = '{}%'.format(str(savings))
-
-            self.win.store.set_value(treeiter, 2, new_size_str)
-            self.win.store.set_value(treeiter, 3, savings)
-        else:
+        if ret != 0:
             message_dialog(self.win, 'error', _("An error has occured"),
                            _("\"{}\" has not been minimized.") \
-                           .format(full_name))
+                           .format(self.full_name))
+            return
+        elif not is_minus:
+            message_dialog(self.win, 'info', _("Compression not useful"),
+                _("\"{}\": the size of the compressed image is larger than the original size.") \
+                .format(self.full_name))
+            return
+
+        # Calculate savings in percent
+        savings = round(100 - (self.new_size * 100 / self.size), 2)
+        self.win.create_treeview_row(self.full_name, self.size, self.new_size,
+                                     savings)
 
     def call_compressor(self, ext):
         lossy = self._settings.get_boolean('lossy')

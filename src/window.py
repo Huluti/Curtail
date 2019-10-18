@@ -22,8 +22,8 @@ from os import path
 
 from .preferences import ImCompressorPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog, parse_filename, add_filechooser_filters
-
+from .tools import message_dialog, parse_filename, add_filechooser_filters, \
+                    sizeof_fmt
 
 UI_PATH = '/com/github/huluti/ImCompressor/ui/'
 SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
@@ -133,6 +133,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.homebox.show_all()
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
+
+    def create_treeview_row(self, name, size, new_size, savings):
+        self.store.append([name, sizeof_fmt(size), sizeof_fmt(new_size),
+                              '{}%'.format(str(savings))])
 
     def go_end_treeview(self):
         self.adjustment.set_value(self.adjustment.get_upper())

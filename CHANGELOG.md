@@ -6,9 +6,10 @@ All notable changes to this project will be documented in this file.
 - Add lossy compression features.
 - Add options to change compression levels.
 - New layout for the preferences dialog.
-- Better displaying of the drag area.
 
 ### Changed
+- Don't permit higher resulting size.
+- Better displaying of the drag area.
 - Update translations.
 
 ### Fixed
