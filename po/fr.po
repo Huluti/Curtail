@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-18 14:45+0200\n"
-"PO-Revision-Date: 2019-10-18 14:46+0200\n"
+"PO-Revision-Date: 2019-10-18 15:46+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.huluti.ImCompressor.desktop.in:5
 msgid "Simple & useful image compressor."
-msgstr "Compresseur d'image simple et utile."
+msgstr "Compresseur d'image simple & utile."
 
 #. Icon name, do not translate
 #: data/com.github.huluti.ImCompressor.desktop.in:10
@@ -106,7 +106,7 @@ msgstr "Utiliser le thème sombre pour les fenêtres."
 
 #: src/ui/window.ui:29 src/window.py:267
 msgid "Simple & useful image compressor"
-msgstr "Compresseur d'image simple et utile"
+msgstr "Compresseur d'image simple & utile"
 
 #: src/ui/window.ui:117
 msgid "Drag and drop your images here..."
