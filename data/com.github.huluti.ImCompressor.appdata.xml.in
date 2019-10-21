@@ -32,6 +32,19 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.6" date="2019-10-21">
+      <description>
+        <ul>
+          <li>Add lossy compression features</li>
+          <li>Add options to change compression levels</li>
+          <li>New layout for the preferences dialog</li>
+          <li>Don't permit higher resulting size</li>
+          <li>Better displaying of the drag area</li>
+          <li>Update translations</li>
+          <li>Catch errors in subprocess to avoid crashing the app</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.2" date="2019-10-13">
       <description>
         <ul>

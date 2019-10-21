@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.6] - DEV
+## [0.6] - 2019-10-21
 ### Added
 - Add lossy compression features.
 - Add options to change compression levels.
