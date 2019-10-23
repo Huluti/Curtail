@@ -139,7 +139,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def create_treeview_row(self, name, size):
         tree_iter = self.store.append([True, name, sizeof_fmt(size), '', '', 0])
-        self.refresh_window()
         return tree_iter
 
     def update_treeview_row(self, tree_iter, new_size, savings):
@@ -245,16 +244,11 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Show tree view if hidden
         if not self.treeview_box.get_visible():
             self.show_treeview(True)
-        self.refresh_window()
         # Call compressor
         GLib.timeout_add(100, self.on_pulse_spinner)
         compressor = Compressor(self, filename, new_filename)
         compressor.compress_image()
         self.go_end_treeview()  # scroll to end of treeview
-
-    def refresh_window(self):
-        while Gtk.events_pending():
-            Gtk.main_iteration_do(False)
 
     def on_pulse_spinner(self):
         for item in self.store:
