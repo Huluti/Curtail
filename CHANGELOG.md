@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.7] - DEV
+### Added
+- Add a spinner to indicate the progress of the compression.
+
+### Fixed
+- Really don't block the UI anymore when performing compression.
+
 ## [0.6] - 2019-10-21
 ### Added
 - Add lossy compression features.
