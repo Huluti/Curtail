@@ -103,7 +103,6 @@ class Compressor():
         self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
         lossy = self._settings.get_boolean('lossy')
-
         if self.file_data['ext'] == 'png':
             command = self.build_png_command(lossy)
         elif self.file_data['ext'] in('jpeg', 'jpg'):
@@ -111,6 +110,8 @@ class Compressor():
         self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
+        GObject.source_remove(self.io_id)
+        stdout.close()
         self.new_size = path.getsize(self.new_filename)
         is_minus = True
         if self.new_size >= self.size:  # new size is equal or higher than the old one
@@ -137,9 +138,6 @@ class Compressor():
                 return
             if not self.delete_backup_file(self.tmp_filename):
                 return
-
-        GObject.source_remove(self.io_id)
-        stdout.close()
 
     def build_png_command(self, lossy):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
