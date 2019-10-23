@@ -129,13 +129,11 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         if show:
             self.homebox.hide()
             self.treeview_box.show_all()
-            self.back_button.set_sensitive(True)
-            self.forward_button.set_sensitive(False)
         else:
             self.treeview_box.hide()
             self.homebox.show_all()
-            self.back_button.set_sensitive(False)
-            self.forward_button.set_sensitive(True)
+        self.back_button.set_sensitive(show)
+        self.forward_button.set_sensitive(not show)
 
     def create_treeview_row(self, name, size):
         tree_iter = self.store.append([True, name, sizeof_fmt(size), '', '', 0])
