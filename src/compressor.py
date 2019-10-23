@@ -16,7 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gio
+import shlex
+from gi.repository import Gio, GObject
 from os import path, remove
 from shutil import copy2
 
@@ -44,12 +45,13 @@ class Compressor():
         self.backup_filename  = '{}/.{}.{}'.format(self.file_data['folder'],
             self.file_data['name'], self.file_data['ext'])
         # to fix https://github.com/mozilla/mozjpeg/issues/248
+        self.fix_jpg_weird_bug = False
         self.tmp_filename  = '{}/.{}-tmp.{}'.format(self.file_data['folder'],
             self.file_data['name'], self.file_data['ext'])
 
-        # Sizes
         self.size = path.getsize(self.filename)
         self.new_size = 0
+        self.tree_iter = None
 
     def create_backup_file(self, filename, backup_filename):
         # Do a backup of the original file
@@ -82,22 +84,34 @@ class Compressor():
             return False
         return True
 
+    def run_command(self, command):
+        try:
+            p = subprocess.Popen(shlex.split(command),
+                                 stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE,
+                                 stdin=subprocess.PIPE)
+            self.io_id = GObject.io_add_watch(p.stdout, GObject.IO_IN, self.feed)
+            GObject.io_add_watch(p.stdout, GObject.IO_HUP, self.command_finished)
+        except Exception as err:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           str(err))
+
     def compress_image(self):
         keep_going = self.create_backup_file(self.filename, self.backup_filename)
         if not keep_going:
             return
 
-        tree_iter = self.win.create_treeview_row(self.full_name, self.size)
-        # The operation that blocks the UI
-        ret = self.call_compressor(self.file_data['ext'])  # compress image
-        # End of the operation that blocks the UI
+        self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
-        if ret != 0:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           _("\"{}\" has not been minimized.") \
-                           .format(self.full_name))
-            return
+        lossy = self._settings.get_boolean('lossy')
 
+        if self.file_data['ext'] == 'png':
+            command = self.get_png_command(lossy)
+        elif self.file_data['ext'] in('jpeg', 'jpg'):
+            command = self.get_jpg_command(lossy)
+        self.run_command(command)  # compress image
+
+    def command_finished(self, stdout, condition):
         self.new_size = path.getsize(self.new_filename)
         is_minus = True
         if self.new_size >= self.size:  # new size is equal or higher than the old one
@@ -119,20 +133,9 @@ class Compressor():
 
         # Calculate savings in percent
         savings = round(100 - (self.new_size * 100 / self.size), 2)
-        self.win.update_treeview_row(tree_iter, self.new_size, savings)
+        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
 
-    def call_compressor(self, ext):
-        lossy = self._settings.get_boolean('lossy')
-        fix_jpg_weird_bug = False
-
-        if ext == 'png':
-            command = self.get_png_command(lossy)
-        elif ext in('jpeg', 'jpg'):
-            command, fix_jpg_weird_bug = self.get_jpg_command(lossy,
-                                                              fix_jpg_weird_bug)
-        ret = self.run_command(command)
-
-        if fix_jpg_weird_bug:
+        if self.fix_jpg_weird_bug:
             keep_going = self.restore_backup_file(self.filename, self.filename,
                                                   self.tmp_filename)
             if not keep_going:
@@ -140,7 +143,9 @@ class Compressor():
             keep_going = self.delete_backup_file(self.tmp_filename)
             if not keep_going:
                 return
-        return ret
+
+        GObject.source_remove(self.io_id)
+        stdout.close()
 
     def get_png_command(self, lossy):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
@@ -160,7 +165,7 @@ class Compressor():
                                       self.new_filename)
         return command
 
-    def get_jpg_command(self, lossy, fix_jpg_weird_bug):
+    def get_jpg_command(self, lossy):
         cjpeg = 'cjpeg -quality {} "{}" > "{}"'
         jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
 
@@ -173,20 +178,14 @@ class Compressor():
                 if not keep_going:
                     return
                 new_filename = self.tmp_filename
-                fix_jpg_weird_bug = True
+                self.fix_jpg_weird_bug = True
             else:
                 new_filename = self.new_filename
             command = cjpeg.format(jpg_lossy_level, self.filename,
                                     new_filename)
-        else: # lossless compression
+        else:  # lossless compression
             command = jpegtran.format(self.new_filename, self.filename)
-        return command, fix_jpg_weird_bug
+        return command
 
-    def run_command(self, command):
-        try:
-            ret = subprocess.call(command, shell=True)
-        except Exception as err:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           str(err))
-            ret = None
-        return ret
+    def feed(self, stdout, condition):
+        return True

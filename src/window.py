@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gdk, Gio
+from gi.repository import Gtk, Gdk, Gio, GLib
 from urllib.parse import unquote
 from os import path
 
@@ -78,12 +78,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
-        self.store = Gtk.ListStore(bool, str, str, str, str)
+        self.store = Gtk.ListStore(bool, str, str, str, str, int)
         self.treeview.set_model(self.store)
         self.renderer = Gtk.CellRendererText()
+        self.spinner_renderer = Gtk.CellRendererSpinner()
 
-        spinner_renderer = Gtk.CellRendererSpinner.new()
-        col_bool = Gtk.TreeViewColumn('', spinner_renderer, active=0)
+        col_bool = Gtk.TreeViewColumn('', self.spinner_renderer, active=0)
         self.treeview.append_column(col_bool)
         self.add_column_to_treeview(_("Filename"), 1)
         self.add_column_to_treeview(_("Old Size"), 2)
@@ -138,7 +138,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.forward_button.set_sensitive(True)
 
     def create_treeview_row(self, name, size):
-        tree_iter = self.store.append([True, name, sizeof_fmt(size), '', ''])
+        tree_iter = self.store.append([True, name, sizeof_fmt(size), '', '', 0])
+        self.refresh_window()
         return tree_iter
 
     def update_treeview_row(self, tree_iter, new_size, savings):
@@ -200,8 +201,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         for filename in final_filenames:
             new_filename = self.create_new_filename(filename)
             self.compress_image(filename, new_filename)
-            while Gtk.events_pending():
-                Gtk.main_iteration()
 
     def clean_filename(self, filename):
         if filename.startswith('file://'):  # drag&drop
@@ -246,10 +245,27 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Show tree view if hidden
         if not self.treeview_box.get_visible():
             self.show_treeview(True)
+        self.refresh_window()
         # Call compressor
+        GLib.timeout_add(100, self.on_pulse_spinner)
         compressor = Compressor(self, filename, new_filename)
         compressor.compress_image()
-        self.go_end_treeview()  # scroll to enf of treeview
+        self.go_end_treeview()  # scroll to end of treeview
+
+    def refresh_window(self):
+        while Gtk.events_pending():
+            Gtk.main_iteration_do(False)
+
+    def on_pulse_spinner(self):
+        for item in self.store:
+            if item[0]:
+                if item[5] == 100:
+                    item[5] = 0
+                else:
+                    item[5] += 1
+
+            self.spinner_renderer.set_property('pulse', item[5])
+        return True
 
     def toggle_dark_theme(self, value):
         self.settings.set_property('gtk-application-prefer-dark-theme',
