@@ -106,9 +106,9 @@ class Compressor():
         lossy = self._settings.get_boolean('lossy')
 
         if self.file_data['ext'] == 'png':
-            command = self.get_png_command(lossy)
+            command = self.build_png_command(lossy)
         elif self.file_data['ext'] in('jpeg', 'jpg'):
-            command = self.get_jpg_command(lossy)
+            command = self.build_jpg_command(lossy)
         self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
@@ -147,7 +147,7 @@ class Compressor():
         GObject.source_remove(self.io_id)
         stdout.close()
 
-    def get_png_command(self, lossy):
+    def build_png_command(self, lossy):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
 
@@ -165,7 +165,7 @@ class Compressor():
                                       self.new_filename)
         return command
 
-    def get_jpg_command(self, lossy):
+    def build_jpg_command(self, lossy):
         cjpeg = 'cjpeg -quality {} "{}" > "{}"'
         jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
 
