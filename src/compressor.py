@@ -122,48 +122,17 @@ class Compressor():
         self.win.update_treeview_row(tree_iter, self.new_size, savings)
 
     def call_compressor(self, ext):
-        fix_weird_bug = False
         lossy = self._settings.get_boolean('lossy')
+        fix_jpg_weird_bug = False
 
-        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
-        optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
-        cjpeg = 'cjpeg -quality {} "{}" > "{}"'
-        jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
-
-        # PNG
         if ext == 'png':
-            png_lossy_level = self._settings.get_int('png-lossy-level')
-            png_lossless_level = self._settings.get_int('png-lossless-level')
-            if lossy:  # lossy compression
-                command = pngquant.format(png_lossy_level, self.filename,
-                                          self.new_filename)
-                command += ' && '
-                command += optipng.format(png_lossless_level, self.new_filename,
-                                          self.new_filename)
-            else: # lossless compression
-                command = optipng.format(png_lossless_level, self.filename,
-                                          self.new_filename)
-        # JPEG
+            command = self.get_png_command(lossy)
         elif ext in('jpeg', 'jpg'):
-            jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
-            if lossy:  # lossy compression
-                if not self._settings.get_boolean('new-file'):  # not using suffix
-                    # to fix https://github.com/mozilla/mozjpeg/issues/248
-                    keep_going = self.create_backup_file(self.filename,
-                                                         self.tmp_filename)
-                    if not keep_going:
-                        return
-                    new_filename = self.tmp_filename
-                    fix_weird_bug = True
-                else:
-                    new_filename = self.new_filename
-                command = cjpeg.format(jpg_lossy_level, self.filename,
-                                        new_filename)
-            else: # lossless compression
-                command = jpegtran.format(self.new_filename, self.filename)
+            command, fix_jpg_weird_bug = self.get_jpg_command(lossy,
+                                                              fix_jpg_weird_bug)
         ret = self.run_command(command)
 
-        if fix_weird_bug:
+        if fix_jpg_weird_bug:
             keep_going = self.restore_backup_file(self.filename, self.filename,
                                                   self.tmp_filename)
             if not keep_going:
@@ -172,6 +141,46 @@ class Compressor():
             if not keep_going:
                 return
         return ret
+
+    def get_png_command(self, lossy):
+        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
+        optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
+
+        png_lossy_level = self._settings.get_int('png-lossy-level')
+        png_lossless_level = self._settings.get_int('png-lossless-level')
+
+        if lossy:  # lossy compression
+            command = pngquant.format(png_lossy_level, self.filename,
+                                      self.new_filename)
+            command += ' && '
+            command += optipng.format(png_lossless_level, self.new_filename,
+                                      self.new_filename)
+        else: # lossless compression
+            command = optipng.format(png_lossless_level, self.filename,
+                                      self.new_filename)
+        return command
+
+    def get_jpg_command(self, lossy, fix_jpg_weird_bug):
+        cjpeg = 'cjpeg -quality {} "{}" > "{}"'
+        jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
+
+        jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
+        if lossy:  # lossy compression
+            if not self._settings.get_boolean('new-file'):  # not using suffix
+                # to fix https://github.com/mozilla/mozjpeg/issues/248
+                keep_going = self.create_backup_file(self.filename,
+                                                     self.tmp_filename)
+                if not keep_going:
+                    return
+                new_filename = self.tmp_filename
+                fix_jpg_weird_bug = True
+            else:
+                new_filename = self.new_filename
+            command = cjpeg.format(jpg_lossy_level, self.filename,
+                                    new_filename)
+        else: # lossless compression
+            command = jpegtran.format(self.new_filename, self.filename)
+        return command, fix_jpg_weird_bug
 
     def run_command(self, command):
         try:
