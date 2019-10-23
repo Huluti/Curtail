@@ -99,17 +99,6 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Info label
         self.change_save_info_label()
 
-    def add_column_to_treeview(self, title, column_id):
-        treeviewcolumn = Gtk.TreeViewColumn(title)
-        if column_id in (0, 3):
-            treeviewcolumn.set_sort_column_id(column_id)
-        treeviewcolumn.set_spacing(10)
-        treeviewcolumn.set_resizable(True)
-        treeviewcolumn.set_expand(True)
-        treeviewcolumn.pack_start(self.renderer, False)
-        treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
-        self.treeview.append_column(treeviewcolumn)
-
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
         action.connect('activate', callback)
@@ -124,6 +113,17 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.create_simple_action('preferences', self.on_preferences)
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
+
+    def add_column_to_treeview(self, title, column_id):
+        treeviewcolumn = Gtk.TreeViewColumn(title)
+        if column_id in (0, 3):
+            treeviewcolumn.set_sort_column_id(column_id)
+        treeviewcolumn.set_spacing(10)
+        treeviewcolumn.set_resizable(True)
+        treeviewcolumn.set_expand(True)
+        treeviewcolumn.pack_start(self.renderer, False)
+        treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
+        self.treeview.append_column(treeviewcolumn)
 
     def show_treeview(self, show):
         if show:
