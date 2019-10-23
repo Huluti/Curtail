@@ -87,7 +87,12 @@ class Compressor():
         if not keep_going:
             return
 
+        tree_iter = self.win.create_treeview_row(True, self.full_name, self.size)
+
+        # The operation that blocks the UI
         ret = self.call_compressor(self.file_data['ext'])  # compress image
+        # End of the operation that blocks the UI
+
         self.new_size = path.getsize(self.new_filename)
         is_minus = True
         if self.new_size >= self.size:  # new size is equal or higher than the old one
@@ -114,8 +119,7 @@ class Compressor():
 
         # Calculate savings in percent
         savings = round(100 - (self.new_size * 100 / self.size), 2)
-        self.win.create_treeview_row(self.full_name, self.size, self.new_size,
-                                     savings)
+        self.win.update_treeview_row(tree_iter, self.new_size, savings)
 
     def call_compressor(self, ext):
         fix_weird_bug = False

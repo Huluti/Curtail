@@ -78,14 +78,17 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
-        self.store = Gtk.ListStore(str, str, str, str)
+        self.store = Gtk.ListStore(bool, str, str, str, str)
         self.treeview.set_model(self.store)
         self.renderer = Gtk.CellRendererText()
 
-        self.add_column_to_treeview(_("Filename"), 0)
-        self.add_column_to_treeview(_("Old Size"), 1)
-        self.add_column_to_treeview(_("New Size"), 2)
-        self.add_column_to_treeview(_("Savings"), 3)
+        spinner_renderer = Gtk.CellRendererSpinner.new()
+        col_bool = Gtk.TreeViewColumn('', spinner_renderer, active=0)
+        self.treeview.append_column(col_bool)
+        self.add_column_to_treeview(_("Filename"), 1)
+        self.add_column_to_treeview(_("Old Size"), 2)
+        self.add_column_to_treeview(_("New Size"), 3)
+        self.add_column_to_treeview(_("Savings"), 4)
 
         self.adjustment = self.treeview_scrolled_window.get_vadjustment()
 
@@ -134,9 +137,13 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
 
-    def create_treeview_row(self, name, size, new_size, savings):
-        self.store.append([name, sizeof_fmt(size), sizeof_fmt(new_size),
-                              '{}%'.format(str(savings))])
+    def create_treeview_row(self, spinner, name, size):
+        tree_iter = self.store.append([spinner, name, sizeof_fmt(size), '', ''])
+        return tree_iter
+
+    def update_treeview_row(self, tree_iter, new_size, savings):
+        self.store.set_value(tree_iter, 3, sizeof_fmt(new_size))
+        self.store.set_value(tree_iter, 4, '{}%'.format(str(savings)))
 
     def go_end_treeview(self):
         self.adjustment.set_value(self.adjustment.get_upper())
