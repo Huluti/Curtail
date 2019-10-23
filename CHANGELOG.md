@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [0.7] - DEV
 ### Added
 - Add a spinner to indicate the progress of the compression.
+- Using threads to compress images simultaneously.
 
 ### Fixed
 - Really don't block the UI anymore when performing compression.
