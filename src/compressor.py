@@ -97,8 +97,7 @@ class Compressor():
                            str(err))
 
     def compress_image(self):
-        keep_going = self.create_backup_file(self.filename, self.backup_filename)
-        if not keep_going:
+        if not self.create_backup_file(self.filename, self.backup_filename):
             return
 
         self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
@@ -116,13 +115,10 @@ class Compressor():
         is_minus = True
         if self.new_size >= self.size:  # new size is equal or higher than the old one
             is_minus = False
-            keep_going = self.restore_backup_file(self.filename,
-                                                  self.new_filename,
-                                                  self.backup_filename)
-            if not keep_going:
+            if not self.restore_backup_file(self.filename, self.new_filename,
+                                            self.backup_filename):
                 return
-        keep_going = self.delete_backup_file(self.backup_filename)
-        if not keep_going:
+        if not self.delete_backup_file(self.backup_filename):
             return
 
         if not is_minus:
@@ -136,12 +132,10 @@ class Compressor():
         self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
 
         if self.fix_jpg_weird_bug:
-            keep_going = self.restore_backup_file(self.filename, self.filename,
-                                                  self.tmp_filename)
-            if not keep_going:
+            if not self.restore_backup_file(self.filename, self.filename,
+                                            self.tmp_filename):
                 return
-            keep_going = self.delete_backup_file(self.tmp_filename)
-            if not keep_going:
+            if not self.delete_backup_file(self.tmp_filename):
                 return
 
         GObject.source_remove(self.io_id)
@@ -173,9 +167,7 @@ class Compressor():
         if lossy:  # lossy compression
             if not self._settings.get_boolean('new-file'):  # not using suffix
                 # to fix https://github.com/mozilla/mozjpeg/issues/248
-                keep_going = self.create_backup_file(self.filename,
-                                                     self.tmp_filename)
-                if not keep_going:
+                if not self.create_backup_file(self.filename, self.tmp_filename):
                     return
                 new_filename = self.tmp_filename
                 self.fix_jpg_weird_bug = True
