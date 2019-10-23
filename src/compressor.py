@@ -88,10 +88,15 @@ class Compressor():
             return
 
         tree_iter = self.win.create_treeview_row(self.full_name, self.size)
-
         # The operation that blocks the UI
         ret = self.call_compressor(self.file_data['ext'])  # compress image
         # End of the operation that blocks the UI
+
+        if ret != 0:
+            message_dialog(self.win, 'error', _("An error has occured"),
+                           _("\"{}\" has not been minimized.") \
+                           .format(self.full_name))
+            return
 
         self.new_size = path.getsize(self.new_filename)
         is_minus = True
@@ -106,12 +111,7 @@ class Compressor():
         if not keep_going:
             return
 
-        if ret != 0:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           _("\"{}\" has not been minimized.") \
-                           .format(self.full_name))
-            return
-        elif not is_minus:
+        if not is_minus:
             message_dialog(self.win, 'info', _("Compression not useful"),
                 _("\"{}\": the size of the compressed image is larger than the original size.") \
                 .format(self.full_name))
