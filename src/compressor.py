@@ -87,7 +87,7 @@ class Compressor():
         if not keep_going:
             return
 
-        tree_iter = self.win.create_treeview_row(True, self.full_name, self.size)
+        tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
         # The operation that blocks the UI
         ret = self.call_compressor(self.file_data['ext'])  # compress image

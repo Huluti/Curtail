@@ -137,11 +137,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             self.back_button.set_sensitive(False)
             self.forward_button.set_sensitive(True)
 
-    def create_treeview_row(self, spinner, name, size):
-        tree_iter = self.store.append([spinner, name, sizeof_fmt(size), '', ''])
+    def create_treeview_row(self, name, size):
+        tree_iter = self.store.append([True, name, sizeof_fmt(size), '', ''])
         return tree_iter
 
     def update_treeview_row(self, tree_iter, new_size, savings):
+        self.store.set_value(tree_iter, 0, False)
         self.store.set_value(tree_iter, 3, sizeof_fmt(new_size))
         self.store.set_value(tree_iter, 4, '{}%'.format(str(savings)))
 
