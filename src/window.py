@@ -198,6 +198,8 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         for filename in final_filenames:
             new_filename = self.create_new_filename(filename)
             self.compress_image(filename, new_filename)
+            while Gtk.events_pending():
+                Gtk.main_iteration()
 
     def clean_filename(self, filename):
         if filename.startswith('file://'):  # drag&drop
