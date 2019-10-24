@@ -42,7 +42,7 @@ class Compressor():
         self.file_data = parse_filename(self.filename)
         self.full_name = self.file_data['full_name']
 
-        self.backup_filename  = '{}/.{}.{}'.format(self.file_data['folder'],
+        self.backup_filename  = '{}/.{}-backup.{}'.format(self.file_data['folder'],
             self.file_data['name'], self.file_data['ext'])
         # to fix https://github.com/mozilla/mozjpeg/issues/248
         self.fix_jpg_weird_bug = False
