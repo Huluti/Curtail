@@ -122,7 +122,7 @@ class Compressor():
 
         # Handle cjpeg weird bug
         if self.fix_jpg_weird_bug:
-            self.restore_backup_file(filename, self.filename,
+            self.restore_backup_file(self.filename, self.filename,
                                      self.tmp_filename)
             self.delete_backup_file(self.tmp_filename)
 
