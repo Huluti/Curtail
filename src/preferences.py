@@ -28,7 +28,6 @@ SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
 class ImCompressorPrefsWindow(Gtk.Window):
     __gtype_name__ = 'ImCompressorPrefsWindow'
 
-    grid = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
     new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()

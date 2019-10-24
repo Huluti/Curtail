@@ -106,8 +106,12 @@ class Compressor():
         GObject.source_remove(self.io_id)
         stdout.close()
 
-        # Check if new size is equal or higher than the old one
         self.new_size = path.getsize(self.new_filename)
+        savings = round(100 - (self.new_size * 100 / self.size), 2)
+
+        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
+
+        # Check if new size is equal or higher than the old one
         if self.new_size >= self.size:
             self.restore_backup_file(self.filename, self.new_filename,
                                      self.backup_filename)
@@ -116,14 +120,9 @@ class Compressor():
                 .format(self.full_name))
         self.delete_backup_file(self.backup_filename)
 
-        # Calculate savings in percent
-        savings = round(100 - (self.new_size * 100 / self.size), 2)
-
-        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
-
         # Handle cjpeg weird bug
         if self.fix_jpg_weird_bug:
-            self.restore_backup_file(self.filename, self.filename,
+            self.restore_backup_file(filename, self.filename,
                                      self.tmp_filename)
             self.delete_backup_file(self.tmp_filename)
 
