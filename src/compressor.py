@@ -60,8 +60,6 @@ class Compressor():
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
-            return False
-        return True
 
     def delete_backup_file(self, backup_filename):
         # Delete backup file
@@ -70,8 +68,6 @@ class Compressor():
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
-            return False
-        return True
 
     def restore_backup_file(self, filename, new_filename, backup_filename):
         # Restore original backup
@@ -81,8 +77,6 @@ class Compressor():
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
-            return False
-        return True
 
     def run_command(self, command):
         try:
@@ -97,8 +91,7 @@ class Compressor():
                            str(err))
 
     def compress_image(self):
-        if not self.create_backup_file(self.filename, self.backup_filename):
-            return
+        self.create_backup_file(self.filename, self.backup_filename)
 
         self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
@@ -112,32 +105,27 @@ class Compressor():
     def command_finished(self, stdout, condition):
         GObject.source_remove(self.io_id)
         stdout.close()
-        self.new_size = path.getsize(self.new_filename)
-        is_minus = True
-        if self.new_size >= self.size:  # new size is equal or higher than the old one
-            is_minus = False
-            if not self.restore_backup_file(self.filename, self.new_filename,
-                                            self.backup_filename):
-                return
-        if not self.delete_backup_file(self.backup_filename):
-            return
 
-        if not is_minus:
+        # Check if new size is equal or higher than the old one
+        self.new_size = path.getsize(self.new_filename)
+        if self.new_size >= self.size:
+            self.restore_backup_file(self.filename, self.new_filename,
+                                     self.backup_filename)
             message_dialog(self.win, 'info', _("Compression not useful"),
-                _("\"{}\": the size of the compressed image is larger than the original size.") \
+                _("\"{}\": the image is already compressed.") \
                 .format(self.full_name))
-            return
+        self.delete_backup_file(self.backup_filename)
 
         # Calculate savings in percent
         savings = round(100 - (self.new_size * 100 / self.size), 2)
+
         self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
 
+        # Handle cjpeg weird bug
         if self.fix_jpg_weird_bug:
-            if not self.restore_backup_file(self.filename, self.filename,
-                                            self.tmp_filename):
-                return
-            if not self.delete_backup_file(self.tmp_filename):
-                return
+            self.restore_backup_file(self.filename, self.filename,
+                                     self.tmp_filename)
+            self.delete_backup_file(self.tmp_filename)
 
     def build_png_command(self, lossy):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
@@ -165,8 +153,7 @@ class Compressor():
         if lossy:  # lossy compression
             if not self._settings.get_boolean('new-file'):  # not using suffix
                 # to fix https://github.com/mozilla/mozjpeg/issues/248
-                if not self.create_backup_file(self.filename, self.tmp_filename):
-                    return
+                self.create_backup_file(self.filename, self.tmp_filename)
                 new_filename = self.tmp_filename
                 self.fix_jpg_weird_bug = True
             else:
