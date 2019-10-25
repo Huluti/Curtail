@@ -16,7 +16,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-import shlex
 from gi.repository import Gio, GObject
 from os import path, remove
 from shutil import copy2
@@ -80,10 +79,11 @@ class Compressor():
 
     def run_command(self, command):
         try:
-            p = subprocess.Popen(shlex.split(command),
+            p = subprocess.Popen(command,
                                  stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE,
-                                 stdin=subprocess.PIPE)
+                                 stdin=subprocess.PIPE,
+                                 shell=True)
             self.io_id = GObject.io_add_watch(p.stdout, GObject.IO_IN, self.feed)
             GObject.io_add_watch(p.stdout, GObject.IO_HUP, self.command_finished)
         except Exception as err:
