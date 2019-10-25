@@ -213,7 +213,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def check_filename(self, filename):
         if not path.exists(filename):  # if path doesn't exist
             message_dialog(self, 'error', _("Path not valid"),
-                           _("\"{}\" doesn't exist.") \
+                           _("{} doesn't exist.") \
                            .format(filename))
             return False
 
@@ -226,7 +226,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
         if file_data['ext'] not in ('png', 'jpg', 'jpeg'):
             message_dialog(self, 'error', _("Format not supported"),
-                        _("The format of \"{}\" is not supported.") \
+                        _("The format of {} is not supported.") \
                         .format(file_data['full_name']))
             return False
         return True

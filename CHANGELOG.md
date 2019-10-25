@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 - Add a spinner to indicate the progress of the compression.
 - Using threads to compress images simultaneously.
 
+### Changed
+- Simplification of certain sentences.
+
 ### Fixed
 - Really don't block the UI anymore when performing compression.
 
