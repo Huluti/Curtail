@@ -1,5 +1,5 @@
 project('imcompressor',  
-          version: '0.6',
+          version: '0.7',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
                    ],

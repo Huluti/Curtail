@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.7] - DEV
+## [0.7] - 2019-10-25
 ### Added
 - Add a spinner to indicate the progress of the compression.
 - Using threads to compress images simultaneously.

@@ -32,6 +32,16 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.7" date="2019-10-25">
+      <description>
+        <ul>
+          <li>Add a spinner to indicate the progress of the compression</li>
+          <li>Using threads to compress images simultaneously</li>
+          <li>Simplification of certain sentences</li>
+          <li>Really don't block the UI anymore when performing compression</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.6" date="2019-10-21">
       <description>
         <ul>
