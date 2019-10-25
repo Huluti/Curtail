@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-18 14:45+0200\n"
-"PO-Revision-Date: 2019-10-18 17:34+0200\n"
-"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
+"POT-Creation-Date: 2019-10-25 14:44+0200\n"
+"PO-Revision-Date: 2019-10-25 20:06+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/com.github.huluti.ImCompressor.desktop.in:3
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:7
@@ -104,7 +104,7 @@ msgstr "Donker thema gebruiken"
 msgid "Use dark theme for the windows."
 msgstr "Voorzie de vensters van een donkere kleur."
 
-#: src/ui/window.ui:29 src/window.py:267
+#: src/ui/window.ui:29 src/window.py:287
 msgid "Simple & useful image compressor"
 msgstr "Eenvoudig programma voor afbeeldingscompressie"
 
@@ -116,7 +116,7 @@ msgstr "Sleep je afbeeldingen hierheen..."
 msgid "or"
 msgstr "of"
 
-#: src/ui/window.ui:145 src/window.py:160
+#: src/ui/window.ui:145 src/window.py:168
 msgid "Browse your files"
 msgstr "Verken je bestanden"
 
@@ -160,83 +160,80 @@ msgstr "Geavanceerd"
 msgid "About ImCompressor"
 msgstr "Over ImCompressor"
 
-#: src/window.py:85
+#: src/window.py:88
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: src/window.py:86
+#: src/window.py:89
 msgid "Old Size"
 msgstr "Oorspronkelijke grootte"
 
-#: src/window.py:87
+#: src/window.py:90
 msgid "New Size"
 msgstr "Nieuwe grootte"
 
-#: src/window.py:88
+#: src/window.py:91
 msgid "Savings"
 msgstr "Opslaan"
 
-#: src/window.py:147
+#: src/window.py:155
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Opgeslagen afbeeldingen worden voorzien van de extensie <b>'{}'</b>."
 
-#: src/window.py:150
+#: src/window.py:158
 msgid "Images are <b>overwritten</b>."
 msgstr "Afbeeldingen worden <b>overschreven</b>."
 
 #. if path doesn't exist
-#: src/window.py:207
+#: src/window.py:215
 msgid "Path not valid"
 msgstr "Ongeldig pad"
 
-#: src/window.py:208
-msgid "\"{}\" doesn't exist."
+#: src/window.py:216
+msgid "{} doesn't exist."
 msgstr "'{}' bestaat niet."
 
 #. don't allow folders for now
-#: src/window.py:213
+#: src/window.py:221
 msgid "Operation not supported"
 msgstr "Geen ondersteuning"
 
-#: src/window.py:214
+#: src/window.py:222
 msgid "Discovery of images in folders is not yet supported."
 msgstr "Het ophalen van afbeeldingen uit mappen wordt nog niet ondersteund."
 
-#: src/window.py:220
+#: src/window.py:228
 msgid "Format not supported"
 msgstr "Geen ondersteuning"
 
-#: src/window.py:221
-msgid "The format of \"{}\" is not supported."
-msgstr "Het formaat '{}' wordt niet ondersteund."
+#: src/window.py:229
+msgid "The format of {} is not supported."
+msgstr "Het formaat van '{}' wordt niet ondersteund."
 
-#: src/window.py:266
+#: src/window.py:286
 msgid "translator-credits"
 msgstr "Heimen Stoffels"
 
-#: src/window.py:268
+#: src/window.py:288
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Uitgebracht onder de GNU GPL(v3)-licentie.\n"
 
-#: src/compressor.py:56 src/compressor.py:66 src/compressor.py:77
-#: src/compressor.py:100 src/compressor.py:150
+#: src/compressor.py:60 src/compressor.py:68 src/compressor.py:77
+#: src/compressor.py:90
 msgid "An error has occured"
 msgstr "Er is een fout opgetreden"
 
-#: src/compressor.py:101
-msgid "\"{}\" has not been minimized."
-msgstr "'{}' is niet geminimaliseerd."
+#: src/compressor.py:121
+msgid "Nothing"
+msgstr "Niets"
 
-#: src/compressor.py:105
+#: src/compressor.py:122
 msgid "Compression not useful"
 msgstr "Geen compressie benodigd"
 
-#: src/compressor.py:106
-msgid ""
-"\"{}\": the size of the compressed image is larger than the original size."
-msgstr ""
-"'{}': de grootte van de gecomprimeerde afbeelding overschrijdt die van de "
-"oorspronkelijke."
+#: src/compressor.py:123
+msgid "{} is already compressed at max with current options."
+msgstr "'{}' is, door de huidige opties, al maximaal gecomprimeerd."
 
 #: src/tools.py:63
 msgid "All images"
@@ -249,3 +246,12 @@ msgstr "PNG-afbeeldingen"
 #: src/tools.py:72
 msgid "JPEG images"
 msgstr "JPEG-afbeeldingen"
+
+#~ msgid "\"{}\" has not been minimized."
+#~ msgstr "'{}' is niet geminimaliseerd."
+
+#~ msgid ""
+#~ "\"{}\": the size of the compressed image is larger than the original size."
+#~ msgstr ""
+#~ "'{}': de grootte van de gecomprimeerde afbeelding overschrijdt die van de "
+#~ "oorspronkelijke."
