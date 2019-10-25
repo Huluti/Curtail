@@ -113,17 +113,18 @@ class Compressor():
             self.delete_backup_file(self.tmp_filename)
 
         self.new_size = path.getsize(self.new_filename)
-        savings = round(100 - (self.new_size * 100 / self.size), 2)
-
-        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
 
         # Check if new size is equal or higher than the old one
         if self.new_size >= self.size:
             self.restore_backup_file(self.filename, self.new_filename,
                                      self.backup_filename)
+            self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
             message_dialog(self.win, 'info', _("Compression not useful"),
-                _("\"{}\": the image is already compressed.") \
-                .format(self.full_name))
+                _("{} is already compressed at max.").format(self.full_name))
+        else:
+            savings = round(100 - (self.new_size * 100 / self.size), 2)
+            self.win.update_treeview_row(self.tree_iter, self.new_size,
+                                         '{}%'.format(str(savings)))
         self.delete_backup_file(self.backup_filename)
 
     def build_png_command(self, lossy):

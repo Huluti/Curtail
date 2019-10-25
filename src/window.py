@@ -141,8 +141,10 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
 
     def update_treeview_row(self, tree_iter, new_size, savings):
         self.store.set_value(tree_iter, 0, False)
-        self.store.set_value(tree_iter, 3, sizeof_fmt(new_size))
-        self.store.set_value(tree_iter, 4, '{}%'.format(str(savings)))
+        if type(new_size) is int:
+            new_size = sizeof_fmt(new_size)
+        self.store.set_value(tree_iter, 3, new_size)
+        self.store.set_value(tree_iter, 4, savings)
 
     def go_end_treeview(self):
         self.adjustment.set_value(self.adjustment.get_upper())
