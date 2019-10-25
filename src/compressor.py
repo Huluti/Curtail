@@ -120,7 +120,8 @@ class Compressor():
                                      self.backup_filename)
             self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
             message_dialog(self.win, 'info', _("Compression not useful"),
-                _("{} is already compressed at max.").format(self.full_name))
+                _("{} is already compressed at max with current options.") \
+                           .format(self.full_name))
         else:
             savings = round(100 - (self.new_size * 100 / self.size), 2)
             self.win.update_treeview_row(self.tree_iter, self.new_size,

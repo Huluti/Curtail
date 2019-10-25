@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-18 14:45+0200\n"
+"POT-Creation-Date: 2019-10-25 14:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Use dark theme for the windows."
 msgstr ""
 
-#: src/ui/window.ui:29 src/window.py:267
+#: src/ui/window.ui:29 src/window.py:287
 msgid "Simple & useful image compressor"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:145 src/window.py:160
+#: src/ui/window.ui:145 src/window.py:168
 msgid "Browse your files"
 msgstr ""
 
@@ -155,80 +155,79 @@ msgstr ""
 msgid "About ImCompressor"
 msgstr ""
 
-#: src/window.py:85
+#: src/window.py:88
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:86
+#: src/window.py:89
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:87
+#: src/window.py:90
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:88
+#: src/window.py:91
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:147
+#: src/window.py:155
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr ""
 
-#: src/window.py:150
+#: src/window.py:158
 msgid "Images are <b>overwritten</b>."
 msgstr ""
 
 #. if path doesn't exist
-#: src/window.py:207
+#: src/window.py:215
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:208
-msgid "\"{}\" doesn't exist."
+#: src/window.py:216
+msgid "{} doesn't exist."
 msgstr ""
 
 #. don't allow folders for now
-#: src/window.py:213
+#: src/window.py:221
 msgid "Operation not supported"
 msgstr ""
 
-#: src/window.py:214
+#: src/window.py:222
 msgid "Discovery of images in folders is not yet supported."
 msgstr ""
 
-#: src/window.py:220
+#: src/window.py:228
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:221
-msgid "The format of \"{}\" is not supported."
+#: src/window.py:229
+msgid "The format of {} is not supported."
 msgstr ""
 
-#: src/window.py:266
+#: src/window.py:286
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:268
+#: src/window.py:288
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
-#: src/compressor.py:56 src/compressor.py:66 src/compressor.py:77
-#: src/compressor.py:100 src/compressor.py:150
+#: src/compressor.py:60 src/compressor.py:68 src/compressor.py:77
+#: src/compressor.py:90
 msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:101
-msgid "\"{}\" has not been minimized."
+#: src/compressor.py:121
+msgid "Nothing"
 msgstr ""
 
-#: src/compressor.py:105
+#: src/compressor.py:122
 msgid "Compression not useful"
 msgstr ""
 
-#: src/compressor.py:106
-msgid ""
-"\"{}\": the size of the compressed image is larger than the original size."
+#: src/compressor.py:123
+msgid "{} is already compressed at max with current options."
 msgstr ""
 
 #: src/tools.py:63
