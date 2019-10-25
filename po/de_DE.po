@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-18 14:45+0200\n"
-"PO-Revision-Date: 2019-10-18 15:02+0200\n"
+"POT-Creation-Date: 2019-10-25 14:44+0200\n"
+"PO-Revision-Date: 2019-10-25 20:32+0200\n"
 "Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: German - Germany <>\n"
 "Language: de_DE\n"
@@ -103,7 +103,7 @@ msgstr "Dunkles Thema verwenden"
 msgid "Use dark theme for the windows."
 msgstr "Dunkles Thema für Fenster verwenden."
 
-#: src/ui/window.ui:29 src/window.py:267
+#: src/ui/window.ui:29 src/window.py:287
 msgid "Simple & useful image compressor"
 msgstr "Einfacher & nützlicher Kompressor für Bilder"
 
@@ -115,7 +115,7 @@ msgstr "Bilder hierher ziehen…"
 msgid "or"
 msgstr "oder"
 
-#: src/ui/window.ui:145 src/window.py:160
+#: src/ui/window.ui:145 src/window.py:168
 msgid "Browse your files"
 msgstr "Dateien durchsuchen"
 
@@ -159,81 +159,80 @@ msgstr "Erweitert"
 msgid "About ImCompressor"
 msgstr "Info zu ImCompressor"
 
-#: src/window.py:85
+#: src/window.py:88
 msgid "Filename"
 msgstr "Dateiname"
 
-#: src/window.py:86
+#: src/window.py:89
 msgid "Old Size"
 msgstr "Alte Größe"
 
-#: src/window.py:87
+#: src/window.py:90
 msgid "New Size"
 msgstr "Neue Größe"
 
-#: src/window.py:88
+#: src/window.py:91
 msgid "Savings"
 msgstr "Einsparung"
 
-#: src/window.py:147
+#: src/window.py:155
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert."
 
-#: src/window.py:150
+#: src/window.py:158
 msgid "Images are <b>overwritten</b>."
 msgstr "Bilder werden <b>überschrieben</b>."
 
 #. if path doesn't exist
-#: src/window.py:207
+#: src/window.py:215
 msgid "Path not valid"
 msgstr "Ungültiger Pfad"
 
-#: src/window.py:208
-msgid "\"{}\" doesn't exist."
-msgstr "\"{}\" existiert nicht."
+#: src/window.py:216
+msgid "{} doesn't exist."
+msgstr "{} existiert nicht."
 
 #. don't allow folders for now
-#: src/window.py:213
+#: src/window.py:221
 msgid "Operation not supported"
 msgstr "Aktion nicht unterstützt"
 
-#: src/window.py:214
+#: src/window.py:222
 msgid "Discovery of images in folders is not yet supported."
 msgstr "Die Erkennung von Bildern in Ordnern wird noch nicht unterstützt."
 
-#: src/window.py:220
+#: src/window.py:228
 msgid "Format not supported"
 msgstr "Nicht unterstütztes Format"
 
-#: src/window.py:221
-msgid "The format of \"{}\" is not supported."
-msgstr "Das Format von \"{}\" wird nicht unterstützt."
+#: src/window.py:229
+msgid "The format of {} is not supported."
+msgstr "Das Format von {} wird nicht unterstützt."
 
-#: src/window.py:266
+#: src/window.py:286
 msgid "translator-credits"
 msgstr "Etamuk"
 
-#: src/window.py:268
+#: src/window.py:288
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Veröffentlicht unter der Lizenz GNU GPL(v3).\n"
 
-#: src/compressor.py:56 src/compressor.py:66 src/compressor.py:77
-#: src/compressor.py:100 src/compressor.py:150
+#: src/compressor.py:60 src/compressor.py:68 src/compressor.py:77
+#: src/compressor.py:90
 msgid "An error has occured"
 msgstr "Es ist ein Fehler aufgetreten"
 
-#: src/compressor.py:101
-msgid "\"{}\" has not been minimized."
-msgstr "\"{}\" wurde nicht verkleinert."
+#: src/compressor.py:121
+msgid "Nothing"
+msgstr "Nichts"
 
-#: src/compressor.py:105
+#: src/compressor.py:122
 msgid "Compression not useful"
 msgstr "Komprimierung nicht sinnvoll"
 
-#: src/compressor.py:106
-msgid ""
-"\"{}\": the size of the compressed image is larger than the original size."
-msgstr "\"{}\": Das komprimierte Bild ist größer als das Original."
+#: src/compressor.py:123
+msgid "{} is already compressed at max with current options."
+msgstr "{} ist mit den aktuellen Optionen bereits maximal komprimiert."
 
 #: src/tools.py:63
 msgid "All images"
@@ -246,3 +245,10 @@ msgstr "PNG-Bilder"
 #: src/tools.py:72
 msgid "JPEG images"
 msgstr "JPEG-Bilder"
+
+#~ msgid "\"{}\" has not been minimized."
+#~ msgstr "\"{}\" wurde nicht verkleinert."
+
+#~ msgid ""
+#~ "\"{}\": the size of the compressed image is larger than the original size."
+#~ msgstr "\"{}\": Das komprimierte Bild ist größer als das Original."
