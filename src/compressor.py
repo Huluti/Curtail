@@ -106,6 +106,12 @@ class Compressor():
         GObject.source_remove(self.io_id)
         stdout.close()
 
+        # Handle cjpeg weird bug
+        if self.fix_jpg_weird_bug:
+            self.restore_backup_file(self.filename, self.filename,
+                                     self.tmp_filename)
+            self.delete_backup_file(self.tmp_filename)
+
         self.new_size = path.getsize(self.new_filename)
         savings = round(100 - (self.new_size * 100 / self.size), 2)
 
@@ -119,12 +125,6 @@ class Compressor():
                 _("\"{}\": the image is already compressed.") \
                 .format(self.full_name))
         self.delete_backup_file(self.backup_filename)
-
-        # Handle cjpeg weird bug
-        if self.fix_jpg_weird_bug:
-            self.restore_backup_file(self.filename, self.filename,
-                                     self.tmp_filename)
-            self.delete_backup_file(self.tmp_filename)
 
     def build_png_command(self, lossy):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
