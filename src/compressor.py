@@ -137,7 +137,7 @@ class Compressor():
                                       self.new_filename)
         else: # lossless compression
             command = optipng.format(png_lossless_level, self.filename,
-                                      self.new_filename)
+                                     self.new_filename)
         return command
 
     def build_jpg_command(self, lossy, metadata):
@@ -151,7 +151,7 @@ class Compressor():
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression
             command = jpegoptim.format(jpg_lossy_level, self.filename,
-                                    self.new_filename)
+                                       self.new_filename)
         else:  # lossless compression
             command = jpegoptim2.format(self.filename, self.new_filename)
         return command
