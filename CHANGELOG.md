@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Replace mozjpeg lib by jpegoptim.
+- Update translations.
 
 ## [0.7] - 2019-10-25
 ### Added
