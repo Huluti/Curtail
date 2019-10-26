@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-25 14:44+0200\n"
+"POT-Creation-Date: 2019-10-26 15:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,51 +53,59 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:11
-msgid "Enable lossy mode"
+#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:138
+msgid "Keep metadata"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:12
-msgid "Use lossy mode to compress images."
+msgid "This setting preserves metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:99
-msgid "Suffix to append at end of new file"
+#: data/com.github.huluti.ImCompressor.gschema.xml:16
+msgid "Enable lossy mode"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:17
-msgid "Suffix to append at end of new file."
+msgid "Use lossy mode to compress images."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:153
-msgid "PNG Lossy Compression Level"
+#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:88
+msgid "Suffix to append at end of new file"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:22
-msgid "Lossy compression level to use for PNG images."
+msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:26
-msgid "PNG Lossless Compression Level"
+#: data/com.github.huluti.ImCompressor.gschema.xml:26 src/ui/preferences.ui:179
+msgid "PNG Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:27
-msgid "Lossless compression level to use for PNG images."
+msgid "Lossy compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:180
-msgid "JPG Lossy Compression Level"
+#: data/com.github.huluti.ImCompressor.gschema.xml:31
+msgid "PNG Lossless Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:32
-msgid "Lossy compression level to use for JPG images."
+msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:112
-msgid "Enable dark theme"
+#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:206
+msgid "JPG Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:37
+msgid "Lossy compression level to use for JPG images."
+msgstr ""
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:41 src/ui/preferences.ui:62
+msgid "Enable dark theme"
+msgstr ""
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:42
 msgid "Use dark theme for the windows."
 msgstr ""
 
@@ -129,25 +137,25 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: src/ui/preferences.ui:75
+#: src/ui/preferences.ui:112
 msgid "Save the compressed image into a new file"
 msgstr ""
 
-#: src/ui/preferences.ui:135
+#: src/ui/preferences.ui:161
 msgid "General"
 msgstr ""
 
-#: src/ui/preferences.ui:204
+#: src/ui/preferences.ui:230
 msgid "Compression"
 msgstr ""
 
-#: src/ui/preferences.ui:235
+#: src/ui/preferences.ui:261
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:246
+#: src/ui/preferences.ui:272
 msgid "Advanced"
 msgstr ""
 
@@ -213,20 +221,20 @@ msgstr ""
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
-#: src/compressor.py:60 src/compressor.py:68 src/compressor.py:77
-#: src/compressor.py:90
+#: src/compressor.py:56 src/compressor.py:64 src/compressor.py:73
+#: src/compressor.py:86
 msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:121
+#: src/compressor.py:112
 msgid "Nothing"
 msgstr ""
 
-#: src/compressor.py:122
+#: src/compressor.py:113
 msgid "Compression not useful"
 msgstr ""
 
-#: src/compressor.py:123
+#: src/compressor.py:114
 msgid "{} is already compressed at max with current options."
 msgstr ""
 

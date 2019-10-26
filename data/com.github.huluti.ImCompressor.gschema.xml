@@ -8,7 +8,7 @@
     </key>
 	  <key type="b" name="metadata">
       <default>true</default>
-      <summary>Keep metatdata</summary>
+      <summary>Keep metadata</summary>
       <description>This setting preserves metadata of images.</description>
     </key>
 	  <key type="b" name="lossy">

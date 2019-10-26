@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-25 14:44+0200\n"
-"PO-Revision-Date: 2019-10-25 14:45+0200\n"
+"POT-Creation-Date: 2019-10-26 15:05+0200\n"
+"PO-Revision-Date: 2019-10-26 15:06+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -56,51 +56,59 @@ msgstr "Sauvegarder dans un nouveau fichier"
 msgid "Save the compressed image into a new file."
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:11
+#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:138
+msgid "Keep metadata"
+msgstr "Garder les métadonnées"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "This setting preserves metadata of images."
+msgstr "Ce paramètre préserve les métadonnées de l'image."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16
 msgid "Enable lossy mode"
 msgstr "Activer le mode avec-perte"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:12
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
 msgid "Use lossy mode to compress images."
 msgstr "Utilise le mode avec-perte pour compresser les images."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:99
+#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:88
 msgid "Suffix to append at end of new file"
 msgstr "Suffixe à ajouter à la fin d'un nouveau fichier"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:17
+#: data/com.github.huluti.ImCompressor.gschema.xml:22
 msgid "Suffix to append at end of new file."
 msgstr "Suffixe à ajouter à la fin d'un nouveau fichier."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:153
+#: data/com.github.huluti.ImCompressor.gschema.xml:26 src/ui/preferences.ui:179
 msgid "PNG Lossy Compression Level"
 msgstr "Niveau de compression avec-perte des PNG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:22
+#: data/com.github.huluti.ImCompressor.gschema.xml:27
 msgid "Lossy compression level to use for PNG images."
 msgstr "Niveau de compression avec-perte à utiliser pour les images PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:26
+#: data/com.github.huluti.ImCompressor.gschema.xml:31
 msgid "PNG Lossless Compression Level"
 msgstr "Niveau de compression sans-perte des PNG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:27
+#: data/com.github.huluti.ImCompressor.gschema.xml:32
 msgid "Lossless compression level to use for PNG images."
 msgstr "Niveau de compression sans-perte à utiliser pour les images PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:31 src/ui/preferences.ui:180
+#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:206
 msgid "JPG Lossy Compression Level"
 msgstr "Niveau de compression avec-perte des JPG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:32
+#: data/com.github.huluti.ImCompressor.gschema.xml:37
 msgid "Lossy compression level to use for JPG images."
 msgstr "Niveau de compression avec-perte à utiliser pour les images JPG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:112
+#: data/com.github.huluti.ImCompressor.gschema.xml:41 src/ui/preferences.ui:62
 msgid "Enable dark theme"
 msgstr "Activer le mode sombre"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:37
+#: data/com.github.huluti.ImCompressor.gschema.xml:42
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
@@ -132,19 +140,19 @@ msgstr "Avec-perte"
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/ui/preferences.ui:75
+#: src/ui/preferences.ui:112
 msgid "Save the compressed image into a new file"
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
 
-#: src/ui/preferences.ui:135
+#: src/ui/preferences.ui:161
 msgid "General"
 msgstr "Général"
 
-#: src/ui/preferences.ui:204
+#: src/ui/preferences.ui:230
 msgid "Compression"
 msgstr "Compression"
 
-#: src/ui/preferences.ui:235
+#: src/ui/preferences.ui:261
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -152,7 +160,7 @@ msgstr ""
 "Niveau de compression sans-perte des PNG\n"
 "(plus c'est haut, plus c'est lent)"
 
-#: src/ui/preferences.ui:246
+#: src/ui/preferences.ui:272
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -218,22 +226,20 @@ msgstr "Hugo Posnic"
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:60 src/compressor.py:68 src/compressor.py:77
-#: src/compressor.py:90
+#: src/compressor.py:56 src/compressor.py:64 src/compressor.py:73
+#: src/compressor.py:86
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:121
+#: src/compressor.py:112
 msgid "Nothing"
 msgstr "Rien"
 
-#: src/compressor.py:122
+#: src/compressor.py:113
 msgid "Compression not useful"
 msgstr "Compression inutile"
 
-#: src/compressor.py:123
-#, fuzzy
-#| msgid "{} is already compressed at max."
+#: src/compressor.py:114
 msgid "{} is already compressed at max with current options."
 msgstr "{} est déjà compressée au maximum avec les paramètres actuels."
 
