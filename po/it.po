@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-25 15:07+0200\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2019-10-26 18:29+0200\n"
+"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +36,8 @@ msgid "Simple &amp; lossless image compressor"
 msgstr "Compressore di immagine semplice & senza perdite"
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:10
-msgid ""
-"ImCompressor is a lossless image compressor, supporting PNG and JPEG file "
-"types."
-msgstr ""
-"ImCompressor è un compressore di immagini senza perdita di dati, che "
-"supporta i formati PNG e JPG."
+msgid "ImCompressor is a lossless image compressor, supporting PNG and JPEG file types."
+msgstr "ImCompressor è un compressore di immagini senza perdita di dati, che supporta i formati PNG e JPG."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:13
 msgid "Hugo Posnic"
@@ -80,10 +76,6 @@ msgstr "Suffisso da aggiungere alla fine del nuovo file"
 msgid "PNG Lossy Compression Level"
 msgstr "Livello di compressione PNG con perdita"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:27
-msgid "Lossy compression level to use for PNG images."
-msgstr "livello di compressione con perdita da utilizzare per immagini PNG"
-
 #: data/com.github.huluti.ImCompressor.gschema.xml:31
 msgid "PNG Lossless Compression Level"
 msgstr "Livello di compressione PNG senza perdita"
@@ -91,10 +83,6 @@ msgstr "Livello di compressione PNG senza perdita"
 #: data/com.github.huluti.ImCompressor.gschema.xml:27
 msgid "Lossy compression level to use for PNG images."
 msgstr "livello di compressione con perdita da utilizzare per immagini PNG."
-
-#: data/com.github.huluti.ImCompressor.gschema.xml:31
-msgid "PNG Lossless Compression Level"
-msgstr "Livello di compressione PNG senza perdita"
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:32
 msgid "Lossless compression level to use for PNG images."
@@ -157,8 +145,7 @@ msgid "Compression"
 msgstr "Compressione"
 
 #: src/ui/preferences.ui:261
-msgid ""
-"PNG Lossless Compression Level\n"
+msgid "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr "Livello di compressione PNG senza perdita\n"
 "(più è alto, più è lento)"
@@ -188,10 +175,8 @@ msgid "Savings"
 msgstr "Risparmio"
 
 #: src/window.py:135
-#, fuzzy
-#| msgid "Images are saved with <b>'{}'suffix</b>."
 msgid "Images are saved with <b>'{}' suffix</b>."
-msgstr "Le immagini vengono salvate con <b>'{}'suffisso</b>."
+msgstr "Le immagini vengono salvate con <b>'{}' suffisso</b>."
 
 #: src/window.py:138
 msgid "Images are <b>overwritten</b>."
@@ -258,3 +243,4 @@ msgstr "Immagini PNG"
 #: src/tools.py:72
 msgid "JPEG images"
 msgstr "Immagini JPEG"
+
