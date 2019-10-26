@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 15:05+0200\n"
-"PO-Revision-Date: 2019-10-26 15:06+0200\n"
+"POT-Creation-Date: 2019-10-26 18:22+0200\n"
+"PO-Revision-Date: 2019-10-26 18:23+0200\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -44,7 +44,15 @@ msgstr ""
 "ImCompressor est un compresseur d'image sans et avec perte qui supporte les "
 "formats PNG et JPG."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:13
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:11
+msgid ""
+"It support both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Il prend en charge les modes de compression sans perte et avec perte avec "
+"une option permettant de conserver ou non les métadonnées des images."
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr ""
 
@@ -231,15 +239,15 @@ msgstr "Distribué sous la licence GNU GPL(v3).\n"
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:112
+#: src/compressor.py:111
 msgid "Nothing"
 msgstr "Rien"
 
-#: src/compressor.py:113
+#: src/compressor.py:112
 msgid "Compression not useful"
 msgstr "Compression inutile"
 
-#: src/compressor.py:114
+#: src/compressor.py:113
 msgid "{} is already compressed at max with current options."
 msgstr "{} est déjà compressée au maximum avec les paramètres actuels."
 

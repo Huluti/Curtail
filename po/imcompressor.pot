@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 15:05+0200\n"
+"POT-Creation-Date: 2019-10-26 18:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,13 @@ msgid ""
 "types."
 msgstr ""
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:13
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:11
+msgid ""
+"It support both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+
+#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr ""
 
@@ -226,15 +232,15 @@ msgstr ""
 msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:112
+#: src/compressor.py:111
 msgid "Nothing"
 msgstr ""
 
-#: src/compressor.py:113
+#: src/compressor.py:112
 msgid "Compression not useful"
 msgstr ""
 
-#: src/compressor.py:114
+#: src/compressor.py:113
 msgid "{} is already compressed at max with current options."
 msgstr ""
 
