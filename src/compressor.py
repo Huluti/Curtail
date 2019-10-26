@@ -146,7 +146,7 @@ class Compressor():
         jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
 
         if not metadata:
-            jpgoptim += ' --strip-all'
+            jpegoptim += ' --strip-all'
             jpegoptim2 += ' --strip-all'
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
