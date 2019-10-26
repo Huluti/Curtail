@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: imcompressor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-12 01:13+0200\n"
-"PO-Revision-Date: 2019-10-15 12:07+0200\n"
-"Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
+"PO-Revision-Date: 2019-10-25 15:07+0200\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -55,10 +55,58 @@ msgstr "Salva in un nuovo file"
 msgid "Save the compressed image into a new file."
 msgstr "Salva l'immagine compressa in un nuovo file."
 
+#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:138
+msgid "Keep metadata"
+msgstr "Mantieni metadati"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:12
+msgid "This setting preserves metadata of images."
+msgstr "Questa impostazione conserva i metadati delle immagini."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:16
+msgid "Enable lossy mode"
+msgstr "Abilita la modalità con perdita"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:17
+msgid "Use lossy mode to compress images."
+msgstr "Utilizzare la modalità di perdita per comprimere le immagini."
+
 #: data/com.github.huluti.ImCompressor.gschema.xml:11
 #: data/com.github.huluti.ImCompressor.gschema.xml:12 src/ui/preferences.ui:82
 msgid "Suffix to append at end of new file"
 msgstr "Suffisso da aggiungere alla fine del nuovo file"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:26 src/ui/preferences.ui:179
+msgid "PNG Lossy Compression Level"
+msgstr "Livello di compressione PNG con perdita"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:27
+msgid "Lossy compression level to use for PNG images."
+msgstr "livello di compressione con perdita da utilizzare per immagini PNG"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:31
+msgid "PNG Lossless Compression Level"
+msgstr "Livello di compressione PNG senza perdita"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:27
+msgid "Lossy compression level to use for PNG images."
+msgstr "livello di compressione con perdita da utilizzare per immagini PNG."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:31
+msgid "PNG Lossless Compression Level"
+msgstr "Livello di compressione PNG senza perdita"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:32
+msgid "Lossless compression level to use for PNG images."
+msgstr "Livello di compressione senza perdita da utilizzare per le immagini PNG."
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:206
+msgid "JPG Lossy Compression Level"
+msgstr "Livello di compressione JPG con perdita"
+
+#: data/com.github.huluti.ImCompressor.gschema.xml:37
+msgid "Lossy compression level to use for JPG images."
+msgstr "livello di compressione con perdita da utilizzare per le immagini JPG."
 
 #: data/com.github.huluti.ImCompressor.gschema.xml:16 src/ui/preferences.ui:69
 msgid "Enable dark theme"
@@ -84,6 +132,14 @@ msgstr "o"
 msgid "Browse your files"
 msgstr "Sfoglia i tuoi file"
 
+#: src/ui/window.ui:170
+msgid "Lossless"
+msgstr "Senza perdita"
+
+#: src/ui/window.ui:199
+msgid "Lossy"
+msgstr "Con perdita"
+
 #: src/ui/preferences.ui:7 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Preferenze"
@@ -91,6 +147,25 @@ msgstr "Preferenze"
 #: src/ui/preferences.ui:30
 msgid "Save the compressed image into a new file"
 msgstr "Salva l'immagine compressa in un nuovo file"
+
+#: src/ui/preferences.ui:161
+msgid "General"
+msgstr "Generale"
+
+#: src/ui/preferences.ui:230
+msgid "Compression"
+msgstr "Compressione"
+
+#: src/ui/preferences.ui:261
+msgid ""
+"PNG Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr "Livello di compressione PNG senza perdita\n"
+"(più è alto, più è lento)"
+
+#: src/ui/preferences.ui:272
+msgid "Advanced"
+msgstr "Avanzato"
 
 #: src/ui/menu.ui:10
 msgid "About ImCompressor"
@@ -160,9 +235,17 @@ msgstr "Distribuito sotto licenza GNU GPL (v3).\n"
 msgid "An error has occured"
 msgstr "Si è verificato un errore"
 
-#: src/compressor.py:62
-msgid "\"{}\" has not been minimized."
-msgstr "\"{}\" non è stato minimizzato."
+#: src/compressor.py:112
+msgid "Nothing"
+msgstr "Niente"
+
+#: src/compressor.py:113
+msgid "Compression not useful"
+msgstr "Compressione non utile"
+
+#: src/compressor.py:114
+msgid "{} is already compressed at max with current options."
+msgstr "{} è già compresso al massimo con le opzioni correnti."
 
 #: src/tools.py:63
 msgid "All images"
