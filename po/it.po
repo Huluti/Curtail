@@ -47,7 +47,8 @@ msgstr ""
 msgid ""
 "It support both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
-msgstr ""
+msgstr "Supporta entrambe le modalità di compressione senza perdite e perdite con un'opzione per"
+"conservare o meno i metadati delle immagini."
 
 #: data/com.github.huluti.ImCompressor.appdata.xml.in:14
 msgid "Hugo Posnic"
