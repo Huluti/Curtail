@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.8] - DEV
 ### Added
-- Add an option to whether keep or not the data.
+- Add an option to whether keep or not metadata of images.
 
 ### Changed
 - Replace mozjpeg lib by jpegoptim.
