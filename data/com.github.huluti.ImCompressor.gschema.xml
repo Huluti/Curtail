@@ -32,7 +32,7 @@
       <description>Lossless compression level to use for PNG images.</description>
     </key>
 	  <key type="i" name="jpg-lossy-level">
-      <default>75</default>
+      <default>90</default>
       <summary>JPG Lossy Compression Level</summary>
       <description>Lossy compression level to use for JPG images.</description>
     </key>
