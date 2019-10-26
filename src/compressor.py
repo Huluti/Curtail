@@ -48,27 +48,27 @@ class Compressor():
         self.new_size = 0
         self.tree_iter = None
 
-    def create_backup_file(self, filename, backup_filename):
+    def create_backup_file(self):
         # Do a backup of the original file
         try:
-            copy2(filename, backup_filename)
+            copy2(self.filename, self.backup_filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
 
-    def delete_backup_file(self, backup_filename):
+    def delete_backup_file(self):
         # Delete backup file
         try:
-            remove(backup_filename)
+            remove(self.backup_filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
 
-    def restore_backup_file(self, filename, new_filename, backup_filename):
+    def restore_backup_file(self):
         # Restore original backup
         try:
-            remove(new_filename)
-            copy2(backup_filename, filename)
+            remove(self.new_filename)
+            copy2(self.backup_filename, self.filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
@@ -87,7 +87,7 @@ class Compressor():
                            str(err))
 
     def compress_image(self):
-        self.create_backup_file(self.filename, self.backup_filename)
+        self.create_backup_file()
 
         self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
@@ -107,8 +107,7 @@ class Compressor():
 
         # Check if new size is equal or higher than the old one
         if self.new_size >= self.size:
-            self.restore_backup_file(self.filename, self.new_filename,
-                                     self.backup_filename)
+            self.restore_backup_file()
             self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
             message_dialog(self.win, 'info', _("Compression not useful"),
                 _("{} is already compressed at max with current options.") \
@@ -117,7 +116,7 @@ class Compressor():
             savings = round(100 - (self.new_size * 100 / self.size), 2)
             self.win.update_treeview_row(self.tree_iter, self.new_size,
                                          '{}%'.format(str(savings)))
-        self.delete_backup_file(self.backup_filename)
+        self.delete_backup_file()
 
     def build_png_command(self, lossy, metadata):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
