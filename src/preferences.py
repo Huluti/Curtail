@@ -28,6 +28,7 @@ SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
 class ImCompressorPrefsWindow(Gtk.Window):
     __gtype_name__ = 'ImCompressorPrefsWindow'
 
+    toggle_metadata = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
     new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
@@ -49,6 +50,11 @@ class ImCompressorPrefsWindow(Gtk.Window):
         # Compression settings
 
         # Use new file
+        self.toggle_metadata.set_active(self._settings.get_boolean('metadata'))
+        self.toggle_metadata.connect('notify::active', self.on_bool_changed,
+                                     'metadata')
+
+        # Keep metadata
         self.toggle_new_file.set_active(self._settings.get_boolean('new-file'))
         self.toggle_new_file.connect('notify::active', self.on_bool_changed,
                                      'new-file')

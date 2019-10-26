@@ -6,6 +6,11 @@
       <summary>Save into a new file</summary>
       <description>Save the compressed image into a new file.</description>
     </key>
+	  <key type="b" name="metadata">
+      <default>true</default>
+      <summary>Keep metatdata</summary>
+      <description>This setting preserves metadata of images.</description>
+    </key>
 	  <key type="b" name="lossy">
       <default>false</default>
       <summary>Enable lossy mode</summary>

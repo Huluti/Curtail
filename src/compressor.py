@@ -43,10 +43,6 @@ class Compressor():
 
         self.backup_filename  = '{}/.{}-backup.{}'.format(self.file_data['folder'],
             self.file_data['name'], self.file_data['ext'])
-        # to fix https://github.com/mozilla/mozjpeg/issues/248
-        self.fix_jpg_weird_bug = False
-        self.tmp_filename  = '{}/.{}-tmp.{}'.format(self.file_data['folder'],
-            self.file_data['name'], self.file_data['ext'])
 
         self.size = path.getsize(self.filename)
         self.new_size = 0
@@ -96,21 +92,16 @@ class Compressor():
         self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
 
         lossy = self._settings.get_boolean('lossy')
+        metadata = self._settings.get_boolean('metadata')
         if self.file_data['ext'] == 'png':
-            command = self.build_png_command(lossy)
+            command = self.build_png_command(lossy, metadata)
         elif self.file_data['ext'] in('jpeg', 'jpg'):
-            command = self.build_jpg_command(lossy)
+            command = self.build_jpg_command(lossy, metadata)
         self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
         GObject.source_remove(self.io_id)
         stdout.close()
-
-        # Handle cjpeg weird bug
-        if self.fix_jpg_weird_bug:
-            self.restore_backup_file(self.filename, self.filename,
-                                     self.tmp_filename)
-            self.delete_backup_file(self.tmp_filename)
 
         self.new_size = path.getsize(self.new_filename)
 
@@ -128,9 +119,13 @@ class Compressor():
                                          '{}%'.format(str(savings)))
         self.delete_backup_file(self.backup_filename)
 
-    def build_png_command(self, lossy):
-        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
-        optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
+    def build_png_command(self, lossy, metadata):
+        if metadata:
+            pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
+            optipng = 'optipng -clobber -o{} "{}" -out "{}"'
+        else:
+            pngquant = 'pngquant --quality=0-{} -f --strip "{}" --output "{}"'
+            optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
 
         png_lossy_level = self._settings.get_int('png-lossy-level')
         png_lossless_level = self._settings.get_int('png-lossless-level')
@@ -146,23 +141,20 @@ class Compressor():
                                       self.new_filename)
         return command
 
-    def build_jpg_command(self, lossy):
-        cjpeg = 'cjpeg -quality {} "{}" > "{}"'
-        jpegtran = 'jpegtran -optimize -progressive -outfile "{}" "{}"'
+    def build_jpg_command(self, lossy, metadata):
+        if metadata:
+            jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
+            jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
+        else:
+            jpegoptim = 'jpegoptim --max={} -o -f --strip-all --stdout "{}" > "{}"'
+            jpegoptim2 = 'jpegoptim -o -f --strip-all --stdout "{}" > "{}"'
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression
-            if not self._settings.get_boolean('new-file'):  # not using suffix
-                # to fix https://github.com/mozilla/mozjpeg/issues/248
-                self.create_backup_file(self.filename, self.tmp_filename)
-                new_filename = self.tmp_filename
-                self.fix_jpg_weird_bug = True
-            else:
-                new_filename = self.new_filename
-            command = cjpeg.format(jpg_lossy_level, self.filename,
-                                    new_filename)
+            command = jpegoptim.format(jpg_lossy_level, self.filename,
+                                    self.new_filename)
         else:  # lossless compression
-            command = jpegtran.format(self.new_filename, self.filename)
+            command = jpegoptim2.format(self.filename, self.new_filename)
         return command
 
     def feed(self, stdout, condition):

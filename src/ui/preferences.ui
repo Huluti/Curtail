@@ -54,56 +54,6 @@
             <property name="row_spacing">20</property>
             <property name="column_spacing">20</property>
             <child>
-              <object class="GtkSwitch" id="toggle_new_file">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="halign">end</property>
-                <property name="valign">center</property>
-                <property name="hexpand">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="halign">start</property>
-                <property name="valign">center</property>
-                <property name="label" translatable="yes">Save the compressed image into a new file</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="entry_suffix">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="max_length">32</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="new_file_label">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="halign">start</property>
-                <property name="valign">center</property>
-                <property name="label" translatable="yes">Suffix to append at end of new file</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -113,7 +63,7 @@
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -126,7 +76,83 @@
               </object>
               <packing>
                 <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="new_file_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Suffix to append at end of new file</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
                 <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry_suffix">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="max_length">32</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Save the compressed image into a new file</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSwitch" id="toggle_new_file">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">end</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Keep metadata</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSwitch" id="toggle_metadata">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">end</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
               </packing>
             </child>
           </object>
