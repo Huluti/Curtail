@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8] - DEV
+### Added
+- Add an option to whether keep or not the data.
+
+### Changed
+- Replace mozjpeg lib by jpegoptim.
+
 ## [0.7] - 2019-10-25
 ### Added
 - Add a spinner to indicate the progress of the compression.
