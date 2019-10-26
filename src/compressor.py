@@ -120,12 +120,12 @@ class Compressor():
         self.delete_backup_file(self.backup_filename)
 
     def build_png_command(self, lossy, metadata):
-        if metadata:
-            pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
-            optipng = 'optipng -clobber -o{} "{}" -out "{}"'
-        else:
-            pngquant = 'pngquant --quality=0-{} -f --strip "{}" --output "{}"'
-            optipng = 'optipng -clobber -o{} -strip all "{}" -out "{}"'
+        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
+        optipng = 'optipng -clobber -o{} "{}" -out "{}"'
+
+        if not metadata:
+            pngquant += ' --strip'
+            optipng += ' -strip all'
 
         png_lossy_level = self._settings.get_int('png-lossy-level')
         png_lossless_level = self._settings.get_int('png-lossless-level')
@@ -142,12 +142,12 @@ class Compressor():
         return command
 
     def build_jpg_command(self, lossy, metadata):
-        if metadata:
-            jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
-            jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
-        else:
-            jpegoptim = 'jpegoptim --max={} -o -f --strip-all --stdout "{}" > "{}"'
-            jpegoptim2 = 'jpegoptim -o -f --strip-all --stdout "{}" > "{}"'
+        jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
+        jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
+
+        if not metadata:
+            jpgoptim += ' --strip-all'
+            jpegoptim2 += ' --strip-all'
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression
