@@ -33,6 +33,15 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.8" date="2019-10-27">
+      <description>
+        <ul>
+          <li>Add an option to whether keep or not metadata of images</li>
+          <li>Replace mozjpeg lib by jpegoptim</li>
+          <li>Update translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.7" date="2019-10-25">
       <description>
         <ul>
