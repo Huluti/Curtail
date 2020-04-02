@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] - 2020-04-02
+### Fixed
+- Fix compression of jpg files that produced 0b files.
+
 ## [0.8] - 2019-10-27
 ### Added
 - Add an option to whether keep or not metadata of images.
