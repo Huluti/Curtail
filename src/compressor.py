@@ -97,6 +97,7 @@ class Compressor():
             command = self.build_png_command(lossy, metadata)
         elif self.file_data['ext'] in('jpeg', 'jpg'):
             command = self.build_jpg_command(lossy, metadata)
+        print(command)
         self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
@@ -141,8 +142,13 @@ class Compressor():
         return command
 
     def build_jpg_command(self, lossy, metadata):
-        jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
-        jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
+        do_new_file = self._settings.get_boolean('new-file')
+        if do_new_file:
+            jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
+            jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
+        else:
+            jpegoptim = 'jpegoptim --max={} -o -f "{}"'
+            jpegoptim2 = 'jpegoptim -o -f "{}"'
 
         if not metadata:
             jpegoptim += ' --strip-all'
@@ -150,10 +156,16 @@ class Compressor():
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression
-            command = jpegoptim.format(jpg_lossy_level, self.filename,
-                                       self.new_filename)
+            if do_new_file:
+                command = jpegoptim.format(jpg_lossy_level, self.filename,
+                                           self.new_filename)
+            else:
+                command = jpegoptim.format(jpg_lossy_level, self.filename)
         else:  # lossless compression
-            command = jpegoptim2.format(self.filename, self.new_filename)
+            if do_new_file:
+                command = jpegoptim2.format(self.filename, self.new_filename)
+            else:
+                command = jpegoptim2.format(self.filename)
         return command
 
     def feed(self, stdout, condition):
