@@ -97,7 +97,6 @@ class Compressor():
             command = self.build_png_command(lossy, metadata)
         elif self.file_data['ext'] in('jpeg', 'jpg'):
             command = self.build_jpg_command(lossy, metadata)
-        print(command)
         self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
