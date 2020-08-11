@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.2] - 2020-08-11
+### Added
+- Add Portuguese (Brazil) translation.
+
+### Changed
+- Don't use legacy path for metadata.
+
 ## [0.8.1] - 2020-04-02
 ### Fixed
 - Fix compression of jpg files that produced 0b files.

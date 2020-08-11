@@ -33,6 +33,14 @@
   <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
 
   <releases>
+    <release version="0.8.2" date="2020-08-20">
+      <description>
+        <ul>
+          <li>Add Portuguese (Brazil) translation</li>
+          <li>Don't use legacy path for metadata</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.8.1" date="2020-04-02">
       <description>
         <ul>
