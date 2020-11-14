@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.3] - 2020-11-14
+### Changed
+- Just update GNOME runtime.
+
 ## [0.8.2] - 2020-08-11
 ### Added
 - Add Portuguese (Brazil) translation.
