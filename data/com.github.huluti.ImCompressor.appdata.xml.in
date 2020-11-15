@@ -35,6 +35,7 @@
   <releases>
     <release version="0.8.3" date="2020-11-14">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Just update GNOME runtime</li>
         </ul>
@@ -42,6 +43,7 @@
     </release>
     <release version="0.8.2" date="2020-08-11">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add Portuguese (Brazil) translation</li>
           <li>Don't use legacy path for metadata</li>
@@ -50,6 +52,7 @@
     </release>
     <release version="0.8.1" date="2020-04-02">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix compression of jpg files that produced 0b files</li>
         </ul>
@@ -57,6 +60,7 @@
     </release>
     <release version="0.8" date="2019-10-27">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add an option to whether keep or not metadata of images</li>
           <li>Replace mozjpeg lib by jpegoptim</li>
@@ -66,6 +70,7 @@
     </release>
     <release version="0.7" date="2019-10-25">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a spinner to indicate the progress of the compression</li>
           <li>Using threads to compress images simultaneously</li>
@@ -76,6 +81,7 @@
     </release>
     <release version="0.6" date="2019-10-21">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add lossy compression features</li>
           <li>Add options to change compression levels</li>
@@ -89,6 +95,7 @@
     </release>
     <release version="0.5.2" date="2019-10-13">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix build</li>
         </ul>
@@ -96,6 +103,7 @@
     </release>
     <release version="0.5.1" date="2019-10-13">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix opening files from file managers</li>
           <li>Add Italian translation</li>
@@ -105,6 +113,7 @@
     </release>
     <release version="0.5" date="2019-10-12">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Toggle the suffix entry according to new file option</li>
           <li>Scroll automatically to last compressed image in the list</li>
@@ -116,6 +125,7 @@
     </release>
     <release version="0.4" date="2019-10-11">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a setting to change the '-min' suffix</li>
           <li>Add some explanations of applied settings</li>
@@ -129,6 +139,7 @@
     </release>
     <release version="0.3" date="2019-10-10">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a preferences window with new-file and dark-theme options</li>
           <li>Various UI changes</li>
@@ -137,6 +148,7 @@
     </release>
     <release version="0.2.2" date="2019-10-10">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Permit to sort results by name or saving ratio</li>
           <li>Fix a crash when compressing an image with dots in its name</li>
@@ -145,6 +157,7 @@
     </release>
     <release version="0.2.1" date="2019-10-09">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Stick back and forward buttons</li>
           <li>Change APP id</li>
@@ -153,6 +166,7 @@
     </release>
     <release version="0.2" date="2019-10-08">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Various optimizations</li>
           <li>Improve error messages</li>
@@ -163,6 +177,7 @@
     </release>
     <release version="0.1" date="2019-10-08">
       <description>
+        <p>Here's the changelog of this version:</p>
         <ul>
           <li>Initial version</li>
         </ul>
