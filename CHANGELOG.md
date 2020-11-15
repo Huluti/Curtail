@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.4] - 2020-11-15
+### Changed
+- Just fix a packaging file.
+
 ## [0.8.3] - 2020-11-14
 ### Changed
 - Just update GNOME runtime.
