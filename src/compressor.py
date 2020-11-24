@@ -17,10 +17,10 @@
 
 import subprocess
 from gi.repository import Gio, GObject
-from os import path, remove
 from shutil import copy2
+from pathlib import Path
 
-from .tools import message_dialog, parse_filename
+from .tools import message_dialog
 
 
 SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
@@ -38,13 +38,16 @@ class Compressor():
         self.filename = filename
         self.new_filename = new_filename
 
-        self.file_data = parse_filename(self.filename)
-        self.full_name = self.file_data['full_name']
+        self.file_data = Path(self.filename)
+        self.new_file_data = Path(self.new_filename)
 
-        self.backup_filename  = '{}/.{}-backup.{}'.format(self.file_data['folder'],
-            self.file_data['name'], self.file_data['ext'])
+        self.full_name = self.file_data.name
 
-        self.size = path.getsize(self.filename)
+        self.backup_filename  = '{}/.{}-backup{}'.format(
+            self.file_data.parents[0], self.file_data.stem,
+            self.file_data.suffix)
+
+        self.size = self.file_data.stat().st_size
         self.new_size = 0
         self.tree_iter = None
 
@@ -59,7 +62,8 @@ class Compressor():
     def delete_backup_file(self):
         # Delete backup file
         try:
-            remove(self.backup_filename)
+            path = Path(self.backup_filename)
+            path.unlink()
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
                            str(err))
@@ -67,7 +71,7 @@ class Compressor():
     def restore_backup_file(self):
         # Restore original backup
         try:
-            remove(self.new_filename)
+            self.new_file_data.unlink()
             copy2(self.backup_filename, self.filename)
         except Exception as err:
             message_dialog(self.win, 'error', _("An error has occured"),
@@ -89,13 +93,13 @@ class Compressor():
     def compress_image(self):
         self.create_backup_file()
 
-        self.tree_iter = self.win.create_treeview_row(self.full_name, self.size)
+        self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
 
         lossy = self._settings.get_boolean('lossy')
         metadata = self._settings.get_boolean('metadata')
-        if self.file_data['ext'] == 'png':
+        if self.file_data.suffix == '.png':
             command = self.build_png_command(lossy, metadata)
-        elif self.file_data['ext'] in('jpeg', 'jpg'):
+        elif self.file_data.suffix in('.jpeg', '.jpg'):
             command = self.build_jpg_command(lossy, metadata)
         self.run_command(command)  # compress image
 
@@ -103,7 +107,7 @@ class Compressor():
         GObject.source_remove(self.io_id)
         stdout.close()
 
-        self.new_size = path.getsize(self.new_filename)
+        self.new_size = self.new_file_data.stat().st_size
 
         # Check if new size is equal or higher than the old one
         if self.new_size >= self.size:

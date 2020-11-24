@@ -18,11 +18,11 @@
 import subprocess
 from gi.repository import Gtk, Gdk, Gio, GLib
 from urllib.parse import unquote
-from os import path
+from pathlib import Path
 
 from .preferences import ImCompressorPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog, parse_filename, add_filechooser_filters, \
+from .tools import message_dialog, add_filechooser_filters, \
                     sizeof_fmt
 
 UI_PATH = '/com/github/huluti/ImCompressor/ui/'
@@ -193,9 +193,9 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         # Clean filenames
         for filename in filenames:
             filename = self.clean_filename(filename)
-            to_add = self.check_filename(filename)
-            if to_add:
-                final_filenames.append(filename)
+            verified_filenames = self.check_filename(filename)
+            for verified_filename in verified_filenames:
+                final_filenames.append(verified_filename)
         # Do operations
         for filename in final_filenames:
             new_filename = self.create_new_filename(filename)
@@ -210,34 +210,45 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             filename = filename.strip('\r\n\x00')  # remove spaces
         return filename
 
+    def check_extension(self, path):
+        if path.suffix:
+            return path.suffix in ('.png', '.jpg', '.jpeg')
+        else:
+            return False
+
     def check_filename(self, filename):
-        if not path.exists(filename):  # if path doesn't exist
+        verified_filenames = []
+
+        path = Path(filename)
+
+        if Path.is_dir(path):
+            for new_filename in path.rglob("*"):
+                new_path = Path(new_filename)
+                if Path.is_file(new_path):
+                    if self.check_extension(new_path):
+                        verified_filenames.append(new_filename)
+        elif Path.is_file(path):
+            if not self.check_extension(path):
+                message_dialog(self, 'error', _("Format not supported"),
+                        _("The format of {} is not supported.") \
+                        .format(file_data['full_name']))
+            else:
+                verified_filenames.append(filename)
+        else:
             message_dialog(self, 'error', _("Path not valid"),
                            _("{} doesn't exist.") \
                            .format(filename))
-            return False
 
-        if not path.isfile(filename):  # don't allow folders for now
-            message_dialog(self, 'error', _("Operation not supported"),
-                           _("Discovery of images in folders is not yet supported."))
-            return False
-
-        file_data = parse_filename(filename)
-
-        if file_data['ext'] not in ('png', 'jpg', 'jpeg'):
-            message_dialog(self, 'error', _("Format not supported"),
-                        _("The format of {} is not supported.") \
-                        .format(file_data['full_name']))
-            return False
-        return True
+        return verified_filenames
 
     def create_new_filename(self, filename):
-        file_data = parse_filename(filename)
+        path = Path(filename)
+
         # Use new file or not
         if self._settings.get_boolean('new-file'):
-            new_filename = '{}/{}{}.{}'.format(file_data['folder'],
-                file_data['name'], self._settings.get_string('suffix'),
-                file_data['ext'])
+            new_filename = '{}/{}{}{}'.format(path.parents[0],
+                path.stem, self._settings.get_string('suffix'),
+                path.suffix)
         else :
             new_filename = filename
         return new_filename
