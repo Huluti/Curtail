@@ -231,7 +231,7 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
             if not self.check_extension(path):
                 message_dialog(self, 'error', _("Format not supported"),
                         _("The format of {} is not supported.") \
-                        .format(file_data['full_name']))
+                        .format(filename)
             else:
                 verified_filenames.append(filename)
         else:
