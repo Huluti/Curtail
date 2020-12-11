@@ -6,8 +6,6 @@ Curtail (previously ImCompressor) is an useful image compressor, supporting PNG 
 It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.
 It is inspired by [Trimage](https://github.com/Kilian/Trimage) and [Image-Optimizer](https://github.com/GijsGoudzwaard/Image-Optimizer).
 
-By the same developer as [ImEditor](https://github.com/ImEditor/ImEditor).
-
 ### Supported formats
 
 PNG, JPEG
