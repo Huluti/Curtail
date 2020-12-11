@@ -283,6 +283,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
         if self.prefs_window is not None:
             self.prefs_window.destroy()
         self.prefs_window = CurtailPrefsWindow(self)
+        self.prefs_window.set_modal(True)
+        self.prefs_window.set_transient_for(self)
         self.prefs_window.present()
 
     def on_about(self, *args):
