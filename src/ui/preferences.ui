@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.1 -->
+<!-- Generated with glade 3.38.2 -->
 <interface domain="curtail">
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkAdjustment" id="jpg_lossy_adj">
@@ -31,7 +31,7 @@
         <property name="margin-top">20</property>
         <property name="margin-bottom">20</property>
         <child>
-          <!-- n-columns=3 n-rows=4 -->
+          <!-- n-columns=2 n-rows=4 -->
           <object class="GtkGrid" id="grid1">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
@@ -142,18 +142,6 @@
                 <property name="top-attach">0</property>
               </packing>
             </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
           </object>
           <packing>
             <property name="name">general</property>
@@ -161,7 +149,7 @@
           </packing>
         </child>
         <child>
-          <!-- n-columns=3 n-rows=3 -->
+          <!-- n-columns=2 n-rows=2 -->
           <object class="GtkGrid" id="grid2">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
@@ -224,21 +212,6 @@
                 <property name="top-attach">1</property>
               </packing>
             </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
           </object>
           <packing>
             <property name="name">compression</property>
@@ -247,7 +220,7 @@
           </packing>
         </child>
         <child>
-          <!-- n-columns=3 n-rows=3 -->
+          <!-- n-columns=2 n-rows=1 -->
           <object class="GtkGrid" id="grid3">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
@@ -282,27 +255,6 @@
                 <property name="top-attach">0</property>
               </packing>
             </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
           </object>
           <packing>
             <property name="name">advanced</property>
@@ -321,6 +273,8 @@
           <object class="GtkStackSwitcher" id="stack_switcher">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="hexpand">True</property>
             <property name="stack">stack</property>
           </object>
         </child>
