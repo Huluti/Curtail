@@ -1,4 +1,4 @@
-project('imcompressor',  
+project('curtail',  
           version: '0.8.4',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',

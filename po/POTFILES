@@ -1,6 +1,6 @@
-data/com.github.huluti.ImCompressor.desktop.in
-data/com.github.huluti.ImCompressor.appdata.xml.in
-data/com.github.huluti.ImCompressor.gschema.xml
+data/com.github.huluti.Curtail.desktop.in
+data/com.github.huluti.Curtail.appdata.xml.in
+data/com.github.huluti.Curtail.gschema.xml
 src/ui/window.ui
 src/ui/preferences.ui
 src/ui/menu.ui

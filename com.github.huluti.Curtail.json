@@ -1,9 +1,9 @@
 {
-    "app-id": "com.github.huluti.ImCompressor",
+    "app-id": "com.github.huluti.Curtail",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
-    "command": "imcompressor",
+    "command": "curtail",
     "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -51,13 +51,13 @@
             ]
         },
         {
-            "name": "imcompressor",
+            "name": "curtail",
             "builddir": true,
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/Huluti/ImCompressor"
+                    "url": "https://github.com/Huluti/Curtail"
                 }
             ]
         }

@@ -1,6 +1,6 @@
 #!@PYTHON@
 
-# imcompressor.in
+# curtail.in
 #
 # Copyright 2019 Hugo Posnic
 #
@@ -26,18 +26,18 @@ import locale
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
-locale.bindtextdomain('imcompressor', localedir)
+locale.bindtextdomain('curtail', localedir)
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-gettext.install('imcompressor', localedir)
+gettext.install('curtail', localedir)
 
 if __name__ == '__main__':
     import gi
 
     from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'imcompressor.gresource'))
+    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'curtail.gresource'))
     resource._register()
 
-    from imcompressor import main
+    from curtail import main
     sys.exit(main.main(VERSION))

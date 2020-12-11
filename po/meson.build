@@ -1,1 +1,1 @@
-i18n.gettext('imcompressor', preset: 'glib')
+i18n.gettext('curtail', preset: 'glib')

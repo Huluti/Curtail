@@ -1,9 +1,9 @@
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-moduledir = join_paths(pkgdatadir, 'imcompressor')
+moduledir = join_paths(pkgdatadir, 'curtail')
 gnome = import('gnome')
 
-gnome.compile_resources('imcompressor',
-  'imcompressor.gresource.xml',
+gnome.compile_resources('curtail',
+  'curtail.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
@@ -18,14 +18,14 @@ conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set('pkgdatadir', pkgdatadir)
 
 configure_file(
-  input: 'imcompressor.in',
-  output: 'imcompressor',
+  input: 'curtail.in',
+  output: 'curtail',
   configuration: conf,
   install: true,
   install_dir: get_option('bindir')
 )
 
-imcompressor_sources = [
+curtail_sources = [
   '__init__.py',
   'main.py',
   'window.py',
@@ -34,4 +34,4 @@ imcompressor_sources = [
   'tools.py'
 ]
 
-install_data(imcompressor_sources, install_dir: moduledir)
+install_data(curtail_sources, install_dir: moduledir)

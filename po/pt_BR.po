@@ -1,11 +1,11 @@
-# imcompressor.pot
+# curtail.pot
 # Copyright (C) 2019 Hugo Posnic
-# This file is distributed under the same license as the imcompressor package.
+# This file is distributed under the same license as the curtail package.
 # Hugo Posnic <hugo.posnic@gmail.com>, 2019 (first Author).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: imcompressor\n"
+"Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-26 18:22+0200\n"
 "PO-Revision-Date: 2020-12-09 19:04+0100\n"
@@ -18,28 +18,28 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: data/com.github.huluti.ImCompressor.desktop.in:3
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:7
-msgid "ImCompressor"
-msgstr "ImCompressor"
+#: data/com.github.huluti.Curtail.desktop.in:3
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+msgid "Curtail"
+msgstr "Curtail"
 
-#: data/com.github.huluti.ImCompressor.desktop.in:5
+#: data/com.github.huluti.Curtail.desktop.in:5
 msgid "Simple & useful image compressor."
 msgstr "Compressor de imagem simples e útil."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:8
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 msgid "Simple &amp; useful image compressor"
 msgstr "Compressor de imagem simples e útil"
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:10
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"ImCompressor is an useful image compressor, supporting PNG and JPEG file "
+"Curtail is an useful image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor é um utilitário de compressão de imagem compatível com os tipos "
+"Curtail é um utilitário de compressão de imagem compatível com os tipos "
 "de arquivo PNG e JPEG."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "It support both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -47,71 +47,71 @@ msgstr ""
 "Ele suporta os modos de compressão com e sem perdas, com a opção de manter "
 "ou não os metadados das imagens."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr "Hugo Posnic"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:6
+#: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
 msgstr "Salvar em um novo arquivo"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:7
+#: data/com.github.huluti.Curtail.gschema.xml:7
 msgid "Save the compressed image into a new file."
 msgstr "Salva a imagem comprimida em um novo arquivo."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:125
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:125
 msgid "Keep metadata"
 msgstr "Manter metadados"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:12
 msgid "This setting preserves metadata of images."
 msgstr "Esta configuração preserva os metadados de imagens."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable lossy mode"
 msgstr "Ativar modo com perdas"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "Use lossy mode to compress images."
 msgstr "Use o modo com perdas para comprimir imagens."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:75
+#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
 msgid "Suffix to append at end of new file"
 msgstr "Sufixo a adicionar no final do novo arquivo"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "Suffix to append at end of new file."
 msgstr "Suffix to append at end of new file."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:26 src/ui/preferences.ui:179
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:179
 msgid "PNG Lossy Compression Level"
 msgstr "Nível de compressão com perdas PNG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Lossy compression level to use for PNG images."
 msgstr "Nível de compressão com perdas a ser usado em imagens PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:31
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "PNG Lossless Compression Level"
 msgstr "Nível de compressão sem perdas PNG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Lossless compression level to use for PNG images."
 msgstr "Nível de compressão sem perdas a ser usado em imagens PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:206
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:206
 msgid "JPG Lossy Compression Level"
 msgstr "Nível de compressão com perdas JPG"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for JPG images."
 msgstr "Nível de compressão com perdas a ser usado em imagens JPG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:41 src/ui/preferences.ui:49
+#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
 msgid "Enable dark theme"
 msgstr "Ativar tema escuro"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Use dark theme for the windows."
 msgstr "Usar um tema escuro para as janelas."
 
@@ -168,8 +168,8 @@ msgid "Advanced"
 msgstr "Avançado"
 
 #: src/ui/menu.ui:10
-msgid "About ImCompressor"
-msgstr "Sobre o ImCompressor"
+msgid "About Curtail"
+msgstr "Sobre o Curtail"
 
 #: src/window.py:88
 msgid "Filename"

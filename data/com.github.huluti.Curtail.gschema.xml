@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="imcompressor">
-	<schema id="com.github.huluti.ImCompressor" path="/com/github/huluti/ImCompressor/">
+<schemalist gettext-domain="curtail">
+	<schema id="com.github.huluti.Curtail" path="/com/github/huluti/Curtail/">
 	  <key type="b" name="new-file">
       <default>true</default>
       <summary>Save into a new file</summary>

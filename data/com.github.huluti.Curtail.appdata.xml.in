@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>com.github.huluti.ImCompressor.desktop</id>
+  <id>com.github.huluti.Curtail.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <content_rating type="oars-1.1" />
-  <name>ImCompressor</name>
+  <name>Curtail</name>
   <summary>Simple &amp; useful image compressor</summary>
   <description>
-    <p>ImCompressor is an useful image compressor, supporting PNG and JPEG file types.</p>
+    <p>Curtail is an useful image compressor, supporting PNG and JPEG file types.</p>
     <p>It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
   </description>
 
   <developer_name>Hugo Posnic</developer_name>
   <update_contact>hugo.posnic@gmail.com</update_contact>
-  <url type="bugtracker">https://github.com/Huluti/ImCompressor/issues</url>
-  <url type="homepage">https://github.com/Huluti/ImCompressor</url>
+  <url type="bugtracker">https://github.com/Huluti/Curtail/issues</url>
+  <url type="homepage">https://github.com/Huluti/Curtail</url>
 
   <kudos>
     <kudo>ModernToolkit</kudo>
@@ -22,15 +22,15 @@
 
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/Huluti/ImCompressor/master/data/screenshots/screen1.png</image>
+      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/Huluti/ImCompressor/master/data/screenshots/screen2.png</image>
+      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
     </screenshot>
   </screenshots>
 
-  <translation type="gettext">imcompressor</translation>
-  <launchable type="desktop-id">com.github.huluti.ImCompressor.desktop</launchable>
+  <translation type="gettext">curtail</translation>
+  <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
     <release version="0.8.4" date="2020-11-15">

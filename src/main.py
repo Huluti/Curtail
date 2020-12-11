@@ -22,10 +22,10 @@ gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk, Gio
 
-from .window import ImCompressorWindow
+from .window import CurtailWindow
 
 
-APP_ID = 'com.github.huluti.ImCompressor'
+APP_ID = 'com.github.huluti.Curtail'
 
 
 class Application(Gtk.Application):
@@ -41,7 +41,7 @@ class Application(Gtk.Application):
 
     def do_activate(self):
         if not self.win:
-            self.win = ImCompressorWindow(application=self)
+            self.win = CurtailWindow(application=self)
         self.win.present()
 
     def file_open_handler(self, app, g_file_list, amount, ukwn):
