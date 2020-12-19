@@ -33,6 +33,16 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+    <release version="1.0.0" date="2020-12-19">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>A new name. Thank's to @bertob, @jannuary and @jimmac.</li>
+          <li>A new icon designed by @jimmac.</li>
+          <li>Support for dragging folders.</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.8.4" date="2020-11-15">
       <description>
         <p>Here's the changelog of this version:</p>
