@@ -41,5 +41,10 @@
       <summary>Enable dark theme</summary>
       <description>Use dark theme for the windows.</description>
     </key>
+	  <key type="b" name="jpg-progressive">
+      <default>false</default>
+      <summary>Enable progressive encoding for jpegs</summary>
+      <description>Optionally encode jpeg images progressively.</description>
+    </key>
 	</schema>
 </schemalist>

@@ -146,6 +146,8 @@ class Compressor():
 
     def build_jpg_command(self, lossy, metadata):
         do_new_file = self._settings.get_boolean('new-file')
+        do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
+
         if do_new_file:
             jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
             jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
@@ -156,6 +158,10 @@ class Compressor():
         if not metadata:
             jpegoptim += ' --strip-all'
             jpegoptim2 += ' --strip-all'
+
+        if do_jpg_progressive:
+            jpegoptim += ' --all-progressive'
+            jpegoptim2 += ' --all-progressive'
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression
