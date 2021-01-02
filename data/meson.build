@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-  input: 'com.github.huluti.ImCompressor.desktop.in',
-  output: 'com.github.huluti.ImCompressor.desktop',
+  input: 'com.github.huluti.Curtail.desktop.in',
+  output: 'com.github.huluti.Curtail.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -15,8 +15,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 'com.github.huluti.ImCompressor.appdata.xml.in',
-  output: 'com.github.huluti.ImCompressor.appdata.xml',
+  input: 'com.github.huluti.Curtail.appdata.xml.in',
+  output: 'com.github.huluti.Curtail.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'metainfo')
@@ -29,7 +29,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('com.github.huluti.ImCompressor.gschema.xml',
+install_data('com.github.huluti.Curtail.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 
@@ -45,15 +45,15 @@ icon_sizes = ['scalable']
 
 foreach i : icon_sizes
   install_data(
-    join_paths('icons/hicolor', i , 'apps', 'com.github.huluti.ImCompressor.svg'),
+    join_paths('icons/hicolor', i , 'apps', 'com.github.huluti.Curtail.svg'),
     install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'icons', 'hicolor', i , 'apps'),
-    rename: '@0@.svg'.format('com.github.huluti.ImCompressor')
+    rename: '@0@.svg'.format('com.github.huluti.Curtail')
   )
 endforeach
 
 # Installing the symbolic icon
 install_data(
-    join_paths('icons/hicolor/symbolic/apps', 'com.github.huluti.ImCompressor-symbolic.svg'),
+    join_paths('icons/hicolor/symbolic/apps', 'com.github.huluti.Curtail-symbolic.svg'),
     install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'icons/hicolor/symbolic/apps'),
-    rename: '@0@-symbolic.svg'.format('com.github.huluti.ImCompressor')
+    rename: '@0@-symbolic.svg'.format('com.github.huluti.Curtail')
 )

@@ -23,7 +23,7 @@ from pathlib import Path
 from .tools import message_dialog
 
 
-SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
+SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
 class Compressor():

@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2020-12-19
+### Added
+- A new name. Thank's to @bertob, @jannuary and @jimmac.
+- A new icon designed by @jimmac.
+- Support for dragging folders.
+
 ## [0.8.4] - 2020-11-15
 ### Changed
 - Just fix a packaging file.

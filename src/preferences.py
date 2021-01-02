@@ -20,13 +20,13 @@ from gi.repository import Gtk, Gio
 from .tools import message_dialog
 
 
-UI_PATH = '/com/github/huluti/ImCompressor/ui/'
-SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
+UI_PATH = '/com/github/huluti/Curtail/ui/'
+SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
 @Gtk.Template(resource_path=UI_PATH + 'preferences.ui')
-class ImCompressorPrefsWindow(Gtk.Window):
-    __gtype_name__ = 'ImCompressorPrefsWindow'
+class CurtailPrefsWindow(Gtk.Window):
+    __gtype_name__ = 'CurtailPrefsWindow'
 
     toggle_metadata = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()

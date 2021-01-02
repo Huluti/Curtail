@@ -20,18 +20,18 @@ from gi.repository import Gtk, Gdk, Gio, GLib
 from urllib.parse import unquote
 from pathlib import Path
 
-from .preferences import ImCompressorPrefsWindow
+from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
                     sizeof_fmt
 
-UI_PATH = '/com/github/huluti/ImCompressor/ui/'
-SETTINGS_SCHEMA = 'com.github.huluti.ImCompressor'
+UI_PATH = '/com/github/huluti/Curtail/ui/'
+SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
 @Gtk.Template(resource_path=UI_PATH + 'window.ui')
-class ImCompressorWindow(Gtk.ApplicationWindow):
-    __gtype_name__ = 'ImCompressorWindow'
+class CurtailWindow(Gtk.ApplicationWindow):
+    __gtype_name__ = 'CurtailWindow'
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
     settings = Gtk.Settings.get_default()
@@ -230,14 +230,12 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
         elif Path.is_file(path):
             if not self.check_extension(path):
                 message_dialog(self, 'error', _("Format not supported"),
-                        _("The format of {} is not supported.") \
-                        .format(file_data['full_name']))
+                    _("The format of {} is not supported.").format(path.name))
             else:
                 verified_filenames.append(filename)
         else:
             message_dialog(self, 'error', _("Path not valid"),
-                           _("{} doesn't exist.") \
-                           .format(filename))
+                           _("{} doesn't exist.").format(filename))
 
         return verified_filenames
 
@@ -284,20 +282,22 @@ class ImCompressorWindow(Gtk.ApplicationWindow):
     def on_preferences(self, *args):
         if self.prefs_window is not None:
             self.prefs_window.destroy()
-        self.prefs_window = ImCompressorPrefsWindow(self)
+        self.prefs_window = CurtailPrefsWindow(self)
+        self.prefs_window.set_modal(True)
+        self.prefs_window.set_transient_for(self)
         self.prefs_window.present()
 
     def on_about(self, *args):
         dialog = Gtk.AboutDialog(transient_for=self)
-        dialog.set_logo_icon_name('com.github.huluti.ImCompressor')
-        dialog.set_program_name('ImCompressor')
-        dialog.set_version('0.8.4')
-        dialog.set_website('https://github.com/Huluti/ImCompressor')
+        dialog.set_logo_icon_name('com.github.huluti.Curtail')
+        dialog.set_program_name('Curtail')
+        dialog.set_version('1.0.0')
+        dialog.set_website('https://github.com/Huluti/Curtail')
         dialog.set_authors(['Hugo Posnic'])
         dialog.set_translator_credits(_("translator-credits"))
         dialog.set_comments(_("Simple & useful image compressor"))
         text = _("Distributed under the GNU GPL(v3) license.\n")
-        text += 'https://github.com/Huluti/ImCompressor/blob/master/COPYING\n'
+        text += 'https://github.com/Huluti/Curtail/blob/master/COPYING\n'
         dialog.set_license(text)
         dialog.run()
         dialog.destroy()

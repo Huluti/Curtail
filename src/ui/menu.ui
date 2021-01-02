@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<interface domain="imcompressor">
+<interface domain="curtail">
   <menu id="window-menu">
     <section>
       <item>
@@ -7,7 +7,7 @@
         <attribute name="action">win.preferences</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">About ImCompressor</attribute>
+        <attribute name="label" translatable="yes">About Curtail</attribute>
         <attribute name="action">win.about</attribute>
       </item>
     </section>

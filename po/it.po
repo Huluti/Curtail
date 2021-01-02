@@ -1,165 +1,161 @@
 # it.po
 # Copyright 2019 Hugo Posnic
-# This file is distributed under the same license as the imcompressor package.
+# This file is distributed under the same license as the curtail package.
 # Albano Battistella <albano_battistella@hotmail.com>, 2019 (first Author).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: imcompressor\n"
+"Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-26 18:22+0200\n"
-"PO-Revision-Date: 2019-10-26 18:38+0200\n"
+"PO-Revision-Date: 2020-12-09 19:04+0100\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
-#: data/com.github.huluti.ImCompressor.desktop.in:3
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:7
-msgid "ImCompressor"
-msgstr "ImCompressor"
+#: data/com.github.huluti.Curtail.desktop.in:3
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+msgid "Curtail"
+msgstr "Curtail"
 
-#: data/com.github.huluti.ImCompressor.desktop.in:5
+#: data/com.github.huluti.Curtail.desktop.in:5
 msgid "Simple & useful image compressor."
 msgstr "Semplice compressore di immagini e senza perdita di dati."
 
-#. Icon name, do not translate
-#: data/com.github.huluti.ImCompressor.desktop.in:10
-msgid "com.github.huluti.ImCompressor"
-msgstr "com.github.huluti.ImCompressor"
-
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:8
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 msgid "Simple &amp; useful image compressor"
 msgstr "Compressore di immagine semplice & senza perdite"
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:10
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"ImCompressor is an useful image compressor, supporting PNG and JPEG file "
+"Curtail is an useful image compressor, supporting PNG and JPEG file "
 "types."
 msgstr ""
-"ImCompressor è un compressore di immagini senza perdita di dati, che "
+"Curtail è un compressore di immagini senza perdita di dati, che "
 "supporta i formati PNG e JPG."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "It support both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
-msgstr "Supporta entrambe le modalità di compressione senza perdite e perdite con un'opzione per"
-"conservare o meno i metadati delle immagini."
+msgstr ""
+"Supporta entrambe le modalità di compressione senza perdite e perdite con "
+"un'opzione perconservare o meno i metadati delle immagini."
 
-#: data/com.github.huluti.ImCompressor.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
 msgid "Hugo Posnic"
 msgstr "Hugo Posnic"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:6
+#: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
 msgstr "Salva in un nuovo file"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:7
+#: data/com.github.huluti.Curtail.gschema.xml:7
 msgid "Save the compressed image into a new file."
 msgstr "Salva l'immagine compressa in un nuovo file."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:11 src/ui/preferences.ui:138
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:125
 msgid "Keep metadata"
 msgstr "Mantieni metadati"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:12
 msgid "This setting preserves metadata of images."
 msgstr "Questa impostazione conserva i metadati delle immagini."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable lossy mode"
 msgstr "Abilita la modalità con perdita"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "Use lossy mode to compress images."
 msgstr "Utilizzare la modalità di perdita per comprimere le immagini."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:21 src/ui/preferences.ui:88
+#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
 msgid "Suffix to append at end of new file"
 msgstr "Suffisso da aggiungere alla fine del nuovo file"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "Suffix to append at end of new file."
 msgstr "Suffisso da aggiungere alla fine del nuovo file."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:26 src/ui/preferences.ui:179
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:179
 msgid "PNG Lossy Compression Level"
 msgstr "Livello di compressione PNG con perdita"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Lossy compression level to use for PNG images."
 msgstr "livello di compressione con perdita da utilizzare per immagini PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:31
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "PNG Lossless Compression Level"
 msgstr "Livello di compressione PNG senza perdita"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Lossless compression level to use for PNG images."
 msgstr ""
 "Livello di compressione senza perdita da utilizzare per le immagini PNG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:36 src/ui/preferences.ui:206
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:206
 msgid "JPG Lossy Compression Level"
 msgstr "Livello di compressione JPG con perdita"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for JPG images."
 msgstr "livello di compressione con perdita da utilizzare per le immagini JPG."
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:41 src/ui/preferences.ui:62
+#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
 msgid "Enable dark theme"
 msgstr "Abilita tema scuro"
 
-#: data/com.github.huluti.ImCompressor.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Use dark theme for the windows."
 msgstr "Usa un tema scuro per le finestre."
 
-#: src/ui/window.ui:29 src/window.py:287
-msgid "Simple & useful image compressor"
-msgstr "Semplice compressore di immagini e senza perdite"
-
-#: src/ui/window.ui:117
+#: src/ui/window.ui:47
 msgid "Drag and drop your images here..."
 msgstr "Trascina e rilascia le tue immagini qui ..."
 
-#: src/ui/window.ui:132
+#: src/ui/window.ui:62
 msgid "or"
 msgstr "o"
 
-#: src/ui/window.ui:145 src/window.py:168
+#: src/ui/window.ui:75 src/window.py:168
 msgid "Browse your files"
 msgstr "Sfoglia i tuoi file"
 
-#: src/ui/window.ui:170
+#: src/ui/window.ui:100
 msgid "Lossless"
 msgstr "Senza perdita"
 
-#: src/ui/window.ui:199
+#: src/ui/window.ui:129
 msgid "Lossy"
 msgstr "Con perdita"
+
+#: src/ui/window.ui:213 src/window.py:298
+msgid "Simple & useful image compressor"
+msgstr "Semplice compressore di immagini e senza perdite"
 
 #: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: src/ui/preferences.ui:112
+#: src/ui/preferences.ui:99
 msgid "Save the compressed image into a new file"
 msgstr "Salva l'immagine compressa in un nuovo file"
 
-#: src/ui/preferences.ui:161
+#: src/ui/preferences.ui:160
 msgid "General"
 msgstr "Generale"
 
-#: src/ui/preferences.ui:230
+#: src/ui/preferences.ui:245
 msgid "Compression"
 msgstr "Compressione"
 
-#: src/ui/preferences.ui:261
+#: src/ui/preferences.ui:277
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -167,13 +163,13 @@ msgstr ""
 "Livello di compressione PNG senza perdita\n"
 "(più è alto, più è lento)"
 
-#: src/ui/preferences.ui:272
+#: src/ui/preferences.ui:309
 msgid "Advanced"
 msgstr "Avanzato"
 
 #: src/ui/menu.ui:10
-msgid "About ImCompressor"
-msgstr "Informazioni su ImCompressor"
+msgid "About Curtail"
+msgstr "Informazioni su Curtail"
 
 #: src/window.py:88
 msgid "Filename"
@@ -199,65 +195,55 @@ msgstr "Le immagini vengono salvate con <b>'{}' suffisso</b>."
 msgid "Images are <b>overwritten</b>."
 msgstr "Le immagini sono <b>sovrascritte</b>."
 
-#. if path doesn't exist
-#: src/window.py:215
-msgid "Path not valid"
-msgstr "Percorso non valido"
-
-#: src/window.py:216
-msgid "{} doesn't exist."
-msgstr "{} non esiste."
-
-#. don't allow folders for now
-#: src/window.py:221
-msgid "Operation not supported"
-msgstr "Operazione non supportata"
-
-#: src/window.py:222
-msgid "Discovery of images in folders is not yet supported."
-msgstr "Il rilevamento delle immagini nelle cartelle non è ancora supportato."
-
-#: src/window.py:228
+#: src/window.py:232
 msgid "Format not supported"
 msgstr "Formato non supportato"
 
-#: src/window.py:229
+#: src/window.py:233
 msgid "The format of {} is not supported."
 msgstr "IL formato di {} non è supportato."
 
-#: src/window.py:286
+#: src/window.py:238
+msgid "Path not valid"
+msgstr "Percorso non valido"
+
+#: src/window.py:239
+msgid "{} doesn't exist."
+msgstr "{} non esiste."
+
+#: src/window.py:297
 msgid "translator-credits"
 msgstr "Albano Battistella"
 
-#: src/window.py:288
+#: src/window.py:299
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribuito sotto licenza GNU GPL (v3).\n"
 
-#: src/compressor.py:56 src/compressor.py:64 src/compressor.py:73
-#: src/compressor.py:86
+#: src/compressor.py:59 src/compressor.py:68 src/compressor.py:77
+#: src/compressor.py:90
 msgid "An error has occured"
 msgstr "Si è verificato un errore"
 
-#: src/compressor.py:111
+#: src/compressor.py:115
 msgid "Nothing"
 msgstr "Niente"
 
-#: src/compressor.py:112
+#: src/compressor.py:116
 msgid "Compression not useful"
 msgstr "Compressione non utile"
 
-#: src/compressor.py:113
+#: src/compressor.py:117
 msgid "{} is already compressed at max with current options."
 msgstr "{} è già compresso al massimo con le opzioni correnti."
 
-#: src/tools.py:63
+#: src/tools.py:51
 msgid "All images"
 msgstr "Tutte le immagini"
 
-#: src/tools.py:68
+#: src/tools.py:56
 msgid "PNG images"
 msgstr "Immagini PNG"
 
-#: src/tools.py:72
+#: src/tools.py:60
 msgid "JPEG images"
 msgstr "Immagini JPEG"

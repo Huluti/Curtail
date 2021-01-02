@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=ImCompressor
-Exec=imcompressor %U
+Name=Curtail
+Exec=curtail %U
 Comment=Simple & useful image compressor.
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Graphics;
 # Icon name, do not translate
-Icon=com.github.huluti.ImCompressor
-StartupWMClass=imcompressor
+Icon=com.github.huluti.Curtail
+StartupWMClass=curtail
 MimeType=image/jpeg;image/png;
 StartupNotify=true
