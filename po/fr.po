@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 18:22+0200\n"
-"PO-Revision-Date: 2020-12-09 19:02+0100\n"
+"POT-Creation-Date: 2021-01-17 11:09+0100\n"
+"PO-Revision-Date: 2021-01-17 11:12+0100\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,17 +24,14 @@ msgid "Curtail"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:5
-msgid "Simple & useful image compressor."
-msgstr "Compresseur d'image simple & utile."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:8
-msgid "Simple &amp; useful image compressor"
-msgstr "Compresseur d'image simple & utile"
+#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
+#: src/window.py:298
+msgid "Compress your images"
+msgstr "Compresser vos images"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG and JPEG file "
-"types."
+"Curtail is an useful image compressor, supporting PNG and JPEG file types."
 msgstr ""
 "Curtail est un compresseur d'image sans et avec perte qui supporte les "
 "formats PNG et JPG."
@@ -83,7 +80,7 @@ msgstr "Suffixe à ajouter à la fin d'un nouveau fichier"
 msgid "Suffix to append at end of new file."
 msgstr "Suffixe à ajouter à la fin d'un nouveau fichier."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:179
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
 msgid "PNG Lossy Compression Level"
 msgstr "Niveau de compression avec-perte des PNG"
 
@@ -99,7 +96,7 @@ msgstr "Niveau de compression sans-perte des PNG"
 msgid "Lossless compression level to use for PNG images."
 msgstr "Niveau de compression sans-perte à utiliser pour les images PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:206
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
 msgid "JPG Lossy Compression Level"
 msgstr "Niveau de compression avec-perte des JPG"
 
@@ -135,10 +132,6 @@ msgstr "Sans-perte"
 msgid "Lossy"
 msgstr "Avec-perte"
 
-#: src/ui/window.ui:213 src/window.py:298
-msgid "Simple & useful image compressor"
-msgstr "Compresseur d'image simple & utile"
-
 #: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Préférences"
@@ -147,15 +140,15 @@ msgstr "Préférences"
 msgid "Save the compressed image into a new file"
 msgstr "Sauvegarder l'image compressée dans un nouveau fichier"
 
-#: src/ui/preferences.ui:160
+#: src/ui/preferences.ui:148
 msgid "General"
 msgstr "Général"
 
-#: src/ui/preferences.ui:245
+#: src/ui/preferences.ui:218
 msgid "Compression"
 msgstr "Compression"
 
-#: src/ui/preferences.ui:277
+#: src/ui/preferences.ui:250
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -163,7 +156,7 @@ msgstr ""
 "Niveau de compression sans-perte des PNG\n"
 "(plus c'est haut, plus c'est lent)"
 
-#: src/ui/preferences.ui:309
+#: src/ui/preferences.ui:261
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -203,11 +196,11 @@ msgstr "Format non supporté"
 msgid "The format of {} is not supported."
 msgstr "Le format de {} n'est pas supporté."
 
-#: src/window.py:238
+#: src/window.py:237
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:239
+#: src/window.py:238
 msgid "{} doesn't exist."
 msgstr "{} n'existe pas."
 
