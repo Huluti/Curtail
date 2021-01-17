@@ -1,14 +1,14 @@
 # curtail.pot
-# Copyright (C) 2021 Hugo POsnic
+# Copyright (C) 2021 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
-# Hugo Posnic AUTHOR <hugo.posnic@protonmail.com>, 2019.
+# Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 11:05+0100\n"
+"POT-Creation-Date: 2021-01-17 11:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,9 +23,6 @@ msgid "Curtail"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:5
-msgid "Simple & useful image compressor."
-msgstr ""
-
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
 #: src/window.py:298
 msgid "Compress your images"
