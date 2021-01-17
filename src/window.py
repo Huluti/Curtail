@@ -295,7 +295,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         dialog.set_website('https://github.com/Huluti/Curtail')
         dialog.set_authors(['Hugo Posnic'])
         dialog.set_translator_credits(_("translator-credits"))
-        dialog.set_comments(_("Simple & useful image compressor"))
+        dialog.set_comments(_("Compress your images"))
         text = _("Distributed under the GNU GPL(v3) license.\n")
         text += 'https://github.com/Huluti/Curtail/blob/master/COPYING\n'
         dialog.set_license(text)

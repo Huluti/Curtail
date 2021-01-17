@@ -5,7 +5,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <content_rating type="oars-1.1" />
   <name>Curtail</name>
-  <summary>Simple &amp; useful image compressor</summary>
+  <summary>Compress your images</summary>
   <description>
     <p>Curtail is an useful image compressor, supporting PNG and JPEG file types.</p>
     <p>It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>

@@ -1,6 +1,6 @@
 # Curtail
 
-## Simple & useful image compressor.
+## Compress your images
 
 Curtail (previously ImCompressor) is an useful image compressor, supporting PNG and JPEG file types.
 It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.

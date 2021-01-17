@@ -210,7 +210,7 @@
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="title">Curtail</property>
-        <property name="subtitle" translatable="yes">Simple &amp; useful image compressor</property>
+        <property name="subtitle" translatable="yes">Compress your images</property>
         <property name="show-close-button">True</property>
         <child>
           <object class="GtkButtonBox">
