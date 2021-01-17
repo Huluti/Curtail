@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 18:22+0200\n"
-"PO-Revision-Date: 2020-12-09 19:03+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-01-17 11:09+0100\n"
+"PO-Revision-Date: 2021-01-17 13:58+0100\n"
+"Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: Spanish - Spain\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -24,19 +24,16 @@ msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.desktop.in:5
-msgid "Simple & useful image compressor."
-msgstr "Sencillo y útil compresor de imágenes."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:8
-msgid "Simple &amp; useful image compressor"
-msgstr "Sencillo & útil compresor de imágenes"
+#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
+#: src/window.py:298
+msgid "Compress your images"
+msgstr "Comprime tus imágenes"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG and JPEG file "
-"types."
+"Curtail is an useful image compressor, supporting PNG and JPEG file types."
 msgstr ""
-"Curtail es un compresor de imágenes con soporte para los formatos PNG y "
+"Curtail es un útil compresor de imágenes con soporte para los formatos PNG y "
 "JPEG."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
@@ -44,8 +41,8 @@ msgid ""
 "It support both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
-"Tiene soporte para compresión con y sin pérdida, y con opción para guardar "
-"metadatos de imágenes."
+"Tiene soporte para compresión con y sin pérdida, y con opción para guardar o "
+"no los metadatos de las imágenes."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:14
 msgid "Hugo Posnic"
@@ -65,7 +62,7 @@ msgstr "Mantener metadatos"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid "This setting preserves metadata of images."
-msgstr "Esta opción mantiene metadatos de imágenes."
+msgstr "Esta opción mantiene los metadatos de las imágenes."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable lossy mode"
@@ -83,7 +80,7 @@ msgstr "Sufijo para agregar al final del nuevo archivo"
 msgid "Suffix to append at end of new file."
 msgstr "Sufijo para agregar al final del nuevo archivo."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:179
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
 msgid "PNG Lossy Compression Level"
 msgstr "Nivel de compresión PNG con pérdida"
 
@@ -99,7 +96,7 @@ msgstr "Nivel de compresión PNG sin pérdida"
 msgid "Lossless compression level to use for PNG images."
 msgstr "Nivel de compresión sin pérdida para usar con imágenes PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:206
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
 msgid "JPG Lossy Compression Level"
 msgstr "Nivel de compresión JPG con pérdida"
 
@@ -125,7 +122,7 @@ msgstr "o"
 
 #: src/ui/window.ui:75 src/window.py:168
 msgid "Browse your files"
-msgstr "Navega por los archivos"
+msgstr "Examinar archivos"
 
 #: src/ui/window.ui:100
 msgid "Lossless"
@@ -135,10 +132,6 @@ msgstr "Sin pérdida"
 msgid "Lossy"
 msgstr "Con pérdida"
 
-#: src/ui/window.ui:213 src/window.py:298
-msgid "Simple & useful image compressor"
-msgstr "Sencillo y útil compresor de imágenes"
-
 #: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Preferencias"
@@ -147,15 +140,15 @@ msgstr "Preferencias"
 msgid "Save the compressed image into a new file"
 msgstr "Guardar imagen comprimida en un nuevo archivo"
 
-#: src/ui/preferences.ui:160
+#: src/ui/preferences.ui:148
 msgid "General"
 msgstr "General"
 
-#: src/ui/preferences.ui:245
+#: src/ui/preferences.ui:218
 msgid "Compression"
 msgstr "Compresión"
 
-#: src/ui/preferences.ui:277
+#: src/ui/preferences.ui:250
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -163,29 +156,29 @@ msgstr ""
 "Nivel de compresión PNG sin pérdida\n"
 "(cuanto más alto, más lento)"
 
-#: src/ui/preferences.ui:309
+#: src/ui/preferences.ui:261
 msgid "Advanced"
 msgstr "Avanzado"
 
 #: src/ui/menu.ui:10
 msgid "About Curtail"
-msgstr "Sobre Curtail"
+msgstr "Acerca de Curtail"
 
 #: src/window.py:88
 msgid "Filename"
-msgstr "Nombre del Archivo"
+msgstr "Nombre del archivo"
 
 #: src/window.py:89
 msgid "Old Size"
-msgstr "Viejo Tamaño"
+msgstr "Antiguo tamaño"
 
 #: src/window.py:90
 msgid "New Size"
-msgstr "Nuevo Tamaño"
+msgstr "Nuevo tamaño"
 
 #: src/window.py:91
 msgid "Savings"
-msgstr "Guardados"
+msgstr "Ahorro"
 
 #: src/window.py:155
 msgid "Images are saved with <b>'{}' suffix</b>."
@@ -203,17 +196,19 @@ msgstr "No hay soporte para el formato"
 msgid "The format of {} is not supported."
 msgstr "No hay soporte para el formato de {}"
 
-#: src/window.py:238
+#: src/window.py:237
 msgid "Path not valid"
 msgstr "Ruta de archivo incorrecta"
 
-#: src/window.py:239
+#: src/window.py:238
 msgid "{} doesn't exist."
 msgstr "{} no existe."
 
 #: src/window.py:297
 msgid "translator-credits"
-msgstr "Josué Quilón Barrios"
+msgstr ""
+"Josué Quilón Barrios\n"
+"Óscar Fernández Díaz"
 
 #: src/window.py:299
 msgid "Distributed under the GNU GPL(v3) license.\n"
