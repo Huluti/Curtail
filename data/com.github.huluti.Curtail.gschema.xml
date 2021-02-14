@@ -36,6 +36,11 @@
       <summary>JPG Lossy Compression Level</summary>
       <description>Lossy compression level to use for JPG images.</description>
     </key>
+	  <key type="b" name="jpg-progressive">
+      <default>false</default>
+      <summary>Enable progressive encoding for jpegs</summary>
+      <description>Optionally encode jpeg images progressively.</description>
+    </key>
 	  <key type="b" name="dark-theme">
       <default>false</default>
       <summary>Enable dark theme</summary>
