@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - DEV
+### Added
+- An option to progressive encode jpegs. Thank's to @trst.
+- Add Russian translation.
+
+### Changed
+- Update Spanish translation.
+
 ## [1.0.0] - 2020-12-19
 ### Added
 - A new name. Thank's to @bertob, @jannuary and @jimmac.
