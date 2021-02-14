@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 11:09+0100\n"
-"PO-Revision-Date: 2021-01-17 11:12+0100\n"
+"POT-Creation-Date: 2021-02-14 12:39+0100\n"
+"PO-Revision-Date: 2021-02-14 12:42+0100\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -104,11 +104,19 @@ msgstr "Niveau de compression avec-perte des JPG"
 msgid "Lossy compression level to use for JPG images."
 msgstr "Niveau de compression avec-perte à utiliser pour les images JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "Enable progressive encoding for jpegs"
+msgstr "Activer l'encodage progressif pour les jpegs"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Optionally encode jpeg images progressively."
+msgstr "En option, encodez progressivement les images jpeg."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
 msgid "Enable dark theme"
 msgstr "Activer le mode sombre"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Use dark theme for the windows."
 msgstr "Utiliser le thème sombre pour les fenêtres."
 
@@ -156,7 +164,11 @@ msgstr ""
 "Niveau de compression sans-perte des PNG\n"
 "(plus c'est haut, plus c'est lent)"
 
-#: src/ui/preferences.ui:261
+#: src/ui/preferences.ui:264
+msgid "Progressive Encode JPG"
+msgstr "Encodage progressif JPG"
+
+#: src/ui/preferences.ui:287
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -217,17 +229,21 @@ msgstr "Distribué sous la licence GNU GPL(v3).\n"
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
 
-#: src/compressor.py:115
-msgid "Nothing"
-msgstr "Rien"
-
-#: src/compressor.py:116
+#: src/compressor.py:114
 msgid "Compression not useful"
 msgstr "Compression inutile"
 
-#: src/compressor.py:117
-msgid "{} is already compressed at max with current options."
-msgstr "{} est déjà compressée au maximum avec les paramètres actuels."
+#: src/compressor.py:115
+msgid ""
+"The new file size of {} is higher than the original size. Do you want to "
+"compress the image anyway?"
+msgstr ""
+"La nouvelle taille du fichier {} est supérieure à la taille d'origine. "
+"Voulez-vous quand même compresser l'image?"
+
+#: src/compressor.py:128
+msgid "Nothing"
+msgstr "Rien"
 
 #: src/tools.py:51
 msgid "All images"
@@ -240,3 +256,6 @@ msgstr "Images PNG"
 #: src/tools.py:60
 msgid "JPEG images"
 msgstr "Images JPEG"
+
+#~ msgid "{} is already compressed at max with current options."
+#~ msgstr "{} est déjà compressée au maximum avec les paramètres actuels."

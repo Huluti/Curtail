@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 11:09+0100\n"
+"POT-Creation-Date: 2021-02-14 12:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,11 +99,19 @@ msgstr ""
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
-msgid "Enable dark theme"
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "Enable progressive encoding for jpegs"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Optionally encode jpeg images progressively."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
+msgid "Enable dark theme"
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Use dark theme for the windows."
 msgstr ""
 
@@ -149,7 +157,11 @@ msgid ""
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:261
+#: src/ui/preferences.ui:264
+msgid "Progressive Encode JPG"
+msgstr ""
+
+#: src/ui/preferences.ui:287
 msgid "Advanced"
 msgstr ""
 
@@ -210,16 +222,18 @@ msgstr ""
 msgid "An error has occured"
 msgstr ""
 
-#: src/compressor.py:115
-msgid "Nothing"
-msgstr ""
-
-#: src/compressor.py:116
+#: src/compressor.py:114
 msgid "Compression not useful"
 msgstr ""
 
-#: src/compressor.py:117
-msgid "{} is already compressed at max with current options."
+#: src/compressor.py:115
+msgid ""
+"The new file size of {} is higher than the original size. Do you want to "
+"compress the image anyway?"
+msgstr ""
+
+#: src/compressor.py:128
+msgid "Nothing"
 msgstr ""
 
 #: src/tools.py:51
