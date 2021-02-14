@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gio, GObject
+from gi.repository import Gtk, Gio, GObject
 from shutil import copy2
 from pathlib import Path
 
@@ -107,19 +107,26 @@ class Compressor():
         GObject.source_remove(self.io_id)
         stdout.close()
 
-        self.new_size = self.new_file_data.stat().st_size
-
         # Check if new size is equal or higher than the old one
+        compress_image = False
+        self.new_size = self.new_file_data.stat().st_size
         if self.new_size >= self.size:
-            self.restore_backup_file()
-            self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
-            message_dialog(self.win, 'info', _("Compression not useful"),
-                _("{} is already compressed at max with current options.") \
-                           .format(self.full_name))
+            response = message_dialog(self.win, 'question', _("Compression not useful"),
+                _("The new file size of {} is higher than the original size." \
+                  " Do you want to compress the image anyway?").format(self.full_name))
+            if response == Gtk.ResponseType.YES:
+                compress_image = True
         else:
+            compress_image = True
+
+        if compress_image:
             savings = round(100 - (self.new_size * 100 / self.size), 2)
             self.win.update_treeview_row(self.tree_iter, self.new_size,
-                                         '{}%'.format(str(savings)))
+                                        '{}%'.format(str(savings)))
+        else:
+            self.restore_backup_file()
+            self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
+
         self.delete_backup_file()
 
     def build_png_command(self, lossy, metadata):
@@ -146,12 +153,18 @@ class Compressor():
 
     def build_jpg_command(self, lossy, metadata):
         do_new_file = self._settings.get_boolean('new-file')
+        do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
+
         if do_new_file:
             jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
             jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
         else:
             jpegoptim = 'jpegoptim --max={} -o -f "{}"'
             jpegoptim2 = 'jpegoptim -o -f "{}"'
+
+        if do_jpg_progressive:
+            jpegoptim += ' --all-progressive'
+            jpegoptim2 += ' --all-progressive'
 
         if not metadata:
             jpegoptim += ' --strip-all'
