@@ -65,4 +65,4 @@ Do you like the app? Would you like to support its development? Feel free to don
 
 GNU GENERAL PUBLIC LICENSE (v3)
 
-**Free Software, Hell Yeah!**
+**Free Software, Yeah!**
