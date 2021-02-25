@@ -1,13 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.0.1] - DEV
+## [1.1.0] - DEV
 ### Added
 - An option to progressive encode jpegs. Thank's to @trst.
 - Add Russian translation.
 
 ### Changed
+- Better handling of existing files.
+- Better appdata summary.
 - Update Spanish translation.
+
+### Fixed
+- Compress images with extensions in uppercase.
 
 ## [1.0.0] - 2020-12-19
 ### Added
