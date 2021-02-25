@@ -97,9 +97,10 @@ class Compressor():
 
         lossy = self._settings.get_boolean('lossy')
         metadata = self._settings.get_boolean('metadata')
-        if self.file_data.suffix == '.png':
+        suffix = self.file_data.suffix.lower()
+        if suffix == '.png':
             command = self.build_png_command(lossy, metadata)
-        elif self.file_data.suffix in('.jpeg', '.jpg'):
+        elif suffix in('.jpeg', '.jpg'):
             command = self.build_jpg_command(lossy, metadata)
         self.run_command(command)  # compress image
 

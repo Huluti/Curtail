@@ -211,8 +211,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         return filename
 
     def check_extension(self, path):
-        if path.suffix:
-            return path.suffix in ('.png', '.jpg', '.jpeg')
+        suffix = path.suffix.lower()
+        if suffix:
+            return suffix in ('.png', '.jpg', '.jpeg')
         else:
             return False
 
