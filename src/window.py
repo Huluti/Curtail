@@ -199,9 +199,18 @@ class CurtailWindow(Gtk.ApplicationWindow):
         # Do operations
         for filename in final_filenames:
             new_filename = self.create_new_filename(filename)
-            self.compress_image(filename, new_filename)
-            while Gtk.events_pending():
-                Gtk.main_iteration()
+            new_file_data = Path(new_filename)
+            compress_image = True
+            if new_file_data.is_file():
+                response = message_dialog(self, 'question', _("File already exists"),
+                _("The file {} already exists." \
+                  " Do you want to compress the image anyway?").format(new_file_data.name))
+                if response == Gtk.ResponseType.NO:
+                    compress_image = False
+            if compress_image:
+                self.compress_image(filename, new_filename)
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
     def clean_filename(self, filename):
         if filename.startswith('file://'):  # drag&drop

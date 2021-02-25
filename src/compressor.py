@@ -43,39 +43,9 @@ class Compressor():
 
         self.full_name = self.file_data.name
 
-        self.backup_filename  = '{}/.{}-backup{}'.format(
-            self.file_data.parents[0], self.file_data.stem,
-            self.file_data.suffix)
-
         self.size = self.file_data.stat().st_size
         self.new_size = 0
         self.tree_iter = None
-
-    def create_backup_file(self):
-        # Do a backup of the original file
-        try:
-            copy2(self.filename, self.backup_filename)
-        except Exception as err:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           str(err))
-
-    def delete_backup_file(self):
-        # Delete backup file
-        try:
-            path = Path(self.backup_filename)
-            path.unlink()
-        except Exception as err:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           str(err))
-
-    def restore_backup_file(self):
-        # Restore original backup
-        try:
-            self.new_file_data.unlink()
-            copy2(self.backup_filename, self.filename)
-        except Exception as err:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           str(err))
 
     def run_command(self, command):
         try:
@@ -91,8 +61,6 @@ class Compressor():
                            str(err))
 
     def compress_image(self):
-        self.create_backup_file()
-
         self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
 
         lossy = self._settings.get_boolean('lossy')
@@ -109,26 +77,11 @@ class Compressor():
         stdout.close()
 
         # Check if new size is equal or higher than the old one
-        compress_image = False
         self.new_size = self.new_file_data.stat().st_size
-        if self.new_size >= self.size:
-            response = message_dialog(self.win, 'question', _("Compression not useful"),
-                _("The new file size of {} is higher than the original size." \
-                  " Do you want to compress the image anyway?").format(self.full_name))
-            if response == Gtk.ResponseType.YES:
-                compress_image = True
-        else:
-            compress_image = True
 
-        if compress_image:
-            savings = round(100 - (self.new_size * 100 / self.size), 2)
-            self.win.update_treeview_row(self.tree_iter, self.new_size,
-                                        '{}%'.format(str(savings)))
-        else:
-            self.restore_backup_file()
-            self.win.update_treeview_row(self.tree_iter, '/', _("Nothing"))
-
-        self.delete_backup_file()
+        savings = round(100 - (self.new_size * 100 / self.size), 2)
+        self.win.update_treeview_row(self.tree_iter, self.new_size,
+                                    '{}%'.format(str(savings)))
 
     def build_png_command(self, lossy, metadata):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
