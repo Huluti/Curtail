@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - An option to progressive encode jpegs. Thank's to @trst.
 - Add Russian translation.
+- Add Slovak translation.
 
 ### Changed
 - Better handling of existing files.
