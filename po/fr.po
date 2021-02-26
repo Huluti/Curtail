@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-14 12:39+0100\n"
-"PO-Revision-Date: 2021-02-14 12:42+0100\n"
+"POT-Creation-Date: 2021-02-25 19:13+0100\n"
+"PO-Revision-Date: 2021-02-26 19:50+0100\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:5
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:298
+#: src/window.py:308
 msgid "Compress your images"
 msgstr "Compresser vos images"
 
@@ -200,50 +200,42 @@ msgstr "Les images sont sauvegardées avec le suffixe <b>'{}'</b>."
 msgid "Images are <b>overwritten</b>."
 msgstr "Les images sont <b>écrasées</b>."
 
-#: src/window.py:232
+#: src/window.py:205
+msgid "File already exists"
+msgstr "Le fichier existe déjà"
+
+#: src/window.py:206
+msgid "The file {} already exists. Do you want to compress the image anyway?"
+msgstr ""
+"Le fichier {} existe déjà. Voulez-vous quand même compresser l'image ?"
+
+#: src/window.py:242
 msgid "Format not supported"
 msgstr "Format non supporté"
 
-#: src/window.py:233
+#: src/window.py:243
 msgid "The format of {} is not supported."
 msgstr "Le format de {} n'est pas supporté."
 
-#: src/window.py:237
+#: src/window.py:247
 msgid "Path not valid"
 msgstr "Chemin non-valide"
 
-#: src/window.py:238
+#: src/window.py:248
 msgid "{} doesn't exist."
 msgstr "{} n'existe pas."
 
-#: src/window.py:297
+#: src/window.py:307
 msgid "translator-credits"
 msgstr "Hugo Posnic"
 
-#: src/window.py:299
+#: src/window.py:309
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribué sous la licence GNU GPL(v3).\n"
 
-#: src/compressor.py:59 src/compressor.py:68 src/compressor.py:77
-#: src/compressor.py:90
+#: src/compressor.py:60
 msgid "An error has occured"
 msgstr "Une erreur est survenue"
-
-#: src/compressor.py:114
-msgid "Compression not useful"
-msgstr "Compression inutile"
-
-#: src/compressor.py:115
-msgid ""
-"The new file size of {} is higher than the original size. Do you want to "
-"compress the image anyway?"
-msgstr ""
-"La nouvelle taille du fichier {} est supérieure à la taille d'origine. "
-"Voulez-vous quand même compresser l'image?"
-
-#: src/compressor.py:128
-msgid "Nothing"
-msgstr "Rien"
 
 #: src/tools.py:51
 msgid "All images"
@@ -256,6 +248,12 @@ msgstr "Images PNG"
 #: src/tools.py:60
 msgid "JPEG images"
 msgstr "Images JPEG"
+
+#~ msgid "Compression not useful"
+#~ msgstr "Compression inutile"
+
+#~ msgid "Nothing"
+#~ msgstr "Rien"
 
 #~ msgid "{} is already compressed at max with current options."
 #~ msgstr "{} est déjà compressée au maximum avec les paramètres actuels."
