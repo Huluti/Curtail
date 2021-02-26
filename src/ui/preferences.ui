@@ -295,12 +295,11 @@
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="show-close-button">True</property>
-        <child>
+        <child type="title">
           <object class="GtkStackSwitcher" id="stack_switcher">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="halign">center</property>
-            <property name="hexpand">True</property>
             <property name="stack">stack</property>
           </object>
         </child>
