@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-25 19:13+0100\n"
-"PO-Revision-Date: 2021-02-26 19:50+0100\n"
+"PO-Revision-Date: 2021-02-26 20:00+0100\n"
 "Last-Translator: Hugo Posnic <hugo.posnic@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -248,12 +248,3 @@ msgstr "Images PNG"
 #: src/tools.py:60
 msgid "JPEG images"
 msgstr "Images JPEG"
-
-#~ msgid "Compression not useful"
-#~ msgstr "Compression inutile"
-
-#~ msgid "Nothing"
-#~ msgstr "Rien"
-
-#~ msgid "{} is already compressed at max with current options."
-#~ msgstr "{} est déjà compressée au maximum avec les paramètres actuels."
