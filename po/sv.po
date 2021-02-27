@@ -1,0 +1,249 @@
+# Swedish translation for Curtail
+# Copyright (C) 2021 Hugo Posnic
+# This file is distributed under the same license as the curtail package.
+# Åke Engelbrektson <eson@svenskasprakfiler.se>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: curtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-25 19:13+0100\n"
+"PO-Revision-Date: 2021-02-27 09:29+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Åke Engelbrektson <eson@svenskasprakfiler.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv\n"
+
+#: data/com.github.huluti.Curtail.desktop.in:3
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+msgid "Curtail"
+msgstr "Curtail"
+
+#: data/com.github.huluti.Curtail.desktop.in:5
+#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
+#: src/window.py:308
+msgid "Compress your images"
+msgstr "Komprimera dina bilder"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
+msgid ""
+"Curtail is an useful image compressor, supporting PNG and JPEG file types."
+msgstr ""
+"Curtail är ett användbart komprimeringsprogram som stödjer PNG- och JPEG-"
+"filer."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
+msgid ""
+"It support both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Det stödjer både förlustfria och förstörande komprimeringslägen med "
+"möjlighet att bevara eller skippa metadata för bilder."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Spara i en ny fil"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Spara den komprimerade bilden i en ny fil."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:125
+msgid "Keep metadata"
+msgstr "Bevara metadata"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid "This setting preserves metadata of images."
+msgstr "Denna inställning bevarar metadata i bilderna."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Enable lossy mode"
+msgstr "Aktivera förstörande läge"
+
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "Use lossy mode to compress images."
+msgstr "Använd förstörande komprimeringsläge på bilderna."
+
+#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
+msgid "Suffix to append at end of new file"
+msgstr "Suffix att tillämpa i slutet på ny fil"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "Suffix to append at end of new file."
+msgstr "Suffix att tillämpa i slutet på ny fil."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
+msgid "PNG Lossy Compression Level"
+msgstr "PNG förstörande komprimeringsnivå"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "Lossy compression level to use for PNG images."
+msgstr "Förstörande komprimeringsnivå att använda på PNG-bilder."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
+msgid "PNG Lossless Compression Level"
+msgstr "PNG förlustfri komprimeringsnivå"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Lossless compression level to use for PNG images."
+msgstr "Förlustfri komprimeringsnivå att använda på PNG-bilder."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
+msgid "JPG Lossy Compression Level"
+msgstr "JPG förstörande komprimeringsnivå"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Lossy compression level to use for JPG images."
+msgstr "Förstörande komprimeringsnivå att använda på JPG-bilder."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "Enable progressive encoding for jpegs"
+msgstr "Aktivera progressiv kodning för JPEG-filer"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Optionally encode jpeg images progressively."
+msgstr "Koda JPEG-bilder progressivt."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
+msgid "Enable dark theme"
+msgstr "Aktivera mörkt tema"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Use dark theme for the windows."
+msgstr "Använd mörkt tema på programfönster."
+
+#: src/ui/window.ui:47
+msgid "Drag and drop your images here..."
+msgstr "Dra och släpp dina bilder här ..."
+
+#: src/ui/window.ui:62
+msgid "or"
+msgstr "eller"
+
+#: src/ui/window.ui:75 src/window.py:168
+msgid "Browse your files"
+msgstr "Bläddra bland dina filer"
+
+#: src/ui/window.ui:100
+msgid "Lossless"
+msgstr "Förlustfri"
+
+#: src/ui/window.ui:129
+msgid "Lossy"
+msgstr "Förstörande"
+
+#: src/ui/preferences.ui:22 src/ui/menu.ui:6
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: src/ui/preferences.ui:99
+msgid "Save the compressed image into a new file"
+msgstr "Spara den komprimerade bilden i en ny fil"
+
+#: src/ui/preferences.ui:148
+msgid "General"
+msgstr "Allmänt"
+
+#: src/ui/preferences.ui:218
+msgid "Compression"
+msgstr "Komprimering"
+
+#: src/ui/preferences.ui:250
+msgid ""
+"PNG Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+"PNG förlustfri komprimeringsnivå\n"
+"(ju högre den är, desto långsammare går det)"
+
+#: src/ui/preferences.ui:264
+msgid "Progressive Encode JPG"
+msgstr "Koda JPG progressivt"
+
+#: src/ui/preferences.ui:287
+msgid "Advanced"
+msgstr "Avancerat"
+
+#: src/ui/menu.ui:10
+msgid "About Curtail"
+msgstr "Om Curtail"
+
+#: src/window.py:88
+msgid "Filename"
+msgstr "Filnamn"
+
+#: src/window.py:89
+msgid "Old Size"
+msgstr "Ursprunglig storlek"
+
+#: src/window.py:90
+msgid "New Size"
+msgstr "Ny storlek"
+
+#: src/window.py:91
+msgid "Savings"
+msgstr "Sparat"
+
+#: src/window.py:155
+msgid "Images are saved with <b>'{}' suffix</b>."
+msgstr "Bilder sparas med <b>suffixet '{}'</b>."
+
+#: src/window.py:158
+msgid "Images are <b>overwritten</b>."
+msgstr "Bilder <b>skrivs över</b>."
+
+#: src/window.py:205
+msgid "File already exists"
+msgstr "Filen finns redan"
+
+#: src/window.py:206
+msgid "The file {} already exists. Do you want to compress the image anyway?"
+msgstr "Filen {} finns redan. Vill du komprimera bilden ändå?"
+
+#: src/window.py:242
+msgid "Format not supported"
+msgstr "Formatet stöds inte"
+
+#: src/window.py:243
+msgid "The format of {} is not supported."
+msgstr "Formatet {} stöds inte."
+
+#: src/window.py:247
+msgid "Path not valid"
+msgstr "Sökvägen är inte giltig"
+
+#: src/window.py:248
+msgid "{} doesn't exist."
+msgstr "{} finns inte."
+
+#: src/window.py:307
+msgid "translator-credits"
+msgstr "Åke Engelbrektson <eson@svenskasprakfiler.se>"
+
+#: src/window.py:309
+msgid "Distributed under the GNU GPL(v3) license.\n"
+msgstr "Distribuerat under GNU GPL(v3) license.\n"
+
+#: src/compressor.py:60
+msgid "An error has occured"
+msgstr "Ett fel har inträffat"
+
+#: src/tools.py:51
+msgid "All images"
+msgstr "Alla bilder"
+
+#: src/tools.py:56
+msgid "PNG images"
+msgstr "PNG-bilder"
+
+#: src/tools.py:60
+msgid "JPEG images"
+msgstr "JPEG-bilder"
