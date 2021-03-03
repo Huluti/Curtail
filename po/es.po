@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 11:09+0100\n"
-"PO-Revision-Date: 2021-01-17 13:58+0100\n"
+"POT-Creation-Date: 2021-02-25 19:13+0100\n"
+"PO-Revision-Date: 2021-03-03 14:10+0100\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
-"Language-Team: Spanish - Spain\n"
-"Language: es_ES\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,9 +25,9 @@ msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.desktop.in:5
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:298
+#: src/window.py:308
 msgid "Compress your images"
-msgstr "Comprime tus imágenes"
+msgstr "Comprima sus imágenes"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
@@ -50,7 +50,7 @@ msgstr "Hugo Posnic"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
-msgstr "Guardar en un nuevo archivo"
+msgstr "Guardar en un archivo nuevo"
 
 #: data/com.github.huluti.Curtail.gschema.xml:7
 msgid "Save the compressed image into a new file."
@@ -66,7 +66,7 @@ msgstr "Esta opción mantiene los metadatos de las imágenes."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable lossy mode"
-msgstr "Habilitar compresión con pérdida"
+msgstr "Activar compresión con pérdida"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "Use lossy mode to compress images."
@@ -74,11 +74,11 @@ msgstr "Usar compresión con pérdida al comprimir imágenes."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
 msgid "Suffix to append at end of new file"
-msgstr "Sufijo para agregar al final del nuevo archivo"
+msgstr "Sufijo para agregar al final del archivo nuevo"
 
 #: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "Suffix to append at end of new file."
-msgstr "Sufijo para agregar al final del nuevo archivo."
+msgstr "Sufijo para agregar al final del archivo archivo."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
 msgid "PNG Lossy Compression Level"
@@ -104,17 +104,25 @@ msgstr "Nivel de compresión JPG con pérdida"
 msgid "Lossy compression level to use for JPG images."
 msgstr "Nivel de compresión con pérdida para usar con imágenes JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
-msgid "Enable dark theme"
-msgstr "Habilitar tema oscuro"
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "Enable progressive encoding for jpegs"
+msgstr "Activar la codificación progresiva de los jpegs"
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Optionally encode jpeg images progressively."
+msgstr "Opcionalmente, codificar las imágenes jpeg de forma progresiva."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
+msgid "Enable dark theme"
+msgstr "Activar tema oscuro"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Use dark theme for the windows."
 msgstr "Usar tema oscuro para las ventanas."
 
 #: src/ui/window.ui:47
 msgid "Drag and drop your images here..."
-msgstr "Arrastra y suelta las imágenes aquí..."
+msgstr "Arrastre y suelte las imágenes aquí..."
 
 #: src/ui/window.ui:62
 msgid "or"
@@ -138,7 +146,7 @@ msgstr "Preferencias"
 
 #: src/ui/preferences.ui:99
 msgid "Save the compressed image into a new file"
-msgstr "Guardar imagen comprimida en un nuevo archivo"
+msgstr "Guardar imagen comprimida en un archivo nuevo"
 
 #: src/ui/preferences.ui:148
 msgid "General"
@@ -156,7 +164,11 @@ msgstr ""
 "Nivel de compresión PNG sin pérdida\n"
 "(cuanto más alto, más lento)"
 
-#: src/ui/preferences.ui:261
+#: src/ui/preferences.ui:264
+msgid "Progressive Encode JPG"
+msgstr "Codificación progresiva JPG"
+
+#: src/ui/preferences.ui:287
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -170,11 +182,11 @@ msgstr "Nombre del archivo"
 
 #: src/window.py:89
 msgid "Old Size"
-msgstr "Antiguo tamaño"
+msgstr "Tamaño antiguo"
 
 #: src/window.py:90
 msgid "New Size"
-msgstr "Nuevo tamaño"
+msgstr "Tamaño nuevo"
 
 #: src/window.py:91
 msgid "Savings"
@@ -188,48 +200,43 @@ msgstr "Las imágenes se guardan con <b> el sufijo '{}'</b>."
 msgid "Images are <b>overwritten</b>."
 msgstr "Las imágenes <b>se sobreescriben</b>."
 
-#: src/window.py:232
+#: src/window.py:205
+msgid "File already exists"
+msgstr "El archivo ya existe"
+
+#: src/window.py:206
+msgid "The file {} already exists. Do you want to compress the image anyway?"
+msgstr "El archivo {} ya existe. ¿Quiere comprimir la imagen de todos modos?"
+
+#: src/window.py:242
 msgid "Format not supported"
 msgstr "No hay soporte para el formato"
 
-#: src/window.py:233
+#: src/window.py:243
 msgid "The format of {} is not supported."
 msgstr "No hay soporte para el formato de {}"
 
-#: src/window.py:237
+#: src/window.py:247
 msgid "Path not valid"
 msgstr "Ruta de archivo incorrecta"
 
-#: src/window.py:238
+#: src/window.py:248
 msgid "{} doesn't exist."
 msgstr "{} no existe."
 
-#: src/window.py:297
+#: src/window.py:307
 msgid "translator-credits"
 msgstr ""
 "Josué Quilón Barrios\n"
 "Óscar Fernández Díaz"
 
-#: src/window.py:299
+#: src/window.py:309
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribuido bajo licencia GNU GPL(v3)\n"
 
-#: src/compressor.py:59 src/compressor.py:68 src/compressor.py:77
-#: src/compressor.py:90
+#: src/compressor.py:60
 msgid "An error has occured"
 msgstr "Se ha producido un error"
-
-#: src/compressor.py:115
-msgid "Nothing"
-msgstr "Nada"
-
-#: src/compressor.py:116
-msgid "Compression not useful"
-msgstr "Compresión no útil"
-
-#: src/compressor.py:117
-msgid "{} is already compressed at max with current options."
-msgstr "{} ya está comprimida al máximo con las opciones actuales."
 
 #: src/tools.py:51
 msgid "All images"
