@@ -85,10 +85,10 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         col_bool = Gtk.TreeViewColumn('', self.spinner_renderer, active=0)
         self.treeview.append_column(col_bool)
-        self.add_column_to_treeview(_("Filename"), 1)
+        self.add_column_to_treeview(_("Filename"), 1, True)
         self.add_column_to_treeview(_("Old Size"), 2)
         self.add_column_to_treeview(_("New Size"), 3)
-        self.add_column_to_treeview(_("Savings"), 4)
+        self.add_column_to_treeview(_("Savings"), 4, True)
 
         self.adjustment = self.treeview_scrolled_window.get_vadjustment()
 
@@ -114,9 +114,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
 
-    def add_column_to_treeview(self, title, column_id):
+    def add_column_to_treeview(self, title, column_id, allow_sort=False):
         treeviewcolumn = Gtk.TreeViewColumn(title)
-        if column_id in (0, 3):
+        if allow_sort:
             treeviewcolumn.set_sort_column_id(column_id)
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
