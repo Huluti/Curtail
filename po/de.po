@@ -1,14 +1,14 @@
 # curtail.pot
 # Copyright 2019 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
-# Onno Giesmann <nutzer3105@gmail.com>, 2019 (first Author).
+# Onno Giesmann <nutzer3105@gmail.com>, 2019-2021 (first Author).
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 18:22+0200\n"
-"PO-Revision-Date: 2020-12-09 19:03+0100\n"
+"POT-Creation-Date: 2021-02-25 19:13+0100\n"
+"PO-Revision-Date: 2021-03-04 21:23+0100\n"
 "Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: German - Germany <>\n"
 "Language: de_DE\n"
@@ -24,19 +24,15 @@ msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.desktop.in:5
-msgid "Simple & useful image compressor."
-msgstr "Einfacher & nützlicher Bild-Kompressor."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:8
-msgid "Simple &amp; useful image compressor"
-msgstr "Einfacher & nützlicher Bild-Kompressor"
+#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
+#: src/window.py:308
+msgid "Compress your images"
+msgstr "Komprimieren Ihrer Bilder"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG and JPEG file "
-"types."
-msgstr ""
-"Curtail ist ein nützlicher Bild-Kompressor für PNG- und JPEG-Dateien."
+"Curtail is an useful image compressor, supporting PNG and JPEG file types."
+msgstr "Curtail ist ein nützlicher Bildkompressor für PNG- und JPEG-Dateien."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
@@ -82,7 +78,7 @@ msgstr "Angehängter Zusatz am Ende der neuen Datei"
 msgid "Suffix to append at end of new file."
 msgstr "Angehängter Zusatz am Ende der neuen Datei."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:179
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
 msgid "PNG Lossy Compression Level"
 msgstr "PNG Verlustbehafteter Komprimierungsgrad"
 
@@ -98,7 +94,7 @@ msgstr "PNG Verlustfreier Komprimierungsgrad"
 msgid "Lossless compression level to use for PNG images."
 msgstr "Verlustfreier Komprimierungsgrad für PNG-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:206
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
 msgid "JPG Lossy Compression Level"
 msgstr "JPG Verlustbehafteter Komprimierungsgrad"
 
@@ -106,11 +102,19 @@ msgstr "JPG Verlustbehafteter Komprimierungsgrad"
 msgid "Lossy compression level to use for JPG images."
 msgstr "Verlustbehafteter Komprimierungsgrad für JPG-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:49
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "Enable progressive encoding for jpegs"
+msgstr "Progressives Encodieren für jpegs aktivieren"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Optionally encode jpeg images progressively."
+msgstr "Optionales progressives Encodieren von jpeg-Bildern."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
 msgid "Enable dark theme"
 msgstr "Dunkles Thema verwenden"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Use dark theme for the windows."
 msgstr "Dunkles Thema für Fenster verwenden."
 
@@ -134,10 +138,6 @@ msgstr "Verlustfrei"
 msgid "Lossy"
 msgstr "Verlustbehaftet"
 
-#: src/ui/window.ui:213 src/window.py:298
-msgid "Simple & useful image compressor"
-msgstr "Einfacher & nützlicher Kompressor für Bilder"
-
 #: src/ui/preferences.ui:22 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Einstellungen"
@@ -146,15 +146,15 @@ msgstr "Einstellungen"
 msgid "Save the compressed image into a new file"
 msgstr "Komprimiertes Bild als neue Datei speichern"
 
-#: src/ui/preferences.ui:160
+#: src/ui/preferences.ui:148
 msgid "General"
 msgstr "Allgemein"
 
-#: src/ui/preferences.ui:245
+#: src/ui/preferences.ui:218
 msgid "Compression"
 msgstr "Kompression"
 
-#: src/ui/preferences.ui:277
+#: src/ui/preferences.ui:250
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -162,7 +162,11 @@ msgstr ""
 "PNG Verlustfreier Komprimierungsgrad\n"
 "(umso höher, desto langsamer)"
 
-#: src/ui/preferences.ui:309
+#: src/ui/preferences.ui:264
+msgid "Progressive Encode JPG"
+msgstr "Progressive Encodierung JPG"
+
+#: src/ui/preferences.ui:287
 msgid "Advanced"
 msgstr "Erweitert"
 
@@ -194,46 +198,42 @@ msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert."
 msgid "Images are <b>overwritten</b>."
 msgstr "Bilder werden <b>überschrieben</b>."
 
-#: src/window.py:232
+#: src/window.py:205
+msgid "File already exists"
+msgstr "Datei existiert bereits"
+
+#: src/window.py:206
+msgid "The file {} already exists. Do you want to compress the image anyway?"
+msgstr ""
+"Die Datei {} existiert bereits. Möchten Sie das Bild trotzdem komprimieren?"
+
+#: src/window.py:242
 msgid "Format not supported"
 msgstr "Nicht unterstütztes Format"
 
-#: src/window.py:233
+#: src/window.py:243
 msgid "The format of {} is not supported."
 msgstr "Das Format von {} wird nicht unterstützt."
 
-#: src/window.py:238
+#: src/window.py:247
 msgid "Path not valid"
 msgstr "Ungültiger Pfad"
 
-#: src/window.py:239
+#: src/window.py:248
 msgid "{} doesn't exist."
 msgstr "{} existiert nicht."
 
-#: src/window.py:297
+#: src/window.py:307
 msgid "translator-credits"
-msgstr "Etamuk"
+msgstr "Onno Giesmann"
 
-#: src/window.py:299
+#: src/window.py:309
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Veröffentlicht unter der Lizenz GNU GPL(v3).\n"
 
-#: src/compressor.py:59 src/compressor.py:68 src/compressor.py:77
-#: src/compressor.py:90
+#: src/compressor.py:60
 msgid "An error has occured"
 msgstr "Es ist ein Fehler aufgetreten"
-
-#: src/compressor.py:115
-msgid "Nothing"
-msgstr "Nichts"
-
-#: src/compressor.py:116
-msgid "Compression not useful"
-msgstr "Komprimierung nicht sinnvoll"
-
-#: src/compressor.py:117
-msgid "{} is already compressed at max with current options."
-msgstr "{} ist mit den aktuellen Optionen bereits maximal komprimiert."
 
 #: src/tools.py:51
 msgid "All images"
@@ -246,3 +246,21 @@ msgstr "PNG-Bilder"
 #: src/tools.py:60
 msgid "JPEG images"
 msgstr "JPEG-Bilder"
+
+#~ msgid "Simple & useful image compressor."
+#~ msgstr "Einfacher & nützlicher Bild-Kompressor."
+
+#~ msgid "Simple &amp; useful image compressor"
+#~ msgstr "Einfacher & nützlicher Bild-Kompressor"
+
+#~ msgid "Simple & useful image compressor"
+#~ msgstr "Einfacher & nützlicher Kompressor für Bilder"
+
+#~ msgid "Nothing"
+#~ msgstr "Nichts"
+
+#~ msgid "Compression not useful"
+#~ msgstr "Komprimierung nicht sinnvoll"
+
+#~ msgid "{} is already compressed at max with current options."
+#~ msgstr "{} ist mit den aktuellen Optionen bereits maximal komprimiert."
