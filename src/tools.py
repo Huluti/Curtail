@@ -15,16 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk
+from gi.repository import Gtk, GLib
 from os import path
 
 
 def sizeof_fmt(num):
-    for unit in ['','Kb','Mb']:
-        if abs(num) < 1024.0:
-            return "%3.1f %s" % (num, unit)
-        num /= 1024.0
-    return "%.1f %s" % (num, 'Yb')
+    return GLib.format_size_full(num, GLib.FormatSizeFlags.IEC_UNITS)
 
 
 def message_dialog(parent, dialog_type, title, text):
