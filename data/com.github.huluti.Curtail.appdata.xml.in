@@ -33,6 +33,24 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+    <release version="1.1.0" date="2021-03-12">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>An option to progressive encode jpegs. Thank's to @trst.</li>
+          <li>Add Russian translation.</li>
+          <li>Add Slovak translation.</li>
+          <li>Add Swedish translation.</li>
+          <li>Better handling of existing files.</li>
+          <li>Better appdata summary.</li>
+          <li>Update Spanish translation.</li>
+          <li>Compress images with extensions in uppercase.</li>
+          <li>Center preferences window header switcher. Thank's to @andrenete.</li>
+          <li>Fix columns sorting. Thank's to @andrenete.</li>
+          <li>Don't allow empty suffix (incorrect compression for JPEG). Thank's to @andrenete.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2020-12-19">
       <description>
         <p>Here's the changelog of this version:</p>
