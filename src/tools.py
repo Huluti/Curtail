@@ -20,7 +20,7 @@ from os import path
 
 
 def sizeof_fmt(num):
-    return GLib.format_size_full(num, GLib.FormatSizeFlags.IEC_UNITS)
+    return GLib.format_size(num)
 
 
 def message_dialog(parent, dialog_type, title, text):
