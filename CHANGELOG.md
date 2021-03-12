@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 - Compress images with extensions in uppercase.
 - Center preferences window header switcher. Thank's to @andrenete.
 - Fix columns sorting. Thank's to @andrenete.
+- Don't allow empty suffix (incorrect compression for JPEG). Thank's to @andrenete.
 
 ## [1.0.0] - 2020-12-19
 ### Added
