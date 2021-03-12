@@ -108,6 +108,8 @@ class CurtailPrefsWindow(Gtk.Window):
     def on_string_changed(self, entry, key):
         self._settings.set_string(key, entry.get_text())
         if key == 'suffix':
+            if not self._settings.get_string('suffix'):
+                self._settings.reset('suffix')
             self.parent.change_save_info_label()
 
     def on_int_changed(self, spin, key):
