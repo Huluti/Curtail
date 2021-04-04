@@ -23,7 +23,7 @@ from pathlib import Path
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
-                    sizeof_fmt
+                    sizeof_fmt, get_file_type
 
 UI_PATH = '/com/github/huluti/Curtail/ui/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -219,10 +219,10 @@ class CurtailWindow(Gtk.ApplicationWindow):
             filename = filename.strip('\r\n\x00')  # remove spaces
         return filename
 
-    def check_extension(self, path):
-        suffix = path.suffix.lower()
-        if suffix:
-            return suffix in ('.png', '.jpg', '.jpeg')
+    def check_extension(self, filename):
+        file_type = get_file_type(filename)
+        if file_type:
+            return file_type in ('png', 'jpg')
         else:
             return False
 

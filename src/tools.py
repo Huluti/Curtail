@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, GLib
+from gi.repository import Gtk, GLib, Gio
 from os import path
 
 
@@ -59,3 +59,17 @@ def add_filechooser_filters(dialog):
     dialog.add_filter(all_images)
     dialog.add_filter(png_images)
     dialog.add_filter(jpeg_images)
+
+
+def get_file_type(filename):
+    content_type, uncertain = Gio.content_type_guess(filename=filename)
+    if not uncertain:
+        if content_type == 'image/jpeg':
+            return 'jpg'
+        elif content_type == 'image/png':
+            return 'png'
+        else:
+            return None
+    else:
+        return None
+

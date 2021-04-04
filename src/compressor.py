@@ -20,7 +20,7 @@ from gi.repository import Gtk, Gio, GObject
 from shutil import copy2
 from pathlib import Path
 
-from .tools import message_dialog
+from .tools import message_dialog, get_file_type
 
 
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -61,16 +61,17 @@ class Compressor():
                            str(err))
 
     def compress_image(self):
-        self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
+        file_type = get_file_type(self.filename)
+        if file_type:
+            self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
+            lossy = self._settings.get_boolean('lossy')
+            metadata = self._settings.get_boolean('metadata')
 
-        lossy = self._settings.get_boolean('lossy')
-        metadata = self._settings.get_boolean('metadata')
-        suffix = self.file_data.suffix.lower()
-        if suffix == '.png':
-            command = self.build_png_command(lossy, metadata)
-        elif suffix in('.jpeg', '.jpg'):
-            command = self.build_jpg_command(lossy, metadata)
-        self.run_command(command)  # compress image
+            if file_type == 'png':
+                command = self.build_png_command(lossy, metadata)
+            elif file_type == 'jpg':
+                command = self.build_jpg_command(lossy, metadata)
+            self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
         GObject.source_remove(self.io_id)
