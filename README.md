@@ -29,7 +29,9 @@ You can also install it by using the following command-line:
 ### Distro packages
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/curtail.svg)](https://repology.org/project/curtail/versions)
-    
+
+A [PPA](https://launchpad.net/~apandada1/+archive/ubuntu/curtail) is available for Ubuntu (18.04+) and derivatives. 
+
 ### Build from source (nightly)
 
 Build and install by running:
