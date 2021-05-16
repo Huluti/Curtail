@@ -53,6 +53,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.set_default_icon_name('com.github.huluti.Curtail')
         self.app = kwargs['application']
 
         self.build_ui()
