@@ -72,7 +72,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.menu_button.set_menu_model(window_menu)
 
         # Mainbox - drag&drop
-        enforce_target = Gtk.TargetEntry.new('text/plain',
+        enforce_target = Gtk.TargetEntry.new('text/uri-list',
                                              Gtk.TargetFlags(4), 0)
         self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
                                    Gdk.DragAction.COPY)
@@ -183,8 +183,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
            self.handle_filenames(filenames)
 
     def on_receive(self, widget, drag_context, x, y, data, info, time):
-        filenames = data.get_text()
-        filenames = filenames.split()  # we may have several paths
+        filenames = data.get_uris()
         self.handle_filenames(filenames)
 
     def handle_filenames(self, filenames):
