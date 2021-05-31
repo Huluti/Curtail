@@ -62,7 +62,7 @@ def add_filechooser_filters(dialog):
 
 
 def get_file_type(filename):
-    content_type, uncertain = Gio.content_type_guess(filename=filename)
+    content_type, uncertain = Gio.content_type_guess(filename=str(filename))
     if not uncertain:
         if content_type == 'image/jpeg':
             return 'jpg'
