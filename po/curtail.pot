@@ -1,14 +1,14 @@
-# curtail.pot
-# Copyright (C) 2021 Hugo Posnic
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the curtail package.
-# Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 19:14+0100\n"
+"POT-Creation-Date: 2021-06-16 18:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,13 +24,14 @@ msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:5
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:308
+#: src/window.py:309
 msgid "Compress your images"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG and JPEG file types."
+"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
+"types."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
@@ -308,7 +309,7 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:125
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:135
 msgid "Keep metadata"
 msgstr ""
 
@@ -324,7 +325,7 @@ msgstr ""
 msgid "Use lossy mode to compress images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
+#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:85
 msgid "Suffix to append at end of new file"
 msgstr ""
 
@@ -332,7 +333,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:177
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -348,27 +349,43 @@ msgstr ""
 msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
-msgid "JPG Lossy Compression Level"
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "WEBP Lossless Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossy compression level to use for JPG images."
+msgid "Lossless compression level to use for WEBP images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
-msgid "Enable progressive encoding for jpegs"
+#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
+msgid "JPG Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
-msgid "Optionally encode jpeg images progressively."
+msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
-msgid "Enable dark theme"
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
+msgid "WEBP Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossy compression level to use for WEBP images."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
+msgid "Enable progressive encoding for jpegs"
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Optionally encode jpeg images progressively."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:56 src/ui/preferences.ui:59
+msgid "Enable dark theme"
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Use dark theme for the windows."
 msgstr ""
 
@@ -380,7 +397,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:75 src/window.py:168
+#: src/ui/window.ui:75 src/window.py:169
 msgid "Browse your files"
 msgstr ""
 
@@ -392,33 +409,39 @@ msgstr ""
 msgid "Lossy"
 msgstr ""
 
-#: src/ui/preferences.ui:22 src/ui/menu.ui:6
+#: src/ui/preferences.ui:32 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr ""
 
-#: src/ui/preferences.ui:99
+#: src/ui/preferences.ui:109
 msgid "Save the compressed image into a new file"
 msgstr ""
 
-#: src/ui/preferences.ui:148
+#: src/ui/preferences.ui:158
 msgid "General"
 msgstr ""
 
-#: src/ui/preferences.ui:218
+#: src/ui/preferences.ui:255
 msgid "Compression"
 msgstr ""
 
-#: src/ui/preferences.ui:250
+#: src/ui/preferences.ui:288
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:264
+#: src/ui/preferences.ui:315
+msgid ""
+"WEBP Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+
+#: src/ui/preferences.ui:329
 msgid "Progressive Encode JPG"
 msgstr ""
 
-#: src/ui/preferences.ui:287
+#: src/ui/preferences.ui:352
 msgid "Advanced"
 msgstr ""
 
@@ -426,27 +449,27 @@ msgstr ""
 msgid "About Curtail"
 msgstr ""
 
-#: src/window.py:88
+#: src/window.py:89
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:89
+#: src/window.py:90
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:90
+#: src/window.py:91
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:91
+#: src/window.py:92
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:155
+#: src/window.py:156
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr ""
 
-#: src/window.py:158
+#: src/window.py:159
 msgid "Images are <b>overwritten</b>."
 msgstr ""
 
@@ -458,27 +481,27 @@ msgstr ""
 msgid "The file {} already exists. Do you want to compress the image anyway?"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:243
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:243
+#: src/window.py:244
 msgid "The format of {} is not supported."
 msgstr ""
 
-#: src/window.py:247
+#: src/window.py:248
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:248
+#: src/window.py:249
 msgid "{} doesn't exist."
 msgstr ""
 
-#: src/window.py:307
+#: src/window.py:308
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:309
+#: src/window.py:310
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
@@ -490,10 +513,14 @@ msgstr ""
 msgid "All images"
 msgstr ""
 
-#: src/tools.py:52
+#: src/tools.py:53
 msgid "PNG images"
 msgstr ""
 
-#: src/tools.py:56
+#: src/tools.py:57
 msgid "JPEG images"
+msgstr ""
+
+#: src/tools.py:61
+msgid "WEBP images"
 msgstr ""
