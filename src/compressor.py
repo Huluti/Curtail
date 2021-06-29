@@ -71,6 +71,8 @@ class Compressor():
                 command = self.build_png_command(lossy, metadata)
             elif file_type == 'jpg':
                 command = self.build_jpg_command(lossy, metadata)
+            elif file_type == 'webp':
+                command = self.build_webp_command(lossy, metadata)
             self.run_command(command)  # compress image
 
     def command_finished(self, stdout, condition):
@@ -137,6 +139,28 @@ class Compressor():
                 command = jpegoptim2.format(self.filename, self.new_filename)
             else:
                 command = jpegoptim2.format(self.filename)
+        return command
+
+    def build_webp_command(self, lossy, metadata):
+        command = "cwebp " + self.filename
+
+        # cwebp doesn't preserve any metadata by default
+        if metadata:
+            command += " -metadata all"
+
+        if lossy:
+            quality = self._settings.get_int('webp-lossy-level')
+        else:
+            command += " -lossless"
+            quality = 100   # maximum cpu power for lossless
+
+        compression_level = self._settings.get_int('webp-lossless-level')
+
+        # multithreaded, (lossless) compression mode, quality, output
+        command += " -mt -m {}".format(compression_level)
+        command += " -q {}".format(quality)
+        command += " -o {}".format(self.new_filename)
+
         return command
 
     def feed(self, stdout, condition):

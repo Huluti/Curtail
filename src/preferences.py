@@ -34,7 +34,9 @@ class CurtailPrefsWindow(Gtk.Window):
     entry_suffix = Gtk.Template.Child()
     spin_png_lossy_level = Gtk.Template.Child()
     spin_png_lossless_level = Gtk.Template.Child()
+    spin_webp_lossless_level = Gtk.Template.Child()
     spin_jpg_lossy_level = Gtk.Template.Child()
+    spin_webp_lossy_level = Gtk.Template.Child()
     toggle_jpg_progressive = Gtk.Template.Child()
     toggle_dark_theme = Gtk.Template.Child()
 
@@ -77,11 +79,23 @@ class CurtailPrefsWindow(Gtk.Window):
         self.spin_png_lossless_level.connect('value-changed',
             self.on_int_changed, 'png-lossless-level')
 
+        # WEBP Lossless Compression Level
+        self.spin_webp_lossless_level.set_value(
+            self._settings.get_int('webp-lossless-level'))
+        self.spin_webp_lossless_level.connect('value-changed',
+            self.on_int_changed, 'webp-lossless-level')
+
         # JPG Lossy Compression Level
         self.spin_jpg_lossy_level.set_value(
             self._settings.get_int('jpg-lossy-level'))
         self.spin_jpg_lossy_level.connect('value-changed',
             self.on_int_changed, 'jpg-lossy-level')
+
+        # WEBP Lossy Compression Level
+        self.spin_webp_lossy_level.set_value(
+            self._settings.get_int('webp-lossy-level'))
+        self.spin_webp_lossy_level.connect('value-changed',
+            self.on_int_changed, 'webp-lossy-level')
 
         # Progressively Encode JPG
         self.toggle_jpg_progressive.set_active(self._settings.get_boolean('jpg-progressive'))

@@ -7,7 +7,7 @@
   <name>Curtail</name>
   <summary>Compress your images</summary>
   <description>
-    <p>Curtail is an useful image compressor, supporting PNG and JPEG file types.</p>
+    <p>Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file types.</p>
     <p>It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
   </description>
 

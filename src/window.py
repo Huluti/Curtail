@@ -222,7 +222,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     def check_extension(self, filename):
         file_type = get_file_type(filename)
         if file_type:
-            return file_type in ('png', 'jpg')
+            return file_type in ('png', 'jpg', 'webp')
         else:
             return False
 
