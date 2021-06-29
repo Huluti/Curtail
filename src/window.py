@@ -302,7 +302,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         dialog = Gtk.AboutDialog(transient_for=self)
         dialog.set_logo_icon_name('com.github.huluti.Curtail')
         dialog.set_program_name('Curtail')
-        dialog.set_version('1.1.0')
+        dialog.set_version('1.2.0')
         dialog.set_website('https://github.com/Huluti/Curtail')
         dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György'])
         dialog.set_translator_credits(_("translator-credits"))

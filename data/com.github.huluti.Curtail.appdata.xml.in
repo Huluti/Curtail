@@ -33,6 +33,22 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+    <release version="1.2.0" date="2021-06-29">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add WEBP support. Thank's to @olokelo.</li>
+          <li>Add Croatian translation. Thank's to @milotype.</li>
+          <li>Update Spanish translation. Thank's to @apandada1.</li>
+          <li>Update Portuguese (Brazil) translation. Thank's to @apandada1.</li>
+          <li>Don't accept empty file. Thank's to @akozlovskiy119.</li>
+          <li>Better guess of extensions. Thank's to @akozlovskiy119.</li>
+          <li>Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119.</li>
+          <li>Fix directory handling. Thank's to @akozlovskiy119.</li>
+          <li>Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2021-03-12">
       <description>
         <p>Here's the changelog of this version:</p>

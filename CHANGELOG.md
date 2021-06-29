@@ -1,6 +1,22 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2021-06-29
+### Added
+- Add WEBP support. Thank's to @olokelo.
+- Add Croatian translation. Thank's to @milotype.
+
+### Changed
+- Update Spanish translation. Thank's to @apandada1.
+- Update Portuguese (Brazil) translation. Thank's to @apandada1.
+- Don't accept empty file. Thank's to @akozlovskiy119.
+- Better guess of extensions. Thank's to @akozlovskiy119.
+
+### Fixed
+- Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119.
+- Fix directory handling. Thank's to @akozlovskiy119.
+- Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1.
+
 ## [1.1.0] - 2021-03-12
 ### Added
 - An option to progressive encode jpegs. Thank's to @trst.

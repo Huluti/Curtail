@@ -1,3 +1,17 @@
+curtail (1.2.0) focal; urgency=medium
+
+  * Add WEBP support. Thank's to @olokelo.
+  * Add Croatian translation. Thank's to @milotype.
+  * Update Spanish translation. Thank's to @apandada1.
+  * Update Portuguese (Brazil) translation. Thank's to @apandada1.
+  * Don't accept empty file. Thank's to @akozlovskiy119.
+  * Better guess of extensions. Thank's to @akozlovskiy119.
+  * Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119.
+  * Fix directory handling. Thank's to @akozlovskiy119.
+  * Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Tue, 29 Jun 2021 22:53:00 +0100
+
 curtail (1.1.0) focal; urgency=medium
 
   * Debian package
