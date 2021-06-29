@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# curtail.pot
+# Copyright (C) 2021 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
 #
 #, fuzzy
 msgid ""

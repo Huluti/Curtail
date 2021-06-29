@@ -142,7 +142,6 @@ class Compressor():
         return command
 
     def build_webp_command(self, lossy, metadata):
-
         command = "cwebp " + self.filename
 
         # cwebp doesn't preserve any metadata by default
