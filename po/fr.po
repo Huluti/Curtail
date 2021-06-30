@@ -443,7 +443,7 @@ msgid ""
 "WEBP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"Niveau de compression sans-perte des WEP\n"
+"Niveau de compression sans-perte des WEBP\n"
 "(plus c'est haut, plus c'est lent)"
 
 #: src/ui/preferences.ui:329
