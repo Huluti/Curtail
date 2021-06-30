@@ -21,6 +21,7 @@ from urllib.parse import unquote
 from pathlib import Path
 
 from .preferences import CurtailPrefsWindow
+from .apply import CurtailApplyDialog
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
                     sizeof_fmt, get_file_type
@@ -37,6 +38,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     settings = Gtk.Settings.get_default()
 
     prefs_window = None
+    apply_window = None
 
     headerbar = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
@@ -50,6 +52,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
     save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
+
+    compress = True
+    apply_to_queue = False
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -189,6 +194,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     def handle_filenames(self, filenames):
         if not filenames:
             return
+        self.apply_to_queue = False  # reset apply queue
         final_filenames = []
         # Clean filenames
         for filename in filenames:
@@ -197,16 +203,35 @@ class CurtailWindow(Gtk.ApplicationWindow):
             for verified_filename in verified_filenames:
                 final_filenames.append(verified_filename)
         # Do operations
+        queue_compress_image = False  # global var for queue
         for filename in final_filenames:
             new_filename = self.create_new_filename(filename)
             new_file_data = Path(new_filename)
-            compress_image = True
-            if new_file_data.is_file():
-                response = message_dialog(self, 'question', _("File already exists"),
-                _("The file {} already exists." \
-                  " Do you want to compress the image anyway?").format(new_file_data.name))
-                if response == Gtk.ResponseType.NO:
-                    compress_image = False
+
+            compress_image = False  # not compress here
+            if new_file_data.is_file():  # verify if file exists
+                if self.apply_to_queue:
+                    if queue_compress_image:
+                        compress_image = True
+                else:
+                    if self.apply_window is not None:
+                        self.apply_window.destroy()
+                    text = "The file <b>{}</b> already exists.\n" \
+                        "Do you want to compress the image anyway?".format(new_file_data.name)
+                    self.apply_window = CurtailApplyDialog(self)
+                    if len(final_filenames) == 1:
+                        self.apply_window.apply_to_queue.hide()
+                    self.apply_window.dynamic_label.set_markup(text)
+                    self.apply_window.set_modal(True)
+                    self.apply_window.set_transient_for(self)
+                    response = self.apply_window.run()
+                    if response == Gtk.ResponseType.YES:
+                        compress_image = True
+                        if self.apply_to_queue:
+                            queue_compress_image = True
+                    self.apply_window.destroy()
+            else:
+                compress_image = True  # compress if not exists
             if compress_image:
                 self.compress_image(filename, new_filename)
                 while Gtk.events_pending():
