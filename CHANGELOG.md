@@ -7,8 +7,8 @@ All notable changes to this project will be documented in this file.
 - Add Croatian translation. Thank's to @milotype.
 
 ### Changed
-- Update Spanish translation. Thank's to @apandada1.
-- Update Portuguese (Brazil) translation. Thank's to @apandada1.
+- Update Spanish translation. Thank's to oscfdezdz.
+- Update Portuguese (Brazil) translation. Thank's to @fulvio-alves.
 - Don't accept empty file. Thank's to @akozlovskiy119.
 - Better guess of extensions. Thank's to @akozlovskiy119.
 

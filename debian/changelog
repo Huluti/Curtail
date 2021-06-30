@@ -2,8 +2,8 @@ curtail (1.2.0) focal; urgency=medium
 
   * Add WEBP support. Thank's to @olokelo.
   * Add Croatian translation. Thank's to @milotype.
-  * Update Spanish translation. Thank's to @apandada1.
-  * Update Portuguese (Brazil) translation. Thank's to @apandada1.
+  * Update Spanish translation. Thank's to @oscfdezdz.
+  * Update Portuguese (Brazil) translation. Thank's to @fulvio-alves.
   * Don't accept empty file. Thank's to @akozlovskiy119.
   * Better guess of extensions. Thank's to @akozlovskiy119.
   * Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119.

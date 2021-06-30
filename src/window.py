@@ -304,7 +304,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         dialog.set_program_name('Curtail')
         dialog.set_version('1.2.0')
         dialog.set_website('https://github.com/Huluti/Curtail')
-        dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György'])
+        dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György', 'olokelo', 'Archisman Panigrahi'])
         dialog.set_translator_credits(_("translator-credits"))
         dialog.set_comments(_("Compress your images"))
         text = _("Distributed under the GNU GPL(v3) license.\n")
