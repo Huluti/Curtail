@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 19:14+0100\n"
-"PO-Revision-Date: 2021-06-05 23:06+0200\n"
+"POT-Creation-Date: 2021-06-16 18:12+0200\n"
+"PO-Revision-Date: 2021-07-02 15:35+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: \n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: olokelo\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n"
 "%100<12 || n%100>14) ? 1 : 2);\n"
 "Language: pl\n"
@@ -26,15 +26,17 @@ msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.desktop.in:5
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:308
+#: src/window.py:309
 msgid "Compress your images"
 msgstr "Kompresuj zdjęcia"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG and JPEG file types."
+"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
+"types."
 msgstr ""
-"Curtail jest narzędziem kompresji zdjęć ze wsparciem dla plików PNG i JPEG."
+"Curtail jest narzędziem kompresji zdjęć ze wsparciem dla plików PNG, JPEG "
+"i WEBP."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
@@ -318,7 +320,7 @@ msgstr "Zapisuj do nowego pliku"
 msgid "Save the compressed image into a new file."
 msgstr "Zapisuj skompresowany obraz do nowego pliku."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:125
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:135
 msgid "Keep metadata"
 msgstr "Zachowaj metadane"
 
@@ -334,15 +336,15 @@ msgstr "Tryb stratnej kompresji"
 msgid "Use lossy mode to compress images."
 msgstr "Używaj trybu stratnej kompresji zdjęć."
 
-#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:75
+#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:85
 msgid "Suffix to append at end of new file"
 msgstr "Przyrostek w nowej nazwie pliku"
 
 #: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "Suffix to append at end of new file."
-msgstr "Przyrostek do dodania na koniec nazwy nowego pliku."
+msgstr "Przyrostek w nowej nazwie pliku."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:167
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:177
 msgid "PNG Lossy Compression Level"
 msgstr "Poziom stratnej kompresji PNG"
 
@@ -358,27 +360,43 @@ msgstr "Poziom bezstratnej kompresji PNG"
 msgid "Lossless compression level to use for PNG images."
 msgstr "Poziom bezstratnej kompresji dla obrazów PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:194
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "WEBP Lossless Compression Level"
+msgstr "Poziom bezstratnej kompresji WEBP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Lossless compression level to use for WEBP images."
+msgstr "Poziom bezstratnej kompresji dla obrazów WEBP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
 msgid "JPG Lossy Compression Level"
 msgstr "Poziom stratnej kompresji JPG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossy compression level to use for JPG images."
 msgstr "Poziom stratnej kompresji dla obrazów JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
+msgid "WEBP Lossy Compression Level"
+msgstr "Poziom stratnej kompresji WEBP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossy compression level to use for WEBP images."
+msgstr "Poziom stratnej kompresji dla obrazów WEBP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "Enable progressive encoding for jpegs"
 msgstr "Załącz progresywne kodowanie jpegów"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Optionally encode jpeg images progressively."
 msgstr "Opcjonalnie koduj progresywnie obrazy jpeg."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:49
+#: data/com.github.huluti.Curtail.gschema.xml:56 src/ui/preferences.ui:59
 msgid "Enable dark theme"
 msgstr "Załącz ciemny motyw"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Use dark theme for the windows."
 msgstr "Używaj ciemnego motywu dla okien."
 
@@ -390,7 +408,7 @@ msgstr "Przeciągnij twoje zdjęcia tutaj..."
 msgid "or"
 msgstr "lub"
 
-#: src/ui/window.ui:75 src/window.py:168
+#: src/ui/window.ui:75 src/window.py:169
 msgid "Browse your files"
 msgstr "Przeglądaj pliki"
 
@@ -402,23 +420,23 @@ msgstr "Bezstratny"
 msgid "Lossy"
 msgstr "Stratny"
 
-#: src/ui/preferences.ui:22 src/ui/menu.ui:6
+#: src/ui/preferences.ui:32 src/ui/menu.ui:6
 msgid "Preferences"
 msgstr "Ustawienia"
 
-#: src/ui/preferences.ui:99
+#: src/ui/preferences.ui:109
 msgid "Save the compressed image into a new file"
 msgstr "Zapisuj skompresowany obraz do nowego pliku"
 
-#: src/ui/preferences.ui:148
+#: src/ui/preferences.ui:158
 msgid "General"
 msgstr "Ogólne"
 
-#: src/ui/preferences.ui:218
+#: src/ui/preferences.ui:255
 msgid "Compression"
 msgstr "Kompresja"
 
-#: src/ui/preferences.ui:250
+#: src/ui/preferences.ui:288
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -426,39 +444,47 @@ msgstr ""
 "Bezstratny Poziom Kompresji PNG\n"
 "(im wyższy tym wolniejszy)"
 
-#: src/ui/preferences.ui:264
+#: src/ui/preferences.ui:315
+msgid ""
+"WEBP Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+"Bezstratny Poziom Kompresji WEBP\n"
+"(im wyższy tym wolniejszy)"
+
+#: src/ui/preferences.ui:329
 msgid "Progressive Encode JPG"
 msgstr "Progresywny JPG"
 
-#: src/ui/preferences.ui:287
+#: src/ui/preferences.ui:352
 msgid "Advanced"
 msgstr "Zaawansowane"
 
 #: src/ui/menu.ui:10
 msgid "About Curtail"
-msgstr "O Curtailu"
+msgstr "O Programie"
 
-#: src/window.py:88
+#: src/window.py:89
 msgid "Filename"
 msgstr "Nazwa pliku"
 
-#: src/window.py:89
+#: src/window.py:90
 msgid "Old Size"
 msgstr "Stary rozmiar"
 
-#: src/window.py:90
+#: src/window.py:91
 msgid "New Size"
 msgstr "Nowy rozmiar"
 
-#: src/window.py:91
+#: src/window.py:92
 msgid "Savings"
 msgstr "Oszczędność"
 
-#: src/window.py:155
+#: src/window.py:156
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr "Zdjęcia są zapisywane <b>z przyrostkiem '{}'</b>."
 
-#: src/window.py:158
+#: src/window.py:159
 msgid "Images are <b>overwritten</b>."
 msgstr "Zdjęcia są <b>nadpisywane</b>."
 
@@ -470,27 +496,27 @@ msgstr "Plik już istnieje"
 msgid "The file {} already exists. Do you want to compress the image anyway?"
 msgstr "Plik {} już istnieje. Czy chcesz rozpocząć kompresję mimo to?"
 
-#: src/window.py:242
+#: src/window.py:243
 msgid "Format not supported"
 msgstr "Niewspierany format"
 
-#: src/window.py:243
+#: src/window.py:244
 msgid "The format of {} is not supported."
 msgstr "Format {} nie jest wspierany."
 
-#: src/window.py:247
+#: src/window.py:248
 msgid "Path not valid"
 msgstr "Nieprawidłowa ścieżka"
 
-#: src/window.py:248
+#: src/window.py:249
 msgid "{} doesn't exist."
 msgstr "{} nie istnieje."
 
-#: src/window.py:307
+#: src/window.py:308
 msgid "translator-credits"
-msgstr "wspomnienia-tłumaczy"
+msgstr "wspomnienia tłumaczy"
 
-#: src/window.py:309
+#: src/window.py:310
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Dystrybucja na licencji GNU GPL(v3).\n"
 
@@ -502,10 +528,14 @@ msgstr "Napotkano błąd"
 msgid "All images"
 msgstr "Wszystkie obrazy"
 
-#: src/tools.py:52
+#: src/tools.py:53
 msgid "PNG images"
 msgstr "obrazy PNG"
 
-#: src/tools.py:56
+#: src/tools.py:57
 msgid "JPEG images"
 msgstr "obrazy JPEG"
+
+#: src/tools.py:61
+msgid "WEBP images"
+msgstr "obrazy WEBP"
