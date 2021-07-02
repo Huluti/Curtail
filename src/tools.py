@@ -47,6 +47,7 @@ def add_filechooser_filters(dialog):
     all_images.set_name(_("All images"))
     all_images.add_mime_type('image/jpeg')
     all_images.add_mime_type('image/png')
+    all_images.add_mime_type('image/webp')
 
     png_images = Gtk.FileFilter()
     png_images.set_name(_("PNG images"))
@@ -56,9 +57,14 @@ def add_filechooser_filters(dialog):
     jpeg_images.set_name(_("JPEG images"))
     jpeg_images.add_mime_type('image/jpeg')
 
+    webp_images = Gtk.FileFilter()
+    webp_images.set_name(_("WEBP images"))
+    webp_images.add_mime_type('image/webp')
+
     dialog.add_filter(all_images)
     dialog.add_filter(png_images)
     dialog.add_filter(jpeg_images)
+    dialog.add_filter(webp_images)
 
 
 def get_file_type(filename):
@@ -68,6 +74,8 @@ def get_file_type(filename):
             return 'jpg'
         elif content_type == 'image/png':
             return 'png'
+        elif content_type == 'image/webp':
+            return 'webp'
         else:
             return None
     else:
