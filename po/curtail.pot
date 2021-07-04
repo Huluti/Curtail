@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-16 18:12+0200\n"
+"POT-Creation-Date: 2021-07-04 11:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:5
 #: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:309
+#: src/window.py:330
 msgid "Compress your images"
 msgstr ""
 
@@ -45,259 +45,298 @@ msgid "Hugo Posnic"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:38
-#: data/com.github.huluti.Curtail.appdata.xml.in:56
-#: data/com.github.huluti.Curtail.appdata.xml.in:66
-#: data/com.github.huluti.Curtail.appdata.xml.in:74
+#: data/com.github.huluti.Curtail.appdata.xml.in:54
+#: data/com.github.huluti.Curtail.appdata.xml.in:72
 #: data/com.github.huluti.Curtail.appdata.xml.in:82
-#: data/com.github.huluti.Curtail.appdata.xml.in:91
-#: data/com.github.huluti.Curtail.appdata.xml.in:99
-#: data/com.github.huluti.Curtail.appdata.xml.in:109
-#: data/com.github.huluti.Curtail.appdata.xml.in:120
-#: data/com.github.huluti.Curtail.appdata.xml.in:134
-#: data/com.github.huluti.Curtail.appdata.xml.in:142
-#: data/com.github.huluti.Curtail.appdata.xml.in:152
-#: data/com.github.huluti.Curtail.appdata.xml.in:164
-#: data/com.github.huluti.Curtail.appdata.xml.in:178
-#: data/com.github.huluti.Curtail.appdata.xml.in:187
-#: data/com.github.huluti.Curtail.appdata.xml.in:196
-#: data/com.github.huluti.Curtail.appdata.xml.in:205
-#: data/com.github.huluti.Curtail.appdata.xml.in:216
+#: data/com.github.huluti.Curtail.appdata.xml.in:90
+#: data/com.github.huluti.Curtail.appdata.xml.in:98
+#: data/com.github.huluti.Curtail.appdata.xml.in:107
+#: data/com.github.huluti.Curtail.appdata.xml.in:115
+#: data/com.github.huluti.Curtail.appdata.xml.in:125
+#: data/com.github.huluti.Curtail.appdata.xml.in:136
+#: data/com.github.huluti.Curtail.appdata.xml.in:150
+#: data/com.github.huluti.Curtail.appdata.xml.in:158
+#: data/com.github.huluti.Curtail.appdata.xml.in:168
+#: data/com.github.huluti.Curtail.appdata.xml.in:180
+#: data/com.github.huluti.Curtail.appdata.xml.in:194
+#: data/com.github.huluti.Curtail.appdata.xml.in:203
+#: data/com.github.huluti.Curtail.appdata.xml.in:212
+#: data/com.github.huluti.Curtail.appdata.xml.in:221
+#: data/com.github.huluti.Curtail.appdata.xml.in:232
 msgid "Here's the changelog of this version:"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:40
-msgid "An option to progressive encode jpegs. Thank's to @trst."
+msgid "Add WEBP support. Thank's to @olokelo."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:41
-msgid "Add Russian translation."
+msgid "Add Croatian translation. Thank's to @milotype."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:42
-msgid "Add Slovak translation."
+msgid "Update Spanish translation. Thank's to @oscfdezdz."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:43
-msgid "Add Swedish translation."
+msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:44
-msgid "Better handling of existing files."
+msgid "Don't accept empty file. Thank's to @akozlovskiy119."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:45
-msgid "Better appdata summary."
+msgid "Better guess of extensions. Thank's to @akozlovskiy119."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:46
-msgid "Update Spanish translation."
+msgid ""
+"Use correct file listing format for drag-and-drop. Thank's to "
+"@akozlovskiy119."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:47
-msgid "Compress images with extensions in uppercase."
+msgid "Fix directory handling. Thank's to @akozlovskiy119."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:48
+msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:56
+msgid "An option to progressive encode jpegs. Thank's to @trst."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:57
+msgid "Add Russian translation."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:58
+msgid "Add Slovak translation."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:59
+msgid "Add Swedish translation."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:60
+msgid "Better handling of existing files."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:61
+msgid "Better appdata summary."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:62
+msgid "Update Spanish translation."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:63
+msgid "Compress images with extensions in uppercase."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:64
 msgid "Center preferences window header switcher. Thank's to @andrenete."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:49
+#: data/com.github.huluti.Curtail.appdata.xml.in:65
 msgid "Fix columns sorting. Thank's to @andrenete."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:50
+#: data/com.github.huluti.Curtail.appdata.xml.in:66
 msgid ""
 "Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
 "@andrenete."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:58
+#: data/com.github.huluti.Curtail.appdata.xml.in:74
 msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:59
+#: data/com.github.huluti.Curtail.appdata.xml.in:75
 msgid "A new icon designed by @jimmac."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:60
+#: data/com.github.huluti.Curtail.appdata.xml.in:76
 msgid "Support for dragging folders."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:68
+#: data/com.github.huluti.Curtail.appdata.xml.in:84
 msgid "Just fix a packaging file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:76
+#: data/com.github.huluti.Curtail.appdata.xml.in:92
 msgid "Just update GNOME runtime"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:84
+#: data/com.github.huluti.Curtail.appdata.xml.in:100
 msgid "Add Portuguese (Brazil) translation"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:85
+#: data/com.github.huluti.Curtail.appdata.xml.in:101
 msgid "Don't use legacy path for metadata"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:93
+#: data/com.github.huluti.Curtail.appdata.xml.in:109
 msgid "Fix compression of jpg files that produced 0b files"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:101
+#: data/com.github.huluti.Curtail.appdata.xml.in:117
 msgid "Add an option to whether keep or not metadata of images"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:102
+#: data/com.github.huluti.Curtail.appdata.xml.in:118
 msgid "Replace mozjpeg lib by jpegoptim"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:103
-#: data/com.github.huluti.Curtail.appdata.xml.in:127
-#: data/com.github.huluti.Curtail.appdata.xml.in:146
+#: data/com.github.huluti.Curtail.appdata.xml.in:119
+#: data/com.github.huluti.Curtail.appdata.xml.in:143
+#: data/com.github.huluti.Curtail.appdata.xml.in:162
 msgid "Update translations"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:111
+#: data/com.github.huluti.Curtail.appdata.xml.in:127
 msgid "Add a spinner to indicate the progress of the compression"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:112
+#: data/com.github.huluti.Curtail.appdata.xml.in:128
 msgid "Using threads to compress images simultaneously"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:113
+#: data/com.github.huluti.Curtail.appdata.xml.in:129
 msgid "Simplification of certain sentences"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:114
+#: data/com.github.huluti.Curtail.appdata.xml.in:130
 msgid "Really don't block the UI anymore when performing compression"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:122
+#: data/com.github.huluti.Curtail.appdata.xml.in:138
 msgid "Add lossy compression features"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:123
+#: data/com.github.huluti.Curtail.appdata.xml.in:139
 msgid "Add options to change compression levels"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:124
+#: data/com.github.huluti.Curtail.appdata.xml.in:140
 msgid "New layout for the preferences dialog"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:125
+#: data/com.github.huluti.Curtail.appdata.xml.in:141
 msgid "Don't permit higher resulting size"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:126
+#: data/com.github.huluti.Curtail.appdata.xml.in:142
 msgid "Better displaying of the drag area"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:128
+#: data/com.github.huluti.Curtail.appdata.xml.in:144
 msgid "Catch errors in subprocess to avoid crashing the app"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:136
+#: data/com.github.huluti.Curtail.appdata.xml.in:152
 msgid "Fix build"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:144
+#: data/com.github.huluti.Curtail.appdata.xml.in:160
 msgid "Fix opening files from file managers"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:145
+#: data/com.github.huluti.Curtail.appdata.xml.in:161
 msgid "Add Italian translation"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:154
+#: data/com.github.huluti.Curtail.appdata.xml.in:170
 msgid "Toggle the suffix entry according to new file option"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:155
+#: data/com.github.huluti.Curtail.appdata.xml.in:171
 msgid "Scroll automatically to last compressed image in the list"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:156
+#: data/com.github.huluti.Curtail.appdata.xml.in:172
 msgid "Add save info label also on homepage and displace it at bottom"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:157
+#: data/com.github.huluti.Curtail.appdata.xml.in:173
 msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:158
+#: data/com.github.huluti.Curtail.appdata.xml.in:174
 msgid "Various fixes"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:166
+#: data/com.github.huluti.Curtail.appdata.xml.in:182
 msgid "Add a setting to change the '-min' suffix"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:167
+#: data/com.github.huluti.Curtail.appdata.xml.in:183
 msgid "Add some explanations of applied settings"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:168
+#: data/com.github.huluti.Curtail.appdata.xml.in:184
 msgid "Add Ctrl+O shortcut to open files"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:169
+#: data/com.github.huluti.Curtail.appdata.xml.in:185
 msgid "Add Dutch and German translations"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:170
+#: data/com.github.huluti.Curtail.appdata.xml.in:186
 msgid "Display translators' names in about dialog"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:171
+#: data/com.github.huluti.Curtail.appdata.xml.in:187
 msgid "Don't block the UI anymore when performing compression"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:172
+#: data/com.github.huluti.Curtail.appdata.xml.in:188
 msgid "Fix size of the preferences window"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:180
+#: data/com.github.huluti.Curtail.appdata.xml.in:196
 msgid "Add a preferences window with new-file and dark-theme options"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:181
+#: data/com.github.huluti.Curtail.appdata.xml.in:197
 msgid "Various UI changes"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:189
+#: data/com.github.huluti.Curtail.appdata.xml.in:205
 msgid "Permit to sort results by name or saving ratio"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:190
+#: data/com.github.huluti.Curtail.appdata.xml.in:206
 msgid "Fix a crash when compressing an image with dots in its name"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:198
+#: data/com.github.huluti.Curtail.appdata.xml.in:214
 msgid "Stick back and forward buttons"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:199
+#: data/com.github.huluti.Curtail.appdata.xml.in:215
 msgid "Change APP id"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:207
+#: data/com.github.huluti.Curtail.appdata.xml.in:223
 msgid "Various optimizations"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:208
+#: data/com.github.huluti.Curtail.appdata.xml.in:224
 msgid "Improve error messages"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:209
+#: data/com.github.huluti.Curtail.appdata.xml.in:225
 msgid "Improve some texts"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:210
+#: data/com.github.huluti.Curtail.appdata.xml.in:226
 msgid "Change description"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:218
+#: data/com.github.huluti.Curtail.appdata.xml.in:234
 msgid "Initial version"
 msgstr ""
 
@@ -397,7 +436,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:75 src/window.py:169
+#: src/ui/window.ui:75 src/window.py:173
 msgid "Browse your files"
 msgstr ""
 
@@ -445,68 +484,82 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
+#: src/ui/apply.ui:7
+msgid "File already exists"
+msgstr ""
+
+#: src/ui/apply.ui:26
+msgid "Compress"
+msgstr ""
+
+#: src/ui/apply.ui:39
+msgid "Skip"
+msgstr ""
+
+#: src/ui/apply.ui:76
+msgid "Apply to all queue"
+msgstr ""
+
 #: src/ui/menu.ui:10
 msgid "About Curtail"
 msgstr ""
 
-#: src/window.py:89
+#: src/window.py:93
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:90
+#: src/window.py:94
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:91
+#: src/window.py:95
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:92
+#: src/window.py:96
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:156
+#: src/window.py:160
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr ""
 
-#: src/window.py:159
+#: src/window.py:163
 msgid "Images are <b>overwritten</b>."
 msgstr ""
 
-#: src/window.py:205
-msgid "File already exists"
-msgstr ""
-
-#: src/window.py:206
-msgid "The file {} already exists. Do you want to compress the image anyway?"
-msgstr ""
-
-#: src/window.py:243
+#: src/window.py:234
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:244
+#: src/window.py:235
 msgid "The format of {} is not supported."
 msgstr ""
 
-#: src/window.py:248
+#: src/window.py:239
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:249
+#: src/window.py:240
 msgid "{} doesn't exist."
 msgstr ""
 
-#: src/window.py:308
+#: src/window.py:329
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:310
+#: src/window.py:331
 msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
 #: src/compressor.py:60
 msgid "An error has occured"
+msgstr ""
+
+#: src/apply.py:49
+msgid ""
+"The file <b>{}</b> already exists.\n"
+"Do you want to compress the image anyway?"
 msgstr ""
 
 #: src/tools.py:47

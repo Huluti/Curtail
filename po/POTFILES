@@ -3,9 +3,11 @@ data/com.github.huluti.Curtail.appdata.xml.in
 data/com.github.huluti.Curtail.gschema.xml
 src/ui/window.ui
 src/ui/preferences.ui
+src/ui/apply.ui
 src/ui/menu.ui
 src/main.py
 src/window.py
 src/compressor.py
 src/preferences.py
+src/apply.py
 src/tools.py

@@ -46,6 +46,8 @@ class CurtailPrefsWindow(Gtk.Window):
         super().__init__(**kwargs)
 
         self.parent = parent
+        self.set_transient_for(parent)
+        self.set_modal(True)
 
         self.build_ui()
 
