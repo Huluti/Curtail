@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.2.1] - 2021-07-04
+### Added
+- Add 'Apply to all queue' option for existing file dialog.
+- Add Polish translation. Thank's to @olokelo.
+
 ## [1.2.0] - 2021-06-29
 ### Added
 - Add WEBP support. Thank's to @olokelo.

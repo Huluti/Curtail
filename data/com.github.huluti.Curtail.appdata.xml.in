@@ -33,6 +33,15 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+    <release version="1.2.1" date="2021-07-04">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add 'Apply to all queue' option for existing file dialog.</li>
+          <li>Add Polish translation. Thank's to @olokelo.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.0" date="2021-06-29">
       <description>
         <p>Here's the changelog of this version:</p>
