@@ -57,6 +57,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.set_title('Curtail')
         self.set_default_icon_name('com.github.huluti.Curtail')
         self.app = kwargs['application']
 
@@ -74,13 +75,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
         self.menu_button.set_menu_model(window_menu)
-
-        # Mainbox - drag&drop
-        enforce_target = Gtk.TargetEntry.new('text/uri-list',
-                                             Gtk.TargetFlags(4), 0)
-        self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
-                                   Gdk.DragAction.COPY)
-        self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
         self.store = Gtk.ListStore(bool, str, str, str, str, int)
@@ -109,7 +103,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         action.connect('activate', callback)
         self.add_action(action)
         if shortcut is not None:
-            self.app.add_accelerator(shortcut, 'win.' + action_name, None)
+            self.app.set_accels_for_action('win.' + action_name, [shortcut])
 
     def create_actions(self):
         self.create_simple_action('back', self.on_back)
@@ -132,11 +126,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def show_treeview(self, show):
         if show:
-            self.homebox.hide()
-            self.treeview_box.show_all()
+            self.homebox.props.visible = False
+            self.treeview_box.props.visible = True
         else:
-            self.treeview_box.hide()
-            self.homebox.show_all()
+            self.treeview_box.props.visible = False
+            self.homebox.props.visible = True
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
 
