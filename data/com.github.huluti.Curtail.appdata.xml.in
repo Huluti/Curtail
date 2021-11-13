@@ -33,6 +33,23 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+    <release version="1.2.2" date="2021-11-13">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add Turkish translation. Thank's to @05akalan57.</li>
+          <li>Add Occitan translation. Thank's to @Mejans.</li>
+          <li>Add Galician translation. Thank's to @Fran Dieguez.</li>
+          <li>Update Dutch translation. Thank's to @Vistaus.</li>
+          <li>Update Spanish translation. Thank's to @oscfdezdz.</li>
+          <li>Update Dutch translation. Thank's to @Vistaus.</li>
+          <li>Update Croatian translation. Thank's to @milotype.</li>
+          <li>Update German translation. Thank's to @Etamuk.</li>
+          <li>Update Portuguese Brazil translation. Thank's to @fulvio-alves.</li>
+          <li>Update Swedish translation. Thank's to @eson57.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.1" date="2021-07-04">
       <description>
         <p>Here's the changelog of this version:</p>

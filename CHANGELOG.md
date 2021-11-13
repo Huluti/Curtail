@@ -1,6 +1,21 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2021-11-13
+### Added
+- Add Turkish translation. Thank's to @05akalan57.
+- Add Occitan translation. Thank's to @Mejans.
+- Add Galician translation. Thank's to @Fran Dieguez.
+
+### Changed
+- Update Dutch translation. Thank's to @Vistaus.
+- Update Spanish translation. Thank's to @oscfdezdz.
+- Update Dutch translation. Thank's to @Vistaus.
+- Update Croatian translation. Thank's to @milotype.
+- Update German translation. Thank's to @Etamuk.
+- Update Portuguese Brazil translation. Thank's to @fulvio-alves.
+- Update Swedish translation. Thank's to @eson57.
+
 ## [1.2.1] - 2021-07-04
 ### Added
 - Add 'Apply to all queue' option for existing file dialog.
