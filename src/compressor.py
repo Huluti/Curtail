@@ -66,11 +66,12 @@ class Compressor():
             self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
             lossy = self._settings.get_boolean('lossy')
             metadata = self._settings.get_boolean('metadata')
+            file_attributes = self._settings.get_boolean('file-attributes')
 
             if file_type == 'png':
-                command = self.build_png_command(lossy, metadata)
+                command = self.build_png_command(lossy, metadata, file_attributes)
             elif file_type == 'jpg':
-                command = self.build_jpg_command(lossy, metadata)
+                command = self.build_jpg_command(lossy, metadata, file_attributes)
             elif file_type == 'webp':
                 command = self.build_webp_command(lossy, metadata)
             self.run_command(command)  # compress image
@@ -86,13 +87,16 @@ class Compressor():
         self.win.update_treeview_row(self.tree_iter, self.new_size,
                                     '{}%'.format(str(savings)))
 
-    def build_png_command(self, lossy, metadata):
+    def build_png_command(self, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} "{}" -out "{}"'
 
         if not metadata:
             pngquant += ' --strip'
             optipng += ' -strip all'
+
+        if file_attributes:
+            optipng += ' -preserve'
 
         png_lossy_level = self._settings.get_int('png-lossy-level')
         png_lossless_level = self._settings.get_int('png-lossless-level')
@@ -108,7 +112,7 @@ class Compressor():
                                      self.new_filename)
         return command
 
-    def build_jpg_command(self, lossy, metadata):
+    def build_jpg_command(self, lossy, metadata, file_attributes):
         do_new_file = self._settings.get_boolean('new-file')
         do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
 
@@ -126,6 +130,10 @@ class Compressor():
         if not metadata:
             jpegoptim += ' --strip-all'
             jpegoptim2 += ' --strip-all'
+
+        if file_attributes:
+            jpegoptim += ' --preserve --preserve-perms'
+            jpegoptim2 += ' --preserve --preserve-perms'
 
         jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
         if lossy:  # lossy compression

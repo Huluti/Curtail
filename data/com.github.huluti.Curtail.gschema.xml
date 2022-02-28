@@ -11,6 +11,11 @@
       <summary>Keep metadata</summary>
       <description>This setting preserves metadata of images.</description>
     </key>
+	  <key type="b" name="file-attributes">
+      <default>true</default>
+      <summary>Preserve file attributes if possible</summary>
+      <description>This setting preserves metadata of images.</description>
+    </key>
 	  <key type="b" name="lossy">
       <default>false</default>
       <summary>Enable lossy mode</summary>
