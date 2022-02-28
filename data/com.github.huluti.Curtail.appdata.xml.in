@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>com.github.huluti.Curtail.desktop</id>
+  <id>com.github.huluti.Curtail</id>
+  <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <content_rating type="oars-1.1" />
-  <name>Curtail</name>
+  <name translatable="no">Curtail</name>
   <summary>Compress your images</summary>
   <description>
     <p>Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file types.</p>
     <p>It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
   </description>
 
-  <developer_name>Hugo Posnic</developer_name>
+  <developer_name translatable="no">Hugo Posnic</developer_name>
   <update_contact>hugo.posnic@gmail.com</update_contact>
   <url type="bugtracker">https://github.com/Huluti/Curtail/issues</url>
   <url type="homepage">https://github.com/Huluti/Curtail</url>
