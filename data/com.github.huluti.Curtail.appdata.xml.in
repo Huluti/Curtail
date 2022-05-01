@@ -16,6 +16,7 @@
   <update_contact>hugo.posnic@gmail.com</update_contact>
   <url type="bugtracker">https://github.com/Huluti/Curtail/issues</url>
   <url type="homepage">https://github.com/Huluti/Curtail</url>
+  <url type="translate">https://github.com/Huluti/Curtail/tree/master/po</url>
 
   <kudos>
     <kudo>ModernToolkit</kudo>
