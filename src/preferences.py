@@ -29,6 +29,7 @@ class CurtailPrefsWindow(Gtk.Window):
     __gtype_name__ = 'CurtailPrefsWindow'
 
     toggle_metadata = Gtk.Template.Child()
+    toggle_file_attributes = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
     new_file_label = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
@@ -54,12 +55,17 @@ class CurtailPrefsWindow(Gtk.Window):
     def build_ui(self):
         # Compression settings
 
-        # Use new file
+        # Keep metadata
         self.toggle_metadata.set_active(self._settings.get_boolean('metadata'))
         self.toggle_metadata.connect('notify::active', self.on_bool_changed,
                                      'metadata')
 
-        # Keep metadata
+        # Preserve file attributes
+        self.toggle_file_attributes.set_active(self._settings.get_boolean('file-attributes'))
+        self.toggle_file_attributes.connect('notify::active', self.on_bool_changed,
+                                     'file-attributes')
+
+        # Use new file
         self.toggle_new_file.set_active(self._settings.get_boolean('new-file'))
         self.toggle_new_file.connect('notify::active', self.on_bool_changed,
                                      'new-file')
