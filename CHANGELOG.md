@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2022-05-01
+### Added
+- Add option to preserve file attributes if possible.
+
+### Changed
+- Update image libraries.
+- Update French translation.
+- Update Russian translation. Thank's to @prokoudine.
+
 ## [1.2.2] - 2021-11-13
 ### Added
 - Add Turkish translation. Thank's to @05akalan57.
