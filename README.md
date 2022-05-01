@@ -1,5 +1,7 @@
 # Curtail
 
+<a href="https://circle.gnome.org"><img src="gnome-circle-badge.svg"></a>
+
 ## Compress your images
 
 Curtail (previously ImCompressor) is an useful image compressor, supporting PNG, JPEG and WEBP file types.
