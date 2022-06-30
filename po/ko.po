@@ -513,7 +513,7 @@ msgstr "환경설정"
 
 #: src/ui/preferences.ui:109
 msgid "Save the compressed image into a new file"
-msgstr "압축된 이미지를 새 파일에 저장합니다"
+msgstr "압축된 이미지를 새 파일에 저장하기"
 
 #: src/ui/preferences.ui:184
 msgid "General"
