@@ -489,7 +489,7 @@ msgstr "창에 어두운 테마를 사용합니다."
 
 #: src/ui/window.ui:47
 msgid "Drag and drop your images here..."
-msgstr "이미지를 여기에 끌어다 놓으십시오..."
+msgstr "이미지를 여기에 끌어다 놓기..."
 
 #: src/ui/window.ui:62
 msgid "or"
