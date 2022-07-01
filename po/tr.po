@@ -1,360 +1,397 @@
-# tr.po
-# Copyright (C) 2021 Hugo Posnic
+# Turkish translation for curtail
+#
+# Copyright (C) 2021-2022 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
+#
 # Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
 # Muhammet Emin AKALAN <05akalan57@gmail.com>, 2021.
+# Sabri Ünal <libreajans@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"POT-Creation-Date: 2021-07-04 11:24+0200\n"
-"PO-Revision-Date: 2021-07-10 14:27+0300\n"
-"Last-Translator: Muhammet Emin AKALAN <05akalan57@gmail.com>\n"
-"Language-Team: Turkish\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-01 16:48+0200\n"
+"PO-Revision-Date: 2022-06-22 02:01+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1\n"
+"X-Project-Style: gnome\n"
 
 #: data/com.github.huluti.Curtail.desktop.in:3
-#: data/com.github.huluti.Curtail.appdata.xml.in:7
 msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.desktop.in:5
-#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
+#: data/com.github.huluti.Curtail.appdata.xml.in:9 src/ui/window.ui:213
 #: src/window.py:330
 msgid "Compress your images"
-msgstr "Resimlerinizi sıkıştırın"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:10
-msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
-"types."
-msgstr ""
-"Curtail, PNG, JPEG ve WEBP dosya türlerini destekleyen kullanışlı bir "
-"görüntü sıkıştırıcıdır."
+msgstr "Görüntülerinizi sıkıştırın"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
-"It support both lossless and lossy compression modes with an option to "
-"whether keep or not metadata of images."
+"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file types."
 msgstr ""
-"Görüntülerin meta verilerini tutma veya saklama seçeneğiyle hem kayıpsız hem "
-"de kayıplı sıkıştırma modlarını destekler."
+"Curtail, PNG, JPEG ve WEBP dosya türlerini destekleyen kullanışlı bir görüntü "
+"sıkıştırıcıdır."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
-msgid "Hugo Posnic"
-msgstr "Hugo Posnic"
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
+msgid ""
+"It support both lossless and lossy compression modes with an option to whether keep "
+"or not metadata of images."
+msgstr ""
+"Görüntülerin üst verilerini tutma veya tutmama seçeneğiyle hem kayıpsız hem de "
+"kayıplı sıkıştırma kiplerini destekler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:38
-#: data/com.github.huluti.Curtail.appdata.xml.in:54
-#: data/com.github.huluti.Curtail.appdata.xml.in:72
-#: data/com.github.huluti.Curtail.appdata.xml.in:82
+#: data/com.github.huluti.Curtail.appdata.xml.in:40
+#: data/com.github.huluti.Curtail.appdata.xml.in:48
+#: data/com.github.huluti.Curtail.appdata.xml.in:65
+#: data/com.github.huluti.Curtail.appdata.xml.in:74
 #: data/com.github.huluti.Curtail.appdata.xml.in:90
-#: data/com.github.huluti.Curtail.appdata.xml.in:98
-#: data/com.github.huluti.Curtail.appdata.xml.in:107
-#: data/com.github.huluti.Curtail.appdata.xml.in:115
-#: data/com.github.huluti.Curtail.appdata.xml.in:125
-#: data/com.github.huluti.Curtail.appdata.xml.in:136
-#: data/com.github.huluti.Curtail.appdata.xml.in:150
-#: data/com.github.huluti.Curtail.appdata.xml.in:158
-#: data/com.github.huluti.Curtail.appdata.xml.in:168
-#: data/com.github.huluti.Curtail.appdata.xml.in:180
+#: data/com.github.huluti.Curtail.appdata.xml.in:108
+#: data/com.github.huluti.Curtail.appdata.xml.in:118
+#: data/com.github.huluti.Curtail.appdata.xml.in:126
+#: data/com.github.huluti.Curtail.appdata.xml.in:134
+#: data/com.github.huluti.Curtail.appdata.xml.in:143
+#: data/com.github.huluti.Curtail.appdata.xml.in:151
+#: data/com.github.huluti.Curtail.appdata.xml.in:161
+#: data/com.github.huluti.Curtail.appdata.xml.in:172
+#: data/com.github.huluti.Curtail.appdata.xml.in:186
 #: data/com.github.huluti.Curtail.appdata.xml.in:194
-#: data/com.github.huluti.Curtail.appdata.xml.in:203
-#: data/com.github.huluti.Curtail.appdata.xml.in:212
-#: data/com.github.huluti.Curtail.appdata.xml.in:221
-#: data/com.github.huluti.Curtail.appdata.xml.in:232
+#: data/com.github.huluti.Curtail.appdata.xml.in:204
+#: data/com.github.huluti.Curtail.appdata.xml.in:216
+#: data/com.github.huluti.Curtail.appdata.xml.in:230
+#: data/com.github.huluti.Curtail.appdata.xml.in:239
+#: data/com.github.huluti.Curtail.appdata.xml.in:248
+#: data/com.github.huluti.Curtail.appdata.xml.in:257
+#: data/com.github.huluti.Curtail.appdata.xml.in:268
 msgid "Here's the changelog of this version:"
 msgstr "İşte bu sürümün değişiklik günlüğü:"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:40
-msgid "Add WEBP support. Thank's to @olokelo."
-msgstr "WEBP desteği ekleyin. @olokelo'ya teşekkürler."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:41
-msgid "Add Croatian translation. Thank's to @milotype."
-msgstr "Hırvatça çeviri ekleyin. @milotype'a teşekkürler."
-
 #: data/com.github.huluti.Curtail.appdata.xml.in:42
+#: data/com.github.huluti.Curtail.appdata.xml.in:50
+msgid "Add Turkish translation. Thank's to @05akalan57."
+msgstr "Türkçe çeviri eklendi. @05akalan57'ye teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:51
+msgid "Add Occitan translation. Thank's to @Mejans."
+msgstr "Oksitanca çeviri eklendi. @Mejans'a teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:52
+msgid "Add Galician translation. Thank's to @Fran Dieguez."
+msgstr "Galiçyaca çeviri eklendi. @Fran Dieguez'e teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:53
+#: data/com.github.huluti.Curtail.appdata.xml.in:55
+#| msgid "Update Spanish translation. Thank's to @oscfdezdz."
+msgid "Update Dutch translation. Thank's to @Vistaus."
+msgstr "Hollandaca çeviri güncellendi. @Vistaus'a teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:54
+#: data/com.github.huluti.Curtail.appdata.xml.in:78
 msgid "Update Spanish translation. Thank's to @oscfdezdz."
 msgstr "İspanyolca çeviriyi güncelleyin. @oscfdezdz'e teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:43
-msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
-msgstr ""
-"Portekizce (Brezilya) çeviriyi güncelleyin. @fulvio-alves'e teşekkürler."
+#: data/com.github.huluti.Curtail.appdata.xml.in:56
+msgid "Update Croatian translation. Thank's to @milotype."
+msgstr "Hırvatça çeviri güncellendi. @milotype'a teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:44
+#: data/com.github.huluti.Curtail.appdata.xml.in:57
+#| msgid "Update Spanish translation. Thank's to @oscfdezdz."
+msgid "Update German translation. Thank's to @Etamuk."
+msgstr "Almanca çeviri güncellendi. @Etamuk'a teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:58
+msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
+msgstr "Portekizce (Brezilya) çeviriyi güncellendi. @fulvio-alves'e teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:59
+msgid "Update Swedish translation. Thank's to @eson57."
+msgstr "İspanyolca çeviriyi güncellendi. @oscfdezdz'e teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:67
+msgid "Add 'Apply to all queue' option for existing file dialog."
+msgstr "Varolan dosya iletişim kutusu için 'Tüm sıraya uygula' seçeneği eklendi."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:68
+msgid "Add Polish translation. Thank's to @olokelo."
+msgstr "Polonyaca çeviri ekleyin. @olokelo'a teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:76
+msgid "Add WEBP support. Thank's to @olokelo."
+msgstr "WEBP desteği eklendi. @olokelo'ya teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:77
+msgid "Add Croatian translation. Thank's to @milotype."
+msgstr "Hırvatça çeviri eklendi. @milotype'a teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:79
+msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
+msgstr "Portekizce (Brezilya) çeviriyi güncelleyin. @fulvio-alves'e teşekkürler."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:80
 msgid "Don't accept empty file. Thank's to @akozlovskiy119."
 msgstr "Boş dosyayı kabul etmeyin. @akozlovskiy119'a teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:45
+#: data/com.github.huluti.Curtail.appdata.xml.in:81
 msgid "Better guess of extensions. Thank's to @akozlovskiy119."
 msgstr "Uzantıların daha iyi tahmini. @akozlovskiy119'a teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:46
-msgid ""
-"Use correct file listing format for drag-and-drop. Thank's to "
-"@akozlovskiy119."
+#: data/com.github.huluti.Curtail.appdata.xml.in:82
+msgid "Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119."
 msgstr ""
-"Sürükle ve bırak için doğru dosya listeleme biçimini kullanın. "
-"@akozlovskiy119'a teşekkürler."
+"Sürükle ve bırak için doğru dosya listeleme biçimini kullanın. @akozlovskiy119'a "
+"teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:47
+#: data/com.github.huluti.Curtail.appdata.xml.in:83
 msgid "Fix directory handling. Thank's to @akozlovskiy119."
-msgstr "Dizin işlemeyi düzeltin. @akozlovskiy119'a teşekkürler."
+msgstr "Dizin işleme düzeltildi. @akozlovskiy119'a teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:48
+#: data/com.github.huluti.Curtail.appdata.xml.in:84
 msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
-msgstr ""
-"LXQt, MATE, XFCE'de (#76) eksik simgeyi düzeltin. @apandada1'e teşekkürler."
+msgstr "LXQt, MATE, XFCE'de (#76) eksik simge düzeltildi. @apandada1'e teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:56
+#: data/com.github.huluti.Curtail.appdata.xml.in:92
 msgid "An option to progressive encode jpegs. Thank's to @trst."
 msgstr "Aşamalı jpeg kodlama seçeneği. @trst'e teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:57
+#: data/com.github.huluti.Curtail.appdata.xml.in:93
 msgid "Add Russian translation."
-msgstr "Rusça çeviri ekleyin."
+msgstr "Rusça çeviri eklendi."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:58
+#: data/com.github.huluti.Curtail.appdata.xml.in:94
 msgid "Add Slovak translation."
-msgstr "Slovakça çeviri ekleyin."
+msgstr "Slovakça çeviri eklendi."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:59
+#: data/com.github.huluti.Curtail.appdata.xml.in:95
 msgid "Add Swedish translation."
-msgstr "İsveççe çeviri ekleyin."
+msgstr "İsveççe çeviri eklendi."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:60
+#: data/com.github.huluti.Curtail.appdata.xml.in:96
 msgid "Better handling of existing files."
 msgstr "Mevcut dosyaların daha iyi işlenmesi."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:61
+#: data/com.github.huluti.Curtail.appdata.xml.in:97
 msgid "Better appdata summary."
 msgstr "Daha iyi uygulama verileri özeti."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:62
+#: data/com.github.huluti.Curtail.appdata.xml.in:98
 msgid "Update Spanish translation."
 msgstr "İspanyolca çeviriyi güncelleyin."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:63
+#: data/com.github.huluti.Curtail.appdata.xml.in:99
 msgid "Compress images with extensions in uppercase."
 msgstr "Büyük harflerle uzantıları olan görüntüleri sıkıştırın."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:64
+#: data/com.github.huluti.Curtail.appdata.xml.in:100
 msgid "Center preferences window header switcher. Thank's to @andrenete."
-msgstr ""
-"Merkez tercihleri penceresi başlık değiştiricisi. @andrenete'ye teşekkürler."
+msgstr "Merkez tercihleri penceresi başlık değiştiricisi. @andrenete'ye teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:65
+#: data/com.github.huluti.Curtail.appdata.xml.in:101
 msgid "Fix columns sorting. Thank's to @andrenete."
-msgstr "Sütun sıralamasını düzeltin. @andrenete'ye teşekkürler."
+msgstr "Sütun sıralaması düzeltildi. @andrenete'ye teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:66
+#: data/com.github.huluti.Curtail.appdata.xml.in:102
 msgid ""
-"Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
-"@andrenete."
+"Don't allow empty suffix (incorrect compression for JPEG). Thank's to @andrenete."
 msgstr ""
-"Boş son eke izin vermeyin (JPEG için yanlış sıkıştırma). @andrenete'ye "
-"teşekkürler."
+"Boş son eke izin vermeyin (JPEG için yanlış sıkıştırma). @andrenete'ye teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:74
+#: data/com.github.huluti.Curtail.appdata.xml.in:110
 msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
 msgstr "Yeni bir isim. @bertob, @jannuary ve @jimmac'a teşekkürler."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:75
+#: data/com.github.huluti.Curtail.appdata.xml.in:111
 msgid "A new icon designed by @jimmac."
 msgstr "@jimmac tarafından tasarlanan yeni bir simge."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:76
+#: data/com.github.huluti.Curtail.appdata.xml.in:112
 msgid "Support for dragging folders."
 msgstr "Klasörleri sürükleme desteği."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:84
+#: data/com.github.huluti.Curtail.appdata.xml.in:120
 msgid "Just fix a packaging file."
 msgstr "Sadece bir paketleme dosyasını düzeltin."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:92
+#: data/com.github.huluti.Curtail.appdata.xml.in:128
 msgid "Just update GNOME runtime"
 msgstr "Sadece GNOME çalışma zamanını güncelleyin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:100
+#: data/com.github.huluti.Curtail.appdata.xml.in:136
 msgid "Add Portuguese (Brazil) translation"
-msgstr "Portekizce (Brezilya) çeviri ekle"
+msgstr "Portekizce (Brezilya) çeviri eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:101
+#: data/com.github.huluti.Curtail.appdata.xml.in:137
 msgid "Don't use legacy path for metadata"
-msgstr "Meta veriler için eski yolu kullanmayın"
+msgstr "Üst veriler için eski yolu kullanma"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:109
+#: data/com.github.huluti.Curtail.appdata.xml.in:145
 msgid "Fix compression of jpg files that produced 0b files"
-msgstr "0b dosyaları oluşturan jpg dosyalarının sıkıştırılmasını düzeltin"
+msgstr "0b dosyaları oluşturan jpg dosyalarının sıkıştırılması düzeltildi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:117
+#: data/com.github.huluti.Curtail.appdata.xml.in:153
 msgid "Add an option to whether keep or not metadata of images"
-msgstr ""
-"Görüntülerin meta verilerinin tutulup tutulmayacağına dair bir seçenek "
-"ekleyin"
+msgstr "Görüntülerin üst verilerinin tutulup tutulmayacağına dair bir seçenek eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:118
+#: data/com.github.huluti.Curtail.appdata.xml.in:154
 msgid "Replace mozjpeg lib by jpegoptim"
 msgstr "mozjpeg lib'i jpegoptim ile değiştirin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:119
-#: data/com.github.huluti.Curtail.appdata.xml.in:143
-#: data/com.github.huluti.Curtail.appdata.xml.in:162
+#: data/com.github.huluti.Curtail.appdata.xml.in:155
+#: data/com.github.huluti.Curtail.appdata.xml.in:179
+#: data/com.github.huluti.Curtail.appdata.xml.in:198
 msgid "Update translations"
 msgstr "Çevirileri güncelle"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:127
+#: data/com.github.huluti.Curtail.appdata.xml.in:163
 msgid "Add a spinner to indicate the progress of the compression"
-msgstr "Sıkıştırmanın ilerlemesini belirtmek için bir döndürücü ekleyin"
+msgstr "Sıkıştırmanın ilerlemesini belirtmek için bir döndürücü eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:128
+#: data/com.github.huluti.Curtail.appdata.xml.in:164
 msgid "Using threads to compress images simultaneously"
 msgstr "Görüntüleri aynı anda sıkıştırmak için iş parçacığı kullanma"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:129
+#: data/com.github.huluti.Curtail.appdata.xml.in:165
 msgid "Simplification of certain sentences"
 msgstr "Bazı cümlelerin sadeleştirilmesi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:130
+#: data/com.github.huluti.Curtail.appdata.xml.in:166
 msgid "Really don't block the UI anymore when performing compression"
-msgstr ""
-"Sıkıştırma gerçekleştirirken artık kullanıcı arayüzünü gerçekten engellemeyin"
+msgstr "Sıkıştırma gerçekleştirirken artık kullanıcı arayüzünü gerçekten engellemeyin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:138
+#: data/com.github.huluti.Curtail.appdata.xml.in:174
 msgid "Add lossy compression features"
-msgstr "Kayıplı sıkıştırma özellikleri ekleyin"
+msgstr "Kayıplı sıkıştırma özellikleri eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:139
+#: data/com.github.huluti.Curtail.appdata.xml.in:175
 msgid "Add options to change compression levels"
-msgstr "Sıkıştırma düzeylerini değiştirmek için seçenekler ekleyin"
+msgstr "Sıkıştırma düzeylerini değiştirmek için seçenekler eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:140
+#: data/com.github.huluti.Curtail.appdata.xml.in:176
 msgid "New layout for the preferences dialog"
 msgstr "Tercihler iletişim kutusu için yeni düzen"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:141
+#: data/com.github.huluti.Curtail.appdata.xml.in:177
 msgid "Don't permit higher resulting size"
 msgstr "Daha yüksek sonuç boyutuna izin verme"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:142
+#: data/com.github.huluti.Curtail.appdata.xml.in:178
 msgid "Better displaying of the drag area"
 msgstr "Sürükleme alanının daha iyi görüntülenmesi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:144
+#: data/com.github.huluti.Curtail.appdata.xml.in:180
 msgid "Catch errors in subprocess to avoid crashing the app"
 msgstr "Uygulamanın çökmesini önlemek için alt süreçteki hataları yakalayın"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:152
+#: data/com.github.huluti.Curtail.appdata.xml.in:188
 msgid "Fix build"
 msgstr "Yapıyı düzelt"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:160
+#: data/com.github.huluti.Curtail.appdata.xml.in:196
 msgid "Fix opening files from file managers"
-msgstr "Dosya yöneticilerinden açılan dosyaları düzeltin"
+msgstr "Dosya yöneticilerinden açılan dosyalar düzeltildi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:161
+#: data/com.github.huluti.Curtail.appdata.xml.in:197
 msgid "Add Italian translation"
-msgstr "İtalyanca çeviri ekle"
+msgstr "İtalyanca çeviri eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:170
+#: data/com.github.huluti.Curtail.appdata.xml.in:206
 msgid "Toggle the suffix entry according to new file option"
 msgstr "Sonek girişini yeni dosya seçeneğine göre değiştir"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:171
+#: data/com.github.huluti.Curtail.appdata.xml.in:207
 msgid "Scroll automatically to last compressed image in the list"
-msgstr "Listedeki en son sıkıştırılmış resme otomatik olarak ilerleyin"
+msgstr "Listedeki en son sıkıştırılmış görüntüye otomatik olarak ilerleyin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:172
+#: data/com.github.huluti.Curtail.appdata.xml.in:208
 msgid "Add save info label also on homepage and displace it at bottom"
 msgstr "Kayıt bilgisi etiketini ana sayfaya da ekleyin ve altta değiştirin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:173
+#: data/com.github.huluti.Curtail.appdata.xml.in:209
 msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
 msgstr ""
 "Bazı hatalardan (ör. klasörler) kaçınmak için dosya adlarının işlenmesini "
 "iyileştirin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:174
+#: data/com.github.huluti.Curtail.appdata.xml.in:210
 msgid "Various fixes"
 msgstr "Çeşitli düzeltmeler"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:182
+#: data/com.github.huluti.Curtail.appdata.xml.in:218
 msgid "Add a setting to change the '-min' suffix"
-msgstr "'-min' son ekini değiştirmek için bir ayar ekleyin"
+msgstr "'-min' son ekini değiştirmek için bir ayar eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:183
+#: data/com.github.huluti.Curtail.appdata.xml.in:219
 msgid "Add some explanations of applied settings"
-msgstr "Uygulanan ayarların bazı açıklamalarını ekleyin"
+msgstr "Uygulanan ayarlara bazı açıklamalar eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:184
+#: data/com.github.huluti.Curtail.appdata.xml.in:220
 msgid "Add Ctrl+O shortcut to open files"
-msgstr "Dosyaları açmak için Ctrl+O kısayolu ekleyin"
+msgstr "Dosyaları açmak için Ctrl+O kısayolu eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:185
+#: data/com.github.huluti.Curtail.appdata.xml.in:221
 msgid "Add Dutch and German translations"
-msgstr "Hollandaca ve Almanca çeviriler ekleyin"
+msgstr "Hollandaca ve Almanca çeviriler eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:186
+#: data/com.github.huluti.Curtail.appdata.xml.in:222
 msgid "Display translators' names in about dialog"
 msgstr "Hakkında iletişim kutusunda çevirmenlerin adlarını göster"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:187
+#: data/com.github.huluti.Curtail.appdata.xml.in:223
 msgid "Don't block the UI anymore when performing compression"
 msgstr "Sıkıştırma gerçekleştirirken artık kullanıcı arayüzünü engellemeyin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:188
+#: data/com.github.huluti.Curtail.appdata.xml.in:224
 msgid "Fix size of the preferences window"
-msgstr "Tercihler penceresinin boyutunu düzeltin"
+msgstr "Tercihler penceresinin boyutu düzeltildi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:196
+#: data/com.github.huluti.Curtail.appdata.xml.in:232
 msgid "Add a preferences window with new-file and dark-theme options"
-msgstr "Yeni dosya ve koyu tema seçenekleriyle bir tercihler penceresi ekleyin"
+msgstr "Yeni dosya ve koyu tema seçenekleriyle bir tercihler penceresi eklendi"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:197
+#: data/com.github.huluti.Curtail.appdata.xml.in:233
 msgid "Various UI changes"
 msgstr "Çeşitli kullanıcı arayüzü değişiklikleri"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:205
+#: data/com.github.huluti.Curtail.appdata.xml.in:241
 msgid "Permit to sort results by name or saving ratio"
 msgstr "Sonuçları ada veya kaydetme oranına göre sıralamaya izin verin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:206
+#: data/com.github.huluti.Curtail.appdata.xml.in:242
 msgid "Fix a crash when compressing an image with dots in its name"
 msgstr ""
-"Adında noktalar bulunan bir görüntüyü sıkıştırırken oluşan kilitlenmeyi "
-"düzeltin"
+"Adında noktalar bulunan bir görüntüyü sıkıştırırken oluşan kilitlenmeyi düzeltin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:214
+#: data/com.github.huluti.Curtail.appdata.xml.in:250
 msgid "Stick back and forward buttons"
 msgstr "Geri ve ileri düğmelerini yapıştırın"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:215
+#: data/com.github.huluti.Curtail.appdata.xml.in:251
 msgid "Change APP id"
 msgstr "APP kimliğini değiştir"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:223
+#: data/com.github.huluti.Curtail.appdata.xml.in:259
 msgid "Various optimizations"
 msgstr "Çeşitli optimizasyonlar"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:224
+#: data/com.github.huluti.Curtail.appdata.xml.in:260
 msgid "Improve error messages"
 msgstr "Hata mesajlarını iyileştirin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:225
+#: data/com.github.huluti.Curtail.appdata.xml.in:261
 msgid "Improve some texts"
 msgstr "Bazı metinleri iyileştirin"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:226
+#: data/com.github.huluti.Curtail.appdata.xml.in:262
 msgid "Change description"
 msgstr "Açıklamayı değiştir"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:234
+#: data/com.github.huluti.Curtail.appdata.xml.in:270
 msgid "Initial version"
 msgstr "İlk versiyon"
 
@@ -368,87 +405,92 @@ msgstr "Sıkıştırılmış görüntüyü yeni bir dosyaya kaydedin."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:135
 msgid "Keep metadata"
-msgstr "Meta verileri sakla"
+msgstr "Üst verileri sakla"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting preserves metadata of images."
-msgstr "Bu ayar, resimlerin meta verilerini korur."
+msgstr "Bu ayar, görüntülerin üst verilerini korur."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:161
+msgid "Preserve file attributes if possible"
+msgstr "Mümkünse dosya özniteliklerini koru"
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Enable lossy mode"
 msgstr "Kayıplı modu etkinleştir"
 
-#: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "Use lossy mode to compress images."
-msgstr "Görüntüleri sıkıştırmak için kayıplı modu kullanın."
+msgstr "Görüntüleri sıkıştırmak için kayıplı kipi kullanın."
 
-#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:85
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:85
 msgid "Suffix to append at end of new file"
 msgstr "Yeni dosyanın sonuna eklenecek sonek"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Suffix to append at end of new file."
 msgstr "Yeni dosyanın sonuna eklenecek sonek."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:177
+#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:203
 msgid "PNG Lossy Compression Level"
-msgstr "PNG Kayıplı Sıkıştırma Seviyesi"
-
-#: data/com.github.huluti.Curtail.gschema.xml:27
-msgid "Lossy compression level to use for PNG images."
-msgstr "PNG görüntüleri için kullanılacak kayıplı sıkıştırma düzeyi."
-
-#: data/com.github.huluti.Curtail.gschema.xml:31
-msgid "PNG Lossless Compression Level"
-msgstr "PNG Kayıpsız Sıkıştırma Seviyesi"
+msgstr "PNG Kayıplı Sıkıştırma Düzeyi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:32
-msgid "Lossless compression level to use for PNG images."
-msgstr "PNG görüntüleri için kullanılacak kayıpsız sıkıştırma düzeyi."
+msgid "Lossy compression level to use for PNG images."
+msgstr "PNG görüntüler için kullanılacak kayıplı sıkıştırma düzeyi."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-msgid "WEBP Lossless Compression Level"
-msgstr "WEBP Kayıpsız Sıkıştırma Seviyesi"
+msgid "PNG Lossless Compression Level"
+msgstr "PNG Kayıpsız Sıkıştırma Düzeyi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossless compression level to use for WEBP images."
-msgstr "WEBP görüntüleri için kullanılacak kayıpsız sıkıştırma seviyesi."
+msgid "Lossless compression level to use for PNG images."
+msgstr "PNG görüntüler için kullanılacak kayıpsız sıkıştırma düzeyi."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
-msgid "JPG Lossy Compression Level"
-msgstr "JPG Kayıplı Sıkıştırma Seviyesi"
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "WEBP Lossless Compression Level"
+msgstr "WEBP Kayıpsız Sıkıştırma Düzeyi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
-msgid "Lossy compression level to use for JPG images."
-msgstr "JPG görüntüleri için kullanılacak kayıplı sıkıştırma düzeyi."
+msgid "Lossless compression level to use for WEBP images."
+msgstr "WEBP görüntüler için kullanılacak kayıpsız sıkıştırma düzeyi."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
-msgid "WEBP Lossy Compression Level"
-msgstr "WEBP Kayıplı Sıkıştırma Seviyesi"
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:230
+msgid "JPG Lossy Compression Level"
+msgstr "JPG Kayıplı Sıkıştırma Düzeyi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
-msgid "Lossy compression level to use for WEBP images."
-msgstr "WEBP görüntüleri için kullanılacak kayıplı sıkıştırma düzeyi."
+msgid "Lossy compression level to use for JPG images."
+msgstr "JPG görüntüler için kullanılacak kayıplı sıkıştırma düzeyi."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
+#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:243
+msgid "WEBP Lossy Compression Level"
+msgstr "WEBP Kayıplı Sıkıştırma Düzeyi"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossy compression level to use for WEBP images."
+msgstr "WEBP görüntüler için kullanılacak kayıplı sıkıştırma düzeyi."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "Enable progressive encoding for jpegs"
 msgstr "jpeg'ler için aşamalı kodlamayı etkinleştir"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Optionally encode jpeg images progressively."
 msgstr "İsteğe bağlı olarak jpeg görüntülerini aşamalı olarak kodlayın."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56 src/ui/preferences.ui:59
+#: data/com.github.huluti.Curtail.gschema.xml:61 src/ui/preferences.ui:59
 msgid "Enable dark theme"
 msgstr "Koyu temayı etkinleştir"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Use dark theme for the windows."
 msgstr "Pencereler için koyu tema kullanın."
 
 #: src/ui/window.ui:47
 msgid "Drag and drop your images here..."
-msgstr "Resimlerinizi buraya sürükleyip bırakın..."
+msgstr "Görüntülerinizi buraya sürükleyip bırakın..."
 
 #: src/ui/window.ui:62
 msgid "or"
@@ -460,11 +502,11 @@ msgstr "Dosyalarınıza göz atın"
 
 #: src/ui/window.ui:100
 msgid "Lossless"
-msgstr "kayıpsız"
+msgstr "Kayıpsız"
 
 #: src/ui/window.ui:129
 msgid "Lossy"
-msgstr "kayıplı"
+msgstr "Kayıplı"
 
 #: src/ui/preferences.ui:32 src/ui/menu.ui:6
 msgid "Preferences"
@@ -474,15 +516,15 @@ msgstr "Tercihler"
 msgid "Save the compressed image into a new file"
 msgstr "Sıkıştırılmış görüntüyü yeni bir dosyaya kaydedin"
 
-#: src/ui/preferences.ui:158
+#: src/ui/preferences.ui:184
 msgid "General"
 msgstr "Genel"
 
-#: src/ui/preferences.ui:255
+#: src/ui/preferences.ui:281
 msgid "Compression"
 msgstr "Sıkıştırma"
 
-#: src/ui/preferences.ui:288
+#: src/ui/preferences.ui:314
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
@@ -490,25 +532,25 @@ msgstr ""
 "PNG Kayıpsız Sıkıştırma Düzeyi\n"
 "(ne kadar yüksekse o kadar yavaştır)"
 
-#: src/ui/preferences.ui:315
+#: src/ui/preferences.ui:341
 msgid ""
 "WEBP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"WEBP Kayıpsız Sıkıştırma Seviyesi\n"
+"WEBP Kayıpsız Sıkıştırma Düzeyi\n"
 "(ne kadar yüksekse o kadar yavaştır)"
 
-#: src/ui/preferences.ui:329
+#: src/ui/preferences.ui:355
 msgid "Progressive Encode JPG"
 msgstr "Aşamalı Kodlama JPG"
 
-#: src/ui/preferences.ui:352
+#: src/ui/preferences.ui:378
 msgid "Advanced"
 msgstr "Gelişmiş"
 
 #: src/ui/apply.ui:7
 msgid "File already exists"
-msgstr "dosya zaten mevcut"
+msgstr "Dosya zaten var"
 
 #: src/ui/apply.ui:26
 msgid "Compress"
@@ -516,7 +558,7 @@ msgstr "Sıkıştır"
 
 #: src/ui/apply.ui:39
 msgid "Skip"
-msgstr "atla"
+msgstr "Atla"
 
 #: src/ui/apply.ui:76
 msgid "Apply to all queue"
@@ -540,7 +582,7 @@ msgstr "Yeni Boyut"
 
 #: src/window.py:96
 msgid "Savings"
-msgstr "tasarruf"
+msgstr "Tasarruf"
 
 #: src/window.py:160
 msgid "Images are saved with <b>'{}' suffix</b>."
@@ -548,7 +590,7 @@ msgstr "Görüntüler '{}' son ekiyle kaydedilir."
 
 #: src/window.py:163
 msgid "Images are <b>overwritten</b>."
-msgstr "Resimlerin <b>üzerine yazılır</b>."
+msgstr "Görüntülerin <b>üzerine yazılır</b>."
 
 #: src/window.py:234
 msgid "Format not supported"
@@ -564,15 +606,17 @@ msgstr "Yol geçerli değil"
 
 #: src/window.py:240
 msgid "{} doesn't exist."
-msgstr "{} mevcut değil."
+msgstr "{} yok."
 
 #: src/window.py:329
 msgid "translator-credits"
-msgstr "Muhammet Emin AKALAN"
+msgstr ""
+"Muhammet Emin Akalan <05akalan57@gmail.com>\n"
+"Sabri Ünal <libreajans@gmail.com>"
 
 #: src/window.py:331
-msgid "Distributed under the GNU GPL(v3) license."
-msgstr "GNU GPL(v3) lisansı altında dağıtılır."
+msgid "Distributed under the GNU GPL(v3) license.\n"
+msgstr "GNU GPL(v3) lisansı altında dağıtılır.\n"
 
 #: src/compressor.py:60
 msgid "An error has occured"
@@ -583,21 +627,21 @@ msgid ""
 "The file <b>{}</b> already exists.\n"
 "Do you want to compress the image anyway?"
 msgstr ""
-"{} dosyası zaten var.\n"
+"<b>{}</b> dosyası zaten var.\n"
 "Yine de görüntüyü sıkıştırmak istiyor musunuz?"
 
 #: src/tools.py:47
 msgid "All images"
-msgstr "Tüm resimler"
+msgstr "Tüm görüntüler"
 
 #: src/tools.py:53
 msgid "PNG images"
-msgstr "PNG görüntüleri"
+msgstr "PNG görüntüler"
 
 #: src/tools.py:57
 msgid "JPEG images"
-msgstr "JPEG görüntüleri"
+msgstr "JPEG görüntüler"
 
 #: src/tools.py:61
 msgid "WEBP images"
-msgstr "WEBP görselleri"
+msgstr "WEBP görüntüler"
