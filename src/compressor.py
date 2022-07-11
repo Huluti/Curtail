@@ -84,8 +84,7 @@ class Compressor():
         self.new_size = self.new_file_data.stat().st_size
 
         savings = round(100 - (self.new_size * 100 / self.size), 2)
-        self.win.update_treeview_row(self.tree_iter, self.new_size,
-                                    '{}%'.format(str(savings)))
+        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
 
     def build_png_command(self, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'

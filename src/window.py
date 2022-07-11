@@ -83,7 +83,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
-        self.store = Gtk.ListStore(bool, str, str, str, str, int)
+        self.store = Gtk.ListStore(bool, str, str, int, str, int, str, float)
         self.treeview.set_model(self.store)
         self.renderer = Gtk.CellRendererText()
         self.spinner_renderer = Gtk.CellRendererSpinner()
@@ -91,9 +91,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         col_bool = Gtk.TreeViewColumn('', self.spinner_renderer, active=0)
         self.treeview.append_column(col_bool)
         self.add_column_to_treeview(_("Filename"), 1, True)
-        self.add_column_to_treeview(_("Old Size"), 2)
-        self.add_column_to_treeview(_("New Size"), 3)
-        self.add_column_to_treeview(_("Savings"), 4, True)
+        self.add_column_to_treeview(_("Old Size"), 2, True, 3)
+        self.add_column_to_treeview(_("New Size"), 4, True, 5)
+        self.add_column_to_treeview(_("Savings"), 6, True, 7)
 
         self.adjustment = self.treeview_scrolled_window.get_vadjustment()
 
@@ -119,10 +119,13 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
 
-    def add_column_to_treeview(self, title, column_id, allow_sort=False):
+    def add_column_to_treeview(self, title, column_id, allow_sort=False, sort_column_id=-1):
         treeviewcolumn = Gtk.TreeViewColumn(title)
         if allow_sort:
-            treeviewcolumn.set_sort_column_id(column_id)
+            if sort_column_id > 0:
+                treeviewcolumn.set_sort_column_id(sort_column_id)
+            else:
+                treeviewcolumn.set_sort_column_id(column_id)
         treeviewcolumn.set_spacing(10)
         treeviewcolumn.set_resizable(True)
         treeviewcolumn.set_expand(True)
@@ -141,15 +144,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.forward_button.set_sensitive(not show)
 
     def create_treeview_row(self, name, size):
-        tree_iter = self.store.append([True, name, sizeof_fmt(size), '', '', 0])
+        tree_iter = self.store.append([True, name, sizeof_fmt(size), size, '', 0, '0%', 0])
         return tree_iter
 
     def update_treeview_row(self, tree_iter, new_size, savings):
         self.store.set_value(tree_iter, 0, False)
-        if type(new_size) is int:
-            new_size = sizeof_fmt(new_size)
-        self.store.set_value(tree_iter, 3, new_size)
-        self.store.set_value(tree_iter, 4, savings)
+        self.store.set_value(tree_iter, 4, sizeof_fmt(new_size))
+        self.store.set_value(tree_iter, 5, new_size)
+        self.store.set_value(tree_iter, 6, '{}%'.format(str(savings)))
+        self.store.set_value(tree_iter, 7, savings)
 
     def go_end_treeview(self):
         self.adjustment.set_value(self.adjustment.get_upper())
