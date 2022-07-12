@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 - Add Korean translation. Thank's to @MarongHappy.
 
 ### Changed
-- Update screnshots.
+- Update screenshots.
 - Update Turkish translation. Thank's to @libreajans.
 - Update French translation. Thank's to @rene-coty.
 - Update Dutch translation. Thank's to @Vistaus.
