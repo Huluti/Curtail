@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - 2022-07-12
+### Added
+- Make size columns sortable.
+- Add Korean translation. Thank's to @MarongHappy.
+
+### Changed
+- Update screnshots.
+- Update Turkish translation. Thank's to @libreajans.
+- Update French translation. Thank's to @rene-coty.
+- Update Dutch translation. Thank's to @Vistaus.
+
+### Fixed
+- Fix savings column sorting.
+
 ## [1.3.0] - 2022-05-01
 ### Added
 - Add option to preserve file attributes if possible.

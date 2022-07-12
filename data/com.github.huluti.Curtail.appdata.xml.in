@@ -35,6 +35,20 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
 
   <releases>
+     <release version="1.3.1" date="2022-07-12">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Make size columns sortable.</li>
+          <li>Add Korean translation. Thank's to @MarongHappy.</li>
+          <li>Update screnshots.</li>
+          <li>Update Turkish translation. Thank's to @libreajans.</li>
+          <li>Update French translation. Thank's to @rene-coty.</li>
+          <li>Update Dutch translation. Thank's to @Vistaus.</li>
+          <li>Fix savings column sorting.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.3.0" date="2022-05-01">
       <description>
         <p>Here's the changelog of this version:</p>
