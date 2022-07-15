@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 22:05\n"
-"PO-Revision-Date: 2022-07-14 22:05\n"
+"PO-Revision-Date: 2022-07-15 12:41\n"
 "Last-Translator: vikdevelop <super-vik1@protonmail.com\n"
 "Language-Team: Czechia <>\n"
 "Language: cs\n"
@@ -186,37 +186,37 @@ msgstr "Přidány portugalské (Brazílie) překladů."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:101
 msgid "Don't use legacy path for metadata"
-msgstr "Don't use legacy path for metadata"
+msgstr "Již nepoužívejte staré umíštění pro metadata"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:109
 msgid "Fix compression of jpg files that produced 0b files"
-msgstr "Fix compression of jpg files that produced 0b files"
+msgstr "Oprava komprese souborů jpg, která vytvářela soubory 0b"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:117
 msgid "Add an option to whether keep or not metadata of images"
-msgstr "Add an option to whether keep or not metadata of images"
+msgstr "Přidána možnost, zda zachovat nebo nezachovat metadata obrázků"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:118
 msgid "Replace mozjpeg lib by jpegoptim"
-msgstr "Replace mozjpeg lib by jpegoptim"
+msgstr "Nahrazena knihovna mozjpeg knihovnou jpegoptim"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:119
 #: data/com.github.huluti.Curtail.appdata.xml.in:143
 #: data/com.github.huluti.Curtail.appdata.xml.in:162
 msgid "Update translations"
-msgstr "Aktualizovány překlady."
+msgstr "Aktualizovány překlady"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:223
 msgid "Various optimizations"
-msgstr "Various optimizations"
+msgstr "Různé optimalizace"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:224
 msgid "Improve error messages"
-msgstr "Improve error messages"
+msgstr "Zlepšení chybových hlášení"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:225
 msgid "Improve some texts"
-msgstr "Improve some texts"
+msgstr "Zlepšení některých textů"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:226
 msgid "Change description"
@@ -304,35 +304,35 @@ msgstr "Progressives Encodieren für jpegs aktivieren"
 
 #: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Optionally encode jpeg images progressively."
-msgstr "Optionales progressives Encodieren von jpeg-Bildern."
+msgstr "Volitelně můžete obrázky jpeg kódovat postupně."
 
 #: data/com.github.huluti.Curtail.gschema.xml:56 src/ui/preferences.ui:59
 msgid "Enable dark theme"
-msgstr "Dunkles Thema verwenden"
+msgstr "Povolit tmavý motiv"
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Use dark theme for the windows."
-msgstr "Dunkles Thema für Fenster verwenden."
+msgstr "Použít tmavý motiv pro okna."
 
 #: src/ui/window.ui:47
 msgid "Drag and drop your images here..."
-msgstr "Bilder hierher ziehen…"
+msgstr "Přetáhněte sem vaše obrázky..."
 
 #: src/ui/window.ui:62
 msgid "or"
-msgstr "oder"
+msgstr "nebo"
 
 #: src/ui/window.ui:75 src/window.py:173
 msgid "Browse your files"
-msgstr "Dateien durchsuchen"
+msgstr "Procházejte vaše soubory"
 
 #: src/ui/window.ui:100
 msgid "Lossless"
-msgstr "Verlustfrei"
+msgstr "Bezztrátový"
 
 #: src/ui/window.ui:129
 msgid "Lossy"
-msgstr "Verlustbehaftet"
+msgstr "Ztrátový"
 
 #: src/ui/preferences.ui:32 src/ui/menu.ui:6
 msgid "Preferences"
@@ -340,7 +340,7 @@ msgstr "Předvolby"
 
 #: src/ui/preferences.ui:109
 msgid "Save the compressed image into a new file"
-msgstr "Uložit kompresovaný obrázek do nového souboru"
+msgstr "Uložit komprimovaný obrázek do nového souboru"
 
 #: src/ui/preferences.ui:158
 msgid "General"
@@ -355,135 +355,135 @@ msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"PNG Verlustfreier Komprimierungsgrad\n"
-"(umso höher, desto langsamer)"
+"Úroveň bezeztrátové komprese PNG\n"
+"(čím vyšší, tím pomalejší)"
 
 #: src/ui/preferences.ui:315
 msgid ""
 "WEBP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"WEBP Verlustfreier Komprimierungsgrad\n"
-"(umso höher, desto langsamer)"
+"Bezeztrátová komprese WEBP\n"
+"(čím vyšší, tím pomalejší)"
 
 #: src/ui/preferences.ui:329
 msgid "Progressive Encode JPG"
-msgstr "Progressive Encodierung JPG"
+msgstr "Progresivní kódování JPG"
 
 #: src/ui/preferences.ui:352
 msgid "Advanced"
-msgstr "Erweitert"
+msgstr "Pokročilé"
 
 #: src/ui/apply.ui:7
 msgid "File already exists"
-msgstr "Datei existiert bereits"
+msgstr "Soubor již existuje"
 
 #: src/ui/apply.ui:26
 msgid "Compress"
-msgstr "Komprimiere"
+msgstr "Komprimovat"
 
 #: src/ui/apply.ui:39
 msgid "Skip"
-msgstr "Überspringen"
+msgstr "Přeskočit"
 
 #: src/ui/apply.ui:76
 msgid "Apply to all queue"
-msgstr "Auf ganze Warteschlange anwenden"
+msgstr "Použít pro všechny fronty"
 
 #: src/ui/menu.ui:10
 msgid "About Curtail"
-msgstr "Info zu Curtail"
+msgstr "O programu Curtail"
 
 #: src/window.py:93
 msgid "Filename"
-msgstr "Dateiname"
+msgstr "Název souboru"
 
 #: src/window.py:94
 msgid "Old Size"
-msgstr "Alte Größe"
+msgstr "Stará velikost"
 
 #: src/window.py:95
 msgid "New Size"
-msgstr "Neue Größe"
+msgstr "Nová velikost"
 
 #: src/window.py:96
 msgid "Savings"
-msgstr "Einsparung"
+msgstr "Úspory"
 
 #: src/window.py:160
 msgid "Images are saved with <b>'{}' suffix</b>."
-msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert."
+msgstr "Obrázky jsou uloženy a <b>'{}' příponou</b>"
 
 #: src/window.py:163
 msgid "Images are <b>overwritten</b>."
-msgstr "Bilder werden <b>überschrieben</b>."
+msgstr "Obrázky jsou <b>přepsané</b>"
 
 #: src/window.py:234
 msgid "Format not supported"
-msgstr "Nicht unterstütztes Format"
+msgstr "Formát není podporován"
 
 #: src/window.py:235
 msgid "The format of {} is not supported."
-msgstr "Das Format von {} wird nicht unterstützt."
+msgstr "Formát {} není podporován."
 
 #: src/window.py:239
 msgid "Path not valid"
-msgstr "Ungültiger Pfad"
+msgstr "Umíštění není správné"
 
 #: src/window.py:240
 msgid "{} doesn't exist."
-msgstr "{} existiert nicht."
+msgstr "{} neexistuje."
 
 #: src/window.py:329
 msgid "translator-credits"
-msgstr "Onno Giesmann"
+msgstr "vikdevelop"
 
 #: src/window.py:331
 msgid "Distributed under the GNU GPL(v3) license.\n"
-msgstr "Veröffentlicht unter der Lizenz GNU GPL(v3).\n"
+msgstr "Šířeno pod licencí GNU GPL(v3).\n"
 
 #: src/compressor.py:60
 msgid "An error has occured"
-msgstr "Es ist ein Fehler aufgetreten"
+msgstr "Vyskytla se chyba"
 
 #: src/apply.py:49
 msgid ""
 "The file <b>{}</b> already exists.\n"
 "Do you want to compress the image anyway?"
 msgstr ""
-"Die Datei <b>{}</b> existiert bereits.\n"
-"Möchten Sie das Bild trotzdem komprimieren?"
+"Soubor <b>{}</b> již existuje.\n"
+"Přejete si obrázek komprimovat znovu?"
 
 #: src/tools.py:47
 msgid "All images"
-msgstr "Alle Bilder"
+msgstr "Všechny obrázky"
 
 #: src/tools.py:53
 msgid "PNG images"
-msgstr "PNG-Bilder"
+msgstr "PNG obrázky"
 
 #: src/tools.py:57
 msgid "JPEG images"
-msgstr "JPEG-Bilder"
+msgstr "JPEG obrázky"
 
 #: src/tools.py:61
 msgid "WEBP images"
-msgstr "WEBP-Bilder"
+msgstr "WEBP obrázky"
 
 #~ msgid "Simple & useful image compressor."
-#~ msgstr "Einfacher & nützlicher Bild-Kompressor."
+#~ msgstr "Jednoduchý a použitelný kompresor obrázků."
 
 #~ msgid "Simple &amp; useful image compressor"
-#~ msgstr "Einfacher & nützlicher Bild-Kompressor"
+#~ msgstr "Jednoduchý a použitelný kompresor obrázků"
 
 #~ msgid "Simple & useful image compressor"
-#~ msgstr "Einfacher & nützlicher Kompressor für Bilder"
+#~ msgstr "Jednoduchý a použitelný kompresor obrázků"
 
 #~ msgid "Nothing"
-#~ msgstr "Nichts"
+#~ msgstr "Nic"
 
 #~ msgid "Compression not useful"
-#~ msgstr "Komprimierung nicht sinnvoll"
+#~ msgstr "Komprese není použitelná"
 
 #~ msgid "{} is already compressed at max with current options."
-#~ msgstr "{} ist mit den aktuellen Optionen bereits maximal komprimiert."
+#~ msgstr "{} je při současných možnostech již komprimován na maximum."
