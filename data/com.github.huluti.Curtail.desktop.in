@@ -10,3 +10,4 @@ Icon=com.github.huluti.Curtail
 StartupWMClass=curtail
 MimeType=image/jpeg;image/png;
 StartupNotify=true
+Keywords=compress;optimize;image;photo;
