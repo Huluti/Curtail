@@ -31,7 +31,7 @@ msgstr "Pas compressie toe op uw afbeeldingen"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
+"Curtail is an useful image compressor, supporting PNG, JPEG and WebP file "
 "types."
 msgstr ""
 "Curtail is een eenvoudige toepassing om afbeeldingen mee te comprimeren en "
@@ -72,7 +72,7 @@ msgid "Here's the changelog of this version:"
 msgstr "Hier ziet u het wijzigingslog:"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:40
-msgid "Add WEBP support. Thank's to @olokelo."
+msgid "Add WebP support. Thank's to @olokelo."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:41
@@ -395,11 +395,11 @@ msgid "Lossless compression level to use for PNG images."
 msgstr "Het te gebruiken png-compressieniveau (zonder kwaliteitsverlies)."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-msgid "WEBP Lossless Compression Level"
+msgid "WebP Lossless Compression Level"
 msgstr "Webp-compressieniveau (zonder kwaliteitsverlies)"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossless compression level to use for WEBP images."
+msgid "Lossless compression level to use for WebP images."
 msgstr "Het te gebruiken webp-compressieniveau (zonder kwaliteitsverlies)."
 
 #: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
@@ -411,11 +411,11 @@ msgid "Lossy compression level to use for JPG images."
 msgstr "Het te gebruiken jpg-compressieniveau."
 
 #: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
-msgid "WEBP Lossy Compression Level"
+msgid "WebP Lossy Compression Level"
 msgstr "Webp-compressieniveau"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
-msgid "Lossy compression level to use for WEBP images."
+msgid "Lossy compression level to use for WebP images."
 msgstr "Het te gebruiken webp-compressieniveau."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
@@ -480,7 +480,7 @@ msgstr ""
 
 #: src/ui/preferences.ui:315
 msgid ""
-"WEBP Lossless Compression Level\n"
+"WebP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 "Het te gebruiken webp-compressieniveau (zonder kwaliteitsverlies)\n"
@@ -587,7 +587,7 @@ msgid "JPEG images"
 msgstr "Jpeg-afbeeldingen"
 
 #: src/tools.py:61
-msgid "WEBP images"
+msgid "WebP images"
 msgstr "Webp-afbeeldingen"
 
 #~ msgid "Simple & useful image compressor."

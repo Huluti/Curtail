@@ -87,7 +87,7 @@ class CurtailPrefsWindow(Gtk.Window):
         self.spin_png_lossless_level.connect('value-changed',
             self.on_int_changed, 'png-lossless-level')
 
-        # WEBP Lossless Compression Level
+        # WebP Lossless Compression Level
         self.spin_webp_lossless_level.set_value(
             self._settings.get_int('webp-lossless-level'))
         self.spin_webp_lossless_level.connect('value-changed',
@@ -99,7 +99,7 @@ class CurtailPrefsWindow(Gtk.Window):
         self.spin_jpg_lossy_level.connect('value-changed',
             self.on_int_changed, 'jpg-lossy-level')
 
-        # WEBP Lossy Compression Level
+        # WebP Lossy Compression Level
         self.spin_webp_lossy_level.set_value(
             self._settings.get_int('webp-lossy-level'))
         self.spin_webp_lossy_level.connect('value-changed',
@@ -141,3 +141,4 @@ class CurtailPrefsWindow(Gtk.Window):
         boolean = self._settings.get_boolean('new-file')
         self.new_file_label.set_sensitive(boolean)
         self.entry_suffix.set_sensitive(boolean)
+

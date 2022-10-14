@@ -58,7 +58,7 @@ def add_filechooser_filters(dialog):
     jpeg_images.add_mime_type('image/jpeg')
 
     webp_images = Gtk.FileFilter()
-    webp_images.set_name(_("WEBP images"))
+    webp_images.set_name(_("WebP images"))
     webp_images.add_mime_type('image/webp')
 
     dialog.add_filter(all_images)

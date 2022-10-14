@@ -43,7 +43,7 @@ curtail (1.2.1) focal; urgency=medium
 
 curtail (1.2.0) focal; urgency=medium
 
-  * Add WEBP support. Thank's to @olokelo.
+  * Add WebP support. Thank's to @olokelo.
   * Add Croatian translation. Thank's to @milotype.
   * Update Spanish translation. Thank's to @oscfdezdz.
   * Update Portuguese (Brazil) translation. Thank's to @fulvio-alves.

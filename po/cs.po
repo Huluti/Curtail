@@ -31,10 +31,10 @@ msgstr "Komprimujte vaše obrázky"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
+"Curtail is an useful image compressor, supporting PNG, JPEG and WebP file "
 "types."
 msgstr ""
-"Curtail je použitelný kompresor obrázků, popdporující PNG, JPEG a WEBP soubory."
+"Curtail je použitelný kompresor obrázků, popdporující PNG, JPEG a WebP soubory."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
@@ -71,8 +71,8 @@ msgid "Here's the changelog of this version:"
 msgstr "Zde je seznam změn této verze:"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:40
-msgid "Add WEBP support. Thank's to @olokelo."
-msgstr "Přidána podpora WEBP. Díky patří @olokelo."
+msgid "Add WebP support. Thank's to @olokelo."
+msgstr "Přidána podpora WebP. Díky patří @olokelo."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:41
 msgid "Add Croatian translation. Thank's to @milotype."
@@ -275,12 +275,12 @@ msgid "Lossless compression level to use for PNG images."
 msgstr "Úroveň bezeztrátové komprese, která se použije pro obrázky PNG.."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-msgid "WEBP Lossless Compression Level"
-msgstr "Úroveň bezeztrátové komprese WEBP"
+msgid "WebP Lossless Compression Level"
+msgstr "Úroveň bezeztrátové komprese WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossless compression level to use for WEBP images."
-msgstr "Úroveň bezeztrátové komprese, která se použije pro obrázky WEBP."
+msgid "Lossless compression level to use for WebP images."
+msgstr "Úroveň bezeztrátové komprese, která se použije pro obrázky WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
 msgid "JPG Lossy Compression Level"
@@ -291,12 +291,12 @@ msgid "Lossy compression level to use for JPG images."
 msgstr "Úroveň ztrátové komprese, která se použije pro obrázky JPG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
-msgid "WEBP Lossy Compression Level"
-msgstr "Úroveň ztrátové komprese WEBP"
+msgid "WebP Lossy Compression Level"
+msgstr "Úroveň ztrátové komprese WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
-msgid "Lossy compression level to use for WEBP images."
-msgstr "Úroveň ztrátové komprese, která se použije pro obrázky WEBP."
+msgid "Lossy compression level to use for WebP images."
+msgstr "Úroveň ztrátové komprese, která se použije pro obrázky WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "Enable progressive encoding for jpegs"
@@ -360,10 +360,10 @@ msgstr ""
 
 #: src/ui/preferences.ui:315
 msgid ""
-"WEBP Lossless Compression Level\n"
+"WebP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"Bezeztrátová komprese WEBP\n"
+"Bezeztrátová komprese WebP\n"
 "(čím vyšší, tím pomalejší)"
 
 #: src/ui/preferences.ui:329
@@ -467,8 +467,8 @@ msgid "JPEG images"
 msgstr "JPEG obrázky"
 
 #: src/tools.py:61
-msgid "WEBP images"
-msgstr "WEBP obrázky"
+msgid "WebP images"
+msgstr "WebP obrázky"
 
 #~ msgid "Simple & useful image compressor."
 #~ msgstr "Jednoduchý a použitelný kompresor obrázků."

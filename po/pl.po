@@ -32,11 +32,11 @@ msgstr "Kompresuj zdjęcia"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WEBP file "
+"Curtail is an useful image compressor, supporting PNG, JPEG and WebP file "
 "types."
 msgstr ""
 "Curtail jest narzędziem kompresji zdjęć ze wsparciem dla plików PNG, JPEG "
-"i WEBP."
+"i WebP."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
@@ -361,12 +361,12 @@ msgid "Lossless compression level to use for PNG images."
 msgstr "Poziom bezstratnej kompresji dla obrazów PNG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-msgid "WEBP Lossless Compression Level"
-msgstr "Poziom bezstratnej kompresji WEBP"
+msgid "WebP Lossless Compression Level"
+msgstr "Poziom bezstratnej kompresji WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossless compression level to use for WEBP images."
-msgstr "Poziom bezstratnej kompresji dla obrazów WEBP."
+msgid "Lossless compression level to use for WebP images."
+msgstr "Poziom bezstratnej kompresji dla obrazów WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
 msgid "JPG Lossy Compression Level"
@@ -377,12 +377,12 @@ msgid "Lossy compression level to use for JPG images."
 msgstr "Poziom stratnej kompresji dla obrazów JPG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
-msgid "WEBP Lossy Compression Level"
-msgstr "Poziom stratnej kompresji WEBP"
+msgid "WebP Lossy Compression Level"
+msgstr "Poziom stratnej kompresji WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
-msgid "Lossy compression level to use for WEBP images."
-msgstr "Poziom stratnej kompresji dla obrazów WEBP."
+msgid "Lossy compression level to use for WebP images."
+msgstr "Poziom stratnej kompresji dla obrazów WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "Enable progressive encoding for jpegs"
@@ -446,10 +446,10 @@ msgstr ""
 
 #: src/ui/preferences.ui:315
 msgid ""
-"WEBP Lossless Compression Level\n"
+"WebP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
-"Bezstratny Poziom Kompresji WEBP\n"
+"Bezstratny Poziom Kompresji WebP\n"
 "(im wyższy tym wolniejszy)"
 
 #: src/ui/preferences.ui:329
@@ -537,5 +537,5 @@ msgid "JPEG images"
 msgstr "obrazy JPEG"
 
 #: src/tools.py:61
-msgid "WEBP images"
-msgstr "obrazy WEBP"
+msgid "WebP images"
+msgstr "obrazy WebP"

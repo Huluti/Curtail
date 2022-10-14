@@ -46,7 +46,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.2.0] - 2021-06-29
 ### Added
-- Add WEBP support. Thank's to @olokelo.
+- Add WebP support. Thank's to @olokelo.
 - Add Croatian translation. Thank's to @milotype.
 
 ### Changed

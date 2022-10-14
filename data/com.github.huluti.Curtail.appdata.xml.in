@@ -8,7 +8,7 @@
   <name translatable="no">Curtail</name>
   <summary>Compress your images</summary>
   <description>
-    <p>Optimize your images with Curtail, a useful image compressor that supports PNG, JPEG and WEBP file types.</p>
+    <p>Optimize your images with Curtail, a useful image compressor that supports PNG, JPEG and WebP file types.</p>
     <p>It supports both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
   </description>
 
@@ -90,7 +90,7 @@
       <description>
         <p>Here's the changelog of this version:</p>
         <ul>
-          <li>Add WEBP support. Thank's to @olokelo.</li>
+          <li>Add WebP support. Thank's to @olokelo.</li>
           <li>Add Croatian translation. Thank's to @milotype.</li>
           <li>Update Spanish translation. Thank's to @oscfdezdz.</li>
           <li>Update Portuguese (Brazil) translation. Thank's to @fulvio-alves.</li>
