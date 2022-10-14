@@ -32,7 +32,18 @@ You can also install it by using the following command-line:
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/curtail.svg)](https://repology.org/project/curtail/versions)
 
-A [PPA](https://launchpad.net/~apandada1/+archive/ubuntu/curtail) is available for Ubuntu (18.04+) and derivatives. 
+### Unofficial packages
+
+A [PPA](https://launchpad.net/~apandada1/+archive/ubuntu/curtail) is available for Ubuntu (18.04+) and derivatives:
+
+    sudo add-apt-repository ppa:apandada1/curtail
+    sudo apt update
+    sudo apt install curtail
+
+A [copr](https://copr.fedorainfracloud.org/coprs/0xmrtt/curtail) package is available for Fedora (36+):
+
+    sudo dnf copr enable 0xmrtt/curtail
+    sudo dnf install curtail
 
 ### Build from source (nightly)
 
