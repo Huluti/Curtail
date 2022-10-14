@@ -15,8 +15,8 @@
             "name":"jpegoptim",
             "sources":[{
                 "type": "archive",
-                "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.4.7.tar.gz",
-                "sha256": "c52616f2fb8d481315871680f9943b0f58c553d1e0c49a6bd4691a3e66d7e6de"
+                "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.0.tar.gz",
+                "sha256": "67b0feba73fd72f0bd383f25bf84149a73378d34c0c25bc0b9b25b0264d85824"
             }]
         },
         {
@@ -39,7 +39,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://pngquant.org/pngquant-2.17.0-src.tar.gz",
+                    "url": "https://pngquant.org/pngquant-2.17.0-src.tar.gz",
                     "sha256": "a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802fcda66"
                 }
             ]
@@ -49,8 +49,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.2.tar.gz",
-                    "sha256": "7656532f837af5f4cec3ff6bafe552c044dc39bf453587bd5b77450802f4aee6"
+                    "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.4.tar.gz",
+                    "sha256": "7bf5a8a28cc69bcfa8cb214f2c3095703c6b73ac5fba4d5480c205331d9494df"
                 }
             ]
         },
