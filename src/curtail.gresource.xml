@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/huluti/Curtail">
-    <file>ui/window.ui</file>
-    <file>ui/preferences.ui</file>
     <file>ui/apply.ui</file>
+    <file>ui/preferences.ui</file>
     <file>ui/menu.ui</file>
+    <file>ui/window.ui</file>
   </gresource>
 </gresources>
