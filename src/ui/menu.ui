@@ -7,6 +7,10 @@
         <attribute name="action">win.preferences</attribute>
       </item>
       <item>
+        <attribute name="label" translatable="yes">Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
         <attribute name="label" translatable="yes">About Curtail</attribute>
         <attribute name="action">win.about</attribute>
       </item>
