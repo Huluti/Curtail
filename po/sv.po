@@ -2,21 +2,22 @@
 # Copyright (C) 2021 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
 # Åke Engelbrektson <eson@svenskasprakfiler.se>, 2021.
+# Luna Jernberg <droidbittin@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-04 11:24+0200\n"
-"PO-Revision-Date: 2021-09-07 08:54+0200\n"
-"Last-Translator: Åke Engelbrektson <eson@svenskasprakfiler.se>\n"
+"PO-Revision-Date: 2023-02-19 11:01+0100\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/com.github.huluti.Curtail.desktop.in:3
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
@@ -69,281 +70,297 @@ msgstr "Hugo Posnic"
 #: data/com.github.huluti.Curtail.appdata.xml.in:221
 #: data/com.github.huluti.Curtail.appdata.xml.in:232
 msgid "Here's the changelog of this version:"
-msgstr ""
+msgstr "Här är ändringsloggen för denna version:"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:40
 msgid "Add WebP support. Thank's to @olokelo."
-msgstr ""
+msgstr "La till WebP stöd. Tack till @olokelo."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:41
 msgid "Add Croatian translation. Thank's to @milotype."
-msgstr ""
+msgstr "La till kroatisk översättning. Tack till @milotype."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:42
 msgid "Update Spanish translation. Thank's to @oscfdezdz."
-msgstr ""
+msgstr "Uppdaterad spansk översättning. Tack till @oscfdezdz."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:43
 msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
 msgstr ""
+"Uppdaterad portugisisk (brasilien) översättning. Tack till @fulvio-alves."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:44
 msgid "Don't accept empty file. Thank's to @akozlovskiy119."
-msgstr ""
+msgstr "Acceptera inte tom fil. Tack till @akozlovskiy119."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:45
 msgid "Better guess of extensions. Thank's to @akozlovskiy119."
-msgstr ""
+msgstr "Bättre gissning av tillägg. Tack till @akozlovskiy119."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:46
 msgid ""
 "Use correct file listing format for drag-and-drop. Thank's to "
 "@akozlovskiy119."
 msgstr ""
+"Använd korrekt filformat för att dra och släppa. Tack till "
+"@akozlovskiy119."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:47
 msgid "Fix directory handling. Thank's to @akozlovskiy119."
-msgstr ""
+msgstr "Fixad kataloghantering. Tack till @akozlovskiy119."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:48
 msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
 msgstr ""
+"Åtgärdade saknad ikon i LXQt, MATE, XFCE (#76). Tack till @apandada1."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:56
 msgid "An option to progressive encode jpegs. Thank's to @trst."
 msgstr ""
+"Ett alternativ för progressiv avkodning av jpeg-filer. Tack till @trst."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:57
 msgid "Add Russian translation."
-msgstr ""
+msgstr "La till rysk översättning"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:58
 msgid "Add Slovak translation."
-msgstr ""
+msgstr "La till slovakisk översättning."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:59
 msgid "Add Swedish translation."
-msgstr ""
+msgstr "La till svensk översättning."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:60
 msgid "Better handling of existing files."
-msgstr ""
+msgstr "Bättre hantering av befintliga filer."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:61
 msgid "Better appdata summary."
-msgstr ""
+msgstr "Bättre appdatasammanfattning."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:62
 msgid "Update Spanish translation."
-msgstr ""
+msgstr "Uppdaterad spansk översättning."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:63
 msgid "Compress images with extensions in uppercase."
-msgstr ""
+msgstr "Komprimera bilder med tillägg i versaler."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:64
 msgid "Center preferences window header switcher. Thank's to @andrenete."
 msgstr ""
+"Bytare för centrera inställningar för fönsterhuvud. Tack till @andrenete."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:65
 msgid "Fix columns sorting. Thank's to @andrenete."
-msgstr ""
+msgstr "Fixade kolumnsortering. Tack till @andrenete."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:66
 msgid ""
 "Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
 "@andrenete."
 msgstr ""
+"Tillåt inte tomt suffix (felaktig komprimering för JPEG). Tack till "
+"@andrenete."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:74
 msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
-msgstr ""
+msgstr "Ett nytt namn. tack till @bertob, @jannuary och @jimmac."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:75
 msgid "A new icon designed by @jimmac."
-msgstr ""
+msgstr "En ny ikon designad av @jimmac."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:76
 msgid "Support for dragging folders."
-msgstr ""
+msgstr "Stöd för att dra mappar."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:84
 msgid "Just fix a packaging file."
-msgstr ""
+msgstr "Fixa bara en förpackningsfil."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:92
 msgid "Just update GNOME runtime"
-msgstr ""
+msgstr "Uppdaterade bara GNOME runtime"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:100
 msgid "Add Portuguese (Brazil) translation"
-msgstr ""
+msgstr "La till portugisisk (Brasilien) översättning"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:101
 msgid "Don't use legacy path for metadata"
-msgstr ""
+msgstr "Använd inte äldre sökväg för metadata"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:109
 msgid "Fix compression of jpg files that produced 0b files"
-msgstr ""
+msgstr "Fixa komprimering av jpg-filer som producerade 0b-filer"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:117
 msgid "Add an option to whether keep or not metadata of images"
 msgstr ""
+"Lägg till ett alternativ för att behålla metadata för bilder eller inte"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:118
 msgid "Replace mozjpeg lib by jpegoptim"
-msgstr ""
+msgstr "Ersatte mozjpeg lib med jpegoptim"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:119
 #: data/com.github.huluti.Curtail.appdata.xml.in:143
 #: data/com.github.huluti.Curtail.appdata.xml.in:162
 msgid "Update translations"
-msgstr ""
+msgstr "Uppdaterade översättningar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:127
 msgid "Add a spinner to indicate the progress of the compression"
-msgstr ""
+msgstr "La till en spinner för att indikera framstegen för kompressionen"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:128
 msgid "Using threads to compress images simultaneously"
-msgstr ""
+msgstr "Använd trådar för att komprimera bilder samtidigt"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:129
 msgid "Simplification of certain sentences"
-msgstr ""
+msgstr "Förenkling av vissa meningar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:130
 msgid "Really don't block the UI anymore when performing compression"
 msgstr ""
+"Blockera verkligen inte användargränssnittet längre när du utför "
+"komprimering"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:138
 msgid "Add lossy compression features"
-msgstr ""
+msgstr "La till förlustkompressionsfunktioner"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:139
 msgid "Add options to change compression levels"
-msgstr ""
+msgstr "La till alternativ för att ändra komprimeringsnivåer"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:140
 msgid "New layout for the preferences dialog"
-msgstr ""
+msgstr "Ny layout för inställningsdialogrutan"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:141
 msgid "Don't permit higher resulting size"
-msgstr ""
+msgstr "Tillåt inte högre resulterande storlek"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:142
 msgid "Better displaying of the drag area"
-msgstr ""
+msgstr "Bättre visning av dragområdet"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:144
 msgid "Catch errors in subprocess to avoid crashing the app"
-msgstr ""
+msgstr "Fångade fel i underprocessen för att undvika att krascha programmet"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:152
 msgid "Fix build"
-msgstr ""
+msgstr "Fixade bygge"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:160
 msgid "Fix opening files from file managers"
-msgstr ""
+msgstr "Fixade att öppna filer från filhanterare"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:161
 msgid "Add Italian translation"
-msgstr ""
+msgstr "La till italiensk översättning"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:170
 msgid "Toggle the suffix entry according to new file option"
-msgstr ""
+msgstr "Växla suffixposten enligt nytt filalternativ"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:171
 msgid "Scroll automatically to last compressed image in the list"
-msgstr ""
+msgstr "Rulla automatiskt till den senaste komprimerade bilden i listan"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:172
 msgid "Add save info label also on homepage and displace it at bottom"
 msgstr ""
+"La till spara infoetikett även på hemsidan och flyttade den längst ner"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:173
 msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
 msgstr ""
+"Förbättrade hanteringen av filnamn för att undvika vissa fel (t.ex. "
+"mappar)"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:174
 msgid "Various fixes"
-msgstr ""
+msgstr "Olika fixar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:182
 msgid "Add a setting to change the '-min' suffix"
-msgstr ""
+msgstr "La till en inställning för att ändra suffixet '-min'"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:183
 msgid "Add some explanations of applied settings"
-msgstr ""
+msgstr "La till några förklaringar av tillämpade inställningar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:184
 msgid "Add Ctrl+O shortcut to open files"
-msgstr ""
+msgstr "La till Ctrl+O genväg för att öppna filer"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:185
 msgid "Add Dutch and German translations"
-msgstr ""
+msgstr "La till nederländska och tyska översättningar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:186
 msgid "Display translators' names in about dialog"
-msgstr ""
+msgstr "Visa översättarnas namn i dialogrutan Om"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:187
 msgid "Don't block the UI anymore when performing compression"
-msgstr ""
+msgstr "Blockera inte gränssnittet längre när du utför komprimering"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:188
 msgid "Fix size of the preferences window"
-msgstr ""
+msgstr "Fixade storleken på inställningsfönstret"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:196
 msgid "Add a preferences window with new-file and dark-theme options"
 msgstr ""
+"La till ett inställningsfönster med alternativ för ny fil och mörkt tema"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:197
 msgid "Various UI changes"
-msgstr ""
+msgstr "Olika ändringar i användargränssnittet"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:205
 msgid "Permit to sort results by name or saving ratio"
-msgstr ""
+msgstr "Tillåtelse att sortera resultat efter namn eller sparkvot"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:206
 msgid "Fix a crash when compressing an image with dots in its name"
 msgstr ""
+"Åtgärdade en krasch när du komprimerar en bild med punkter i dess namn"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:214
 msgid "Stick back and forward buttons"
-msgstr ""
+msgstr "Fäste tillbaka och framåt knapparna"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:215
 msgid "Change APP id"
-msgstr ""
+msgstr "Ändrade APP id"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:223
 msgid "Various optimizations"
-msgstr ""
+msgstr "Olika optimeringar"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:224
 msgid "Improve error messages"
-msgstr ""
+msgstr "Förbättrade felmeddelanden"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:225
 msgid "Improve some texts"
-msgstr ""
+msgstr "Förbättrade vissa texter"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:226
 msgid "Change description"
-msgstr ""
+msgstr "Ändrade beskrivning"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:234
 msgid "Initial version"
-msgstr ""
+msgstr "Första versionen"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -555,7 +572,9 @@ msgstr "{} finns inte."
 
 #: src/window.py:329
 msgid "translator-credits"
-msgstr "Åke Engelbrektson <eson@svenskasprakfiler.se>"
+msgstr ""
+"Åke Engelbrektson <eson@svenskasprakfiler.se>\n"
+"Luna Jernberg <droidbittin@gmail.com>"
 
 #: src/window.py:331
 msgid "Distributed under the GNU GPL(v3) license.\n"
