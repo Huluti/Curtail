@@ -76,11 +76,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.menu_button.set_menu_model(window_menu)
 
         # Mainbox - drag&drop
-        #enforce_target = Gtk.TargetEntry.new('text/uri-list',
-                                             #Gtk.TargetFlags(4), 0)
-        #self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
-                                   #Gdk.DragAction.COPY)
-        #self.mainbox.connect('drag-data-received', self.on_receive)
+        drop_target_main = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_main.connect('drop', self.on_dnd_drop)
+        self.mainbox.add_controller(drop_target_main)
 
         # Treeview
         self.store = Gtk.ListStore(bool, str, str, int, str, int, str, float)
@@ -190,8 +188,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         dialog.connect('response', handle_response)
         dialog.show()
 
-    def on_receive(self, widget, drag_context, x, y, data, info, time):
-        filenames = data.get_uris()
+    def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
+        files = value.get_files()
+        if not files:
+            return
+
+        filenames = []
+        for file in files:
+            filenames.append(file.get_path())
+
         final_filenames = self.handle_filenames(filenames)
         self.compress_filenames(final_filenames)
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
   <requires lib="gtk" version="4.0"/>
-  <requires lib="gtk" version="4.0"/>
   <template class="CurtailWindow" parent="GtkApplicationWindow">
+    <property name="title" translatable="1">Curtail</property>
     <property name="default-width">600</property>
     <property name="default-height">300</property>
     <child>
