@@ -76,11 +76,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.menu_button.set_menu_model(window_menu)
 
         # Mainbox - drag&drop
-        enforce_target = Gtk.TargetEntry.new('text/uri-list',
-                                             Gtk.TargetFlags(4), 0)
-        self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
-                                   Gdk.DragAction.COPY)
-        self.mainbox.connect('drag-data-received', self.on_receive)
+        #enforce_target = Gtk.TargetEntry.new('text/uri-list',
+                                             #Gtk.TargetFlags(4), 0)
+        #self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
+                                   #Gdk.DragAction.COPY)
+        #self.mainbox.connect('drag-data-received', self.on_receive)
 
         # Treeview
         self.store = Gtk.ListStore(bool, str, str, int, str, int, str, float)
@@ -109,7 +109,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         action.connect('activate', callback)
         self.add_action(action)
         if shortcut is not None:
-            self.app.add_accelerator(shortcut, 'win.' + action_name, None)
+            self.app.set_accels_for_action('win.' + action_name, [shortcut])
 
     def create_actions(self):
         self.create_simple_action('back', self.on_back)
@@ -136,10 +136,10 @@ class CurtailWindow(Gtk.ApplicationWindow):
     def show_treeview(self, show):
         if show:
             self.homebox.hide()
-            self.treeview_box.show_all()
+            self.treeview_box.show()
         else:
             self.treeview_box.hide()
-            self.homebox.show_all()
+            self.homebox.show()
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
 
@@ -173,21 +173,22 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_treeview(True)
 
     def on_select(self, *args):
-        dialog = Gtk.FileChooserDialog(_("Browse your files"), self,
-            Gtk.FileChooserAction.OPEN,
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+        dialog = Gtk.FileChooserNative.new(_("Browse your files"), self,
+            Gtk.FileChooserAction.OPEN)
         dialog.set_select_multiple(True)
         add_filechooser_filters(dialog)
-        filenames = None
-        response = dialog.run()
-        if response == Gtk.ResponseType.OK:
-            filenames = dialog.get_filenames()  # we may have several files
-        dialog.destroy()
 
-        if filenames:
-            final_filenames = self.handle_filenames(filenames)
-            self.compress_filenames(final_filenames)
+        def handle_response(_dialog, response: Gtk.ResponseType):
+            if response == Gtk.ResponseType.ACCEPT:
+                files = dialog.get_files() # we may have several files
+                filenames = list()
+                for file in files:
+                    filenames.append(file.get_path())
+                final_filenames = self.handle_filenames(filenames)
+                self.compress_filenames(final_filenames)
+
+        dialog.connect('response', handle_response)
+        dialog.show()
 
     def on_receive(self, widget, drag_context, x, y, data, info, time):
         filenames = data.get_uris()
@@ -269,24 +270,25 @@ class CurtailWindow(Gtk.ApplicationWindow):
                     if queue_compress_image:
                         compress_image = True
                 else:
-                    if self.apply_window is not None:
-                        self.apply_window.destroy()
                     self.apply_window = CurtailApplyDialog(self)
                     if len(filenames) == 1:  # hide queue checkbox if there is only one image
                         self.apply_window.apply_to_queue.hide()
                     self.apply_window.set_dynamic_label(new_file_data.name)
-                    response = self.apply_window.run()
-                    if response == Gtk.ResponseType.YES:
-                        compress_image = True
-                        if self.apply_to_queue:
-                            queue_compress_image = True
-                    self.apply_window.destroy()
+
+                    def handle_response(_dialog, response: Gtk.ResponseType):
+                        if response == Gtk.ResponseType.YES:
+                            if self.apply_to_queue:
+                                queue_compress_image = True
+                            self.compress_image(filename, new_filename)
+
+                        self.apply_window.close()
+
+                    self.apply_window.connect('response', handle_response)
+                    self.apply_window.show()
             else:
                 compress_image = True  # compress if not exists
             if compress_image:
                 self.compress_image(filename, new_filename)
-                while Gtk.events_pending():
-                    Gtk.main_iteration()
 
     def compress_image(self, filename, new_filename):
         # Show tree view if hidden
@@ -334,8 +336,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         text = _("Distributed under the GNU GPL(v3) license.\n")
         text += 'https://github.com/Huluti/Curtail/blob/master/COPYING\n'
         dialog.set_license(text)
-        dialog.run()
-        dialog.destroy()
+        dialog.show()
 
     def on_quit(self, *args):
         self.app.quit()

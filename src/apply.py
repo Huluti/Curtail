@@ -43,7 +43,6 @@ class CurtailApplyDialog(Gtk.Dialog):
     def build_ui(self):
         self.apply_to_queue.set_active(False)
         self.apply_to_queue.connect('toggled', self.on_apply_to_queue_toggled)
-        self.compress_button.get_style_context().add_class(Gtk.STYLE_CLASS_SUGGESTED_ACTION)
 
     def set_dynamic_label(self, filename):
         text = _("The file <b>{}</b> already exists.\n" \
