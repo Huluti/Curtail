@@ -3,7 +3,7 @@
   <requires lib="gtk" version="4.0"/>
   <template class="CurtailWindow" parent="GtkApplicationWindow">
     <property name="title" translatable="1">Curtail</property>
-    <property name="default-width">600</property>
+    <property name="default-width">650</property>
     <property name="default-height">300</property>
     <child>
       <object class="GtkBox" id="mainbox">
@@ -89,7 +89,6 @@
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
-            <property name="margin-bottom">20</property>
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkScrolledWindow" id="treeview_scrolled_window">

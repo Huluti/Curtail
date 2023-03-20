@@ -12,7 +12,6 @@
         <property name="margin-top">20</property>
         <property name="margin-bottom">20</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
         <child>
           <object class="GtkLabel">
             <property name="label" translatable="1">If you continue, these files will be overwritten:</property>
@@ -22,7 +21,6 @@
         </child>
         <child>
           <object class="GtkLabel" id="file_list">
-            <property name="margin-bottom">20</property>
             <property name="halign">start</property>
           </object>
         </child>
