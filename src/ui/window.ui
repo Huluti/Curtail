@@ -19,14 +19,20 @@
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <property name="orientation">vertical</property>
-            <property name="spacing">15</property>
+            <property name="spacing">10</property>
             <child>
-              <object class="GtkLabel">"
-                <property name="label" translatable="1">Drag and drop your images here...</property>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Compress your images</property>
                 <property name="margin-top">20</property>
+                <property name="margin-bottom">20</property>
                 <attributes>
                   <attribute name="weight" value="bold"></attribute>
                 </attributes>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="1">Drag and drop your images here...</property>
               </object>
             </child>
             <child>
@@ -41,11 +47,12 @@
               <object class="GtkButton" id="filechooser_button">
                 <property name="label" translatable="1">Browse your files</property>
                 <property name="action-name">win.select-file</property>
+                <property name="margin-bottom">20</property>
               </object>
             </child>
             <child>
               <object class="GtkBox">
-                <property name="margin-top">20</property>"
+                <property name="margin-top">10</property>
                 <property name="spacing">10</property>
                 <property name="halign">center</property>
                 <property name="valign">center</property>
