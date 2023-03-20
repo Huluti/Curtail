@@ -21,8 +21,9 @@
             <property name="orientation">vertical</property>
             <property name="spacing">15</property>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel">"
                 <property name="label" translatable="1">Drag and drop your images here...</property>
+                <property name="margin-top">20</property>
                 <attributes>
                   <attribute name="weight" value="bold"></attribute>
                 </attributes>
@@ -39,13 +40,12 @@
             <child>
               <object class="GtkButton" id="filechooser_button">
                 <property name="label" translatable="1">Browse your files</property>
-                <property name="receives-default">1</property>
                 <property name="action-name">win.select-file</property>
               </object>
             </child>
             <child>
               <object class="GtkBox">
-                <property name="margin-top">20</property>
+                <property name="margin-top">20</property>"
                 <property name="spacing">10</property>
                 <property name="halign">center</property>
                 <property name="valign">center</property>
@@ -101,6 +101,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="save_info_label">
+            <property name="margin-top">20</property>
             <property name="margin-bottom">20</property>
           </object>
         </child>
@@ -110,17 +111,15 @@
       <object class="GtkHeaderBar" id="headerbar">
         <child>
           <object class="GtkBox">
-            <property name="homogeneous">1</property>
+            <property name="spacing">5</property>
             <child>
               <object class="GtkButton" id="back_button">
-                <property name="receives-default">1</property>
                 <property name="action-name">win.back</property>
                 <property name="icon-name">go-previous-symbolic</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="forward_button">
-                <property name="receives-default">1</property>
                 <property name="action-name">win.forward</property>
                 <property name="icon-name">go-next-symbolic</property>
               </object>
@@ -129,7 +128,6 @@
         </child>
         <child type="end">
           <object class="GtkMenuButton" id="menu_button">
-            <property name="receives-default">1</property>
             <child>
               <object class="GtkImage">
                 <property name="icon-name">open-menu-symbolic</property>
@@ -141,3 +139,4 @@
     </child>
   </template>
 </interface>
+

@@ -25,7 +25,6 @@
             <child>
               <object class="GtkCheckButton" id="apply_to_queue">
                 <property name="label" translatable="1">Apply to all queue</property>
-                <property name="focusable">1</property>
                 <property name="margin-bottom">20</property>
               </object>
             </child>
@@ -44,15 +43,11 @@
         <child>
           <object class="GtkButton" id="compress_button">
             <property name="label" translatable="1">Compress</property>
-            <property name="focusable">1</property>
-            <property name="receives-default">1</property>
           </object>
         </child>
         <child>
           <object class="GtkButton" id="skip_button">
             <property name="label" translatable="1">Skip</property>
-            <property name="focusable">1</property>
-            <property name="receives-default">1</property>
           </object>
         </child>
       </object>

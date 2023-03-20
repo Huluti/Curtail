@@ -59,7 +59,6 @@
                 </child>
                 <child>
                   <object class="GtkSwitch" id="toggle_dark_theme">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="hexpand">1</property>
@@ -82,7 +81,6 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="entry_suffix">
-                    <property name="focusable">1</property>
                     <property name="max-length">32</property>
                     <layout>
                       <property name="column">1</property>
@@ -103,7 +101,6 @@
                 </child>
                 <child>
                   <object class="GtkSwitch" id="toggle_new_file">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="hexpand">1</property>
@@ -126,7 +123,6 @@
                 </child>
                 <child>
                   <object class="GtkSwitch" id="toggle_metadata">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="hexpand">1</property>
@@ -149,7 +145,6 @@
                 </child>
                 <child>
                   <object class="GtkSwitch" id="toggle_file_attributes">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="hexpand">1</property>
@@ -187,7 +182,6 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="spin_png_lossy_level">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="hexpand">1</property>
                     <property name="text">0</property>
@@ -222,7 +216,6 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="spin_webp_lossy_level">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="hexpand">1</property>
                     <property name="text">0</property>
@@ -235,7 +228,6 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="spin_jpg_lossy_level">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="hexpand">1</property>
                     <property name="text">0</property>
@@ -263,7 +255,6 @@
                 <property name="column-spacing">20</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_png_lossless_level">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="hexpand">1</property>
                     <property name="text">0</property>
@@ -287,7 +278,6 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="spin_webp_lossless_level">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="hexpand">1</property>
                     <property name="text">0</property>
@@ -322,7 +312,6 @@
                 </child>
                 <child>
                   <object class="GtkSwitch" id="toggle_jpg_progressive">
-                    <property name="focusable">1</property>
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="hexpand">1</property>
