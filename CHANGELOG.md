@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Port to GTK 4
 
+### Changed
+- Update deps
+
 ### Fixed
 - Less annoying 'Apply dialog'
 
