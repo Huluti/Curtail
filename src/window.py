@@ -264,46 +264,43 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def compress_filenames(self, filenames):
         # Do operations
-        queue_compress_image = False  # global var for queue
+        files = []
+        needs_overwrite = []
         for filename in filenames:
             new_filename = self.create_new_filename(filename)
+            files.append({'filename': filename, 'new_filename': new_filename})
+
             new_file_data = Path(new_filename)
+            if new_file_data.is_file():  # verify if new file path exists
+                needs_overwrite.append(new_filename)
 
-            compress_image = False  # not compress here
-            if new_file_data.is_file():  # verify if file exists
-                if self.apply_to_queue:
-                    if queue_compress_image:
-                        compress_image = True
-                else:
-                    self.apply_window = CurtailApplyDialog(self)
-                    if len(filenames) == 1:  # hide queue checkbox if there is only one image
-                        self.apply_window.apply_to_queue.hide()
-                    self.apply_window.set_dynamic_label(new_file_data.name)
+        if len(needs_overwrite) > 0:
+            self.apply_window = CurtailApplyDialog(self)
+            self.apply_window.set_file_list(needs_overwrite)
 
-                    def handle_response(_dialog, response: Gtk.ResponseType):
-                        if response == Gtk.ResponseType.YES:
-                            if self.apply_to_queue:
-                                queue_compress_image = True
-                            self.compress_image(filename, new_filename)
+            def handle_response(_dialog, response: Gtk.ResponseType):
+                if response == Gtk.ResponseType.YES:
+                    self.compress_images(files)
 
-                        self.apply_window.close()
+                self.apply_window.close()
 
-                    self.apply_window.connect('response', handle_response)
-                    self.apply_window.show()
-            else:
-                compress_image = True  # compress if not exists
-            if compress_image:
-                self.compress_image(filename, new_filename)
+            self.apply_window.connect('response', handle_response)
+            self.apply_window.show()
+        else:
+            self.compress_images(files)
 
-    def compress_image(self, filename, new_filename):
+    def compress_images(self, files):
         # Show tree view if hidden
         if not self.treeview_box.get_visible():
             self.show_treeview(True)
-        # Call compressor
-        GLib.timeout_add(100, self.on_pulse_spinner)
-        compressor = Compressor(self, filename, new_filename)
-        compressor.compress_image()
-        self.go_end_treeview()  # scroll to end of treeview
+
+        for file in files:
+            # Call compressor
+            GLib.timeout_add(100, self.on_pulse_spinner)
+            compressor = Compressor(self, file['filename'],
+                file['new_filename'])
+            compressor.compress_image()
+            self.go_end_treeview()  # scroll to end of treeview
 
     def on_pulse_spinner(self):
         for item in self.store:

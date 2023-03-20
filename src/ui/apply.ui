@@ -2,7 +2,7 @@
 <interface domain="curtail">
   <requires lib="gtk" version="4.0"/>
   <template class="CurtailApplyDialog" parent="GtkDialog">
-    <property name="title" translatable="1">File already exists</property>
+    <property name="title" translatable="1">Some files already exists</property>
     <property name="resizable">0</property>
     <property name="modal">1</property>
     <child internal-child="content_area">
@@ -14,26 +14,23 @@
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child>
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <child>
-              <object class="GtkLabel" id="dynamic_label">
-                <property name="margin-bottom">20</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="apply_to_queue">
-                <property name="label" translatable="1">Apply to all queue</property>
-                <property name="margin-bottom">20</property>
-              </object>
-            </child>
+          <object class="GtkLabel">
+            <property name="label" translatable="1">If you continue, these files will be overwritten:</property>
+            <property name="margin-bottom">20</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="file_list">
+            <property name="margin-bottom">20</property>
+            <property name="halign">start</property>
           </object>
         </child>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="yes">compress_button</action-widget>
-      <action-widget response="no">skip_button</action-widget>
+      <action-widget response="yes">continue_button</action-widget>
+      <action-widget response="no">cancel_button</action-widget>
     </action-widgets>
     <child internal-child="action_area">
       <object class="GtkBox">
@@ -41,18 +38,18 @@
         <property name="margin-end">20</property>
         <property name="margin-bottom">20</property>
         <property name="spacing">10</property>
-        <property name="can-focus">False</property>
+        <property name="halign">start</property>
         <child>
-          <object class="GtkButton" id="compress_button">
-            <property name="label" translatable="1">Compress</property>
+          <object class="GtkButton" id="continue_button">
+            <property name="label" translatable="1">Continue</property>
             <style>
                 <class name="suggested-action"/>
             </style>
           </object>
         </child>
         <child>
-          <object class="GtkButton" id="skip_button">
-            <property name="label" translatable="1">Skip</property>
+          <object class="GtkButton" id="cancel_button">
+            <property name="label" translatable="1">Cancel</property>
           </object>
         </child>
       </object>

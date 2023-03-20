@@ -25,10 +25,7 @@ UI_PATH = '/com/github/huluti/Curtail/ui/'
 class CurtailApplyDialog(Gtk.Dialog):
     __gtype_name__ = 'CurtailApplyDialog'
 
-    dynamic_label = Gtk.Template.Child()
-    apply_to_queue = Gtk.Template.Child()
-    compress_button = Gtk.Template.Child()
-    skip_button = Gtk.Template.Child()
+    file_list = Gtk.Template.Child()
 
 
     def __init__(self, parent, **kwargs):
@@ -38,17 +35,8 @@ class CurtailApplyDialog(Gtk.Dialog):
         self.set_transient_for(parent)
         self.set_modal(True)
 
-        self.build_ui()
-
-    def build_ui(self):
-        self.apply_to_queue.set_active(False)
-        self.apply_to_queue.connect('toggled', self.on_apply_to_queue_toggled)
-
-    def set_dynamic_label(self, filename):
-        text = _("The file <b>{}</b> already exists.\n" \
-            "Do you want to compress the image anyway?".format(filename))
-        self.dynamic_label.set_markup(text)
-
-    def on_apply_to_queue_toggled(self, widget):
-        state = widget.get_active()
-        self.parent.apply_to_queue = state
+    def set_file_list(self, filenames):
+        text = ''
+        for filename in filenames:
+            text = text + '- ' + filename + '\n'
+        self.file_list.set_markup(text)
