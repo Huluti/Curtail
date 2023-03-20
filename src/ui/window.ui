@@ -118,7 +118,9 @@
       <object class="GtkHeaderBar" id="headerbar">
         <child>
           <object class="GtkBox">
-            <property name="spacing">5</property>
+            <style>
+              <class name="linked"/>
+            </style>
             <child>
               <object class="GtkButton" id="back_button">
                 <property name="action-name">win.back</property>

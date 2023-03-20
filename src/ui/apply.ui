@@ -7,7 +7,6 @@
     <property name="modal">1</property>
     <child internal-child="content_area">
       <object class="GtkBox">
-        <property name="visible">0</property>
         <property name="margin-start">20</property>
         <property name="margin-end">20</property>
         <property name="margin-top">20</property>
@@ -38,11 +37,17 @@
     </action-widgets>
     <child internal-child="action_area">
       <object class="GtkBox">
-        <property name="valign">center</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="spacing">10</property>
         <property name="can-focus">False</property>
         <child>
           <object class="GtkButton" id="compress_button">
             <property name="label" translatable="1">Compress</property>
+            <style>
+                <class name="suggested-action"/>
+            </style>
           </object>
         </child>
         <child>
