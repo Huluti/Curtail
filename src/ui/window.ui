@@ -48,6 +48,9 @@
                 <property name="label" translatable="1">Browse your files</property>
                 <property name="action-name">win.select-file</property>
                 <property name="margin-bottom">20</property>
+                <style>
+                  <class name="suggested-action"/>
+                </style>
               </object>
             </child>
             <child>
