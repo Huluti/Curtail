@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-21 12:59+0100\n"
+"POT-Creation-Date: 2023-03-21 14:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -434,7 +434,7 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:116
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:94
 msgid "Keep metadata"
 msgstr ""
 
@@ -443,7 +443,7 @@ msgstr ""
 msgid "This setting preserves metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:138
+#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:116
 msgid "Preserve file attributes if possible"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgstr ""
 msgid "Use lossy mode to compress images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:74
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:52
 msgid "Suffix to append at end of new file"
 msgstr ""
 
@@ -463,7 +463,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:175
+#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:153
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -487,7 +487,7 @@ msgstr ""
 msgid "Lossless compression level to use for WebP images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:197
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:175
 msgid "JPG Lossy Compression Level"
 msgstr ""
 
@@ -495,7 +495,7 @@ msgstr ""
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:208
+#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:186
 msgid "WebP Lossy Compression Level"
 msgstr ""
 
@@ -509,14 +509,6 @@ msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Optionally encode jpeg images progressively."
-msgstr ""
-
-#: data/com.github.huluti.Curtail.gschema.xml:61 src/ui/preferences.ui:52
-msgid "Enable dark theme"
-msgstr ""
-
-#: data/com.github.huluti.Curtail.gschema.xml:62
-msgid "Use dark theme for the windows."
 msgstr ""
 
 #: src/ui/help_overlay.ui:11
@@ -552,31 +544,31 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/ui/preferences.ui:94
+#: src/ui/preferences.ui:72
 msgid "Save the compressed image into a new file"
 msgstr ""
 
-#: src/ui/preferences.ui:163
+#: src/ui/preferences.ui:141
 msgid "Compression"
 msgstr ""
 
-#: src/ui/preferences.ui:244
+#: src/ui/preferences.ui:222
 msgid "Advanced"
 msgstr ""
 
-#: src/ui/preferences.ui:266
+#: src/ui/preferences.ui:244
 msgid ""
 "PNG Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:288
+#: src/ui/preferences.ui:266
 msgid ""
 "WebP Lossless Compression Level\n"
 "(the higher it is, the slower it is)"
 msgstr ""
 
-#: src/ui/preferences.ui:300
+#: src/ui/preferences.ui:278
 msgid "Progressive Encode JPG"
 msgstr ""
 
@@ -596,7 +588,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: src/ui/window.ui:47 src/window.py:173
+#: src/ui/window.ui:47 src/window.py:169
 msgid "Browse files"
 msgstr ""
 
@@ -636,66 +628,66 @@ msgstr ""
 msgid "WebP images"
 msgstr ""
 
-#: src/window.py:90
+#: src/window.py:86
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:91
+#: src/window.py:87
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:92
+#: src/window.py:88
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:93
+#: src/window.py:89
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:160
+#: src/window.py:156
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr ""
 
-#: src/window.py:163
+#: src/window.py:159
 msgid "Images are <b>overwritten</b>."
 msgstr ""
 
-#: src/window.py:241
+#: src/window.py:238
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:239
 msgid "The format of {} is not supported."
 msgstr ""
 
-#: src/window.py:246
+#: src/window.py:243
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:247
+#: src/window.py:244
 msgid "{} doesn't exist."
 msgstr ""
 
-#: src/window.py:276
+#: src/window.py:273
 msgid "If you continue, these files will be overwritten:"
 msgstr ""
 
-#: src/window.py:282
+#: src/window.py:279
 msgid "Some files already exists"
 msgstr ""
 
-#: src/window.py:285
+#: src/window.py:282
 msgid "_Cancel"
 msgstr ""
 
-#: src/window.py:286
+#: src/window.py:283
 msgid "C_onfirm"
 msgstr ""
 
-#: src/window.py:357
+#: src/window.py:350
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:361
+#: src/window.py:354
 msgid "Contributors"
 msgstr ""
