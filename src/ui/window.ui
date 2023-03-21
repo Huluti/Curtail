@@ -44,7 +44,7 @@
             </child>
             <child>
               <object class="GtkButton" id="filechooser_button">
-                <property name="label" translatable="yes">Browse files</property>
+                <property name="label" translatable="yes">Browse Files</property>
                 <property name="action-name">win.select-file</property>
                 <property name="margin-bottom">20</property>
                 <style>
@@ -118,14 +118,14 @@
               <object class="GtkButton" id="back_button">
                 <property name="action-name">win.back</property>
                 <property name="icon-name">go-previous-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Compress your images</property>
+                <property name="tooltip-text" translatable="yes">Compress Images</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="forward_button">
                 <property name="action-name">win.forward</property>
                 <property name="icon-name">go-next-symbolic</property>
-                <property name="tooltip-text" translatable="yes">See saving results</property>
+                <property name="tooltip-text" translatable="yes">Saving Results</property>
               </object>
             </child>
           </object>

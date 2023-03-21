@@ -166,7 +166,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_treeview(True)
 
     def on_select(self, *args):
-        dialog = Gtk.FileChooserNative.new(_("Browse files"), self,
+        dialog = Gtk.FileChooserNative.new(_("Browse Files"), self,
             Gtk.FileChooserAction.OPEN)
         dialog.set_select_multiple(True)
         add_filechooser_filters(dialog)
@@ -358,6 +358,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 'Balló György',
                 'olokelo',
                 'Archisman Panigrahi',
+                'Maximiliano'
             ]
         )
         about.present()
