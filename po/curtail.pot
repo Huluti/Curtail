@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-20 20:33+0100\n"
+"POT-Creation-Date: 2023-03-21 11:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:9
-#: data/com.github.huluti.Curtail.desktop.in:5 src/ui/window.ui:25
-#: src/window.py:337
+#: data/com.github.huluti.Curtail.desktop.in:5 src/ui/window.ui:24
 msgid "Compress your images"
 msgstr ""
 
@@ -576,7 +575,7 @@ msgid "Images are <b>overwritten</b>."
 msgstr ""
 
 #: src/window.py:174
-msgid "Browse your files"
+msgid "Browse files"
 msgstr ""
 
 #: src/window.py:243
@@ -595,10 +594,10 @@ msgstr ""
 msgid "{} doesn't exist."
 msgstr ""
 
-#: src/window.py:336
+#: src/window.py:345
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:338
-msgid "Distributed under the GNU GPL(v3) license.\n"
+#: src/window.py:349
+msgid "Contributors"
 msgstr ""
