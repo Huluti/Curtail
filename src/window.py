@@ -270,11 +270,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
             new_file_data = Path(new_filename)
             if new_file_data.is_file():  # verify if new file path exists
-                needs_overwrite.append(new_filename)
+                needs_overwrite.append(new_file_data.name)
 
         if len(needs_overwrite) > 0:
             text = _('If you continue, these files will be overwritten:') + '\n\n'
-            for filename in filenames:
+            for filename in needs_overwrite:
                 text = text + '- ' + filename + '\n'
 
             dialog = Adw.MessageDialog.new(
