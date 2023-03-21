@@ -21,7 +21,6 @@ from urllib.parse import unquote
 from pathlib import Path
 
 from .preferences import CurtailPrefsWindow
-from .apply import CurtailApplyDialog
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
                     sizeof_fmt, get_file_type
@@ -203,7 +202,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
     def handle_filenames(self, filenames):
         if not filenames:
             return
-        self.apply_to_queue = False  # reset apply queue
         final_filenames = []
         # Clean filenames
         for filename in filenames:
@@ -275,17 +273,30 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 needs_overwrite.append(new_filename)
 
         if len(needs_overwrite) > 0:
-            self.apply_window = CurtailApplyDialog(self)
-            self.apply_window.set_file_list(needs_overwrite)
+            text = _('If you continue, these files will be overwritten:') + '\n\n'
+            for filename in filenames:
+                text = text + '- ' + filename + '\n'
+
+            dialog = Adw.MessageDialog.new(
+                self,
+                _('Some files already exists'),
+                text
+            )
+            dialog.add_response(Gtk.ResponseType.CANCEL.value_nick, _("_Cancel"))
+            dialog.add_response(Gtk.ResponseType.OK.value_nick, _("C_onfirm"))
+            dialog.set_response_appearance(
+                response=Gtk.ResponseType.OK.value_nick,
+                appearance=Adw.ResponseAppearance.DESTRUCTIVE
+            )
 
             def handle_response(_dialog, response: Gtk.ResponseType):
-                if response == Gtk.ResponseType.YES:
+                if response == Gtk.ResponseType.OK.value_nick:
                     self.compress_images(files)
 
-                self.apply_window.close()
+                dialog.close()
 
-            self.apply_window.connect('response', handle_response)
-            self.apply_window.present()
+            dialog.connect('response', handle_response)
+            dialog.present()
         else:
             self.compress_images(files)
 
@@ -334,7 +345,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
                     developer_name='Hugo Posnic',
                     license_type=Gtk.License.GPL_3_0,
                     website='https://github.com/Huluti/Curtail',
-                    issue_url='https://github.com/Huluti/Curtail/issues',
+                    issue_url='https://github.com/Huluti/Curtail/issues/new',
                     version='1.4.0',
                     developers=[
                         'Hugo Posnic https://github.com/Huluti'

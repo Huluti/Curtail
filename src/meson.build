@@ -31,7 +31,6 @@ curtail_sources = [
   'window.py',
   'compressor.py',
   'preferences.py',
-  'apply.py',
   'tools.py'
 ]
 
