@@ -55,8 +55,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     apply_to_queue = False
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.set_default_icon_name('com.github.huluti.Curtail')
         self.app = kwargs['application']
 
