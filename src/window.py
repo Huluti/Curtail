@@ -350,8 +350,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
                     developers=[
                         'Hugo Posnic https://github.com/Huluti'
                     ],
-                    artists=[
+                    designers=[
                         'Jakub Steiner https://github.com/jimmac',
+                        'Tobias Bernard https://github.com/bertob'
                     ],
                     translator_credits=_("translator-credits"),
                     copyright='© Hugo Posnic'
@@ -364,7 +365,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 'Balló György',
                 'olokelo',
                 'Archisman Panigrahi',
-                'Tobias Bernard https://github.com/bertob'
             ]
         )
         about.present()
