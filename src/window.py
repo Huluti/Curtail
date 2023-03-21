@@ -133,11 +133,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def show_treeview(self, show):
         if show:
-            self.homebox.hide()
-            self.treeview_box.show()
+            self.homebox.set_visible(False)
+            self.treeview_box.set_visible(True)
         else:
-            self.treeview_box.hide()
-            self.homebox.show()
+            self.treeview_box.set_visible(False)
+            self.homebox.set_visible(True)
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
 
@@ -285,7 +285,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 self.apply_window.close()
 
             self.apply_window.connect('response', handle_response)
-            self.apply_window.show()
+            self.apply_window.present()
         else:
             self.compress_images(files)
 
@@ -335,10 +335,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
         dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György', 'olokelo', 'Archisman Panigrahi'])
         dialog.set_translator_credits(_("translator-credits"))
         dialog.set_comments(_("Compress your images"))
-        text = _("Distributed under the GNU GPL(v3) license.\n")
-        text += 'https://github.com/Huluti/Curtail/blob/master/COPYING\n'
-        dialog.set_license(text)
-        dialog.show()
+        dialog.set_license_type(Gtk.License.GPL_3_0)
+        dialog.present()
 
     def on_quit(self, *args):
         self.app.quit()

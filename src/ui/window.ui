@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
-  <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
   <template class="CurtailWindow" parent="GtkApplicationWindow">
     <property name="title" translatable="1">Curtail</property>
     <property name="default-width">650</property>
@@ -26,14 +24,14 @@
                 <property name="label" translatable="yes">Compress your images</property>
                 <property name="margin-top">20</property>
                 <property name="margin-bottom">20</property>
-                <attributes>
-                  <attribute name="weight" value="bold"></attribute>
-                </attributes>
+                <style>
+                  <class name="title-1"/>
+                </style>
               </object>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="label" translatable="1">Drag and drop your images here...</property>
+                <property name="label" translatable="1">Drag and drop your images here…</property>
               </object>
             </child>
             <child>
@@ -116,9 +114,6 @@
       <object class="GtkHeaderBar" id="headerbar">
         <child>
           <object class="GtkBox">
-            <style>
-              <class name="linked"/>
-            </style>
             <child>
               <object class="GtkButton" id="back_button">
                 <property name="action-name">win.back</property>

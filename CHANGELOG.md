@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.4.0] - DEV
 ### Added
-- Port to GTK 4
+- Port to GTK 4 & Libadwaita
 
 ### Changed
 - Update deps

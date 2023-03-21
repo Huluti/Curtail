@@ -12,7 +12,7 @@
             <property name="title" translatable="1" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Select file</property>
+                <property name="title" translatable="1" context="shortcut window">Select File</property>
                 <property name="action-name">win.select-file</property>
               </object>
             </child>
@@ -24,7 +24,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Keyboard shortcuts</property>
+                <property name="title" translatable="1" context="shortcut window">Keyboard Shortcuts</property>
                 <property name="action-name">win.show-help-overlay</property>
               </object>
             </child>
