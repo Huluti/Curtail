@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
-  <requires lib="gtk" version="4.0"/>
   <menu id="window-menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">Preferences</attribute>
+        <attribute name="label" translatable="true">Preferences</attribute>
         <attribute name="action">win.preferences</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">Keyboard Shortcuts</attribute>
+        <attribute name="label" translatable="true">Keyboard Shortcuts</attribute>
         <attribute name="action">win.show-help-overlay</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">About Curtail</attribute>
+        <attribute name="label" translatable="true">About Curtail</attribute>
         <attribute name="action">win.about</attribute>
       </item>
     </section>

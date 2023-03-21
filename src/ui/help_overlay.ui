@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk" version="4.0"/>
   <object class="GtkShortcutsWindow" id="help_overlay">
-    <property name="modal">1</property>
+    <property name="modal">true</property>
     <child>
       <object class="GtkShortcutsSection">
         <property name="section-name">shortcuts</property>
         <property name="max-height">10</property>
         <child>
           <object class="GtkShortcutsGroup">
-            <property name="title" translatable="1" context="shortcut window">General</property>
+            <property name="title" translatable="true" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Select File</property>
+                <property name="title" translatable="true" context="shortcut window">Select File</property>
                 <property name="action-name">win.select-file</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Preferences</property>
+                <property name="title" translatable="true" context="shortcut window">Preferences</property>
                 <property name="action-name">win.preferences</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Keyboard Shortcuts</property>
+                <property name="title" translatable="true" context="shortcut window">Keyboard Shortcuts</property>
                 <property name="action-name">win.show-help-overlay</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="1" context="shortcut window">Quit</property>
+                <property name="title" translatable="true" context="shortcut window">Quit</property>
                 <property name="action-name">win.quit</property>
               </object>
             </child>

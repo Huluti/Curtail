@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
   <template class="CurtailWindow" parent="GtkApplicationWindow">
-    <property name="title" translatable="1">Curtail</property>
+    <property name="title" translatable="true">Curtail</property>
     <property name="default-width">650</property>
     <property name="default-height">300</property>
     <child>
@@ -15,13 +15,13 @@
           <object class="GtkBox" id="homebox">
             <property name="halign">center</property>
             <property name="valign">center</property>
-            <property name="hexpand">1</property>
-            <property name="vexpand">1</property>
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
             <property name="orientation">vertical</property>
             <property name="spacing">10</property>
             <child>
               <object class="GtkLabel">
-                <property name="label" translatable="yes">Compress your images</property>
+                <property name="label" translatable="true">Compress your images</property>
                 <property name="margin-top">20</property>
                 <property name="margin-bottom">20</property>
                 <style>
@@ -31,12 +31,12 @@
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="label" translatable="1">Drag and drop your images here…</property>
+                <property name="label" translatable="true">Drag and drop your images here…</property>
               </object>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="label" translatable="1">or</property>
+                <property name="label" translatable="true">or</property>
                 <attributes>
                   <attribute name="style" value="italic"></attribute>
                 </attributes>
@@ -44,7 +44,7 @@
             </child>
             <child>
               <object class="GtkButton" id="filechooser_button">
-                <property name="label" translatable="1">Browse files</property>
+                <property name="label" translatable="true">Browse files</property>
                 <property name="action-name">win.select-file</property>
                 <property name="margin-bottom">20</property>
                 <style>
@@ -62,7 +62,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">end</property>
-                    <property name="label" translatable="1">Lossless</property>
+                    <property name="label" translatable="true">Lossless</property>
                   </object>
                 </child>
                 <child>
@@ -74,7 +74,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label" translatable="1">Lossy</property>
+                    <property name="label" translatable="true">Lossy</property>
                   </object>
                 </child>
               </object>
@@ -91,8 +91,8 @@
               <object class="GtkScrolledWindow" id="treeview_scrolled_window">
                 <property name="child">
                   <object class="GtkTreeView" id="treeview">
-                    <property name="hexpand">1</property>
-                    <property name="vexpand">1</property>
+                    <property name="hexpand">true</property>
+                    <property name="vexpand">true</property>
                     <child internal-child="selection">
                       <object class="GtkTreeSelection"/>
                     </child>
@@ -118,14 +118,14 @@
               <object class="GtkButton" id="back_button">
                 <property name="action-name">win.back</property>
                 <property name="icon-name">go-previous-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Compress your images</property>
+                <property name="tooltip-text" translatable="true">Compress your images</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="forward_button">
                 <property name="action-name">win.forward</property>
                 <property name="icon-name">go-next-symbolic</property>
-                <property name="tooltip-text" translatable="yes">See saving results</property>
+                <property name="tooltip-text" translatable="true">See saving results</property>
               </object>
             </child>
           </object>
@@ -133,8 +133,8 @@
         <child type="end">
           <object class="GtkMenuButton" id="menu_button">
               <property name="icon-name">open-menu-symbolic</property>
-              <property name="primary">1</property>
-              <property name="tooltip-text" translatable="yes">Main Menu</property>
+              <property name="primary">true</property>
+              <property name="tooltip-text" translatable="true">Main Menu</property>
           </object>
         </child>
       </object>
