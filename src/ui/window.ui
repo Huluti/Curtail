@@ -118,12 +118,14 @@
               <object class="GtkButton" id="back_button">
                 <property name="action-name">win.back</property>
                 <property name="icon-name">go-previous-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Compress your images</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="forward_button">
                 <property name="action-name">win.forward</property>
                 <property name="icon-name">go-next-symbolic</property>
+                <property name="tooltip-text" translatable="yes">See saving results</property>
               </object>
             </child>
           </object>
@@ -132,6 +134,7 @@
           <object class="GtkMenuButton" id="menu_button">
               <property name="icon-name">open-menu-symbolic</property>
               <property name="primary">1</property>
+              <property name="tooltip-text" translatable="yes">Main Menu</property>
           </object>
         </child>
       </object>
