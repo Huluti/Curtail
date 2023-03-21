@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gdk, Gio, GLib
+from gi.repository import Gtk, Gdk, Gio, GLib, Adw
 from urllib.parse import unquote
 from pathlib import Path
 
@@ -171,7 +171,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_treeview(True)
 
     def on_select(self, *args):
-        dialog = Gtk.FileChooserNative.new(_("Browse your files"), self,
+        dialog = Gtk.FileChooserNative.new(_("Browse files"), self,
             Gtk.FileChooserAction.OPEN)
         dialog.set_select_multiple(True)
         add_filechooser_filters(dialog)
@@ -327,16 +327,36 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.prefs_window.present()
 
     def on_about(self, *args):
-        dialog = Gtk.AboutDialog(transient_for=self)
-        dialog.set_logo_icon_name('com.github.huluti.Curtail')
-        dialog.set_program_name('Curtail')
-        dialog.set_version('1.4.0')
-        dialog.set_website('https://github.com/Huluti/Curtail')
-        dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György', 'olokelo', 'Archisman Panigrahi'])
-        dialog.set_translator_credits(_("translator-credits"))
-        dialog.set_comments(_("Compress your images"))
-        dialog.set_license_type(Gtk.License.GPL_3_0)
-        dialog.present()
+        about = Adw.AboutWindow(
+                    transient_for=self,
+                    application_name='Curtail',
+                    application_icon='com.github.huluti.Curtail',
+                    developer_name='Hugo Posnic',
+                    license_type=Gtk.License.GPL_3_0,
+                    website='https://github.com/Huluti/Curtail',
+                    issue_url='https://github.com/Huluti/Curtail/issues',
+                    version='1.4.0',
+                    developers=[
+                        'Hugo Posnic https://github.com/Huluti'
+                    ],
+                    artists=[
+                        'Jakub Steiner https://github.com/jimmac',
+                    ],
+                    translator_credits=_("translator-credits"),
+                    copyright='© Hugo Posnic'
+                )
+        about.add_credit_section(
+            _("Contributors"),
+            [
+                'Steven Teskey',
+                'Andrey Kozlovskiy',
+                'Balló György',
+                'olokelo',
+                'Archisman Panigrahi',
+                'Tobias Bernard https://github.com/bertob'
+            ]
+        )
+        about.present()
 
     def on_quit(self, *args):
         self.app.quit()
