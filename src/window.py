@@ -65,10 +65,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.forward_button.set_sensitive(False)
 
     def build_ui(self):
-        # Dark theme at start
-        if self._settings.get_boolean('dark-theme'):
-            self.toggle_dark_theme(True)
-
         # Headerbar
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
@@ -324,10 +320,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
             self.spinner_renderer.set_property('pulse', item[5])
         return True
-
-    def toggle_dark_theme(self, value):
-        self.settings.set_property('gtk-application-prefer-dark-theme',
-                                       value)
 
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())

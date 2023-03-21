@@ -39,7 +39,6 @@ class CurtailPrefsWindow(Gtk.Window):
     spin_jpg_lossy_level = Gtk.Template.Child()
     spin_webp_lossy_level = Gtk.Template.Child()
     toggle_jpg_progressive = Gtk.Template.Child()
-    toggle_dark_theme = Gtk.Template.Child()
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
@@ -110,20 +109,10 @@ class CurtailPrefsWindow(Gtk.Window):
         self.toggle_jpg_progressive.connect('notify::active', self.on_bool_changed,
                                             'jpg-progressive')
 
-        # Advanced settings
-
-        # Toggle dark theme
-        self.toggle_dark_theme.connect('notify::active', self.on_bool_changed,
-                                       'dark-theme')
-        self.toggle_dark_theme.set_active(
-            self._settings.get_boolean('dark-theme'))
-
     def on_bool_changed(self, switch, state, key):
         self._settings.set_boolean(key, switch.get_active())
         # Additional actions
-        if key == 'dark-theme':
-            self.parent.toggle_dark_theme(switch.get_active())
-        elif key == 'new-file':
+        if key == 'new-file':
             self.parent.change_save_info_label()
             self.enable_suffix_section()
 

@@ -46,28 +46,6 @@
                 <property name="row-spacing">20</property>
                 <property name="column-spacing">20</property>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">Enable dark theme</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">4</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSwitch" id="toggle_dark_theme">
-                    <property name="halign">end</property>
-                    <property name="valign">center</property>
-                    <property name="hexpand">true</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">4</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
                   <object class="GtkLabel" id="new_file_label">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
