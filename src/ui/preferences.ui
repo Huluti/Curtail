@@ -26,7 +26,7 @@
     <property name="page-increment">10</property>
   </object>
   <template class="CurtailPrefsWindow" parent="GtkWindow">
-    <property name="title" translatable="true">Preferences</property>
+    <property name="title" translatable="yes">Preferences</property>
     <property name="resizable">false</property>
     <property name="child">
       <object class="GtkStack" id="stack">
@@ -37,7 +37,7 @@
         <child>
           <object class="GtkStackPage">
             <property name="name">general</property>
-            <property name="title" translatable="true">General</property>
+            <property name="title" translatable="yes">General</property>
             <property name="child">
               <object class="GtkGrid" id="grid1">
                 <property name="valign">start</property>
@@ -49,7 +49,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Enable dark theme</property>
+                    <property name="label" translatable="yes">Enable dark theme</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">4</property>
@@ -71,7 +71,7 @@
                   <object class="GtkLabel" id="new_file_label">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Suffix to append at end of new file</property>
+                    <property name="label" translatable="yes">Suffix to append at end of new file</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">3</property>
@@ -91,7 +91,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Save the compressed image into a new file</property>
+                    <property name="label" translatable="yes">Save the compressed image into a new file</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">2</property>
@@ -113,7 +113,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Keep metadata</property>
+                    <property name="label" translatable="yes">Keep metadata</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">0</property>
@@ -135,7 +135,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Preserve file attributes if possible</property>
+                    <property name="label" translatable="yes">Preserve file attributes if possible</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">1</property>
@@ -160,7 +160,7 @@
         <child>
           <object class="GtkStackPage">
             <property name="name">compression</property>
-            <property name="title" translatable="true">Compression</property>
+            <property name="title" translatable="yes">Compression</property>
             <property name="child">
               <object class="GtkGrid" id="grid2">
                 <property name="valign">start</property>
@@ -172,7 +172,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">PNG Lossy Compression Level</property>
+                    <property name="label" translatable="yes">PNG Lossy Compression Level</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">0</property>
@@ -194,7 +194,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">JPG Lossy Compression Level</property>
+                    <property name="label" translatable="yes">JPG Lossy Compression Level</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">1</property>
@@ -205,7 +205,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">WebP Lossy Compression Level</property>
+                    <property name="label" translatable="yes">WebP Lossy Compression Level</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">2</property>
@@ -241,7 +241,7 @@
         <child>
           <object class="GtkStackPage">
             <property name="name">advanced</property>
-            <property name="title" translatable="true">Advanced</property>
+            <property name="title" translatable="yes">Advanced</property>
             <property name="child">
               <object class="GtkGrid" id="grid3">
                 <property name="valign">start</property>
@@ -263,7 +263,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label" translatable="true">PNG Lossless Compression Level
+                    <property name="label" translatable="yes">PNG Lossless Compression Level
 (the higher it is, the slower it is)</property>
                     <layout>
                       <property name="column">0</property>
@@ -285,7 +285,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label" translatable="true">WebP Lossless Compression Level
+                    <property name="label" translatable="yes">WebP Lossless Compression Level
 (the higher it is, the slower it is)</property>
                     <layout>
                       <property name="column">0</property>
@@ -297,7 +297,7 @@
                   <object class="GtkLabel">
                     <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="true">Progressive Encode JPG</property>
+                    <property name="label" translatable="yes">Progressive Encode JPG</property>
                     <layout>
                       <property name="column">0</property>
                       <property name="row">2</property>
