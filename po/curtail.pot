@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-21 11:59+0100\n"
+"POT-Creation-Date: 2023-03-21 12:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:9
 #: data/com.github.huluti.Curtail.desktop.in:5 src/ui/window.ui:24
+#: src/ui/window.ui:121
 msgid "Compress your images"
 msgstr ""
 
@@ -417,7 +418,7 @@ msgstr ""
 msgid "Initial version"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.desktop.in:3
+#: data/com.github.huluti.Curtail.desktop.in:3 src/ui/window.ui:4
 msgid "Curtail"
 msgstr ""
 
@@ -433,7 +434,7 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:11
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:116
 msgid "Keep metadata"
 msgstr ""
 
@@ -442,7 +443,7 @@ msgstr ""
 msgid "This setting preserves metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:138
 msgid "Preserve file attributes if possible"
 msgstr ""
 
@@ -454,7 +455,7 @@ msgstr ""
 msgid "Use lossy mode to compress images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:26
+#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:74
 msgid "Suffix to append at end of new file"
 msgstr ""
 
@@ -462,7 +463,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:31
+#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:175
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -486,7 +487,7 @@ msgstr ""
 msgid "Lossless compression level to use for WebP images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:46
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:197
 msgid "JPG Lossy Compression Level"
 msgstr ""
 
@@ -494,7 +495,7 @@ msgstr ""
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
+#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:208
 msgid "WebP Lossy Compression Level"
 msgstr ""
 
@@ -510,7 +511,7 @@ msgstr ""
 msgid "Optionally encode jpeg images progressively."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:61
+#: data/com.github.huluti.Curtail.gschema.xml:61 src/ui/preferences.ui:52
 msgid "Enable dark theme"
 msgstr ""
 
@@ -518,16 +519,101 @@ msgstr ""
 msgid "Use dark theme for the windows."
 msgstr ""
 
-#: src/ui/menu.ui:7
+#: src/ui/help_overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/ui/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Select File"
+msgstr ""
+
+#: src/ui/help_overlay.ui:20
+msgctxt "shortcut window"
 msgid "Preferences"
 msgstr ""
 
-#: src/ui/menu.ui:11
+#: src/ui/help_overlay.ui:26
+msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: src/ui/menu.ui:15
+#: src/ui/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: src/ui/preferences.ui:29 src/ui/menu.ui:6
+msgid "Preferences"
+msgstr ""
+
+#: src/ui/preferences.ui:40
+msgid "General"
+msgstr ""
+
+#: src/ui/preferences.ui:94
+msgid "Save the compressed image into a new file"
+msgstr ""
+
+#: src/ui/preferences.ui:163
+msgid "Compression"
+msgstr ""
+
+#: src/ui/preferences.ui:244
+msgid "Advanced"
+msgstr ""
+
+#: src/ui/preferences.ui:266
+msgid ""
+"PNG Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+
+#: src/ui/preferences.ui:288
+msgid ""
+"WebP Lossless Compression Level\n"
+"(the higher it is, the slower it is)"
+msgstr ""
+
+#: src/ui/preferences.ui:300
+msgid "Progressive Encode JPG"
+msgstr ""
+
+#: src/ui/menu.ui:10
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: src/ui/menu.ui:14
 msgid "About Curtail"
+msgstr ""
+
+#: src/ui/window.ui:34
+msgid "Drag and drop your images here…"
+msgstr ""
+
+#: src/ui/window.ui:39
+msgid "or"
+msgstr ""
+
+#: src/ui/window.ui:47 src/window.py:173
+msgid "Browse files"
+msgstr ""
+
+#: src/ui/window.ui:65
+msgid "Lossless"
+msgstr ""
+
+#: src/ui/window.ui:77
+msgid "Lossy"
+msgstr ""
+
+#: src/ui/window.ui:128
+msgid "See saving results"
+msgstr ""
+
+#: src/ui/window.ui:137
+msgid "Main Menu"
 msgstr ""
 
 #: src/compressor.py:60
@@ -550,54 +636,66 @@ msgstr ""
 msgid "WebP images"
 msgstr ""
 
-#: src/window.py:91
+#: src/window.py:90
 msgid "Filename"
 msgstr ""
 
-#: src/window.py:92
+#: src/window.py:91
 msgid "Old Size"
 msgstr ""
 
-#: src/window.py:93
+#: src/window.py:92
 msgid "New Size"
 msgstr ""
 
-#: src/window.py:94
+#: src/window.py:93
 msgid "Savings"
 msgstr ""
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Images are saved with <b>'{}' suffix</b>."
 msgstr ""
 
-#: src/window.py:164
+#: src/window.py:163
 msgid "Images are <b>overwritten</b>."
 msgstr ""
 
-#: src/window.py:174
-msgid "Browse files"
-msgstr ""
-
-#: src/window.py:243
+#: src/window.py:241
 msgid "Format not supported"
 msgstr ""
 
-#: src/window.py:244
+#: src/window.py:242
 msgid "The format of {} is not supported."
 msgstr ""
 
-#: src/window.py:248
+#: src/window.py:246
 msgid "Path not valid"
 msgstr ""
 
-#: src/window.py:249
+#: src/window.py:247
 msgid "{} doesn't exist."
 msgstr ""
 
-#: src/window.py:345
+#: src/window.py:276
+msgid "If you continue, these files will be overwritten:"
+msgstr ""
+
+#: src/window.py:282
+msgid "Some files already exists"
+msgstr ""
+
+#: src/window.py:285
+msgid "_Cancel"
+msgstr ""
+
+#: src/window.py:286
+msgid "C_onfirm"
+msgstr ""
+
+#: src/window.py:357
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:349
+#: src/window.py:361
 msgid "Contributors"
 msgstr ""
