@@ -45,7 +45,7 @@ class Application(Adw.Application):
         self.do_activate()
         filenames = []
         for g_file in g_file_list:
-            filenames.append(g_file.get_path())
+            filenames.append(g_file.get_uri())
         self.win.handle_filenames(filenames)
 
 
