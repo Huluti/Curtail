@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-21 14:00+0100\n"
+"POT-Creation-Date: 2023-03-21 17:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,6 @@ msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:9
 #: data/com.github.huluti.Curtail.desktop.in:5 src/ui/window.ui:24
-#: src/ui/window.ui:121
 msgid "Compress your images"
 msgstr ""
 
@@ -589,7 +588,7 @@ msgid "or"
 msgstr ""
 
 #: src/ui/window.ui:47 src/window.py:169
-msgid "Browse files"
+msgid "Browse Files"
 msgstr ""
 
 #: src/ui/window.ui:65
@@ -600,8 +599,12 @@ msgstr ""
 msgid "Lossy"
 msgstr ""
 
+#: src/ui/window.ui:121
+msgid "Compress Images"
+msgstr ""
+
 #: src/ui/window.ui:128
-msgid "See saving results"
+msgid "Saving Results"
 msgstr ""
 
 #: src/ui/window.ui:137
