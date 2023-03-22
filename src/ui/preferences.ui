@@ -141,8 +141,8 @@
           <object class="AdwPreferencesGroup">
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">PNG Lossless Compression Level
-(the higher it is, the slower it is)</property>
+                <property name="title" translatable="yes">PNG Lossless Compression Level</property>
+                <property name="subtitle" translatable="yes">The higher it is, the slower it is</property>
                 <property name="activatable-widget">spin_png_lossless_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_png_lossless_level">
@@ -154,8 +154,8 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">WebP Lossless Compression Level
-(the higher it is, the slower it is)</property>
+                <property name="title" translatable="yes">WebP Lossless Compression Level</property>
+                <property name="subtitle" translatable="yes">The higher it is, the slower it is</property>
                 <property name="activatable-widget">spin_webp_lossless_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_webp_lossless_level">
