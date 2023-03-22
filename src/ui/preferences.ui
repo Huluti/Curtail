@@ -25,289 +25,161 @@
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
-  <template class="CurtailPrefsWindow" parent="GtkWindow">
+  <template class="CurtailPrefsWindow" parent="AdwPreferencesWindow">
     <property name="title" translatable="yes">Preferences</property>
-    <property name="resizable">false</property>
-    <property name="child">
-      <object class="GtkStack" id="stack">
-        <property name="margin-start">20</property>
-        <property name="margin-end">20</property>
-        <property name="margin-top">20</property>
-        <property name="margin-bottom">20</property>
+    <property name="modal">True</property>
+    <property name="hide-on-close">True</property>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="name">general</property>
+        <property name="title" translatable="yes">General</property>
+        <property name="icon-name">applications-system-symbolic</property>
         <child>
-          <object class="GtkStackPage">
-            <property name="name">general</property>
-            <property name="title" translatable="yes">General</property>
-            <property name="child">
-              <object class="GtkGrid" id="grid1">
-                <property name="valign">start</property>
-                <property name="margin-top">20</property>
-                <property name="margin-bottom">20</property>
-                <property name="row-spacing">20</property>
-                <property name="column-spacing">20</property>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Save the compressed image into a new file</property>
+                <property name="activatable-widget">toggle_new_file</property>
                 <child>
-                  <object class="GtkLabel" id="new_file_label">
-                    <property name="halign">start</property>
+                  <object class="GtkSwitch" id="toggle_new_file">
                     <property name="valign">center</property>
-                    <property name="label" translatable="yes">Suffix to append at end of new file</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">3</property>
-                    </layout>
                   </object>
                 </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Suffix to append at end of new file</property>
+                <property name="activatable-widget">entry_suffix</property>
                 <child>
                   <object class="GtkEntry" id="entry_suffix">
                     <property name="max-length">32</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">3</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="yes">Save the compressed image into a new file</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">2</property>
-                    </layout>
                   </object>
                 </child>
-                <child>
-                  <object class="GtkSwitch" id="toggle_new_file">
-                    <property name="halign">end</property>
-                    <property name="valign">center</property>
-                    <property name="hexpand">true</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">Keep metadata</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">0</property>
-                    </layout>
-                  </object>
-                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Keep metadata</property>
+                <property name="activatable-widget">toggle_metadata</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_metadata">
-                    <property name="halign">end</property>
                     <property name="valign">center</property>
-                    <property name="hexpand">true</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">0</property>
-                    </layout>
                   </object>
                 </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">Preserve file attributes if possible</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">1</property>
-                    </layout>
-                  </object>
-                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Preserve file attributes if possible</property>
+                <property name="activatable-widget">toggle_file_attributes</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_file_attributes">
-                    <property name="halign">end</property>
                     <property name="valign">center</property>
-                    <property name="hexpand">true</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">1</property>
-                    </layout>
                   </object>
                 </child>
               </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkStackPage">
-            <property name="name">compression</property>
-            <property name="title" translatable="yes">Compression</property>
-            <property name="child">
-              <object class="GtkGrid" id="grid2">
-                <property name="valign">start</property>
-                <property name="margin-top">20</property>
-                <property name="margin-bottom">20</property>
-                <property name="row-spacing">20</property>
-                <property name="column-spacing">20</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">PNG Lossy Compression Level</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">0</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinButton" id="spin_png_lossy_level">
-                    <property name="halign">end</property>
-                    <property name="hexpand">true</property>
-                    <property name="adjustment">png_lossy_adj</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">0</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">JPG Lossy Compression Level</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">1</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">WebP Lossy Compression Level</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinButton" id="spin_webp_lossy_level">
-                    <property name="halign">end</property>
-                    <property name="hexpand">true</property>
-                    <property name="adjustment">webp_lossy_adj</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinButton" id="spin_jpg_lossy_level">
-                    <property name="halign">end</property>
-                    <property name="hexpand">true</property>
-                    <property name="adjustment">jpg_lossy_adj</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">1</property>
-                    </layout>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkStackPage">
-            <property name="name">advanced</property>
-            <property name="title" translatable="yes">Advanced</property>
-            <property name="child">
-              <object class="GtkGrid" id="grid3">
-                <property name="valign">start</property>
-                <property name="margin-top">20</property>
-                <property name="margin-bottom">20</property>
-                <property name="row-spacing">20</property>
-                <property name="column-spacing">20</property>
-                <child>
-                  <object class="GtkSpinButton" id="spin_png_lossless_level">
-                    <property name="halign">end</property>
-                    <property name="hexpand">true</property>
-                    <property name="adjustment">png_lossless_adj</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">0</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">PNG Lossless Compression Level
-(the higher it is, the slower it is)</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">0</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinButton" id="spin_webp_lossless_level">
-                    <property name="halign">end</property>
-                    <property name="hexpand">1</property>
-                    <property name="adjustment">webp_lossless_adj</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">1</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">WebP Lossless Compression Level
-(the higher it is, the slower it is)</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">1</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">Progressive Encode JPG</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">2</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSwitch" id="toggle_jpg_progressive">
-                    <property name="halign">end</property>
-                    <property name="valign">center</property>
-                    <property name="hexpand">true</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">2</property>
-                    </layout>
-                  </object>
-                </child>
-              </object>
-            </property>
+            </child>
           </object>
         </child>
       </object>
-    </property>
-    <child type="titlebar">
-      <object class="GtkHeaderBar">
-        <child type="title">
-          <object class="GtkStackSwitcher" id="stack_switcher">
-            <property name="halign">center</property>
-            <property name="stack">stack</property>
+    </child>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="name">compression</property>
+        <property name="title" translatable="yes">Compression</property>
+        <property name="icon-name">image-x-generic-symbolic</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">PNG Lossy Compression Level</property>
+                <property name="activatable-widget">spin_png_lossy_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_png_lossy_level">
+                    <property name="adjustment">png_lossy_adj</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">JPG Lossy Compression Level</property>
+                <property name="activatable-widget">spin_jpg_lossy_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_jpg_lossy_level">
+                    <property name="adjustment">jpg_lossy_adj</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">WebP Lossy Compression Level</property>
+                <property name="activatable-widget">spin_webp_lossy_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_webp_lossy_level">
+                    <property name="adjustment">webp_lossy_adj</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="name">advanced</property>
+        <property name="title" translatable="yes">Advanced</property>
+        <property name="icon-name">dialog-warning-symbolic</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">PNG Lossless Compression Level
+(the higher it is, the slower it is)</property>
+                <property name="activatable-widget">spin_png_lossless_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_png_lossless_level">
+                    <property name="adjustment">png_lossless_adj</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">WebP Lossless Compression Level
+(the higher it is, the slower it is)</property>
+                <property name="activatable-widget">spin_webp_lossless_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_webp_lossless_level">
+                    <property name="adjustment">webp_lossless_adj</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Progressive Encode JPG</property>
+                <property name="activatable-widget">toggle_jpg_progressive</property>
+                <child>
+                  <object class="GtkSwitch" id="toggle_jpg_progressive">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </child>
       </object>
     </child>
   </template>
 </interface>
+
