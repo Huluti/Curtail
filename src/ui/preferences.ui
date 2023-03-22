@@ -2,8 +2,6 @@
 <interface domain="curtail">
   <template class="CurtailPrefsWindow" parent="AdwPreferencesWindow">
     <property name="title" translatable="yes">Preferences</property>
-    <property name="modal">True</property>
-    <property name="hide-on-close">True</property>
     <child>
       <object class="AdwPreferencesPage">
         <property name="name">general</property>
