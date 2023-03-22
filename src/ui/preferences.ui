@@ -21,15 +21,8 @@
               </object>
             </child>
             <child>
-              <object class="AdwActionRow">
+              <object class="AdwEntryRow" id="entry_suffix">
                 <property name="title" translatable="yes">Suffix to append at end of new file</property>
-                <property name="activatable-widget">entry_suffix</property>
-                <child>
-                  <object class="GtkEntry" id="entry_suffix">
-                    <property name="max-length">32</property>
-                    <property name="valign">center</property>
-                  </object>
-                </child>
               </object>
             </child>
             <child>
