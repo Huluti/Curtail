@@ -177,7 +177,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 filenames = list()
                 for file in files:
                     filenames.append(file.get_uri())
-                    print(file.get_uri())
                 final_filenames = self.handle_filenames(filenames)
                 self.compress_filenames(final_filenames)
 
