@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-21 17:46+0100\n"
+"POT-Creation-Date: 2023-03-22 14:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -433,7 +433,7 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:94
+#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:64
 msgid "Keep metadata"
 msgstr ""
 
@@ -442,7 +442,7 @@ msgstr ""
 msgid "This setting preserves metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:116
+#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:75
 msgid "Preserve file attributes if possible"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:153
+#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:97
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -470,7 +470,7 @@ msgstr ""
 msgid "Lossy compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:36
+#: data/com.github.huluti.Curtail.gschema.xml:36 src/ui/preferences.ui:144
 msgid "PNG Lossless Compression Level"
 msgstr ""
 
@@ -478,7 +478,7 @@ msgstr ""
 msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
+#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:157
 msgid "WebP Lossless Compression Level"
 msgstr ""
 
@@ -486,7 +486,7 @@ msgstr ""
 msgid "Lossless compression level to use for WebP images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:175
+#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:109
 msgid "JPG Lossy Compression Level"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr ""
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:186
+#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:121
 msgid "WebP Lossy Compression Level"
 msgstr ""
 
@@ -539,35 +539,27 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: src/ui/preferences.ui:40
+#: src/ui/preferences.ui:35
 msgid "General"
 msgstr ""
 
-#: src/ui/preferences.ui:72
+#: src/ui/preferences.ui:41
 msgid "Save the compressed image into a new file"
 msgstr ""
 
-#: src/ui/preferences.ui:141
+#: src/ui/preferences.ui:91
 msgid "Compression"
 msgstr ""
 
-#: src/ui/preferences.ui:222
+#: src/ui/preferences.ui:138
 msgid "Advanced"
 msgstr ""
 
-#: src/ui/preferences.ui:244
-msgid ""
-"PNG Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
+#: src/ui/preferences.ui:145 src/ui/preferences.ui:158
+msgid "The higher it is, the slower it is"
 msgstr ""
 
-#: src/ui/preferences.ui:266
-msgid ""
-"WebP Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
-msgstr ""
-
-#: src/ui/preferences.ui:278
+#: src/ui/preferences.ui:170
 msgid "Progressive Encode JPG"
 msgstr ""
 
