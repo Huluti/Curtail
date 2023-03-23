@@ -1,15 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.4.0] - DEV
+## [1.4.0] - 2023-03-23
 ### Added
-- Port to GTK 4 & Libadwaita
+- Port to GTK 4 and Libadwaita.
 
 ### Changed
-- Update deps
+- Update deps.
+- Update translations.
 
 ### Fixed
-- Less annoying 'Apply dialog'
+- Less annoying 'Apply dialog'.
 
 ## [1.3.1] - 2022-07-12
 ### Added

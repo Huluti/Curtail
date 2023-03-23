@@ -11,18 +11,15 @@
     <p>Optimize your images with Curtail, a useful image compressor that supports PNG, JPEG and WebP file types.</p>
     <p>It supports both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
   </description>
-
   <developer_name translatable="no">Hugo Posnic</developer_name>
-  <update_contact>hugo.posnic@gmail.com</update_contact>
+  <update_contact>hugo.posnic@protonmail.com</update_contact>
   <url type="bugtracker">https://github.com/Huluti/Curtail/issues</url>
   <url type="homepage">https://github.com/Huluti/Curtail</url>
-  <url type="donation">https://paypal.me/hposnic</url>
+  <url type="donation">https://liberapay.com/hugoposnic</url>
   <url type="translate">https://github.com/Huluti/Curtail/tree/master/po</url>
-
   <kudos>
     <kudo>ModernToolkit</kudo>
   </kudos>
-
   <screenshots>
     <screenshot type="default">
       <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
@@ -30,13 +27,25 @@
     <screenshot>
       <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
     </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen3.png</image>
+    </screenshot>
   </screenshots>
-
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
-
   <releases>
-     <release version="1.3.1" date="2022-07-12">
+    <release version="1.4.0" date="2023-03-23">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Port to GTK 4 and Libadwaita.</li>
+          <li>Update deps.</li>
+          <li>Less annoying 'Apply dialog'.</li>
+          <li>Update translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.1" date="2022-07-12">
       <description>
         <p>Here's the changelog of this version:</p>
         <ul>
@@ -291,3 +300,4 @@
     </release>
   </releases>
 </component>
+
