@@ -16,12 +16,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gdk, Gio, GLib
+from gi.repository import Gtk, Gdk, Gio, GLib, Adw
 from urllib.parse import unquote
 from pathlib import Path
 
 from .preferences import CurtailPrefsWindow
-from .apply import CurtailApplyDialog
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
                     sizeof_fmt, get_file_type
@@ -55,8 +54,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     apply_to_queue = False
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.set_default_icon_name('com.github.huluti.Curtail')
         self.app = kwargs['application']
 
@@ -66,21 +65,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.forward_button.set_sensitive(False)
 
     def build_ui(self):
-        # Dark theme at start
-        if self._settings.get_boolean('dark-theme'):
-            self.toggle_dark_theme(True)
-
         # Headerbar
         builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
         window_menu = builder.get_object('window-menu')
         self.menu_button.set_menu_model(window_menu)
 
         # Mainbox - drag&drop
-        enforce_target = Gtk.TargetEntry.new('text/uri-list',
-                                             Gtk.TargetFlags(4), 0)
-        self.mainbox.drag_dest_set(Gtk.DestDefaults.ALL, [enforce_target],
-                                   Gdk.DragAction.COPY)
-        self.mainbox.connect('drag-data-received', self.on_receive)
+        drop_target_main = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_main.connect('drop', self.on_dnd_drop)
+        self.mainbox.add_controller(drop_target_main)
 
         # Treeview
         self.store = Gtk.ListStore(bool, str, str, int, str, int, str, float)
@@ -109,7 +102,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         action.connect('activate', callback)
         self.add_action(action)
         if shortcut is not None:
-            self.app.add_accelerator(shortcut, 'win.' + action_name, None)
+            self.app.set_accels_for_action('win.' + action_name, [shortcut])
 
     def create_actions(self):
         self.create_simple_action('back', self.on_back)
@@ -135,11 +128,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def show_treeview(self, show):
         if show:
-            self.homebox.hide()
-            self.treeview_box.show_all()
+            self.homebox.set_visible(False)
+            self.treeview_box.set_visible(True)
         else:
-            self.treeview_box.hide()
-            self.homebox.show_all()
+            self.treeview_box.set_visible(False)
+            self.homebox.set_visible(True)
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
 
@@ -173,31 +166,38 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_treeview(True)
 
     def on_select(self, *args):
-        dialog = Gtk.FileChooserDialog(_("Browse your files"), self,
-            Gtk.FileChooserAction.OPEN,
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+        dialog = Gtk.FileChooserNative.new(_("Browse Files"), self,
+            Gtk.FileChooserAction.OPEN)
         dialog.set_select_multiple(True)
         add_filechooser_filters(dialog)
-        filenames = None
-        response = dialog.run()
-        if response == Gtk.ResponseType.OK:
-            filenames = dialog.get_filenames()  # we may have several files
-        dialog.destroy()
 
-        if filenames:
-            final_filenames = self.handle_filenames(filenames)
-            self.compress_filenames(final_filenames)
+        def handle_response(_dialog, response: Gtk.ResponseType):
+            if response == Gtk.ResponseType.ACCEPT:
+                files = dialog.get_files() # we may have several files
+                filenames = list()
+                for file in files:
+                    filenames.append(file.get_uri())
+                final_filenames = self.handle_filenames(filenames)
+                self.compress_filenames(final_filenames)
 
-    def on_receive(self, widget, drag_context, x, y, data, info, time):
-        filenames = data.get_uris()
+        dialog.connect('response', handle_response)
+        dialog.show()
+
+    def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
+        files = value.get_files()
+        if not files:
+            return
+
+        filenames = []
+        for file in files:
+            filenames.append(file.get_uri())
+
         final_filenames = self.handle_filenames(filenames)
         self.compress_filenames(final_filenames)
 
     def handle_filenames(self, filenames):
         if not filenames:
             return
-        self.apply_to_queue = False  # reset apply queue
         final_filenames = []
         # Clean filenames
         for filename in filenames:
@@ -258,45 +258,56 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def compress_filenames(self, filenames):
         # Do operations
-        queue_compress_image = False  # global var for queue
+        files = []
+        needs_overwrite = []
         for filename in filenames:
             new_filename = self.create_new_filename(filename)
+            files.append({'filename': filename, 'new_filename': new_filename})
+
             new_file_data = Path(new_filename)
+            if new_file_data.is_file():  # verify if new file path exists
+                needs_overwrite.append(new_file_data.name)
 
-            compress_image = False  # not compress here
-            if new_file_data.is_file():  # verify if file exists
-                if self.apply_to_queue:
-                    if queue_compress_image:
-                        compress_image = True
-                else:
-                    if self.apply_window is not None:
-                        self.apply_window.destroy()
-                    self.apply_window = CurtailApplyDialog(self)
-                    if len(filenames) == 1:  # hide queue checkbox if there is only one image
-                        self.apply_window.apply_to_queue.hide()
-                    self.apply_window.set_dynamic_label(new_file_data.name)
-                    response = self.apply_window.run()
-                    if response == Gtk.ResponseType.YES:
-                        compress_image = True
-                        if self.apply_to_queue:
-                            queue_compress_image = True
-                    self.apply_window.destroy()
-            else:
-                compress_image = True  # compress if not exists
-            if compress_image:
-                self.compress_image(filename, new_filename)
-                while Gtk.events_pending():
-                    Gtk.main_iteration()
+        if len(needs_overwrite) > 0:
+            text = _('If you continue, these files will be overwritten:') + '\n\n'
+            for filename in needs_overwrite:
+                text = text + '- ' + filename + '\n'
 
-    def compress_image(self, filename, new_filename):
+            dialog = Adw.MessageDialog.new(
+                self,
+                _('Some files already exists'),
+                text
+            )
+            dialog.add_response(Gtk.ResponseType.CANCEL.value_nick, _("_Cancel"))
+            dialog.add_response(Gtk.ResponseType.OK.value_nick, _("C_onfirm"))
+            dialog.set_response_appearance(
+                response=Gtk.ResponseType.OK.value_nick,
+                appearance=Adw.ResponseAppearance.DESTRUCTIVE
+            )
+
+            def handle_response(_dialog, response: Gtk.ResponseType):
+                if response == Gtk.ResponseType.OK.value_nick:
+                    self.compress_images(files)
+
+                dialog.close()
+
+            dialog.connect('response', handle_response)
+            dialog.present()
+        else:
+            self.compress_images(files)
+
+    def compress_images(self, files):
         # Show tree view if hidden
         if not self.treeview_box.get_visible():
             self.show_treeview(True)
-        # Call compressor
-        GLib.timeout_add(100, self.on_pulse_spinner)
-        compressor = Compressor(self, filename, new_filename)
-        compressor.compress_image()
-        self.go_end_treeview()  # scroll to end of treeview
+
+        for file in files:
+            # Call compressor
+            GLib.timeout_add(100, self.on_pulse_spinner)
+            compressor = Compressor(self, file['filename'],
+                file['new_filename'])
+            compressor.compress_image()
+            self.go_end_treeview()  # scroll to end of treeview
 
     def on_pulse_spinner(self):
         for item in self.store:
@@ -309,10 +320,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.spinner_renderer.set_property('pulse', item[5])
         return True
 
-    def toggle_dark_theme(self, value):
-        self.settings.set_property('gtk-application-prefer-dark-theme',
-                                       value)
-
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())
 
@@ -323,19 +330,37 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.prefs_window.present()
 
     def on_about(self, *args):
-        dialog = Gtk.AboutDialog(transient_for=self)
-        dialog.set_logo_icon_name('com.github.huluti.Curtail')
-        dialog.set_program_name('Curtail')
-        dialog.set_version('1.3.1')
-        dialog.set_website('https://github.com/Huluti/Curtail')
-        dialog.set_authors(['Hugo Posnic', 'Steven Teskey', 'Andrey Kozlovskiy', 'Balló György', 'olokelo', 'Archisman Panigrahi'])
-        dialog.set_translator_credits(_("translator-credits"))
-        dialog.set_comments(_("Compress your images"))
-        text = _("Distributed under the GNU GPL(v3) license.\n")
-        text += 'https://github.com/Huluti/Curtail/blob/master/COPYING\n'
-        dialog.set_license(text)
-        dialog.run()
-        dialog.destroy()
+        about = Adw.AboutWindow(
+                    transient_for=self,
+                    application_name='Curtail',
+                    application_icon='com.github.huluti.Curtail',
+                    developer_name='Hugo Posnic',
+                    license_type=Gtk.License.GPL_3_0,
+                    website='https://github.com/Huluti/Curtail',
+                    issue_url='https://github.com/Huluti/Curtail/issues/new',
+                    version='1.4.0',
+                    developers=[
+                        'Hugo Posnic https://github.com/Huluti'
+                    ],
+                    designers=[
+                        'Jakub Steiner https://github.com/jimmac',
+                        'Tobias Bernard https://github.com/bertob'
+                    ],
+                    translator_credits=_("translator-credits"),
+                    copyright='© Hugo Posnic'
+                )
+        about.add_credit_section(
+            _("Contributors"),
+            [
+                'Steven Teskey',
+                'Andrey Kozlovskiy',
+                'Balló György',
+                'olokelo',
+                'Archisman Panigrahi',
+                'Maximiliano'
+            ]
+        )
+        about.present()
 
     def on_quit(self, *args):
         self.app.quit()

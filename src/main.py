@@ -18,40 +18,41 @@
 import sys
 import gi
 
-gi.require_version('Gtk', '3.0')
+gi.require_version('Gtk', '4.0')
+gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gio, Adw
 
 from .window import CurtailWindow
 
 
 APP_ID = 'com.github.huluti.Curtail'
 
-
-class Application(Gtk.Application):
-    def __init__(self):
-        super().__init__(application_id=APP_ID,
-                         flags=Gio.ApplicationFlags.HANDLES_OPEN)
-        self.win = None
+class Application(Adw.Application):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def do_startup(self):
-        Gtk.Application.do_startup(self)
+        Adw.Application.do_startup(self)
 
         self.connect('open', self.file_open_handler)
 
     def do_activate(self):
-        if not self.win:
-            self.win = CurtailWindow(application=self)
+        self.win = CurtailWindow(application=self)
         self.win.present()
 
     def file_open_handler(self, app, g_file_list, amount, ukwn):
         self.do_activate()
         filenames = []
         for g_file in g_file_list:
-            filenames.append(g_file.get_path())
+            filenames.append(g_file.get_uri())
         self.win.handle_filenames(filenames)
 
 
 def main(version):
-    app = Application()
+    app = Application(
+        application_id=APP_ID,
+        flags=Gio.ApplicationFlags.HANDLES_OPEN
+    )
     return app.run(sys.argv)
+

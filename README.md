@@ -64,7 +64,8 @@ The app can then be removed with:
 
 Curtail uses a number of open source projects to work properly:
 
-- [GTK 3](https://www.gtk.org)
+- [GTK 4](https://www.gtk.org)
+- [Libadwaita](https://gitlab.gnome.org/GNOME/libadwaita)
 - [Python 3](https://www.python.org)
 - [OptiPNG](http://optipng.sourceforge.net)
 - [pngquant](https://pngquant.org)

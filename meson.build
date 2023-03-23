@@ -1,15 +1,20 @@
 project('curtail',  
-          version: '1.3.1',
-    meson_version: '>= 0.50.0',
-  default_options: [ 'warning_level=2',
-                   ],
+          version: '1.4.0',
+    meson_version: '>= 0.59.0',
+  default_options: [ 'warning_level=2', 'werror=false', ],
 )
 
 i18n = import('i18n')
+gnome = import('gnome')
+
 
 
 subdir('data')
 subdir('src')
 subdir('po')
 
-meson.add_install_script('build-aux/meson/postinstall.py')
+gnome.post_install(
+     glib_compile_schemas: true,
+    gtk_update_icon_cache: true,
+  update_desktop_database: true,
+)
