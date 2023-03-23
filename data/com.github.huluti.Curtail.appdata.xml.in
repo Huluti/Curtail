@@ -38,9 +38,9 @@
       <description>
         <p>Here's the changelog of this version:</p>
         <ul>
-          <li>Port to GTK 4 and Libadwaita.</li>
-          <li>Update deps.</li>
-          <li>Less annoying 'Apply dialog'.</li>
+          <li>Port to GTK 4 and Libadwaita</li>
+          <li>Update deps</li>
+          <li>Less annoying 'Apply dialog'</li>
           <li>Update translations</li>
         </ul>
       </description>
