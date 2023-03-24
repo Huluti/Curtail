@@ -231,12 +231,12 @@ class CurtailWindow(Gtk.ApplicationWindow):
         elif Path.is_file(path):
             size = path.stat().st_size
             if not self.check_extension(filename) or size <= 0:
-                message_dialog(self, 'error', _("Format not supported"),
+                message_dialog(self, _("Format not supported"),
                     _("The format of {} is not supported.").format(path.name))
             else:
                 verified_filenames.append(filename)
         else:
-            message_dialog(self, 'error', _("Path not valid"),
+            message_dialog(self, _("Path not valid"),
                            _("{} doesn't exist.").format(filename))
 
         return verified_filenames

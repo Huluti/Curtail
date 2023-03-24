@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, GLib, Gio
+from gi.repository import Adw, Gtk, GLib, Gio
 from os import path
 
 
@@ -23,23 +23,19 @@ def sizeof_fmt(num):
     return GLib.format_size(num)
 
 
-def message_dialog(parent, dialog_type, title, text):
+def message_dialog(parent, title, text):
     """Simplify way to show a message in a dialog"""
-    button_type = Gtk.ButtonsType.OK
-    if dialog_type == 'info':
-        dialog_type = Gtk.MessageType.INFO
-    elif dialog_type == 'warning':
-        dialog_type = Gtk.MessageType.WARNING
-    elif dialog_type == 'error':
-        dialog_type = Gtk.MessageType.ERROR
-    elif dialog_type == 'question':
-        dialog_type = Gtk.MessageType.QUESTION
-        button_type = Gtk.ButtonsType.YES_NO
-    dialog = Gtk.MessageDialog(parent, 0, dialog_type, button_type, title)
-    dialog.format_secondary_text(text)
-    response = dialog.run()
-    dialog.destroy()
-    return response
+    dialog = Adw.MessageDialog.new(
+        parent,
+        title,
+        text
+    )
+    dialog.add_response(Gtk.ResponseType.OK.value_nick, _("_Ok"))
+    dialog.set_response_appearance(
+        response=Gtk.ResponseType.OK.value_nick,
+        appearance=Adw.ResponseAppearance.SUGGESTED
+    )
+    dialog.present()
 
 
 def add_filechooser_filters(dialog):
