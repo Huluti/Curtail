@@ -76,17 +76,16 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.mainbox.add_controller(drop_target_main)
 
         # Treeview
-        self.store = Gtk.ListStore(bool, str, str, int, str, int, str, float)
+        self.store = Gtk.ListStore(str, str, int, str, int, str, float)
         self.treeview.set_model(self.store)
         self.renderer = Gtk.CellRendererText()
-        self.spinner_renderer = Gtk.CellRendererSpinner()
 
-        col_bool = Gtk.TreeViewColumn('', self.spinner_renderer, active=0)
-        self.treeview.append_column(col_bool)
-        self.add_column_to_treeview(_("Filename"), 1, True)
-        self.add_column_to_treeview(_("Old Size"), 2, True, 3)
-        self.add_column_to_treeview(_("New Size"), 4, True, 5)
-        self.add_column_to_treeview(_("Savings"), 6, True, 7)
+        column = Gtk.TreeViewColumn()
+        self.treeview.append_column(column)
+        self.add_column_to_treeview(_("Filename"), 0, True)
+        self.add_column_to_treeview(_("Old Size"), 1, True, 3)
+        self.add_column_to_treeview(_("New Size"), 3, True, 5)
+        self.add_column_to_treeview(_("Savings"), 5, True, 7)
 
         self.adjustment = self.treeview_scrolled_window.get_vadjustment()
 
@@ -135,17 +134,24 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.homebox.set_visible(True)
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
+        self.sync_ui()
+
+    def sync_ui(self):
+        main_context = GLib.MainContext.default()
+        while main_context.pending():
+            main_context.iteration(False)
 
     def create_treeview_row(self, name, size):
-        tree_iter = self.store.append([True, name, sizeof_fmt(size), size, '', 0, '0%', 0])
+        tree_iter = self.store.append([name, sizeof_fmt(size), size, '', 0, '0%', 0])
+        self.sync_ui()
         return tree_iter
 
     def update_treeview_row(self, tree_iter, new_size, savings):
-        self.store.set_value(tree_iter, 0, False)
-        self.store.set_value(tree_iter, 4, sizeof_fmt(new_size))
-        self.store.set_value(tree_iter, 5, new_size)
-        self.store.set_value(tree_iter, 6, '{}%'.format(str(savings)))
-        self.store.set_value(tree_iter, 7, savings)
+        self.store.set_value(tree_iter, 3, sizeof_fmt(new_size))
+        self.store.set_value(tree_iter, 4, new_size)
+        self.store.set_value(tree_iter, 5, '{}%'.format(str(savings)))
+        self.store.set_value(tree_iter, 6, savings)
+        self.sync_ui()
 
     def go_end_treeview(self):
         self.adjustment.set_value(self.adjustment.get_upper())
@@ -193,8 +199,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.compress_filenames(final_filenames)
 
     def handle_filenames(self, filenames):
-        if not filenames:
-            return
         final_filenames = []
         # Clean filenames
         for filename in filenames:
@@ -294,28 +298,14 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.compress_images(files)
 
     def compress_images(self, files):
-        # Show tree view if hidden
-        if not self.treeview_box.get_visible():
-            self.show_treeview(True)
+        self.show_treeview(True)
 
         for file in files:
             # Call compressor
-            GLib.timeout_add(100, self.on_pulse_spinner)
             compressor = Compressor(self, file['filename'],
                 file['new_filename'])
             compressor.compress_image()
             self.go_end_treeview()  # scroll to end of treeview
-
-    def on_pulse_spinner(self):
-        for item in self.store:
-            if item[0]:
-                if item[5] == 100:
-                    item[5] = 0
-                else:
-                    item[5] += 1
-
-            self.spinner_renderer.set_property('pulse', item[5])
-        return True
 
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())

@@ -49,16 +49,16 @@ class Compressor():
 
     def run_command(self, command):
         try:
-            p = subprocess.Popen(command,
+            subprocess.call(command,
                                  stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE,
                                  stdin=subprocess.PIPE,
-                                 shell=True)
-            self.io_id = GObject.io_add_watch(p.stdout, GObject.IO_IN, self.feed)
-            GObject.io_add_watch(p.stdout, GObject.IO_HUP, self.command_finished)
+                                 shell=True,
+                                 timeout=20)
+            self.command_finished()
+
         except Exception as err:
-            message_dialog(self.win, 'error', _("An error has occured"),
-                           str(err))
+            message_dialog(self.win, _("An error has occured"), str(err))
 
     def compress_image(self):
         file_type = get_file_type(self.filename)
@@ -76,11 +76,8 @@ class Compressor():
                 command = self.build_webp_command(lossy, metadata)
             self.run_command(command)  # compress image
 
-    def command_finished(self, stdout, condition):
-        GObject.source_remove(self.io_id)
-        stdout.close()
-
-        # Check if new size is equal or higher than the old one
+    def command_finished(self):
+        # TODO: Check if new size is equal or higher than the old one
         self.new_size = self.new_file_data.stat().st_size
 
         savings = round(100 - (self.new_size * 100 / self.size), 2)
