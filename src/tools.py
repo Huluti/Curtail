@@ -61,10 +61,13 @@ def add_filechooser_filters(dialog):
     webp_images.set_name(_("WebP images"))
     webp_images.add_mime_type('image/webp')
 
-    dialog.add_filter(all_images)
-    dialog.add_filter(png_images)
-    dialog.add_filter(jpeg_images)
-    dialog.add_filter(webp_images)
+    file_filters = Gio.ListStore.new(Gtk.FileFilter)
+    file_filters.append(all_images)
+    file_filters.append(png_images)
+    file_filters.append(jpeg_images)
+    file_filters.append(webp_images)
+
+    dialog.set_filters(file_filters)
 
 
 def get_file_type(filename):

@@ -166,22 +166,19 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_treeview(True)
 
     def on_select(self, *args):
-        dialog = Gtk.FileChooserNative.new(_("Browse Files"), self,
-            Gtk.FileChooserAction.OPEN)
-        dialog.set_select_multiple(True)
+        dialog = Gtk.FileDialog(title=_("Browse Files"))
         add_filechooser_filters(dialog)
 
-        def handle_response(_dialog, response: Gtk.ResponseType):
-            if response == Gtk.ResponseType.ACCEPT:
-                files = dialog.get_files() # we may have several files
-                filenames = list()
-                for file in files:
-                    filenames.append(file.get_uri())
-                final_filenames = self.handle_filenames(filenames)
-                self.compress_filenames(final_filenames)
+        def handle_response(dialog, result):
+            files = dialog.open_multiple_finish(result)
+            filenames = list()
+            for file in files:
+                print(file.get_uri())
+                filenames.append(file.get_uri())
+            final_filenames = self.handle_filenames(filenames)
+            self.compress_filenames(final_filenames)
 
-        dialog.connect('response', handle_response)
-        dialog.show()
+        dialog.open_multiple(self, None, handle_response)
 
     def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
         files = value.get_files()
