@@ -92,6 +92,10 @@
                 <property name="hscrollbar-policy">never</property>
                 <child>
                   <object class="GtkListBox" id="listbox">
+                    <property name="margin-start">10</property>
+                    <property name="margin-end">10</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
                     <style>
                       <class name="boxed-list" />
                     </style>
