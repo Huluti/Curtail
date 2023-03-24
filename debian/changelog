@@ -1,3 +1,11 @@
+curtail (1.5.0) focal; urgency=medium
+
+  * More modern results page.
+  * Reduce images one by one to avoid freezes.
+  * Update translations.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Sat, 25 Mar 2023 00:10 +0200
+
 curtail (1.4.0) focal; urgency=medium
 
   * Port to GTK 4 and Libadwaita.

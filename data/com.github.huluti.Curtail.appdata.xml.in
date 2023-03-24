@@ -34,6 +34,16 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.5.0" date="2023-03-25">
+      <description>
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>More modern results page</li>
+          <li>Reduce images one by one to avoid freezes</li>
+          <li>Update translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.0" date="2023-03-23">
       <description>
         <p>Here's the changelog of this version:</p>

@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2023-03-25
+### Changed
+- More modern results page.
+- Update translations.
+
+### Fixed
+- Reduce images one by one to avoid freezes.
+
 ## [1.4.0] - 2023-03-23
 ### Added
 - Port to GTK 4 and Libadwaita.
