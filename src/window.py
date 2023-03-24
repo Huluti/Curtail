@@ -179,7 +179,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
             files = dialog.open_multiple_finish(result)
             filenames = list()
             for file in files:
-                print(file.get_uri())
                 filenames.append(file.get_uri())
             final_filenames = self.handle_filenames(filenames)
             self.compress_filenames(final_filenames)
@@ -260,24 +259,20 @@ class CurtailWindow(Gtk.ApplicationWindow):
     def compress_filenames(self, filenames):
         # Do operations
         files = []
-        needs_overwrite = []
+        needs_overwrite = False
         for filename in filenames:
             new_filename = self.create_new_filename(filename)
             files.append({'filename': filename, 'new_filename': new_filename})
 
             new_file_data = Path(new_filename)
-            if new_file_data.is_file():  # verify if new file path exists
-                needs_overwrite.append(new_file_data.name)
+            if not needs_overwrite and new_file_data.is_file():  # verify if new file path exists
+                needs_overwrite = True
 
-        if len(needs_overwrite) > 0:
-            text = _('If you continue, these files will be overwritten:') + '\n\n'
-            for filename in needs_overwrite:
-                text = text + '- ' + filename + '\n'
-
+        if (needs_overwrite):
             dialog = Adw.MessageDialog.new(
                 self,
                 _('Some files already exists'),
-                text
+                _('If you continue, some files will be overwritten.')
             )
             dialog.add_response(Gtk.ResponseType.CANCEL.value_nick, _("_Cancel"))
             dialog.add_response(Gtk.ResponseType.OK.value_nick, _("C_onfirm"))
