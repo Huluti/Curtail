@@ -45,7 +45,7 @@ class Compressor():
 
         self.size = self.file_data.stat().st_size
         self.new_size = 0
-        self.tree_iter = None
+        self.row = None
 
     def run_command(self, command):
         try:
@@ -63,7 +63,8 @@ class Compressor():
     def compress_image(self):
         file_type = get_file_type(self.filename)
         if file_type:
-            self.tree_iter = self.win.create_treeview_row(str(self.full_name), self.size)
+            self.row = self.win.create_result_row(self.full_name, self.filename,
+                self.new_filename, self.size)
             lossy = self._settings.get_boolean('lossy')
             metadata = self._settings.get_boolean('metadata')
             file_attributes = self._settings.get_boolean('file-attributes')
@@ -81,7 +82,7 @@ class Compressor():
         self.new_size = self.new_file_data.stat().st_size
 
         savings = round(100 - (self.new_size * 100 / self.size), 2)
-        self.win.update_treeview_row(self.tree_iter, self.new_size, savings)
+        self.win.update_result_row(self.row, self.size, self.new_size, savings)
 
     def build_png_command(self, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'

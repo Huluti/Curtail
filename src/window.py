@@ -23,7 +23,7 @@ from pathlib import Path
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, \
-                    sizeof_fmt, get_file_type
+                    sizeof_fmt, get_file_type, create_image_from_file
 
 UI_PATH = '/com/github/huluti/Curtail/ui/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -45,9 +45,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
     menu_button = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
-    treeview_box = Gtk.Template.Child()
-    treeview_scrolled_window = Gtk.Template.Child()
-    treeview = Gtk.Template.Child()
+    resultbox = Gtk.Template.Child()
+    scrolled_window = Gtk.Template.Child()
+    listbox = Gtk.Template.Child()
     save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
@@ -61,7 +61,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         self.build_ui()
         self.create_actions()
-        self.show_treeview(False)
+        self.show_results(False)
         self.forward_button.set_sensitive(False)
 
     def build_ui(self):
@@ -75,26 +75,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         drop_target_main.connect('drop', self.on_dnd_drop)
         self.mainbox.add_controller(drop_target_main)
 
-        # Treeview
-        self.store = Gtk.ListStore(str, str, int, str, int, str, float)
-        self.treeview.set_model(self.store)
-        self.renderer = Gtk.CellRendererText()
-
-        column = Gtk.TreeViewColumn()
-        self.treeview.append_column(column)
-        self.add_column_to_treeview(_("Filename"), 0, True)
-        self.add_column_to_treeview(_("Old Size"), 1, True, 3)
-        self.add_column_to_treeview(_("New Size"), 3, True, 5)
-        self.add_column_to_treeview(_("Savings"), 5, True, 7)
-
-        self.adjustment = self.treeview_scrolled_window.get_vadjustment()
-
         # Lossy toggle
         self.toggle_lossy.set_active(self._settings.get_boolean('lossy'))
         self.toggle_lossy.connect('notify::active', self.on_lossy_changed)
 
         # Info label
         self.change_save_info_label()
+
+        # Results
+        self.adjustment = self.scrolled_window.get_vadjustment()
 
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
@@ -111,50 +100,51 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
 
-    def add_column_to_treeview(self, title, column_id, allow_sort=False, sort_column_id=-1):
-        treeviewcolumn = Gtk.TreeViewColumn(title)
-        if allow_sort:
-            if sort_column_id > 0:
-                treeviewcolumn.set_sort_column_id(sort_column_id)
-            else:
-                treeviewcolumn.set_sort_column_id(column_id)
-        treeviewcolumn.set_spacing(10)
-        treeviewcolumn.set_resizable(True)
-        treeviewcolumn.set_expand(True)
-        treeviewcolumn.pack_start(self.renderer, False)
-        treeviewcolumn.add_attribute(self.renderer, 'text', column_id)
-        self.treeview.append_column(treeviewcolumn)
-
-    def show_treeview(self, show):
+    def show_results(self, show):
         if show:
             self.homebox.set_visible(False)
-            self.treeview_box.set_visible(True)
+            self.resultbox.set_visible(True)
         else:
-            self.treeview_box.set_visible(False)
+            self.resultbox.set_visible(False)
             self.homebox.set_visible(True)
         self.back_button.set_sensitive(show)
         self.forward_button.set_sensitive(not show)
         self.sync_ui()
+
+    def go_end_scrolledwindow(self):
+        self.adjustment.set_value(self.adjustment.get_upper())
 
     def sync_ui(self):
         main_context = GLib.MainContext.default()
         while main_context.pending():
             main_context.iteration(False)
 
-    def create_treeview_row(self, name, size):
-        tree_iter = self.store.append([name, sizeof_fmt(size), size, '', 0, '0%', 0])
-        self.sync_ui()
-        return tree_iter
+    def create_result_row(self, name, filename, new_filename, size):
+        row = Adw.ActionRow()
+        row.set_title(name)
+        row.set_tooltip_text(new_filename)
+        subtitle = sizeof_fmt(size)
+        row.set_subtitle(subtitle)
 
-    def update_treeview_row(self, tree_iter, new_size, savings):
-        self.store.set_value(tree_iter, 3, sizeof_fmt(new_size))
-        self.store.set_value(tree_iter, 4, new_size)
-        self.store.set_value(tree_iter, 5, '{}%'.format(str(savings)))
-        self.store.set_value(tree_iter, 6, savings)
+        image = create_image_from_file(filename, 60, 60)
+        row.add_prefix(image)
+
+        self.listbox.insert(row, -1)  # insert at end
+
         self.sync_ui()
 
-    def go_end_treeview(self):
-        self.adjustment.set_value(self.adjustment.get_upper())
+        return row
+
+    def update_result_row(self, row, size, new_size, savings):
+        subtitle = sizeof_fmt(size) + ' -> ' + sizeof_fmt(new_size)
+        row.set_subtitle(subtitle)
+
+        savings_widget = Gtk.Label(label=str(savings) + '%')
+        color = 'success' if savings > 0 else 'error'
+        savings_widget.add_css_class(color)
+        row.add_suffix(savings_widget)
+
+        self.sync_ui()
 
     def change_save_info_label(self):
         label = '<span size="small">{}</span>'
@@ -166,10 +156,10 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.save_info_label.set_markup(label)
 
     def on_back(self, *args):
-        self.show_treeview(False)
+        self.show_results(False)
 
     def on_forward(self, *args):
-        self.show_treeview(True)
+        self.show_results(True)
 
     def on_select(self, *args):
         dialog = Gtk.FileDialog(title=_("Browse Files"))
@@ -293,14 +283,14 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.compress_images(files)
 
     def compress_images(self, files):
-        self.show_treeview(True)
+        self.show_results(True)
 
         for file in files:
             # Call compressor
             compressor = Compressor(self, file['filename'],
                 file['new_filename'])
             compressor.compress_image()
-            self.go_end_treeview()  # scroll to end of treeview
+            self.go_end_scrolledwindow()
 
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())

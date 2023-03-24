@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Adw, Gtk, GLib, Gio
+from gi.repository import Adw, Gtk, GLib, Gio, GdkPixbuf
 from os import path
 
 
@@ -80,3 +80,29 @@ def get_file_type(filename):
     else:
         return None
 
+
+def create_image_from_file(filename, max_width, max_height):
+    # Image preview
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+
+    # Calculate new dimensions while preserving aspect ratio
+    width = pixbuf.get_width()
+    height = pixbuf.get_height()
+
+    # If the image is wider than it is tall, scale it to fit the width
+    if width > height:
+        ratio = max_width / float(width)
+        new_width = max_width
+        new_height = int(height * ratio)
+    # Otherwise, scale it to fit the height
+    else:
+        ratio = max_height / float(height)
+        new_width = int(width * ratio)
+        new_height = max_height
+
+    scaled_pixbuf = pixbuf.scale_simple(new_width, new_height,
+        GdkPixbuf.InterpType.BILINEAR)
+
+    image = Gtk.Image.new_from_pixbuf(scaled_pixbuf)
+
+    return image

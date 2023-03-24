@@ -82,22 +82,23 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="treeview_box">
+          <object class="GtkBox" id="resultbox">
             <property name="margin-start">10</property>
             <property name="margin-end">10</property>
             <property name="margin-top">10</property>
-            <property name="orientation">vertical</property>
+            <property name="vexpand">true</property>
             <child>
-              <object class="GtkScrolledWindow" id="treeview_scrolled_window">
-                <property name="child">
-                  <object class="GtkTreeView" id="treeview">
+              <object class="GtkScrolledWindow" id="scrolled_window">
+                <property name="hscrollbar-policy">never</property>
+                <child>
+                  <object class="GtkListBox" id="listbox">
+                    <style>
+                      <class name="boxed-list" />
+                    </style>
                     <property name="hexpand">true</property>
-                    <property name="vexpand">true</property>
-                    <child internal-child="selection">
-                      <object class="GtkTreeSelection"/>
-                    </child>
+                    <property name="selection-mode">none</property>
                   </object>
-                </property>
+                </child>
               </object>
             </child>
           </object>
