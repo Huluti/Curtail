@@ -40,8 +40,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
     apply_window = None
 
     headerbar = Gtk.Template.Child()
-    back_button = Gtk.Template.Child()
-    forward_button = Gtk.Template.Child()
+    filechooser_button_headerbar = Gtk.Template.Child()
+    clear_button_headerbar = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
@@ -62,7 +62,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.build_ui()
         self.create_actions()
         self.show_results(False)
-        self.forward_button.set_sensitive(False)
 
     def build_ui(self):
         # Headerbar
@@ -96,6 +95,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('back', self.on_back)
         self.create_simple_action('forward', self.on_forward)
         self.create_simple_action('select-file', self.on_select, '<Primary>o')
+        self.create_simple_action('clear-results', self.clear_results)
         self.create_simple_action('preferences', self.on_preferences, '<Primary>comma')
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
@@ -104,12 +104,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         if show:
             self.homebox.set_visible(False)
             self.resultbox.set_visible(True)
+            self.clear_button_headerbar.set_visible(True)
         else:
             self.resultbox.set_visible(False)
             self.homebox.set_visible(True)
-        self.back_button.set_sensitive(show)
-        self.forward_button.set_sensitive(not show)
+            self.clear_button_headerbar.set_visible(False)
         self.sync_ui()
+
+    def clear_results(self, *args):
+        self.show_results(False)
 
     def go_end_scrolledwindow(self):
         self.adjustment.set_value(self.adjustment.get_upper())
