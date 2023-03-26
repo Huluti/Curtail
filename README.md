@@ -76,7 +76,8 @@ Curtail uses a number of open source projects to work properly:
 
 Do you like the app? Would you like to support its development? Feel free to donate.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/hposnic)
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/hugoposnic)](https://liberapay.com/hugoposnic)
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/hugoposnic)](https://liberapay.com/hugoposnic)
 
 ## License
 
