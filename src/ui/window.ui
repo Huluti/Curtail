@@ -3,7 +3,7 @@
   <template class="CurtailWindow" parent="GtkApplicationWindow">
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
-    <property name="default-height">300</property>
+    <property name="default-height">350</property>
     <child>
       <object class="GtkBox" id="mainbox">
         <property name="margin-start">10</property>
@@ -56,6 +56,7 @@
             <child>
               <object class="GtkBox">
                 <property name="margin-top">10</property>
+                <property name="margin-bottom">20</property>
                 <property name="spacing">10</property>
                 <property name="halign">center</property>
                 <property name="valign">center</property>
@@ -107,16 +108,10 @@
             </child>
           </object>
         </child>
-        <child>
-          <object class="GtkLabel" id="save_info_label">
-            <property name="margin-top">20</property>
-            <property name="margin-bottom">20</property>
-          </object>
-        </child>
       </object>
     </child>
     <child type="titlebar">
-      <object class="GtkHeaderBar" id="headerbar">
+      <object class="AdwHeaderBar" id="headerbar">
         <child>
           <object class="GtkBox">
             <child>
@@ -133,6 +128,11 @@
                 <property name="tooltip-text" translatable="yes">Clear Results</property>
               </object>
             </child>
+          </object>
+        </child>
+        <child type="title">
+          <object class="AdwWindowTitle" id="window_title">
+              <property name="title" translatable="yes">Curtail</property>
           </object>
         </child>
         <child type="end">

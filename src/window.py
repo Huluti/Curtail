@@ -40,6 +40,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     apply_window = None
 
     headerbar = Gtk.Template.Child()
+    window_title = Gtk.Template.Child()
     filechooser_button_headerbar = Gtk.Template.Child()
     clear_button_headerbar = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
@@ -48,7 +49,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
     resultbox = Gtk.Template.Child()
     scrolled_window = Gtk.Template.Child()
     listbox = Gtk.Template.Child()
-    save_info_label = Gtk.Template.Child()
     filechooser_button = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
 
@@ -92,8 +92,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.app.set_accels_for_action('win.' + action_name, [shortcut])
 
     def create_actions(self):
-        self.create_simple_action('back', self.on_back)
-        self.create_simple_action('forward', self.on_forward)
         self.create_simple_action('select-file', self.on_select, '<Primary>o')
         self.create_simple_action('clear-results', self.clear_results)
         self.create_simple_action('preferences', self.on_preferences, '<Primary>comma')
@@ -113,6 +111,8 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def clear_results(self, *args):
         self.show_results(False)
+        while child := self.resultbox.get_first_child():
+            self.resultbox.remove(child)
 
     def go_end_scrolledwindow(self):
         self.adjustment.set_value(self.adjustment.get_upper())
@@ -150,19 +150,13 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.sync_ui()
 
     def change_save_info_label(self):
-        label = '<span size="small">{}</span>'
+        label = ''
         if self._settings.get_boolean('new-file'):
-            label = label.format(_("Images are saved with <b>'{}' suffix</b>.")\
-                                 .format(self._settings.get_string('suffix')))
+            label = _("Images are saved with '{}' suffix.")\
+                                 .format(self._settings.get_string('suffix'))
         else:
-            label = label.format(_("Images are <b>overwritten</b>."))
-        self.save_info_label.set_markup(label)
-
-    def on_back(self, *args):
-        self.show_results(False)
-
-    def on_forward(self, *args):
-        self.show_results(True)
+            label = _("Images are overwritten.")
+        self.window_title.set_subtitle(label)
 
     def on_select(self, *args):
         dialog = Gtk.FileDialog(title=_("Browse Files"))
