@@ -69,6 +69,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         window_menu = builder.get_object('window-menu')
         self.menu_button.set_menu_model(window_menu)
 
+        # Saving subtitle
+        self.set_saving_subtitle()
+
         # Mainbox - drag&drop
         drop_target_main = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
         drop_target_main.connect('drop', self.on_dnd_drop)
@@ -77,9 +80,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         # Lossy toggle
         self.toggle_lossy.set_active(self._settings.get_boolean('lossy'))
         self.toggle_lossy.connect('notify::active', self.on_lossy_changed)
-
-        # Info label
-        self.change_save_info_label()
 
         # Results
         self.adjustment = self.scrolled_window.get_vadjustment()
@@ -149,7 +149,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         self.sync_ui()
 
-    def change_save_info_label(self):
+    def set_saving_subtitle(self):
         label = ''
         if self._settings.get_boolean('new-file'):
             label = _("Images are saved with '{}' suffix.")\

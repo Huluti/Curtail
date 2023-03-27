@@ -112,7 +112,7 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         self._settings.set_boolean(key, switch.get_active())
         # Additional actions
         if key == 'new-file':
-            self.parent.change_save_info_label()
+            self.parent.set_saving_subtitle()
             self.enable_suffix_section()
 
     def on_string_changed(self, entry, key):
@@ -120,7 +120,7 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         if key == 'suffix':
             if not self._settings.get_string('suffix'):
                 self._settings.reset('suffix')
-            self.parent.change_save_info_label()
+            self.parent.set_saving_subtitle()
 
     def on_int_changed(self, spin, key):
         self._settings.set_int(key, spin.get_value())
