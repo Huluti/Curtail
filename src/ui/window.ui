@@ -84,9 +84,6 @@
         </child>
         <child>
           <object class="GtkBox" id="resultbox">
-            <property name="margin-start">10</property>
-            <property name="margin-end">10</property>
-            <property name="margin-top">10</property>
             <property name="vexpand">true</property>
             <child>
               <object class="GtkScrolledWindow" id="scrolled_window">
