@@ -16,14 +16,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gdk, Gio, GLib, Adw
+from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 from urllib.parse import unquote
 from pathlib import Path
 
+from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog, add_filechooser_filters, \
-                    sizeof_fmt, get_file_type, create_image_from_file
+from .tools import message_dialog, add_filechooser_filters, get_file_type, \
+    create_image_from_file
 
 UI_PATH = '/com/github/huluti/Curtail/ui/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -52,7 +53,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     filechooser_button = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
 
-    apply_to_queue = False
+    results_model = Gio.ListStore.new(ResultItem)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -82,6 +83,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.toggle_lossy.connect('notify::active', self.on_lossy_changed)
 
         # Results
+        self.listbox.bind_model(self.results_model, self.create_result_row)
         self.adjustment = self.scrolled_window.get_vadjustment()
 
     def create_simple_action(self, action_name, callback, shortcut=None):
@@ -107,47 +109,33 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.resultbox.set_visible(False)
             self.homebox.set_visible(True)
             self.clear_button_headerbar.set_visible(False)
-        self.sync_ui()
-
-    def clear_results(self, *args):
-        self.show_results(False)
-        while child := self.resultbox.get_first_child():
-            self.resultbox.remove(child)
 
     def go_end_scrolledwindow(self):
         self.adjustment.set_value(self.adjustment.get_upper())
 
-    def sync_ui(self):
-        main_context = GLib.MainContext.default()
-        while main_context.pending():
-            main_context.iteration(False)
+    def clear_results(self, *args):
+        self.show_results(False)
+        self.results_model.remove_all()
 
-    def create_result_row(self, name, filename, new_filename, size):
+    def create_result_row(self, result_item):
         row = Adw.ActionRow()
-        row.set_title(name)
-        row.set_tooltip_text(new_filename)
-        subtitle = sizeof_fmt(size)
-        row.set_subtitle(subtitle)
+        row.set_title(result_item.name)
+        row.set_tooltip_text(result_item.new_filename)
+        row.set_subtitle(result_item.size)
 
-        image = create_image_from_file(filename, 60, 60)
+        image = create_image_from_file(result_item.filename, 60, 60)
         row.add_prefix(image)
 
-        self.listbox.insert(row, -1)  # insert at end
-
-        self.sync_ui()
-
-        return row
-
-    def update_result_row(self, row, size, new_size, savings):
-        subtitle = sizeof_fmt(size) + ' -> ' + sizeof_fmt(new_size)
-        row.set_subtitle(subtitle)
-
-        savings_widget = Gtk.Label(label=str(savings) + '%')
-        color = 'success' if savings > 0 else 'error'
-        savings_widget.add_css_class(color)
+        savings_widget = Gtk.Label()
+        savings_widget.add_css_class('success')
         row.add_suffix(savings_widget)
 
-        self.sync_ui()
+        result_item.bind_property('savings', savings_widget, 'label',
+            GObject.BindingFlags.DEFAULT)
+        result_item.bind_property('size', row, 'subtitle',
+            GObject.BindingFlags.DEFAULT)
+
+        return row
 
     def set_saving_subtitle(self):
         label = ''

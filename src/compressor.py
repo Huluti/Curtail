@@ -20,7 +20,8 @@ from gi.repository import Gtk, Gio, GObject
 from shutil import copy2
 from pathlib import Path
 
-from .tools import message_dialog, get_file_type
+from .resultitem import ResultItem
+from .tools import message_dialog, get_file_type, sizeof_fmt
 
 
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -44,10 +45,8 @@ class Compressor():
         self.full_name = self.file_data.name
 
         self.size = self.file_data.stat().st_size
-        self.new_size = 0
-        self.row = None
 
-    def run_command(self, command):
+    def run_command(self, command, result_item):
         try:
             subprocess.call(command,
                                  stdout=subprocess.PIPE,
@@ -55,7 +54,7 @@ class Compressor():
                                  stdin=subprocess.PIPE,
                                  shell=True,
                                  timeout=20)
-            self.command_finished()
+            self.command_finished(result_item)
 
         except Exception as err:
             message_dialog(self.win, _("An error has occured"), str(err))
@@ -63,8 +62,11 @@ class Compressor():
     def compress_image(self):
         file_type = get_file_type(self.filename)
         if file_type:
-            self.row = self.win.create_result_row(self.full_name, self.filename,
-                self.new_filename, self.size)
+            result_item = ResultItem(self.full_name, self.filename,
+                self.new_filename, sizeof_fmt(self.size), 0)
+            self.win.results_model.insert(0, result_item)
+            self.win.listbox.invalidate_headers()
+
             lossy = self._settings.get_boolean('lossy')
             metadata = self._settings.get_boolean('metadata')
             file_attributes = self._settings.get_boolean('file-attributes')
@@ -75,14 +77,12 @@ class Compressor():
                 command = self.build_jpg_command(lossy, metadata, file_attributes)
             elif file_type == 'webp':
                 command = self.build_webp_command(lossy, metadata)
-            self.run_command(command)  # compress image
+            self.run_command(command, result_item)  # compress image
 
-    def command_finished(self):
-        # TODO: Check if new size is equal or higher than the old one
-        self.new_size = self.new_file_data.stat().st_size
-
-        savings = round(100 - (self.new_size * 100 / self.size), 2)
-        self.win.update_result_row(self.row, self.size, self.new_size, savings)
+    def command_finished(self, result_item):
+        new_size = self.new_file_data.stat().st_size
+        result_item.size = result_item.size + ' -> ' + sizeof_fmt(new_size)
+        result_item.savings = str(round(100 - (new_size * 100 / self.size), 2)) + '%'
 
     def build_png_command(self, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
@@ -168,5 +168,3 @@ class Compressor():
 
         return command
 
-    def feed(self, stdout, condition):
-        return True
