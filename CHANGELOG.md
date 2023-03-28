@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - DEV
+### Changed
+- Better workflow for headerbar.
+- Move saving state in the subtitle.
+- Simplify preferences.
+- Update translations.
+
 ## [1.5.0] - 2023-03-25
 ### Changed
 - More modern results page.
