@@ -151,12 +151,16 @@ class CurtailWindow(Gtk.ApplicationWindow):
         add_filechooser_filters(dialog)
 
         def handle_response(dialog, result):
-            files = dialog.open_multiple_finish(result)
-            filenames = list()
-            for file in files:
-                filenames.append(file.get_uri())
-            final_filenames = self.handle_filenames(filenames)
-            self.compress_filenames(final_filenames)
+            try:
+                files = dialog.open_multiple_finish(result)
+            except GLib.Error as err:
+                print("Could not open files: %s", err.message)
+            else:
+                filenames = list()
+                for file in files:
+                    filenames.append(file.get_uri())
+                final_filenames = self.handle_filenames(filenames)
+                self.compress_filenames(final_filenames)
 
         dialog.open_multiple(self, None, handle_response)
 
