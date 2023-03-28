@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
-from gi.repository import Gtk, Gio, GObject
+from gi.repository import Gtk, Gio, GObject, GLib
 from shutil import copy2
 from pathlib import Path
 
@@ -60,17 +60,19 @@ class Compressor():
             message_dialog(self.win, _("An error has occured"), str(err))
 
     def compress_image(self):
+        result_item = ResultItem(self.full_name, self.filename,
+            self.new_filename, sizeof_fmt(self.size), 0)
+        self.win.results_model.append(result_item)
+
+        GLib.idle_add(self.command_start, result_item)
+
+    def command_start(self, result_item):
+        lossy = self._settings.get_boolean('lossy')
+        metadata = self._settings.get_boolean('metadata')
+        file_attributes = self._settings.get_boolean('file-attributes')
+
         file_type = get_file_type(self.filename)
         if file_type:
-            result_item = ResultItem(self.full_name, self.filename,
-                self.new_filename, sizeof_fmt(self.size), 0)
-            self.win.results_model.insert(0, result_item)
-            self.win.listbox.invalidate_headers()
-
-            lossy = self._settings.get_boolean('lossy')
-            metadata = self._settings.get_boolean('metadata')
-            file_attributes = self._settings.get_boolean('file-attributes')
-
             if file_type == 'png':
                 command = self.build_png_command(lossy, metadata, file_attributes)
             elif file_type == 'jpg':
