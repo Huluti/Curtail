@@ -58,6 +58,7 @@
         <property name="icon-name">image-x-generic-symbolic</property>
         <child>
           <object class="AdwPreferencesGroup">
+            <property name="title" translatable="no">PNG</property>
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">PNG Lossy Compression Level</property>
@@ -78,6 +79,30 @@
             </child>
             <child>
               <object class="AdwActionRow">
+                <property name="title" translatable="yes">PNG Lossless Compression Level</property>
+                <property name="subtitle" translatable="yes">The higher it is, the slower it is</property>
+                <property name="activatable-widget">spin_png_lossless_level</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_png_lossless_level">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment" id="png_lossless_adj">
+                        <property name="upper">7</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">10</property>
+                      </object>
+                    </property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="no">JPG</property>
+            <child>
+              <object class="AdwActionRow">
                 <property name="title" translatable="yes">JPG Lossy Compression Level</property>
                 <property name="activatable-widget">spin_jpg_lossy_level</property>
                 <child>
@@ -96,17 +121,10 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">WebP Lossy Compression Level</property>
-                <property name="activatable-widget">spin_webp_lossy_level</property>
+                <property name="title" translatable="yes">Progressive Encode JPG</property>
+                <property name="activatable-widget">toggle_jpg_progressive</property>
                 <child>
-                  <object class="GtkSpinButton" id="spin_webp_lossy_level">
-                    <property name="adjustment">
-                      <object class="GtkAdjustment" id="webp_lossy_adj">
-                        <property name="upper">100</property>
-                        <property name="step-increment">1</property>
-                        <property name="page-increment">10</property>
-                      </object>
-                    </property>
+                  <object class="GtkSwitch" id="toggle_jpg_progressive">
                     <property name="valign">center</property>
                   </object>
                 </child>
@@ -114,25 +132,18 @@
             </child>
           </object>
         </child>
-      </object>
-    </child>
-    <child>
-      <object class="AdwPreferencesPage">
-        <property name="name">advanced</property>
-        <property name="title" translatable="yes">Advanced</property>
-        <property name="icon-name">dialog-warning-symbolic</property>
         <child>
           <object class="AdwPreferencesGroup">
+            <property name="title" translatable="no">WebP</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">PNG Lossless Compression Level</property>
-                <property name="subtitle" translatable="yes">The higher it is, the slower it is</property>
-                <property name="activatable-widget">spin_png_lossless_level</property>
+                <property name="title" translatable="yes">WebP Lossy Compression Level</property>
+                <property name="activatable-widget">spin_webp_lossy_level</property>
                 <child>
-                  <object class="GtkSpinButton" id="spin_png_lossless_level">
+                  <object class="GtkSpinButton" id="spin_webp_lossy_level">
                     <property name="adjustment">
-                      <object class="GtkAdjustment" id="png_lossless_adj">
-                        <property name="upper">7</property>
+                      <object class="GtkAdjustment" id="webp_lossy_adj">
+                        <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
                       </object>
@@ -156,17 +167,6 @@
                         <property name="page-increment">10</property>
                       </object>
                     </property>
-                    <property name="valign">center</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="AdwActionRow">
-                <property name="title" translatable="yes">Progressive Encode JPG</property>
-                <property name="activatable-widget">toggle_jpg_progressive</property>
-                <child>
-                  <object class="GtkSwitch" id="toggle_jpg_progressive">
                     <property name="valign">center</property>
                   </object>
                 </child>
