@@ -56,5 +56,10 @@
       <summary>Enable progressive encoding for jpegs</summary>
       <description>Optionally encode jpeg images progressively.</description>
     </key>
+	  <key type="i" name="compression-timeout">
+      <default>30</default>
+      <summary>Compression Timeout</summary>
+      <description>Compression timeout for each image.</description>
+    </key>
 	</schema>
 </schemalist>

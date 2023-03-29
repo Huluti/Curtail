@@ -47,6 +47,25 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Compression timeout</property>
+                <property name="subtitle" translatable="yes">For each image</property>
+                <property name="activatable-widget">spin_timeout</property>
+                <child>
+                  <object class="GtkSpinButton" id="spin_timeout">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment" id="timeout">
+                        <property name="upper">100</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">10</property>
+                      </object>
+                    </property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>"
+              </object>
+            </child>
           </object>
         </child>
       </object>

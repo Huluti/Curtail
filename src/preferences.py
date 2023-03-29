@@ -32,6 +32,7 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
     toggle_file_attributes = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
     entry_suffix = Gtk.Template.Child()
+    spin_timeout = Gtk.Template.Child()
     spin_png_lossy_level = Gtk.Template.Child()
     spin_png_lossless_level = Gtk.Template.Child()
     spin_webp_lossless_level = Gtk.Template.Child()
@@ -72,6 +73,12 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         self.enable_suffix_section()
         self.entry_suffix.set_text(self._settings.get_string('suffix'))
         self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
+
+        # Compression Timeout
+        self.spin_timeout.set_value(
+            self._settings.get_int('compression-timeout'))
+        self.spin_timeout.connect('value-changed',
+            self.on_int_changed, 'compression-timeout')
 
         # PNG Lossy Compression Level
         self.spin_png_lossy_level.set_value(

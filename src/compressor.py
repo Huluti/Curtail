@@ -47,21 +47,29 @@ class Compressor():
         self.size = self.file_data.stat().st_size
 
     def run_command(self, command, result_item):
+        compression_timeout = self._settings.get_int('compression-timeout')
         try:
             subprocess.call(command,
                                  stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE,
                                  stdin=subprocess.PIPE,
                                  shell=True,
-                                 timeout=20)
+                                 timeout=compression_timeout)
             self.command_finished(result_item)
-
+        except subprocess.TimeoutExpired:
+            message = _("Compression has reached the configured timeout of {} seconds. \
+You can change it in Preferences.").format(compression_timeout)
+            message_dialog(self.win, _("Timeout expired"), message)
+            result_item.running = False
+            result_item.error = True
         except Exception as err:
             message_dialog(self.win, _("An error has occured"), str(err))
+            result_item.running = False
+            result_item.error = True
 
     def compress_image(self):
         result_item = ResultItem(self.full_name, self.filename,
-            self.new_filename, sizeof_fmt(self.size), 0)
+            self.new_filename, sizeof_fmt(self.size), 0, True, False)
         self.win.results_model.append(result_item)
 
         GLib.idle_add(self.command_start, result_item)
@@ -85,6 +93,7 @@ class Compressor():
         new_size = self.new_file_data.stat().st_size
         result_item.size = result_item.size + ' -> ' + sizeof_fmt(new_size)
         result_item.savings = str(round(100 - (new_size * 100 / self.size), 2)) + '%'
+        result_item.running = False
 
     def build_png_command(self, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'

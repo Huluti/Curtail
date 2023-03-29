@@ -26,11 +26,11 @@ from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, get_file_type, \
     create_image_from_file
 
-UI_PATH = '/com/github/huluti/Curtail/ui/'
+CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
-@Gtk.Template(resource_path=UI_PATH + 'window.ui')
+@Gtk.Template(resource_path=CURTAIL_PATH + 'ui/window.ui')
 class CurtailWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'CurtailWindow'
 
@@ -65,8 +65,12 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_results(False)
 
     def build_ui(self):
+        # Set icons
+        icon_theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
+        icon_theme.add_resource_path(CURTAIL_PATH + 'icons/')
+
         # Headerbar
-        builder = Gtk.Builder.new_from_resource(UI_PATH + 'menu.ui')
+        builder = Gtk.Builder.new_from_resource(CURTAIL_PATH + 'ui/menu.ui')
         window_menu = builder.get_object('window-menu')
         self.menu_button.set_menu_model(window_menu)
 
@@ -130,9 +134,22 @@ class CurtailWindow(Gtk.ApplicationWindow):
         savings_widget.add_css_class('success')
         row.add_suffix(savings_widget)
 
+        spinner = Gtk.Spinner()
+        spinner.start()
+        row.add_suffix(spinner)
+
+        error_image = Gtk.Image.new_from_icon_name('x-circular-symbolic')
+        error_image.set_visible(False)
+        error_image.add_css_class('error')
+        row.add_suffix(error_image)
+
         result_item.bind_property('savings', savings_widget, 'label',
             GObject.BindingFlags.DEFAULT)
         result_item.bind_property('size', row, 'subtitle',
+            GObject.BindingFlags.DEFAULT)
+        result_item.bind_property('running', spinner, 'visible',
+            GObject.BindingFlags.DEFAULT)
+        result_item.bind_property('error', error_image, 'visible',
             GObject.BindingFlags.DEFAULT)
 
         return row
