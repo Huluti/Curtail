@@ -7,7 +7,7 @@ project('curtail',
 i18n = import('i18n')
 gnome = import('gnome')
 
-
+application_id = 'com.github.huluti.Curtail'
 
 subdir('data')
 subdir('src')
