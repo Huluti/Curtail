@@ -37,10 +37,22 @@ class Compressor():
         self.c_update_result_item = c_update_result_item
         self.c_enable_compression = c_enable_compression
 
+        # Options
+        self.do_new_file = self._settings.get_boolean('new-file')
         self.compression_timeout = self._settings.get_int('compression-timeout')
         self.lossy = self._settings.get_boolean('lossy')
         self.metadata = self._settings.get_boolean('metadata')
         self.file_attributes = self._settings.get_boolean('file-attributes')
+
+        # Format options
+        self.png_lossy_level = self._settings.get_int('png-lossy-level')
+        self.png_lossless_level = self._settings.get_int('png-lossless-level')
+
+        self.jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
+        self.do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
+
+        self.webp_lossless_level = self._settings.get_int('webp-lossless-level')
+        self.webp_lossy_level = self._settings.get_int('webp-lossy-level')
 
     def compress_images(self):
         self.thread = threading.Thread(target=self._compress_images)
@@ -51,11 +63,11 @@ class Compressor():
             file_type = get_file_type(result_item.filename)
             if file_type:
                 if file_type == 'png':
-                    command = self.build_png_command(result_item, self.lossy, self.metadata, self.file_attributes)
+                    command = self.build_png_command(result_item)
                 elif file_type == 'jpg':
-                    command = self.build_jpg_command(result_item, self.lossy, self.metadata, self.file_attributes)
+                    command = self.build_jpg_command(result_item)
                 elif file_type == 'webp':
-                    command = self.build_webp_command(result_item, self.lossy, self.metadata)
+                    command = self.build_webp_command(result_item)
                 self.run_command(command, result_item)  # compress image
         GLib.idle_add(self.c_enable_compression, result_item)
 
@@ -85,87 +97,78 @@ class Compressor():
 
         GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
-    def build_png_command(self, result_item, lossy, metadata, file_attributes):
+    def build_png_command(self, result_item):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
         optipng = 'optipng -clobber -o{} "{}" -out "{}"'
 
-        if not metadata:
+        if not self.metadata:
             pngquant += ' --strip'
             optipng += ' -strip all'
 
-        if file_attributes:
+        if self.file_attributes:
             optipng += ' -preserve'
 
-        png_lossy_level = self._settings.get_int('png-lossy-level')
-        png_lossless_level = self._settings.get_int('png-lossless-level')
-
-        if lossy:  # lossy compression
-            command = pngquant.format(png_lossy_level, result_item.filename,
+        if self.lossy:  # lossy compression
+            command = pngquant.format(self.png_lossy_level, result_item.filename,
                                       result_item.new_filename)
             command += ' && '
-            command += optipng.format(png_lossless_level, result_item.new_filename,
+            command += optipng.format(self.png_lossless_level, result_item.new_filename,
                                       result_item.new_filename)
         else: # lossless compression
-            command = optipng.format(png_lossless_level, result_item.filename,
+            command = optipng.format(self.png_lossless_level, result_item.filename,
                                      result_item.new_filename)
         return command
 
-    def build_jpg_command(self, result_item, lossy, metadata, file_attributes):
-        do_new_file = self._settings.get_boolean('new-file')
-        do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
-
-        if do_new_file:
+    def build_jpg_command(self, result_item):
+        if self.do_new_file:
             jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
             jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
         else:
             jpegoptim = 'jpegoptim --max={} -o -f "{}"'
             jpegoptim2 = 'jpegoptim -o -f "{}"'
 
-        if do_jpg_progressive:
+        if self.do_jpg_progressive:
             jpegoptim += ' --all-progressive'
             jpegoptim2 += ' --all-progressive'
 
-        if not metadata:
+        if not self.metadata:
             jpegoptim += ' --strip-all'
             jpegoptim2 += ' --strip-all'
 
-        if file_attributes:
+        if self.file_attributes:
             jpegoptim += ' --preserve --preserve-perms'
             jpegoptim2 += ' --preserve --preserve-perms'
 
-        jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
-        if lossy:  # lossy compression
-            if do_new_file:
-                command = jpegoptim.format(jpg_lossy_level, result_item.filename,
+        if self.lossy:  # lossy compression
+            if self.do_new_file:
+                command = jpegoptim.format(self.jpg_lossy_level, result_item.filename,
                                            result_item.new_filename)
             else:
-                command = jpegoptim.format(jpg_lossy_level, result_item.filename)
+                command = jpegoptim.format(self.jpg_lossy_level, result_item.filename)
         else:  # lossless compression
-            if do_new_file:
+            if self.do_new_file:
                 command = jpegoptim2.format(result_item.filename, result_item.new_filename)
             else:
                 command = jpegoptim2.format(result_item.filename)
         return command
 
-    def build_webp_command(self, result_item, lossy, metadata):
-        command = "cwebp " + result_item.filename
+    def build_webp_command(self, result_item):
+        command = 'cwebp ' + result_item.filename
 
         # cwebp doesn't preserve any metadata by default
-        if metadata:
-            command += " -metadata all"
+        if self.metadata:
+            command += ' -metadata all'
 
-        if lossy:
-            quality = self._settings.get_int('webp-lossy-level')
+        if self.lossy:
+            quality = self.webp_lossy_level
         else:
-            command += " -lossless"
+            command += ' -lossless'
             quality = 100   # maximum cpu power for lossless
 
-        compression_level = self._settings.get_int('webp-lossless-level')
-
         # multithreaded, (lossless) compression mode, quality, output
-        command += " -mt -m {}".format(compression_level)
-        command += " -q {}".format(quality)
-        command += " -o {}".format(result_item.new_filename)
+        command += ' -mt -m {}'.format(self.webp_lossless_level)
+        command += ' -q {}'.format(quality)
+        command += ' -o {}'.format(result_item.new_filename)
 
         return command
 

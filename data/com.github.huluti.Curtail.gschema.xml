@@ -36,11 +36,6 @@
       <summary>PNG Lossless Compression Level</summary>
       <description>Lossless compression level to use for PNG images.</description>
 	  </key>
-	  <key type="i" name="webp-lossless-level">
-      <default>4</default>
-      <summary>WebP Lossless Compression Level</summary>
-      <description>Lossless compression level to use for WebP images.</description>
-    </key>
 	  <key type="i" name="jpg-lossy-level">
       <default>90</default>
       <summary>JPG Lossy Compression Level</summary>
@@ -50,6 +45,11 @@
       <default>70</default>
       <summary>WebP Lossy Compression Level</summary>
       <description>Lossy compression level to use for WebP images.</description>
+    </key>
+	  <key type="i" name="webp-lossless-level">
+      <default>4</default>
+      <summary>WebP Lossless Compression Level</summary>
+      <description>Lossless compression level to use for WebP images.</description>
     </key>
 	  <key type="b" name="jpg-progressive">
       <default>false</default>
