@@ -107,7 +107,7 @@
                   <object class="GtkSpinButton" id="spin_png_lossless_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="png_lossless_adj">
-                        <property name="lower">1</property>
+                        <property name="lower">0</property>
                         <property name="upper">2</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
