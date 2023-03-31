@@ -1,16 +1,21 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.6.0] - DEV
+## [1.6.0] - 2023-03-31
 
 ### Added
 - Configurable compression timeout.
+- Compress images in an other thread.
 
 ### Changed
 - Better workflow for headerbar.
 - Move saving state in the subtitle.
+- Show errors on each line and not in modals anymore.
 - Simplify preferences.
 - Update translations.
+
+### Fixed
+- Fix compression level ranges in UI.
 
 ## [1.5.0] - 2023-03-25
 ### Changed
