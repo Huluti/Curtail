@@ -26,8 +26,10 @@ import locale
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
-locale.bindtextdomain('curtail', localedir)
-
+try:
+	locale.bindtextdomain('curtail', localedir)
+except:
+	pass
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 gettext.install('curtail', localedir)
