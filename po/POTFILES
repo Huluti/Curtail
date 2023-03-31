@@ -1,10 +1,10 @@
 data/com.github.huluti.Curtail.appdata.xml.in
 data/com.github.huluti.Curtail.desktop.in
 data/com.github.huluti.Curtail.gschema.xml
-src/ui/help_overlay.ui
-src/ui/preferences.ui
-src/ui/menu.ui
-src/ui/window.ui
+data/ui/help_overlay.ui
+data/ui/preferences.ui
+data/ui/menu.ui
+data/ui/window.ui
 src/compressor.py
 src/main.py
 src/preferences.py
