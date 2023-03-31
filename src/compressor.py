@@ -69,7 +69,7 @@ class Compressor():
                 elif file_type == 'webp':
                     command = self.build_webp_command(result_item)
                 self.run_command(command, result_item)  # compress image
-        GLib.idle_add(self.c_enable_compression, result_item)
+        GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
         error = False
