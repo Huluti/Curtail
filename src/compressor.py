@@ -21,7 +21,6 @@ from gi.repository import Gtk, GLib, Gio, GObject
 from shutil import copy2
 from pathlib import Path
 
-from .resultitem import ResultItem
 from .tools import message_dialog, get_file_type
 
 
@@ -31,12 +30,10 @@ SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 class Compressor():
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
-    def __init__(self, files, c_update_results_model, c_update_result_item,
-        c_enable_compression):
+    def __init__(self, result_items, c_update_result_item, c_enable_compression):
         super().__init__()
 
-        self.files = files
-        self.c_update_results_model = c_update_results_model
+        self.result_items = result_items
         self.c_update_result_item = c_update_result_item
         self.c_enable_compression = c_enable_compression
 
@@ -46,27 +43,11 @@ class Compressor():
         self.file_attributes = self._settings.get_boolean('file-attributes')
 
     def compress_images(self):
-        result_items = []
-        for file in self.files:
-            file_data = Path(file['filename'])
-            full_name = file_data.name
-            size = file_data.stat().st_size
-
-            result_item = ResultItem(
-                full_name,
-                file['filename'],
-                file['new_filename'],
-                size
-            )
-
-            result_items.append(result_item)
-            GLib.idle_add(self.c_update_results_model, result_item)  # update ui
-
-        self.thread = threading.Thread(target=self._compress_images, args=(result_items,))
+        self.thread = threading.Thread(target=self._compress_images)
         self.thread.start()
 
-    def _compress_images(self, result_items):
-        for result_item in result_items:
+    def _compress_images(self):
+        for result_item in self.result_items:
             file_type = get_file_type(result_item.filename)
             if file_type:
                 if file_type == 'png':
@@ -76,7 +57,7 @@ class Compressor():
                 elif file_type == 'webp':
                     command = self.build_webp_command(result_item, self.lossy, self.metadata)
                 self.run_command(command, result_item)  # compress image
-        GLib.idle_add(self.c_enable_compression, result_item)  # update ui
+        GLib.idle_add(self.c_enable_compression, result_item)
 
     def run_command(self, command, result_item):
         error = False
@@ -102,7 +83,7 @@ class Compressor():
             new_file_data = Path(result_item.new_filename)
             result_item.new_size = new_file_data.stat().st_size
 
-        GLib.idle_add(self.c_update_result_item, result_item, error, error_message)  # update ui
+        GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item, lossy, metadata, file_attributes):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'

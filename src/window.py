@@ -117,18 +117,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.homebox.set_visible(True)
             self.clear_button_headerbar.set_visible(False)
 
-    def go_end_scrolledwindow(self):
-        adjustment = self.scrolled_window.get_vadjustment()
-        adjustment.set_value(adjustment.get_upper() - adjustment.get_page_size())
-        self.scrolled_window.set_vadjustment(adjustment)
-
     def clear_results(self, *args):
         self.show_results(False)
         self.results_model.remove_all()
-
-    def update_results_model(self, result_item):
-        self.results_model.append(result_item)
-        self.go_end_scrolledwindow()
 
     def update_result_item(self, result_item, error, error_message):
         result_item.running = False
@@ -310,8 +301,23 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.show_results(True)
         self.enable_compression(False)
 
-        compressor = Compressor(files, self.update_results_model,
-            self.update_result_item, self.enable_compression)
+        result_items = []
+        for file in files:
+            file_data = Path(file['filename'])
+            full_name = file_data.name
+            size = file_data.stat().st_size
+
+            result_item = ResultItem(
+                full_name,
+                file['filename'],
+                file['new_filename'],
+                size
+            )
+
+            result_items.append(result_item)
+            self.results_model.append(result_item)
+
+        compressor = Compressor(result_items, self.update_result_item, self.enable_compression)
         GLib.idle_add(compressor.compress_images)
 
     def on_lossy_changed(self, switch, state):
