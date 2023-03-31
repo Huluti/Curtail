@@ -24,7 +24,7 @@ from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import message_dialog, add_filechooser_filters, get_file_type, \
-    create_image_from_file
+    create_image_from_file, sizeof_fmt
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -88,7 +88,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         # Results
         self.listbox.bind_model(self.results_model, self.create_result_row)
-        self.adjustment = self.scrolled_window.get_vadjustment()
 
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
@@ -104,6 +103,10 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
 
+    def enable_compression(self, enable):
+        self.filechooser_button_headerbar.set_sensitive(enable)
+        self.clear_button_headerbar.set_sensitive(enable)
+
     def show_results(self, show):
         if show:
             self.homebox.set_visible(False)
@@ -115,17 +118,32 @@ class CurtailWindow(Gtk.ApplicationWindow):
             self.clear_button_headerbar.set_visible(False)
 
     def go_end_scrolledwindow(self):
-        self.adjustment.set_value(self.adjustment.get_upper())
+        adjustment = self.scrolled_window.get_vadjustment()
+        adjustment.set_value(adjustment.get_upper() - adjustment.get_page_size())
+        self.scrolled_window.set_vadjustment(adjustment)
 
     def clear_results(self, *args):
         self.show_results(False)
         self.results_model.remove_all()
 
+    def update_results_model(self, result_item):
+        self.results_model.append(result_item)
+        self.go_end_scrolledwindow()
+
+    def update_result_item(self, result_item, error, error_message):
+        result_item.running = False
+        result_item.error = error
+        if not error:
+            result_item.savings = str(round(100 - (result_item.new_size * 100 / result_item.size), 2)) + '%'
+            result_item.subtitle_label += ' -> ' + sizeof_fmt(result_item.new_size)
+        else:
+            result_item.subtitle_label = error_message
+
     def create_result_row(self, result_item):
         row = Adw.ActionRow()
         row.set_title(result_item.name)
         row.set_tooltip_text(result_item.new_filename)
-        row.set_subtitle(result_item.size)
+        row.set_subtitle(result_item.subtitle_label)
 
         image = create_image_from_file(result_item.filename, 60, 60)
         row.add_prefix(image)
@@ -145,7 +163,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         result_item.bind_property('savings', savings_widget, 'label',
             GObject.BindingFlags.DEFAULT)
-        result_item.bind_property('size', row, 'subtitle',
+        result_item.bind_property('subtitle_label', row, 'subtitle',
             GObject.BindingFlags.DEFAULT)
         result_item.bind_property('running', spinner, 'visible',
             GObject.BindingFlags.DEFAULT)
@@ -290,13 +308,11 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
     def compress_images(self, files):
         self.show_results(True)
+        self.enable_compression(False)
 
-        for file in files:
-            # Call compressor
-            compressor = Compressor(self, file['filename'],
-                file['new_filename'])
-            compressor.compress_image()
-            self.go_end_scrolledwindow()
+        compressor = Compressor(files, self.update_results_model,
+            self.update_result_item, self.enable_compression)
+        GLib.idle_add(compressor.compress_images)
 
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())
