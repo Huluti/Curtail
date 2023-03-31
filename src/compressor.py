@@ -17,11 +17,11 @@
 
 import threading
 import subprocess
-from gi.repository import Gtk, GLib, Gio, GObject
+from gi.repository import GLib, Gio
 from shutil import copy2
 from pathlib import Path
 
-from .tools import message_dialog, get_file_type
+from .tools import get_file_type
 
 
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
