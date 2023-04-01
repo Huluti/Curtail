@@ -18,7 +18,6 @@
 import threading
 import subprocess
 from gi.repository import GLib, Gio
-from shutil import copy2
 from pathlib import Path
 
 from .tools import get_file_type

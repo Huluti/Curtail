@@ -16,7 +16,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from gi.repository import Adw, Gtk, GLib, Gio, GdkPixbuf
-from os import path
 
 
 def sizeof_fmt(num):

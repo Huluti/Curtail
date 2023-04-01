@@ -17,8 +17,6 @@
 
 from gi.repository import Gtk, Gio, Adw
 
-from .tools import message_dialog
-
 
 UI_PATH = '/com/github/huluti/Curtail/ui/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'

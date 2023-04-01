@@ -15,7 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import subprocess
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 from urllib.parse import unquote
 from pathlib import Path
@@ -230,13 +229,13 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         path = Path(filename)
 
-        if Path.is_dir(path):
+        if path.is_dir():
             for new_filename in path.rglob("*"):
                 new_path = Path(new_filename)
-                if Path.is_file(new_path):
+                if new_path.is_file():
                     if self.check_extension(new_path):
                         verified_filenames.append(new_filename)
-        elif Path.is_file(path):
+        elif path.is_file():
             size = path.stat().st_size
             if not self.check_extension(filename) or size <= 0:
                 message_dialog(self, _("Format not supported"),
