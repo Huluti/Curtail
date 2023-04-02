@@ -15,6 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import re
+import platform
+import subprocess
 from gi.repository import Gtk, GLib, Gio, GdkPixbuf
 
 
@@ -90,3 +93,67 @@ def create_image_from_file(filename, max_width, max_height):
     image = Gtk.Image.new_from_pixbuf(scaled_pixbuf)
 
     return image
+
+
+def debug_infos():
+    python_version = platform.python_version()
+
+    gtk_version = '{}.{}.{}'.format(Gtk.get_major_version(),
+        Gtk.get_minor_version(), Gtk.get_micro_version())
+
+     # Jpegoptim
+    try:
+        jpegoptim = subprocess.check_output("jpegoptim --version", shell=True)
+        jpegoptim = extract_version(jpegoptim.decode('utf-8'))
+    except Exception as err:
+        jpegoptim = _('Version not found')
+
+    # OptiPNG
+    try:
+        optipng = subprocess.check_output("optipng -version", shell=True)
+        optipng = extract_version(optipng.decode('utf-8'))
+    except Exception as err:
+        pass
+        optipng = _('Version not found')
+
+    # pngquant
+    try:
+        pngquant = subprocess.check_output("pngquant --version", shell=True)
+        pngquant = extract_version(pngquant.decode('utf-8'))
+    except Exception as err:
+        pngquant = _('Version not found')
+
+    # Libwebp
+    try:
+        libwebp = subprocess.check_output("cwebp -version", shell=True)
+        libwebp = extract_version(libwebp.decode('utf-8'))
+    except Exception as err:
+        libwebp = _('Version not found')
+
+    debug = '''Python: {}\n
+Gtk: {}\n
+Jpegoptim: {}\n
+OptiPNG: {}\n
+pngquant: {}\n
+Libwep: {}\n'''.format(
+    python_version,
+    gtk_version,
+    jpegoptim,
+    optipng,
+    pngquant,
+    libwebp
+)
+
+    return debug
+
+def extract_version(text):
+    # regular expression to match the version string,
+    # consists of three groups of one or more digits separated by dots
+    version_regex = r"(\d+\.\d+\.\d+)"
+
+    match = re.search(version_regex, text)
+    if match:
+        version_string = match.group(1) # extract the version string from the match object
+        return version_string
+    else:
+        return _('Version not found')

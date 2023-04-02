@@ -23,7 +23,7 @@ from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import add_filechooser_filters, get_file_type, \
-    create_image_from_file, sizeof_fmt
+    create_image_from_file, sizeof_fmt, debug_infos
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -310,7 +310,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
                     copyright='© Hugo Posnic'
                 )
         about.add_credit_section(
-            _("Contributors"),
+            _('Contributors'),
             [
                 'Steven Teskey',
                 'Andrey Kozlovskiy',
@@ -320,6 +320,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 'Maximiliano'
             ]
         )
+        about.set_debug_info(debug_infos())
         about.present()
 
     def on_quit(self, *args):
