@@ -3,7 +3,6 @@
   <template class="CurtailWindow" parent="GtkApplicationWindow">
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
-    <property name="default-height">350</property>
     <child>
       <object class="GtkBox" id="mainbox">
         <property name="margin-start">10</property>
@@ -12,74 +11,57 @@
         <property name="margin-bottom">10</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkBox" id="homebox">
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="hexpand">true</property>
+          <object class="AdwStatusPage" id="homebox">
             <property name="vexpand">true</property>
-            <property name="orientation">vertical</property>
-            <property name="spacing">10</property>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Compress your images</property>
-                <property name="margin-top">20</property>
-                <property name="margin-bottom">20</property>
-                <style>
-                  <class name="title-1"/>
-                </style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Drag and drop your images here…</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">or</property>
-                <attributes>
-                  <attribute name="style" value="italic"></attribute>
-                </attributes>
-              </object>
-            </child>
-            <child>
-              <object class="GtkButton" id="filechooser_button">
-                <property name="label" translatable="yes">Browse Files</property>
-                <property name="action-name">win.select-file</property>
-                <property name="margin-bottom">20</property>
-                <style>
-                  <class name="suggested-action"/>
-                  <class name="pill"/>
-                </style>
-              </object>
-            </child>
+            <property name="icon-name">com.github.huluti.Curtail</property>
+            <property name="title" translatable="no">Curtail</property>
+            <property name="description" translatable="yes">Drag and drop your images here…</property>
             <child>
               <object class="GtkBox">
-                <property name="margin-top">10</property>
-                <property name="margin-bottom">20</property>
-                <property name="spacing">10</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
+                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="halign">end</property>
-                    <property name="label" translatable="yes">Lossless</property>
+                  <object class="GtkButton">
+                    <property name="label" translatable="yes">_Browse Files</property>
+                    <property name="halign">center</property>
+                    <property name="action-name">win.select-file</property>
+                    <property name="margin-bottom">40</property>
+                    <property name="use-underline">1</property>
+                    <style>
+                      <class name="suggested-action"/>
+                      <class name="pill"/>
+                    </style>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="toggle_lossy">
+                  <object class="GtkBox">
+                    <property name="spacing">10</property>
                     <property name="halign">center</property>
                     <property name="valign">center</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label" translatable="yes">Lossy</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="halign">end</property>
+                        <property name="label" translatable="yes">Lossless</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSwitch" id="toggle_lossy">
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Lossy</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
             </child>
+            <style>
+              <class name="icon-dropshadow"/>
+            </style>
           </object>
         </child>
         <child>

@@ -49,7 +49,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
     resultbox = Gtk.Template.Child()
     scrolled_window = Gtk.Template.Child()
     listbox = Gtk.Template.Child()
-    filechooser_button = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
 
     results_model = Gio.ListStore.new(ResultItem)
