@@ -17,6 +17,7 @@
 
 import threading
 import subprocess
+import logging
 from gi.repository import GLib, Gio
 from pathlib import Path
 
@@ -80,11 +81,13 @@ class Compressor():
                                  stdin=subprocess.PIPE,
                                  shell=True,
                                  timeout=self.compression_timeout)
-        except subprocess.TimeoutExpired:
+        except subprocess.TimeoutExpired as err:
+            logging.error(str(err))
             error_message = _("Compression has reached the configured timeout of {} seconds.").format(self.compression_timeout)
             error = True
         except Exception as err:
-            error_message = _("An unknown error has occured.")
+            logging.error(str(err))
+            error_message = _("An unknown error has occured")
             error = True
         finally:
             self.command_finished(result_item, error, error_message)

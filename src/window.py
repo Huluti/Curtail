@@ -22,7 +22,7 @@ from pathlib import Path
 from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
-from .tools import message_dialog, add_filechooser_filters, get_file_type, \
+from .tools import add_filechooser_filters, get_file_type, \
     create_image_from_file, sizeof_fmt
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
@@ -135,8 +135,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
         row.set_tooltip_text(result_item.new_filename)
         row.set_subtitle(result_item.subtitle_label)
 
-        image = create_image_from_file(result_item.filename, 60, 60)
-        row.add_prefix(image)
+        if len(result_item.new_filename) > 0:
+            image = create_image_from_file(result_item.filename, 60, 60)
+            row.add_prefix(image)
 
         savings_widget = Gtk.Label()
         savings_widget.add_css_class('success')
@@ -206,8 +207,15 @@ class CurtailWindow(Gtk.ApplicationWindow):
         # Clean filenames
         for filename in filenames:
             filename = self.clean_filename(filename)
-            verified_filenames = self.check_filename(filename)
-            final_filenames = final_filenames + verified_filenames
+
+            path = Path(filename)
+            if path.is_dir():
+                for new_filename in path.rglob("*"):
+                    new_filename = self.clean_filename(new_filename)
+                    final_filenames.append(new_filename)
+            else:
+                final_filenames.append(filename)
+
         return final_filenames
 
     def clean_filename(self, filename):
@@ -224,97 +232,51 @@ class CurtailWindow(Gtk.ApplicationWindow):
         else:
             return False
 
-    def check_filename(self, filename):
-        verified_filenames = []
-
-        path = Path(filename)
-
-        if path.is_dir():
-            for new_filename in path.rglob("*"):
-                new_path = Path(new_filename)
-                if new_path.is_file():
-                    if self.check_extension(new_path):
-                        verified_filenames.append(new_filename)
-        elif path.is_file():
-            size = path.stat().st_size
-            if not self.check_extension(filename) or size <= 0:
-                message_dialog(self, _("Format not supported"),
-                    _("The format of {} is not supported.").format(path.name))
-            else:
-                verified_filenames.append(filename)
-        else:
-            message_dialog(self, _("Path not valid"),
-                           _("{} doesn't exist.").format(filename))
-
-        return verified_filenames
-
-    def create_new_filename(self, filename):
-        path = Path(filename)
-
+    def create_new_filename(self, path):
         # Use new file or not
         if self._settings.get_boolean('new-file'):
             new_filename = '{}/{}{}{}'.format(path.parents[0],
                 path.stem, self._settings.get_string('suffix'),
                 path.suffix)
         else :
-            new_filename = filename
+            new_filename = str(path)
         return new_filename
 
     def compress_filenames(self, filenames):
-        # Do operations
-        files = []
-        needs_overwrite = False
+        result_items = []
         for filename in filenames:
-            new_filename = self.create_new_filename(filename)
-            files.append({'filename': filename, 'new_filename': new_filename})
+            error_message = False
+            path = Path(filename)
 
-            new_file_data = Path(new_filename)
-            if not needs_overwrite and new_file_data.is_file():  # verify if new file path exists
-                needs_overwrite = True
+            # Check file
+            if not path.is_file():
+                error_message = _("This file doesn't exist.").format(filename)
 
-        if (needs_overwrite):
-            dialog = Adw.MessageDialog.new(
-                self,
-                _('Some files already exists'),
-                _('If you continue, some files will be overwritten.')
-            )
-            dialog.add_response(Gtk.ResponseType.CANCEL.value_nick, _("_Cancel"))
-            dialog.add_response(Gtk.ResponseType.OK.value_nick, _("C_onfirm"))
-            dialog.set_response_appearance(
-                response=Gtk.ResponseType.OK.value_nick,
-                appearance=Adw.ResponseAppearance.DESTRUCTIVE
-            )
+            # Check format
+            size = path.stat().st_size
+            if not self.check_extension(filename) or size <= 0:
+                error_message = _("Format of this file is not supported.").format(path.name)
 
-            def handle_response(_dialog, response: Gtk.ResponseType):
-                if response == Gtk.ResponseType.OK.value_nick:
-                    self.compress_images(files)
+            if not error_message:
+                new_filename = self.create_new_filename(path)
+            else:
+                new_filename = ''
 
-                dialog.close()
+            result_item = ResultItem(path.name, filename, new_filename, size)
 
-            dialog.connect('response', handle_response)
-            dialog.present()
-        else:
-            self.compress_images(files)
+            if not error_message:
+                result_items.append(result_item)
 
-    def compress_images(self, files):
+            self.results_model.append(result_item)
+
+            if error_message:
+                GLib.idle_add(self.update_result_item, result_item, True, error_message)
+
+        self.compress_images(result_items)
+
+    def compress_images(self, result_items):
         self.show_results(True)
         self.enable_compression(False)
-
-        result_items = []
-        for file in files:
-            file_data = Path(file['filename'])
-            full_name = file_data.name
-            size = file_data.stat().st_size
-
-            result_item = ResultItem(
-                full_name,
-                file['filename'],
-                file['new_filename'],
-                size
-            )
-
-            result_items.append(result_item)
-            self.results_model.append(result_item)
 
         compressor = Compressor(result_items, self.update_result_item, self.enable_compression)
         GLib.idle_add(compressor.compress_images)

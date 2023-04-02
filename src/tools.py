@@ -22,21 +22,6 @@ def sizeof_fmt(num):
     return GLib.format_size(num)
 
 
-def message_dialog(parent, title, text):
-    """Simplify way to show a message in a dialog"""
-    dialog = Adw.MessageDialog.new(
-        parent,
-        title,
-        text
-    )
-    dialog.add_response(Gtk.ResponseType.OK.value_nick, _("_Ok"))
-    dialog.set_response_appearance(
-        response=Gtk.ResponseType.OK.value_nick,
-        appearance=Adw.ResponseAppearance.SUGGESTED
-    )
-    dialog.present()
-
-
 def add_filechooser_filters(dialog):
     all_images = Gtk.FileFilter()
     all_images.set_name(_("All images"))
