@@ -164,7 +164,6 @@ class CurtailWindow(Gtk.ApplicationWindow):
         return row
 
     def set_saving_subtitle(self):
-        label = ''
         if self._settings.get_boolean('new-file'):
             label = _("Images are saved with '{}' suffix.")\
                                  .format(self._settings.get_string('suffix'))

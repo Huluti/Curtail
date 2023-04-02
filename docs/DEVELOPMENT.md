@@ -8,9 +8,9 @@
 
 `poetry run pylint src`
 
-## Run pyflackes
+## Run pyflakes
 
-`poetry run pylint pyflackes`
+`poetry run pyflakes src`
 
 ## Run bandit
 
