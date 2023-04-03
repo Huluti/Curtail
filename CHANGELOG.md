@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - DEV
+
+### Added
+- New start screen with an AdwStatusPage.
+- Add debug information in about window.
+
+### Changed
+- Minor UI improvements.
+- Remove some remaining dialogs.
+- Bump deps.
+
 ## [1.6.0] - 2023-03-31
 
 ### Added
