@@ -135,7 +135,7 @@ Gtk: {}\n
 Jpegoptim: {}\n
 OptiPNG: {}\n
 pngquant: {}\n
-Libwep: {}\n'''.format(
+Libwebp: {}\n'''.format(
     python_version,
     gtk_version,
     jpegoptim,
