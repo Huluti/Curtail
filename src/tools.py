@@ -91,6 +91,10 @@ def create_image_from_file(filename, max_width, max_height):
         GdkPixbuf.InterpType.BILINEAR)
 
     image = Gtk.Image.new_from_pixbuf(scaled_pixbuf)
+    if new_width > new_height:
+        image.set_pixel_size(new_width)
+    else:
+        image.set_pixel_size(new_height)
 
     return image
 

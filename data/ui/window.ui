@@ -5,17 +5,13 @@
     <property name="default-width">650</property>
     <child>
       <object class="GtkBox" id="mainbox">
-        <property name="margin-start">10</property>
-        <property name="margin-end">10</property>
-        <property name="margin-top">10</property>
-        <property name="margin-bottom">10</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwStatusPage" id="homebox">
             <property name="vexpand">true</property>
             <property name="icon-name">com.github.huluti.Curtail</property>
             <property name="title" translatable="no">Curtail</property>
-            <property name="description" translatable="yes">Drag and drop your images here…</property>
+            <property name="description" translatable="yes">Drop images here to compress them</property>
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
@@ -74,8 +70,8 @@
                   <object class="AdwClamp">
                     <property name="margin-start">10</property>
                     <property name="margin-end">10</property>
-                    <property name="margin-top">10</property>
-                    <property name="margin-bottom">10</property>
+                    <property name="margin-top">20</property>
+                    <property name="margin-bottom">20</property>
                     <child>
                       <object class="GtkListBox" id="listbox">
                         <property name="hexpand">true</property>

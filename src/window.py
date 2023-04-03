@@ -135,7 +135,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         row.set_subtitle(result_item.subtitle_label)
 
         if len(result_item.new_filename) > 0:
-            image = create_image_from_file(result_item.filename, 60, 60)
+            image = create_image_from_file(result_item.filename, 48, 48)
             row.add_prefix(image)
 
         savings_widget = Gtk.Label()
