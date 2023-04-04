@@ -71,6 +71,7 @@ Curtail uses a number of open source projects to work properly:
 - [pngquant](https://pngquant.org)
 - [Jpegoptim](https://github.com/tjko/jpegoptim)
 - [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html)
+- [Scour](https://github.com/scour-project/scour)
 
 ## Donations
 
