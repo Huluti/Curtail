@@ -1,3 +1,16 @@
+curtail (1.7.0) focal; urgency=medium
+
+  * SVG support.
+  * Add a warning banner for overwrite mode.
+  * New start screen with an AdwStatusPage.
+  * Add debug information in about window.
+  * Switch from OptiPNG to Oxipng.
+  * Minor UI improvements.
+  * Remove some remaining dialogs.
+  * Bump deps.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Mon, 04 Apr 2023 23:33 +0200
+
 curtail (1.6.0) focal; urgency=medium
 
   * Configurable compression timeout.

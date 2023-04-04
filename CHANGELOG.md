@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.7.0] - DEV
+## [1.7.0] - 2023-04-04
 
 ### Added
 - SVG support.
