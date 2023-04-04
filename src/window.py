@@ -44,6 +44,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
     filechooser_button_headerbar = Gtk.Template.Child()
     clear_button_headerbar = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
+    warning_banner = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
     resultbox = Gtk.Template.Child()
@@ -74,6 +75,9 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         # Saving subtitle
         self.set_saving_subtitle()
+
+        # Warning banner
+        self.show_warning_banner()
 
         # Mainbox - drag&drop
         drop_target_main = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
@@ -162,13 +166,21 @@ class CurtailWindow(Gtk.ApplicationWindow):
 
         return row
 
-    def set_saving_subtitle(self):
-        if self._settings.get_boolean('new-file'):
-            label = _("Images are saved with '{}' suffix.")\
+    def set_saving_subtitle(self, new_file=None):
+        if new_file is None:
+            new_file = self._settings.get_boolean('new-file')
+        if new_file:
+            label = _("Safe mode with '{}' suffix")\
                                  .format(self._settings.get_string('suffix'))
         else:
-            label = _("Images are overwritten.")
+            label = _("Overwrite mode")
         self.window_title.set_subtitle(label)
+
+    def show_warning_banner(self, show=None):
+        if show is None:
+            show = not self._settings.get_boolean('new-file')
+
+        self.warning_banner.set_revealed(show)
 
     def on_select(self, *args):
         dialog = Gtk.FileDialog(title=_("Browse Files"))

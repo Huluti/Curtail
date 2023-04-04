@@ -69,7 +69,7 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
                                      'new-file')
 
         # Suffix
-        self.enable_suffix_section()
+        self.entry_suffix.set_sensitive(self._settings.get_boolean('new-file'))
         self.entry_suffix.set_text(self._settings.get_string('suffix'))
         self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
 
@@ -123,8 +123,10 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         self._settings.set_boolean(key, switch.get_active())
         # Additional actions
         if key == 'new-file':
-            self.parent.set_saving_subtitle()
-            self.enable_suffix_section()
+            new_file = self._settings.get_boolean('new-file')
+            self.parent.set_saving_subtitle(new_file)
+            self.parent.show_warning_banner(not new_file)
+            self.entry_suffix.set_sensitive(new_file)
 
     def on_string_changed(self, entry, key):
         self._settings.set_string(key, entry.get_text())
@@ -135,8 +137,3 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
 
     def on_int_changed(self, spin, key):
         self._settings.set_int(key, spin.get_value())
-
-    def enable_suffix_section(self):
-        boolean = self._settings.get_boolean('new-file')
-        self.entry_suffix.set_sensitive(boolean)
-

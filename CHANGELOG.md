@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - 🌟 SVG support.
+- Add a warning banner for overwrite mode.
 - New start screen with an AdwStatusPage.
 - Add debug information in about window.
 

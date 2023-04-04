@@ -11,7 +11,8 @@
           <object class="AdwPreferencesGroup">
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Save the compressed image into a new file</property>
+                <property name="title" translatable="yes">Safe Mode</property>
+                <property name="subtitle" translatable="yes">Save the compressed image into a new file</property>
                 <property name="activatable-widget">toggle_new_file</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_new_file">

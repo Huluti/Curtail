@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 22:47+0200\n"
+"POT-Creation-Date: 2023-04-04 23:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,7 +472,7 @@ msgid "Initial version"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:115
+#: data/ui/window.ui:122
 msgid "Curtail"
 msgstr ""
 
@@ -489,7 +489,7 @@ msgstr ""
 msgid "Save the compressed image into a new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:30
+#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
 msgid "Keep metadata"
 msgstr ""
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "This setting preserves metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:41
+#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:42
 msgid "Preserve file attributes if possible"
 msgstr ""
 
@@ -510,7 +510,7 @@ msgstr ""
 msgid "Use lossy mode to compress images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:25
+#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
 msgid "Suffix to append at end of new file"
 msgstr ""
 
@@ -518,7 +518,7 @@ msgstr ""
 msgid "Suffix to append at end of new file."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:31 data/ui/preferences.ui:84
+#: data/com.github.huluti.Curtail.gschema.xml:31 data/ui/preferences.ui:85
 msgid "PNG Lossy Compression Level"
 msgstr ""
 
@@ -526,7 +526,7 @@ msgstr ""
 msgid "Lossy compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 data/ui/preferences.ui:103
+#: data/com.github.huluti.Curtail.gschema.xml:36 data/ui/preferences.ui:104
 msgid "PNG Lossless Compression Level"
 msgstr ""
 
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 data/ui/preferences.ui:128
+#: data/com.github.huluti.Curtail.gschema.xml:41 data/ui/preferences.ui:129
 msgid "JPG Lossy Compression Level"
 msgstr ""
 
@@ -542,7 +542,7 @@ msgstr ""
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 data/ui/preferences.ui:163
+#: data/com.github.huluti.Curtail.gschema.xml:46 data/ui/preferences.ui:164
 msgid "WebP Lossy Compression Level"
 msgstr ""
 
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Lossy compression level to use for WebP images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 data/ui/preferences.ui:182
+#: data/com.github.huluti.Curtail.gschema.xml:51 data/ui/preferences.ui:183
 msgid "WebP Lossless Compression Level"
 msgstr ""
 
@@ -616,34 +616,38 @@ msgid "General"
 msgstr ""
 
 #: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr ""
+
+#: data/ui/preferences.ui:15
 msgid "Save the compressed image into a new file"
 msgstr ""
 
-#: data/ui/preferences.ui:52
+#: data/ui/preferences.ui:53
 msgid "Compression timeout"
 msgstr ""
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.ui:54
 msgid "For each image"
 msgstr ""
 
-#: data/ui/preferences.ui:77
+#: data/ui/preferences.ui:78
 msgid "Compression"
 msgstr ""
 
-#: data/ui/preferences.ui:104 data/ui/preferences.ui:183
+#: data/ui/preferences.ui:105 data/ui/preferences.ui:184
 msgid "The higher it is, the slower it is"
 msgstr ""
 
-#: data/ui/preferences.ui:147
+#: data/ui/preferences.ui:148
 msgid "Progressive Encode JPG"
 msgstr ""
 
-#: data/ui/preferences.ui:207
+#: data/ui/preferences.ui:208
 msgid "SVG Maximum Compression Level"
 msgstr ""
 
-#: data/ui/preferences.ui:208
+#: data/ui/preferences.ui:209
 msgid "Can be more destructive for the image"
 msgstr ""
 
@@ -655,31 +659,39 @@ msgstr ""
 msgid "About Curtail"
 msgstr ""
 
-#: data/ui/window.ui:14
+#: data/ui/window.ui:12
+msgid "_Change Mode"
+msgstr ""
+
+#: data/ui/window.ui:13
+msgid "Images will be overwritten, proceed carefully."
+msgstr ""
+
+#: data/ui/window.ui:21
 msgid "Drop images here to compress them"
 msgstr ""
 
-#: data/ui/window.ui:20
+#: data/ui/window.ui:27
 msgid "_Browse Files"
 msgstr ""
 
-#: data/ui/window.ui:39
+#: data/ui/window.ui:46
 msgid "Lossless"
 msgstr ""
 
-#: data/ui/window.ui:51
+#: data/ui/window.ui:58
 msgid "Lossy"
 msgstr ""
 
-#: data/ui/window.ui:101 src/window.py:174
+#: data/ui/window.ui:108 src/window.py:186
 msgid "Browse Files"
 msgstr ""
 
-#: data/ui/window.ui:108
+#: data/ui/window.ui:115
 msgid "Clear Results"
 msgstr ""
 
-#: data/ui/window.ui:122
+#: data/ui/window.ui:129
 msgid "Main Menu"
 msgstr ""
 
@@ -716,26 +728,26 @@ msgstr ""
 msgid "Version not found"
 msgstr ""
 
-#: src/window.py:167
-msgid "Images are saved with '{}' suffix."
+#: src/window.py:173
+msgid "Safe mode with '{}' suffix"
 msgstr ""
 
-#: src/window.py:170
-msgid "Images are overwritten."
+#: src/window.py:176
+msgid "Overwrite mode"
 msgstr ""
 
-#: src/window.py:251
+#: src/window.py:263
 msgid "This file doesn't exist."
 msgstr ""
 
-#: src/window.py:256
+#: src/window.py:268
 msgid "Format of this file is not supported."
 msgstr ""
 
-#: src/window.py:308
+#: src/window.py:320
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:312
+#: src/window.py:324
 msgid "Contributors"
 msgstr ""
