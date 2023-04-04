@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [1.7.0] - DEV
 
 ### Added
+- 🌟 SVG support.
 - New start screen with an AdwStatusPage.
 - Add debug information in about window.
 

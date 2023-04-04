@@ -49,10 +49,12 @@ class Compressor():
         self.png_lossless_level = self._settings.get_int('png-lossless-level')
 
         self.jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
-        self.do_jpg_progressive = self._settings.get_boolean('jpg-progressive')
+        self.jpg_progressive = self._settings.get_boolean('jpg-progressive')
 
         self.webp_lossless_level = self._settings.get_int('webp-lossless-level')
         self.webp_lossy_level = self._settings.get_int('webp-lossy-level')
+
+        self.svg_maximum_level = self._settings.get_boolean('svg-maximum-level')
 
     def compress_images(self):
         self.thread = threading.Thread(target=self._compress_images)
@@ -68,6 +70,8 @@ class Compressor():
                     command = self.build_jpg_command(result_item)
                 elif file_type == 'webp':
                     command = self.build_webp_command(result_item)
+                elif file_type == 'svg':
+                    command = self.build_svg_command(result_item)
                 self.run_command(command, result_item)  # compress image
         GLib.idle_add(self.c_enable_compression, True)
 
@@ -129,7 +133,7 @@ class Compressor():
             jpegoptim = 'jpegoptim --max={} -o -f "{}"'
             jpegoptim2 = 'jpegoptim -o -f "{}"'
 
-        if self.do_jpg_progressive:
+        if self.jpg_progressive:
             jpegoptim += ' --all-progressive'
             jpegoptim2 += ' --all-progressive'
 
@@ -171,6 +175,16 @@ class Compressor():
         command += ' -mt -m {}'.format(self.webp_lossless_level)
         command += ' -q {}'.format(quality)
         command += ' -o {}'.format(result_item.new_filename)
+
+        return command
+
+    def build_svg_command(self, result_item):
+        command = 'scour -i {} -o {}'.format(result_item.filename,
+            result_item.new_filename)
+
+        if self.svg_maximum_level:
+            command += ' --enable-viewboxing --enable-id-stripping'
+            command += ' --enable-comment-stripping --shorten-ids --indent=none'
 
         return command
 

@@ -69,6 +69,7 @@
                 }
             ]
         },
+        "python3-scour.json",
         {
             "name": "curtail",
             "builddir": true,

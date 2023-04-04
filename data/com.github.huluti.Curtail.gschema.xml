@@ -53,8 +53,13 @@
     </key>
 	  <key type="b" name="jpg-progressive">
       <default>false</default>
-      <summary>Enable progressive encoding for jpegs</summary>
+      <summary>Enable progressive encoding for JPEG images.</summary>
       <description>Optionally encode jpeg images progressively.</description>
+    </key>
+	  <key type="b" name="svg-maximum-level">
+      <default>false</default>
+      <summary>Enable maximum compression for SVG images.</summary>
+      <description>Optionally enable maximum cleaning of SVG images.</description>
     </key>
 	  <key type="i" name="compression-timeout">
       <default>30</default>

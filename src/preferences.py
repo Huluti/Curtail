@@ -37,6 +37,7 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
     spin_jpg_lossy_level = Gtk.Template.Child()
     spin_webp_lossy_level = Gtk.Template.Child()
     toggle_jpg_progressive = Gtk.Template.Child()
+    toggle_svg_maximum_level = Gtk.Template.Child()
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
@@ -112,6 +113,11 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         self.toggle_jpg_progressive.set_active(self._settings.get_boolean('jpg-progressive'))
         self.toggle_jpg_progressive.connect('notify::active', self.on_bool_changed,
                                             'jpg-progressive')
+
+        # Maxium SVG compression
+        self.toggle_svg_maximum_level.set_active(self._settings.get_boolean('svg-maximum-level'))
+        self.toggle_svg_maximum_level.connect('notify::active', self.on_bool_changed,
+                                            'svg-maximum-level')
 
     def on_bool_changed(self, switch, state, key):
         self._settings.set_boolean(key, switch.get_active())

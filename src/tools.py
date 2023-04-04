@@ -31,6 +31,7 @@ def add_filechooser_filters(dialog):
     all_images.add_mime_type('image/jpeg')
     all_images.add_mime_type('image/png')
     all_images.add_mime_type('image/webp')
+    all_images.add_mime_type('image/svg+xml')
 
     png_images = Gtk.FileFilter()
     png_images.set_name(_("PNG images"))
@@ -44,11 +45,16 @@ def add_filechooser_filters(dialog):
     webp_images.set_name(_("WebP images"))
     webp_images.add_mime_type('image/webp')
 
+    svg_images = Gtk.FileFilter()
+    svg_images.set_name(_("SVG images"))
+    svg_images.add_mime_type('image/svg+xml')
+
     file_filters = Gio.ListStore.new(Gtk.FileFilter)
     file_filters.append(all_images)
     file_filters.append(png_images)
     file_filters.append(jpeg_images)
     file_filters.append(webp_images)
+    file_filters.append(svg_images)
 
     dialog.set_filters(file_filters)
 
@@ -62,6 +68,8 @@ def get_file_type(filename):
             return 'png'
         elif content_type == 'image/webp':
             return 'webp'
+        elif content_type == 'image/svg+xml':
+            return 'svg'
         else:
             return None
     else:
@@ -109,42 +117,51 @@ def debug_infos():
     try:
         jpegoptim = subprocess.check_output(['jpegoptim', '--version'])
         jpegoptim = extract_version(jpegoptim.decode('utf-8'))
-    except Exception as err:
+    except Exception:
         jpegoptim = _('Version not found')
 
     # Oxipng
     try:
         oxipng = subprocess.check_output(['oxipng', '--version'])
         oxipng = extract_version(oxipng.decode('utf-8'))
-    except Exception as err:
+    except Exception:
         oxipng = _('Version not found')
 
     # pngquant
     try:
         pngquant = subprocess.check_output(['pngquant', '--version'])
         pngquant = extract_version(pngquant.decode('utf-8'))
-    except Exception as err:
+    except Exception:
         pngquant = _('Version not found')
 
     # Libwebp
     try:
         libwebp = subprocess.check_output(['cwebp', '-version'])
         libwebp = extract_version(libwebp.decode('utf-8'))
-    except Exception as err:
+    except Exception:
         libwebp = _('Version not found')
+
+    # Scour
+    try:
+        scour = subprocess.check_output(['scour', '--version'])
+        scour = extract_version(scour.decode('utf-8'))
+    except Exception:
+        scour = _('Version not found')
 
     debug = '''Python: {}\n
 Gtk: {}\n
 Jpegoptim: {}\n
 Oxipng: {}\n
 pngquant: {}\n
-Libwebp: {}\n'''.format(
+Libwebp: {}\n
+Scour: {}\n'''.format(
     python_version,
     gtk_version,
     jpegoptim,
     oxipng,
     pngquant,
-    libwebp
+    libwebp,
+    scour
 )
 
     return debug

@@ -64,7 +64,7 @@
                     </property>
                     <property name="valign">center</property>
                   </object>
-                </child>"
+                </child>
               </object>
             </child>
           </object>
@@ -192,6 +192,22 @@
                         <property name="page-increment">10</property>
                       </object>
                     </property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="no">SVG</property>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">SVG Maximum Compression Level</property>
+                <property name="subtitle" translatable="yes">Can be more destructive for the image</property>
+                <child>
+                  <object class="GtkSwitch" id="toggle_svg_maximum_level">
                     <property name="valign">center</property>
                   </object>
                 </child>

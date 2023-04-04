@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 17:17+0200\n"
+"POT-Creation-Date: 2023-04-04 22:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
-"PNG, JPEG and WebP file types."
+"PNG, JPEG, WebP and SVG file types."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:12
@@ -559,7 +559,7 @@ msgid "Lossless compression level to use for WebP images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
-msgid "Enable progressive encoding for jpegs"
+msgid "Enable progressive encoding for JPEG images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
@@ -567,10 +567,18 @@ msgid "Optionally encode jpeg images progressively."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Compression Timeout"
+msgid "Enable maximum compression for SVG images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Optionally enable maximum cleaning of SVG images."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Compression Timeout"
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Compression timeout for each image."
 msgstr ""
 
@@ -631,6 +639,14 @@ msgstr ""
 msgid "Progressive Encode JPG"
 msgstr ""
 
+#: data/ui/preferences.ui:207
+msgid "SVG Maximum Compression Level"
+msgstr ""
+
+#: data/ui/preferences.ui:208
+msgid "Can be more destructive for the image"
+msgstr ""
+
 #: data/ui/menu.ui:10
 msgid "Keyboard Shortcuts"
 msgstr ""
@@ -667,11 +683,11 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: src/compressor.py:86
+#: src/compressor.py:90
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr ""
 
-#: src/compressor.py:90
+#: src/compressor.py:94
 msgid "An unknown error has occured"
 msgstr ""
 
@@ -679,20 +695,24 @@ msgstr ""
 msgid "All images"
 msgstr ""
 
-#: src/tools.py:36
+#: src/tools.py:37
 msgid "PNG images"
 msgstr ""
 
-#: src/tools.py:40
+#: src/tools.py:41
 msgid "JPEG images"
 msgstr ""
 
-#: src/tools.py:44
+#: src/tools.py:45
 msgid "WebP images"
 msgstr ""
 
-#: src/tools.py:113 src/tools.py:121 src/tools.py:128 src/tools.py:135
-#: src/tools.py:163
+#: src/tools.py:49
+msgid "SVG images"
+msgstr ""
+
+#: src/tools.py:121 src/tools.py:128 src/tools.py:135 src/tools.py:142
+#: src/tools.py:149 src/tools.py:179
 msgid "Version not found"
 msgstr ""
 
