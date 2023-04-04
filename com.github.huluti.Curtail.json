@@ -3,6 +3,9 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command": "curtail",
     "finish-args": [
         "--share=ipc",
@@ -13,26 +16,37 @@
     ],
     "modules": [
         {
-            "name":"jpegoptim",
-            "sources":[{
-                "type": "archive",
-                "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.3.tar.gz",
-                "sha256": "2600d1c84cee714b69d88944c0b90f93ef3eac7010c96dadabf32ea90d67e33e"
-            }]
-        },
-        {
-            "name": "optipng",
-            "build-options": {
-                "config-opts": [
-                    "--with-system-libs"
-                ]
-            },
+            "name": "jpegoptim",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz",
-                    "sha256": "4f32f233cef870b3f95d3ad6428bfe4224ef34908f1b42b0badf858216654452"
+                    "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.3.tar.gz",
+                    "sha256": "2600d1c84cee714b69d88944c0b90f93ef3eac7010c96dadabf32ea90d67e33e"
                 }
+            ]
+        },
+        {
+            "name": "oxipng",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "install -Dm 755 target/release/oxipng -t /app/bin"
+            ],
+            "build-options": {
+				"append-path": "/usr/lib/sdk/rust-stable/bin",
+				"env": {
+				    "CARGO_HOME": "/run/build/oxipng/cargo"
+				}
+			},
+			"cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v8.0.0.tar.gz",
+                    "sha256": "ef96d6340e70900de0a38ace8f5f20878f6c256b18b0c59cd87f2b515437b87b"
+                },
+                "oxipng-sources.json"
             ]
         },
         {

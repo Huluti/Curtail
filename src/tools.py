@@ -107,29 +107,28 @@ def debug_infos():
 
      # Jpegoptim
     try:
-        jpegoptim = subprocess.check_output("jpegoptim --version", shell=True)
+        jpegoptim = subprocess.check_output(['jpegoptim', '--version'])
         jpegoptim = extract_version(jpegoptim.decode('utf-8'))
     except Exception as err:
         jpegoptim = _('Version not found')
 
-    # OptiPNG
+    # Oxipng
     try:
-        optipng = subprocess.check_output("optipng -version", shell=True)
-        optipng = extract_version(optipng.decode('utf-8'))
+        oxipng = subprocess.check_output(['oxipng', '--version'])
+        oxipng = extract_version(oxipng.decode('utf-8'))
     except Exception as err:
-        pass
-        optipng = _('Version not found')
+        oxipng = _('Version not found')
 
     # pngquant
     try:
-        pngquant = subprocess.check_output("pngquant --version", shell=True)
+        pngquant = subprocess.check_output(['pngquant', '--version'])
         pngquant = extract_version(pngquant.decode('utf-8'))
     except Exception as err:
         pngquant = _('Version not found')
 
     # Libwebp
     try:
-        libwebp = subprocess.check_output("cwebp -version", shell=True)
+        libwebp = subprocess.check_output(['cwebp', '-version'])
         libwebp = extract_version(libwebp.decode('utf-8'))
     except Exception as err:
         libwebp = _('Version not found')
@@ -137,13 +136,13 @@ def debug_infos():
     debug = '''Python: {}\n
 Gtk: {}\n
 Jpegoptim: {}\n
-OptiPNG: {}\n
+Oxipng: {}\n
 pngquant: {}\n
 Libwebp: {}\n'''.format(
     python_version,
     gtk_version,
     jpegoptim,
-    optipng,
+    oxipng,
     pngquant,
     libwebp
 )

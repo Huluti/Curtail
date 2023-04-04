@@ -101,23 +101,23 @@ class Compressor():
 
     def build_png_command(self, result_item):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
-        optipng = 'optipng -clobber -o{} "{}" -out "{}"'
+        oxipng = 'oxipng -o {} -i 1 "{}" --out "{}"'
 
         if not self.metadata:
             pngquant += ' --strip'
-            optipng += ' -strip all'
+            oxipng += ' --strip safe'
 
         if self.file_attributes:
-            optipng += ' -preserve'
+            oxipng += ' --preserve'
 
         if self.lossy:  # lossy compression
             command = pngquant.format(self.png_lossy_level, result_item.filename,
                                       result_item.new_filename)
             command += ' && '
-            command += optipng.format(self.png_lossless_level, result_item.new_filename,
+            command += oxipng.format(self.png_lossless_level, result_item.new_filename,
                                       result_item.new_filename)
         else: # lossless compression
-            command = optipng.format(self.png_lossless_level, result_item.filename,
+            command = oxipng.format(self.png_lossless_level, result_item.filename,
                                      result_item.new_filename)
         return command
 

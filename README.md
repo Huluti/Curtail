@@ -67,7 +67,7 @@ Curtail uses a number of open source projects to work properly:
 - [GTK 4](https://www.gtk.org)
 - [Libadwaita](https://gitlab.gnome.org/GNOME/libadwaita)
 - [Python 3](https://www.python.org)
-- [OptiPNG](http://optipng.sourceforge.net)
+- [Oxipng](https://github.com/shssoichiro/oxipng)
 - [pngquant](https://pngquant.org)
 - [Jpegoptim](https://github.com/tjko/jpegoptim)
 - [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html)
