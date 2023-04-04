@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Add debug information in about window.
 
 ### Changed
+- Switch from OptiPNG to Oxipng.
 - Minor UI improvements.
 - Remove some remaining dialogs.
 - Bump deps.
