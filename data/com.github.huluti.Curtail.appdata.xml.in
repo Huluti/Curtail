@@ -34,7 +34,7 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
-    <release version="1.7.0" date="2023-04-04">
+    <release version="1.7.0" date="2023-04-05">
       <description>
         <p>Here's the changelog of this version:</p>
         <ul>
@@ -46,6 +46,7 @@
           <li>Minor UI improvements</li>
           <li>Remove some remaining dialogs</li>
           <li>Bump deps</li>
+          <li>Fix handling of filenames with spaces for WEBP compressor</li>
         </ul>
       </description>
     </release>

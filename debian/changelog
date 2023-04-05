@@ -8,8 +8,9 @@ curtail (1.7.0) focal; urgency=medium
   * Minor UI improvements.
   * Remove some remaining dialogs.
   * Bump deps.
+  * Fix handling of filenames with spaces for WEBP compressor.
 
- -- Archisman Panigrahi <apandada1@gmail.com>  Mon, 04 Apr 2023 23:33 +0200
+ -- Archisman Panigrahi <apandada1@gmail.com>  Mon, 05 Apr 2023 13:18 +0200
 
 curtail (1.6.0) focal; urgency=medium
 

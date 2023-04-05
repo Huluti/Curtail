@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.7.0] - 2023-04-04
+## [1.7.0] - 2023-04-05
 
 ### Added
 - SVG support.
@@ -14,6 +14,9 @@ All notable changes to this project will be documented in this file.
 - Minor UI improvements.
 - Remove some remaining dialogs.
 - Bump deps.
+
+### Fixed
+- Fix handling of filenames with spaces for WEBP compressor.
 
 ## [1.6.0] - 2023-03-31
 
@@ -254,3 +257,4 @@ All notable changes to this project will be documented in this file.
 ## [0.1] - 2019-10-08
 ### Added
 - Initial version.
+
