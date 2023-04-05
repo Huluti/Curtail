@@ -79,10 +79,9 @@ class Compressor():
         error = False
         error_message = ''
         try:
-            subprocess.call(command,
-                             stdout=subprocess.PIPE,
-                             stderr=subprocess.PIPE,
-                             stdin=subprocess.PIPE,
+            output = subprocess.run(command,
+                             capture_output=True,
+                             check=True,
                              shell=True,
                              timeout=self.compression_timeout)
         except subprocess.TimeoutExpired as err:
@@ -99,7 +98,7 @@ class Compressor():
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
                 else:
-                    logging.error("Can't find the compressed file")
+                    logging.error(str(output))
                     error_message = _("Can't find the compressed file")
                     error = True
 
@@ -161,7 +160,7 @@ class Compressor():
         return command
 
     def build_webp_command(self, result_item):
-        command = 'cwebp ' + result_item.filename
+        command = 'cwebp "{}"'.format(result_item.filename)
 
         # cwebp doesn't preserve any metadata by default
         if self.metadata:
@@ -176,24 +175,24 @@ class Compressor():
         # multithreaded, (lossless) compression mode, quality, output
         command += ' -mt -m {}'.format(self.webp_lossless_level)
         command += ' -q {}'.format(quality)
-        command += ' -o {}'.format(result_item.new_filename)
+        command += ' -o "{}"'.format(result_item.new_filename)
 
         return command
 
     def build_svg_command(self, result_item):
         # workaround for https://github.com/scour-project/scour/issues/129
         temp_new_filename = result_item.new_filename
-        if result_item.filename == result_item.new_filename:
+        if not self.do_new_file:
             temp_new_filename = '{}.temp'.format(result_item.new_filename)
 
-        command = 'scour -i {} -o {}'.format(result_item.filename, temp_new_filename)
+        command = 'scour -i "{}" -o "{}"'.format(result_item.filename, temp_new_filename)
 
         if self.svg_maximum_level:
             command += ' --enable-viewboxing --enable-id-stripping'
             command += ' --enable-comment-stripping --shorten-ids --indent=none'
 
-        if result_item.filename == result_item.new_filename:
-            command += ' && mv {} {}'.format(temp_new_filename, result_item.new_filename)
+        if not self.do_new_file:
+            command += ' && mv "{}" "{}"'.format(temp_new_filename, result_item.new_filename)
 
         return command
 
