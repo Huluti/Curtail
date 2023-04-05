@@ -39,7 +39,6 @@
 				    "CARGO_HOME": "/run/build/oxipng/cargo"
 				}
 			},
-			"cleanup": [ "*" ],
             "sources": [
                 {
                     "type": "archive",
