@@ -80,28 +80,30 @@ class Compressor():
         error_message = ''
         try:
             subprocess.call(command,
-                                 stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE,
-                                 stdin=subprocess.PIPE,
-                                 shell=True,
-                                 timeout=self.compression_timeout)
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE,
+                             shell=True,
+                             timeout=self.compression_timeout)
         except subprocess.TimeoutExpired as err:
             logging.error(str(err))
-            error_message = _("Compression has reached the configured timeout of {} seconds.").format(self.compression_timeout)
+            error_message = _('Compression has reached the configured timeout of {} seconds.').format(self.compression_timeout)
             error = True
         except Exception as err:
             logging.error(str(err))
-            error_message = _("An unknown error has occured")
+            error_message = _('An unknown error has occured')
             error = True
         finally:
-            self.command_finished(result_item, error, error_message)
+            if not error:
+                new_file_data = Path(result_item.new_filename)
+                if new_file_data.is_file():
+                    result_item.new_size = new_file_data.stat().st_size
+                else:
+                    logging.error("Can't find the compressed file")
+                    error_message = _("Can't find the compressed file")
+                    error = True
 
-    def command_finished(self, result_item, error, error_message):
-        if not error:
-            new_file_data = Path(result_item.new_filename)
-            result_item.new_size = new_file_data.stat().st_size
-
-        GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
+            GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item):
         pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
