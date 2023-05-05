@@ -20,7 +20,7 @@ PNG, JPEG, WebP, SVG
 
 ### Universal package for Linux (recommended)
 
-Curtail is available as a flatpak package.
+Curtail is available as a Flatpak package.
 
 <a href='https://flathub.org/apps/details/com.github.huluti.Curtail'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
@@ -33,6 +33,10 @@ You can also install it by using the following command-line:
 [![Packaging status](https://repology.org/badge/vertical-allrepos/curtail.svg)](https://repology.org/project/curtail/versions)
 
 ### Unofficial packages
+
+A [Snap](https://snapcraft.io/curtail) package is available:
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/curtail)
 
 A [PPA](https://launchpad.net/~apandada1/+archive/ubuntu/curtail) is available for Ubuntu (18.04+) and derivatives:
 
