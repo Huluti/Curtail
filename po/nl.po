@@ -708,7 +708,7 @@ msgstr ""
 "De compressie heeft het ingestelde tijdsverloop van {} seconden bereikt."
 
 #: src/compressor.py:94
-msgid "An unknown error has occured"
+msgid "An unknown error has occurred"
 msgstr "Er is een onbekende fout opgetreden"
 
 #: src/tools.py:30

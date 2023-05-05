@@ -225,7 +225,7 @@ msgstr "Distribuované pod licenciou GNU GPL(v3).\n"
 
 #: src/compressor.py:59 src/compressor.py:68 src/compressor.py:77
 #: src/compressor.py:90
-msgid "An error has occured"
+msgid "An error has occurred"
 msgstr "Došlo k chybe"
 
 #: src/compressor.py:114

@@ -700,7 +700,7 @@ msgid "Compression has reached the configured timeout of {} seconds."
 msgstr ""
 
 #: src/compressor.py:94
-msgid "An unknown error has occured"
+msgid "An unknown error has occurred"
 msgstr ""
 
 #: src/tools.py:30

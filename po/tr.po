@@ -619,7 +619,7 @@ msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "GNU GPL(v3) lisansı altında dağıtılır.\n"
 
 #: src/compressor.py:60
-msgid "An error has occured"
+msgid "An error has occurred"
 msgstr "Bir hata oluştu"
 
 #: src/apply.py:49

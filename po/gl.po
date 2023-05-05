@@ -576,7 +576,7 @@ msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr "Distribuído baixo a licenza GNU GPL(v3)\n"
 
 #: src/compressor.py:60
-msgid "An error has occured"
+msgid "An error has occurred"
 msgstr "Produciuse un erro"
 
 #: src/apply.py:49

@@ -768,7 +768,7 @@ msgstr ""
 "La compresión ha alcanzado el tiempo de espera configurado de {} segundos."
 
 #: src/compressor.py:93
-msgid "An unknown error has occured"
+msgid "An unknown error has occurred"
 msgstr "Se ha producido un error desconocido"
 
 #: src/compressor.py:102

@@ -90,7 +90,7 @@ class Compressor():
             error = True
         except Exception as err:
             logging.error(str(err))
-            error_message = _('An unknown error has occured')
+            error_message = _('An unknown error has occurredd')
             error = True
         finally:
             if not error:

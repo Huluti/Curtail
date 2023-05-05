@@ -553,7 +553,7 @@ msgid "Distributed under the GNU GPL(v3) license.\n"
 msgstr ""
 
 #: src/compressor.py:60
-msgid "An error has occured"
+msgid "An error has occurred"
 msgstr "Una error s’es producha"
 
 #: src/apply.py:49
