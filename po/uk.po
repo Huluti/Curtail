@@ -1,0 +1,776 @@
+# curtail.pot
+# Copyright (C) 2021 Hugo Posnic
+# This file is distributed under the same license as the curtail package.
+# Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
+# volkov <volkovissocool@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: curtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-04 23:29+0200\n"
+"PO-Revision-Date: 2023-05-25 23:47+0300\n"
+"Last-Translator: volkov <volkovissocool@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:9
+#: data/com.github.huluti.Curtail.desktop.in:5
+msgid "Compress your images"
+msgstr "Стискайте ваші зображення"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"Оптимізуйте ваші зображення за допомогою Curtail - корисного додатку для "
+"стискання зображень, який підтримує PNG, JPEG, WebP і SVG розширення "
+"файлів."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
+msgid ""
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Він підтримує як стискання без втрат якості, так із втратами; також є "
+"опція, чи треба зберігати мета-дані зображень чи ні."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:39
+#: data/com.github.huluti.Curtail.appdata.xml.in:54
+#: data/com.github.huluti.Curtail.appdata.xml.in:64
+#: data/com.github.huluti.Curtail.appdata.xml.in:75
+#: data/com.github.huluti.Curtail.appdata.xml.in:89
+#: data/com.github.huluti.Curtail.appdata.xml.in:100
+#: data/com.github.huluti.Curtail.appdata.xml.in:117
+#: data/com.github.huluti.Curtail.appdata.xml.in:126
+#: data/com.github.huluti.Curtail.appdata.xml.in:142
+#: data/com.github.huluti.Curtail.appdata.xml.in:160
+#: data/com.github.huluti.Curtail.appdata.xml.in:170
+#: data/com.github.huluti.Curtail.appdata.xml.in:178
+#: data/com.github.huluti.Curtail.appdata.xml.in:186
+#: data/com.github.huluti.Curtail.appdata.xml.in:195
+#: data/com.github.huluti.Curtail.appdata.xml.in:203
+#: data/com.github.huluti.Curtail.appdata.xml.in:213
+#: data/com.github.huluti.Curtail.appdata.xml.in:224
+#: data/com.github.huluti.Curtail.appdata.xml.in:238
+#: data/com.github.huluti.Curtail.appdata.xml.in:246
+#: data/com.github.huluti.Curtail.appdata.xml.in:256
+#: data/com.github.huluti.Curtail.appdata.xml.in:268
+#: data/com.github.huluti.Curtail.appdata.xml.in:282
+#: data/com.github.huluti.Curtail.appdata.xml.in:291
+#: data/com.github.huluti.Curtail.appdata.xml.in:300
+#: data/com.github.huluti.Curtail.appdata.xml.in:309
+#: data/com.github.huluti.Curtail.appdata.xml.in:320
+msgid "Here's the changelog of this version:"
+msgstr "Ось список змін у цій версії:"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:41
+msgid "Configurable compression timeout"
+msgstr "Налаштування тайм-ауту для стискання"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:42
+msgid "Compress images in an other thread"
+msgstr "Стискання зображень у потоках"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:43
+msgid "Better workflow for headerbar"
+msgstr "Покращено робочий процес з заголовком вікна"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:44
+msgid "Move saving state in the subtitle"
+msgstr "Пересунуто стан зберігання у заголовок"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:45
+msgid "Show errors on each line and not in modals anymore"
+msgstr ""
+"Тепер помилки будуть показуватися кожна на своїй строчці, а не у модальних "
+"вікнах"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:46
+msgid "Simplify preferences"
+msgstr "Спрощено налаштування"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:47
+#: data/com.github.huluti.Curtail.appdata.xml.in:58
+#: data/com.github.huluti.Curtail.appdata.xml.in:69
+#: data/com.github.huluti.Curtail.appdata.xml.in:207
+#: data/com.github.huluti.Curtail.appdata.xml.in:231
+#: data/com.github.huluti.Curtail.appdata.xml.in:250
+msgid "Update translations"
+msgstr "Оновлено переклади"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:48
+msgid "Fix compression level ranges in UI"
+msgstr "Виправлено обирання рівня стискання у інтерфейсі"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:56
+msgid "More modern results page"
+msgstr "Більш сучасний інтерфейс для сторінки результатів"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:57
+msgid "Reduce images one by one to avoid freezes"
+msgstr "Зменшуйте одне зображення за іншим, щоб уникнути зависання"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:66
+msgid "Port to GTK 4 and Libadwaita"
+msgstr "Портовано на GTK 4 і Libadwaita"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:67
+msgid "Update deps"
+msgstr "Оновлено залежності"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:68
+msgid "Less annoying 'Apply dialog'"
+msgstr "Менш дратівливе \"Прийняти\" діалогове вікно"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:77
+msgid "Make size columns sortable."
+msgstr "Тепер колонки з розміром сортуються."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:78
+msgid "Add Korean translation. Thank's to @MarongHappy."
+msgstr "Додано корейський переклад. Дякуємо @MarongHappy."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:79
+msgid "Update screenshots."
+msgstr "Оновлено скриншоти."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:80
+msgid "Update Turkish translation. Thank's to @libreajans."
+msgstr "Оновлено турецький переклад. Дякуємо @libreajans."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:81
+msgid "Update French translation. Thank's to @rene-coty."
+msgstr "Оновлено французький переклад. Дякуємо @rene-coty."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:82
+#: data/com.github.huluti.Curtail.appdata.xml.in:105
+#: data/com.github.huluti.Curtail.appdata.xml.in:107
+msgid "Update Dutch translation. Thank's to @Vistaus."
+msgstr "Оновлено голландський переклад. Дякуємо @Vistaus."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:83
+msgid "Fix savings column sorting."
+msgstr "Виправлено збереження сортування колонок."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:91
+msgid "Add option to preserve file attributes if possible."
+msgstr "Додано опцію для збереження атрибутів файлу, якщо можливо."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:92
+msgid "Update image libraries."
+msgstr "Оновлено бібліотеки зображень."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:93
+msgid "Update French translation."
+msgstr "Оновлено французький переклад."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:94
+msgid "Update Russian translation. Thank's to @prokoudine."
+msgstr "Оновлену російський переклад. Дякуємо @prokoudine."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:102
+msgid "Add Turkish translation. Thank's to @05akalan57."
+msgstr "Додано турецький переклад. Дякуємо @05akalan57."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:103
+msgid "Add Occitan translation. Thank's to @Mejans."
+msgstr "Додано окситанський переклад. Дякуємо @Mejans."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:104
+msgid "Add Galician translation. Thank's to @Fran Dieguez."
+msgstr "Додано галицький переклад. Дякуємо @Fran Dieguez."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:106
+#: data/com.github.huluti.Curtail.appdata.xml.in:130
+msgid "Update Spanish translation. Thank's to @oscfdezdz."
+msgstr "Оновлено іспанський переклад. Дякуємо @oscfdezdz."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:108
+msgid "Update Croatian translation. Thank's to @milotype."
+msgstr "Оновлено хорватський переклад. Дякуємо @milotype."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:109
+msgid "Update German translation. Thank's to @Etamuk."
+msgstr "Оновлено німецький переклад. Дякуємо @Etamuk."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:110
+msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
+msgstr "Оновлено португальський (Бразилія) переклад. Дякуємо @fulvio-alves."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:111
+msgid "Update Swedish translation. Thank's to @eson57."
+msgstr "Оновлено шведський переклад. Дякуємо @eson57."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:119
+msgid "Add 'Apply to all queue' option for existing file dialog."
+msgstr ""
+"Додано \"Прийняти до усіх черг\" опцію до існуючого діалогу про файл."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:120
+msgid "Add Polish translation. Thank's to @olokelo."
+msgstr "Додано польській переклад. Дякуємо @olokelo."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:128
+msgid "Add WebP support. Thank's to @olokelo."
+msgstr "Додано підтримку WebP. Дякуємо @olokelo."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:129
+msgid "Add Croatian translation. Thank's to @milotype."
+msgstr "Додано хорватський переклад. Дякуємо @milotype."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:131
+msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
+msgstr "Оновлено португальський (Бразилія) переклад. Дякуємо @fulvio-alves."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:132
+msgid "Don't accept empty file. Thank's to @akozlovskiy119."
+msgstr "Не приймати порожні файли. Дякуємо @akozlovskiy119."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:133
+msgid "Better guess of extensions. Thank's to @akozlovskiy119."
+msgstr "Покращено вгадування розширення файлу. Дякуємо @akozlovskiy119."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:134
+msgid ""
+"Use correct file listing format for drag-and-drop. Thank's to "
+"@akozlovskiy119."
+msgstr ""
+"Покращено список файлів при перетягуванні файлів. Дякуємо @akozlovskiy119."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:135
+msgid "Fix directory handling. Thank's to @akozlovskiy119."
+msgstr "Виправлено обробку каталогів. Дякуємо @akozlovskiy119."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:136
+msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
+msgstr ""
+"Виправлено відсутню піктограму для LXQt, MATE, XFCE (#76). Дякуємо "
+"@apandada1."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:144
+msgid "An option to progressive encode jpegs. Thank's to @trst."
+msgstr "Додано опцію для прогресивного кодування JPEG. Дякуємо @trst."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:145
+msgid "Add Russian translation."
+msgstr "Додано російський переклад."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:146
+msgid "Add Slovak translation."
+msgstr "Додано словацький переклад."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:147
+msgid "Add Swedish translation."
+msgstr "Додано шведський переклад."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:148
+msgid "Better handling of existing files."
+msgstr "Покращено обробку існуючих файлів."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:149
+msgid "Better appdata summary."
+msgstr "Покращено підсумок appdata."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:150
+msgid "Update Spanish translation."
+msgstr "Оновлено іспанський переклад."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:151
+msgid "Compress images with extensions in uppercase."
+msgstr "Стискання зображень з міткою розширення у нижньому регістрі."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:152
+msgid "Center preferences window header switcher. Thank's to @andrenete."
+msgstr "Центрування заголовка вінка налаштувань. Дякуємо @andrenete."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:153
+msgid "Fix columns sorting. Thank's to @andrenete."
+msgstr "Виправлено сортування колонок. Дякуємо @andrenete."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:154
+msgid ""
+"Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
+"@andrenete."
+msgstr ""
+"Не дозволяти порожні суфікси (не правильне стискання для JPEG). Дякуємо "
+"@andrenete."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:162
+msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
+msgstr "Нова назва. Дякуємо @bertob, @jannuary and @jimmac."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:163
+msgid "A new icon designed by @jimmac."
+msgstr "Нова піктограма була зроблена @jimmac."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:164
+msgid "Support for dragging folders."
+msgstr "Підтримка для перетягування каталогів/тек."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:172
+msgid "Just fix a packaging file."
+msgstr "Виправлено назву пакету додатку."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:180
+msgid "Just update GNOME runtime"
+msgstr "Оновлено рантайм GNOME"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:188
+msgid "Add Portuguese (Brazil) translation"
+msgstr "Додано португальський (Бразилія) переклад"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:189
+msgid "Don't use legacy path for metadata"
+msgstr "Не використовувати застарілий шлях для мета-даних"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:197
+msgid "Fix compression of jpg files that produced 0b files"
+msgstr ""
+"Виправлено стискання для jpg файлів, які вироблять файли з розміром 0 "
+"байтів"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:205
+msgid "Add an option to whether keep or not metadata of images"
+msgstr "Додано опцію для зберігання (або не) мета-даних зображень"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:206
+msgid "Replace mozjpeg lib by jpegoptim"
+msgstr "Замінено бібліотеку mozjpeg на jpegoptim"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:215
+msgid "Add a spinner to indicate the progress of the compression"
+msgstr ""
+"Додано індикатор який обертається, щоб показати що процес стискання у "
+"процесі"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:216
+msgid "Using threads to compress images simultaneously"
+msgstr "Використовуються потоки для стискання кількох зображень одночасно"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:217
+msgid "Simplification of certain sentences"
+msgstr "Спрощено певні речення"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:218
+msgid "Really don't block the UI anymore when performing compression"
+msgstr "Тепер точно не блокується інтерфейс при стисканні"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:226
+msgid "Add lossy compression features"
+msgstr "Додано стискання з втратами якості"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:227
+msgid "Add options to change compression levels"
+msgstr "Додано опцію для зміни рівня стискання"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:228
+msgid "New layout for the preferences dialog"
+msgstr "Покращення для діалогового вікна налаштувань"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:229
+msgid "Don't permit higher resulting size"
+msgstr "Не дозволяйте більший кінцевий розмір"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:230
+msgid "Better displaying of the drag area"
+msgstr "Покращено відображення перетягуємої зони"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:232
+msgid "Catch errors in subprocess to avoid crashing the app"
+msgstr ""
+"Виявлення помилок у підпроцесах для уникання закриття програму під час збою"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:240
+msgid "Fix build"
+msgstr "Виправлено збирання додатку"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:248
+msgid "Fix opening files from file managers"
+msgstr "Виправлено відкривання зобржень із менеджерів файлів"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:249
+msgid "Add Italian translation"
+msgstr "Додано італійський переклад"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:258
+msgid "Toggle the suffix entry according to new file option"
+msgstr "Перемикання суфіксу відповідно до налаштувань нових файлів"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:259
+msgid "Scroll automatically to last compressed image in the list"
+msgstr "Автоматично гортати до останнього стисненого файлу у списку"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:260
+msgid "Add save info label also on homepage and displace it at bottom"
+msgstr ""
+"Додано інформацію про збереження на головній сторінці і перенесено її вниз"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:261
+msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
+msgstr ""
+"Виправлено обробку назв файлів, щоб уникнути деяких помилок (наприклад, "
+"каталогів)"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:262
+msgid "Various fixes"
+msgstr "Різні виправлення"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:270
+msgid "Add a setting to change the '-min' suffix"
+msgstr "Додано опцію для зміни суфікса \"-min\""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:271
+msgid "Add some explanations of applied settings"
+msgstr "Додано пояснення для деякий опцій налаштувань"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:272
+msgid "Add Ctrl+O shortcut to open files"
+msgstr "Додано клавіатурне скорочення Ctrl+O для відкривання файлів"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:273
+msgid "Add Dutch and German translations"
+msgstr "Додано голландський та німецький переклади"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:274
+msgid "Display translators' names in about dialog"
+msgstr "Показувати імена перекладачів у вікні \"Про програму\""
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:275
+msgid "Don't block the UI anymore when performing compression"
+msgstr "Не блокувати інтерфейс при стисканні"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:276
+msgid "Fix size of the preferences window"
+msgstr "Виправлено розмір вікна налаштувань"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:284
+msgid "Add a preferences window with new-file and dark-theme options"
+msgstr "Додано налаштування для нових файлів та темний стиль"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:285
+msgid "Various UI changes"
+msgstr "Зміни у інтерфейсі"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:293
+msgid "Permit to sort results by name or saving ratio"
+msgstr "Дозволено сортувати результати по назві або співвідношенні стискання"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:294
+msgid "Fix a crash when compressing an image with dots in its name"
+msgstr "Виправлено збій при стисканні зображення з точками у назві"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:302
+msgid "Stick back and forward buttons"
+msgstr "Кнопки для повернення назад і вперед"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:303
+msgid "Change APP id"
+msgstr "Змінено ідентифікатор додатку"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:311
+msgid "Various optimizations"
+msgstr "Трохи оптимізації"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:312
+msgid "Improve error messages"
+msgstr "Виправлені повідомлення про помилки"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:313
+msgid "Improve some texts"
+msgstr "Виправлено певні строки тексту"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:314
+msgid "Change description"
+msgstr "Змінено опис"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:322
+msgid "Initial version"
+msgstr "Перший реліз"
+
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:122
+msgid "Curtail"
+msgstr "Curtail"
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "compress;optimize;image;photo;стиснути;фото;оптимізувати;зображення;"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Зберегти у новий файл"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Зберігати стиснене зображення у окремий файл."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
+msgid "Keep metadata"
+msgstr "Зберігати мета-дані"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting preserves metadata of images."
+msgstr "Ця опція буде зберігати мета-дані зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:42
+msgid "Preserve file attributes if possible"
+msgstr "Зберігати атрибути файлів, якщо можливо"
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Enable lossy mode"
+msgstr "Активувати режим з втратами якості"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "Use lossy mode to compress images."
+msgstr "Використовувати режим з втратами якості зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
+msgid "Suffix to append at end of new file"
+msgstr "Суфікс який додається в кінці назви нового файла"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "Suffix to append at end of new file."
+msgstr "Суфікс який додається в кінці назви нового файла."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31 data/ui/preferences.ui:85
+msgid "PNG Lossy Compression Level"
+msgstr "Рівень стискання з втратами якості для PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Lossy compression level to use for PNG images."
+msgstr "Рівень стискання з втратами якості для PNG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36 data/ui/preferences.ui:104
+msgid "PNG Lossless Compression Level"
+msgstr "Рівень стискання без втрат якості для PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Lossless compression level to use for PNG images."
+msgstr "Рівень стискання без втрат якості для PNG зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41 data/ui/preferences.ui:129
+msgid "JPG Lossy Compression Level"
+msgstr "Рівень стискання з втратами якості JPG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Lossy compression level to use for JPG images."
+msgstr "Рівень стискання з втратами якості JPG зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46 data/ui/preferences.ui:164
+msgid "WebP Lossy Compression Level"
+msgstr "Рівень стискання з втратами якості WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossy compression level to use for WebP images."
+msgstr "Рівень стискання з втратами якості WebP зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51 data/ui/preferences.ui:183
+msgid "WebP Lossless Compression Level"
+msgstr "Рівень стискання без втрат якості для WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossless compression level to use for WebP images."
+msgstr "Рівень стискання без втрат якості для WebP зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
+msgid "Enable progressive encoding for JPEG images."
+msgstr "Активувати прогресивне кодування JPEG зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Optionally encode jpeg images progressively."
+msgstr "Опціонально прогресивно кодувати JPEG зображення."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "Enable maximum compression for SVG images."
+msgstr "Активувати максимальне стискання для SVG зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Optionally enable maximum cleaning of SVG images."
+msgstr "Опціонально активувати максимальне очищення SVG зображень."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Compression Timeout"
+msgstr "Тайм-аут стискання"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Compression timeout for each image."
+msgstr "Тайм-аут стискання для кожного зображення."
+
+#: data/ui/help_overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Загальні"
+
+#: data/ui/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Select File"
+msgstr "Обрати файл"
+
+#: data/ui/help_overlay.ui:20
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: data/ui/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: data/ui/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Вийти"
+
+#: data/ui/preferences.ui:4 data/ui/menu.ui:6
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: data/ui/preferences.ui:8
+msgid "General"
+msgstr "Загальні"
+
+#: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr "Безпечний режим"
+
+#: data/ui/preferences.ui:15
+msgid "Save the compressed image into a new file"
+msgstr "Зберігати стиснене зображення у окремий файл"
+
+#: data/ui/preferences.ui:53
+msgid "Compression timeout"
+msgstr "Тайм-аут стискання"
+
+#: data/ui/preferences.ui:54
+msgid "For each image"
+msgstr "Для кожного зображення"
+
+#: data/ui/preferences.ui:78
+msgid "Compression"
+msgstr "Стискання"
+
+#: data/ui/preferences.ui:105 data/ui/preferences.ui:184
+msgid "The higher it is, the slower it is"
+msgstr "Чим більше, тим повільніше воно буде"
+
+#: data/ui/preferences.ui:148
+msgid "Progressive Encode JPG"
+msgstr "Прогресивне кодування JPG"
+
+#: data/ui/preferences.ui:208
+msgid "SVG Maximum Compression Level"
+msgstr "Максимальний рівень стискання SVG"
+
+#: data/ui/preferences.ui:209
+msgid "Can be more destructive for the image"
+msgstr "Може бути більше нищівним для зображення"
+
+#: data/ui/menu.ui:10
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: data/ui/menu.ui:14
+msgid "About Curtail"
+msgstr "Про Curtail"
+
+#: data/ui/window.ui:12
+msgid "_Change Mode"
+msgstr "_Режим заміни"
+
+#: data/ui/window.ui:13
+msgid "Images will be overwritten, proceed carefully."
+msgstr "Зображення будуть перезаписані, будь-те обережні."
+
+#: data/ui/window.ui:21
+msgid "Drop images here to compress them"
+msgstr "Перетягніть зображення сюди, щоб стиснути їх"
+
+#: data/ui/window.ui:27
+msgid "_Browse Files"
+msgstr "Оглянути _файли"
+
+#: data/ui/window.ui:46
+msgid "Lossless"
+msgstr "Без втрат якості"
+
+#: data/ui/window.ui:58
+msgid "Lossy"
+msgstr "З втратами якості"
+
+#: data/ui/window.ui:108 src/window.py:186
+msgid "Browse Files"
+msgstr "Оглянути файли"
+
+#: data/ui/window.ui:115
+msgid "Clear Results"
+msgstr "Очистити результати"
+
+#: data/ui/window.ui:129
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: src/compressor.py:90
+msgid "Compression has reached the configured timeout of {} seconds."
+msgstr "Стискання досягло тайм-ауту, який був налаштований на {} секунд."
+
+#: src/compressor.py:94
+msgid "An unknown error has occurred"
+msgstr "Сталася невідома помилка"
+
+#: src/tools.py:30
+msgid "All images"
+msgstr "Усі зображення"
+
+#: src/tools.py:37
+msgid "PNG images"
+msgstr "PNG зображення"
+
+#: src/tools.py:41
+msgid "JPEG images"
+msgstr "JPEG зображення"
+
+#: src/tools.py:45
+msgid "WebP images"
+msgstr "WebP зображення"
+
+#: src/tools.py:49
+msgid "SVG images"
+msgstr "SVG зображення"
+
+#: src/tools.py:121 src/tools.py:128 src/tools.py:135 src/tools.py:142
+#: src/tools.py:149 src/tools.py:179
+msgid "Version not found"
+msgstr "Версію не знайдено"
+
+#: src/window.py:173
+msgid "Safe mode with '{}' suffix"
+msgstr "Безпечний режим з '{}' суфіксом"
+
+#: src/window.py:176
+msgid "Overwrite mode"
+msgstr "Режим перезаписування"
+
+#: src/window.py:263
+msgid "This file doesn't exist."
+msgstr "Цей файл не існує."
+
+#: src/window.py:268
+msgid "Format of this file is not supported."
+msgstr "Формат цього файлу не підтримується."
+
+#: src/window.py:320
+msgid "translator-credits"
+msgstr "volkov <volkovissocool@gmail.com>"
+
+#: src/window.py:324
+msgid "Contributors"
+msgstr "Спільнота"
