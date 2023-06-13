@@ -78,7 +78,10 @@ def get_file_type(filename):
 
 def create_image_from_file(filename, max_width, max_height):
     # Image preview
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+    try:
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+    except:
+        return None
 
     # Calculate new dimensions while preserving aspect ratio
     width = pixbuf.get_width()
