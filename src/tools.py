@@ -16,6 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import re
+import logging
 import platform
 import subprocess
 from gi.repository import Gtk, GLib, Gio, GdkPixbuf
@@ -80,7 +81,8 @@ def create_image_from_file(filename, max_width, max_height):
     # Image preview
     try:
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-    except:
+    except Exception as err:
+        logging.error(str(err))
         return None
 
     # Calculate new dimensions while preserving aspect ratio
