@@ -23,7 +23,7 @@ from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import add_filechooser_filters, get_file_type, \
-    create_image_from_file, sizeof_fmt, debug_infos
+    create_image_from_file, sizeof_fmt, debug_infos, get_image_files_from_folder
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -104,6 +104,7 @@ class CurtailWindow(Gtk.ApplicationWindow):
         self.create_simple_action('preferences', self.on_preferences, '<Primary>comma')
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
+        self.create_simple_action('convert-dir', self.on_select_folder, '<Primary>d')
 
     def enable_compression(self, enable):
         self.filechooser_button_headerbar.set_sensitive(enable)
@@ -200,6 +201,27 @@ class CurtailWindow(Gtk.ApplicationWindow):
                 self.compress_filenames(final_filenames)
 
         dialog.open_multiple(self, None, handle_response)
+
+    def on_select_folder(self, *args):
+        dialog = Gtk.FileDialog(title=_("Browse Directories"))
+
+        def handle_response(dialog, result):
+            try:
+                folders = dialog.select_multiple_folders_finish(result)
+            except GLib.Error as err:
+                print("Could not open files: %s", err.message)
+            else:
+                filenames = list()
+                for folder in folders:
+                    images = get_image_files_from_folder(folder.get_path())
+
+                    for image in images:
+                        filenames.append(image.get_uri())
+
+                final_filenames = self.handle_filenames(filenames)
+                self.compress_filenames(final_filenames)
+
+        dialog.select_multiple_folders(self, None, handle_response)
 
     def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
         files = value.get_files()
