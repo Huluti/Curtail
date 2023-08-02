@@ -208,45 +208,50 @@ class CurtailWindow(Gtk.ApplicationWindow):
         def handle_response(dialog, result):
             def on_dir_dialog_response(warn_dialog, response):
                 if response == "compress":
-                    try:
-                        folders = dialog.select_multiple_folders_finish(result)
-                    except GLib.Error as err:
-                        print("Could not open files: %s", err.message)
-                    else:
-                        filenames = list()
-                        for folder in folders:
-                            images = get_image_files_from_folder(folder.get_path())
+                    filenames = list()
+                    for folder in folders:
+                        images = get_image_files_from_folder(folder.get_path())
 
-                            for image in images:
-                                filenames.append(image.get_uri())
+                        for image in images:
+                            filenames.append(image.get_uri())
 
-                        final_filenames = self.handle_filenames(filenames)
-                        self.compress_filenames(final_filenames)
+                    final_filenames = self.handle_filenames(filenames)
+                    self.compress_filenames(final_filenames)
 
-            warning_message_dialog = None
-            if self._settings.get_boolean('new-file'):
-                warning_message_dialog = Adw.MessageDialog.new(self,
-                    _("Are you sure you want to compress images in these directories?"),
-                    _("All of the images in the directories selected and their subdirectories will be converted. The original files will not be modified."))
+            try:
+                folders = dialog.select_multiple_folders_finish(result)
+            except GLib.Error as err:
+                print("Could not open files: %s", err.message)
             else:
-                warning_message_dialog = Adw.MessageDialog.new(self,
-                    _("Are you sure you want to compress images in these directories?"),
-                    _("All of the images in the directories selected and their subdirectories will be converted and overwritten!"))
-
-
-            warning_message_dialog.add_response("cancel", _("Cancel"))
-            warning_message_dialog.add_response("compress", _("Compress"))
-            warning_message_dialog.connect("response", on_dir_dialog_response)
-
-            if self._settings.get_boolean('new-file'):
-                warning_message_dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
-            else:
-                warning_message_dialog.set_response_appearance("compress", Adw.ResponseAppearance.DESTRUCTIVE)
-
-            warning_message_dialog.show()
+                warning_message_dialog = self._create_warning_dialog()
+                warning_message_dialog.connect("response", on_dir_dialog_response)
+                warning_message_dialog.show()
 
         dialog.select_multiple_folders(self, None, handle_response)
 
+    def _create_warning_dialog(self):
+        dialog = None
+        if self._settings.get_boolean('new-file'):
+            dialog = Adw.MessageDialog.new(self,
+                _("Are you sure you want to compress images in these directories?"),
+                _("All of the images in the directories selected and their "
+                "subdirectories will be compressed. The original images will not "
+                "be modified."))
+        else:
+            dialog = Adw.MessageDialog.new(self,
+                _("Are you sure you want to compress images in these directories?"),
+                _("All of the images in the directories selected and their "
+                "subdirectories will be compressed and overwritten!"))
+
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("compress", _("Compress"))
+
+        if self._settings.get_boolean('new-file'):
+            dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
+        else:
+            dialog.set_response_appearance("compress", Adw.ResponseAppearance.DESTRUCTIVE)
+
+        return dialog
 
     def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
         files = value.get_files()
