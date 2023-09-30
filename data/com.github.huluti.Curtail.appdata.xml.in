@@ -36,7 +36,7 @@
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
     <release version="1.7.0" date="2023-04-05">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>SVG support</li>
@@ -52,7 +52,7 @@
       </description>
     </release>
     <release version="1.6.0" date="2023-03-31">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Configurable compression timeout</li>
@@ -67,7 +67,7 @@
       </description>
     </release>
     <release version="1.5.0" date="2023-03-25">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>More modern results page</li>
@@ -77,7 +77,7 @@
       </description>
     </release>
     <release version="1.4.0" date="2023-03-23">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Port to GTK 4 and Libadwaita</li>
@@ -88,7 +88,7 @@
       </description>
     </release>
     <release version="1.3.1" date="2022-07-12">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Make size columns sortable.</li>
@@ -102,7 +102,7 @@
       </description>
     </release>
     <release version="1.3.0" date="2022-05-01">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add option to preserve file attributes if possible.</li>
@@ -113,7 +113,7 @@
       </description>
     </release>
     <release version="1.2.2" date="2021-11-13">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add Turkish translation. Thank's to @05akalan57.</li>
@@ -130,7 +130,7 @@
       </description>
     </release>
     <release version="1.2.1" date="2021-07-04">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add 'Apply to all queue' option for existing file dialog.</li>
@@ -139,7 +139,7 @@
       </description>
     </release>
     <release version="1.2.0" date="2021-06-29">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add WebP support. Thank's to @olokelo.</li>
@@ -155,7 +155,7 @@
       </description>
     </release>
     <release version="1.1.0" date="2021-03-12">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>An option to progressive encode jpegs. Thank's to @trst.</li>
@@ -173,7 +173,7 @@
       </description>
     </release>
     <release version="1.0.0" date="2020-12-19">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>A new name. Thank's to @bertob, @jannuary and @jimmac.</li>
@@ -183,7 +183,7 @@
       </description>
     </release>
     <release version="0.8.4" date="2020-11-15">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Just fix a packaging file.</li>
@@ -191,7 +191,7 @@
       </description>
     </release>
     <release version="0.8.3" date="2020-11-14">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Just update GNOME runtime</li>
@@ -199,7 +199,7 @@
       </description>
     </release>
     <release version="0.8.2" date="2020-08-11">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add Portuguese (Brazil) translation</li>
@@ -208,7 +208,7 @@
       </description>
     </release>
     <release version="0.8.1" date="2020-04-02">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix compression of jpg files that produced 0b files</li>
@@ -216,7 +216,7 @@
       </description>
     </release>
     <release version="0.8" date="2019-10-27">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add an option to whether keep or not metadata of images</li>
@@ -226,7 +226,7 @@
       </description>
     </release>
     <release version="0.7" date="2019-10-25">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a spinner to indicate the progress of the compression</li>
@@ -237,7 +237,7 @@
       </description>
     </release>
     <release version="0.6" date="2019-10-21">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add lossy compression features</li>
@@ -251,7 +251,7 @@
       </description>
     </release>
     <release version="0.5.2" date="2019-10-13">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix build</li>
@@ -259,7 +259,7 @@
       </description>
     </release>
     <release version="0.5.1" date="2019-10-13">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Fix opening files from file managers</li>
@@ -269,7 +269,7 @@
       </description>
     </release>
     <release version="0.5" date="2019-10-12">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Toggle the suffix entry according to new file option</li>
@@ -281,7 +281,7 @@
       </description>
     </release>
     <release version="0.4" date="2019-10-11">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a setting to change the '-min' suffix</li>
@@ -295,7 +295,7 @@
       </description>
     </release>
     <release version="0.3" date="2019-10-10">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Add a preferences window with new-file and dark-theme options</li>
@@ -304,7 +304,7 @@
       </description>
     </release>
     <release version="0.2.2" date="2019-10-10">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Permit to sort results by name or saving ratio</li>
@@ -313,7 +313,7 @@
       </description>
     </release>
     <release version="0.2.1" date="2019-10-09">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Stick back and forward buttons</li>
@@ -322,7 +322,7 @@
       </description>
     </release>
     <release version="0.2" date="2019-10-08">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Various optimizations</li>
@@ -333,7 +333,7 @@
       </description>
     </release>
     <release version="0.1" date="2019-10-08">
-      <description>
+      <description translatable="no">
         <p>Here's the changelog of this version:</p>
         <ul>
           <li>Initial version</li>
