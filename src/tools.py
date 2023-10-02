@@ -19,6 +19,7 @@ import re
 import logging
 import platform
 import subprocess
+import os
 from gi.repository import Gtk, GLib, Gio, GdkPixbuf
 
 
@@ -111,6 +112,16 @@ def create_image_from_file(filename, max_width, max_height):
 
     return image
 
+def get_image_files_from_folder(folder_path):
+    images = []
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            path = os.path.join(root, file)
+            if get_file_type(path) != None:
+                image_file = Gio.File.new_for_path(path)
+                images.append(image_file)
+
+    return images
 
 def debug_infos():
     python_version = platform.python_version()

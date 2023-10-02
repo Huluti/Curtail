@@ -3,6 +3,10 @@
   <menu id="window-menu">
     <section>
       <item>
+        <attribute name="label" translatable="yes">Bulk Compress Directory (Recursive)</attribute>
+        <attribute name="action">win.convert-dir</attribute>
+      </item>
+      <item>
         <attribute name="label" translatable="yes">Preferences</attribute>
         <attribute name="action">win.preferences</attribute>
       </item>
