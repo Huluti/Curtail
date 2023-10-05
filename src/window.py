@@ -30,7 +30,7 @@ SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
 @Gtk.Template(resource_path=CURTAIL_PATH + 'ui/window.ui')
-class CurtailWindow(Gtk.ApplicationWindow):
+class CurtailWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'CurtailWindow'
 
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
