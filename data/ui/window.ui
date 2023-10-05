@@ -1,136 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
-  <template class="CurtailWindow" parent="GtkApplicationWindow">
+  <template class="CurtailWindow" parent="AdwApplicationWindow">
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
-    <child>
-      <object class="GtkBox" id="mainbox">
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="AdwBanner" id="warning_banner">
-            <property name="action-name">win.preferences</property>
-            <property name="button-label" translatable="yes">_Change Mode</property>
-            <property name="title" translatable="yes">Images will be overwritten, proceed carefully.</property>
-          </object>
-        </child>
-        <child>
-          <object class="AdwStatusPage" id="homebox">
-            <property name="vexpand">true</property>
-            <property name="icon-name">com.github.huluti.Curtail</property>
-            <property name="title" translatable="no">Curtail</property>
-            <property name="description" translatable="yes">Drop images here to compress them</property>
+
+    <property name="content">
+      <object class="AdwToolbarView">
+
+        <child type="top">
+          <object class="AdwHeaderBar" id="headerbar">
             <child>
               <object class="GtkBox">
-                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkButton">
-                    <property name="label" translatable="yes">_Browse Files</property>
-                    <property name="halign">center</property>
+                  <object class="GtkButton" id="filechooser_button_headerbar">
+                    <property name="icon-name">document-open-symbolic</property>
                     <property name="action-name">win.select-file</property>
-                    <property name="margin-bottom">40</property>
-                    <property name="use-underline">1</property>
-                    <style>
-                      <class name="suggested-action"/>
-                      <class name="pill"/>
-                    </style>
+                    <property name="tooltip-text" translatable="yes">Browse Files</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkBox">
-                    <property name="spacing">10</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="halign">end</property>
-                        <property name="label" translatable="yes">Lossless</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkSwitch" id="toggle_lossy">
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Lossy</property>
-                      </object>
-                    </child>
+                  <object class="GtkButton" id="clear_button_headerbar">
+                    <property name="icon-name">view-refresh-symbolic</property>
+                    <property name="action-name">win.clear-results</property>
+                    <property name="tooltip-text" translatable="yes">Clear Results</property>
                   </object>
                 </child>
               </object>
             </child>
-            <style>
-              <class name="icon-dropshadow"/>
-            </style>
+            <child type="title">
+              <object class="AdwWindowTitle" id="window_title">
+                  <property name="title" translatable="yes">Curtail</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton" id="menu_button">
+                  <property name="icon-name">open-menu-symbolic</property>
+                  <property name="primary">true</property>
+                  <property name="tooltip-text" translatable="yes">Main Menu</property>
+              </object>
+            </child>
           </object>
         </child>
-        <child>
-          <object class="GtkBox" id="resultbox">
+
+        <property name="content">
+          <object class="GtkBox" id="mainbox">
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkScrolledWindow" id="scrolled_window">
+              <object class="AdwBanner" id="warning_banner">
+                <property name="action-name">win.preferences</property>
+                <property name="button-label" translatable="yes">_Change Mode</property>
+                <property name="title" translatable="yes">Images will be overwritten, proceed carefully.</property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwStatusPage" id="homebox">
                 <property name="vexpand">true</property>
-                <property name="hscrollbar-policy">never</property>
+                <property name="icon-name">com.github.huluti.Curtail</property>
+                <property name="title" translatable="no">Curtail</property>
+                <property name="description" translatable="yes">Drop images here to compress them</property>
                 <child>
-                  <object class="AdwClamp">
-                    <property name="margin-start">10</property>
-                    <property name="margin-end">10</property>
-                    <property name="margin-top">20</property>
-                    <property name="margin-bottom">20</property>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkListBox" id="listbox">
-                        <property name="hexpand">true</property>
-                        <property name="valign">start</property>
-                        <property name="selection-mode">none</property>
+                      <object class="GtkButton">
+                        <property name="label" translatable="yes">_Browse Files</property>
+                        <property name="halign">center</property>
+                        <property name="action-name">win.select-file</property>
+                        <property name="margin-bottom">40</property>
+                        <property name="use-underline">1</property>
                         <style>
-                          <class name="boxed-list" />
+                          <class name="suggested-action"/>
+                          <class name="pill"/>
                         </style>
                       </object>
                     </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">10</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">end</property>
+                            <property name="label" translatable="yes">Lossless</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSwitch" id="toggle_lossy">
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Lossy</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <style>
+                  <class name="icon-dropshadow"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="resultbox">
+                <child>
+                  <object class="GtkScrolledWindow" id="scrolled_window">
+                    <property name="vexpand">true</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="AdwClamp">
+                        <property name="margin-start">10</property>
+                        <property name="margin-end">10</property>
+                        <property name="margin-top">20</property>
+                        <property name="margin-bottom">20</property>
+                        <child>
+                          <object class="GtkListBox" id="listbox">
+                            <property name="hexpand">true</property>
+                            <property name="valign">start</property>
+                            <property name="selection-mode">none</property>
+                            <style>
+                              <class name="boxed-list" />
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
             </child>
           </object>
-        </child>
+        </property>
+
       </object>
-    </child>
-    <child type="titlebar">
-      <object class="AdwHeaderBar" id="headerbar">
-        <child>
-          <object class="GtkBox">
-            <child>
-              <object class="GtkButton" id="filechooser_button_headerbar">
-                <property name="icon-name">document-open-symbolic</property>
-                <property name="action-name">win.select-file</property>
-                <property name="tooltip-text" translatable="yes">Browse Files</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkButton" id="clear_button_headerbar">
-                <property name="icon-name">view-refresh-symbolic</property>
-                <property name="action-name">win.clear-results</property>
-                <property name="tooltip-text" translatable="yes">Clear Results</property>
-              </object>
-            </child>
-          </object>
-        </child>
-        <child type="title">
-          <object class="AdwWindowTitle" id="window_title">
-              <property name="title" translatable="yes">Curtail</property>
-          </object>
-        </child>
-        <child type="end">
-          <object class="GtkMenuButton" id="menu_button">
-              <property name="icon-name">open-menu-symbolic</property>
-              <property name="primary">true</property>
-              <property name="tooltip-text" translatable="yes">Main Menu</property>
-          </object>
-        </child>
-      </object>
-    </child>
+    </property>
+
   </template>
 </interface>
 
