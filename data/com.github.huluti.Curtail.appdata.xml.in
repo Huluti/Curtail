@@ -21,6 +21,15 @@
   <kudos>
     <kudo>ModernToolkit</kudo>
   </kudos>
+  <categories>
+    <category>Graphics</category>
+  </categories>
+  <keywords>
+    <keyword>compress</keyword>
+    <keyword>optimize</keyword>
+    <keyword>image</keyword>
+    <keyword>photo</keyword>
+  </keywords>
   <screenshots>
     <screenshot type="default">
       <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
