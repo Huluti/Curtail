@@ -129,7 +129,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         result_item.error = error
         if not error:
             result_item.savings = str(round(100 - (result_item.new_size * 100 / result_item.size), 2)) + '%'
-            result_item.subtitle_label += ' -> ' + sizeof_fmt(result_item.new_size)
+            result_item.subtitle_label += ' → ' + sizeof_fmt(result_item.new_size)
         else:
             result_item.subtitle_label = error_message
 
