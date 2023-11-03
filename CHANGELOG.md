@@ -1,6 +1,22 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 1.8.0 - 2023-11-03
+### Added
+- Add "Bulk Compress Directory (recursive)" feature. Thank's to @rk234.
+- Add simplified Chinese translation. Thank's to @yuhldr.
+- Add Ukrainian translation. Thank's to @Vovkiv.
+- Add categories and keywords support in appdata. Thank's to @sabriunal.
+
+### Changed
+- Improve clarity of preference options.
+- Update OxiPNG to v9.
+- Update translations.
+
+### Fixed
+- Handle cases where previews can't be generated.
+- Fix some "Format of this file is not supported".
+
 ## [1.7.0] - 2023-04-05
 
 ### Added

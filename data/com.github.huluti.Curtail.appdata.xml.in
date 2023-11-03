@@ -44,6 +44,22 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.8.0" date="2023-10-03">
+      <description translatable="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add "Bulk Compress Directory (recursive)" feature. Thank's to @rk234</li>
+          <li>Add simplified Chinese translation. Thank's to @yuhldr</li>
+          <li>Add Ukrainian translation. Thank's to @Vovkiv.</li>
+          <li>Add categories and keywords support in appdata. Thank's to @sabriunal</li>
+          <li>Improve clarity of preference options</li>
+          <li>Update OxiPNG to v9</li>
+          <li>Update translations</li>
+          <li>Handle cases where previews can't be generated</li>
+          <li>Fix some "Format of this file is not supported"</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.7.0" date="2023-04-05">
       <description translatable="no">
         <p>Here's the changelog of this version:</p>
