@@ -62,18 +62,15 @@ def add_filechooser_filters(dialog):
 
 
 def get_file_type(filename):
-    content_type, uncertain = Gio.content_type_guess(filename=str(filename))
-    if not uncertain:
-        if content_type == 'image/jpeg':
-            return 'jpg'
-        elif content_type == 'image/png':
-            return 'png'
-        elif content_type == 'image/webp':
-            return 'webp'
-        elif content_type == 'image/svg+xml':
-            return 'svg'
-        else:
-            return None
+    content_type = Gio.content_type_guess(filename=str(filename))[0]
+    if content_type == 'image/jpeg':
+        return 'jpg'
+    elif content_type == 'image/png':
+        return 'png'
+    elif content_type == 'image/webp':
+        return 'webp'
+    elif content_type == 'image/svg+xml':
+        return 'svg'
     else:
         return None
 
