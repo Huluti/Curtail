@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v8.0.0.tar.gz",
-                    "sha256": "ef96d6340e70900de0a38ace8f5f20878f6c256b18b0c59cd87f2b515437b87b"
+                    "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.0.0.tar.gz",
+                    "sha256": "534fa8f349f52b01c2ee4332cef25ce1311edca04209ac6d972e38b171550a1b"
                 },
                 "oxipng-sources.json"
             ]
