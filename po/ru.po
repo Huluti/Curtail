@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-03 09:45+0100\n"
-"PO-Revision-Date: 2024-01-06 21:42+1000\n"
+"PO-Revision-Date: 2024-01-08 01:28+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -303,7 +303,7 @@ msgstr "Используйте с осторожностью, т.к. изобр�
 
 #: data/ui/window.ui:60
 msgid "Drop images here to compress them"
-msgstr "Для сжатия изображений, перетащите их сюда"
+msgstr "Перетащите сюда изображения для их сжатия"
 
 #: data/ui/window.ui:66
 msgid "_Browse Files"
