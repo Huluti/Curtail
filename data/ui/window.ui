@@ -49,7 +49,7 @@
               <object class="AdwBanner" id="warning_banner">
                 <property name="action-name">win.preferences</property>
                 <property name="button-label" translatable="yes">_Change Mode</property>
-                <property name="title" translatable="yes">Images will be overwritten, proceed carefully.</property>
+                <property name="title" translatable="yes">Images will be overwritten, proceed carefully</property>
               </object>
             </child>
             <child>
