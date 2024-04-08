@@ -282,6 +282,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         return final_filenames
 
     def clean_filename(self, filename):
+        filename = str(filename)
         if filename.startswith('file://'):  # drag&drop
             filename = filename[7:]  # remove 'file://'
             filename = unquote(filename)  # remove %20
