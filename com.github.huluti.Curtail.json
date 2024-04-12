@@ -1,60 +1,60 @@
 {
-    "id": "com.github.huluti.Curtail",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
-    "sdk": "org.gnome.Sdk",
-    "sdk-extensions": [
+    "id":"com.github.huluti.Curtail",
+    "runtime":"org.gnome.Platform",
+    "runtime-version":"46",
+    "sdk":"org.gnome.Sdk",
+    "sdk-extensions":[
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
-    "command": "curtail",
-    "finish-args": [
+    "command":"curtail",
+    "finish-args":[
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--filesystem=home"
     ],
-    "modules": [
+    "modules":[
         {
-            "name": "jpegoptim",
-            "sources": [
+            "name":"jpegoptim",
+            "sources":[
                 {
-                    "type": "archive",
-                    "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.5.tar.gz",
-                    "sha256": "90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38"
+                    "type":"archive",
+                    "url":"https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.5.tar.gz",
+                    "sha256":"90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38"
                 }
             ]
         },
         {
-            "name": "oxipng",
-            "buildsystem": "simple",
-            "build-commands": [
+            "name":"oxipng",
+            "buildsystem":"simple",
+            "build-commands":[
                 "cargo --offline fetch --manifest-path Cargo.toml --verbose",
                 "cargo --offline build --release --verbose",
                 "install -Dm 755 target/release/oxipng -t /app/bin"
             ],
-            "build-options": {
-				"append-path": "/usr/lib/sdk/rust-stable/bin",
-				"env": {
-				    "CARGO_HOME": "/run/build/oxipng/cargo"
-				}
-			},
-            "sources": [
+            "build-options":{
+                "append-path":"/usr/lib/sdk/rust-stable/bin",
+                "env":{
+                    "CARGO_HOME":"/run/build/oxipng/cargo"
+                }
+            },
+            "sources":[
                 {
-                    "type": "archive",
-                    "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.0.0.tar.gz",
-                    "sha256": "534fa8f349f52b01c2ee4332cef25ce1311edca04209ac6d972e38b171550a1b"
+                    "type":"archive",
+                    "url":"https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.0.0.tar.gz",
+                    "sha256":"534fa8f349f52b01c2ee4332cef25ce1311edca04209ac6d972e38b171550a1b"
                 },
                 "oxipng-sources.json"
             ]
         },
         {
-            "name": "pngquant",
-            "sources": [
+            "name":"pngquant",
+            "sources":[
                 {
-                    "type": "archive",
-                    "url": "http://pngquant.org/pngquant-2.18.0-src.tar.gz",
-                    "sha256": "e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4"
+                    "type":"archive",
+                    "url":"http://pngquant.org/pngquant-2.18.0-src.tar.gz",
+                    "sha256":"e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4"
                 }
             ]
         },
