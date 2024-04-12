@@ -1,3 +1,9 @@
+curtail (1.9.1) focal; urgency=medium
+
+  * Use default decoration layout for screenshots.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Fri, 12 Apr 2024 13:40 +0200
+
 curtail (1.9.0) focal; urgency=medium
 
   * Correct title case, reword subtitles, remove periods. Thank's to @MonsterObserver.

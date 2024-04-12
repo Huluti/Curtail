@@ -38,6 +38,14 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.9.1" date="2024-04-12">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Use default decoration layout for screenshots</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.0" date="2024-04-12">
       <description translate="no">
         <p>Here's the changelog of this version:</p>

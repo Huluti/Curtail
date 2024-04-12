@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+
+## 1.9.1 - 2024-04-12
+### Fixed
+- Use default decoration layout for screenshots
+
 ## 1.9.0 - 2024-04-12
 ### Changed
 - Correct title case, reword subtitles, remove periods. Thank's to @MonsterObserver.

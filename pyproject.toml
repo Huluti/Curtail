@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "curtail"
-version = "1.9.0"
+version = "1.9.1"
 description = ""
 authors = ["Hugo Posnic <hugo.posnic@protonmail.com>"]
 license = "GPLv3"
