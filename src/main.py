@@ -35,18 +35,17 @@ class Application(Adw.Application):
     def do_startup(self):
         Adw.Application.do_startup(self)
 
-        self.connect('open', self.file_open_handler)
-
     def do_activate(self):
         self.win = CurtailWindow(application=self)
         self.win.present()
 
-    def file_open_handler(self, app, g_file_list, amount, ukwn):
+    def do_open(self, g_file_list, amount, ukwn):
         self.do_activate()
         filenames = []
         for g_file in g_file_list:
             filenames.append(g_file.get_uri())
-        self.win.handle_filenames(filenames)
+        final_filenames = self.win.handle_filenames(filenames)
+        self.win.compress_filenames(final_filenames)
 
 
 def main(version):
