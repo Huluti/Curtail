@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 1.9.0 - 2024-04-12
+### Changed
+- Correct title case, reword subtitles, remove periods. Thank's to @MonsterObserver.
+- Use proper arrow character. Thank's to @kra-mo.
+- Update translations.
+
+### Fixed
+- Fix drag and drop for folders. Thank's to @ARAKHNID.
+- Appstream data improvements. Thank's to @yakushabb and @bertob.
+
 ## 1.8.0 - 2023-11-03
 ### Added
 - Add "Bulk Compress Directory (recursive)" feature. Thank's to @rk234.

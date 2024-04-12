@@ -1,3 +1,13 @@
+curtail (1.9.0) focal; urgency=medium
+
+  * Correct title case, reword subtitles, remove periods. Thank's to @MonsterObserver.
+  * Use proper arrow character. Thank's to @kra-mo.
+  * Update translations.
+  * Fix drag and drop for folders. Thank's to @ARAKHNID.
+  * Appstream data improvements. Thank's to @yakushabb and @bertob.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Fri, 12 Apr 2024 12:30 +0200
+
 curtail (1.8.0) focal; urgency=medium
 
   * Add "Bulk Compress Directory (recursive)" feature. Thank's to @rk234.
