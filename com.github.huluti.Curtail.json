@@ -26,6 +26,14 @@
             ]
         },
         {
+            "name": "gccfix",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ln -s /usr/bin/gcc /app/bin/aarch64-linux-gnu-gcc"
+            ],
+            "cleanup": ["*"]
+        },
+        {
             "name":"oxipng",
             "buildsystem":"simple",
             "build-commands":[
