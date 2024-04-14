@@ -1,0 +1,415 @@
+# curtail.pot
+# Copyright (C) 2021 Hugo Posnic
+# This file is distributed under the same license as the curtail package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# twlvnn <kraft_werk@tutanota.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: curtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-03 09:45+0100\n"
+"PO-Revision-Date: 2024-04-14 14:41+0200\n"
+"Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
+"Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 45.3\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:9
+#: data/com.github.huluti.Curtail.desktop.in:5
+msgid "Compress your images"
+msgstr "Компресирайте вашите изображения"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"Оптимизирайте вашите изображения с „Curtail“ — полезен компресор на "
+"изображения, който поддържа PNG, JPEG, WebP и SVG файлове."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
+msgid ""
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Поддържа режими на компресия „без загуба“ и „със загуба“, като има "
+"възможност да се или да не се запазят метаданните на изображенията."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:28
+msgid "compress"
+msgstr "компресия"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:29
+msgid "optimize"
+msgstr "оптимизиране"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:30
+msgid "image"
+msgstr "изображение"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:31
+msgid "photo"
+msgstr "снимка"
+
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:32
+msgid "Curtail"
+msgstr "Curtail"
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr ""
+"compress;optimize;image;photo;компресия;оптимизиране;изображение;снимка;"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Запазете в нов файл"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Запазете компресираното изображение в нов файл."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
+msgid "Keep metadata"
+msgstr "Запазете метаданните"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting preserves metadata of images."
+msgstr "Тази настройка запазва метаданните на изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:43
+msgid "Preserve file attributes if possible"
+msgstr "Запазете файловите атрибути, ако е възможно"
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Enable lossy mode"
+msgstr "Включване на режим „със загуба“"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "Use lossy mode to compress images."
+msgstr "Използвайте режим „със загуба“, за да компресирате изображения."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
+msgid "Suffix to append at end of new file"
+msgstr "Наставка за добавяне в края на новия файл"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "Suffix to append at end of new file."
+msgstr "Наставка за добавяне в края на новия файл."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
+msgid "PNG Lossy Compression Level"
+msgstr "Ниво на компресия със загуба на PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Lossy compression level to use for PNG images."
+msgstr ""
+"Ниво на компресия със загуба, което да се използва за PNG изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "PNG Lossless Compression Level"
+msgstr "Ниво на компресия без загуба на PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Lossless compression level to use for PNG images."
+msgstr ""
+"Ниво на компресия без загуба, което да се използва за PNG изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "JPG Lossy Compression Level"
+msgstr "Ниво на компресия със загуба на JPG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Lossy compression level to use for JPG images."
+msgstr ""
+"Ниво на компресия със загуба, което да се използва за JPG изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46
+msgid "WebP Lossy Compression Level"
+msgstr "Ниво на компресия със загуба на WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossy compression level to use for WebP images."
+msgstr ""
+"Ниво на компресия със загуба, което да се използва за WebP изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
+msgid "WebP Lossless Compression Level"
+msgstr "Ниво на компресия без загуба на WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossless compression level to use for WebP images."
+msgstr ""
+"Ниво на компресия без загуба, което да се използва за WebP изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
+msgid "Enable progressive encoding for JPEG images."
+msgstr "Активиране на прогресивното кодиране за JPEG изображения."
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Optionally encode jpeg images progressively."
+msgstr "По желание прогресивно кодирайте jpeg изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "Enable maximum compression for SVG images."
+msgstr "Активиране на максимално компресиране за SVG изображения."
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Optionally enable maximum cleaning of SVG images."
+msgstr "По желание разрешете максимално почистване на SVG изображенията."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Compression Timeout"
+msgstr "Изчакване на компресията"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Compression timeout for each image."
+msgstr "Изчакване на компресията за всяко изображение."
+
+#: data/ui/help_overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общи"
+
+#: data/ui/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Select File"
+msgstr "Избиране на файл"
+
+#: data/ui/help_overlay.ui:20
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Настройки"
+
+#: data/ui/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Клавишни комбинации"
+
+#: data/ui/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Спиране на програмата"
+
+#: data/ui/preferences.ui:4 data/ui/menu.ui:10
+msgid "Preferences"
+msgstr "Настройки"
+
+#: data/ui/preferences.ui:8
+msgid "General"
+msgstr "Общи"
+
+#: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr "Безопасен режим"
+
+#: data/ui/preferences.ui:15
+msgid "Save the compressed image into a new file"
+msgstr "Запази компресираното изображение в нов файл"
+
+#: data/ui/preferences.ui:32
+msgid "Keep metadata chunks that do not affect rendering."
+msgstr "Запази метаданните, които не влияят на изобразяването."
+
+#: data/ui/preferences.ui:44
+msgid ""
+"Ensure the output file has the same permissions and timestamps as the input "
+"file."
+msgstr ""
+"Уверете се, че резултатният файл има същите права и времена като входния "
+"файл."
+
+#: data/ui/preferences.ui:55
+msgid "Compression timeout"
+msgstr "Изчакване на компресията"
+
+#: data/ui/preferences.ui:56
+msgid "For each image"
+msgstr "За всяко изображение"
+
+#: data/ui/preferences.ui:80
+msgid "Compression"
+msgstr "Компресия"
+
+#: data/ui/preferences.ui:87 data/ui/preferences.ui:132
+#: data/ui/preferences.ui:169
+msgid "Lossy Compression"
+msgstr "Компресия със загуба"
+
+#: data/ui/preferences.ui:88 data/ui/preferences.ui:133
+#: data/ui/preferences.ui:170
+msgid "In percentage. 100% is the best quality."
+msgstr "В проценти. 100% е най-доброто качество."
+
+#: data/ui/preferences.ui:107 data/ui/preferences.ui:189
+msgid "Lossless Compression Level"
+msgstr "Ниво на компресия без загуба"
+
+#: data/ui/preferences.ui:108 data/ui/preferences.ui:190
+msgid "Between 0 and 6. 6 is the highest (but slower) level."
+msgstr "Между 0 и 6. 6 е най-високото (но по-бавно) ниво."
+
+#: data/ui/preferences.ui:152
+msgid "Progressive Encode"
+msgstr "Прогресивно кодиране"
+
+#: data/ui/preferences.ui:153
+msgid "To enable incremental image rendering: blurry to clear."
+msgstr ""
+"Да активирате поетапно изобразяване на изображения: от размазано до ясно."
+
+#: data/ui/preferences.ui:214
+msgid "Maximum Compression Level"
+msgstr "Максимално ниво на компресия"
+
+#: data/ui/preferences.ui:215
+msgid "Can be more destructive for the image."
+msgstr "Може да бъде по-увреждащо за изображението."
+
+#: data/ui/menu.ui:6
+msgid "Bulk Compress Directory (Recursive)"
+msgstr "Групово компресиране на папката (рекурсивно)"
+
+#: data/ui/menu.ui:14
+msgid "Keyboard Shortcuts"
+msgstr "Клавишни настройки"
+
+#: data/ui/menu.ui:18
+msgid "About Curtail"
+msgstr "Относно „Curtail“"
+
+#: data/ui/window.ui:18 src/window.py:188
+msgid "Browse Files"
+msgstr "Разглеждане на файловете"
+
+#: data/ui/window.ui:25
+msgid "Clear Results"
+msgstr "Изчистване на резултатите"
+
+#: data/ui/window.ui:39
+msgid "Main Menu"
+msgstr "Основно меню"
+
+#: data/ui/window.ui:51
+msgid "_Change Mode"
+msgstr "_Променяне на режима"
+
+#: data/ui/window.ui:52
+msgid "Images will be overwritten, proceed carefully."
+msgstr "Изображенията ще бъдат презаписани, действайте внимателно."
+
+#: data/ui/window.ui:60
+msgid "Drop images here to compress them"
+msgstr "Пуснете изображения тук, за да ги компресирате"
+
+#: data/ui/window.ui:66
+msgid "_Browse Files"
+msgstr "_Разглеждане на файловете"
+
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "Без загуба"
+
+#: data/ui/window.ui:97
+msgid "Lossy"
+msgstr "Със загуба"
+
+#: src/compressor.py:89
+msgid "Compression has reached the configured timeout of {} seconds."
+msgstr "Компресията достигна конфигурираното изчакване от {} секунди."
+
+#: src/compressor.py:93
+msgid "An unknown error has occurred"
+msgstr "Възникна непозната грешка"
+
+#: src/compressor.py:102
+msgid "Can't find the compressed file"
+msgstr "Неуспешно намиране на компресирания файл"
+
+#: src/tools.py:32
+msgid "All images"
+msgstr "Всички изображения"
+
+#: src/tools.py:39
+msgid "PNG images"
+msgstr "PNG изображения"
+
+#: src/tools.py:43
+msgid "JPEG images"
+msgstr "JPEG изображения"
+
+#: src/tools.py:47
+msgid "WebP images"
+msgstr "WebP изображения"
+
+#: src/tools.py:51
+msgid "SVG images"
+msgstr "SVG изображения"
+
+#: src/tools.py:134 src/tools.py:141 src/tools.py:148 src/tools.py:155
+#: src/tools.py:162 src/tools.py:192
+msgid "Version not found"
+msgstr "Не е намерена версията"
+
+#: src/window.py:175
+msgid "Safe mode with '{}' suffix"
+msgstr "Безопасен режим с '{}' наставка"
+
+#: src/window.py:178
+msgid "Overwrite mode"
+msgstr "Режим „Презаписване“"
+
+#: src/window.py:206
+msgid "Browse Directories"
+msgstr "Разглеждане на папки"
+
+#: src/window.py:236 src/window.py:242
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Сигурни ли сте, че искате да компресирате изображенията в тези папки?"
+
+#: src/window.py:237
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"Всички изображения в избраните папки и техните подпапки ще бъдат "
+"компресирани. Оригиналните изображения няма да бъдат променени."
+
+#: src/window.py:243
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"Всички изображения в избраните папки и техните подпапки ще бъдат "
+"компресирани и презаписани!"
+
+#: src/window.py:246
+msgid "Cancel"
+msgstr "Отказване"
+
+#: src/window.py:247
+msgid "Compress"
+msgstr "Компресиране"
+
+#: src/window.py:316
+msgid "This file doesn't exist."
+msgstr "Файлът не съществува."
+
+#: src/window.py:321
+msgid "Format of this file is not supported."
+msgstr "Форматът на този файл не се поддържа."
+
+#: src/window.py:373
+msgid "translator-credits"
+msgstr "twlvnn <kraft_werk@tutanota.com>"
+
+#: src/window.py:377
+msgid "Contributors"
+msgstr "Сътрудници"
