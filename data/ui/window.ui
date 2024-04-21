@@ -3,6 +3,7 @@
   <template class="CurtailWindow" parent="AdwApplicationWindow">
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
+    <property name="default-height">500</property>
 
     <property name="content">
       <object class="AdwToolbarView">
