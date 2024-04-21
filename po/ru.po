@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-03 09:45+0100\n"
-"PO-Revision-Date: 2024-01-08 01:28+1000\n"
+"POT-Creation-Date: 2024-04-13 14:53+0800\n"
+"PO-Revision-Date: 2024-04-21 12:41+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -20,12 +20,12 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:9
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
 msgid "Compress your images"
 msgstr "Сжатие изображений"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
@@ -33,7 +33,7 @@ msgstr ""
 "Оптимизируйте свои изображения с помощью Curtail, удобного графического "
 "компрессора, поддерживающего работу с файлами форматов PNG, JPEG, WebP и SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -41,28 +41,11 @@ msgstr ""
 "Приложение поддерживает сжатие с потерями и без потерь в качестве и "
 "позволяет выбрать, сохранять ли метаданные."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:28
-msgid "compress"
-msgstr "сжать"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:29
-msgid "optimize"
-msgstr "оптимизировать"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:30
-msgid "image"
-msgstr "изображение"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:31
-msgid "photo"
-msgstr "фотография"
-
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
 #: data/ui/window.ui:32
 msgid "Curtail"
 msgstr "Curtail"
 
-#. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
 msgid "compress;optimize;image;photo;"
 msgstr "compress;optimize;image;photo;сжатие;оптимизация;изображение;фото;"
@@ -75,7 +58,7 @@ msgstr "Сохранить в новый файл"
 msgid "Save the compressed image into a new file."
 msgstr "Сохранять сжатые данные в новый файл."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
+#: data/com.github.huluti.Curtail.gschema.xml:11
 msgid "Keep metadata"
 msgstr "Сохранять метаданные"
 
@@ -84,7 +67,7 @@ msgstr "Сохранять метаданные"
 msgid "This setting preserves metadata of images."
 msgstr "Не удалять уже существующие метаданные изображений."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:43
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Preserve file attributes if possible"
 msgstr "По возможности сохранять атрибуты файла"
 
@@ -96,7 +79,7 @@ msgstr "Включить режим с потерей качества"
 msgid "Use lossy mode to compress images."
 msgstr "Использовать режим с потерей качества для сжатия изображений."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Suffix to append at end of new file"
 msgstr "Суффикс для имени нового файла"
 
@@ -160,7 +143,7 @@ msgstr "Использовать максимальное сжатие при з
 msgid "Optionally enable maximum cleaning of SVG images."
 msgstr "При необходимости использовать максимальную очистку изображений SVG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:66
+#: data/com.github.huluti.Curtail.gschema.xml:66 data/ui/preferences.ui:55
 msgid "Compression Timeout"
 msgstr "Ограничение времени сжатия"
 
@@ -206,28 +189,36 @@ msgid "Safe Mode"
 msgstr "Безопасный режим"
 
 #: data/ui/preferences.ui:15
-msgid "Save the compressed image into a new file"
+msgid "Save the compressed image in a new file"
 msgstr "Сохранять сжатое изображение в новый файл"
 
+#: data/ui/preferences.ui:26
+msgid "New File Suffix"
+msgstr "Новый суффикс файла"
+
+#: data/ui/preferences.ui:31
+msgid "Keep Metadata"
+msgstr "Сохранять метаданные"
+
 #: data/ui/preferences.ui:32
-msgid "Keep metadata chunks that do not affect rendering."
-msgstr "Сохранять фрагменты метаданных, которые не влияют на рендеринг."
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Сохранять фрагменты метаданных, которые не влияют на рендеринг"
+
+#: data/ui/preferences.ui:43
+msgid "Keep File Attributes When Possible"
+msgstr "Сохранять атрибуты файла, когда это возможно"
 
 #: data/ui/preferences.ui:44
 msgid ""
-"Ensure the output file has the same permissions and timestamps as the input "
-"file."
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
 msgstr ""
-"Убедитесь, что выходной и входной файлы имеют одинаковые права доступа и "
-"временные метки."
-
-#: data/ui/preferences.ui:55
-msgid "Compression timeout"
-msgstr "Ограничение времени сжатия"
+"Убедитесь, что новый и исходный файлы имеют одинаковые права доступа и "
+"временные метки"
 
 #: data/ui/preferences.ui:56
-msgid "For each image"
-msgstr "Для каждого изображения"
+msgid "Set the timeout between images"
+msgstr "Установить временной интервал между изображениями"
 
 #: data/ui/preferences.ui:80
 msgid "Compression"
@@ -240,34 +231,36 @@ msgstr "Сжатие с потерями"
 
 #: data/ui/preferences.ui:88 data/ui/preferences.ui:133
 #: data/ui/preferences.ui:170
-msgid "In percentage. 100% is the best quality."
-msgstr "В процентах. 100% - это наилучшее качество."
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr ""
+"Установите качество сгенерированного изображения. 100% - это наилучшее "
+"качество"
 
 #: data/ui/preferences.ui:107 data/ui/preferences.ui:189
 msgid "Lossless Compression Level"
 msgstr "Уровень сжатия без потерь"
 
 #: data/ui/preferences.ui:108 data/ui/preferences.ui:190
-msgid "Between 0 and 6. 6 is the highest (but slower) level."
+msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr ""
-"Значения от 0 до 6. Самый лучший уровень сжатия (но самый медленный) "
-"соответствует 6."
+"Установите уровень сжатия. Самый лучший уровень сжатия (но самый медленный) "
+"соответствует 6"
 
 #: data/ui/preferences.ui:152
 msgid "Progressive Encode"
 msgstr "Прогрессивное кодирование"
 
 #: data/ui/preferences.ui:153
-msgid "To enable incremental image rendering: blurry to clear."
-msgstr "Постепенная отрисовка изображения: от размытого до чёткого."
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr "Включить постепенную отрисовку изображения: от размытого до чёткого"
 
 #: data/ui/preferences.ui:214
 msgid "Maximum Compression Level"
 msgstr "Максимальный уровень сжатия"
 
 #: data/ui/preferences.ui:215
-msgid "Can be more destructive for the image."
-msgstr "Изображения могут быть повреждены."
+msgid "This can be more destructive for the image"
+msgstr "Изображения при этом могут быть повреждены"
 
 #: data/ui/menu.ui:6
 msgid "Bulk Compress Directory (Recursive)"
@@ -298,8 +291,8 @@ msgid "_Change Mode"
 msgstr "_Изменить режим"
 
 #: data/ui/window.ui:52
-msgid "Images will be overwritten, proceed carefully."
-msgstr "Используйте с осторожностью, т.к. изображения будут перезаписаны."
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Используйте с осторожностью, т.к. изображения будут перезаписаны"
 
 #: data/ui/window.ui:60
 msgid "Drop images here to compress them"
@@ -394,23 +387,41 @@ msgstr "Отменить"
 msgid "Compress"
 msgstr "Сжать"
 
-#: src/window.py:316
+#: src/window.py:317
 msgid "This file doesn't exist."
 msgstr "Этот файл не существует."
 
-#: src/window.py:321
+#: src/window.py:322
 msgid "Format of this file is not supported."
 msgstr "Формат этого файла не поддерживается."
 
-#: src/window.py:373
+#: src/window.py:374
 msgid "translator-credits"
 msgstr ""
 "Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
-"Ser82-png <savmail.as@gmail.com>"
+"Ser82-png <savmail.as@gmail.com>, 2023-2024"
 
-#: src/window.py:377
+#: src/window.py:378
 msgid "Contributors"
 msgstr "Участники"
+
+#~ msgid "compress"
+#~ msgstr "сжать"
+
+#~ msgid "optimize"
+#~ msgstr "оптимизировать"
+
+#~ msgid "image"
+#~ msgstr "изображение"
+
+#~ msgid "photo"
+#~ msgstr "фотография"
+
+#~ msgid "Compression timeout"
+#~ msgstr "Ограничение времени сжатия"
+
+#~ msgid "For each image"
+#~ msgstr "Для каждого изображения"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
