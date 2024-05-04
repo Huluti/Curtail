@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
   <template class="CurtailPrefsWindow" parent="AdwPreferencesWindow">
-    <property name="title" translatable="yes">Preferences</property>
+    <property name="title" translatable="1">Preferences</property>
     <child>
       <object class="AdwPreferencesPage">
         <property name="name">general</property>
-        <property name="title" translatable="yes">General</property>
+        <property name="title" translatable="1">General</property>
         <property name="icon-name">applications-system-symbolic</property>
         <child>
           <object class="AdwPreferencesGroup">
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Safe Mode</property>
-                <property name="subtitle" translatable="yes">Save the compressed image in a new file</property>
+                <property name="title" translatable="1">Safe Mode</property>
+                <property name="subtitle" translatable="1">Save the compressed image in a new file</property>
                 <property name="activatable-widget">toggle_new_file</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_new_file">
@@ -23,13 +23,13 @@
             </child>
             <child>
               <object class="AdwEntryRow" id="entry_suffix">
-                <property name="title" translatable="yes">New File Suffix</property>
+                <property name="title" translatable="1">New File Suffix</property>
               </object>
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Keep Metadata</property>
-                <property name="subtitle" translatable="yes">Keep metadata chunks that do not affect rendering</property>
+                <property name="title" translatable="1">Keep Metadata</property>
+                <property name="subtitle" translatable="1">Keep metadata chunks that do not affect rendering</property>
                 <property name="activatable-widget">toggle_metadata</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_metadata">
@@ -40,8 +40,8 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Keep File Attributes When Possible</property>
-                <property name="subtitle" translatable="yes">Ensure the new file has the same permissions and timestamps as the original file</property>
+                <property name="title" translatable="1">Keep File Attributes When Possible</property>
+                <property name="subtitle" translatable="1">Ensure the new file has the same permissions and timestamps as the original file</property>
                 <property name="activatable-widget">toggle_file_attributes</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_file_attributes">
@@ -52,8 +52,8 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Compression Timeout</property>
-                <property name="subtitle" translatable="yes">Set the timeout between images</property>
+                <property name="title" translatable="1">Compression Timeout</property>
+                <property name="subtitle" translatable="1">Set the timeout between images</property>
                 <property name="activatable-widget">spin_timeout</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_timeout">
@@ -77,21 +77,20 @@
     <child>
       <object class="AdwPreferencesPage">
         <property name="name">compression</property>
-        <property name="title" translatable="yes">Compression</property>
+        <property name="title" translatable="1">Compression</property>
         <property name="icon-name">image-x-generic-symbolic</property>
         <child>
           <object class="AdwPreferencesGroup">
-            <property name="title" translatable="no">PNG</property>
+            <property name="title" translatable="0">PNG</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Lossy Compression</property>
-                <property name="subtitle" translatable="yes">Set the quality of the generated image, 100 is the best quality</property>
+                <property name="title" translatable="1">Lossy Compression</property>
+                <property name="subtitle" translatable="1">Set the quality of the generated image, 100 is the best quality</property>
                 <property name="activatable-widget">spin_png_lossy_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_png_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="png_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -104,14 +103,13 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Lossless Compression Level</property>
-                <property name="subtitle" translatable="yes">Set the level of the compression, 6 is the highest but slowest level</property>
+                <property name="title" translatable="1">Lossless Compression Level</property>
+                <property name="subtitle" translatable="1">Set the level of the compression, 6 is the highest but slowest level</property>
                 <property name="activatable-widget">spin_png_lossless_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_png_lossless_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="png_lossless_adj">
-                        <property name="lower">0</property>
                         <property name="upper">6</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -126,17 +124,16 @@
         </child>
         <child>
           <object class="AdwPreferencesGroup">
-            <property name="title" translatable="no">JPG</property>
+            <property name="title" translatable="0">JPG</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Lossy Compression</property>
-                <property name="subtitle" translatable="yes">Set the quality of the generated image, 100 is the best quality</property>
+                <property name="title" translatable="1">Lossy Compression</property>
+                <property name="subtitle" translatable="1">Set the quality of the generated image, 100 is the best quality</property>
                 <property name="activatable-widget">spin_jpg_lossy_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_jpg_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="jpg_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -149,8 +146,8 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Progressive Encode</property>
-                <property name="subtitle" translatable="yes">Enable incremental image rendering, going from blurry to clear</property>
+                <property name="title" translatable="1">Progressive Encode</property>
+                <property name="subtitle" translatable="1">Enable incremental image rendering, going from blurry to clear</property>
                 <property name="activatable-widget">toggle_jpg_progressive</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_jpg_progressive">
@@ -163,17 +160,16 @@
         </child>
         <child>
           <object class="AdwPreferencesGroup">
-            <property name="title" translatable="no">WebP</property>
+            <property name="title" translatable="0">WebP</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Lossy Compression</property>
-                <property name="subtitle" translatable="yes">Set the quality of the generated image, 100 is the best quality</property>
+                <property name="title" translatable="1">Lossy Compression</property>
+                <property name="subtitle" translatable="1">Set the quality of the generated image, 100 is the best quality</property>
                 <property name="activatable-widget">spin_webp_lossy_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_webp_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="webp_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -186,14 +182,13 @@
             </child>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Lossless Compression Level</property>
-                <property name="subtitle" translatable="yes">Set the level of the compression, 6 is the highest but slowest level</property>
+                <property name="title" translatable="1">Lossless Compression Level</property>
+                <property name="subtitle" translatable="1">Set the level of the compression, 6 is the highest but slowest level</property>
                 <property name="activatable-widget">spin_webp_lossless_level</property>
                 <child>
                   <object class="GtkSpinButton" id="spin_webp_lossless_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="webp_lossless_adj">
-                        <property name="lower">0</property>
                         <property name="upper">6</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -208,11 +203,11 @@
         </child>
         <child>
           <object class="AdwPreferencesGroup">
-            <property name="title" translatable="no">SVG</property>
+            <property name="title" translatable="0">SVG</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Maximum Compression Level</property>
-                <property name="subtitle" translatable="yes">This can be more destructive for the image</property>
+                <property name="title" translatable="1">Maximum Compression Level</property>
+                <property name="subtitle" translatable="1">This can be more destructive for the image</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_svg_maximum_level">
                     <property name="valign">center</property>
@@ -226,4 +221,3 @@
     </child>
   </template>
 </interface>
-
