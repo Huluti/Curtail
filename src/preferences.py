@@ -26,6 +26,7 @@ SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 class CurtailPrefsWindow(Adw.PreferencesWindow):
     __gtype_name__ = 'CurtailPrefsWindow'
 
+    toggle_recursive = Gtk.Template.Child()
     toggle_metadata = Gtk.Template.Child()
     toggle_file_attributes = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
@@ -52,6 +53,11 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
 
     def build_ui(self):
         # Compression settings
+
+        # Recursive
+        self.toggle_recursive.set_active(self._settings.get_boolean('recursive'))
+        self.toggle_recursive.connect('notify::active', self.on_bool_changed,
+                                     'recursive')
 
         # Keep metadata
         self.toggle_metadata.set_active(self._settings.get_boolean('metadata'))

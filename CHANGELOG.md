@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 ### Added
+- Add a "Recursive Compression" setting.
 - Add Bulgarian translation. Thank's to @twlvnn.
 - Add Hindi translation. Thank's to @Scrambled777.
 
@@ -12,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fix opening files with "Open With...". Thank's to @ARAKHN1D.
+- Fix DnD with nested folders (recursive).
 
 ## 1.9.1 - 2024-04-12
 ### Fixed

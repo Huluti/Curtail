@@ -6,6 +6,11 @@
       <summary>Save into a new file</summary>
       <description>Save the compressed image into a new file.</description>
     </key>
+	  <key type="b" name="recursive">
+	    <default>true</default>
+	    <summary>Enable recursive compression in folders</summary>
+	    <description>This setting enable compression in a recursive way in folders.</description>
+	  </key>
 	  <key type="b" name="metadata">
       <default>true</default>
       <summary>Keep metadata</summary>
