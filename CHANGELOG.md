@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## UNRELEASED
+### Added
+- Add Bulgarian translation. Thank's to @twlvnn.
+- Add Hindi translation. Thank's to @Scrambled777.
+
+### Changed
+- Update OxiPNG to v9.1.1
+- Update translations.
+
+### Fixed
+- Fix opening files with "Open With...". Thank's to @ARAKHN1D.
 
 ## 1.9.1 - 2024-04-12
 ### Fixed
@@ -13,7 +24,7 @@ All notable changes to this project will be documented in this file.
 - Update translations.
 
 ### Fixed
-- Fix drag and drop for folders. Thank's to @ARAKHNID.
+- Fix drag and drop for folders. Thank's to @ARAKHN1D.
 - Appstream data improvements. Thank's to @yakushabb and @bertob.
 
 ## 1.8.0 - 2023-11-03
