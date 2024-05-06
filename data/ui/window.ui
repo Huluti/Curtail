@@ -4,10 +4,8 @@
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
     <property name="default-height">500</property>
-
     <property name="content">
       <object class="AdwToolbarView">
-
         <child type="top">
           <object class="AdwHeaderBar" id="headerbar">
             <child>
@@ -30,19 +28,18 @@
             </child>
             <child type="title">
               <object class="AdwWindowTitle" id="window_title">
-                  <property name="title" translatable="yes">Curtail</property>
+                <property name="title" translatable="yes">Curtail</property>
               </object>
             </child>
             <child type="end">
               <object class="GtkMenuButton" id="menu_button">
-                  <property name="icon-name">open-menu-symbolic</property>
-                  <property name="primary">true</property>
-                  <property name="tooltip-text" translatable="yes">Main Menu</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="primary">true</property>
+                <property name="tooltip-text" translatable="yes">Main Menu</property>
               </object>
             </child>
           </object>
         </child>
-
         <property name="content">
           <object class="GtkBox" id="mainbox">
             <property name="orientation">vertical</property>
@@ -125,7 +122,7 @@
                             <property name="valign">start</property>
                             <property name="selection-mode">none</property>
                             <style>
-                              <class name="boxed-list" />
+                              <class name="boxed-list"/>
                             </style>
                           </object>
                         </child>
@@ -137,10 +134,7 @@
             </child>
           </object>
         </property>
-
       </object>
     </property>
-
   </template>
 </interface>
-

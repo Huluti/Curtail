@@ -91,7 +91,6 @@
                   <object class="GtkSpinButton" id="spin_png_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="png_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -111,7 +110,6 @@
                   <object class="GtkSpinButton" id="spin_png_lossless_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="png_lossless_adj">
-                        <property name="lower">0</property>
                         <property name="upper">6</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -136,7 +134,6 @@
                   <object class="GtkSpinButton" id="spin_jpg_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="jpg_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -173,7 +170,6 @@
                   <object class="GtkSpinButton" id="spin_webp_lossy_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="webp_lossy_adj">
-                        <property name="lower">0</property>
                         <property name="upper">100</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -193,7 +189,6 @@
                   <object class="GtkSpinButton" id="spin_webp_lossless_level">
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="webp_lossless_adj">
-                        <property name="lower">0</property>
                         <property name="upper">6</property>
                         <property name="step-increment">1</property>
                         <property name="page-increment">10</property>
@@ -226,4 +221,3 @@
     </child>
   </template>
 </interface>
-
