@@ -23,7 +23,8 @@ from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import add_filechooser_filters, get_file_type, \
-    create_image_from_file, sizeof_fmt, debug_infos, get_image_files_from_folder
+    create_image_from_file, sizeof_fmt, debug_infos, \
+    get_image_files_from_folder, get_image_files_from_folder_recursive
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
