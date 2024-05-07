@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-13 14:53+0800\n"
-"PO-Revision-Date: 2024-05-06 17:31+0530\n"
+"POT-Creation-Date: 2024-05-07 10:37+0200\n"
+"PO-Revision-Date: 2024-05-07 21:20+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -41,10 +41,11 @@ msgstr ""
 "दोनों का समर्थन करता है।"
 
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:32
+#: data/ui/window.ui:31
 msgid "Curtail"
 msgstr "Curtail"
 
+#. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
 msgid "compress;optimize;image;photo;"
 msgstr "संपीड़ित करें;अनुकूलित करें;छवि;फोटो;"
@@ -58,95 +59,103 @@ msgid "Save the compressed image into a new file."
 msgstr "संपीड़ित छवि को नई फाइल में सहेजें।"
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Enable recursive compression in folders"
+msgstr "फोल्डरों में पुनरावर्ती संपीड़न सक्षम करें"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "यह सेटिंग फोल्डरों में पुनरावर्ती तरीके से संपीड़न को सक्षम करती है।"
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Keep metadata"
 msgstr "मेटाडेटा रखें"
 
-#: data/com.github.huluti.Curtail.gschema.xml:12
 #: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "यह सेटिंग छवियों के मेटाडेटा को सुरक्षित रखती है।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve file attributes if possible"
 msgstr "यदि संभव हो तो फाइल विशेषताएं सुरक्षित रखें"
 
-#: data/com.github.huluti.Curtail.gschema.xml:21
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
 msgstr "हानिप्रद मोड सक्षम करें"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Use lossy mode to compress images."
 msgstr "छवियों को संपीड़ित करने के लिए हानिप्रद मोड का उपयोग करें।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:26
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Suffix to append at end of new file"
 msgstr "नई फाइल के अंत में जोड़ने के लिए प्रत्यय"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Suffix to append at end of new file."
 msgstr "नई फाइल के अंत में जोड़ने के लिए प्रत्यय।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:31
+#: data/com.github.huluti.Curtail.gschema.xml:36
 msgid "PNG Lossy Compression Level"
 msgstr "PNG हानिप्रद संपीड़न स्तर"
 
-#: data/com.github.huluti.Curtail.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for PNG images."
 msgstr "PNG छवियों के लिए उपयोग करने के लिए हानिप्रद संपीड़न स्तर।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:36
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossless Compression Level"
 msgstr "PNG हानिरहित संपीड़न स्तर"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossless compression level to use for PNG images."
 msgstr "PNG छवियों के लिए उपयोग करने के लिए हानिरहित संपीड़न स्तर।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "JPG Lossy Compression Level"
 msgstr "JPG हानिप्रद संपीड़न स्तर"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossy compression level to use for JPG images."
 msgstr "JPG छवियों के लिए उपयोग करने के लिए हानिप्रद संपीड़न स्तर।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:46
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
 msgstr "WebP हानिप्रद संपीड़न स्तर"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for WebP images."
 msgstr "WebP छवियों के लिए उपयोग करने के लिए हानिप्रद संपीड़न स्तर।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossless Compression Level"
 msgstr "WebP हानिरहित संपीड़न स्तर"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossless compression level to use for WebP images."
 msgstr "WebP छवियों के लिए उपयोग करने के लिए हानिरहित संपीड़न स्तर।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:56
+#: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "Enable progressive encoding for JPEG images."
 msgstr "JPEG छवियों के लिए प्रगतिशील एन्कोडिंग सक्षम करें।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "वैकल्पिक रूप से JPEG छवियों को प्रगतिशील एन्कोड करें।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:61
+#: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable maximum compression for SVG images."
 msgstr "SVG छवियों के लिए अधिकतम संपीड़न सक्षम करें।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:62
+#: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Optionally enable maximum cleaning of SVG images."
 msgstr "वैकल्पिक रूप से SVG छवियों की अधिकतम सफाई सक्षम करें।"
 
-#: data/com.github.huluti.Curtail.gschema.xml:66 data/ui/preferences.ui:55
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:67
 msgid "Compression Timeout"
 msgstr "संपीड़न समय-समाप्ति"
 
-#: data/com.github.huluti.Curtail.gschema.xml:67
+#: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Compression timeout for each image."
 msgstr "प्रत्येक छवि के लिए संपीड़न समय-समाप्ति।"
 
@@ -196,68 +205,76 @@ msgid "New File Suffix"
 msgstr "नई फाइल प्रत्यय"
 
 #: data/ui/preferences.ui:31
+msgid "Recursive Compression"
+msgstr "पुनरावर्ती संपीड़न"
+
+#: data/ui/preferences.ui:32
+msgid "Enable or disable compression through subdirectories"
+msgstr "उपनिर्देशिकाओं के माध्यम से संपीड़न सक्षम या अक्षम करें"
+
+#: data/ui/preferences.ui:43
 msgid "Keep Metadata"
 msgstr "मेटाडेटा रखें"
 
-#: data/ui/preferences.ui:32
+#: data/ui/preferences.ui:44
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "मेटाडेटा खंड रखें जो प्रतिपादन को प्रभावित न करें"
 
-#: data/ui/preferences.ui:43
+#: data/ui/preferences.ui:55
 msgid "Keep File Attributes When Possible"
 msgstr "जब संभव हो तो फाइल विशेषताएं रखें"
 
-#: data/ui/preferences.ui:44
+#: data/ui/preferences.ui:56
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr "सुनिश्चित करें कि नई फाइल में मूल फाइल के समान ही अनुमतियां और समय-चिह्न हैं"
 
-#: data/ui/preferences.ui:56
+#: data/ui/preferences.ui:68
 msgid "Set the timeout between images"
 msgstr "छवियों के बीच समय-सीमा निर्धारित करें"
 
-#: data/ui/preferences.ui:80
-msgid "Compression"
-msgstr "संपीड़न"
+#: data/ui/preferences.ui:92
+msgid "Formats"
+msgstr "प्रारूप"
 
-#: data/ui/preferences.ui:87 data/ui/preferences.ui:132
-#: data/ui/preferences.ui:169
+#: data/ui/preferences.ui:99 data/ui/preferences.ui:142
+#: data/ui/preferences.ui:178
 msgid "Lossy Compression"
 msgstr "हानिप्रद संपीड़न"
 
-#: data/ui/preferences.ui:88 data/ui/preferences.ui:133
-#: data/ui/preferences.ui:170
+#: data/ui/preferences.ui:100 data/ui/preferences.ui:143
+#: data/ui/preferences.ui:179
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "उत्पन्न छवि की गुणवत्ता निर्धारित करें, 100 सर्वोत्तम गुणवत्ता है"
 
-#: data/ui/preferences.ui:107 data/ui/preferences.ui:189
+#: data/ui/preferences.ui:118 data/ui/preferences.ui:197
 msgid "Lossless Compression Level"
 msgstr "हानिरहित संपीड़न स्तर"
 
-#: data/ui/preferences.ui:108 data/ui/preferences.ui:190
+#: data/ui/preferences.ui:119 data/ui/preferences.ui:198
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr "संपीड़न का स्तर निर्धारित करें, 6 उच्चतम लेकिन सबसे धीमा स्तर है"
 
-#: data/ui/preferences.ui:152
+#: data/ui/preferences.ui:161
 msgid "Progressive Encode"
 msgstr "प्रगतिशील एनकोड"
 
-#: data/ui/preferences.ui:153
+#: data/ui/preferences.ui:162
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr "धुंधली से स्पष्ट की ओर बढ़ते हुए, वृद्धिशील छवि प्रतिपादन सक्षम करें"
 
-#: data/ui/preferences.ui:214
+#: data/ui/preferences.ui:221
 msgid "Maximum Compression Level"
 msgstr "अधिकतम संपीड़न स्तर"
 
-#: data/ui/preferences.ui:215
+#: data/ui/preferences.ui:222
 msgid "This can be more destructive for the image"
 msgstr "यह छवि के लिए अधिक विनाशकारी हो सकता है"
 
 #: data/ui/menu.ui:6
-msgid "Bulk Compress Directory (Recursive)"
-msgstr "निर्देशिका को सामूहिक रूप से संपीड़ित करें (पुनरावर्ती)"
+msgid "Bulk Compress Directory"
+msgstr "सामूहिक निर्देशिका संपीड़न"
 
 #: data/ui/menu.ui:14
 msgid "Keyboard Shortcuts"
@@ -267,39 +284,39 @@ msgstr "कीबोर्ड शॉर्टकट"
 msgid "About Curtail"
 msgstr "Curtail के बारे में"
 
-#: data/ui/window.ui:18 src/window.py:188
+#: data/ui/window.ui:17 src/window.py:189
 msgid "Browse Files"
 msgstr "फाइलें ब्राउज़ करें"
 
-#: data/ui/window.ui:25
+#: data/ui/window.ui:24
 msgid "Clear Results"
 msgstr "परिणाम साफ करें"
 
-#: data/ui/window.ui:39
+#: data/ui/window.ui:38
 msgid "Main Menu"
 msgstr "मुख्य मेनू"
 
-#: data/ui/window.ui:51
+#: data/ui/window.ui:49
 msgid "_Change Mode"
 msgstr "मोड बदलें (_C)"
 
-#: data/ui/window.ui:52
+#: data/ui/window.ui:50
 msgid "Images will be overwritten, proceed carefully"
 msgstr "छवियां अधिलेखित कर दी जाएंगी, सावधानी से आगे बढ़ें"
 
-#: data/ui/window.ui:60
+#: data/ui/window.ui:58
 msgid "Drop images here to compress them"
 msgstr "छवियों को संपीड़ित करने के लिए उन्हें यहां छोड़ें"
 
-#: data/ui/window.ui:66
+#: data/ui/window.ui:64
 msgid "_Browse Files"
 msgstr "फाइलें ब्राउज़ करें (_B)"
 
-#: data/ui/window.ui:85
+#: data/ui/window.ui:83
 msgid "Lossless"
 msgstr "हानिरहित"
 
-#: data/ui/window.ui:97
+#: data/ui/window.ui:95
 msgid "Lossy"
 msgstr "हानिप्रद"
 
@@ -335,16 +352,16 @@ msgstr "WebP छवियां"
 msgid "SVG images"
 msgstr "SVG छवियां"
 
-#: src/tools.py:134 src/tools.py:141 src/tools.py:148 src/tools.py:155
-#: src/tools.py:162 src/tools.py:192
+#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
+#: src/tools.py:173 src/tools.py:203
 msgid "Version not found"
 msgstr "संस्करण नहीं मिला"
 
-#: src/window.py:175
+#: src/window.py:176
 msgid "Safe mode with '{}' suffix"
 msgstr "'{}' प्रत्यय के साथ सुरक्षित मोड"
 
-#: src/window.py:178
+#: src/window.py:179
 msgid "Overwrite mode"
 msgstr "अधिलेखित मोड"
 
@@ -352,11 +369,11 @@ msgstr "अधिलेखित मोड"
 msgid "Browse Directories"
 msgstr "निर्देशिकाएं ब्राउज़ करें"
 
-#: src/window.py:236 src/window.py:242
+#: src/window.py:231 src/window.py:237
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "क्या आप वाकई इन निर्देशिकाओं में छवियों को संपीड़ित करना चाहते हैं?"
 
-#: src/window.py:237
+#: src/window.py:232
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -364,7 +381,7 @@ msgstr ""
 "चयनित निर्देशिकाओं की सभी छवियां और उनकी उपनिर्देशिकाएं संपीड़ित की जाएंगी। मूल छवियों "
 "को संशोधित नहीं किया जाएगा।"
 
-#: src/window.py:243
+#: src/window.py:238
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -372,26 +389,26 @@ msgstr ""
 "चयनित निर्देशिकाओं और उनकी उपनिर्देशिकाओं की सभी छवियों को संपीड़ित और अधिलेखित कर "
 "दिया जाएगा!"
 
-#: src/window.py:246
+#: src/window.py:241
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/window.py:247
+#: src/window.py:242
 msgid "Compress"
 msgstr "संपीड़ित करें"
 
-#: src/window.py:317
+#: src/window.py:316
 msgid "This file doesn't exist."
 msgstr "यह फाइल मौजूद नहीं है।"
 
-#: src/window.py:322
+#: src/window.py:321
 msgid "Format of this file is not supported."
 msgstr "इस फाइल का प्रारूप समर्थित नहीं है।"
 
-#: src/window.py:374
+#: src/window.py:373
 msgid "translator-credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
-#: src/window.py:378
+#: src/window.py:377
 msgid "Contributors"
 msgstr "योगदानकर्ता"
