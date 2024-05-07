@@ -20,7 +20,7 @@ from urllib.parse import unquote
 from pathlib import Path
 
 from .resultitem import ResultItem
-from .preferences import CurtailPrefsWindow
+from .preferences import CurtailPrefsDialog
 from .compressor import Compressor
 from .tools import add_filechooser_filters, get_file_type, \
     create_image_from_file, sizeof_fmt, debug_infos, \
@@ -37,7 +37,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
     settings = Gtk.Settings.get_default()
 
-    prefs_window = None
+    prefs_dialog = None
     apply_window = None
 
     headerbar = Gtk.Template.Child()
@@ -220,20 +220,20 @@ class CurtailWindow(Adw.ApplicationWindow):
             else:
                 warning_message_dialog = self._create_warning_dialog()
                 warning_message_dialog.connect("response", on_dir_dialog_response)
-                warning_message_dialog.show()
+                warning_message_dialog.present(self)
 
         dialog.select_multiple_folders(self, None, handle_response)
 
     def _create_warning_dialog(self):
         dialog = None
         if self._settings.get_boolean('new-file'):
-            dialog = Adw.MessageDialog.new(self,
+            dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _("All of the images in the directories selected and their "
                 "subdirectories will be compressed. The original images will not "
                 "be modified."))
         else:
-            dialog = Adw.MessageDialog.new(self,
+            dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _("All of the images in the directories selected and their "
                 "subdirectories will be compressed and overwritten!"))
@@ -348,14 +348,13 @@ class CurtailWindow(Adw.ApplicationWindow):
         self._settings.set_boolean('lossy', switch.get_active())
 
     def on_preferences(self, *args):
-        if self.prefs_window is not None:
-            self.prefs_window.destroy()
-        self.prefs_window = CurtailPrefsWindow(self)
-        self.prefs_window.present()
+        if self.prefs_dialog is not None:
+            self.prefs_dialog.force_close()
+        self.prefs_dialog = CurtailPrefsDialog(self)
+        self.prefs_dialog.present(self)
 
     def on_about(self, *args):
-        about = Adw.AboutWindow(
-                    transient_for=self,
+        about = Adw.AboutDialog(
                     application_name='Curtail',
                     application_icon='com.github.huluti.Curtail',
                     developer_name='Hugo Posnic',
@@ -385,7 +384,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             ]
         )
         about.set_debug_info(debug_infos())
-        about.present()
+        about.present(self)
 
     def on_quit(self, *args):
         self.app.quit()

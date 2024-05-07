@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="curtail">
-  <template class="CurtailPrefsWindow" parent="AdwPreferencesWindow">
+  <template class="CurtailPrefsDialog" parent="AdwPreferencesDialog">
     <property name="title" translatable="yes">Preferences</property>
     <child>
       <object class="AdwPreferencesPage">

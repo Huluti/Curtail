@@ -23,8 +23,8 @@ SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
 
 
 @Gtk.Template(resource_path=UI_PATH + 'preferences.ui')
-class CurtailPrefsWindow(Adw.PreferencesWindow):
-    __gtype_name__ = 'CurtailPrefsWindow'
+class CurtailPrefsDialog(Adw.PreferencesDialog):
+    __gtype_name__ = 'CurtailPrefsDialog'
 
     toggle_recursive = Gtk.Template.Child()
     toggle_metadata = Gtk.Template.Child()
@@ -46,9 +46,6 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
         super().__init__(**kwargs)
 
         self.parent = parent
-        self.set_transient_for(parent)
-        self.set_modal(True)
-
         self.build_ui()
 
     def build_ui(self):
@@ -143,3 +140,4 @@ class CurtailPrefsWindow(Adw.PreferencesWindow):
 
     def on_int_changed(self, spin, key):
         self._settings.set_int(key, spin.get_value())
+
