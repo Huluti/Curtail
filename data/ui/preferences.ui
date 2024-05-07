@@ -29,7 +29,7 @@
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Recursive Compression</property>
-                <property name="subtitle" translatable="yes">Enable or disable recursive compression through subdirectories</property>
+                <property name="subtitle" translatable="yes">Enable or disable compression through subdirectories</property>
                 <property name="activatable-widget">toggle_recursive</property>
                 <child>
                   <object class="GtkSwitch" id="toggle_recursive">
