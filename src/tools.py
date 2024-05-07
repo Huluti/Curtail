@@ -109,15 +109,26 @@ def create_image_from_file(filename, max_width, max_height):
 
     return image
 
+
 def get_image_files_from_folder(folder_path):
+    images = []
+    for file in os.listdir(folder_path):
+        path = os.path.join(folder_path, file)
+        if os.path.isfile(path):
+            if get_file_type(path) is not None:
+                image_file = Gio.File.new_for_path(path)
+                images.append(image_file.get_uri())
+    return images
+
+
+def get_image_files_from_folder_recursive(folder_path):
     images = []
     for root, dirs, files in os.walk(folder_path):
         for file in files:
             path = os.path.join(root, file)
-            if get_file_type(path) != None:
+            if get_file_type(path) is not None:
                 image_file = Gio.File.new_for_path(path)
-                images.append(image_file)
-
+                images.append(image_file.get_uri())
     return images
 
 def debug_infos():

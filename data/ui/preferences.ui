@@ -28,6 +28,18 @@
             </child>
             <child>
               <object class="AdwActionRow">
+                <property name="title" translatable="yes">Recursive Compression</property>
+                <property name="subtitle" translatable="yes">Enable or disable compression through subdirectories</property>
+                <property name="activatable-widget">toggle_recursive</property>
+                <child>
+                  <object class="GtkSwitch" id="toggle_recursive">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
                 <property name="title" translatable="yes">Keep Metadata</property>
                 <property name="subtitle" translatable="yes">Keep metadata chunks that do not affect rendering</property>
                 <property name="activatable-widget">toggle_metadata</property>
@@ -76,8 +88,8 @@
     </child>
     <child>
       <object class="AdwPreferencesPage">
-        <property name="name">compression</property>
-        <property name="title" translatable="yes">Compression</property>
+        <property name="name">formats</property>
+        <property name="title" translatable="yes">Formats</property>
         <property name="icon-name">image-x-generic-symbolic</property>
         <child>
           <object class="AdwPreferencesGroup">

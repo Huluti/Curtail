@@ -23,7 +23,8 @@ from .resultitem import ResultItem
 from .preferences import CurtailPrefsWindow
 from .compressor import Compressor
 from .tools import add_filechooser_filters, get_file_type, \
-    create_image_from_file, sizeof_fmt, debug_infos, get_image_files_from_folder
+    create_image_from_file, sizeof_fmt, debug_infos, \
+    get_image_files_from_folder, get_image_files_from_folder_recursive
 
 CURTAIL_PATH = '/com/github/huluti/Curtail/'
 SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
@@ -197,8 +198,7 @@ class CurtailWindow(Adw.ApplicationWindow):
                 filenames = list()
                 for file in files:
                     filenames.append(file.get_uri())
-                final_filenames = self.handle_filenames(filenames)
-                self.compress_filenames(final_filenames)
+                self.compress_filenames(filenames)
 
         dialog.open_multiple(self, None, handle_response)
 
@@ -210,13 +210,8 @@ class CurtailWindow(Adw.ApplicationWindow):
                 if response == "compress":
                     filenames = list()
                     for folder in folders:
-                        images = get_image_files_from_folder(folder.get_path())
-
-                        for image in images:
-                            filenames.append(image.get_uri())
-
-                    final_filenames = self.handle_filenames(filenames)
-                    self.compress_filenames(final_filenames)
+                        filenames.append(folder.get_path())
+                    self.compress_filenames(filenames)
 
             try:
                 folders = dialog.select_multiple_folders_finish(result)
@@ -261,9 +256,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         filenames = []
         for file in files:
             filenames.append(file.get_uri())
-
-        final_filenames = self.handle_filenames(filenames)
-        self.compress_filenames(final_filenames)
+        self.compress_filenames(filenames)
 
     def handle_filenames(self, filenames):
         final_filenames = []
@@ -273,9 +266,13 @@ class CurtailWindow(Adw.ApplicationWindow):
 
             path = Path(filename)
             if path.is_dir():
-                for new_filename in path.rglob("*"):
-                    new_filename = self.clean_filename(new_filename)
-                    final_filenames.append(new_filename)
+                if self._settings.get_boolean('recursive'):
+                    images = get_image_files_from_folder_recursive(path)
+                else:
+                    images = get_image_files_from_folder(path)
+                for image in images:
+                    image = self.clean_filename(image)
+                    final_filenames.append(image)
             else:
                 final_filenames.append(filename)
 
@@ -307,6 +304,8 @@ class CurtailWindow(Adw.ApplicationWindow):
         return new_filename
 
     def compress_filenames(self, filenames):
+        filenames = self.handle_filenames(filenames)
+
         result_items = []
         for filename in filenames:
             error_message = False
