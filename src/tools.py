@@ -117,7 +117,7 @@ def get_image_files_from_folder(folder_path):
         if os.path.isfile(path):
             if get_file_type(path) is not None:
                 image_file = Gio.File.new_for_path(path)
-                images.append(image_file)
+                images.append(image_file.get_uri())
     return images
 
 
@@ -128,7 +128,7 @@ def get_image_files_from_folder_recursive(folder_path):
             path = os.path.join(root, file)
             if get_file_type(path) is not None:
                 image_file = Gio.File.new_for_path(path)
-                images.append(image_file)
+                images.append(image_file.get_uri())
     return images
 
 def debug_infos():
