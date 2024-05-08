@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fix opening files with "Open With...". Thank's to @ARAKHN1D.
 - Fix DnD with nested folders (recursive).
-- Fix translation not applied to help overlay window.
+- Fix translations not applied to the help overlay window.
 
 ## 1.9.1 - 2024-04-12
 ### Fixed
