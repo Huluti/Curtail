@@ -77,6 +77,13 @@ class Compressor():
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
+        if not self.do_new_file:
+            # Creates a copy of the input file
+            # This is done in case the output file is larger than the input file
+            result_item_path = Path(result_item.filename)
+            original_filename = Path(result_item.filename).with_stem(f"{result_item_path.stem}-og")
+            shutil.copy2(result_item.filename, original_filename)
+
         error = False
         error_message = ''
         try:
@@ -99,14 +106,16 @@ class Compressor():
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
 
-                    # This check is mainly for WebP compression
-                    try:
-                        if result_item.new_size > result_item.size:
+                    # This check is mainly for compressors that don't have a way
+                    # to automatically detect and skip files
+                    if result_item.new_size > result_item.size:
+                        if self.do_new_file:
                             shutil.copy2(result_item.filename, result_item.new_filename)
-                            result_item.new_size = new_file_data.stat().st_size
-                    except shutil.SameFileError as err:
-                        # This will happen with overwrite mode on
-                        pass
+                        else:
+                            shutil.copy2(original_filename, result_item.new_filename)
+                        result_item.new_size = new_file_data.stat().st_size
+                    original_filename.unlink(True)
+
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
