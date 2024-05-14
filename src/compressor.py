@@ -18,6 +18,7 @@
 import threading
 import subprocess
 import logging
+import shutil
 from gi.repository import GLib, Gio
 from pathlib import Path
 
@@ -97,6 +98,15 @@ class Compressor():
                 new_file_data = Path(result_item.new_filename)
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
+
+                    # This check is mainly for WebP compression
+                    try:
+                        if result_item.new_size > result_item.size:
+                            shutil.copy2(result_item.filename, result_item.new_filename)
+                            result_item.new_size = new_file_data.stat().st_size
+                    except shutil.SameFileError as err:
+                        # This will happen with overwrite mode on
+                        pass
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
@@ -105,7 +115,7 @@ class Compressor():
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item):
-        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
+        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}" --skip-if-larger'
         oxipng = 'oxipng -o {} -i 1 "{}" --out "{}"'
 
         if not self.metadata:
