@@ -18,7 +18,6 @@
 import threading
 import subprocess
 import logging
-import io
 import shutil
 from gi.repository import GLib, Gio
 from pathlib import Path
