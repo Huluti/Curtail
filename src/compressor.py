@@ -18,6 +18,7 @@
 import threading
 import subprocess
 import logging
+import io
 import shutil
 from gi.repository import GLib, Gio
 from pathlib import Path
@@ -80,9 +81,8 @@ class Compressor():
         if not self.do_new_file:
             # Creates a copy of the input file
             # This is done in case the output file is larger than the input file
-            result_item_path = Path(result_item.filename)
-            original_filename = Path(result_item.filename).with_stem(f"{result_item_path.stem}-og")
-            shutil.copy2(result_item.filename, original_filename)
+            temp_filename = result_item.filename + ".temp"
+            shutil.copy2(result_item.filename, temp_filename)
 
         error = False
         error_message = ''
@@ -112,9 +112,9 @@ class Compressor():
                         if self.do_new_file:
                             shutil.copy2(result_item.filename, result_item.new_filename)
                         else:
-                            shutil.copy2(original_filename, result_item.new_filename)
+                            shutil.copy2(temp_filename, result_item.new_filename)
                         result_item.new_size = new_file_data.stat().st_size
-                    original_filename.unlink(True)
+                    Path(temp_filename).unlink(True)
 
                 else:
                     logging.error(str(output))
