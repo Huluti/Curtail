@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
+
+## 1.10.0 - 2024-06-07
 ### Added
 - Add a "Recursive Compression" setting.
 - Add Bulgarian translation. Thank's to @twlvnn.
@@ -10,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Update OxiPNG to v9.1.1
 - Update translations.
+- Change safe mode directly from warning banner button.
 
 ### Fixed
 - Fix opening files with "Open With...". Thank's to @ARAKHN1D.

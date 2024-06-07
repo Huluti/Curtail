@@ -38,6 +38,22 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.10.0" date="2024-06-07">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add a "Recursive Compression" setting</li>
+          <li>Add Bulgarian translation. Thank's to @twlvnn</li>
+          <li>Add Hindi translation. Thank's to @Scrambled777</li>
+          <li>Update OxiPNG to v9.1.1</li>
+          <li>Update translations</li>
+          <li>Change safe mode directly from warning banner button</li>
+          <li>Fix opening files with "Open With...". Thank's to @ARAKHN1D</li>
+          <li>Fix DnD with nested folders (recursive)</li>
+          <li>Fix translations not applied to the help overlay window</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.1" date="2024-04-12">
       <description translate="no">
         <p>Here's the changelog of this version:</p>

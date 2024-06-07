@@ -1,3 +1,17 @@
+curtail (1.10.0) focal; urgency=medium
+
+  * Add a "Recursive Compression" setting.
+  * Add Bulgarian translation. Thank's to @twlvnn.
+  * Add Hindi translation. Thank's to @Scrambled777.
+  * Update OxiPNG to v9.1.1
+  * Update translations.
+  * Change safe mode directly from warning banner button.
+  * Fix opening files with "Open With...". Thank's to @ARAKHN1D.
+  * Fix DnD with nested folders (recursive).
+  * Fix translations not applied to the help overlay window.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Fri, 07 Jun 2024 13:15 +0200
+
 curtail (1.9.1) focal; urgency=medium
 
   * Use default decoration layout for screenshots.
