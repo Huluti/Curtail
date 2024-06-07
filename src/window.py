@@ -102,6 +102,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     def create_actions(self):
         self.create_simple_action('select-file', self.on_select, '<Primary>o')
         self.create_simple_action('clear-results', self.clear_results)
+        self.create_simple_action('banner-change-mode', self.banner_change_mode)
         self.create_simple_action('preferences', self.on_preferences, '<Primary>comma')
         self.create_simple_action('about', self.on_about)
         self.create_simple_action('quit', self.on_quit, '<Primary>q')
@@ -346,6 +347,10 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def on_lossy_changed(self, switch, state):
         self._settings.set_boolean('lossy', switch.get_active())
+
+    def banner_change_mode(self, *args):
+        self._settings.set_boolean('new-file', True)
+        self.show_warning_banner()
 
     def on_preferences(self, *args):
         if self.prefs_dialog is not None:

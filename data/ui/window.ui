@@ -45,7 +45,7 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="AdwBanner" id="warning_banner">
-                <property name="action-name">win.preferences</property>
+                <property name="action-name">win.banner-change-mode</property>
                 <property name="button-label" translatable="yes">_Change Mode</property>
                 <property name="title" translatable="yes">Images will be overwritten, proceed carefully</property>
               </object>
