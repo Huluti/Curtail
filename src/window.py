@@ -351,6 +351,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     def banner_change_mode(self, *args):
         self._settings.set_boolean('new-file', True)
         self.show_warning_banner()
+        self.set_saving_subtitle()
 
     def on_preferences(self, *args):
         if self.prefs_dialog is not None:
