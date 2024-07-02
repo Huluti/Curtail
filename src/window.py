@@ -42,6 +42,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     headerbar = Gtk.Template.Child()
     window_title = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
     filechooser_button_headerbar = Gtk.Template.Child()
     clear_button_headerbar = Gtk.Template.Child()
     menu_button = Gtk.Template.Child()
@@ -306,6 +307,11 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def compress_filenames(self, filenames):
         filenames = self.handle_filenames(filenames)
+
+        # No files found
+        if not filenames:
+            self.toast_overlay.add_toast(Adw.Toast(title="No files found"))
+            return
 
         result_items = []
         for filename in filenames:
