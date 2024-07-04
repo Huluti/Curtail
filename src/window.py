@@ -310,7 +310,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         # No files found
         if not filenames:
-            self.toast_overlay.add_toast(Adw.Toast(title="No files found"))
+            self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
