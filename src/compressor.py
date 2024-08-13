@@ -113,8 +113,8 @@ class Compressor():
                             shutil.copy2(result_item.filename, result_item.new_filename)
                         else:
                             shutil.copy2(temp_filename, result_item.new_filename)
+                            Path(temp_filename).unlink(True)
                         result_item.new_size = new_file_data.stat().st_size
-                    Path(temp_filename).unlink(True)
 
                 else:
                     logging.error(str(output))
