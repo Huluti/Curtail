@@ -80,7 +80,9 @@ class Compressor():
         if not self.do_new_file:
             # Creates a copy of the input file
             # This is done in case the output file is larger than the input file
-            temp_filename = result_item.filename + ".temp"
+            index = result_item.filename.find(result_item.name)
+            temp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".temp"
+            print(temp_filename)
             shutil.copy2(result_item.filename, temp_filename)
 
         error = False
