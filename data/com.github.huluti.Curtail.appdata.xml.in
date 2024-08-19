@@ -31,9 +31,6 @@
     <screenshot>
       <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
     </screenshot>
-    <screenshot>
-      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen3.png</image>
-    </screenshot>
   </screenshots>
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
