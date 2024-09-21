@@ -79,37 +79,37 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         # Compression Timeout
         self.spin_timeout.set_value(
             self._settings.get_int('compression-timeout'))
-        self.spin_timeout.connect('value-changed',
+        self.spin_timeout.connect('notify::value',
             self.on_int_changed, 'compression-timeout')
 
         # PNG Lossy Compression Level
         self.spin_png_lossy_level.set_value(
             self._settings.get_int('png-lossy-level'))
-        self.spin_png_lossy_level.connect('value-changed',
+        self.spin_png_lossy_level.connect('notify::value',
             self.on_int_changed, 'png-lossy-level')
 
         # PNG Lossless Compression Level
         self.spin_png_lossless_level.set_value(
             self._settings.get_int('png-lossless-level'))
-        self.spin_png_lossless_level.connect('value-changed',
+        self.spin_png_lossless_level.connect('notify::value',
             self.on_int_changed, 'png-lossless-level')
 
         # WebP Lossless Compression Level
         self.spin_webp_lossless_level.set_value(
             self._settings.get_int('webp-lossless-level'))
-        self.spin_webp_lossless_level.connect('value-changed',
+        self.spin_webp_lossless_level.connect('notify::value',
             self.on_int_changed, 'webp-lossless-level')
 
         # JPG Lossy Compression Level
         self.spin_jpg_lossy_level.set_value(
             self._settings.get_int('jpg-lossy-level'))
-        self.spin_jpg_lossy_level.connect('value-changed',
+        self.spin_jpg_lossy_level.connect('notify::value',
             self.on_int_changed, 'jpg-lossy-level')
 
         # WebP Lossy Compression Level
         self.spin_webp_lossy_level.set_value(
             self._settings.get_int('webp-lossy-level'))
-        self.spin_webp_lossy_level.connect('value-changed',
+        self.spin_webp_lossy_level.connect('notify::value',
             self.on_int_changed, 'webp-lossy-level')
 
         # Progressively Encode JPG
@@ -138,6 +138,6 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
                 self._settings.reset('suffix')
             self.parent.set_saving_subtitle()
 
-    def on_int_changed(self, spin, key):
+    def on_int_changed(self, spin, _, key):
         self._settings.set_int(key, spin.get_value())
 
