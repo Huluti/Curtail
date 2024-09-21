@@ -18,6 +18,7 @@
 import threading
 import subprocess
 import logging
+import shutil
 from gi.repository import GLib, Gio
 from pathlib import Path
 
@@ -76,6 +77,13 @@ class Compressor():
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
+        if not self.do_new_file:
+            # Creates a copy of the input file
+            # This is done in case the output file is larger than the input file
+            index = result_item.filename.find(result_item.name)
+            temp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".temp"
+            shutil.copy2(result_item.filename, temp_filename)
+
         error = False
         error_message = ''
         try:
@@ -97,6 +105,17 @@ class Compressor():
                 new_file_data = Path(result_item.new_filename)
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
+
+                    # This check is mainly for compressors that don't have a way
+                    # to automatically detect and skip files
+                    if result_item.new_size > result_item.size:
+                        if self.do_new_file:
+                            shutil.copy2(result_item.filename, result_item.new_filename)
+                        else:
+                            shutil.copy2(temp_filename, result_item.new_filename)
+                            Path(temp_filename).unlink(True)
+                        result_item.new_size = new_file_data.stat().st_size
+
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
@@ -105,7 +124,7 @@ class Compressor():
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item):
-        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}"'
+        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}" --skip-if-larger'
         oxipng = 'oxipng -o {} -i 1 "{}" --out "{}"'
 
         if not self.metadata:
