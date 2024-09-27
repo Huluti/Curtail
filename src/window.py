@@ -151,8 +151,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         savings_widget.add_css_class('success')
         row.add_suffix(savings_widget)
 
-        spinner = Gtk.Spinner()
-        spinner.start()
+        spinner = Adw.Spinner()
         row.add_suffix(spinner)
 
         error_image = Gtk.Image.new_from_icon_name('x-circular-symbolic')

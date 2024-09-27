@@ -4,8 +4,6 @@
     <property name="title" translatable="yes">Curtail</property>
     <property name="default-width">650</property>
     <property name="default-height">500</property>
-    <property name="width-request">360</property>
-    <property name="height-request">294</property>
     <property name="content">
       <object class="AdwToastOverlay" id="toast_overlay">
         <property name="child">
