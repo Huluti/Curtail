@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+### Added
+- Always restore original files when compression produces larger files. Thank's to @ARAKHN1D.
+- Notify when no files are found in a folder. Thank's to @ARAKHN1D.
+- Add Norwegian Bokmaal translations Thank's to @bragefuglseth.
+
+### Changed
+- Update translations.
+- Use new libadwaita row widgets. Thank's to @bragefuglset and @ARAKHN1D.
+- Update Gnome Runtime to 47.
+
+### Fixed
+
 ## 1.10.0 - 2024-06-07
 ### Added
 - Add a "Recursive Compression" setting.
@@ -16,7 +28,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fix opening files with "Open With...". Thank's to @ARAKHN1D.
-- Fix DnD with nested folders (recursive).
+- Fix DnD with nested folders (recursive). Thank's to @ARAKHN1D.
 - Fix translations not applied to the help overlay window.
 
 ## 1.9.1 - 2024-04-12
