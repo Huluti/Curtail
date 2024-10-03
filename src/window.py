@@ -18,6 +18,7 @@
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 from urllib.parse import unquote
 from pathlib import Path
+from shlex import quote
 
 from .resultitem import ResultItem
 from .preferences import CurtailPrefsDialog
@@ -330,6 +331,10 @@ class CurtailWindow(Adw.ApplicationWindow):
                 new_filename = self.create_new_filename(path)
             else:
                 new_filename = ''
+
+            # Avoid shell injections
+            filename = quote(filename)
+            new_filename = quote(new_filename)
 
             result_item = ResultItem(path.name, filename, new_filename, size)
 

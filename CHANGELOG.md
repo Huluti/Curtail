@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 - Update Gnome Runtime to 47.
 
 ### Fixed
+- Fix a shell injection vulnerability. Thank's to @gycsaba96.
 
 ## 1.10.0 - 2024-06-07
 ### Added
