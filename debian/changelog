@@ -1,3 +1,15 @@
+curtail (1.11.0) focal; urgency=medium
+
+  * Always restore original files when compression produces larger files. Thank's to @ARAKHN1D.
+  * Notify when no files are found in a folder. Thank's to @ARAKHN1D.
+  * Add Norwegian Bokmaal translations Thank's to @bragefuglseth.
+  * Update translations.
+  * Use new libadwaita row widgets. Thank's to @bragefuglset and @ARAKHN1D.
+  * Update Gnome Runtime to 47.
+  * Fix a shell injection vulnerability. Thank's to @gycsaba96.
+
+-- Archisman Panigrahi <apandada1@gmail.com>  Tue, 03 Oct 2024 08:45 +0200
+
 curtail (1.10.0) focal; urgency=medium
 
   * Add a "Recursive Compression" setting.
@@ -5,9 +17,9 @@ curtail (1.10.0) focal; urgency=medium
   * Add Hindi translation. Thank's to @Scrambled777.
   * Update OxiPNG to v9.1.1
   * Update translations.
-  * Change safe mode directly from warning banner button.
+  * Change safe mode directly from warning banner button. Thank's to @ARAKHN1D.
   * Fix opening files with "Open With...". Thank's to @ARAKHN1D.
-  * Fix DnD with nested folders (recursive).
+  * Fix DnD with nested folders (recursive). Thank's to @ARAKHN1D.
   * Fix translations not applied to the help overlay window.
 
  -- Archisman Panigrahi <apandada1@gmail.com>  Fri, 07 Jun 2024 13:15 +0200

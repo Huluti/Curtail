@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.11.0 - 2024-09-03
 ### Added
 - Always restore original files when compression produces larger files. Thank's to @ARAKHN1D.
 - Notify when no files are found in a folder. Thank's to @ARAKHN1D.
@@ -25,7 +26,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Update OxiPNG to v9.1.1
 - Update translations.
-- Change safe mode directly from warning banner button.
+- Change safe mode directly from warning banner button. Thank's to @ARAKHN1D.
 
 ### Fixed
 - Fix opening files with "Open With...". Thank's to @ARAKHN1D.

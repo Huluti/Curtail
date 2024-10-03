@@ -35,6 +35,20 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.11.0" date="2024-09-03">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Always restore original files when compression produces larger files. Thank's to @ARAKHN1D</li>
+          <li>Notify when no files are found in a folder. Thank's to @ARAKHN1D</li>
+          <li>Add Norwegian Bokmaal translations Thank's to @bragefuglseth</li>
+          <li>Update translations</li>
+          <li>Use new libadwaita row widgets. Thank's to @bragefuglset and @ARAKHN1D</li>
+          <li>Update Gnome Runtime to 47</li>
+          <li>Fix a shell injection vulnerability. Thank's to @gycsaba96</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.10.0" date="2024-06-07">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
@@ -44,9 +58,9 @@
           <li>Add Hindi translation. Thank's to @Scrambled777</li>
           <li>Update OxiPNG to v9.1.1</li>
           <li>Update translations</li>
-          <li>Change safe mode directly from warning banner button</li>
+          <li>Change safe mode directly from warning banner button. Thank's to @ARAKHN1D</li>
           <li>Fix opening files with "Open With...". Thank's to @ARAKHN1D</li>
-          <li>Fix DnD with nested folders (recursive)</li>
+          <li>Fix DnD with nested folders (recursive). Thank's to @ARAKHN1D</li>
           <li>Fix translations not applied to the help overlay window</li>
         </ul>
       </description>
