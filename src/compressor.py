@@ -58,6 +58,14 @@ class Compressor():
 
         self.svg_maximum_level = self._settings.get_boolean('svg-maximum-level')
 
+    def create_tmp_result_item(self, result_item):
+        # This is done in case the output is larger than the input in overwrite mode
+        index = result_item.filename.find(result_item.name)
+        tmp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".tmp"
+        result_item.filename = tmp_filename
+        result_item.new_filename = tmp_filename
+        shutil.copy2(result_item.original_filename, result_item.filename)
+
     def compress_images(self):
         self.thread = threading.Thread(target=self._compress_images)
         self.thread.start()
@@ -71,20 +79,17 @@ class Compressor():
                 elif file_type == 'jpg':
                     command = self.build_jpg_command(result_item)
                 elif file_type == 'webp':
+                    if not self.do_new_file:
+                        self.create_tmp_result_item(result_item)
                     command = self.build_webp_command(result_item)
                 elif file_type == 'svg':
+                    if not self.do_new_file:
+                        self.create_tmp_result_item(result_item)
                     command = self.build_svg_command(result_item)
                 self.run_command(command, result_item)  # compress image
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
-        if not self.do_new_file:
-            # Creates a copy of the input file
-            # This is done in case the output file is larger than the input file
-            index = result_item.filename.find(result_item.name)
-            temp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".temp"
-            shutil.copy2(result_item.filename, temp_filename)
-
         error = False
         error_message = ''
         try:
@@ -107,16 +112,20 @@ class Compressor():
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
 
-                    # This check is mainly for compressors that don't have a way
-                    # to automatically detect and skip files
-                    if result_item.new_size > result_item.size:
-                        if self.do_new_file:
+                    # Manually skip files if necessary
+                    if get_file_type(result_item.original_filename) in ["webp", "svg"]:
+                        if self.do_new_file and result_item.new_size > result_item.size:
                             shutil.copy2(result_item.filename, result_item.new_filename)
-                        else:
-                            shutil.copy2(temp_filename, result_item.new_filename)
-                            Path(temp_filename).unlink(True)
-                        result_item.new_size = new_file_data.stat().st_size
-
+                            result_item.new_size = new_file_data.stat().st_size
+                        elif not self.do_new_file:
+                            if not result_item.new_size > result_item.size:
+                                shutil.copy2(result_item.filename, result_item.original_filename)
+                            # Remove temporary file
+                            Path(result_item.filename).unlink(True)
+                            result_item.filename = result_item.original_filename
+                            result_item.new_filename = result_item.original_filename
+                            new_file_data = Path(result_item.new_filename)
+                            result_item.new_size = new_file_data.stat().st_size
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
