@@ -21,6 +21,7 @@ import logging
 import shutil
 from gi.repository import GLib, Gio
 from pathlib import Path
+from shlex import quote
 
 from .tools import get_file_type
 
@@ -124,8 +125,8 @@ class Compressor():
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item):
-        pngquant = 'pngquant --quality=0-{} -f "{}" --output "{}" --skip-if-larger'
-        oxipng = 'oxipng -o {} -i 1 "{}" --out "{}"'
+        pngquant = 'pngquant --quality=0-{} -f {} --output {} --skip-if-larger'
+        oxipng = 'oxipng -o {} -i 1 {} --out {}'
 
         if not self.metadata:
             pngquant += ' --strip'
@@ -135,23 +136,23 @@ class Compressor():
             oxipng += ' --preserve'
 
         if self.lossy:  # lossy compression
-            command = pngquant.format(self.png_lossy_level, result_item.filename,
-                                      result_item.new_filename)
+            command = pngquant.format(self.png_lossy_level, quote(result_item.filename),
+                                      quote(result_item.new_filename))
             command += ' && '
-            command += oxipng.format(self.png_lossless_level, result_item.new_filename,
-                                      result_item.new_filename)
+            command += oxipng.format(self.png_lossless_level, quote(result_item.new_filename),
+                                      quote(result_item.new_filename))
         else: # lossless compression
-            command = oxipng.format(self.png_lossless_level, result_item.filename,
-                                     result_item.new_filename)
+            command = oxipng.format(self.png_lossless_level, quote(result_item.filename),
+                                     quote(result_item.new_filename))
         return command
 
     def build_jpg_command(self, result_item):
         if self.do_new_file:
-            jpegoptim = 'jpegoptim --max={} -o -f --stdout "{}" > "{}"'
-            jpegoptim2 = 'jpegoptim -o -f --stdout "{}" > "{}"'
+            jpegoptim = 'jpegoptim --max={} -o -f --stdout {} > {}'
+            jpegoptim2 = 'jpegoptim -o -f --stdout {} > {}'
         else:
-            jpegoptim = 'jpegoptim --max={} -o -f "{}"'
-            jpegoptim2 = 'jpegoptim -o -f "{}"'
+            jpegoptim = 'jpegoptim --max={} -o -f {}'
+            jpegoptim2 = 'jpegoptim -o -f {}'
 
         if self.jpg_progressive:
             jpegoptim += ' --all-progressive'
@@ -167,19 +168,19 @@ class Compressor():
 
         if self.lossy:  # lossy compression
             if self.do_new_file:
-                command = jpegoptim.format(self.jpg_lossy_level, result_item.filename,
-                                           result_item.new_filename)
+                command = jpegoptim.format(self.jpg_lossy_level, quote(result_item.filename),
+                                           quote(result_item.new_filename))
             else:
-                command = jpegoptim.format(self.jpg_lossy_level, result_item.filename)
+                command = jpegoptim.format(self.jpg_lossy_level, quote(result_item.filename))
         else:  # lossless compression
             if self.do_new_file:
-                command = jpegoptim2.format(result_item.filename, result_item.new_filename)
+                command = jpegoptim2.format(quote(result_item.filename), quote(result_item.new_filename))
             else:
-                command = jpegoptim2.format(result_item.filename)
+                command = jpegoptim2.format(quote(result_item.filename))
         return command
 
     def build_webp_command(self, result_item):
-        command = 'cwebp "{}"'.format(result_item.filename)
+        command = 'cwebp {}'.format(quote(result_item.filename))
 
         # cwebp doesn't preserve any metadata by default
         if self.metadata:
@@ -194,7 +195,7 @@ class Compressor():
         # multithreaded, (lossless) compression mode, quality, output
         command += ' -mt -m {}'.format(self.webp_lossless_level)
         command += ' -q {}'.format(quality)
-        command += ' -o "{}"'.format(result_item.new_filename)
+        command += ' -o {}'.format(quote(result_item.new_filename))
 
         return command
 
@@ -204,14 +205,14 @@ class Compressor():
         if not self.do_new_file:
             temp_new_filename = '{}.temp'.format(result_item.new_filename)
 
-        command = 'scour -i "{}" -o "{}"'.format(result_item.filename, temp_new_filename)
+        command = 'scour -i {} -o {}'.format(quote(result_item.filename), quote(temp_new_filename))
 
         if self.svg_maximum_level:
             command += ' --enable-viewboxing --enable-id-stripping'
             command += ' --enable-comment-stripping --shorten-ids --indent=none'
 
         if not self.do_new_file:
-            command += ' && mv "{}" "{}"'.format(temp_new_filename, result_item.new_filename)
+            command += ' && mv {} {}'.format(quote(temp_new_filename), quote(result_item.new_filename))
 
         return command
 
