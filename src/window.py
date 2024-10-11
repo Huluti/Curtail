@@ -372,7 +372,7 @@ class CurtailWindow(Adw.ApplicationWindow):
                     license_type=Gtk.License.GPL_3_0,
                     website='https://github.com/Huluti/Curtail',
                     issue_url='https://github.com/Huluti/Curtail/issues/new',
-                    version='1.11.0',
+                    version='1.11.1',
                     developers=[
                         'Hugo Posnic https://github.com/Huluti'
                     ],

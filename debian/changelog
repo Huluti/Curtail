@@ -1,3 +1,7 @@
+curtail (1.11.1) focal; urgency=medium
+
+  * Fix shell injection prevention. Thank's to @ARAKHN1D.
+
 curtail (1.11.0) focal; urgency=medium
 
   * Always restore original files when compression produces larger files. Thank's to @ARAKHN1D.

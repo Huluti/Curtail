@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.11.1 - 2024-09-11
+### Fixed
+- Fix shell injection prevention. Thank's to @ARAKHN1D.
+
 ## 1.11.0 - 2024-09-03
 ### Added
 - Always restore original files when compression produces larger files. Thank's to @ARAKHN1D.
