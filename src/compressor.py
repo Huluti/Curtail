@@ -19,6 +19,7 @@ import threading
 import subprocess
 import logging
 import shutil
+import filecmp
 from gi.repository import GLib, Gio
 from pathlib import Path
 from shlex import quote
@@ -117,15 +118,22 @@ class Compressor():
                         if self.do_new_file and result_item.new_size > result_item.size:
                             shutil.copy2(result_item.filename, result_item.new_filename)
                             result_item.new_size = new_file_data.stat().st_size
+                            result_item.skipped = True
                         elif not self.do_new_file:
                             if not result_item.new_size > result_item.size:
                                 shutil.copy2(result_item.filename, result_item.original_filename)
+                            else:
+                                result_item.skipped = True
+
                             # Remove temporary file
                             Path(result_item.filename).unlink(True)
                             result_item.filename = result_item.original_filename
                             result_item.new_filename = result_item.original_filename
                             new_file_data = Path(result_item.new_filename)
                             result_item.new_size = new_file_data.stat().st_size
+                    else:
+                        if filecmp.cmp(result_item.filename, result_item.new_filename):
+                            result_item.skipped = True
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
