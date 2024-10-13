@@ -15,6 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+import subprocess
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 from urllib.parse import unquote
 from pathlib import Path
@@ -93,6 +95,12 @@ class CurtailWindow(Adw.ApplicationWindow):
         # Results
         self.listbox.bind_model(self.results_model, self.create_result_row)
 
+        # Right click on results
+        gesture = Gtk.GestureClick.new()
+        gesture.set_button(Gdk.BUTTON_SECONDARY)
+        gesture.connect("pressed", self.on_results_right_click, self.listbox)
+        self.listbox.add_controller(gesture)
+
     def create_simple_action(self, action_name, callback, shortcut=None):
         action = Gio.SimpleAction.new(action_name, None)
         action.connect('activate', callback)
@@ -169,6 +177,48 @@ class CurtailWindow(Adw.ApplicationWindow):
             GObject.BindingFlags.DEFAULT)
 
         return row
+
+    def on_results_right_click(self, gesture, button, x, y, user_data):
+        row = self.listbox.get_row_at_y(y)
+        filename = row.get_tooltip_text()
+        if not os.path.exists(filename):
+            return
+
+        popover = Gtk.PopoverMenu()
+
+        # Create actions for the popover
+        action_group = Gio.SimpleActionGroup.new()
+
+        open_image_action = Gio.SimpleAction.new("open-image", None)
+        open_image_action.connect("activate", self.on_open_image_action, filename)
+        action_group.add_action(open_image_action)
+
+        open_folder_action = Gio.SimpleAction.new("open-folder", None)
+        open_folder_action.connect("activate", self.on_open_folder_action, filename)
+        action_group.add_action(open_folder_action)
+
+        # Insert the actions into the window's action group
+        self.insert_action_group("context-menu", action_group)
+
+        # Define the structure of the popover menu
+        menu_model = Gio.Menu.new()
+        menu_model.append(_("Open Image"), "context-menu.open-image")
+        menu_model.append(_("Show in Folder"), "context-menu.open-folder")
+
+        # Set the menu model to the popover
+        popover.set_menu_model(menu_model)
+        popover.set_pointing_to(Gdk.Rectangle(x, y, 1, 1))
+        popover.set_offset(x, y)
+        popover.set_has_arrow(False)
+        popover.set_parent(self.listbox)
+        popover.popup()
+
+    def on_open_image_action(self, action, param, filename):
+        subprocess.run(['xdg-open', filename])
+
+    def on_open_folder_action(self, action, param, filename):
+        folder_path = os.path.dirname(filename)
+        subprocess.run(['xdg-open', folder_path])
 
     def set_saving_subtitle(self, new_file=None):
         if new_file is None:
