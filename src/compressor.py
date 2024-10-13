@@ -19,6 +19,8 @@ import threading
 import subprocess
 import logging
 import shutil
+import os
+from concurrent.futures import ThreadPoolExecutor
 from gi.repository import GLib, Gio
 from pathlib import Path
 from shlex import quote
@@ -59,10 +61,13 @@ class Compressor():
         self.svg_maximum_level = self._settings.get_boolean('svg-maximum-level')
 
     def compress_images(self):
-        self.thread = threading.Thread(target=self._compress_images)
-        self.thread.start()
+        thread = threading.Thread(target=self._compress_images)
+        thread.start()
 
     def _compress_images(self):
+        cpu_count = os.cpu_count()
+        executor = ThreadPoolExecutor(max_workers=cpu_count)
+        futures = []
         for result_item in self.result_items:
             file_type = get_file_type(result_item.filename)
             if file_type:
@@ -74,7 +79,11 @@ class Compressor():
                     command = self.build_webp_command(result_item)
                 elif file_type == 'svg':
                     command = self.build_svg_command(result_item)
-                self.run_command(command, result_item)  # compress image
+                future = executor.submit(self.run_command, command, result_item)
+                futures.append(future)
+
+        for future in futures:
+            future.result()
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
