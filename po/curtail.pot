@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 10:37+0200\n"
+"POT-Creation-Date: 2024-10-13 17:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:31
+#: data/ui/window.ui:33
 msgid "Curtail"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Optionally enable maximum cleaning of SVG images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:67
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
 msgstr ""
 
@@ -194,75 +194,75 @@ msgstr ""
 msgid "Save the compressed image in a new file"
 msgstr ""
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.ui:20
 msgid "New File Suffix"
 msgstr ""
 
-#: data/ui/preferences.ui:31
+#: data/ui/preferences.ui:25
 msgid "Recursive Compression"
 msgstr ""
 
-#: data/ui/preferences.ui:32
+#: data/ui/preferences.ui:26
 msgid "Enable or disable compression through subdirectories"
 msgstr ""
 
-#: data/ui/preferences.ui:43
+#: data/ui/preferences.ui:31
 msgid "Keep Metadata"
 msgstr ""
 
-#: data/ui/preferences.ui:44
+#: data/ui/preferences.ui:32
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr ""
 
-#: data/ui/preferences.ui:55
+#: data/ui/preferences.ui:37
 msgid "Keep File Attributes When Possible"
 msgstr ""
 
-#: data/ui/preferences.ui:56
+#: data/ui/preferences.ui:38
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr ""
 
-#: data/ui/preferences.ui:68
+#: data/ui/preferences.ui:44
 msgid "Set the timeout between images"
 msgstr ""
 
-#: data/ui/preferences.ui:92
+#: data/ui/preferences.ui:62
 msgid "Formats"
 msgstr ""
 
-#: data/ui/preferences.ui:99 data/ui/preferences.ui:142
-#: data/ui/preferences.ui:178
+#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
+#: data/ui/preferences.ui:124
 msgid "Lossy Compression"
 msgstr ""
 
-#: data/ui/preferences.ui:100 data/ui/preferences.ui:143
-#: data/ui/preferences.ui:179
+#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
+#: data/ui/preferences.ui:125
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr ""
 
-#: data/ui/preferences.ui:118 data/ui/preferences.ui:197
+#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
 msgid "Lossless Compression Level"
 msgstr ""
 
-#: data/ui/preferences.ui:119 data/ui/preferences.ui:198
+#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr ""
 
-#: data/ui/preferences.ui:161
+#: data/ui/preferences.ui:113
 msgid "Progressive Encode"
 msgstr ""
 
-#: data/ui/preferences.ui:162
+#: data/ui/preferences.ui:114
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr ""
 
-#: data/ui/preferences.ui:221
+#: data/ui/preferences.ui:155
 msgid "Maximum Compression Level"
 msgstr ""
 
-#: data/ui/preferences.ui:222
+#: data/ui/preferences.ui:156
 msgid "This can be more destructive for the image"
 msgstr ""
 
@@ -278,51 +278,51 @@ msgstr ""
 msgid "About Curtail"
 msgstr ""
 
-#: data/ui/window.ui:17 src/window.py:189
+#: data/ui/window.ui:19 src/window.py:240
 msgid "Browse Files"
 msgstr ""
 
-#: data/ui/window.ui:24
+#: data/ui/window.ui:26
 msgid "Clear Results"
 msgstr ""
 
-#: data/ui/window.ui:38
+#: data/ui/window.ui:40
 msgid "Main Menu"
 msgstr ""
 
-#: data/ui/window.ui:49
+#: data/ui/window.ui:51
 msgid "_Change Mode"
 msgstr ""
 
-#: data/ui/window.ui:50
+#: data/ui/window.ui:52
 msgid "Images will be overwritten, proceed carefully"
 msgstr ""
 
-#: data/ui/window.ui:58
+#: data/ui/window.ui:60
 msgid "Drop images here to compress them"
 msgstr ""
 
-#: data/ui/window.ui:64
+#: data/ui/window.ui:66
 msgid "_Browse Files"
 msgstr ""
 
-#: data/ui/window.ui:83
+#: data/ui/window.ui:85
 msgid "Lossless"
 msgstr ""
 
-#: data/ui/window.ui:95
+#: data/ui/window.ui:97
 msgid "Lossy"
 msgstr ""
 
-#: src/compressor.py:89
+#: src/compressor.py:98
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr ""
 
-#: src/compressor.py:93
+#: src/compressor.py:102
 msgid "An unknown error has occurred"
 msgstr ""
 
-#: src/compressor.py:102
+#: src/compressor.py:122
 msgid "Can't find the compressed file"
 msgstr ""
 
@@ -351,54 +351,66 @@ msgstr ""
 msgid "Version not found"
 msgstr ""
 
-#: src/window.py:176
-msgid "Safe mode with '{}' suffix"
-msgstr ""
-
-#: src/window.py:179
-msgid "Overwrite mode"
+#: src/window.py:205
+msgid "Open Image"
 msgstr ""
 
 #: src/window.py:206
+msgid "Show in Folder"
+msgstr ""
+
+#: src/window.py:227
+msgid "Safe mode with '{}' suffix"
+msgstr ""
+
+#: src/window.py:230
+msgid "Overwrite mode"
+msgstr ""
+
+#: src/window.py:257
 msgid "Browse Directories"
 msgstr ""
 
-#: src/window.py:231 src/window.py:237
+#: src/window.py:282 src/window.py:288
 msgid "Are you sure you want to compress images in these directories?"
 msgstr ""
 
-#: src/window.py:232
+#: src/window.py:283
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
 
-#: src/window.py:238
+#: src/window.py:289
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 
-#: src/window.py:241
+#: src/window.py:292
 msgid "Cancel"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:293
 msgid "Compress"
 msgstr ""
 
-#: src/window.py:316
+#: src/window.py:362
+msgid "No files found"
+msgstr ""
+
+#: src/window.py:372
 msgid "This file doesn't exist."
 msgstr ""
 
-#: src/window.py:321
+#: src/window.py:377
 msgid "Format of this file is not supported."
 msgstr ""
 
-#: src/window.py:373
+#: src/window.py:433
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:377
+#: src/window.py:437
 msgid "Contributors"
 msgstr ""
