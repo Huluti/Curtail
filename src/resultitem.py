@@ -14,6 +14,7 @@ class ResultItem(GObject.Object):
     subtitle_label = GObject.Property(type=str, default='')
     savings = GObject.Property(type=str, default='')
     running = GObject.Property(type=bool, default=True)
+    skipped = GObject.Property(type=bool, default=False)
     error = GObject.Property(type=bool, default=False)
     error_message = GObject.Property(type=str, default='')
 
