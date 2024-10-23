@@ -391,7 +391,8 @@ class CurtailWindow(Adw.ApplicationWindow):
                 'Balló György',
                 'olokelo',
                 'Archisman Panigrahi',
-                'Maximiliano'
+                'Maximiliano',
+                'ARAKHNID'
             ]
         )
         about.set_debug_info(debug_infos())
