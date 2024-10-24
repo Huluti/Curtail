@@ -138,11 +138,13 @@ class CurtailWindow(Adw.ApplicationWindow):
     def update_result_item(self, result_item, error, error_message):
         result_item.running = False
         result_item.error = error
-        if not error:
+        if error:
+            result_item.subtitle_label = error_message
+        elif result_item.skipped:
+            result_item.savings = _("Skipped")
+        else:
             result_item.savings = str(round(100 - (result_item.new_size * 100 / result_item.size), 2)) + '%'
             result_item.subtitle_label += ' → ' + sizeof_fmt(result_item.new_size)
-        else:
-            result_item.subtitle_label = error_message
 
     def create_result_row(self, result_item):
         row = Adw.ActionRow()
@@ -154,6 +156,29 @@ class CurtailWindow(Adw.ApplicationWindow):
             image = create_image_from_file(result_item.filename, 48, 48)
             if image:
                 row.add_prefix(image)
+
+        skipped_info_button = Gtk.MenuButton()
+        skipped_info_button.set_valign(Gtk.Align.CENTER)
+        skipped_info_button.set_tooltip_text(_("More Information"))
+        skipped_info_button.set_icon_name("info-outline-symbolic")
+        skipped_info_button.add_css_class("flat")
+        skipped_info_button.set_visible(False)
+
+        popover = Gtk.Popover()
+        popover_label = Gtk.Label()
+        popover_label.set_text(_("Compression was skipped because compressing the file would have resulted in a larger file size."))
+        popover_label.set_halign(Gtk.Align.CENTER)
+        popover_label.set_valign(Gtk.Align.CENTER)
+        popover_label.set_margin_bottom(6)
+        popover_label.set_margin_start(6)
+        popover_label.set_margin_end(6)
+        popover_label.set_margin_top(6)
+        popover_label.set_max_width_chars(50)
+        popover_label.set_wrap(True)
+        popover.set_child(popover_label)
+
+        skipped_info_button.set_popover(popover)
+        row.add_suffix(skipped_info_button)
 
         savings_widget = Gtk.Label()
         savings_widget.add_css_class('success')
@@ -172,6 +197,8 @@ class CurtailWindow(Adw.ApplicationWindow):
         result_item.bind_property('subtitle_label', row, 'subtitle',
             GObject.BindingFlags.DEFAULT)
         result_item.bind_property('running', spinner, 'visible',
+            GObject.BindingFlags.DEFAULT)
+        result_item.bind_property('skipped', skipped_info_button, 'visible',
             GObject.BindingFlags.DEFAULT)
         result_item.bind_property('error', error_image, 'visible',
             GObject.BindingFlags.DEFAULT)
@@ -450,3 +477,4 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def on_quit(self, *args):
         self.app.quit()
+
