@@ -59,6 +59,8 @@ class Compressor():
         self.svg_maximum_level = self._settings.get_boolean('svg-maximum-level')
 
     def create_tmp_result_item(self, result_item):
+        # Creates a temporary copy of the file to be compressed rather than the original
+        # The result_item's information is changed to point to the temporary file
         # This is done in case the output is larger than the input in overwrite mode
         index = result_item.filename.find(result_item.name)
         tmp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".tmp"
@@ -78,11 +80,11 @@ class Compressor():
                     command = self.build_png_command(result_item)
                 elif file_type == 'jpg':
                     command = self.build_jpg_command(result_item)
-                elif file_type == 'webp':
+                elif file_type == 'webp': # Must be manually skipped
                     if not self.do_new_file:
                         self.create_tmp_result_item(result_item)
                     command = self.build_webp_command(result_item)
-                elif file_type == 'svg':
+                elif file_type == 'svg': # Must be manually skipped
                     if not self.do_new_file:
                         self.create_tmp_result_item(result_item)
                     command = self.build_svg_command(result_item)
@@ -112,25 +114,35 @@ class Compressor():
                 if new_file_data.is_file():
                     result_item.new_size = new_file_data.stat().st_size
 
-                    # Manually skip files if necessary
+                    # Manually skip files if necessary (WebP or SVG)
                     if get_file_type(result_item.original_filename) in ["webp", "svg"]:
                         if self.do_new_file and result_item.new_size > result_item.size:
+                            # Output is larger than input in safe mode
+                            # Copy the uncompressed original file onto the compressed new file
                             shutil.copy2(result_item.filename, result_item.new_filename)
                             result_item.new_size = new_file_data.stat().st_size
                             result_item.skipped = True
                         elif not self.do_new_file:
                             if not result_item.new_size > result_item.size:
+                                # Output is smaller than input in overwrite mode
+                                # Copy the compressed temporary file onto the uncompressed original file
                                 shutil.copy2(result_item.filename, result_item.original_filename)
                             else:
+                                # Output is smaller than input in overwrite mode
+                                # Set file as skipped, since the temporary file was compressed
+                                # The original file was not changed
                                 result_item.skipped = True
 
-                            # Remove temporary file
+                            # Remove temporary file that was created for overwrite mode
+                            # Also set the result_item's information back to the original file
                             Path(result_item.filename).unlink(True)
                             result_item.filename = result_item.original_filename
                             result_item.new_filename = result_item.original_filename
                             new_file_data = Path(result_item.new_filename)
                             result_item.new_size = new_file_data.stat().st_size
+
                     elif result_item.size == result_item.new_size:
+                        # File was automatically skipped by a compressor
                         result_item.skipped = True
                 else:
                     logging.error(str(output))
