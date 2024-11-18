@@ -62,7 +62,12 @@ def add_filechooser_filters(dialog):
 
 
 def get_file_type(filename):
-    content_type = Gio.content_type_guess(filename=str(filename))[0]
+    # Open the file and read the first few bytes,
+    # and we'll check the file header to determine the file type if we can't by extension
+    with open(filename, "rb") as image:
+        file_header = image.read(0xf)
+
+    content_type = Gio.content_type_guess(filename=str(filename), data=file_header)[0]
     if content_type == 'image/jpeg':
         return 'jpg'
     elif content_type == 'image/png':

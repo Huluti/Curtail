@@ -337,7 +337,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             filename = filename.strip('\r\n\x00')  # remove spaces
         return filename
 
-    def check_extension(self, filename):
+    def check_format(self, filename):
         file_type = get_file_type(filename)
         if file_type:
             return file_type in ('png', 'jpg', 'webp', 'svg')
@@ -373,7 +373,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
             # Check format
             size = path.stat().st_size
-            if not self.check_extension(filename) or size <= 0:
+            if not self.check_format(filename) or size <= 0:
                 error_message = _("Format of this file is not supported.").format(path.name)
 
             if not error_message:
