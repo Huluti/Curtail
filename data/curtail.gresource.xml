@@ -11,4 +11,7 @@
   <gresource prefix="/com/github/huluti/Curtail/icons/scalable/actions/">
     <file preprocess="xml-stripblanks" alias="x-circular-symbolic.svg">icons/scalable/actions/x-circular-symbolic.svg</file>
   </gresource>
+  <gresource prefix="/com/github/huluti/Curtail/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="info-outline-symbolic.svg">icons/scalable/actions/info-outline-symbolic.svg</file>
+</gresource>
 </gresources>
