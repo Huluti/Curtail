@@ -19,7 +19,7 @@
 	  <key type="b" name="file-attributes">
       <default>true</default>
       <summary>Preserve file permissions and timestamps if possible</summary>
-      <description>This setting file permissions and timestamps of images if possible</description>
+      <description>This setting file permissions and timestamps of images if possible.</description>
     </key>
 	  <key type="b" name="lossy">
       <default>false</default>
@@ -58,13 +58,13 @@
     </key>
 	  <key type="b" name="jpg-progressive">
       <default>false</default>
-      <summary>Enable progressive encoding for JPEG images.</summary>
+      <summary>Enable progressive encoding for JPEG images</summary>
       <description>Optionally encode jpeg images progressively.</description>
     </key>
 	  <key type="b" name="svg-maximum-level">
       <default>false</default>
-      <summary>Enable maximum compression for SVG images.</summary>
-      <description>Optionally enable maximum cleaning of SVG images.</description>
+      <summary>Enable maximum compression for SVG images</summary>
+      <description>Enable maximum cleaning of SVG images.</description>
     </key>
 	  <key type="i" name="compression-timeout">
       <default>30</default>
