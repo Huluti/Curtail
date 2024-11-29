@@ -13,13 +13,13 @@
 	  </key>
 	  <key type="b" name="metadata">
       <default>true</default>
-      <summary>Keep metadata</summary>
+      <summary>Preserve metadata</summary>
       <description>This setting preserves metadata of images.</description>
     </key>
 	  <key type="b" name="file-attributes">
       <default>true</default>
-      <summary>Preserve file attributes if possible</summary>
-      <description>This setting preserves metadata of images.</description>
+      <summary>Preserve file permissions and timestamps if possible</summary>
+      <description>This setting file permissions and timestamps of images if possible</description>
     </key>
 	  <key type="b" name="lossy">
       <default>false</default>
