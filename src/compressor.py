@@ -175,11 +175,11 @@ class Compressor():
 
     def build_jpg_command(self, result_item):
         if self.do_new_file:
-            jpegoptim = 'jpegoptim --max={} -o -f --stdout {} > {}'
-            jpegoptim2 = 'jpegoptim -o -f --stdout {} > {}'
+            jpegoptim = 'jpegoptim --max={} -o --stdout {} > {}'
+            jpegoptim2 = 'jpegoptim -o --stdout {} > {}'
         else:
-            jpegoptim = 'jpegoptim --max={} -o -f {}'
-            jpegoptim2 = 'jpegoptim -o -f {}'
+            jpegoptim = 'jpegoptim --max={} -o {}'
+            jpegoptim2 = 'jpegoptim -o {}'
 
         if self.jpg_progressive:
             jpegoptim += ' --all-progressive'
