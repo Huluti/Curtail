@@ -116,13 +116,14 @@ class Compressor():
 
                     # Manually skip files if necessary (WebP or SVG)
                     if get_file_type(result_item.original_filename) in ["webp", "svg"]:
-                        if self.do_new_file and result_item.new_size > result_item.size:
-                            # Output is larger than input in safe mode
-                            # Copy the uncompressed original file onto the compressed new file
-                            shutil.copy2(result_item.filename, result_item.new_filename)
-                            result_item.new_size = new_file_data.stat().st_size
-                            result_item.skipped = True
-                        elif not self.do_new_file:
+                        if self.do_new_file:
+                            if result_item.new_size >= result_item.size:
+                                # Output is larger (or equal) than input in safe mode
+                                # Copy the uncompressed original file onto the compressed new file
+                                shutil.copy2(result_item.filename, result_item.new_filename)
+                                result_item.new_size = new_file_data.stat().st_size
+                                result_item.skipped = True
+                        else:
                             if not result_item.new_size > result_item.size:
                                 # Output is smaller than input in overwrite mode
                                 # Copy the compressed temporary file onto the uncompressed original file
@@ -140,7 +141,6 @@ class Compressor():
                             result_item.new_filename = result_item.original_filename
                             new_file_data = Path(result_item.new_filename)
                             result_item.new_size = new_file_data.stat().st_size
-
                     elif result_item.size == result_item.new_size:
                         # File was automatically skipped by a compressor
                         result_item.skipped = True
