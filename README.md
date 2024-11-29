@@ -77,6 +77,12 @@ Curtail uses a number of open source projects to work properly:
 - [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html)
 - [Scour](https://gitlab.com/inkscape/extras/scour)
 
+## Translations
+Translation of this project takes place on the GNOME translation platform,
+[Damned Lies](https://l10n.gnome.org/module/Curtail). For further
+information on how to join a language team, or even to create one, please see
+[GNOME Translation Project wiki page](https://wiki.gnome.org/TranslationProject).
+
 ## Donations
 
 Do you like the app? Would you like to support its development? Feel free to donate.
