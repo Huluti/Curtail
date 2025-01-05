@@ -21,7 +21,12 @@
                 {
                     "type":"archive",
                     "url":"https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.5.tar.gz",
-                    "sha256":"90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38"
+                    "sha256":"90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1472,
+                        "url-template": "https://github.com/tjko/jpegoptim/archive/refs/tags/v$version.tar.gz"
+                    }
                 }
             ]
         },
@@ -50,20 +55,43 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.1.1.tar.gz",
-                    "sha256":"f50db90c7ef95c0964dc980f6596b821f362e15d6d4bab247f1eb4aab7554db8"
+                    "url":"https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.1.3.tar.gz",
+                    "sha256":"5f34bc3a9eba661a686106261720061b1136301ccd67cc653c9c70d71fa33c09",
+                    "x-checker-data": {
+                        "type":"anitya",
+                        "id":"209796",
+                        "url-template":"https://github.com/shssoichiro/oxipng/archive/refs/tags/v$version.tar.gz"
+                    }
                 },
                 "oxipng-sources.json"
             ]
         },
         {
             "name":"pngquant",
+            "buildsystem":"simple",
+            "build-commands":[
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "install -Dm 755 target/release/pngquant -t /app/bin"
+            ],
+            "build-options":{
+                "append-path":"/usr/lib/sdk/rust-stable/bin",
+                "env":{
+                    "CARGO_HOME":"/run/build/pngquant/cargo"
+                }
+            },
             "sources":[
                 {
-                    "type":"archive",
-                    "url":"http://pngquant.org/pngquant-2.18.0-src.tar.gz",
-                    "sha256":"e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4"
-                }
+                    "type":"git",
+                    "url":"https://github.com/kornelski/pngquant.git",
+                    "tag":"3.0.3",
+                    "commit":"53a332a58f44357b6b41842a54d74aa1e245913d",
+                    "x-checker-data": {
+                        "type":"git",
+                        "tag-pattern":"^([\\d.]+)$"
+                    }
+                },
+                "pngquant-sources.json"
             ]
         },
         "python3-scour.json"
