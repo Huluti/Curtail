@@ -1,6 +1,19 @@
+curtail (1.12.0) focal; urgency=medium
+
+  * "Open image" and "Show in folder" actions.
+  * Indicate that file compression was skipped. Thank's to @ARAKHN1D.
+  * Use file data to guess content type in addition to extension. Thank's to @sheepy0125.
+  * Improve skipping if output is larger than input. Thank's to @ARAKHN1D.
+  * Update dependencies. Thank's to @PunkPangolin.
+  * Update translations.
+
+-- Archisman Panigrahi <apandada1@gmail.com>  Sun, 05 Jan 2025 16:00 +0200
+
 curtail (1.11.1) focal; urgency=medium
 
   * Fix shell injection prevention. Thank's to @ARAKHN1D.
+
+-- Archisman Panigrahi <apandada1@gmail.com>  Fri, 11 Oct 2024 08:50 +0200
 
 curtail (1.11.0) focal; urgency=medium
 

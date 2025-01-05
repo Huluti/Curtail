@@ -94,6 +94,16 @@
                 "pngquant-sources.json"
             ]
         },
-        "python3-scour.json"
+        "python3-scour.json",
+        {
+            "name": "curtail",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
     ]
 }

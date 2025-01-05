@@ -35,6 +35,19 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.12.0" date="2025-01-05">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>"Open image" and "Show in folder" actions</li>
+          <li>Indicate that file compression was skipped. Thank's to @ARAKHN1D</li>
+          <li>Use file data to guess content type in addition to extension. Thank's to @sheepy0125</li>
+          <li>Improve skipping if output is larger than input. Thank's to @ARAKHN1D</li>
+          <li>Update dependencies. Thank's to @PunkPangolin</li>
+          <li>Update translations</li>
+        </ul>
+      </description>
+    </release>
      <release version="1.11.1" date="2024-09-11">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
