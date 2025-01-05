@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.12.0 - 2025-01-05
+### Added
+- "Open image" and "Show in folder" actions.
+- Indicate that file compression was skipped. Thank's to @ARAKHN1D.
+- Use file data to guess content type in addition to extension. Thank's to @sheepy0125.
+
+### Changed
+- Improve skipping if output is larger than input. Thank's to @ARAKHN1D.
+- Update dependencies. Thank's to @PunkPangolin.
+- Update translations.
+
 ## 1.11.1 - 2024-09-11
 ### Fixed
 - Fix shell injection prevention. Thank's to @ARAKHN1D.
