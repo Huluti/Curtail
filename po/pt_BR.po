@@ -1,23 +1,24 @@
-# curtail.pot
-# Copyright (C) 2019 Hugo Posnic
+# Brazilian Portuguese translation for curtail.
+# Copyright (C) 2025 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
 # Hugo Posnic <hugo.posnic@gmail.com>, 2019 (first Author).
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2024-11-08 14:55+0000\n"
-"PO-Revision-Date: 2024-11-10 12:25-0300\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"POT-Creation-Date: 2024-12-06 03:24+0000\n"
+"PO-Revision-Date: 2024-12-06 10:02-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
 "Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 47.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 47.1\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
@@ -75,17 +76,22 @@ msgid "This setting enable compression in a recursive way in folders."
 msgstr "Esta configuração ativa compressão em uma forma recursiva nas pastas."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
+msgid "Preserve metadata"
 msgstr "Manter metadados"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Esta configuração preserva os metadados de imagens."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "Preservar os atributos do arquivo, se possível"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr ""
+"Preservar as permissões do arquivo e marcas de data e hora, se possível"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Isto define as permissões e marcas de data e hora de imagens, se possível."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -144,24 +150,20 @@ msgid "Lossless compression level to use for WebP images."
 msgstr "Nível de compressão sem perdas a ser usado em imagens WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
+msgid "Enable progressive encoding for JPEG images"
 msgstr "Ativar codificação progressiva para imagens JPEG"
 
-# Esperar resposta: https://github.com/Huluti/Curtail/issues/262
 #: data/com.github.huluti.Curtail.gschema.xml:62
-#, fuzzy
 msgid "Optionally encode jpeg images progressively."
-msgstr "Opcionalmente, codifique imagens jpeg de forma progressiva."
+msgstr "Opcionalmente, codifica imagens jpeg de forma progressiva."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
+msgid "Enable maximum compression for SVG images"
 msgstr "Ativar compressão máxima para imagens SVG"
 
-# Esperar resposta: https://github.com/Huluti/Curtail/issues/262
 #: data/com.github.huluti.Curtail.gschema.xml:67
-#, fuzzy
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "Opcionalmente, ative a limpeza máxima de imagens SVG."
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Ativa a limpeza máxima de imagens SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -301,7 +303,7 @@ msgstr "Atalhos de teclado"
 msgid "About Curtail"
 msgstr "Sobre o Curtail"
 
-#: data/ui/window.ui:19 src/window.py:240
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Procura arquivos"
 
@@ -337,15 +339,15 @@ msgstr "Sem perda"
 msgid "Lossy"
 msgstr "Com perda"
 
-#: src/compressor.py:98
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "A compressão atingiu o tempo limite configurado de {} segundos."
 
-#: src/compressor.py:102
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "Ocorreu um erro desconhecido"
 
-#: src/compressor.py:122
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "Não é possível encontrar o arquivo compactado"
 
@@ -369,36 +371,52 @@ msgstr "Imagens WebP"
 msgid "SVG images"
 msgstr "Imagens SVG"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Versão não encontrada"
 
-#: src/window.py:205
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Ignorado"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "Mais informação"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"A compressão foi ignorada porque a compressão do arquivo resultaria em um "
+"arquivo de grande tamanho."
+
+#: src/window.py:232
 msgid "Open Image"
 msgstr "Abrir imagem"
 
-#: src/window.py:206
+#: src/window.py:233
 msgid "Show in Folder"
 msgstr "Mostrar na pasta"
 
-#: src/window.py:227
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "Modo de segurança com sufixo “{}”"
 
-#: src/window.py:230
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Modo de substituição"
 
-#: src/window.py:257
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "Navegar nos diretórios"
 
-#: src/window.py:282 src/window.py:288
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Tem certeza de que deseja comprimir imagens nestes diretórios?"
 
-#: src/window.py:283
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -406,7 +424,7 @@ msgstr ""
 "Todas as imagens nos diretórios selecionados e seus subdiretórios serão "
 "comprimidas. As imagens originais não serão modificadas."
 
-#: src/window.py:289
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -414,33 +432,33 @@ msgstr ""
 "Todas as imagens nos diretórios selecionados e seus subdiretórios serão "
 "comprimidas e substituídas!"
 
-#: src/window.py:292
+#: src/window.py:319
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/window.py:293
+#: src/window.py:320
 msgid "Compress"
 msgstr "Comprimir"
 
-#: src/window.py:362
+#: src/window.py:389
 msgid "No files found"
 msgstr "Nenhum arquivo encontrado"
 
-#: src/window.py:372
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "O arquivo não existe."
 
-#: src/window.py:377
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "O formato deste arquivo não é suportado."
 
-#: src/window.py:433
+#: src/window.py:460
 msgid "translator-credits"
 msgstr ""
 "Fúlvio Alves <fga.fulvio@gmail.com>\n"
 "Rafael Fontenelle <rafaelff@gnome.org>"
 
-#: src/window.py:437
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Colaboradores"
 
@@ -813,9 +831,6 @@ msgstr "Colaboradores"
 
 #~ msgid "File already exists"
 #~ msgstr "O arquivo já existe"
-
-#~ msgid "Skip"
-#~ msgstr "Pular"
 
 #~ msgid "Apply to all queue"
 #~ msgstr "Aplicar a todas as filas"
