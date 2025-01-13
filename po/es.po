@@ -3,47 +3,54 @@
 # This file is distributed under the same license as the curtail package.
 # Josue Quilon Barrios <manekenpix@fastmail.com>, 2019 (first Author).
 # Óscar Fernández Díaz <oscfdezdz@tuta.io>, 2023.
+# Julián Villodre <jvillodrede@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 18:24+0200\n"
-"PO-Revision-Date: 2023-10-02 18:26+0200\n"
-"Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
-"Language-Team: Spanish\n"
-"Language: es\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2024-11-29 15:24+0000\n"
+"PO-Revision-Date: 2024-12-21 23:48+0100\n"
+"Last-Translator: Julián Villodre <jvillodrede@gmail.com>\n"
+"Language-Team: es_ES\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 45.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 47.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:9
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
 msgid "Compress your images"
 msgstr "Comprima sus imágenes"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
 "Optimice sus imágenes con Curtail, un útil compresor de imágenes compatible "
-"con los tipos de archivo PNG, JPEG, WebP y SVG."
+"con archivos PNG, JPEG, WebP y SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
-"Admite modos de compresión con y sin pérdidas, con la opción de conservar o "
+"Admite modos de compresión con y sin pérdida, con la opción de conservar o "
 "no los metadatos de las imágenes."
 
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:122
-msgid "Curtail"
-msgstr "Curtail"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -56,100 +63,115 @@ msgstr "Guardar en un archivo nuevo"
 
 #: data/com.github.huluti.Curtail.gschema.xml:7
 msgid "Save the compressed image into a new file."
-msgstr "Guardar imagen comprimida en un nuevo archivo."
+msgstr "Guardar imagen comprimida en un archivo nuevo."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
-msgid "Keep metadata"
-msgstr "Mantener metadatos"
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Enable recursive compression in folders"
+msgstr "Activar la compresión recursiva en carpetas"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "Este ajuste activa la compresión recursiva en carpetas."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Preserve metadata"
+msgstr "Mantener metadatos"
+
 #: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting preserves metadata of images."
-msgstr "Esta opción mantiene los metadatos de las imágenes."
-
-#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:42
-msgid "Preserve file attributes if possible"
-msgstr "Conservar los atributos de los archivos si es posible"
+msgstr "Este ajuste mantiene los metadatos de las imágenes."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve file permissions and timestamps if possible"
+msgstr ""
+"Mantener los permisos de archivo y las marcas de tiempo siempre que sea "
+"posible"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Este ajuste mantiene los permisos de archivo y las marcas de tiempo siempre "
+"que sea posible."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
 msgstr "Activar compresión con pérdida"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Use lossy mode to compress images."
 msgstr "Usar compresión con pérdida al comprimir imágenes."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Suffix to append at end of new file"
-msgstr "Sufijo para agregar al final del archivo nuevo"
-
-#: data/com.github.huluti.Curtail.gschema.xml:27
-msgid "Suffix to append at end of new file."
-msgstr "Sufijo para agregar al final del archivo archivo."
-
-#: data/com.github.huluti.Curtail.gschema.xml:31 data/ui/preferences.ui:85
-msgid "PNG Lossy Compression Level"
-msgstr "Nivel de compresión PNG con pérdida"
+msgstr "Sufijo para añadir al final del archivo nuevo"
 
 #: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Suffix to append at end of new file."
+msgstr "Sufijo para añadir al final del archivo nuevo."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "PNG Lossy Compression Level"
+msgstr "Nivel de compresión con pérdida para PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for PNG images."
 msgstr "Nivel de compresión con pérdida para usar con imágenes PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 data/ui/preferences.ui:104
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossless Compression Level"
-msgstr "Nivel de compresión PNG sin pérdida"
+msgstr "Nivel de compresión sin pérdida para PNG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossless compression level to use for PNG images."
 msgstr "Nivel de compresión sin pérdida para usar con imágenes PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 data/ui/preferences.ui:129
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "JPG Lossy Compression Level"
-msgstr "Nivel de compresión JPG con pérdida"
+msgstr "Nivel de compresión con pérdida para JPG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossy compression level to use for JPG images."
 msgstr "Nivel de compresión con pérdida para usar con imágenes JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 data/ui/preferences.ui:164
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
-msgstr "Nivel de compresión con pérdida WebP"
+msgstr "Nivel de compresión con pérdida para WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for WebP images."
 msgstr "Nivel de compresión con pérdida para usar con imágenes WebP."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 data/ui/preferences.ui:183
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossless Compression Level"
-msgstr "Nivel de compresión WebP sin pérdida"
+msgstr "Nivel de compresión sin pérdida para WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossless compression level to use for WebP images."
 msgstr "Nivel de compresión sin pérdida para usar con imágenes WebP."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56
-msgid "Enable progressive encoding for JPEG images."
-msgstr "Activar la codificación progresiva para imágenes JPEG."
-
-#: data/com.github.huluti.Curtail.gschema.xml:57
-msgid "Optionally encode jpeg images progressively."
-msgstr "Opcionalmente, codificar las imágenes jpeg de forma progresiva."
-
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable maximum compression for SVG images."
-msgstr "Activar la compresión máxima para imágenes SVG."
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Activar la codificación progresiva para imágenes JPEG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "Opcionalmente, active la limpieza máxima de imágenes SVG."
+msgid "Optionally encode jpeg images progressively."
+msgstr "Codificar las imágenes jpeg de forma progresiva."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Compression Timeout"
-msgstr "Tiempo límite de compresión"
+msgid "Enable maximum compression for SVG images"
+msgstr "Activar la compresión máxima para imágenes SVG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Activar la limpieza máxima de imágenes SVG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
+msgid "Compression Timeout"
+msgstr "Tiempo de espera para la compresión"
+
+#: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Compression timeout for each image."
-msgstr "Tiempo límite de compresión para cada imagen."
+msgstr "Tiempo de espera de compresión para cada imagen."
 
 #: data/ui/help_overlay.ui:11
 msgctxt "shortcut window"
@@ -189,40 +211,90 @@ msgid "Safe Mode"
 msgstr "Modo seguro"
 
 #: data/ui/preferences.ui:15
-msgid "Save the compressed image into a new file"
+msgid "Save the compressed image in a new file"
 msgstr "Guardar imagen comprimida en un archivo nuevo"
 
-#: data/ui/preferences.ui:53
-msgid "Compression timeout"
-msgstr "Tiempo límite de compresión"
+#: data/ui/preferences.ui:20
+msgid "New File Suffix"
+msgstr "Nuevo sufijo para el archivo"
 
-#: data/ui/preferences.ui:54
-msgid "For each image"
-msgstr "Para cada imagen"
+#: data/ui/preferences.ui:25
+msgid "Recursive Compression"
+msgstr "Compresión recursiva"
 
-#: data/ui/preferences.ui:78
-msgid "Compression"
-msgstr "Compresión"
+#: data/ui/preferences.ui:26
+msgid "Enable or disable compression through subdirectories"
+msgstr "Active o desactive la compresión a través de subcarpetas"
 
-#: data/ui/preferences.ui:105 data/ui/preferences.ui:184
-msgid "The higher it is, the slower it is"
-msgstr "Cuanto más alto, más lento."
+#: data/ui/preferences.ui:31
+msgid "Keep Metadata"
+msgstr "Conservar metadatos"
 
-#: data/ui/preferences.ui:148
-msgid "Progressive Encode JPG"
-msgstr "Codificación progresiva JPG"
+#: data/ui/preferences.ui:32
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Conservar fragmentos de metadatos que no afecten al renderizado"
 
-#: data/ui/preferences.ui:208
-msgid "SVG Maximum Compression Level"
-msgstr "Nivel máximo de compresión SVG"
+#: data/ui/preferences.ui:37
+msgid "Keep File Attributes When Possible"
+msgstr "Conservar los atributos de los archivos cuando sea posible"
 
-#: data/ui/preferences.ui:209
-msgid "Can be more destructive for the image"
+#: data/ui/preferences.ui:38
+msgid ""
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr ""
+"Asegurar que el nuevo archivo tenga los mismos permisos y marcas de tiempo "
+"que el archivo original"
+
+#: data/ui/preferences.ui:44
+msgid "Set the timeout between images"
+msgstr "Establecer el tiempo de espera entre imágenes"
+
+#: data/ui/preferences.ui:62
+msgid "Formats"
+msgstr "Formatos"
+
+#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
+#: data/ui/preferences.ui:124
+msgid "Lossy Compression"
+msgstr "Compresión con pérdida"
+
+#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
+#: data/ui/preferences.ui:125
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr ""
+"Establecer la calidad de la imagen generada, siendo 100 la mejor calidad"
+
+#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
+msgid "Lossless Compression Level"
+msgstr "Nivel de compresión sin pérdida"
+
+#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
+msgid "Set the level of the compression, 6 is the highest but slowest level"
+msgstr ""
+"Establecer el nivel de compresión, siendo 6 el nivel más alto pero el más "
+"lento"
+
+#: data/ui/preferences.ui:113
+msgid "Progressive Encode"
+msgstr "Codificación progresiva"
+
+#: data/ui/preferences.ui:114
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr ""
+"Activar renderizado incremental de imágenes, pasando de borrosas a claras"
+
+#: data/ui/preferences.ui:155
+msgid "Maximum Compression Level"
+msgstr "Nivel de compresión máxima"
+
+#: data/ui/preferences.ui:156
+msgid "This can be more destructive for the image"
 msgstr "Puede ser más destructivo para la imagen"
 
 #: data/ui/menu.ui:6
-msgid "Bulk Compress Directory (Recursive)"
-msgstr "Compresión masiva de directorios (recursiva)"
+msgid "Bulk Compress Directory"
+msgstr "Compresión masiva de carpetas"
 
 #: data/ui/menu.ui:14
 msgid "Keyboard Shortcuts"
@@ -232,52 +304,51 @@ msgstr "Atajos del teclado"
 msgid "About Curtail"
 msgstr "Acerca de Curtail"
 
-#: data/ui/window.ui:12
-msgid "_Change Mode"
-msgstr "_Cambiar modo"
-
-#: data/ui/window.ui:13
-msgid "Images will be overwritten, proceed carefully."
-msgstr "Las imágenes se sobrescribirán, proceda con cuidado."
-
-#: data/ui/window.ui:21
-msgid "Drop images here to compress them"
-msgstr "Suelte aquí las imágenes para comprimirlas"
-
-#: data/ui/window.ui:27
-msgid "_Browse Files"
-msgstr "_Examinar archivos"
-
-#: data/ui/window.ui:46
-msgid "Lossless"
-msgstr "Sin pérdida"
-
-#: data/ui/window.ui:58
-msgid "Lossy"
-msgstr "Con pérdida"
-
-#: data/ui/window.ui:108 src/window.py:188
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Examinar archivos"
 
-#: data/ui/window.ui:115
+#: data/ui/window.ui:26
 msgid "Clear Results"
 msgstr "Limpiar resultados"
 
-#: data/ui/window.ui:129
+#: data/ui/window.ui:40
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: src/compressor.py:89
+#: data/ui/window.ui:51
+msgid "_Change Mode"
+msgstr "_Cambiar modo"
+
+#: data/ui/window.ui:52
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Las imágenes se sobrescribirán, proceda con cuidado"
+
+#: data/ui/window.ui:60
+msgid "Drop images here to compress them"
+msgstr "Suelte aquí las imágenes para comprimirlas"
+
+#: data/ui/window.ui:66
+msgid "_Browse Files"
+msgstr "_Examinar archivos"
+
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "Sin pérdida"
+
+#: data/ui/window.ui:97
+msgid "Lossy"
+msgstr "Con pérdida"
+
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
-msgstr ""
-"La compresión ha alcanzado el tiempo de espera configurado de {} segundos."
+msgstr "La compresión alcanzó el tiempo de espera configurado de {} segundos."
 
-#: src/compressor.py:93
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
-msgstr "Se ha producido un error desconocido"
+msgstr "Ocurrió un error desconocido"
 
-#: src/compressor.py:102
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "No se encuentra el archivo comprimido"
 
@@ -301,65 +372,103 @@ msgstr "Imágenes WebP"
 msgid "SVG images"
 msgstr "Imágenes SVG"
 
-#: src/tools.py:137 src/tools.py:144 src/tools.py:151 src/tools.py:158
-#: src/tools.py:165 src/tools.py:195
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Versión no encontrada"
 
-#: src/window.py:175
-msgid "Safe mode with '{}' suffix"
-msgstr "Modo seguro con sufijo '{}'"
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Omitido"
 
-#: src/window.py:178
+#: src/window.py:162
+msgid "More Information"
+msgstr "Más información"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Se omitió la compresión porque comprimir el archivo habría resultado en un "
+"tamaño de archivo mayor."
+
+#: src/window.py:232
+msgid "Open Image"
+msgstr "Abrir imagen"
+
+#: src/window.py:233
+msgid "Show in Folder"
+msgstr "Mostrar en la carpeta"
+
+#: src/window.py:254
+msgid "Safe mode with '{}' suffix"
+msgstr "Modo seguro con sufijo «{}»"
+
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Modo de sobrescritura"
 
-#: src/window.py:206
+#: src/window.py:284
 msgid "Browse Directories"
-msgstr "Examinar directorios"
+msgstr "Examinar carpetas"
 
-#: src/window.py:236 src/window.py:242
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
-msgstr "¿Está seguro de que desea comprimir las imágenes de estos directorios?"
+msgstr "¿Está seguro de que desea comprimir las imágenes de estas carpetas?"
 
-#: src/window.py:237
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
-"Se comprimirán todas las imágenes de los directorios seleccionados y sus "
-"subdirectorios. Las imágenes originales no se modificarán."
+"Se comprimirán todas las imágenes de las carpetas seleccionadas, incluyendo "
+"subcarpetas. Las imágenes originales no se modificarán."
 
-#: src/window.py:243
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
-"Todas las imágenes de los directorios seleccionados y sus subdirectorios se "
+"Todas las imágenes de las carpetas seleccionadas y sus subcarpetas se "
 "comprimirán y sobrescribirán."
 
-#: src/window.py:246
+#: src/window.py:319
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/window.py:247
+#: src/window.py:320
 msgid "Compress"
 msgstr "Comprimir"
 
-#: src/window.py:316
+#: src/window.py:389
+msgid "No files found"
+msgstr "No se encontraron archivos"
+
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "Este archivo no existe."
 
-#: src/window.py:321
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "El formato de este archivo no es compatible."
 
-#: src/window.py:373
+#: src/window.py:460
 msgid "translator-credits"
 msgstr ""
+"Julián Villodre <jvillodrede@gmail.com>, 2024\n"
 "Josué Quilón Barrios\n"
 "Óscar Fernández Díaz"
 
-#: src/window.py:377
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Colaboradores"
+
+#~ msgid "Compression timeout"
+#~ msgstr "Tiempo límite de compresión"
+
+#~ msgid "For each image"
+#~ msgstr "Para cada imagen"
+
+#~ msgid "The higher it is, the slower it is"
+#~ msgstr "Cuanto más alto, más lento."
