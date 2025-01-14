@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2024-11-19 20:34+0000\n"
-"PO-Revision-Date: 2024-11-22 19:01+0800\n"
+"POT-Creation-Date: 2024-11-29 15:24+0000\n"
+"PO-Revision-Date: 2024-11-30 09:48+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -72,17 +72,20 @@ msgid "This setting enable compression in a recursive way in folders."
 msgstr "此设置可以在文件夹中以递归方式启用压缩。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
+msgid "Preserve metadata"
 msgstr "保留元数据"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "此设置保留图像的元数据。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "尽可能保留文件属性"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "尽可能保留文件权限和时间戳"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr "该选项会尽可能设置图像的文件权限和时间戳。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -141,20 +144,20 @@ msgid "Lossless compression level to use for WebP images."
 msgstr "用于 WebP 图像的无损压缩级别。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
-msgstr "为 JPEG 图像启用渐进式编码。"
+msgid "Enable progressive encoding for JPEG images"
+msgstr "为 JPEG 图像启用渐进式编码"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "可选的启用 JPEG 图像渐进式编码。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
-msgstr "为 SVG 图像启用最大压缩。"
+msgid "Enable maximum compression for SVG images"
+msgstr "为 SVG 图像启用最大压缩"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "可选地启用 SVG 图像最大程度清理。"
+msgid "Enable maximum cleaning of SVG images."
+msgstr "启用 SVG 图像的最大程度清理。"
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -289,7 +292,7 @@ msgstr "键盘快捷键"
 msgid "About Curtail"
 msgstr "关于 Curtail"
 
-#: data/ui/window.ui:19 src/window.py:240
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "浏览文件"
 
@@ -325,15 +328,15 @@ msgstr "无损"
 msgid "Lossy"
 msgstr "有损"
 
-#: src/compressor.py:98
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "压缩已达到配置的 {} 秒超时。"
 
-#: src/compressor.py:102
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "发生未知错误"
 
-#: src/compressor.py:122
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "无法找到已压缩文件"
 
@@ -357,75 +360,89 @@ msgstr "WebP 图像"
 msgid "SVG images"
 msgstr "SVG 图像"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "未找到版本"
 
-#: src/window.py:205
+#: src/window.py:144
+msgid "Skipped"
+msgstr "已跳过"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "更多信息"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr "压缩已跳过，因为压缩该文件会导致文件更大。"
+
+#: src/window.py:232
 msgid "Open Image"
 msgstr "打开图像"
 
-#: src/window.py:206
+#: src/window.py:233
 msgid "Show in Folder"
 msgstr "在文件夹中显示"
 
-#: src/window.py:227
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "后缀为“{}”的安全模式"
 
-#: src/window.py:230
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "覆盖模式"
 
-#: src/window.py:257
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "浏览目录"
 
-#: src/window.py:282 src/window.py:288
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "您确定要压缩这些目录中的图像吗？"
 
-#: src/window.py:283
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr "所选目录及其子目录中的所有图像都将被压缩。原始图像不会被修改。"
 
-#: src/window.py:289
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr "所选目录及其子目录中的所有图像都将被压缩并覆盖！"
 
-#: src/window.py:292
+#: src/window.py:319
 msgid "Cancel"
 msgstr "取消"
 
-#: src/window.py:293
+#: src/window.py:320
 msgid "Compress"
 msgstr "压缩"
 
-#: src/window.py:362
+#: src/window.py:389
 msgid "No files found"
 msgstr "未找到文件"
 
-#: src/window.py:372
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "此文件不存在。"
 
-#: src/window.py:377
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "不支持此文件的格式。"
 
-#: src/window.py:433
+#: src/window.py:460
 msgid "translator-credits"
 msgstr ""
 "Hugo Posnic <hugo.posnic@protonmail.com>, 2019\n"
 "余航 <yuhldr@qq.com>, 2023\n"
 "lumingzh <lumingzh@qq.com>, 2024"
 
-#: src/window.py:437
+#: src/window.py:464
 msgid "Contributors"
 msgstr "贡献者"
 
