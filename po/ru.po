@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-13 17:19+0200\n"
-"PO-Revision-Date: 2024-10-14 17:11+1000\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2024-11-29 15:24+0000\n"
+"PO-Revision-Date: 2024-11-30 10:48+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -20,6 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
@@ -42,10 +48,10 @@ msgstr ""
 "Приложение поддерживает сжатие с потерями и без потерь в качестве и "
 "позволяет выбрать, сохранять ли метаданные."
 
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:33
-msgid "Curtail"
-msgstr "Curtail"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -69,17 +75,22 @@ msgid "This setting enable compression in a recursive way in folders."
 msgstr "Выполнять рекурсивное сжатие в папках."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
+msgid "Preserve metadata"
 msgstr "Сохранять метаданные"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Не удалять уже существующие метаданные изображений."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "По возможности сохранять атрибуты файла"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "По возможности сохранять права доступа к файлам и временные метки"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Настройте права доступа к файлам и временные метки изображений, если это "
+"возможно."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -138,20 +149,20 @@ msgid "Lossless compression level to use for WebP images."
 msgstr "Уровень сжатия без потери качества для изображений WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
-msgstr "Использовать прогрессивное кодирование при записи файлов JPEG."
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Использовать прогрессивное кодирование при записи файлов JPEG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "Записывать прогрессивный JPEG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
-msgstr "Использовать максимальное сжатие при записи файлов PNG."
+msgid "Enable maximum compression for SVG images"
+msgstr "Использовать максимальное сжатие при записи файлов PNG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "При необходимости использовать максимальную очистку изображений SVG."
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Использовать максимальную очистку изображений SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -292,7 +303,7 @@ msgstr "Комбинации клавиш"
 msgid "About Curtail"
 msgstr "О приложении"
 
-#: data/ui/window.ui:19 src/window.py:240
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Обзор файлов"
 
@@ -328,15 +339,15 @@ msgstr "Без потерь"
 msgid "Lossy"
 msgstr "С потерями"
 
-#: src/compressor.py:98
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Время ограничения сжатия достигло заданного значения {} секунд."
 
-#: src/compressor.py:102
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "Произошла неизвестная ошибка"
 
-#: src/compressor.py:122
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "Не удалось найти сжатый файл"
 
@@ -360,36 +371,52 @@ msgstr "Изображения WebP"
 msgid "SVG images"
 msgstr "Изображения SVG"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Версия не найдена"
 
-#: src/window.py:205
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Пропущено"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "Дополнительная информация"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Сжатие было пропущено, поскольку это действие могло привести к увеличению "
+"размера файла."
+
+#: src/window.py:232
 msgid "Open Image"
 msgstr "Открыть изображение"
 
-#: src/window.py:206
+#: src/window.py:233
 msgid "Show in Folder"
 msgstr "Показать в папке"
 
-#: src/window.py:227
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "Безопасный режим с суффиксом '{}'"
 
-#: src/window.py:230
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Режим перезаписи"
 
-#: src/window.py:257
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "Укажите каталоги"
 
-#: src/window.py:282 src/window.py:288
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Вы уверены, что хотите сжать изображения в этих каталогах?"
 
-#: src/window.py:283
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -397,7 +424,7 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты. Но "
 "исходные файлы не изменятся."
 
-#: src/window.py:289
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -405,33 +432,33 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты и "
 "перезаписаны!"
 
-#: src/window.py:292
+#: src/window.py:319
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/window.py:293
+#: src/window.py:320
 msgid "Compress"
 msgstr "Сжать"
 
-#: src/window.py:362
+#: src/window.py:389
 msgid "No files found"
 msgstr "Файлы не найдены"
 
-#: src/window.py:372
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "Этот файл не существует."
 
-#: src/window.py:377
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Формат этого файла не поддерживается."
 
-#: src/window.py:433
+#: src/window.py:460
 msgid "translator-credits"
 msgstr ""
 "Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Ser82-png <savmail.as@gmail.com>"
 
-#: src/window.py:437
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Участники"
 
@@ -452,9 +479,6 @@ msgstr "Участники"
 
 #~ msgid "For each image"
 #~ msgstr "Для каждого изображения"
-
-#~ msgid "Hugo Posnic"
-#~ msgstr "Hugo Posnic"
 
 #~ msgid "Here's the changelog of this version:"
 #~ msgstr "Вот список изменений в этой версии:"
@@ -705,9 +729,6 @@ msgstr "Участники"
 
 #~ msgid "File already exists"
 #~ msgstr "Файл уже существует"
-
-#~ msgid "Skip"
-#~ msgstr "Пропустить"
 
 #~ msgid "Apply to all queue"
 #~ msgstr "Применить ко всей очереди"
