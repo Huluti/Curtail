@@ -2,14 +2,14 @@
 # Copyright (C) 2024 Curtail's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Curtail package.
 #
-# Martin Srebotnjak <miles@filmsi.net>, 2024.
+# Martin Srebotnjak <miles@filmsi.net>, 2024,2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2024-12-01 03:24+0000\n"
-"PO-Revision-Date: 2024-12-21 23:23+0100\n"
+"POT-Creation-Date: 2025-01-12 20:47+0000\n"
+"PO-Revision-Date: 2025-01-17 10:27+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups."
 "com>\n"
@@ -19,14 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && "
 "n%100<=4 ? 2 : 3);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
 #: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
 #: data/ui/window.ui:33
-#, fuzzy
 msgid "Curtail"
-msgstr "Omejitev"
+msgstr "Stiskalnica"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
@@ -38,8 +37,8 @@ msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
-"Optimizirajte svoje slike z uporabnim kompresorjem slik, ki podpira vrste "
-"datotek PNG, JPEG, WebP in SVG."
+"Optimizirajte svoje slike s Stiskalnico, uporabno stiskalnico slik, ki "
+"podpira vrste datotek PNG, JPEG, WebP in SVG."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
@@ -87,13 +86,13 @@ msgstr "Ta nastavitev ohrani metapodatke slik."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve file permissions and timestamps if possible"
-msgstr "Ohrani dovoljenja in časovne žige datotek, če je možno"
+msgstr "Ohrani pravice datotek in časovne žige, če je možno"
 
 #: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting file permissions and timestamps of images if possible."
 msgstr ""
-"Ta nastavitev omogoča, da ohranite izvorna dovoljenja in časovne žige slik, "
-"če je možno."
+"Zagotavlja, da ima nova datoteka enaka dovoljenja in časovne žige kot "
+"izvirna datoteka, če je to možno."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -153,7 +152,7 @@ msgstr "Raven stiskanja brez izgub za slike WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "Enable progressive encoding for JPEG images"
-msgstr "Omogočite progresivno kodiranje za slike JPEG."
+msgstr "Omogočite progresivno kodiranje za slike JPEG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
@@ -161,11 +160,11 @@ msgstr "Po želji lahko slike jpeg kodirate progresivno."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable maximum compression for SVG images"
-msgstr "Omogočite največje stiskanje za slike SVG."
+msgstr "Omogočite največje stiskanje za slike SVG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Enable maximum cleaning of SVG images."
-msgstr "Omogočite maksimalno čiščenje slik SVG."
+msgstr "Omogočite največje čiščenje slik SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -250,7 +249,7 @@ msgstr ""
 
 #: data/ui/preferences.ui:44
 msgid "Set the timeout between images"
-msgstr "Nastavite časovni zamik med slikami"
+msgstr "Nastavite časovni interval med slikami"
 
 #: data/ui/preferences.ui:62
 msgid "Formats"
@@ -280,7 +279,7 @@ msgstr "Progresivno kodiranje"
 
 #: data/ui/preferences.ui:114
 msgid "Enable incremental image rendering, going from blurry to clear"
-msgstr "Omogočite postopno izrisovanje slik, od zabrisanega do jasnega"
+msgstr "Omogoči postopno izrisovanje slik, od zabrisanega do jasnega"
 
 #: data/ui/preferences.ui:155
 msgid "Maximum Compression Level"
@@ -299,9 +298,8 @@ msgid "Keyboard Shortcuts"
 msgstr "Tipkovne bližnjice"
 
 #: data/ui/menu.ui:18
-#, fuzzy
 msgid "About Curtail"
-msgstr "O programu Curtail"
+msgstr "O programu Stiskalnica"
 
 #: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
@@ -390,7 +388,7 @@ msgid ""
 "a larger file size."
 msgstr ""
 "Stiskanje je bilo preskočeno, ker bi stiskanje datoteke povzročilo večjo "
-"datoteko."
+"velikost datoteke."
 
 #: src/window.py:232
 msgid "Open Image"
