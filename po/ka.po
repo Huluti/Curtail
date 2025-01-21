@@ -1,14 +1,14 @@
 # Georgian translation for Curtail.
 # Copyright (C) 2024 Curtail's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Curtail package.
-# Ekaterine Papava <papava.e@gtu.ge>,  2024.
+# Ekaterine Papava <papava.e@gtu.ge>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2024-11-12 15:24+0000\n"
-"PO-Revision-Date: 2024-11-17 06:40+0100\n"
+"POT-Creation-Date: 2025-01-11 15:24+0000\n"
+"PO-Revision-Date: 2025-01-12 20:34+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -72,17 +72,22 @@ msgstr ""
 "ეს პარამეტრი საქაღალდეებში რეკურსიული გზით შეკუმშვის საშუალებას იძლევა."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
+msgid "Preserve metadata"
 msgstr "მეტამონაცემების შენარჩუნება"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "ეს პარამეტრი ინარჩუნებს სურათების მეტამონაცემებს."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "ფაილის ატრიბუტების შენარჩუნება, თუ ეს შესაძლებელია"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "შესაძლებლობის შემთხვევაში შეინარჩუნეთ ფაილის ნებართვები და ვადები"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"დარწმუნება, რომ ახალ ფაილს აქვს იგივე წვდომების და დროის შტამპები, რაც "
+"ორიგინალს ჰქონდა."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -141,20 +146,20 @@ msgid "Lossless compression level to use for WebP images."
 msgstr "კარგვის გარეშე შეკუმშვის დონე WebP სურათებისთვის."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
-msgstr "პროგრესული კოდირების ჩართვა JPEG გამოსახულებებისთვის."
+msgid "Enable progressive encoding for JPEG images"
+msgstr "პროგრესული კოდირების ჩართვა JPEG გამოსახულებებისთვის"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "სურვილისამებრ დააკოდირეთ jpeg გამოსახულებები პროგრესულად."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
-msgstr "მაქსიმალური შეკუმშვის ჩართვა SVG გამოახულებებისთვის."
+msgid "Enable maximum compression for SVG images"
+msgstr "მაქსიმალური შეკუმშვის ჩართვა SVG გამოსახულებებისთვის"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "სურვილისამებრ ჩართეთ SVG სურათების მაქსიმალური გაწმენდა."
+msgid "Enable maximum cleaning of SVG images."
+msgstr "სურვილისამებრ ჩართეთ SVG სურათების მაქსიმალური გაწმენდა"
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -292,7 +297,7 @@ msgstr "კლავიატურის მალსახმობები"
 msgid "About Curtail"
 msgstr "Curtail-ის შესახებ"
 
-#: data/ui/window.ui:19 src/window.py:240
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "ფაილის არჩევა"
 
@@ -328,15 +333,15 @@ msgstr "კარგვის გარეშე"
 msgid "Lossy"
 msgstr "კარგვითი"
 
-#: src/compressor.py:98
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "შეკუმშვამ მიაღწია მორგებულ მოლოდინის ვადას, რომელიც {} წამია."
 
-#: src/compressor.py:102
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "ნაპოვნია უცნობი შეცდომა"
 
-#: src/compressor.py:122
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "შეკუმშული ფაილი ვერ ვიპოვე"
 
@@ -360,36 +365,51 @@ msgstr "WEBP გამოსახულებები"
 msgid "SVG images"
 msgstr "SVG გამოსახულებები"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "ვერსია ვერ მოიძებნა"
 
-#: src/window.py:205
+#: src/window.py:144
+msgid "Skipped"
+msgstr "გამოტოვებულია"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "მეტი ინფორმაცია"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"შეკუმშვა გამოტოვებულია, რადგან შედეგად მიღებული ფაილი უფრო დიდი იქნებოდა."
+
+#: src/window.py:232
 msgid "Open Image"
 msgstr "გამოსახულების გახსნა"
 
-#: src/window.py:206
+#: src/window.py:233
 msgid "Show in Folder"
 msgstr "საქაღალდეში ჩვენება"
 
-#: src/window.py:227
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "უსაფრთხო რეჟიმი \"{}\" სუფიქსით"
 
-#: src/window.py:230
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "თავზე გადაწერის რეჟიმი"
 
-#: src/window.py:257
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "საქაღალდეების პოვნა"
 
-#: src/window.py:282 src/window.py:288
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "მართლა გნებავთ ამ საქაღალდეებში არსებული გამოსახულებების შეკუმშვა?"
 
-#: src/window.py:283
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -397,38 +417,38 @@ msgstr ""
 "ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში "
 "შეიკუმშება. ორიგინალი გამოსახულებები არ შეიცვლება."
 
-#: src/window.py:289
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
-"ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში "
-"შეიკუმშება და თავზე გადაეწერება!"
+"ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში შეიკუმშება "
+"და თავზე გადაეწერება!"
 
-#: src/window.py:292
+#: src/window.py:319
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: src/window.py:293
+#: src/window.py:320
 msgid "Compress"
 msgstr "შეკუმშვა"
 
-#: src/window.py:362
+#: src/window.py:389
 msgid "No files found"
 msgstr "ფაილები ვერ მოიძებნა"
 
-#: src/window.py:372
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "ეს ფაილი არ არსებობს."
 
-#: src/window.py:377
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "ამ ფაილის ფორმატი მხარდაჭერილი არაა."
 
-#: src/window.py:433
+#: src/window.py:460
 msgid "translator-credits"
 msgstr "Giorgi Maghlakelidze https://launchpad.net/~dracid"
 
-#: src/window.py:437
+#: src/window.py:464
 msgid "Contributors"
 msgstr "შემომწირავები"
