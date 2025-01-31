@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-13 17:19+0200\n"
-"PO-Revision-Date: 2024-11-24 12:25+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2025-01-25 15:29+0000\n"
+"PO-Revision-Date: 2025-01-31 13:20+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
 "Language: oc\n"
@@ -16,6 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.5\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
@@ -38,10 +44,10 @@ msgstr ""
 "Es compatible amb los mòdes de compression sens pèrda e amb pèrda amb una "
 "opcion per gardar o non las metadonadas dels imatges."
 
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:33
-msgid "Curtail"
-msgstr "Curtail"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -67,17 +73,22 @@ msgstr ""
 "dossièrs."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
-msgstr "Gardar las metadonadas"
+msgid "Preserve metadata"
+msgstr "Servar las metadonadas"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Aqueste reglatge sèrva las metadonadas dels imatges."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "Servar los atributs de fichièr se possible"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Servar las permissions e orodatatges de fichièr se possible"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Aqueste paramètre definís las permissions de fichièrs e d’orodatatge se "
+"possible."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -136,20 +147,20 @@ msgid "Lossless compression level to use for WebP images."
 msgstr "Nivèl de compression sens pèrda d’utilizar pels imatges WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
-msgstr "Activar l’encodatge progressiu pels imatges JPEG."
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Activar l’encodatge progressiu pels imatges JPEG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "En opcion encodar los imatges jpeg progressivament."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
-msgstr "Activar la compression maximala pels imatges SVG."
+msgid "Enable maximum compression for SVG images"
+msgstr "Activar la compression maximala pels imatges SVG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "En opcion activar lo netejatge maximum dels imatges SVG."
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Activar lo netejatge maximum dels imatges SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
@@ -286,7 +297,7 @@ msgstr "Acorchis de clavièr"
 msgid "About Curtail"
 msgstr "A prepaus de Curtail"
 
-#: data/ui/window.ui:19 src/window.py:240
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Percórrer los fichièrs"
 
@@ -322,15 +333,15 @@ msgstr "Sens pèrda"
 msgid "Lossy"
 msgstr "Compression amb pèrda"
 
-#: src/compressor.py:98
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "La compression a atengut lo relambi configurat de {} segondas."
 
-#: src/compressor.py:102
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "Una error desconeguda s'es producha"
 
-#: src/compressor.py:122
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "Impossible de trobar lo fichièr compressat"
 
@@ -354,36 +365,52 @@ msgstr "Imatge WebP"
 msgid "SVG images"
 msgstr "imatges SVG"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Version pas trobada"
 
-#: src/window.py:205
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Ignorat"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "Mai d'informacions"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"La compression es estada sautada perque compressar lo fichièr auriá creat "
+"un fichièr mai pesuc."
+
+#: src/window.py:232
 msgid "Open Image"
 msgstr "Dobrir un imatge"
 
-#: src/window.py:206
+#: src/window.py:233
 msgid "Show in Folder"
 msgstr "Mostrar lo repertòri"
 
-#: src/window.py:227
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "Mòde segur amb lo sufixe « {} »"
 
-#: src/window.py:230
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Mòde espotiment"
 
-#: src/window.py:257
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "Percórrer los dossièrs"
 
-#: src/window.py:282 src/window.py:288
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Volètz vertadièrament compressar los imatges d’aquestes repertòris ?"
 
-#: src/window.py:283
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -391,7 +418,7 @@ msgstr ""
 "Totes los imatges dels repertòris seleccionat e lors jos repertòris seràn "
 "compressats. Los imatges originals seràn pas modificats."
 
-#: src/window.py:289
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -399,31 +426,31 @@ msgstr ""
 "Totes los imatges dels repertòris seleccionat e lors jos repertòris seràn "
 "compressats e remplaçats !"
 
-#: src/window.py:292
+#: src/window.py:319
 msgid "Cancel"
 msgstr "Anullar"
 
-#: src/window.py:293
+#: src/window.py:320
 msgid "Compress"
 msgstr "Compression"
 
-#: src/window.py:362
+#: src/window.py:389
 msgid "No files found"
 msgstr "Cap de fichièr pas trobat"
 
-#: src/window.py:372
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "Aqueste fichièr existís pas."
 
-#: src/window.py:377
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Lo format d’aqueste fichièr es pas pres en compte."
 
-#: src/window.py:433
+#: src/window.py:460
 msgid "translator-credits"
 msgstr "Quentin PAGÈS"
 
-#: src/window.py:437
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Contributors"
 
@@ -435,9 +462,6 @@ msgstr "Contributors"
 
 #~ msgid "The higher it is, the slower it is"
 #~ msgstr "Mai es elevat, mai lent es"
-
-#~ msgid "Hugo Posnic"
-#~ msgstr "Hugo Posnic"
 
 #~ msgid "Here's the changelog of this version:"
 #~ msgstr "Istoric complet de las modificacions d’aquesta version :"
@@ -468,9 +492,6 @@ msgstr "Contributors"
 
 #~ msgid "File already exists"
 #~ msgstr "Lo fichièr existís ja"
-
-#~ msgid "Skip"
-#~ msgstr "Ignorar"
 
 #~ msgid "Apply to all queue"
 #~ msgstr "Aplicar a tota la fila"
