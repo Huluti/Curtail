@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-01-12 20:47+0000\n"
-"PO-Revision-Date: 2025-01-1225 20:47+0000\n"
+"POT-Creation-Date: 2025-01-25 15:29+0000\n"
+"PO-Revision-Date: 2025-02-15 20:47+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -74,11 +74,11 @@ msgstr "Ezarpen honekin irudien metadatuak mantentzen dira."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve file permissions and timestamps if possible"
-msgstr "Mantendu fitxategiaren baimenak eta denbora-zigiluak, posible denean"
+msgstr "Mantendu fitxategi-baimenak eta denbora-zigiluak, posible denean"
 
 #: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting file permissions and timestamps of images if possible."
-msgstr ""
+msgstr "Honek irudien fitxategi-baimenak eta denbora-zigiluak mantentzen ditu, posible denean."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -118,7 +118,7 @@ msgstr "JPGen galeradun konpresio-maila"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossy compression level to use for JPG images."
-msgstr ""
+msgstr "JPG irudietan erabiliko den galeradun konpresio-maila."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
@@ -126,7 +126,7 @@ msgstr "WebPren galeradun konpresio-maila"
 
 #: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for WebP images."
-msgstr ""
+msgstr "WebP irudietan erabiliko den galeradun konpresio-maila."
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossless Compression Level"
@@ -134,7 +134,7 @@ msgstr "WebPen galerarik gabeko konpresio-maila"
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossless compression level to use for WebP images."
-msgstr ""
+msgstr "WebP irudietan erabiliko den galerarik gabeko konpresio-maila."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "Enable progressive encoding for JPEG images"
@@ -323,7 +323,7 @@ msgstr "Galeraduna"
 
 #: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
-msgstr ""
+msgstr "Konpresioak konfiguratutako {} segundoen denbora-muga gainditu du."
 
 #: src/compressor.py:109
 msgid "An unknown error has occurred"
@@ -370,7 +370,7 @@ msgstr "Informazio gehiago"
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
-msgstr ""
+msgstr "Konpresioa saltatu da fitxategia konprimatzeak tamaina handiagoa sortuko lukeelako."
 
 #: src/window.py:232
 msgid "Open Image"
@@ -382,7 +382,7 @@ msgstr "Erakutsi karpetan"
 
 #: src/window.py:254
 msgid "Safe mode with '{}' suffix"
-msgstr ""
+msgstr "Modu segurua '{}' atzizkiarekin"
 
 #: src/window.py:257
 msgid "Overwrite mode"
@@ -400,13 +400,13 @@ msgstr "Ziur zaude irudiak direktorio hauetan konprimatu nahi dituzula?"
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
-msgstr ""
+msgstr "Hautatutako direktorioko eta bere azpidirektorioetako irudi guztiak konprimatuko dira. Jatorrizko irudiak ez dira aldatuko."
 
 #: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
-msgstr ""
+msgstr "Hautatutako direktorioko eta bere azpidirektorioetako irudi guztiak konprimatu eta gainidatziko dira!"
 
 #: src/window.py:319
 msgid "Cancel"
