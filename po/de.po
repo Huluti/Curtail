@@ -3,29 +3,35 @@
 # This file is distributed under the same license as the curtail package.
 # Onno Giesmann <nutzer3105@gmail.com>, 2019-2021 (first Author).
 # MoonlightWave-12 <123384363+MoonlightWave-12@users.noreply.github.com>, 2023.
+# Philipp Kiemle <l10n@prly.mozmail.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 23:29+0200\n"
-"PO-Revision-Date: 2023-05-07 19:47+0200\n"
-"Last-Translator: MoonlightWave-12 <123384363+MoonlightWave-12@users.noreply."
-"github.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2025-01-12 20:47+0000\n"
+"PO-Revision-Date: 2025-02-07 20:31+0100\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German - Germany <>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:9
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
 msgid "Compress your images"
 msgstr "Komprimieren Ihrer Bilder"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
@@ -33,492 +39,23 @@ msgstr ""
 "Optimiere deine Bilder mit Curtail, einem nützlichen Bild-Kompressor der die "
 "Dateiformate PNG, JPEG, WebP, und SVG unterstützt."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
-"Er unterstützt verlustfreie und verlustbehaftete Kompression, wobei die "
+"Es unterstützt verlustfreie und verlustbehaftete Komprimierung, wobei die "
 "Metadaten von Bildern optional behalten oder entfernt werden können."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:39
-#: data/com.github.huluti.Curtail.appdata.xml.in:54
-#: data/com.github.huluti.Curtail.appdata.xml.in:64
-#: data/com.github.huluti.Curtail.appdata.xml.in:75
-#: data/com.github.huluti.Curtail.appdata.xml.in:89
-#: data/com.github.huluti.Curtail.appdata.xml.in:100
-#: data/com.github.huluti.Curtail.appdata.xml.in:117
-#: data/com.github.huluti.Curtail.appdata.xml.in:126
-#: data/com.github.huluti.Curtail.appdata.xml.in:142
-#: data/com.github.huluti.Curtail.appdata.xml.in:160
-#: data/com.github.huluti.Curtail.appdata.xml.in:170
-#: data/com.github.huluti.Curtail.appdata.xml.in:178
-#: data/com.github.huluti.Curtail.appdata.xml.in:186
-#: data/com.github.huluti.Curtail.appdata.xml.in:195
-#: data/com.github.huluti.Curtail.appdata.xml.in:203
-#: data/com.github.huluti.Curtail.appdata.xml.in:213
-#: data/com.github.huluti.Curtail.appdata.xml.in:224
-#: data/com.github.huluti.Curtail.appdata.xml.in:238
-#: data/com.github.huluti.Curtail.appdata.xml.in:246
-#: data/com.github.huluti.Curtail.appdata.xml.in:256
-#: data/com.github.huluti.Curtail.appdata.xml.in:268
-#: data/com.github.huluti.Curtail.appdata.xml.in:282
-#: data/com.github.huluti.Curtail.appdata.xml.in:291
-#: data/com.github.huluti.Curtail.appdata.xml.in:300
-#: data/com.github.huluti.Curtail.appdata.xml.in:309
-#: data/com.github.huluti.Curtail.appdata.xml.in:320
-msgid "Here's the changelog of this version:"
-msgstr "Hier sind die Änderungen in dieser Version:"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:41
-msgid "Configurable compression timeout"
-msgstr "Einstellbare Zeitbegrenzung für die Kompression"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:42
-msgid "Compress images in an other thread"
-msgstr "Komprimiere Bilder in einem anderen Thread"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:43
-#, fuzzy
-msgid "Better workflow for headerbar"
-msgstr "Besserer Arbeitsablauf für die Kopfleiste (Headerbar)"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:44
-msgid "Move saving state in the subtitle"
-msgstr ""
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:45
-#, fuzzy
-msgid "Show errors on each line and not in modals anymore"
-msgstr "Fehler in jeder Zeile anzeigen; nicht mehr in einem modalen Dialog"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:46
-msgid "Simplify preferences"
-msgstr "Einstellungen vereinfachen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:47
-#: data/com.github.huluti.Curtail.appdata.xml.in:58
-#: data/com.github.huluti.Curtail.appdata.xml.in:69
-#: data/com.github.huluti.Curtail.appdata.xml.in:207
-#: data/com.github.huluti.Curtail.appdata.xml.in:231
-#: data/com.github.huluti.Curtail.appdata.xml.in:250
-msgid "Update translations"
-msgstr "Übersetzungen aktualisiert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:48
-#, fuzzy
-msgid "Fix compression level ranges in UI"
-msgstr "Verlustbehafteter Komprimierungsgrad für PNG-Bilder"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:56
-msgid "More modern results page"
-msgstr "Modernere Ergebnis-Seite"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:57
-msgid "Reduce images one by one to avoid freezes"
-msgstr "Bilder eines nach dem anderen verkleinern, um einfrieren zu vermeiden"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:66
-msgid "Port to GTK 4 and Libadwaita"
-msgstr "Zu GTK 4 und Libadwaita portiert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:67
-msgid "Update deps"
-msgstr "Abhängigkeiten aktualisiert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:68
-msgid "Less annoying 'Apply dialog'"
-msgstr "Weniger nerviger \"Anwenden\"-Dialog"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:77
-msgid "Make size columns sortable."
-msgstr ""
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:78
-msgid "Add Korean translation. Thank's to @MarongHappy."
-msgstr "Koreanische Übersetzung hinzugefügt. Danke an @MarongHappy."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:79
-msgid "Update screenshots."
-msgstr "Bildschirmfotos aktualisiert."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:80
-msgid "Update Turkish translation. Thank's to @libreajans."
-msgstr "Türkische Übersetzung aktualisiert. Danke an @libreajans."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:81
-msgid "Update French translation. Thank's to @rene-coty."
-msgstr "Französische Übersetzung aktualisiert. Danke an @rene-coty."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:82
-#: data/com.github.huluti.Curtail.appdata.xml.in:105
-#: data/com.github.huluti.Curtail.appdata.xml.in:107
-msgid "Update Dutch translation. Thank's to @Vistaus."
-msgstr "Niederländische Übersetzung aktualisiert. Danke an @Vistaus."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:83
-msgid "Fix savings column sorting."
-msgstr ""
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:91
-msgid "Add option to preserve file attributes if possible."
-msgstr ""
-"Option zum beibehalten der Datei-Attribute (sofern machbar), hinzugefügt."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:92
-msgid "Update image libraries."
-msgstr ""
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:93
-msgid "Update French translation."
-msgstr "Französische Übersetzung aktualisiert."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:94
-msgid "Update Russian translation. Thank's to @prokoudine."
-msgstr "Russische Übersetzung aktualisiert. Danke an @prokoudine."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:102
-msgid "Add Turkish translation. Thank's to @05akalan57."
-msgstr "Türkische Übersetzung hinzugefügt. Danke an @05akalan57."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:103
-#, fuzzy
-msgid "Add Occitan translation. Thank's to @Mejans."
-msgstr "Übersetzung hinzugefügt. Danke an @Mejans."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:104
-#, fuzzy
-msgid "Add Galician translation. Thank's to @Fran Dieguez."
-msgstr "Übersetzung hinzugefügt. Danke an @Fran Dieguez."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:106
-#: data/com.github.huluti.Curtail.appdata.xml.in:130
-msgid "Update Spanish translation. Thank's to @oscfdezdz."
-msgstr "Spanische Übersetzung aktualisiert. Danke an @oscfdezdz."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:108
-msgid "Update Croatian translation. Thank's to @milotype."
-msgstr "Kroatische Übersetzung hinzugefügt. Danke an @milotype."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:109
-msgid "Update German translation. Thank's to @Etamuk."
-msgstr "Deutsche Übersetzung aktualisiert. Danke an @Etamuk."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:110
-msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
-msgstr ""
-"Portugiesische (Brasilien) Übersetzung aktualisiert. Danke an @fulvio-alves."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:111
-msgid "Update Swedish translation. Thank's to @eson57."
-msgstr "Schwedische Übersetzung aktualisiert. Danke an @eson57."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:119
-msgid "Add 'Apply to all queue' option for existing file dialog."
-msgstr ""
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:120
-msgid "Add Polish translation. Thank's to @olokelo."
-msgstr "Polnische Übersetzung hinzugefügt. Danke an @olokelo."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:128
-msgid "Add WebP support. Thank's to @olokelo."
-msgstr "WebP-Unterstützung hinzugefügt. Danke an @olokelo."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:129
-msgid "Add Croatian translation. Thank's to @milotype."
-msgstr "Kroatische Übersetzung hinzugefügt. Danke an @milotype."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:131
-msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
-msgstr ""
-"Portugiesische (Brasilien) Übersetzung aktualisiert. Danke an @fulvio-alves."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:132
-msgid "Don't accept empty file. Thank's to @akozlovskiy119."
-msgstr "Kein Akzeptieren von leeren Dateien. Danke an @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:133
-msgid "Better guess of extensions. Thank's to @akozlovskiy119."
-msgstr "Besseres Erkennen von Erweiterungen. Danke an @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:134
-msgid ""
-"Use correct file listing format for drag-and-drop. Thank's to "
-"@akozlovskiy119."
-msgstr ""
-"Verwende richtiges Dateiauflistungsformat bei Drag-and-Drop. Thank's to "
-"@akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:135
-msgid "Fix directory handling. Thank's to @akozlovskiy119."
-msgstr "Problem mit Verzeichnisverwaltung behoben. Danke an @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:136
-msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
-msgstr ""
-"Fehlendes Symbol in LXQt, MATE, XFCE behoben (#76). Danke an @apandada1."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:144
-msgid "An option to progressive encode jpegs. Thank's to @trst."
-msgstr "Eine Option für das progressive Encodieren von jpegs. Danke an @trst."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:145
-msgid "Add Russian translation."
-msgstr "Russische Übersetzung hinzugefügt."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:146
-msgid "Add Slovak translation."
-msgstr "Slowakische Übersetzung hinzugefügt."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:147
-msgid "Add Swedish translation."
-msgstr "Schwedische Übersetzung hinzugefügt."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:148
-msgid "Better handling of existing files."
-msgstr "Bessere Handhabung von existierenden Dateien."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:149
-msgid "Better appdata summary."
-msgstr "Bessere \"appdata\"-Zusammenfassung."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:150
-msgid "Update Spanish translation."
-msgstr "Spanische Übersetzung aktualisiert."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:151
-msgid "Compress images with extensions in uppercase."
-msgstr "Komprimieren von Bildern mit Erweiterungen in Großbuchstaben."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:152
-msgid "Center preferences window header switcher. Thank's to @andrenete."
-msgstr "Mittige Umschalter im Einstellungenfenster. Danke an @andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:153
-msgid "Fix columns sorting. Thank's to @andrenete."
-msgstr "Spaltensortierung behoben. Danke an @andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:154
-msgid ""
-"Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
-"@andrenete."
-msgstr ""
-"Leeren Suffix nicht erlauben (fehlerhafte Kompression von JPEG). Danke an "
-"@andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:162
-msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
-msgstr "Ein neuer Name. Danke an @bertob, @jannuary und @jimmac."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:163
-msgid "A new icon designed by @jimmac."
-msgstr "Ein neues Symbol, erstellt von @jimmac."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:164
-msgid "Support for dragging folders."
-msgstr "Unterstützung für Ziehen von Ordnern ergänzt."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:172
-msgid "Just fix a packaging file."
-msgstr "Nur eine Paketdatei aktualisiert."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:180
-msgid "Just update GNOME runtime"
-msgstr "Nur eine GNOME-Laufzeit aktualisiert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:188
-msgid "Add Portuguese (Brazil) translation"
-msgstr "Portugiesische (Brasilien) Übersetzung hinzugefügt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:189
-msgid "Don't use legacy path for metadata"
-msgstr "Keinen Legacy-Pfad für Metadaten verwenden"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:197
-msgid "Fix compression of jpg files that produced 0b files"
-msgstr "Kompression von jpg-Bildern behoben, die 0b-Dateien erzeugte"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:205
-msgid "Add an option to whether keep or not metadata of images"
-msgstr ""
-"Eine Option hinzugefügt, die Metadaten von Bildern entweder zu behalten oder "
-"nicht"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:206
-msgid "Replace mozjpeg lib by jpegoptim"
-msgstr "Mozjpeg lib durch jpegoptim ersetzt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:215
-msgid "Add a spinner to indicate the progress of the compression"
-msgstr ""
-"Dreh-Animation hinzugefügt, um den Fortschritt der Kompression zu "
-"verdeutlichen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:216
-msgid "Using threads to compress images simultaneously"
-msgstr "Verwende Durchgänge, um Bilder gleichzeitig zu komprimieren"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:217
-msgid "Simplification of certain sentences"
-msgstr "Vereinfachung von verschiedenen Sätzen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:218
-msgid "Really don't block the UI anymore when performing compression"
-msgstr ""
-"Die Benutzeroberfläche wird nun wirklich nicht mehr blockiert, wenn eine "
-"Kompression läuft"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:226
-msgid "Add lossy compression features"
-msgstr "Verlustbehaftete Komprimierungsfunktion hinzugefügt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:227
-msgid "Add options to change compression levels"
-msgstr "Option ergänzt, um die Kompressionslevel zu ändern"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:228
-msgid "New layout for the preferences dialog"
-msgstr "Neues Design für das Einstellungsfenster"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:229
-msgid "Don't permit higher resulting size"
-msgstr "Keine höher resultierende Größe erlauben"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:230
-msgid "Better displaying of the drag area"
-msgstr "Bessere Darstellung der Ziehen-Fläche"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:232
-msgid "Catch errors in subprocess to avoid crashing the app"
-msgstr ""
-"Fehler im Nebenprozess aufgenommen, um das Abstürzen der Anwendung zu "
-"vermeiden"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:240
-msgid "Fix build"
-msgstr "Version mit Fehlerbehebungen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:248
-msgid "Fix opening files from file managers"
-msgstr "Fehler beim Öffnen von Dateien aus der Dateiverwaltung behoben"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:249
-msgid "Add Italian translation"
-msgstr "Italienische Übersetzung hinzugefügt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:258
-msgid "Toggle the suffix entry according to new file option"
-msgstr ""
-"Umschalten des Suffix-Eintrages entsprechend der Option für neue Dateien"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:259
-msgid "Scroll automatically to last compressed image in the list"
-msgstr "Automatisch zum zuletzt komprimierten Bild in der Liste gehen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:260
-msgid "Add save info label also on homepage and displace it at bottom"
-msgstr ""
-"Hinweis mit einer Info zum Speichern zusätzlich zur Startseite hinzugefügt "
-"und nach unten verschoben"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:261
-msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
-msgstr ""
-"Verbessertes Handhaben von Dateinamen, um einige Fehler zu vermeiden (z.B. "
-"Ordner)"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:262
-msgid "Various fixes"
-msgstr "Verschiedene Fehlerbehebungen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:270
-msgid "Add a setting to change the '-min' suffix"
-msgstr "Möglichkeit hinzugefügt, den Anhang '-min' zu ändern"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:271
-msgid "Add some explanations of applied settings"
-msgstr "Einige Erläuterungen zu den angewendeten Einstellungen ergänzt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:272
-msgid "Add Ctrl+O shortcut to open files"
-msgstr "Tastenkürzel STRG+O zum Öffnen von Dateien ergänzt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:273
-msgid "Add Dutch and German translations"
-msgstr "Deutsche und niederländische Übersetzung hinzugefügt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:274
-msgid "Display translators' names in about dialog"
-msgstr "Die Namen der Übersetzer erscheinen im Info-Dialog"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:275
-msgid "Don't block the UI anymore when performing compression"
-msgstr ""
-"Die Benutzeroberfläche wird nun nicht mehr blockiert, wenn eine Kompression "
-"läuft"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:276
-msgid "Fix size of the preferences window"
-msgstr "Problem mit der Größe des Einstellungsfensters behoben"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:284
-msgid "Add a preferences window with new-file and dark-theme options"
-msgstr ""
-"Einstellungsfenster mit Optionen für \"Neue Datei\" und \"Dunkles Thema\" "
-"hinzugefügt"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:285
-msgid "Various UI changes"
-msgstr "Verschiedene Änderungen an der Benutzeroberfläche"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:293
-msgid "Permit to sort results by name or saving ratio"
-msgstr "Möglichkeit, Ergebnisse nach Namen oder Einsparung zu sortieren"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:294
-msgid "Fix a crash when compressing an image with dots in its name"
-msgstr ""
-"Ein Fehler wurde behoben, der beim Komprimieren von Bildern mit Punkten im "
-"Namen auftrat"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:302
-msgid "Stick back and forward buttons"
-msgstr "Vor- und Zurück-Schaltflächen angeheftet"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:303
-msgid "Change APP id"
-msgstr "APP-ID geändert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:311
-msgid "Various optimizations"
-msgstr "Verschiedene Optimierungen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:312
-msgid "Improve error messages"
-msgstr "Deutlichere Fehlermeldungen"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:313
-msgid "Improve some texts"
-msgstr "Einige Texte verbessert"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:314
-msgid "Change description"
-msgstr "Beschreibung ändern"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:322
-msgid "Initial version"
-msgstr "Erste Version"
-
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:122
-msgid "Curtail"
-msgstr "Curtail"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
 msgid "compress;optimize;image;photo;"
-msgstr ""
+msgstr "compress;optimize;image;photo;komprimieren;optimieren;Bild;Foto;"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -528,98 +65,110 @@ msgstr "Als neue Datei speichern"
 msgid "Save the compressed image into a new file."
 msgstr "Komprimiertes Bild als neue Datei speichern."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 data/ui/preferences.ui:31
-msgid "Keep metadata"
-msgstr "Metadaten behalten"
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Enable recursive compression in folders"
+msgstr "Rekursive Komprimierung in Verzeichnissen aktivieren"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "Diese Einstellung aktiviert rekursive Komprimierung in Verzeichnissen."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Preserve metadata"
+msgstr "Metadaten behalten"
+
 #: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting preserves metadata of images."
 msgstr "Diese Einstellung behält die Metadaten von Bildern bei."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 data/ui/preferences.ui:42
-msgid "Preserve file attributes if possible"
-msgstr "Datei-Attribute beibehalten, sofern möglich"
-
 #: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Datei-Attribute und Zeitstempel beibehalten, sofern möglich"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Diese Einstellung behält die Metadaten und Zeitstempel von Bildern bei."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
 msgstr "Verlustbehafteten Modus aktivieren"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Use lossy mode to compress images."
 msgstr "Verwende den verlustbehafteten Modus zum Komprimieren von Bildern."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 data/ui/preferences.ui:26
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Suffix to append at end of new file"
 msgstr "Angehängter Zusatz am Ende der neuen Datei"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Suffix to append at end of new file."
 msgstr "Angehängter Zusatz am Ende der neuen Datei."
 
-#: data/com.github.huluti.Curtail.gschema.xml:31 data/ui/preferences.ui:85
+#: data/com.github.huluti.Curtail.gschema.xml:36
 msgid "PNG Lossy Compression Level"
 msgstr "PNG Verlustbehafteter Komprimierungsgrad"
 
-#: data/com.github.huluti.Curtail.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for PNG images."
 msgstr "Verlustbehafteter Komprimierungsgrad für PNG-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36 data/ui/preferences.ui:104
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossless Compression Level"
 msgstr "PNG Verlustfreier Komprimierungsgrad"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossless compression level to use for PNG images."
 msgstr "Verlustfreier Komprimierungsgrad für PNG-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41 data/ui/preferences.ui:129
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "JPG Lossy Compression Level"
 msgstr "JPG Verlustbehafteter Komprimierungsgrad"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossy compression level to use for JPG images."
 msgstr "Verlustbehafteter Komprimierungsgrad für JPG-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 data/ui/preferences.ui:164
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
 msgstr "WebP Verlustbehafteter Komprimierungsgrad"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for WebP images."
 msgstr "Verlustbehafteter Komprimierungsgrad für WebP-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 data/ui/preferences.ui:183
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossless Compression Level"
 msgstr "WebP Verlustfreier Komprimierungsgrad"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossless compression level to use for WebP images."
 msgstr "Verlustfreier Komprimierungsgrad für WebP-Bilder."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56
-msgid "Enable progressive encoding for JPEG images."
-msgstr "Progressives Encodieren für JPEG-Bilder aktivieren."
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Progressives Encodieren für JPEG-Bilder aktivieren"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "Optionales progressives Encodieren von JPEG-Bildern."
 
-#: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable maximum compression for SVG images."
-msgstr "Aktiviere maximalen Komprimierungsgrad für SVG-Bilder."
-
-#: data/com.github.huluti.Curtail.gschema.xml:62
-msgid "Optionally enable maximum cleaning of SVG images."
-msgstr "Aktiviere maximales Bereinigen von SVG-Bildern."
-
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Compression Timeout"
-msgstr "Zeitbegrenzung für Kompression"
+msgid "Enable maximum compression for SVG images"
+msgstr "Maximalen Komprimierungsgrad für SVG-Bilder aktivieren"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Maximales Bereinigen von SVG-Bildern aktivieren."
+
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
+msgid "Compression Timeout"
+msgstr "Zeitbegrenzung für Komprimierung"
+
+#: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Compression timeout for each image."
-msgstr "Zeitbegrenzung für Kompression; für jedes einzelne Bild."
+msgstr "Zeitbegrenzung für Komprimierung; für jedes einzelne Bild."
 
 #: data/ui/help_overlay.ui:11
 msgctxt "shortcut window"
@@ -646,7 +195,7 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Beenden"
 
-#: data/ui/preferences.ui:4 data/ui/menu.ui:6
+#: data/ui/preferences.ui:4 data/ui/menu.ui:10
 msgid "Preferences"
 msgstr "Einstellungen"
 
@@ -659,144 +208,582 @@ msgid "Safe Mode"
 msgstr "Sicherer Modus"
 
 #: data/ui/preferences.ui:15
-msgid "Save the compressed image into a new file"
+msgid "Save the compressed image in a new file"
 msgstr "Komprimiertes Bild als neue Datei speichern"
 
-#: data/ui/preferences.ui:53
-msgid "Compression timeout"
-msgstr "Zeitbegrenzung für Kompression"
+#: data/ui/preferences.ui:20
+msgid "New File Suffix"
+msgstr ""
 
-#: data/ui/preferences.ui:54
-msgid "For each image"
-msgstr "Für jedes Bild"
+#: data/ui/preferences.ui:25
+msgid "Recursive Compression"
+msgstr "Rekursive Komprimierung"
 
-#: data/ui/preferences.ui:78
-msgid "Compression"
-msgstr "Kompression"
+#: data/ui/preferences.ui:26
+msgid "Enable or disable compression through subdirectories"
+msgstr ""
 
-#: data/ui/preferences.ui:105 data/ui/preferences.ui:184
-msgid "The higher it is, the slower it is"
-msgstr "Umso höher, desto langsamer"
+#: data/ui/preferences.ui:31
+msgid "Keep Metadata"
+msgstr "Metadaten behalten"
 
-#: data/ui/preferences.ui:148
-msgid "Progressive Encode JPG"
-msgstr "Progressive Encodierung JPG"
+#: data/ui/preferences.ui:32
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr ""
 
-#: data/ui/preferences.ui:208
-msgid "SVG Maximum Compression Level"
-msgstr "SVG maximaler Komprimierungsgrad"
+#: data/ui/preferences.ui:37
+msgid "Keep File Attributes When Possible"
+msgstr "Datei-Attribute beibehalten, sofern möglich"
 
-#: data/ui/preferences.ui:209
-#, fuzzy
-msgid "Can be more destructive for the image"
+#: data/ui/preferences.ui:38
+msgid ""
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr ""
+
+#: data/ui/preferences.ui:44
+msgid "Set the timeout between images"
+msgstr ""
+
+#: data/ui/preferences.ui:62
+msgid "Formats"
+msgstr "Formate"
+
+#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
+#: data/ui/preferences.ui:124
+msgid "Lossy Compression"
+msgstr "Verlustbehaftete Komprimierung"
+
+#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
+#: data/ui/preferences.ui:125
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr ""
+
+#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
+msgid "Lossless Compression Level"
+msgstr "Grad der verlustfreien Komprimierung"
+
+#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
+msgid "Set the level of the compression, 6 is the highest but slowest level"
+msgstr ""
+
+#: data/ui/preferences.ui:113
+msgid "Progressive Encode"
+msgstr "Progressive Encodierung"
+
+#: data/ui/preferences.ui:114
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr ""
+
+#: data/ui/preferences.ui:155
+msgid "Maximum Compression Level"
+msgstr "Maximaler Komprimierungsgrad"
+
+#: data/ui/preferences.ui:156
+msgid "This can be more destructive for the image"
 msgstr "Kann mehr Schäden am Bild verursachen"
 
-#: data/ui/menu.ui:10
+#: data/ui/menu.ui:6
+msgid "Bulk Compress Directory"
+msgstr ""
+
+#: data/ui/menu.ui:14
 msgid "Keyboard Shortcuts"
 msgstr "Tastenkombinationen"
 
-#: data/ui/menu.ui:14
+#: data/ui/menu.ui:18
 msgid "About Curtail"
 msgstr "Info zu Curtail"
 
-#: data/ui/window.ui:12
-msgid "_Change Mode"
-msgstr "_Modus wechseln"
-
-#: data/ui/window.ui:13
-msgid "Images will be overwritten, proceed carefully."
-msgstr "Bilder werden überschrieben, sei vorsichtig."
-
-#: data/ui/window.ui:21
-msgid "Drop images here to compress them"
-msgstr "Lege Bilder hier ab, um sie zu komprimieren"
-
-#: data/ui/window.ui:27
-msgid "_Browse Files"
-msgstr "_Dateien durchsuchen"
-
-#: data/ui/window.ui:46
-msgid "Lossless"
-msgstr "Verlustfrei"
-
-#: data/ui/window.ui:58
-msgid "Lossy"
-msgstr "Verlustbehaftet"
-
-#: data/ui/window.ui:108 src/window.py:186
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Dateien durchsuchen"
 
-#: data/ui/window.ui:115
+#: data/ui/window.ui:26
 msgid "Clear Results"
 msgstr "Ergebnisse löschen"
 
-#: data/ui/window.ui:129
+#: data/ui/window.ui:40
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: src/compressor.py:90
+#: data/ui/window.ui:51
+msgid "_Change Mode"
+msgstr "_Modus wechseln"
+
+#: data/ui/window.ui:52
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Bilder werden überschrieben, fahren Sie vorsichtig fort"
+
+#: data/ui/window.ui:60
+msgid "Drop images here to compress them"
+msgstr "Lege Bilder hier ab, um sie zu komprimieren"
+
+#: data/ui/window.ui:66
+msgid "_Browse Files"
+msgstr "_Dateien durchsuchen"
+
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "Verlustfrei"
+
+#: data/ui/window.ui:97
+msgid "Lossy"
+msgstr "Verlustbehaftet"
+
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr ""
 "Komprimierung hat die eingestellte Zeitbegrenzung von {} Sekunden erreicht."
 
-#: src/compressor.py:94
-#, fuzzy
-#| msgid "An unknown error has occured"
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "Ein unbekannter Fehler ist aufgetreten"
 
-#: src/tools.py:30
+#: src/compressor.py:149
+msgid "Can't find the compressed file"
+msgstr "Die komprimierte Datei kann nicht gefunden werden"
+
+#: src/tools.py:32
 msgid "All images"
 msgstr "Alle Bilder"
 
-#: src/tools.py:37
+#: src/tools.py:39
 msgid "PNG images"
 msgstr "PNG-Bilder"
 
-#: src/tools.py:41
+#: src/tools.py:43
 msgid "JPEG images"
 msgstr "JPEG-Bilder"
 
-#: src/tools.py:45
+#: src/tools.py:47
 msgid "WebP images"
 msgstr "WebP-Bilder"
 
-#: src/tools.py:49
+#: src/tools.py:51
 msgid "SVG images"
 msgstr "SVG-Bilder"
 
-#: src/tools.py:121 src/tools.py:128 src/tools.py:135 src/tools.py:142
-#: src/tools.py:149 src/tools.py:179
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Version nicht gefunden"
 
-#: src/window.py:173
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Übersprungen"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "Weitere Informationen"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+
+#: src/window.py:232
+msgid "Open Image"
+msgstr "Bild öffnen"
+
+#: src/window.py:233
+msgid "Show in Folder"
+msgstr "In Ordner anzeigen"
+
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "Bilder werden mit dem <b>Zusatz '{}'</b> gespeichert"
 
-#: src/window.py:176
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Überschreiben-Modus"
 
-#: src/window.py:263
+#: src/window.py:284
+msgid "Browse Directories"
+msgstr "Verzeichnisse durchsuchen"
+
+#: src/window.py:309 src/window.py:315
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Möchten Sie die Bilder in diesen Verzeichnissen wirklich komprimieren?"
+
+#: src/window.py:310
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+
+#: src/window.py:316
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+
+#: src/window.py:319
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/window.py:320
+msgid "Compress"
+msgstr "Komprimiere"
+
+#: src/window.py:389
+msgid "No files found"
+msgstr "Keine Dateien gefunden"
+
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "Diese Datei existiert nicht."
 
-#: src/window.py:268
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Das Format von dieser Datei wird nicht unterstützt."
 
-#: src/window.py:320
+#: src/window.py:460
 msgid "translator-credits"
-msgstr "Onno Giesmann, MoonlightWave-12"
+msgstr ""
+"Onno Giesmann\n"
+"MoonlightWave-12\n"
+"Philipp Kiemle <l10n@prly.mozmail.com>"
 
-#: src/window.py:324
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Beitragende"
 
-#~ msgid "Hugo Posnic"
-#~ msgstr "Hugo Posnic"
+#~ msgid "Here's the changelog of this version:"
+#~ msgstr "Hier sind die Änderungen in dieser Version:"
+
+#~ msgid "Configurable compression timeout"
+#~ msgstr "Einstellbare Zeitbegrenzung für die Kompression"
+
+#~ msgid "Compress images in an other thread"
+#~ msgstr "Komprimiere Bilder in einem anderen Thread"
+
+#, fuzzy
+#~ msgid "Better workflow for headerbar"
+#~ msgstr "Besserer Arbeitsablauf für die Kopfleiste (Headerbar)"
+
+#, fuzzy
+#~ msgid "Show errors on each line and not in modals anymore"
+#~ msgstr "Fehler in jeder Zeile anzeigen; nicht mehr in einem modalen Dialog"
+
+#~ msgid "Simplify preferences"
+#~ msgstr "Einstellungen vereinfachen"
+
+#~ msgid "Update translations"
+#~ msgstr "Übersetzungen aktualisiert"
+
+#, fuzzy
+#~ msgid "Fix compression level ranges in UI"
+#~ msgstr "Verlustbehafteter Komprimierungsgrad für PNG-Bilder"
+
+#~ msgid "More modern results page"
+#~ msgstr "Modernere Ergebnis-Seite"
+
+#~ msgid "Reduce images one by one to avoid freezes"
+#~ msgstr ""
+#~ "Bilder eines nach dem anderen verkleinern, um einfrieren zu vermeiden"
+
+#~ msgid "Port to GTK 4 and Libadwaita"
+#~ msgstr "Zu GTK 4 und Libadwaita portiert"
+
+#~ msgid "Update deps"
+#~ msgstr "Abhängigkeiten aktualisiert"
+
+#~ msgid "Less annoying 'Apply dialog'"
+#~ msgstr "Weniger nerviger \"Anwenden\"-Dialog"
+
+#~ msgid "Add Korean translation. Thank's to @MarongHappy."
+#~ msgstr "Koreanische Übersetzung hinzugefügt. Danke an @MarongHappy."
+
+#~ msgid "Update screenshots."
+#~ msgstr "Bildschirmfotos aktualisiert."
+
+#~ msgid "Update Turkish translation. Thank's to @libreajans."
+#~ msgstr "Türkische Übersetzung aktualisiert. Danke an @libreajans."
+
+#~ msgid "Update French translation. Thank's to @rene-coty."
+#~ msgstr "Französische Übersetzung aktualisiert. Danke an @rene-coty."
+
+#~ msgid "Update Dutch translation. Thank's to @Vistaus."
+#~ msgstr "Niederländische Übersetzung aktualisiert. Danke an @Vistaus."
+
+#~ msgid "Add option to preserve file attributes if possible."
+#~ msgstr ""
+#~ "Option zum beibehalten der Datei-Attribute (sofern machbar), hinzugefügt."
+
+#~ msgid "Update French translation."
+#~ msgstr "Französische Übersetzung aktualisiert."
+
+#~ msgid "Update Russian translation. Thank's to @prokoudine."
+#~ msgstr "Russische Übersetzung aktualisiert. Danke an @prokoudine."
+
+#~ msgid "Add Turkish translation. Thank's to @05akalan57."
+#~ msgstr "Türkische Übersetzung hinzugefügt. Danke an @05akalan57."
+
+#, fuzzy
+#~ msgid "Add Occitan translation. Thank's to @Mejans."
+#~ msgstr "Übersetzung hinzugefügt. Danke an @Mejans."
+
+#, fuzzy
+#~ msgid "Add Galician translation. Thank's to @Fran Dieguez."
+#~ msgstr "Übersetzung hinzugefügt. Danke an @Fran Dieguez."
+
+#~ msgid "Update Spanish translation. Thank's to @oscfdezdz."
+#~ msgstr "Spanische Übersetzung aktualisiert. Danke an @oscfdezdz."
+
+#~ msgid "Update Croatian translation. Thank's to @milotype."
+#~ msgstr "Kroatische Übersetzung hinzugefügt. Danke an @milotype."
+
+#~ msgid "Update German translation. Thank's to @Etamuk."
+#~ msgstr "Deutsche Übersetzung aktualisiert. Danke an @Etamuk."
+
+#~ msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
+#~ msgstr ""
+#~ "Portugiesische (Brasilien) Übersetzung aktualisiert. Danke an @fulvio-"
+#~ "alves."
+
+#~ msgid "Update Swedish translation. Thank's to @eson57."
+#~ msgstr "Schwedische Übersetzung aktualisiert. Danke an @eson57."
+
+#~ msgid "Add Polish translation. Thank's to @olokelo."
+#~ msgstr "Polnische Übersetzung hinzugefügt. Danke an @olokelo."
+
+#~ msgid "Add WebP support. Thank's to @olokelo."
+#~ msgstr "WebP-Unterstützung hinzugefügt. Danke an @olokelo."
+
+#~ msgid "Add Croatian translation. Thank's to @milotype."
+#~ msgstr "Kroatische Übersetzung hinzugefügt. Danke an @milotype."
+
+#~ msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
+#~ msgstr ""
+#~ "Portugiesische (Brasilien) Übersetzung aktualisiert. Danke an @fulvio-"
+#~ "alves."
+
+#~ msgid "Don't accept empty file. Thank's to @akozlovskiy119."
+#~ msgstr "Kein Akzeptieren von leeren Dateien. Danke an @akozlovskiy119."
+
+#~ msgid "Better guess of extensions. Thank's to @akozlovskiy119."
+#~ msgstr "Besseres Erkennen von Erweiterungen. Danke an @akozlovskiy119."
+
+#~ msgid ""
+#~ "Use correct file listing format for drag-and-drop. Thank's to "
+#~ "@akozlovskiy119."
+#~ msgstr ""
+#~ "Verwende richtiges Dateiauflistungsformat bei Drag-and-Drop. Thank's to "
+#~ "@akozlovskiy119."
+
+#~ msgid "Fix directory handling. Thank's to @akozlovskiy119."
+#~ msgstr ""
+#~ "Problem mit Verzeichnisverwaltung behoben. Danke an @akozlovskiy119."
+
+#~ msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
+#~ msgstr ""
+#~ "Fehlendes Symbol in LXQt, MATE, XFCE behoben (#76). Danke an @apandada1."
+
+#~ msgid "An option to progressive encode jpegs. Thank's to @trst."
+#~ msgstr ""
+#~ "Eine Option für das progressive Encodieren von jpegs. Danke an @trst."
+
+#~ msgid "Add Russian translation."
+#~ msgstr "Russische Übersetzung hinzugefügt."
+
+#~ msgid "Add Slovak translation."
+#~ msgstr "Slowakische Übersetzung hinzugefügt."
+
+#~ msgid "Add Swedish translation."
+#~ msgstr "Schwedische Übersetzung hinzugefügt."
+
+#~ msgid "Better handling of existing files."
+#~ msgstr "Bessere Handhabung von existierenden Dateien."
+
+#~ msgid "Better appdata summary."
+#~ msgstr "Bessere \"appdata\"-Zusammenfassung."
+
+#~ msgid "Update Spanish translation."
+#~ msgstr "Spanische Übersetzung aktualisiert."
+
+#~ msgid "Compress images with extensions in uppercase."
+#~ msgstr "Komprimieren von Bildern mit Erweiterungen in Großbuchstaben."
+
+#~ msgid "Center preferences window header switcher. Thank's to @andrenete."
+#~ msgstr "Mittige Umschalter im Einstellungenfenster. Danke an @andrenete."
+
+#~ msgid "Fix columns sorting. Thank's to @andrenete."
+#~ msgstr "Spaltensortierung behoben. Danke an @andrenete."
+
+#~ msgid ""
+#~ "Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
+#~ "@andrenete."
+#~ msgstr ""
+#~ "Leeren Suffix nicht erlauben (fehlerhafte Kompression von JPEG). Danke an "
+#~ "@andrenete."
+
+#~ msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
+#~ msgstr "Ein neuer Name. Danke an @bertob, @jannuary und @jimmac."
+
+#~ msgid "A new icon designed by @jimmac."
+#~ msgstr "Ein neues Symbol, erstellt von @jimmac."
+
+#~ msgid "Support for dragging folders."
+#~ msgstr "Unterstützung für Ziehen von Ordnern ergänzt."
+
+#~ msgid "Just fix a packaging file."
+#~ msgstr "Nur eine Paketdatei aktualisiert."
+
+#~ msgid "Just update GNOME runtime"
+#~ msgstr "Nur eine GNOME-Laufzeit aktualisiert"
+
+#~ msgid "Add Portuguese (Brazil) translation"
+#~ msgstr "Portugiesische (Brasilien) Übersetzung hinzugefügt"
+
+#~ msgid "Don't use legacy path for metadata"
+#~ msgstr "Keinen Legacy-Pfad für Metadaten verwenden"
+
+#~ msgid "Fix compression of jpg files that produced 0b files"
+#~ msgstr "Kompression von jpg-Bildern behoben, die 0b-Dateien erzeugte"
+
+#~ msgid "Add an option to whether keep or not metadata of images"
+#~ msgstr ""
+#~ "Eine Option hinzugefügt, die Metadaten von Bildern entweder zu behalten "
+#~ "oder nicht"
+
+#~ msgid "Replace mozjpeg lib by jpegoptim"
+#~ msgstr "Mozjpeg lib durch jpegoptim ersetzt"
+
+#~ msgid "Add a spinner to indicate the progress of the compression"
+#~ msgstr ""
+#~ "Dreh-Animation hinzugefügt, um den Fortschritt der Kompression zu "
+#~ "verdeutlichen"
+
+#~ msgid "Using threads to compress images simultaneously"
+#~ msgstr "Verwende Durchgänge, um Bilder gleichzeitig zu komprimieren"
+
+#~ msgid "Simplification of certain sentences"
+#~ msgstr "Vereinfachung von verschiedenen Sätzen"
+
+#~ msgid "Really don't block the UI anymore when performing compression"
+#~ msgstr ""
+#~ "Die Benutzeroberfläche wird nun wirklich nicht mehr blockiert, wenn eine "
+#~ "Kompression läuft"
+
+#~ msgid "Add lossy compression features"
+#~ msgstr "Verlustbehaftete Komprimierungsfunktion hinzugefügt"
+
+#~ msgid "Add options to change compression levels"
+#~ msgstr "Option ergänzt, um die Kompressionslevel zu ändern"
+
+#~ msgid "New layout for the preferences dialog"
+#~ msgstr "Neues Design für das Einstellungsfenster"
+
+#~ msgid "Don't permit higher resulting size"
+#~ msgstr "Keine höher resultierende Größe erlauben"
+
+#~ msgid "Better displaying of the drag area"
+#~ msgstr "Bessere Darstellung der Ziehen-Fläche"
+
+#~ msgid "Catch errors in subprocess to avoid crashing the app"
+#~ msgstr ""
+#~ "Fehler im Nebenprozess aufgenommen, um das Abstürzen der Anwendung zu "
+#~ "vermeiden"
+
+#~ msgid "Fix build"
+#~ msgstr "Version mit Fehlerbehebungen"
+
+#~ msgid "Fix opening files from file managers"
+#~ msgstr "Fehler beim Öffnen von Dateien aus der Dateiverwaltung behoben"
+
+#~ msgid "Add Italian translation"
+#~ msgstr "Italienische Übersetzung hinzugefügt"
+
+#~ msgid "Toggle the suffix entry according to new file option"
+#~ msgstr ""
+#~ "Umschalten des Suffix-Eintrages entsprechend der Option für neue Dateien"
+
+#~ msgid "Scroll automatically to last compressed image in the list"
+#~ msgstr "Automatisch zum zuletzt komprimierten Bild in der Liste gehen"
+
+#~ msgid "Add save info label also on homepage and displace it at bottom"
+#~ msgstr ""
+#~ "Hinweis mit einer Info zum Speichern zusätzlich zur Startseite "
+#~ "hinzugefügt und nach unten verschoben"
+
+#~ msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
+#~ msgstr ""
+#~ "Verbessertes Handhaben von Dateinamen, um einige Fehler zu vermeiden (z."
+#~ "B. Ordner)"
+
+#~ msgid "Various fixes"
+#~ msgstr "Verschiedene Fehlerbehebungen"
+
+#~ msgid "Add a setting to change the '-min' suffix"
+#~ msgstr "Möglichkeit hinzugefügt, den Anhang '-min' zu ändern"
+
+#~ msgid "Add some explanations of applied settings"
+#~ msgstr "Einige Erläuterungen zu den angewendeten Einstellungen ergänzt"
+
+#~ msgid "Add Ctrl+O shortcut to open files"
+#~ msgstr "Tastenkürzel STRG+O zum Öffnen von Dateien ergänzt"
+
+#~ msgid "Add Dutch and German translations"
+#~ msgstr "Deutsche und niederländische Übersetzung hinzugefügt"
+
+#~ msgid "Display translators' names in about dialog"
+#~ msgstr "Die Namen der Übersetzer erscheinen im Info-Dialog"
+
+#~ msgid "Don't block the UI anymore when performing compression"
+#~ msgstr ""
+#~ "Die Benutzeroberfläche wird nun nicht mehr blockiert, wenn eine "
+#~ "Kompression läuft"
+
+#~ msgid "Fix size of the preferences window"
+#~ msgstr "Problem mit der Größe des Einstellungsfensters behoben"
+
+#~ msgid "Add a preferences window with new-file and dark-theme options"
+#~ msgstr ""
+#~ "Einstellungsfenster mit Optionen für \"Neue Datei\" und \"Dunkles Thema\" "
+#~ "hinzugefügt"
+
+#~ msgid "Various UI changes"
+#~ msgstr "Verschiedene Änderungen an der Benutzeroberfläche"
+
+#~ msgid "Permit to sort results by name or saving ratio"
+#~ msgstr "Möglichkeit, Ergebnisse nach Namen oder Einsparung zu sortieren"
+
+#~ msgid "Fix a crash when compressing an image with dots in its name"
+#~ msgstr ""
+#~ "Ein Fehler wurde behoben, der beim Komprimieren von Bildern mit Punkten "
+#~ "im Namen auftrat"
+
+#~ msgid "Stick back and forward buttons"
+#~ msgstr "Vor- und Zurück-Schaltflächen angeheftet"
+
+#~ msgid "Change APP id"
+#~ msgstr "APP-ID geändert"
+
+#~ msgid "Various optimizations"
+#~ msgstr "Verschiedene Optimierungen"
+
+#~ msgid "Improve error messages"
+#~ msgstr "Deutlichere Fehlermeldungen"
+
+#~ msgid "Improve some texts"
+#~ msgstr "Einige Texte verbessert"
+
+#~ msgid "Change description"
+#~ msgstr "Beschreibung ändern"
+
+#~ msgid "Initial version"
+#~ msgstr "Erste Version"
+
+#~ msgid "Compression timeout"
+#~ msgstr "Zeitbegrenzung für Kompression"
+
+#~ msgid "For each image"
+#~ msgstr "Für jedes Bild"
+
+#~ msgid "The higher it is, the slower it is"
+#~ msgstr "Umso höher, desto langsamer"
 
 #~ msgid "Enable dark theme"
 #~ msgstr "Dunkles Thema verwenden"
@@ -822,12 +809,6 @@ msgstr "Beitragende"
 
 #~ msgid "File already exists"
 #~ msgstr "Datei existiert bereits"
-
-#~ msgid "Compress"
-#~ msgstr "Komprimiere"
-
-#~ msgid "Skip"
-#~ msgstr "Überspringen"
 
 #~ msgid "Apply to all queue"
 #~ msgstr "Auf ganze Warteschlange anwenden"
