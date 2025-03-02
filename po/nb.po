@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 10:37+0200\n"
-"PO-Revision-Date: 2024-09-21 01:35+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2024-11-29 15:24+0000\n"
+"PO-Revision-Date: 2024-12-29 23:38+0100\n"
 "Last-Translator: Brage <bragefuglseth@gnome.org>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.4\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
@@ -39,10 +45,10 @@ msgstr ""
 "Appen støtter komprimering både med og uten kvalitetsreduksjon, og kan også "
 "slette metadata om nødvendig."
 
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:31
-msgid "Curtail"
-msgstr "Curtail"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
+msgid "Hugo Posnic"
+msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -66,17 +72,21 @@ msgid "This setting enable compression in a recursive way in folders."
 msgstr "Utfør komprimering videre innover i undermapper hvis det er mulig."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
-msgid "Keep metadata"
-msgstr "Behold metadata"
+msgid "Preserve metadata"
+msgstr "Bevar metadata"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
-#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
-msgstr "Behold metadataene til bilder som komprimeres."
+msgstr "Bevar metadataene til bilder som komprimeres."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
-msgid "Preserve file attributes if possible"
-msgstr "Behold filegenskaper hvis mulig"
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Behold filegenskaper"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Behold filegenskapene og tidspunktene til bilder som komprimeres, om mulig."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
@@ -101,8 +111,8 @@ msgstr "Kvalitetsreduserende komprimeringsnivå på PNG-bilder"
 #: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for PNG images."
 msgstr ""
-"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering "
-"av PNG-bilder."
+"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering av "
+"PNG-bilder."
 
 #: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossless Compression Level"
@@ -120,8 +130,8 @@ msgstr "Kvalitetsreduserende kopmrimeringsnivå på JPG-bilder"
 #: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossy compression level to use for JPG images."
 msgstr ""
-"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering "
-"av JPG-bilder."
+"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering av "
+"JPG-bilder."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
@@ -130,8 +140,8 @@ msgstr "Kvalitetsreduserende komprimeringsnivå på WebP-bilder"
 #: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for WebP images."
 msgstr ""
-"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering "
-"av WebP-bilder."
+"Komprimeringsnivået som skal brukes ved kvalitetsreduserende komprimering av "
+"WebP-bilder."
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossless Compression Level"
@@ -143,7 +153,7 @@ msgstr ""
 "Komprimeringsnivået som skal brukes ved tapsfri komprimering av WebP-bilder."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "Enable progressive encoding for JPEG images."
+msgid "Enable progressive encoding for JPEG images"
 msgstr "Gradvis innlasting av JPEG-bilder"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
@@ -151,14 +161,14 @@ msgid "Optionally encode jpeg images progressively."
 msgstr "Lagre JPEG-bilder med mulighet for gradvis innlasting."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "Enable maximum compression for SVG images."
+msgid "Enable maximum compression for SVG images"
 msgstr "Maksimal SVG-komprimering"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Optionally enable maximum cleaning of SVG images."
+msgid "Enable maximum cleaning of SVG images."
 msgstr "Gjør størrelsen på SVG-filer så liten som overhodet mulig."
 
-#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:67
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
 msgid "Compression Timeout"
 msgstr "Tidsgrense"
 
@@ -207,31 +217,31 @@ msgstr "Sikker modus"
 msgid "Save the compressed image in a new file"
 msgstr "Lagre komprimerte bilder som nye filer"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.ui:20
 msgid "New File Suffix"
 msgstr "Filsuffiks"
 
-#: data/ui/preferences.ui:31
+#: data/ui/preferences.ui:25
 msgid "Recursive Compression"
 msgstr "Komprimer undermapper"
 
-#: data/ui/preferences.ui:32
+#: data/ui/preferences.ui:26
 msgid "Enable or disable compression through subdirectories"
 msgstr "Se etter bilder å komprimere i undermapper"
 
-#: data/ui/preferences.ui:43
+#: data/ui/preferences.ui:31
 msgid "Keep Metadata"
 msgstr "Behold metadata"
 
-#: data/ui/preferences.ui:44
+#: data/ui/preferences.ui:32
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "Behold metadata som ikke påvirker visningen av bildet"
 
-#: data/ui/preferences.ui:55
+#: data/ui/preferences.ui:37
 msgid "Keep File Attributes When Possible"
 msgstr "Behold filegenskaper"
 
-#: data/ui/preferences.ui:56
+#: data/ui/preferences.ui:38
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
@@ -239,50 +249,50 @@ msgstr ""
 "Sørg for at nye filer lagres med samme tillatelser og tidspunkter som de "
 "opprinnelige"
 
-#: data/ui/preferences.ui:68
+#: data/ui/preferences.ui:44
 msgid "Set the timeout between images"
 msgstr "Den øvre tidsgrensen for komprimering av et bilde"
 
-#: data/ui/preferences.ui:92
+#: data/ui/preferences.ui:62
 msgid "Formats"
 msgstr "Formater"
 
-#: data/ui/preferences.ui:99 data/ui/preferences.ui:142
-#: data/ui/preferences.ui:178
+#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
+#: data/ui/preferences.ui:124
 msgid "Lossy Compression"
 msgstr "Sluttkvalitet ved reduksjon"
 
-#: data/ui/preferences.ui:100 data/ui/preferences.ui:143
-#: data/ui/preferences.ui:179
+#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
+#: data/ui/preferences.ui:125
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr ""
-"Kvalitetsnivået på bilder komprimert med kvalitetsreduksjon, på en skala "
-"fra 0 til 100"
+"Kvalitetsnivået på bilder komprimert med kvalitetsreduksjon, på en skala fra "
+"0 til 100"
 
-#: data/ui/preferences.ui:118 data/ui/preferences.ui:197
+#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
 msgid "Lossless Compression Level"
 msgstr "Tapsfritt komprimeringsnivå"
 
-#: data/ui/preferences.ui:119 data/ui/preferences.ui:198
+#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr ""
 "Komprimeringsnivået på bilder komprimert i tapsfri modus, på en skala fra 0 "
 "til 6. Høyere nivå gir økt tidsbruk."
 
-#: data/ui/preferences.ui:161
+#: data/ui/preferences.ui:113
 msgid "Progressive Encode"
 msgstr "Gradvis innlasting"
 
-#: data/ui/preferences.ui:162
+#: data/ui/preferences.ui:114
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr ""
 "Lagre bilder med mulighet for gradvis innlasting, fra uklart til skarpt"
 
-#: data/ui/preferences.ui:221
+#: data/ui/preferences.ui:155
 msgid "Maximum Compression Level"
 msgstr "Maksimalt komprimeringsnivå"
 
-#: data/ui/preferences.ui:222
+#: data/ui/preferences.ui:156
 msgid "This can be more destructive for the image"
 msgstr "Kan føre til en økt kvalitetsreduksjon"
 
@@ -298,51 +308,51 @@ msgstr "Tastatursnarveier"
 msgid "About Curtail"
 msgstr "Om Curtail"
 
-#: data/ui/window.ui:17 src/window.py:189
+#: data/ui/window.ui:19 src/window.py:267
 msgid "Browse Files"
 msgstr "Velg bilder"
 
-#: data/ui/window.ui:24
+#: data/ui/window.ui:26
 msgid "Clear Results"
 msgstr "Fjern resultater"
 
-#: data/ui/window.ui:38
+#: data/ui/window.ui:40
 msgid "Main Menu"
 msgstr "Hovedmeny"
 
-#: data/ui/window.ui:49
+#: data/ui/window.ui:51
 msgid "_Change Mode"
 msgstr "_Endre modus"
 
-#: data/ui/window.ui:50
+#: data/ui/window.ui:52
 msgid "Images will be overwritten, proceed carefully"
 msgstr "Sikker modus er av — bilder vil erstattes direkte"
 
-#: data/ui/window.ui:58
+#: data/ui/window.ui:60
 msgid "Drop images here to compress them"
 msgstr "Dra og slipp bilder her for å komprimere dem"
 
-#: data/ui/window.ui:64
+#: data/ui/window.ui:66
 msgid "_Browse Files"
 msgstr "_Velg bilder"
 
-#: data/ui/window.ui:83
+#: data/ui/window.ui:85
 msgid "Lossless"
 msgstr "Tapsfritt"
 
-#: data/ui/window.ui:95
+#: data/ui/window.ui:97
 msgid "Lossy"
 msgstr "Reduserende"
 
-#: src/compressor.py:89
+#: src/compressor.py:105
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Komprimeringen har nådd den angitte tidsgrensen på {} sekunder."
 
-#: src/compressor.py:93
+#: src/compressor.py:109
 msgid "An unknown error has occurred"
 msgstr "Noe gikk galt"
 
-#: src/compressor.py:102
+#: src/compressor.py:149
 msgid "Can't find the compressed file"
 msgstr "Fant ikke komprimert fil"
 
@@ -366,28 +376,52 @@ msgstr "WebP-bilder"
 msgid "SVG images"
 msgstr "SVG-bilder"
 
-#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
-#: src/tools.py:173 src/tools.py:203
+#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
+#: src/tools.py:181 src/tools.py:211
 msgid "Version not found"
 msgstr "Fant ikke versjon"
 
-#: src/window.py:176
+#: src/window.py:144
+msgid "Skipped"
+msgstr "Hoppet over"
+
+#: src/window.py:162
+msgid "More Information"
+msgstr "Mer informasjon"
+
+#: src/window.py:169
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Dette bildet ble ikke komprimert, fordi det hadde gitt en større fil enn den "
+"opprinnelige."
+
+#: src/window.py:232
+msgid "Open Image"
+msgstr "Åpne bilde"
+
+#: src/window.py:233
+msgid "Show in Folder"
+msgstr "Vis i mappe"
+
+#: src/window.py:254
 msgid "Safe mode with '{}' suffix"
 msgstr "Sikker modus med suffiks «{}»"
 
-#: src/window.py:179
+#: src/window.py:257
 msgid "Overwrite mode"
 msgstr "Erstatningsmodus"
 
-#: src/window.py:206
+#: src/window.py:284
 msgid "Browse Directories"
 msgstr "Velg mapper"
 
-#: src/window.py:231 src/window.py:237
+#: src/window.py:309 src/window.py:315
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Komprimere mapper?"
 
-#: src/window.py:232
+#: src/window.py:310
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -395,7 +429,7 @@ msgstr ""
 "Alle bildene i de valgte mappene vil komprimeres, inkludert undermapper. De "
 "opprinnelige filene vil ikke endres."
 
-#: src/window.py:238
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -403,26 +437,30 @@ msgstr ""
 "Alle bildene i de valgte mappene vil komprimeres, inkludert undermapper. De "
 "opprinnelige filene vil erstattes."
 
-#: src/window.py:241
+#: src/window.py:319
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/window.py:242
+#: src/window.py:320
 msgid "Compress"
 msgstr "Komprimer"
 
-#: src/window.py:316
+#: src/window.py:389
+msgid "No files found"
+msgstr "Fant ingen filer"
+
+#: src/window.py:399
 msgid "This file doesn't exist."
 msgstr "Denne filen finnes ikke."
 
-#: src/window.py:321
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Denne filtypen støttes ikke."
 
-#: src/window.py:373
+#: src/window.py:460
 msgid "translator-credits"
 msgstr "Brage Fuglseth https://bragefuglseth.dev"
 
-#: src/window.py:377
+#: src/window.py:464
 msgid "Contributors"
 msgstr "Forbedret av"
