@@ -30,7 +30,8 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
     toggle_metadata = Gtk.Template.Child()
     toggle_file_attributes = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
-    entry_suffix = Gtk.Template.Child()
+    toggle_naming_mode = Gtk.Template.Child()
+    entry_suffix_prefix = Gtk.Template.Child()
     spin_timeout = Gtk.Template.Child()
     spin_png_lossy_level = Gtk.Template.Child()
     spin_png_lossless_level = Gtk.Template.Child()
@@ -71,10 +72,15 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         self.toggle_new_file.connect('notify::active', self.on_bool_changed,
                                      'new-file')
 
-        # Suffix
-        self.entry_suffix.set_sensitive(self._settings.get_boolean('new-file'))
-        self.entry_suffix.set_text(self._settings.get_string('suffix'))
-        self.entry_suffix.connect('changed', self.on_string_changed, 'suffix')
+        # Naming mode
+        self.toggle_naming_mode.set_sensitive(self._settings.get_boolean('new-file'))
+        self.toggle_naming_mode.set_selected(self._settings.get_int('naming-mode'))
+        self.toggle_naming_mode.connect('notify::selected-item', self.on_selected_item, 'naming-mode')
+
+        # Prefix-Suffix
+        self.entry_suffix_prefix.set_sensitive(self._settings.get_boolean('new-file'))
+        self.entry_suffix_prefix.set_text(self._settings.get_string('suffix-prefix'))
+        self.entry_suffix_prefix.connect('changed', self.on_string_changed, 'suffix-prefix')
 
         # Compression Timeout
         self.spin_timeout.set_value(
@@ -129,13 +135,21 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
             new_file = self._settings.get_boolean('new-file')
             self.parent.set_saving_subtitle(new_file)
             self.parent.show_warning_banner(not new_file)
-            self.entry_suffix.set_sensitive(new_file)
+            self.toggle_naming_mode.set_sensitive(new_file)
+            self.entry_suffix_prefix.set_sensitive(new_file)
+
+    def on_selected_item(self, combo, _, key):
+        self._settings.set_int(key, combo.get_selected())
+        if key == 'naming-mode':
+            if not self._settings.get_int('naming-mode'):
+                self._settings.reset('naming-mode')
+            self.parent.set_saving_subtitle()
 
     def on_string_changed(self, entry, key):
         self._settings.set_string(key, entry.get_text())
-        if key == 'suffix':
-            if not self._settings.get_string('suffix'):
-                self._settings.reset('suffix')
+        if key == 'suffix-prefix':
+            if not self._settings.get_string('suffix-prefix'):
+                self._settings.reset('suffix-prefix')
             self.parent.set_saving_subtitle()
 
     def on_int_changed(self, spin, _, key):

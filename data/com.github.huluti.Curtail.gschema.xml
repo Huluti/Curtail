@@ -6,6 +6,11 @@
       <summary>Save into a new file</summary>
       <description>Save the compressed image into a new file.</description>
     </key>
+	  <key type="i" name="naming-mode">
+      <default>0</default>
+      <summary>Select the mode to append text for a new file</summary>
+      <description>Set how to append the additional text (as suffix or prefix) for a new file.</description>
+    </key>
 	  <key type="b" name="recursive">
 	    <default>true</default>
 	    <summary>Enable recursive compression in folders</summary>
@@ -26,10 +31,10 @@
       <summary>Enable lossy mode</summary>
       <description>Use lossy mode to compress images.</description>
     </key>
-	  <key type="s" name="suffix">
+	  <key type="s" name="suffix-prefix">
       <default>'-min'</default>
-      <summary>Suffix to append at end of new file</summary>
-      <description>Suffix to append at end of new file.</description>
+      <summary>Suffix/Prefix to append at new file</summary>
+      <description>Suffix/Prefix to append at new file.</description>
     </key>
 	  <key type="i" name="png-lossy-level">
       <default>90</default>
