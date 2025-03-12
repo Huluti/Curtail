@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-01-12 20:47+0000\n"
-"PO-Revision-Date: 2025-01-17 10:27+0100\n"
+"POT-Creation-Date: 2025-03-12 17:38+0000\n"
+"PO-Revision-Date: 2025-03-12 19:20+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups."
 "com>\n"
@@ -69,108 +69,119 @@ msgid "Save the compressed image into a new file."
 msgstr "Stisnjeno sliko shrani v novo datoteko."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Select the mode to append text for a new file"
+msgstr "Izberite način dodajanja besedila za novo datoteko"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr ""
+"Nastavite način dodatnega besedila (kot pripone ali predpone) za novo "
+"datoteko."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
 msgstr "Omogoči rekurzivno stiskanje v mapah"
 
-#: data/com.github.huluti.Curtail.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting enable compression in a recursive way in folders."
 msgstr "Ta nastavitev omogoča stiskanje v mapah na rekurziven način."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve metadata"
 msgstr "Ohrani metapodatke"
 
-#: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Ta nastavitev ohrani metapodatke slik."
 
-#: data/com.github.huluti.Curtail.gschema.xml:21
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Preserve file permissions and timestamps if possible"
 msgstr "Ohrani pravice datotek in časovne žige, če je možno"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "This setting file permissions and timestamps of images if possible."
 msgstr ""
 "Zagotavlja, da ima nova datoteka enaka dovoljenja in časovne žige kot "
 "izvirna datoteka, če je to možno."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
 msgstr "Omogoči način z izgubami"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Use lossy mode to compress images."
 msgstr "Uporabi način z izgubami za stiskanje slik."
 
-#: data/com.github.huluti.Curtail.gschema.xml:31
-msgid "Suffix to append at end of new file"
-msgstr "Pripona za dodajanje na koncu nove datoteke"
-
-#: data/com.github.huluti.Curtail.gschema.xml:32
-msgid "Suffix to append at end of new file."
-msgstr "Pripona za dodajanje na koncu nove datoteke."
-
 #: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "Suffix/Prefix to append at new file"
+msgstr "Pripona za dodajanje novi datoteki"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Suffix/Prefix to append at new file."
+msgstr "Pripona/predpona za dodajanje imenu novih datotek."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossy Compression Level"
 msgstr "Raven stiskanja PNG z izgubami"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossy compression level to use for PNG images."
 msgstr "Raven stiskanja z izgubami, ki se uporablja za slike PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "PNG Lossless Compression Level"
 msgstr "Raven stiskanja PNG brez izgub"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossless compression level to use for PNG images."
 msgstr "Raven stiskanja brez izgub za slike PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "JPG Lossy Compression Level"
 msgstr "Raven stiskanja JPG z izgubami"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for JPG images."
 msgstr "Raven stiskanja z izgubami, ki se uporablja za slike JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossy Compression Level"
 msgstr "Raven stiskanja WebP z izgubami"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossy compression level to use for WebP images."
 msgstr "Raven stiskanja z izgubami, ki se uporablja za slike WebP."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56
+#: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "WebP Lossless Compression Level"
 msgstr "Raven stiskanja WebP brez izgub"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Lossless compression level to use for WebP images."
 msgstr "Raven stiskanja brez izgub za slike WebP."
 
-#: data/com.github.huluti.Curtail.gschema.xml:61
+#: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable progressive encoding for JPEG images"
 msgstr "Omogočite progresivno kodiranje za slike JPEG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:62
+#: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Optionally encode jpeg images progressively."
 msgstr "Po želji lahko slike jpeg kodirate progresivno."
 
-#: data/com.github.huluti.Curtail.gschema.xml:66
+#: data/com.github.huluti.Curtail.gschema.xml:71
 msgid "Enable maximum compression for SVG images"
 msgstr "Omogočite največje stiskanje za slike SVG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:67
+#: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Enable maximum cleaning of SVG images."
 msgstr "Omogočite največje čiščenje slik SVG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
 msgid "Compression Timeout"
 msgstr "Časovna omejitev stiskanja"
 
-#: data/com.github.huluti.Curtail.gschema.xml:72
+#: data/com.github.huluti.Curtail.gschema.xml:77
 msgid "Compression timeout for each image."
 msgstr "Časovna omejitev stiskanja za vsako sliko."
 
@@ -215,31 +226,47 @@ msgstr "Varni način"
 msgid "Save the compressed image in a new file"
 msgstr "Stisnjeno sliko shrani v novo datoteko"
 
-#: data/ui/preferences.ui:20
-msgid "New File Suffix"
-msgstr "Nova pripona datoteke"
+#: data/ui/preferences.ui:21
+msgid "Naming Mode"
+msgstr "Način poimenovanja"
 
-#: data/ui/preferences.ui:25
+#: data/ui/preferences.ui:22
+msgid "Select between suffix and prefix"
+msgstr "Izberite med pripono in predpono"
+
+#: data/ui/preferences.ui:26
+msgid "Suffix"
+msgstr "Pripona"
+
+#: data/ui/preferences.ui:27
+msgid "Prefix"
+msgstr "Predpona"
+
+#: data/ui/preferences.ui:36
+msgid "New File Suffix/Prefix"
+msgstr "Pripona/predpona novih datotek"
+
+#: data/ui/preferences.ui:41
 msgid "Recursive Compression"
 msgstr "Rekurzivno stiskanje"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.ui:42
 msgid "Enable or disable compression through subdirectories"
 msgstr "Omogočite ali onemogočite stiskanje po podmapah"
 
-#: data/ui/preferences.ui:31
+#: data/ui/preferences.ui:47
 msgid "Keep Metadata"
 msgstr "Ohrani metapodatke"
 
-#: data/ui/preferences.ui:32
+#: data/ui/preferences.ui:48
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "Ohrani dele metapodatkov, ki ne vplivajo na izrisovanje"
 
-#: data/ui/preferences.ui:37
+#: data/ui/preferences.ui:53
 msgid "Keep File Attributes When Possible"
 msgstr "Ohrani atribute datoteke, kadar je to možno"
 
-#: data/ui/preferences.ui:38
+#: data/ui/preferences.ui:54
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
@@ -247,45 +274,45 @@ msgstr ""
 "Zagotovite, da ima nova datoteka enaka dovoljenja in časovne žige kot "
 "izvirna datoteka"
 
-#: data/ui/preferences.ui:44
+#: data/ui/preferences.ui:60
 msgid "Set the timeout between images"
 msgstr "Nastavite časovni interval med slikami"
 
-#: data/ui/preferences.ui:62
+#: data/ui/preferences.ui:78
 msgid "Formats"
 msgstr "Vrste datotek"
 
-#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
-#: data/ui/preferences.ui:124
+#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
+#: data/ui/preferences.ui:140
 msgid "Lossy Compression"
 msgstr "Stiskanje z izgubami"
 
-#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
-#: data/ui/preferences.ui:125
+#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
+#: data/ui/preferences.ui:141
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "Nastavite kakovost ustvarjene slike, 100 je najboljša kakovost"
 
-#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
+#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
 msgid "Lossless Compression Level"
 msgstr "Raven stiskanja brez izgub"
 
-#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
+#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr "Nastavite raven stiskanja, 6 je najvišja, vendar najpočasnejša raven"
 
-#: data/ui/preferences.ui:113
+#: data/ui/preferences.ui:129
 msgid "Progressive Encode"
 msgstr "Progresivno kodiranje"
 
-#: data/ui/preferences.ui:114
+#: data/ui/preferences.ui:130
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr "Omogoči postopno izrisovanje slik, od zabrisanega do jasnega"
 
-#: data/ui/preferences.ui:155
+#: data/ui/preferences.ui:171
 msgid "Maximum Compression Level"
 msgstr "Najvišja raven stiskanja"
 
-#: data/ui/preferences.ui:156
+#: data/ui/preferences.ui:172
 msgid "This can be more destructive for the image"
 msgstr "To je lahko bolj uničujoče za sliko"
 
@@ -301,7 +328,7 @@ msgstr "Tipkovne bližnjice"
 msgid "About Curtail"
 msgstr "O programu Stiskalnica"
 
-#: data/ui/window.ui:19 src/window.py:267
+#: data/ui/window.ui:19 src/window.py:269
 msgid "Browse Files"
 msgstr "Prebrskaj datoteke"
 
@@ -398,23 +425,23 @@ msgstr "Odpri sliko"
 msgid "Show in Folder"
 msgstr "Pokaži v mapi"
 
-#: src/window.py:254
-msgid "Safe mode with '{}' suffix"
-msgstr "Varni način s pripono »{}«"
+#: src/window.py:255
+msgid "Safe mode with '{}' {}"
+msgstr "Varni način s/z »{}« {}"
 
-#: src/window.py:257
+#: src/window.py:259
 msgid "Overwrite mode"
 msgstr "Način prepisovanja"
 
-#: src/window.py:284
+#: src/window.py:286
 msgid "Browse Directories"
 msgstr "Prebrskaj mape"
 
-#: src/window.py:309 src/window.py:315
+#: src/window.py:311 src/window.py:317
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ali ste prepričani, da želite stisniti slike v teh mapah?"
 
-#: src/window.py:310
+#: src/window.py:312
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -422,37 +449,37 @@ msgstr ""
 "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene. Izvirne "
 "slike ne bodo spremenjene."
 
-#: src/window.py:316
+#: src/window.py:318
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene in prepisane!"
 
-#: src/window.py:319
+#: src/window.py:321
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/window.py:320
+#: src/window.py:322
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/window.py:389
+#: src/window.py:396
 msgid "No files found"
 msgstr "Ni najdenih datotek"
 
-#: src/window.py:399
+#: src/window.py:406
 msgid "This file doesn't exist."
 msgstr "Datoteka ne obstaja."
 
-#: src/window.py:404
+#: src/window.py:411
 msgid "Format of this file is not supported."
 msgstr "Oblika zapisa te datoteke ni podprta."
 
-#: src/window.py:460
+#: src/window.py:467
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/window.py:464
+#: src/window.py:471
 msgid "Contributors"
 msgstr "Avtorji prispevkov"
