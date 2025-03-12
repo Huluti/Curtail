@@ -15,9 +15,25 @@
                 <property name="subtitle" translatable="yes">Save the compressed image in a new file</property>
               </object>
             </child>
+
             <child>
-              <object class="AdwEntryRow" id="entry_suffix">
-                <property name="title" translatable="yes">New File Suffix</property>
+              <object class="AdwComboRow" id="toggle_naming_mode">
+                <property name="title" translatable="yes">Naming Mode</property>
+                <property name="subtitle" translatable="yes">Select between suffix and prefix</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item translatable="yes">Suffix</item>
+                      <item translatable="yes">Prefix</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="entry_suffix_prefix">
+                <property name="title" translatable="yes">New File Suffix/Prefix</property>
               </object>
             </child>
             <child>

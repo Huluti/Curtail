@@ -251,8 +251,10 @@ class CurtailWindow(Adw.ApplicationWindow):
         if new_file is None:
             new_file = self._settings.get_boolean('new-file')
         if new_file:
-            label = _("Safe mode with '{}' suffix")\
-                                 .format(self._settings.get_string('suffix'))
+            naming_mode = "suffix" if self._settings.get_int('naming-mode') == 0 else "prefix"
+            label = _("Safe mode with '{}' {}")\
+                                 .format(self._settings.get_string('suffix-prefix'),
+                                 naming_mode)
         else:
             label = _("Overwrite mode")
         self.window_title.set_subtitle(label)
@@ -374,9 +376,14 @@ class CurtailWindow(Adw.ApplicationWindow):
     def create_new_filename(self, path):
         # Use new file or not
         if self._settings.get_boolean('new-file'):
-            new_filename = '{}/{}{}{}'.format(path.parents[0],
-                path.stem, self._settings.get_string('suffix'),
-                path.suffix)
+            if self._settings.get_int('naming-mode') == 0: # Suffix selected
+                new_filename = '{}/{}{}{}'.format(path.parents[0],
+                    path.stem, self._settings.get_string('suffix-prefix'),
+                    path.suffix)
+            else: # Prefix selected
+                new_filename = '{}/{}{}{}'.format(path.parents[0],
+                    self._settings.get_string('suffix-prefix'), path.stem,
+                    path.suffix)
         else :
             new_filename = str(path)
         return new_filename
