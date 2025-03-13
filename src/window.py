@@ -251,10 +251,14 @@ class CurtailWindow(Adw.ApplicationWindow):
         if new_file is None:
             new_file = self._settings.get_boolean('new-file')
         if new_file:
-            naming_mode = "suffix" if self._settings.get_int('naming-mode') == 0 else "prefix"
-            label = _("Safe mode with '{}' {}")\
-                                 .format(self._settings.get_string('suffix-prefix'),
-                                 naming_mode)
+            suffix_prefix = self._settings.get_string('suffix-prefix')
+
+            if self._settings.get_int('naming-mode') == 0:
+                label = _(f"Safe mode with “{suffix_prefix}” suffix")\
+                                 .format(suffix_prefix)
+            else:
+                label = _(f"Safe mode with “{suffix_prefix}” prefix")\
+                                     .format(self._settings.get_string('suffix-prefix'))
         else:
             label = _("Overwrite mode")
         self.window_title.set_subtitle(label)
@@ -374,15 +378,22 @@ class CurtailWindow(Adw.ApplicationWindow):
             return False
 
     def create_new_filename(self, path):
+        parent = path.parents[0]
+        stem = path.stem
+        suffix_prefix = self._settings.get_string('suffix-prefix')
+        extension = path.suffix
+
         # Use new file or not
         if self._settings.get_boolean('new-file'):
             if self._settings.get_int('naming-mode') == 0: # Suffix selected
-                new_filename = '{}/{}{}{}'.format(path.parents[0],
-                    path.stem, self._settings.get_string('suffix-prefix'),
+                new_filename = f'{parent}/{stem}{suffix_prefix}{extension}'\
+                    .format(path.parents[0], path.stem,\
+                    self._settings.get_string('suffix-prefix'),\
                     path.suffix)
             else: # Prefix selected
-                new_filename = '{}/{}{}{}'.format(path.parents[0],
-                    self._settings.get_string('suffix-prefix'), path.stem,
+                new_filename = f'{parent}/{suffix_prefix}{stem}{extension}'\
+                    .format(path.parents[0],\
+                    self._settings.get_string('suffix-prefix'), path.stem,\
                     path.suffix)
         else :
             new_filename = str(path)

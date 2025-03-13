@@ -360,7 +360,11 @@ msgid "Show in Folder"
 msgstr ""
 
 #: src/window.py:227
-msgid "Safe mode with '{}' suffix"
+msgid "Safe mode with “{}” suffix"
+msgstr ""
+
+#: src/window.py:227
+msgid "Safe mode with “{}” prefix"
 msgstr ""
 
 #: src/window.py:230
