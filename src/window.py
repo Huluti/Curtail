@@ -387,14 +387,10 @@ class CurtailWindow(Adw.ApplicationWindow):
         if self._settings.get_boolean('new-file'):
             if self._settings.get_int('naming-mode') == 0: # Suffix selected
                 new_filename = f'{parent}/{stem}{suffix_prefix}{extension}'\
-                    .format(path.parents[0], path.stem,\
-                    self._settings.get_string('suffix-prefix'),\
-                    path.suffix)
+                    .format(parent, stem, suffix_prefix, extension)
             else: # Prefix selected
                 new_filename = f'{parent}/{suffix_prefix}{stem}{extension}'\
-                    .format(path.parents[0],\
-                    self._settings.get_string('suffix-prefix'), path.stem,\
-                    path.suffix)
+                    .format(parent, suffix_prefix, stem, extension)
         else :
             new_filename = str(path)
         return new_filename
