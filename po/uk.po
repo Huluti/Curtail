@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the curtail package.
 # Hugo Posnic <hugo.posnic@protonmail.com>, 2019.
 # volkov <volkovissocool@gmail.com>, 2023.
-# Yuri Chornoivan <yurchor@ukr.net>, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2024-11-29 15:24+0000\n"
-"PO-Revision-Date: 2024-11-29 18:53+0200\n"
+"POT-Creation-Date: 2025-03-12 17:38+0000\n"
+"PO-Revision-Date: 2025-03-14 22:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -68,117 +68,123 @@ msgid "Save the compressed image into a new file."
 msgstr "Зберігати стиснене зображення у окремий файл."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
+#| msgid "Suffix to append at end of new file"
+msgid "Select the mode to append text for a new file"
+msgstr "Виберіть режим дописування тексту для нового файла"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr ""
+"Встановлює, як дописувати додатковий фрагмент тексту (як суфікс або префікс)"
+" до нового файла."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
 msgstr "Увімкнути рекурсивне стискання у теках"
 
-#: data/com.github.huluti.Curtail.gschema.xml:12
+#: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting enable compression in a recursive way in folders."
 msgstr ""
 "За допомогою цього пункту можна увімкнути рекурсивне стискання у теках."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
-#| msgid "Keep metadata"
+#: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve metadata"
 msgstr "Зберігати метадані"
 
-#: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Ця опція буде зберігати метадані зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:21
-#| msgid "Preserve file attributes if possible"
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Preserve file permissions and timestamps if possible"
 msgstr "Зберігати права доступу та часові позначки файлів, якщо можливо"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
-#| msgid ""
-#| "Ensure the new file has the same permissions and timestamps as the "
-#| "original file"
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "This setting file permissions and timestamps of images if possible."
 msgstr ""
-"Використання цього параметра надає змогу зберігати права доступу та часові"
-" позначки зображень, якщо це можливо."
+"Використання цього параметра надає змогу зберігати права доступу та часові "
+"позначки зображень, якщо це можливо."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
 msgstr "Активувати режим з втратами якості"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Use lossy mode to compress images."
 msgstr "Використовувати режим з втратами якості зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:31
-msgid "Suffix to append at end of new file"
-msgstr "Суфікс який додається в кінці назви нового файла"
-
-#: data/com.github.huluti.Curtail.gschema.xml:32
-msgid "Suffix to append at end of new file."
-msgstr "Суфікс який додається в кінці назви нового файла."
-
 #: data/com.github.huluti.Curtail.gschema.xml:36
+#| msgid "Suffix to append at end of new file"
+msgid "Suffix/Prefix to append at new file"
+msgstr "Суфікс/Префікс, який слід дописувати до нового файла"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+#| msgid "Suffix to append at end of new file."
+msgid "Suffix/Prefix to append at new file."
+msgstr "Суфікс або префікс, який слід дописувати для нового файла."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossy Compression Level"
 msgstr "Рівень стискання з втратами якості для PNG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossy compression level to use for PNG images."
 msgstr "Рівень стискання з втратами якості для PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "PNG Lossless Compression Level"
 msgstr "Рівень стискання без втрат якості для PNG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossless compression level to use for PNG images."
 msgstr "Рівень стискання без втрат якості для PNG зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "JPG Lossy Compression Level"
 msgstr "Рівень стискання з втратами якості JPG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for JPG images."
 msgstr "Рівень стискання з втратами якості JPG зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossy Compression Level"
 msgstr "Рівень стискання з втратами якості WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossy compression level to use for WebP images."
 msgstr "Рівень стискання з втратами якості WebP зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56
+#: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "WebP Lossless Compression Level"
 msgstr "Рівень стискання без втрат якості для WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Lossless compression level to use for WebP images."
 msgstr "Рівень стискання без втрат якості для WebP зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:61
-#| msgid "Enable progressive encoding for JPEG images."
+#: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable progressive encoding for JPEG images"
 msgstr "Активувати прогресивне кодування JPEG зображень"
 
-#: data/com.github.huluti.Curtail.gschema.xml:62
+#: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Optionally encode jpeg images progressively."
 msgstr "Опціонально прогресивно кодувати JPEG зображення."
 
-#: data/com.github.huluti.Curtail.gschema.xml:66
-#| msgid "Enable maximum compression for SVG images."
+#: data/com.github.huluti.Curtail.gschema.xml:71
 msgid "Enable maximum compression for SVG images"
 msgstr "Активувати максимальне стискання для SVG зображень"
 
-#: data/com.github.huluti.Curtail.gschema.xml:67
-#| msgid "Optionally enable maximum cleaning of SVG images."
+#: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Enable maximum cleaning of SVG images."
 msgstr "Увімкнути максимальне очищення SVG зображень."
 
-#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
 msgid "Compression Timeout"
 msgstr "Час очікування стискання"
 
-#: data/com.github.huluti.Curtail.gschema.xml:72
+#: data/com.github.huluti.Curtail.gschema.xml:77
 msgid "Compression timeout for each image."
 msgstr "Час очікування на стискання для кожного зображення."
 
@@ -223,31 +229,49 @@ msgstr "Безпечний режим"
 msgid "Save the compressed image in a new file"
 msgstr "Зберегти стиснене зображення до нового файла"
 
-#: data/ui/preferences.ui:20
-msgid "New File Suffix"
-msgstr "Суфікс назви нового файла"
+#: data/ui/preferences.ui:21
+#| msgid "_Change Mode"
+msgid "Naming Mode"
+msgstr "Режим іменування"
 
-#: data/ui/preferences.ui:25
+#: data/ui/preferences.ui:22
+msgid "Select between suffix and prefix"
+msgstr "Виберіть між суфіксом і префіксом"
+
+#: data/ui/preferences.ui:26
+msgid "Suffix"
+msgstr "Суфікс"
+
+#: data/ui/preferences.ui:27
+msgid "Prefix"
+msgstr "Префікс"
+
+#: data/ui/preferences.ui:36
+#| msgid "New File Suffix"
+msgid "New File Suffix/Prefix"
+msgstr "Суфікс/Префікс нового файла"
+
+#: data/ui/preferences.ui:41
 msgid "Recursive Compression"
 msgstr "Рекурсивне стискання"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.ui:42
 msgid "Enable or disable compression through subdirectories"
 msgstr "Увімкнути або вимкнути стискання у підкаталогах"
 
-#: data/ui/preferences.ui:31
+#: data/ui/preferences.ui:47
 msgid "Keep Metadata"
 msgstr "Зберігати метадані"
 
-#: data/ui/preferences.ui:32
+#: data/ui/preferences.ui:48
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "Зберігати метадані файла, які не впливають на показ"
 
-#: data/ui/preferences.ui:37
+#: data/ui/preferences.ui:53
 msgid "Keep File Attributes When Possible"
 msgstr "Зберігати атрибути файлів, якщо можливо"
 
-#: data/ui/preferences.ui:38
+#: data/ui/preferences.ui:54
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
@@ -255,45 +279,45 @@ msgstr ""
 "Вихідний файл буде мати такі ж права доступу і час створення, як і вхідний "
 "файл"
 
-#: data/ui/preferences.ui:44
+#: data/ui/preferences.ui:60
 msgid "Set the timeout between images"
 msgstr "Встановити час очікування між зображеннями"
 
-#: data/ui/preferences.ui:62
+#: data/ui/preferences.ui:78
 msgid "Formats"
 msgstr "Формати"
 
-#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
-#: data/ui/preferences.ui:124
+#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
+#: data/ui/preferences.ui:140
 msgid "Lossy Compression"
 msgstr "Стискання з втратами"
 
-#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
-#: data/ui/preferences.ui:125
+#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
+#: data/ui/preferences.ui:141
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "Встановити якість створеного зображення; 100 — найкраща якість"
 
-#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
+#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
 msgid "Lossless Compression Level"
 msgstr "Рівень стискання без втрат якості"
 
-#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
+#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr "Встановити рівень стискання; 6 — найвищий, але найповільніший рівень"
 
-#: data/ui/preferences.ui:113
+#: data/ui/preferences.ui:129
 msgid "Progressive Encode"
 msgstr "Прогресивне кодування"
 
-#: data/ui/preferences.ui:114
+#: data/ui/preferences.ui:130
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr "Увімкнути поступову обробку зображення: від розмитого до чіткого"
 
-#: data/ui/preferences.ui:155
+#: data/ui/preferences.ui:171
 msgid "Maximum Compression Level"
 msgstr "Максимальний рівень стискання"
 
-#: data/ui/preferences.ui:156
+#: data/ui/preferences.ui:172
 msgid "This can be more destructive for the image"
 msgstr "Може бути більш руйнівним для зображення"
 
@@ -309,7 +333,7 @@ msgstr "Клавіатурні скорочення"
 msgid "About Curtail"
 msgstr "Про Curtail"
 
-#: data/ui/window.ui:19 src/window.py:267
+#: data/ui/window.ui:19 src/window.py:269
 msgid "Browse Files"
 msgstr "Огляд файлів"
 
@@ -395,8 +419,8 @@ msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
-"Стискання пропущено, оскільки стискання файла призведе до збільшення розміру"
-" файла."
+"Стискання пропущено, оскільки стискання файла призведе до збільшення розміру "
+"файла."
 
 #: src/window.py:232
 msgid "Open Image"
@@ -406,23 +430,24 @@ msgstr "Відкривання зображення"
 msgid "Show in Folder"
 msgstr "Показати у теці"
 
-#: src/window.py:254
-msgid "Safe mode with '{}' suffix"
-msgstr "Безпечний режим з '{}' суфіксом"
+#: src/window.py:255
+#| msgid "Safe mode with '{}' suffix"
+msgid "Safe mode with '{}' {}"
+msgstr "Безпечний режим з «{}» {}"
 
-#: src/window.py:257
+#: src/window.py:259
 msgid "Overwrite mode"
 msgstr "Режим перезаписування"
 
-#: src/window.py:284
+#: src/window.py:286
 msgid "Browse Directories"
 msgstr "Огляд тек"
 
-#: src/window.py:309 src/window.py:315
+#: src/window.py:311 src/window.py:317
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ви впевнені, що бажаєте стиснути зображення у цих теках?"
 
-#: src/window.py:310
+#: src/window.py:312
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -430,40 +455,40 @@ msgstr ""
 "Усі зображення у обраних теках та їхніх підтеках будуть стиснуті. "
 "Оригінальні зображення не будуть змінені."
 
-#: src/window.py:316
+#: src/window.py:318
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 "Усі зображення у обраних теках та їхніх підтеках будуть стиснуті та замінені!"
 
-#: src/window.py:319
+#: src/window.py:321
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/window.py:320
+#: src/window.py:322
 msgid "Compress"
 msgstr "Стиснути"
 
-#: src/window.py:389
+#: src/window.py:396
 msgid "No files found"
 msgstr "Файлів не знайдено"
 
-#: src/window.py:399
+#: src/window.py:406
 msgid "This file doesn't exist."
 msgstr "Цей файл не існує."
 
-#: src/window.py:404
+#: src/window.py:411
 msgid "Format of this file is not supported."
 msgstr "Формат цього файлу не підтримується."
 
-#: src/window.py:460
+#: src/window.py:467
 msgid "translator-credits"
 msgstr ""
 "volkov <volkovissocool@gmail.com>, 2023\n"
 "Юрій Чорноіван <yurchor@ukr.net>, 2024"
 
-#: src/window.py:464
+#: src/window.py:471
 msgid "Contributors"
 msgstr "Учасники розробки"
 
