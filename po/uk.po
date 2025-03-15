@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-12 17:38+0000\n"
-"PO-Revision-Date: 2025-03-14 22:30+0200\n"
+"POT-Creation-Date: 2025-03-15 14:51+0000\n"
+"PO-Revision-Date: 2025-03-15 22:03+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -68,7 +68,6 @@ msgid "Save the compressed image into a new file."
 msgstr "Зберігати стиснене зображення у окремий файл."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
-#| msgid "Suffix to append at end of new file"
 msgid "Select the mode to append text for a new file"
 msgstr "Виберіть режим дописування тексту для нового файла"
 
@@ -76,8 +75,8 @@ msgstr "Виберіть режим дописування тексту для �
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
 msgstr ""
-"Встановлює, як дописувати додатковий фрагмент тексту (як суфікс або префікс)"
-" до нового файла."
+"Встановлює, як дописувати додатковий фрагмент тексту (як суфікс або префікс) "
+"до нового файла."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
@@ -115,12 +114,10 @@ msgid "Use lossy mode to compress images."
 msgstr "Використовувати режим з втратами якості зображень."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-#| msgid "Suffix to append at end of new file"
 msgid "Suffix/Prefix to append at new file"
 msgstr "Суфікс/Префікс, який слід дописувати до нового файла"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-#| msgid "Suffix to append at end of new file."
 msgid "Suffix/Prefix to append at new file."
 msgstr "Суфікс або префікс, який слід дописувати для нового файла."
 
@@ -230,7 +227,6 @@ msgid "Save the compressed image in a new file"
 msgstr "Зберегти стиснене зображення до нового файла"
 
 #: data/ui/preferences.ui:21
-#| msgid "_Change Mode"
 msgid "Naming Mode"
 msgstr "Режим іменування"
 
@@ -247,7 +243,6 @@ msgid "Prefix"
 msgstr "Префікс"
 
 #: data/ui/preferences.ui:36
-#| msgid "New File Suffix"
 msgid "New File Suffix/Prefix"
 msgstr "Суфікс/Префікс нового файла"
 
@@ -333,7 +328,7 @@ msgstr "Клавіатурні скорочення"
 msgid "About Curtail"
 msgstr "Про Curtail"
 
-#: data/ui/window.ui:19 src/window.py:269
+#: data/ui/window.ui:19 src/window.py:273
 msgid "Browse Files"
 msgstr "Огляд файлів"
 
@@ -369,15 +364,15 @@ msgstr "Без втрат якості"
 msgid "Lossy"
 msgstr "З втратами якості"
 
-#: src/compressor.py:105
+#: src/compressor.py:114
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Стискання досягло тайм-ауту, який був налаштований на {} секунд."
 
-#: src/compressor.py:109
+#: src/compressor.py:118
 msgid "An unknown error has occurred"
 msgstr "Сталася невідома помилка"
 
-#: src/compressor.py:149
+#: src/compressor.py:158
 msgid "Can't find the compressed file"
 msgstr "Не вдалося знайти стиснутий файл"
 
@@ -430,24 +425,29 @@ msgstr "Відкривання зображення"
 msgid "Show in Folder"
 msgstr "Показати у теці"
 
-#: src/window.py:255
-#| msgid "Safe mode with '{}' suffix"
-msgid "Safe mode with '{}' {}"
-msgstr "Безпечний режим з «{}» {}"
+#: src/window.py:257
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” suffix"
+msgstr "Безпечний режим з суфіксом «{suffix_prefix}»"
 
-#: src/window.py:259
+#: src/window.py:260
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” prefix"
+msgstr "Безпечний режим з префіксом «{suffix_prefix}»"
+
+#: src/window.py:263
 msgid "Overwrite mode"
 msgstr "Режим перезаписування"
 
-#: src/window.py:286
+#: src/window.py:290
 msgid "Browse Directories"
 msgstr "Огляд тек"
 
-#: src/window.py:311 src/window.py:317
+#: src/window.py:315 src/window.py:321
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ви впевнені, що бажаєте стиснути зображення у цих теках?"
 
-#: src/window.py:312
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -455,42 +455,46 @@ msgstr ""
 "Усі зображення у обраних теках та їхніх підтеках будуть стиснуті. "
 "Оригінальні зображення не будуть змінені."
 
-#: src/window.py:318
+#: src/window.py:322
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 "Усі зображення у обраних теках та їхніх підтеках будуть стиснуті та замінені!"
 
-#: src/window.py:321
+#: src/window.py:325
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/window.py:322
+#: src/window.py:326
 msgid "Compress"
 msgstr "Стиснути"
 
-#: src/window.py:396
+#: src/window.py:403
 msgid "No files found"
 msgstr "Файлів не знайдено"
 
-#: src/window.py:406
+#: src/window.py:413
 msgid "This file doesn't exist."
 msgstr "Цей файл не існує."
 
-#: src/window.py:411
+#: src/window.py:418
 msgid "Format of this file is not supported."
 msgstr "Формат цього файлу не підтримується."
 
-#: src/window.py:467
+#: src/window.py:474
 msgid "translator-credits"
 msgstr ""
 "volkov <volkovissocool@gmail.com>, 2023\n"
 "Юрій Чорноіван <yurchor@ukr.net>, 2024"
 
-#: src/window.py:471
+#: src/window.py:478
 msgid "Contributors"
 msgstr "Учасники розробки"
+
+#~| msgid "Safe mode with '{}' suffix"
+#~ msgid "Safe mode with '{}' {}"
+#~ msgstr "Безпечний режим з «{}» {}"
 
 #~ msgid "compress"
 #~ msgstr "стискання"
