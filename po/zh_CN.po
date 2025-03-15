@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-12 17:38+0000\n"
-"PO-Revision-Date: 2025-03-13 18:28+0800\n"
+"POT-Creation-Date: 2025-03-15 14:51+0000\n"
+"PO-Revision-Date: 2025-03-16 06:52+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -317,7 +317,7 @@ msgstr "键盘快捷键"
 msgid "About Curtail"
 msgstr "关于 Curtail"
 
-#: data/ui/window.ui:19 src/window.py:269
+#: data/ui/window.ui:19 src/window.py:273
 msgid "Browse Files"
 msgstr "浏览文件"
 
@@ -353,15 +353,15 @@ msgstr "无损"
 msgid "Lossy"
 msgstr "有损"
 
-#: src/compressor.py:105
+#: src/compressor.py:114
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "压缩已达到配置的 {} 秒超时。"
 
-#: src/compressor.py:109
+#: src/compressor.py:118
 msgid "An unknown error has occurred"
 msgstr "发生未知错误"
 
-#: src/compressor.py:149
+#: src/compressor.py:158
 msgid "Can't find the compressed file"
 msgstr "无法找到已压缩文件"
 
@@ -412,64 +412,73 @@ msgstr "打开图像"
 msgid "Show in Folder"
 msgstr "在文件夹中显示"
 
-#: src/window.py:255
-msgid "Safe mode with '{}' {}"
-msgstr "带有“{}”{} 的安全模式"
+#: src/window.py:257
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” suffix"
+msgstr "带有“{suffix_prefix}”后缀的安全模式"
 
-#: src/window.py:259
+#: src/window.py:260
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” prefix"
+msgstr "带有“{suffix_prefix}”前缀的安全模式"
+
+#: src/window.py:263
 msgid "Overwrite mode"
 msgstr "覆盖模式"
 
-#: src/window.py:286
+#: src/window.py:290
 msgid "Browse Directories"
 msgstr "浏览目录"
 
-#: src/window.py:311 src/window.py:317
+#: src/window.py:315 src/window.py:321
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "您确定要压缩这些目录中的图像吗？"
 
-#: src/window.py:312
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr "所选目录及其子目录中的所有图像都将被压缩。原始图像不会被修改。"
 
-#: src/window.py:318
+#: src/window.py:322
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr "所选目录及其子目录中的所有图像都将被压缩并覆盖！"
 
-#: src/window.py:321
+#: src/window.py:325
 msgid "Cancel"
 msgstr "取消"
 
-#: src/window.py:322
+#: src/window.py:326
 msgid "Compress"
 msgstr "压缩"
 
-#: src/window.py:396
+#: src/window.py:403
 msgid "No files found"
 msgstr "未找到文件"
 
-#: src/window.py:406
+#: src/window.py:413
 msgid "This file doesn't exist."
 msgstr "此文件不存在。"
 
-#: src/window.py:411
+#: src/window.py:418
 msgid "Format of this file is not supported."
 msgstr "不支持此文件的格式。"
 
-#: src/window.py:467
+#: src/window.py:474
 msgid "translator-credits"
 msgstr ""
 "Hugo Posnic <hugo.posnic@protonmail.com>, 2019\n"
 "余航 <yuhldr@qq.com>, 2023\n"
 "lumingzh <lumingzh@qq.com>, 2024-2025"
 
-#: src/window.py:471
+#: src/window.py:478
 msgid "Contributors"
 msgstr "贡献者"
+
+#~ msgid "Safe mode with '{}' {}"
+#~ msgstr "带有“{}”{} 的安全模式"
 
 #, fuzzy
 #~ msgid "compress"
