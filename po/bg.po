@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-13 03:24+0000\n"
-"PO-Revision-Date: 2025-03-14 11:01+0100\n"
+"POT-Creation-Date: 2025-03-17 03:24+0000\n"
+"PO-Revision-Date: 2025-03-17 09:47+0100\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
 "Language: bg\n"
@@ -69,7 +69,9 @@ msgstr "Режим за добавяне на текст към името на 
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
-msgstr "Как допълнителният текст да се добавя към името нов файл — префикс или суфикс."
+msgstr ""
+"Как допълнителният текст да се добавя към името нов файл — префикс или "
+"суфикс."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
@@ -328,7 +330,7 @@ msgstr "Клавишни комбинации"
 msgid "About Curtail"
 msgstr "Относно „Curtail“"
 
-#: data/ui/window.ui:19 src/window.py:269
+#: data/ui/window.ui:19 src/window.py:273
 msgid "Browse Files"
 msgstr "Разглеждане на файловете"
 
@@ -364,15 +366,15 @@ msgstr "Без загуба"
 msgid "Lossy"
 msgstr "Със загуба"
 
-#: src/compressor.py:105
+#: src/compressor.py:114
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Компресията достигна конфигурираното изчакване от {} секунди."
 
-#: src/compressor.py:109
+#: src/compressor.py:118
 msgid "An unknown error has occurred"
 msgstr "Възникна непозната грешка"
 
-#: src/compressor.py:149
+#: src/compressor.py:158
 msgid "Can't find the compressed file"
 msgstr "Компресираният файл липсва"
 
@@ -423,23 +425,29 @@ msgstr "Отваряне на изображението"
 msgid "Show in Folder"
 msgstr "Показване във „Файлове“"
 
-#: src/window.py:255
-msgid "Safe mode with '{}' {}"
-msgstr "Безопасен режим със {1} „{0}“"
+#: src/window.py:257
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” suffix"
+msgstr "Безопасен режим със суфикс „{suffix_prefix}“"
 
-#: src/window.py:259
+#: src/window.py:260
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” prefix"
+msgstr "Безопасен режим с префикс „{suffix_prefix}“"
+
+#: src/window.py:263
 msgid "Overwrite mode"
 msgstr "Режим „Презаписване“"
 
-#: src/window.py:286
+#: src/window.py:290
 msgid "Browse Directories"
 msgstr "Разглеждане на папки"
 
-#: src/window.py:311 src/window.py:317
+#: src/window.py:315 src/window.py:321
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Сигурни ли сте, че искате да компресирате изображенията в тези папки?"
 
-#: src/window.py:312
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -447,7 +455,7 @@ msgstr ""
 "Всички изображения в избраните папки и техните подпапки ще се компресират. "
 "Оригиналните изображения няма да бъдат променени."
 
-#: src/window.py:318
+#: src/window.py:322
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -455,27 +463,27 @@ msgstr ""
 "Всички изображения в избраните папки и техните подпапки ще се компресират и "
 "презапишат!"
 
-#: src/window.py:321
+#: src/window.py:325
 msgid "Cancel"
 msgstr "Отказване"
 
-#: src/window.py:322
+#: src/window.py:326
 msgid "Compress"
 msgstr "Компресиране"
 
-#: src/window.py:396
+#: src/window.py:403
 msgid "No files found"
 msgstr "Няма файлове"
 
-#: src/window.py:406
+#: src/window.py:413
 msgid "This file doesn't exist."
 msgstr "Файлът не съществува."
 
-#: src/window.py:411
+#: src/window.py:418
 msgid "Format of this file is not supported."
 msgstr "Форматът на този файл не се поддържа."
 
-#: src/window.py:467
+#: src/window.py:474
 msgid "translator-credits"
 msgstr ""
 "Twlvnn Kraftwerk &lt;<a "
@@ -487,6 +495,6 @@ msgstr ""
 "Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
 "newticket'>съответния раздел</a>."
 
-#: src/window.py:471
+#: src/window.py:478
 msgid "Contributors"
 msgstr "Сътрудници"
