@@ -61,12 +61,12 @@
                     <child>
                       <object class="GtkBox">
                         <property name="orientation">vertical</property>
+                        <property name="spacing">36</property>
                         <child>
                           <object class="GtkButton">
                             <property name="label" translatable="yes">_Browse Files</property>
                             <property name="halign">center</property>
                             <property name="action-name">win.select-file</property>
-                            <property name="margin-bottom">40</property>
                             <property name="use-underline">1</property>
                             <style>
                               <class name="suggested-action"/>
@@ -75,26 +75,18 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkBox">
-                            <property name="spacing">10</property>
+                          <object class="AdwToggleGroup" id="toggle_lossy">
                             <property name="halign">center</property>
-                            <property name="valign">center</property>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="halign">end</property>
+                              <object class="AdwToggle">
                                 <property name="label" translatable="yes">Lossless</property>
+                                <property name="name">lossless</property>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkSwitch" id="toggle_lossy">
-                                <property name="halign">center</property>
-                                <property name="valign">center</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="halign">start</property>
+                              <object class="AdwToggle">
                                 <property name="label" translatable="yes">Lossy</property>
+                                <property name="name">lossy</property>
                               </object>
                             </child>
                           </object>

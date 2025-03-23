@@ -441,8 +441,8 @@ class CurtailWindow(Adw.ApplicationWindow):
         compressor = Compressor(result_items, self.update_result_item, self.enable_compression)
         GLib.idle_add(compressor.compress_images)
 
-    def on_lossy_changed(self, switch, state):
-        self._settings.set_boolean('lossy', switch.get_active())
+    def on_lossy_changed(self, toggle, state):
+        self._settings.set_boolean("lossy", toggle.get_active_name() == "lossy")
 
     def banner_change_mode(self, *args):
         self._settings.set_boolean('new-file', True)
