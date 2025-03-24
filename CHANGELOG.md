@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.13.0 - 2025-03-24
+### Added
+- Add multi-threading.
+- Add new preference to select between prefix and suffix for new files. Thank's to @rubenmvc.
+
+### Changed
+- Use AdwToggleGroup for lossless/lossy selector. Thank's to @ARAKHN1D.
+- Update oxipng.
+- Update GNOME Runtime to 48
+- Update translations.
+
 ## 1.12.0 - 2025-01-05
 ### Added
 - "Open image" and "Show in folder" actions.

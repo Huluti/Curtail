@@ -7,8 +7,10 @@
   <name translate="no">Curtail</name>
   <summary>Compress your images</summary>
   <description>
-    <p>Optimize your images with Curtail, a useful image compressor that supports PNG, JPEG, WebP and SVG file types.</p>
-    <p>It supports both lossless and lossy compression modes with an option to whether keep or not metadata of images.</p>
+    <p>Optimize your images with Curtail, a useful image compressor that supports PNG, JPEG, WebP
+      and SVG file types.</p>
+    <p>It supports both lossless and lossy compression modes with an option to whether keep or not
+      metadata of images.</p>
   </description>
   <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name translate="no">Hugo Posnic</developer_name>
@@ -26,15 +28,30 @@
   </kudos>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
+      <image type="source">
+        https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
+      <image type="source">
+        https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
     </screenshot>
   </screenshots>
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+    <release version="1.13.0" date="2025-03-24">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add multi-threading</li>
+          <li>Add new preference to select between prefix and suffix for new files. Thank's to @rubenmvc</li>
+          <li>Use AdwToggleGroup for lossless/lossy selector. Thank's to @ARAKHN1D</li>
+          <li>Update oxipng</li>
+          <li>Update GNOME Runtime to 48</li>
+          <li>Update translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.12.0" date="2025-01-05">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
@@ -48,7 +65,7 @@
         </ul>
       </description>
     </release>
-     <release version="1.11.1" date="2024-09-11">
+    <release version="1.11.1" date="2024-09-11">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
         <ul>
@@ -60,7 +77,8 @@
       <description translate="no">
         <p>Here's the changelog of this version:</p>
         <ul>
-          <li>Always restore original files when compression produces larger files. Thank's to @ARAKHN1D</li>
+          <li>Always restore original files when compression produces larger files. Thank's to
+            @ARAKHN1D</li>
           <li>Notify when no files are found in a folder. Thank's to @ARAKHN1D</li>
           <li>Add Norwegian Bokmaal translations Thank's to @bragefuglseth</li>
           <li>Update translations</li>
