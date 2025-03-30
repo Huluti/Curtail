@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-12 17:38+0000\n"
-"PO-Revision-Date: 2025-03-14 00:30+1000\n"
+"POT-Creation-Date: 2025-03-24 03:24+0000\n"
+"PO-Revision-Date: 2025-03-29 12:06+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -330,7 +330,7 @@ msgstr "Комбинации клавиш"
 msgid "About Curtail"
 msgstr "О приложении"
 
-#: data/ui/window.ui:19 src/window.py:269
+#: data/ui/window.ui:19 src/window.py:273
 msgid "Browse Files"
 msgstr "Обзор файлов"
 
@@ -354,27 +354,27 @@ msgstr "Используйте с осторожностью, т.к. изобр�
 msgid "Drop images here to compress them"
 msgstr "Перетащите сюда изображения для их сжатия"
 
-#: data/ui/window.ui:66
+#: data/ui/window.ui:67
 msgid "_Browse Files"
 msgstr "_Укажите файлы"
 
-#: data/ui/window.ui:85
+#: data/ui/window.ui:82
 msgid "Lossless"
 msgstr "Без потерь"
 
-#: data/ui/window.ui:97
+#: data/ui/window.ui:88
 msgid "Lossy"
 msgstr "С потерями"
 
-#: src/compressor.py:105
+#: src/compressor.py:114
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Время ограничения сжатия достигло заданного значения {} секунд."
 
-#: src/compressor.py:109
+#: src/compressor.py:118
 msgid "An unknown error has occurred"
 msgstr "Произошла неизвестная ошибка"
 
-#: src/compressor.py:149
+#: src/compressor.py:158
 msgid "Can't find the compressed file"
 msgstr "Не удалось найти сжатый файл"
 
@@ -427,23 +427,29 @@ msgstr "Открыть изображение"
 msgid "Show in Folder"
 msgstr "Показать в папке"
 
-#: src/window.py:255
-msgid "Safe mode with '{}' {}"
-msgstr "Безопасный режим с '{}' {}"
+#: src/window.py:257
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” suffix"
+msgstr "Безопасный режим с суффиксом «{suffix_prefix}»"
 
-#: src/window.py:259
+#: src/window.py:260
+#, python-brace-format
+msgid "Safe mode with “{suffix_prefix}” prefix"
+msgstr "Безопасный режим с префиксом «{suffix_prefix}»"
+
+#: src/window.py:263
 msgid "Overwrite mode"
 msgstr "Режим перезаписи"
 
-#: src/window.py:286
+#: src/window.py:290
 msgid "Browse Directories"
 msgstr "Укажите каталоги"
 
-#: src/window.py:311 src/window.py:317
+#: src/window.py:315 src/window.py:321
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Вы уверены, что хотите сжать изображения в этих каталогах?"
 
-#: src/window.py:312
+#: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -451,7 +457,7 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты. Но "
 "исходные файлы не изменятся."
 
-#: src/window.py:318
+#: src/window.py:322
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -459,35 +465,38 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты и "
 "перезаписаны!"
 
-#: src/window.py:321
+#: src/window.py:325
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/window.py:322
+#: src/window.py:326
 msgid "Compress"
 msgstr "Сжать"
 
-#: src/window.py:396
+#: src/window.py:403
 msgid "No files found"
 msgstr "Файлы не найдены"
 
-#: src/window.py:406
+#: src/window.py:413
 msgid "This file doesn't exist."
 msgstr "Этот файл не существует."
 
-#: src/window.py:411
+#: src/window.py:418
 msgid "Format of this file is not supported."
 msgstr "Формат этого файла не поддерживается."
 
-#: src/window.py:467
+#: src/window.py:474
 msgid "translator-credits"
 msgstr ""
 "Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Ser82-png <savmail.as@gmail.com>"
 
-#: src/window.py:471
+#: src/window.py:478
 msgid "Contributors"
 msgstr "Участники"
+
+#~ msgid "Safe mode with '{}' {}"
+#~ msgstr "Безопасный режим с '{}' {}"
 
 #~ msgid "compress"
 #~ msgstr "сжать"
