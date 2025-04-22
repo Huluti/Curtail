@@ -128,9 +128,8 @@ class Compressor():
                         if self.do_new_file:
                             if result_item.new_size >= result_item.size:
                                 # Output is larger (or equal) than input in safe mode
-                                # Copy the uncompressed original file onto the compressed new file
-                                shutil.copy2(result_item.filename, result_item.new_filename)
-                                result_item.new_size = new_file_data.stat().st_size
+                                # Remove the new file
+                                Path(result_item.new_filename).unlink(True)
                                 result_item.skipped = True
                         else:
                             if not result_item.new_size > result_item.size:
@@ -153,6 +152,10 @@ class Compressor():
                     elif result_item.size == result_item.new_size:
                         # File was automatically skipped by a compressor
                         result_item.skipped = True
+
+                        # Remove new file if in safe mode
+                        if self.do_new_file:
+                            Path(result_item.new_filename).unlink(True)
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
