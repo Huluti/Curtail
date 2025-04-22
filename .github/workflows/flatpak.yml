@@ -1,0 +1,19 @@
+on:
+  push:
+    branches: [master]
+  pull_request:
+name: Flatpak
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v4
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+      with:
+        bundle: curtail.flatpak
+        manifest-path: com.github.huluti.Curtail.json
+        cache-key: flatpak-builder-${{ github.sha }}
