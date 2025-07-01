@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-24 03:24+0000\n"
-"PO-Revision-Date: 2025-03-29 20:24+1100\n"
+"POT-Creation-Date: 2025-04-22 15:24+0000\n"
+"PO-Revision-Date: 2025-07-01 20:24+1100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
 "Language: oc\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Optimizatz vòstres imatges amb Curtail, un compressor d’imatges util que "
 "pren en carga los tipes de fichièr PNG, JPEG, WebP e SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -45,7 +45,7 @@ msgstr ""
 "opcion per gardar o non las metadonadas dels imatges."
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.appdata.xml.in:16
 msgid "Hugo Posnic"
 msgstr "Hugo Posnic"
 
@@ -64,7 +64,7 @@ msgstr "Enregistrar l’imatge compressat dins un fichièr novèl."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
 msgid "Select the mode to append text for a new file"
-msgstr "Causir lo òde per apondre lo texte pel fichièr novèl"
+msgstr "Causir lo mòde per apondre lo texte pel fichièr novèl"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid ""
@@ -368,7 +368,7 @@ msgstr "La compression a atengut lo relambi configurat de {} segondas."
 msgid "An unknown error has occurred"
 msgstr "Una error desconeguda s'es producha"
 
-#: src/compressor.py:158
+#: src/compressor.py:161
 msgid "Can't find the compressed file"
 msgstr "Impossible de trobar lo fichièr compressat"
 
