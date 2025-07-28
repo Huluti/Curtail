@@ -31,12 +31,14 @@ APP_ID = 'com.github.huluti.Curtail'
 class Application(Adw.Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.win = None
 
     def do_startup(self):
         Adw.Application.do_startup(self)
 
     def do_activate(self):
-        self.win = CurtailWindow(application=self)
+        if not self.win:
+            self.win = CurtailWindow(application=self)
         self.win.present()
 
     def do_open(self, g_file_list, amount, ukwn):
