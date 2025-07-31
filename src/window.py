@@ -413,9 +413,12 @@ class CurtailWindow(Adw.ApplicationWindow):
                 error_message = _("This file doesn't exist.").format(filename)
 
             # Check format
-            size = path.stat().st_size
-            if not self.check_format(filename) or size <= 0:
-                error_message = _("Format of this file is not supported.").format(path.name)
+            if not error_message:
+                size = path.stat().st_size
+                if not self.check_format(filename) or size <= 0:
+                    error_message = _("Format of this file is not supported.").format(path.name)
+            else:
+                size = 0
 
             if not error_message:
                 new_filename = self.create_new_filename(path)
