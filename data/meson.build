@@ -1,3 +1,4 @@
+bindir = join_paths(get_option('prefix'), get_option('bindir'))
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 
 gnome = import('gnome')
@@ -51,5 +52,15 @@ if compile_schemas.found()
     args: ['--strict', '--dry-run', meson.current_source_dir()]
   )
 endif
+
+service_conf = configuration_data()
+service_conf.set('app-id', application_id)
+service_conf.set('bindir', bindir)
+configure_file(
+  input: 'com.github.huluti.Curtail.service.in',
+  output: 'com.github.huluti.Curtail.service',
+  configuration: service_conf,
+  install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services')
+)
 
 subdir('icons')
