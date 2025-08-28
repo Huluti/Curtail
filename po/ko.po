@@ -1,15 +1,15 @@
 # curtail.pot
 # Copyright (C) 2021 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
-# Junghee Lee <daemul72@gmail.com>, 2022.
+# Junghee Lee <daemul72@gmail.com>, 2022, 2025.
 # Jaeeun Lee <jaeeun02@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-01 16:48+0200\n"
-"PO-Revision-Date: 2022-06-30 21:40+0900\n"
+"POT-Creation-Date: 2024-10-13 17:19+0200\n"
+"PO-Revision-Date: 2025-08-28 23:30+0900\n"
 "Last-Translator: Junghee Lee <daemul72@gmail.com>\n"
 "Language-Team: https://www.transifex.com/marong/curtail/\n"
 "Language: ko\n"
@@ -17,382 +17,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/com.github.huluti.Curtail.desktop.in:3
-msgid "Curtail"
-msgstr "Curtail"
-
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:5
-#: data/com.github.huluti.Curtail.appdata.xml.in:9 src/ui/window.ui:213
-#: src/window.py:330
 msgid "Compress your images"
 msgstr "사용자의 이미지를 압축합니다"
 
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"PNG, JPEG, WebP, SVG 파일 유형을 지원하는 유용한 이미지 압축기인 Curtail로 이"
+"미지를 최적화하세요."
+
 #: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WebP file "
-"types."
-msgstr ""
-"Curtail은 PNG, JPEG, WebP 파일 형식을 지원하는 유용한 이미지 압축기입니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
-msgid ""
-"It support both lossless and lossy compression modes with an option to "
+"It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
-"이미지의 메타데이터를 유지할지 여부에 대한 옵션으로 무손실 및 손실 압축 모"
-"드를 모두 지원합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:40
-#: data/com.github.huluti.Curtail.appdata.xml.in:48
-#: data/com.github.huluti.Curtail.appdata.xml.in:65
-#: data/com.github.huluti.Curtail.appdata.xml.in:74
-#: data/com.github.huluti.Curtail.appdata.xml.in:90
-#: data/com.github.huluti.Curtail.appdata.xml.in:108
-#: data/com.github.huluti.Curtail.appdata.xml.in:118
-#: data/com.github.huluti.Curtail.appdata.xml.in:126
-#: data/com.github.huluti.Curtail.appdata.xml.in:134
-#: data/com.github.huluti.Curtail.appdata.xml.in:143
-#: data/com.github.huluti.Curtail.appdata.xml.in:151
-#: data/com.github.huluti.Curtail.appdata.xml.in:161
-#: data/com.github.huluti.Curtail.appdata.xml.in:172
-#: data/com.github.huluti.Curtail.appdata.xml.in:186
-#: data/com.github.huluti.Curtail.appdata.xml.in:194
-#: data/com.github.huluti.Curtail.appdata.xml.in:204
-#: data/com.github.huluti.Curtail.appdata.xml.in:216
-#: data/com.github.huluti.Curtail.appdata.xml.in:230
-#: data/com.github.huluti.Curtail.appdata.xml.in:239
-#: data/com.github.huluti.Curtail.appdata.xml.in:248
-#: data/com.github.huluti.Curtail.appdata.xml.in:257
-#: data/com.github.huluti.Curtail.appdata.xml.in:268
-msgid "Here's the changelog of this version:"
-msgstr "이 버전의 변경 로그는 다음과 같습니다:"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:42
-#: data/com.github.huluti.Curtail.appdata.xml.in:50
-msgid "Add Turkish translation. Thank's to @05akalan57."
-msgstr "터키어 번역을 추가합니다. @05akalan57님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:51
-msgid "Add Occitan translation. Thank's to @Mejans."
-msgstr "프로방스어 번역을 추가합니다. @Mejans님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:52
-msgid "Add Galician translation. Thank's to @Fran Dieguez."
-msgstr "갈리시아어 번역을 추가합니다. @Fran Diegues님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:53
-#: data/com.github.huluti.Curtail.appdata.xml.in:55
-msgid "Update Dutch translation. Thank's to @Vistaus."
-msgstr "네덜란드어 번역을 업데이트합니다. @Vistaus님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:54
-#: data/com.github.huluti.Curtail.appdata.xml.in:78
-msgid "Update Spanish translation. Thank's to @oscfdezdz."
-msgstr "스페인어 번역을 업데이트합니다. @oscfdez님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:56
-msgid "Update Croatian translation. Thank's to @milotype."
-msgstr "크로아티아어 번역을 업데이트합니다. @milotype님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:57
-msgid "Update German translation. Thank's to @Etamuk."
-msgstr "독일어 번역을 업데이트합니다. @Etamuk님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:58
-msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
-msgstr ""
-"브라질 포르투갈어 번역을 업데이트합니다. @ful vio-alve님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:59
-msgid "Update Swedish translation. Thank's to @eson57."
-msgstr "스웨덴어 번역을 업데이트합니다. @eson57님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:67
-msgid "Add 'Apply to all queue' option for existing file dialog."
-msgstr "기존 파일 대화상자의 '모든 대기열에 적용하기' 옵션을 추가합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:68
-msgid "Add Polish translation. Thank's to @olokelo."
-msgstr "폴란드어 번역을 추가합니다. @olokelo님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:76
-msgid "Add WebP support. Thank's to @olokelo."
-msgstr "WebP 지원을 추가합니다. @olokelo님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:77
-msgid "Add Croatian translation. Thank's to @milotype."
-msgstr "크로아티아어 번역을 추가합니다. @milotype님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:79
-msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
-msgstr ""
-"포르투갈어(브라질) 번역을 업데이트합니다. @ful vio-alve님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:80
-msgid "Don't accept empty file. Thank's to @akozlovskiy119."
-msgstr "빈 파일을 허용하지 않습니다. @akozlovskiy119님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:81
-msgid "Better guess of extensions. Thank's to @akozlovskiy119."
-msgstr "확장자를 더 잘 추측합니다. @akozlovskiy119님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:82
-msgid ""
-"Use correct file listing format for drag-and-drop. Thank's to "
-"@akozlovskiy119."
-msgstr ""
-"드래그 앤 드롭에 올바른 파일 목록 형식을 사용합니다. @akozlovskyy119님께 "
-"감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:83
-msgid "Fix directory handling. Thank's to @akozlovskiy119."
-msgstr "디렉터리 처리를 수정합니다. @akozlovskyy119님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:84
-msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
-msgstr ""
-"LXQt, MATE, XFCE(#76)에서 누락된 아이콘을 수정합니다. @apandada1님께 감사"
-"드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:92
-msgid "An option to progressive encode jpegs. Thank's to @trst."
-msgstr "JPEG를 점진적으로 인코딩하는 옵션입니다. @trst님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:93
-msgid "Add Russian translation."
-msgstr "러시아어 번역을 추가합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:94
-msgid "Add Slovak translation."
-msgstr "슬로바키아어 번역을 추가합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:95
-msgid "Add Swedish translation."
-msgstr "스웨덴어 번역을 추가합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:96
-msgid "Better handling of existing files."
-msgstr "기존 파일을 더 잘 처리합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:97
-msgid "Better appdata summary."
-msgstr "앱데이터 요약이 개선됩니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:98
-msgid "Update Spanish translation."
-msgstr "스페인어 번역을 업데이트합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:99
-msgid "Compress images with extensions in uppercase."
-msgstr "확장자를 대문자로 하여 이미지를 압축합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:100
-msgid "Center preferences window header switcher. Thank's to @andrenete."
-msgstr "중앙 환경설정 창 헤더 전환도구입니다. @andrenete님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:101
-msgid "Fix columns sorting. Thank's to @andrenete."
-msgstr "열 정렬을 수정합니다. @andrenete님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:102
-msgid ""
-"Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
-"@andrenete."
-msgstr ""
-"빈 접미사를 허용하지 않습니다(JPEG의 잘못된 압축). @andrenete님께 감사드립"
-"니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:110
-msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
-msgstr "새로운 이름. @bertob, @jannuary 및 @jimmac님께 감사드립니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:111
-msgid "A new icon designed by @jimmac."
-msgstr "@jimmac님이 디자인한 새로운 아이콘입니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:112
-msgid "Support for dragging folders."
-msgstr "폴더 드래그하기를 지원합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:120
-msgid "Just fix a packaging file."
-msgstr "패키징 파일만 수정합니다."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:128
-msgid "Just update GNOME runtime"
-msgstr "GNOME 런타임을 업데이트하십시오"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:136
-msgid "Add Portuguese (Brazil) translation"
-msgstr "포르투갈어(브라질) 번역을 추가합니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:137
-msgid "Don't use legacy path for metadata"
-msgstr "메타데이터에 기존 경로를 사용하지 않음"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:145
-msgid "Fix compression of jpg files that produced 0b files"
-msgstr "0바이트 파일을 생성한 jpg 파일의 압축 수정"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:153
-msgid "Add an option to whether keep or not metadata of images"
-msgstr "이미지의 메타데이터를 유지할지 여부를 지정하는 옵션 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:154
-msgid "Replace mozjpeg lib by jpegoptim"
-msgstr "jpegoptim으로 mozjpeg lib 바꾸기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:155
-#: data/com.github.huluti.Curtail.appdata.xml.in:179
-#: data/com.github.huluti.Curtail.appdata.xml.in:198
-msgid "Update translations"
-msgstr "번역 업데이트하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:163
-msgid "Add a spinner to indicate the progress of the compression"
-msgstr "압축 진행 상황을 나타내는 회전자 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:164
-msgid "Using threads to compress images simultaneously"
-msgstr "스레드를 사용하여 동시에 이미지 압축"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:165
-msgid "Simplification of certain sentences"
-msgstr "특정 문장의 단순화"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:166
-msgid "Really don't block the UI anymore when performing compression"
-msgstr "압축을 수행할 때 더 이상 UI를 차단하지 마십시오"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:174
-msgid "Add lossy compression features"
-msgstr "손실 압축 기능 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:175
-msgid "Add options to change compression levels"
-msgstr "압축 수준을 변경하는 옵션 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:176
-msgid "New layout for the preferences dialog"
-msgstr "환경설정 대화상자의 새로운 레이아웃"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:177
-msgid "Don't permit higher resulting size"
-msgstr "더 큰 결과 크기를 허용하지 않습니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:178
-msgid "Better displaying of the drag area"
-msgstr "드래그 영역의 더 좋은 표시"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:180
-msgid "Catch errors in subprocess to avoid crashing the app"
-msgstr "하위 프로세스에서 오류를 잡아 앱 충돌을 방지합니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:188
-msgid "Fix build"
-msgstr "빌드 수정하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:196
-msgid "Fix opening files from file managers"
-msgstr "파일 관리자에서 파일 열기 수정하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:197
-msgid "Add Italian translation"
-msgstr "이탈리아어 번역을 추가합니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:206
-msgid "Toggle the suffix entry according to new file option"
-msgstr "새 파일 옵션에 따라 접미사 항목 전환하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:207
-msgid "Scroll automatically to last compressed image in the list"
-msgstr "목록에서 마지막으로 압축된 이미지로 자동 스크롤하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:208
-msgid "Add save info label also on homepage and displace it at bottom"
-msgstr "홈페이지에도 정보 저장 레이블을 추가하고 하단에 위치시킵니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:209
-msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
-msgstr "일부 오류(예: 폴더)를 방지하기 위해 파일 이름 처리 개선하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:210
-msgid "Various fixes"
-msgstr "다양한 수정 사항"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:218
-msgid "Add a setting to change the '-min' suffix"
-msgstr "'-min' 접미사를 변경하는 설정 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:219
-msgid "Add some explanations of applied settings"
-msgstr "적용된 설정에 대한 설명 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:220
-msgid "Add Ctrl+O shortcut to open files"
-msgstr "파일을 열려면 Ctrl+O 단축키 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:221
-msgid "Add Dutch and German translations"
-msgstr "네덜란드어 및 독일어 번역을 추가합니다"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:222
-msgid "Display translators' names in about dialog"
-msgstr "정보 대화상자에 번역자 이름 표시하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:223
-msgid "Don't block the UI anymore when performing compression"
-msgstr "압축을 수행할 때 UI를 더 이상 차단하지 않음"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:224
-msgid "Fix size of the preferences window"
-msgstr "환경설정 창의 크기 수정하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:232
-msgid "Add a preferences window with new-file and dark-theme options"
-msgstr "새 파일 및 어두운 테마 옵션이 있는 환경설정 창 추가하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:233
-msgid "Various UI changes"
-msgstr "다양한 UI 변경"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:241
-msgid "Permit to sort results by name or saving ratio"
-msgstr "이름 또는 저장 비율별로 결과 정렬 허용하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:242
-msgid "Fix a crash when compressing an image with dots in its name"
-msgstr "이름에 점이 있는 이미지를 압축할 때 충돌 수정하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:250
-msgid "Stick back and forward buttons"
-msgstr "뒤로 및 앞으로 버튼 고정하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:251
-msgid "Change APP id"
-msgstr "앱 ID 변경하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:259
-msgid "Various optimizations"
-msgstr "다양한 최적화"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:260
-msgid "Improve error messages"
-msgstr "오류 메시지 개선하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:261
-msgid "Improve some texts"
-msgstr "일부 텍스트 개선하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:262
-msgid "Change description"
-msgstr "설명 변경하기"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:270
-msgid "Initial version"
-msgstr "초기 버전"
+"무손실(lossless) 및 손실(lossy) 압축 모드를 모두 지원하며, 이미지의 메타데이"
+"터 유지 여부를 선택할 수 있습니다."
+
+#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/ui/window.ui:33
+msgid "Curtail"
+msgstr "Curtail"
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "compress;optimize;image;photo;압축;최적화;이미지;사진;"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -402,60 +58,61 @@ msgstr "새 파일에 저장하기"
 msgid "Save the compressed image into a new file."
 msgstr "압축된 이미지를 새 파일에 저장합니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:135
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Enable recursive compression in folders"
+msgstr "폴더에서 재귀적 압축 활성화"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid "This setting enable compression in a recursive way in folders."
+msgstr ""
+"이 설정은 폴더 내의 모든 하위 폴더와 파일까지 포함하여 압축을 활성화합니다."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Keep metadata"
 msgstr "메타데이터 유지하기"
 
-#: data/com.github.huluti.Curtail.gschema.xml:12
 #: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "이 설정은 이미지의 메타데이터를 보존합니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16 src/ui/preferences.ui:161
+#: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve file attributes if possible"
 msgstr "가능한 경우 파일 속성 보존하기"
 
-#: data/com.github.huluti.Curtail.gschema.xml:21
+#: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Enable lossy mode"
 msgstr "손실 모드 활성화"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
+#: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "Use lossy mode to compress images."
 msgstr "손실 모드를 사용하여 이미지를 압축합니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:85
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Suffix to append at end of new file"
 msgstr "새 파일 끝에 추가할 접미사"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Suffix to append at end of new file."
 msgstr "새 파일의 끝에 추가할 접미사입니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:31 src/ui/preferences.ui:203
+#: data/com.github.huluti.Curtail.gschema.xml:36
 msgid "PNG Lossy Compression Level"
 msgstr "PNG 손실 압축 수준"
 
-#: data/com.github.huluti.Curtail.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Lossy compression level to use for PNG images."
 msgstr "PNG 이미지에 사용할 손실 압축 수준입니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossless Compression Level"
 msgstr "PNG 무손실 압축 수준"
 
-#: data/com.github.huluti.Curtail.gschema.xml:37
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossless compression level to use for PNG images."
 msgstr "PNG 이미지에 사용할 무손실 압축 수준입니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:41
-msgid "WebP Lossless Compression Level"
-msgstr "WebP 무손실 압축 수준"
-
-#: data/com.github.huluti.Curtail.gschema.xml:42
-msgid "Lossless compression level to use for WebP images."
-msgstr "WebP 이미지에 사용할 무손실 압축 수준입니다."
-
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:230
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "JPG Lossy Compression Level"
 msgstr "JPG 손실 압축 수준"
 
@@ -463,7 +120,7 @@ msgstr "JPG 손실 압축 수준"
 msgid "Lossy compression level to use for JPG images."
 msgstr "JPG 이미지에 사용할 손실 압축 수준입니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51 src/ui/preferences.ui:243
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "WebP Lossy Compression Level"
 msgstr "WebP 손실 압축 수준"
 
@@ -472,175 +129,620 @@ msgid "Lossy compression level to use for WebP images."
 msgstr "WebP 이미지에 사용할 손실 압축 수준입니다."
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
-msgid "Enable progressive encoding for jpegs"
-msgstr "JPEG에 대한 프로그레시브 인코딩 활성화"
+msgid "WebP Lossless Compression Level"
+msgstr "WebP 무손실 압축 수준"
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Lossless compression level to use for WebP images."
+msgstr "WebP 이미지에 사용할 무손실 압축 수준입니다."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "Enable progressive encoding for JPEG images."
+msgstr "JPEG 이미지에 대해 점진적 인코딩을 활성화합니다."
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Optionally encode jpeg images progressively."
 msgstr "선택적으로 JPEG 이미지들을 점진적으로 인코딩합니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:61 src/ui/preferences.ui:59
-msgid "Enable dark theme"
-msgstr "어두운 테마 활성화"
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Enable maximum compression for SVG images."
+msgstr "SVG 이미지에 최대 압축을 활성화합니다."
 
-#: data/com.github.huluti.Curtail.gschema.xml:62
-msgid "Use dark theme for the windows."
-msgstr "창에 어두운 테마를 사용합니다."
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Optionally enable maximum cleaning of SVG images."
+msgstr "선택적으로 SVG 이미지의 최대 정리를 활성화합니다."
 
-#: src/ui/window.ui:47
-msgid "Drag and drop your images here..."
-msgstr "이미지를 여기에 끌어다 놓기..."
+#: data/com.github.huluti.Curtail.gschema.xml:71 data/ui/preferences.ui:43
+msgid "Compression Timeout"
+msgstr "압축 시간초과"
 
-#: src/ui/window.ui:62
-msgid "or"
-msgstr "또는"
+#: data/com.github.huluti.Curtail.gschema.xml:72
+msgid "Compression timeout for each image."
+msgstr "각 이미지에 대한 압축 시간초과."
 
-#: src/ui/window.ui:75 src/window.py:173
-msgid "Browse your files"
-msgstr "사용자의 파일 찾아보기"
-
-#: src/ui/window.ui:100
-msgid "Lossless"
-msgstr "무손실"
-
-#: src/ui/window.ui:129
-msgid "Lossy"
-msgstr "손실"
-
-#: src/ui/preferences.ui:32 src/ui/menu.ui:6
-msgid "Preferences"
-msgstr "환경설정"
-
-#: src/ui/preferences.ui:109
-msgid "Save the compressed image into a new file"
-msgstr "압축된 이미지를 새 파일에 저장하기"
-
-#: src/ui/preferences.ui:184
+#: data/ui/help_overlay.ui:11
+msgctxt "shortcut window"
 msgid "General"
 msgstr "일반"
 
-#: src/ui/preferences.ui:281
-msgid "Compression"
-msgstr "압축"
+#: data/ui/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Select File"
+msgstr "파일 선택하기"
 
-#: src/ui/preferences.ui:314
+#: data/ui/help_overlay.ui:20
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "환경설정"
+
+#: data/ui/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "키보드 단축키"
+
+#: data/ui/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "종료"
+
+#: data/ui/preferences.ui:4 data/ui/menu.ui:10
+msgid "Preferences"
+msgstr "환경설정"
+
+#: data/ui/preferences.ui:8
+msgid "General"
+msgstr "일반"
+
+#: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr "안전 모드"
+
+#: data/ui/preferences.ui:15
+msgid "Save the compressed image in a new file"
+msgstr "압축된 이미지를 새 파일에 저장하기"
+
+#: data/ui/preferences.ui:20
+msgid "New File Suffix"
+msgstr "새 파일 접미어"
+
+#: data/ui/preferences.ui:25
+msgid "Recursive Compression"
+msgstr "재귀적 압축"
+
+#: data/ui/preferences.ui:26
+msgid "Enable or disable compression through subdirectories"
+msgstr "하위 디렉터리를 통한 압축 활성화 또는 비활성화"
+
+#: data/ui/preferences.ui:31
+msgid "Keep Metadata"
+msgstr "메타데이터 유지하기"
+
+#: data/ui/preferences.ui:32
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "렌더링에 영향을 미치지 않는 메타데이터 청크 유지하기"
+
+#: data/ui/preferences.ui:37
+msgid "Keep File Attributes When Possible"
+msgstr "가능한 한 파일 속성 유지하기"
+
+#: data/ui/preferences.ui:38
 msgid ""
-"PNG Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
-msgstr ""
-"PNG 무손실 압축 수준\n"
-"(높을수록 더 느림)"
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr "새 파일에 원본 파일과 동일한 권한 및 타임스탬프가 있는지 확인하세요"
 
-#: src/ui/preferences.ui:341
-msgid ""
-"WebP Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
-msgstr ""
-"WebP 무손실 압축 수준\n"
-"(높을수록 더 느림)"
+#: data/ui/preferences.ui:44
+msgid "Set the timeout between images"
+msgstr "이미지 간 시간초과 지정하기"
 
-#: src/ui/preferences.ui:355
-msgid "Progressive Encode JPG"
-msgstr "프로그레시브 인코딩 JPG"
+#: data/ui/preferences.ui:62
+msgid "Formats"
+msgstr "형식"
 
-#: src/ui/preferences.ui:378
-msgid "Advanced"
-msgstr "고급"
+#: data/ui/preferences.ui:69 data/ui/preferences.ui:100
+#: data/ui/preferences.ui:124
+msgid "Lossy Compression"
+msgstr "손실 압축"
 
-#: src/ui/apply.ui:7
-msgid "File already exists"
-msgstr "파일이 이미 있습니다"
+#: data/ui/preferences.ui:70 data/ui/preferences.ui:101
+#: data/ui/preferences.ui:125
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr "생성된 이미지의 화질을 지정하는 기능이며, 100이 가장 좋은 화질"
 
-#: src/ui/apply.ui:26
-msgid "Compress"
-msgstr "압축하기"
+#: data/ui/preferences.ui:82 data/ui/preferences.ui:137
+msgid "Lossless Compression Level"
+msgstr "무손실 압축 수준"
 
-#: src/ui/apply.ui:39
-msgid "Skip"
-msgstr "건너뛰기"
+#: data/ui/preferences.ui:83 data/ui/preferences.ui:138
+msgid "Set the level of the compression, 6 is the highest but slowest level"
+msgstr "압축 수준을 지정하며, 6이 가장 높지만 가장 느린 수준"
 
-#: src/ui/apply.ui:76
-msgid "Apply to all queue"
-msgstr "모든 대기열에 적용하기"
+#: data/ui/preferences.ui:113
+msgid "Progressive Encode"
+msgstr "프로그레시브 인코드"
 
-#: src/ui/menu.ui:10
+#: data/ui/preferences.ui:114
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr "이미지를 흐릿한 상태에서 선명한 상태로 점진적으로 렌더링하도록 활성화"
+
+#: data/ui/preferences.ui:155
+msgid "Maximum Compression Level"
+msgstr "최대 압축 수준"
+
+#: data/ui/preferences.ui:156
+msgid "This can be more destructive for the image"
+msgstr "이는 이미지에 더 큰 손상을 줄 수 있습니다"
+
+#: data/ui/menu.ui:6
+msgid "Bulk Compress Directory"
+msgstr "일괄 압축 디렉터리"
+
+#: data/ui/menu.ui:14
+msgid "Keyboard Shortcuts"
+msgstr "키보드 단축키"
+
+#: data/ui/menu.ui:18
 msgid "About Curtail"
 msgstr "Curtail 정보"
 
-#: src/window.py:93
-msgid "Filename"
-msgstr "파일이름"
+#: data/ui/window.ui:19 src/window.py:240
+msgid "Browse Files"
+msgstr "파일 찾아보기"
 
-#: src/window.py:94
-msgid "Old Size"
-msgstr "이전 크기"
+#: data/ui/window.ui:26
+msgid "Clear Results"
+msgstr "결과 지우기"
 
-#: src/window.py:95
-msgid "New Size"
-msgstr "새로운 크기"
+#: data/ui/window.ui:40
+msgid "Main Menu"
+msgstr "메인 메뉴"
 
-#: src/window.py:96
-msgid "Savings"
-msgstr "절감"
+#: data/ui/window.ui:51
+msgid "_Change Mode"
+msgstr "모드 변경하기(_C)"
 
-#: src/window.py:160
-msgid "Images are saved with <b>'{}' suffix</b>."
-msgstr "이미지는 <b>'{}' 접미사</b>로 저장됩니다."
+#: data/ui/window.ui:52
+msgid "Images will be overwritten, proceed carefully"
+msgstr "이미지가 덮어씌워지므로 주의해서 진행하세요"
 
-#: src/window.py:163
-msgid "Images are <b>overwritten</b>."
-msgstr "이미지를 <b>덮어씁니다</b>."
+#: data/ui/window.ui:60
+msgid "Drop images here to compress them"
+msgstr "이미지를 여기에 놓아 압축하세요"
 
-#: src/window.py:234
-msgid "Format not supported"
-msgstr "지원되지 않는 형식"
+#: data/ui/window.ui:66
+msgid "_Browse Files"
+msgstr "파일 찾아보기(_B)"
 
-#: src/window.py:235
-msgid "The format of {} is not supported."
-msgstr "{}의 형식은 지원되지 않습니다."
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "무손실"
 
-#: src/window.py:239
-msgid "Path not valid"
-msgstr "경로가 올바르지 않음"
+#: data/ui/window.ui:97
+msgid "Lossy"
+msgstr "손실"
 
-#: src/window.py:240
-msgid "{} doesn't exist."
-msgstr "{}이(가) 존재하지 않습니다."
+#: src/compressor.py:98
+msgid "Compression has reached the configured timeout of {} seconds."
+msgstr "압축 작업이 설정된 시간초과인 {}초에 도달했습니다."
 
-#: src/window.py:329
+#: src/compressor.py:102
+msgid "An unknown error has occurred"
+msgstr "알 수 없는 오류가 발생했습니다"
+
+#: src/compressor.py:122
+msgid "Can't find the compressed file"
+msgstr "압축 파일을 찾을 수 없습니다"
+
+#: src/tools.py:32
+msgid "All images"
+msgstr "모든 이미지"
+
+#: src/tools.py:39
+msgid "PNG images"
+msgstr "PNG 이미지"
+
+#: src/tools.py:43
+msgid "JPEG images"
+msgstr "JPEG 이미지"
+
+#: src/tools.py:47
+msgid "WebP images"
+msgstr "WebP 이미지"
+
+#: src/tools.py:51
+msgid "SVG images"
+msgstr "SVG 이미지"
+
+#: src/tools.py:145 src/tools.py:152 src/tools.py:159 src/tools.py:166
+#: src/tools.py:173 src/tools.py:203
+msgid "Version not found"
+msgstr "버전을 찾을 수 없습니다"
+
+#: src/window.py:205
+msgid "Open Image"
+msgstr "이미지 열기"
+
+#: src/window.py:206
+msgid "Show in Folder"
+msgstr "폴더에 표시하기"
+
+#: src/window.py:227
+msgid "Safe mode with â{}â suffix"
+msgstr "â{}â 접미어를 붙인 안전 모드"
+
+#: src/window.py:227
+msgid "Safe mode with â{}â prefix"
+msgstr "â{}â 접두어를 붙인 안전 모드"
+
+#: src/window.py:230
+msgid "Overwrite mode"
+msgstr "겹쳐쓰기 모드"
+
+#: src/window.py:257
+msgid "Browse Directories"
+msgstr "디렉터리 찾아보기"
+
+#: src/window.py:282 src/window.py:288
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "해당 디렉토리의 이미지를 압축하시겠습니까?"
+
+#: src/window.py:283
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"선택한 디렉터리와 그 하위 디렉터리에 있는 모든 이미지가 압축됩니다. 원본 이미"
+"지는 수정되지 않습니다."
+
+#: src/window.py:289
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"선택한 디렉터리와 그 하위 디렉터리에 있는 모든 이미지가 압축되어 덮어쓰기됩니"
+"다!"
+
+#: src/window.py:292
+msgid "Cancel"
+msgstr "취소하기"
+
+#: src/window.py:293
+msgid "Compress"
+msgstr "압축하기"
+
+#: src/window.py:362
+msgid "No files found"
+msgstr "파일을 찾을 수 없음"
+
+#: src/window.py:372
+msgid "This file doesn't exist."
+msgstr "이 파일은 존재하지 않습니다."
+
+#: src/window.py:377
+msgid "Format of this file is not supported."
+msgstr "이 파일의 형식은 지원되지 않습니다."
+
+#: src/window.py:433
 msgid "translator-credits"
 msgstr ""
 "Junghee Lee <daemul72@gmail.com>\n"
 "Jaeeun Lee <jaeeun02@gmail.com>"
 
-#: src/window.py:331
-msgid "Distributed under the GNU GPL(v3) license.\n"
-msgstr "GNU GPL(v3) 라이선스에 따라 배포됩니다.\n"
+#: src/window.py:437
+msgid "Contributors"
+msgstr "기여자"
 
-#: src/compressor.py:60
-msgid "An error has occurred"
-msgstr "오류가 발생했습니다"
+#~ msgid "Here's the changelog of this version:"
+#~ msgstr "이 버전의 변경 로그는 다음과 같습니다:"
 
-#: src/apply.py:49
-msgid ""
-"The file <b>{}</b> already exists.\n"
-"Do you want to compress the image anyway?"
-msgstr ""
-"<b>{}</b> 파일이 이미 존재합니다.\n"
-"그래도 이미지를 압축하시겠습니까?"
+#~ msgid "Add Turkish translation. Thank's to @05akalan57."
+#~ msgstr "터키어 번역을 추가합니다. @05akalan57님께 감사드립니다."
 
-#: src/tools.py:47
-msgid "All images"
-msgstr "모든 이미지"
+#~ msgid "Add Occitan translation. Thank's to @Mejans."
+#~ msgstr "프로방스어 번역을 추가합니다. @Mejans님께 감사드립니다."
 
-#: src/tools.py:53
-msgid "PNG images"
-msgstr "PNG 이미지"
+#~ msgid "Add Galician translation. Thank's to @Fran Dieguez."
+#~ msgstr "갈리시아어 번역을 추가합니다. @Fran Diegues님께 감사드립니다."
 
-#: src/tools.py:57
-msgid "JPEG images"
-msgstr "JPEG 이미지"
+#~ msgid "Update Dutch translation. Thank's to @Vistaus."
+#~ msgstr "네덜란드어 번역을 업데이트합니다. @Vistaus님께 감사드립니다."
 
-#: src/tools.py:61
-msgid "WebP images"
-msgstr "WebP 이미지"
+#~ msgid "Update Spanish translation. Thank's to @oscfdezdz."
+#~ msgstr "스페인어 번역을 업데이트합니다. @oscfdez님께 감사드립니다."
+
+#~ msgid "Update Croatian translation. Thank's to @milotype."
+#~ msgstr "크로아티아어 번역을 업데이트합니다. @milotype님께 감사드립니다."
+
+#~ msgid "Update German translation. Thank's to @Etamuk."
+#~ msgstr "독일어 번역을 업데이트합니다. @Etamuk님께 감사드립니다."
+
+#~ msgid "Update Portuguese Brazil translation. Thank's to @fulvio-alves."
+#~ msgstr ""
+#~ "브라질 포르투갈어 번역을 업데이트합니다. @ful vio-alve님께 감사드립니다."
+
+#~ msgid "Update Swedish translation. Thank's to @eson57."
+#~ msgstr "스웨덴어 번역을 업데이트합니다. @eson57님께 감사드립니다."
+
+#~ msgid "Add 'Apply to all queue' option for existing file dialog."
+#~ msgstr "기존 파일 대화상자의 '모든 대기열에 적용하기' 옵션을 추가합니다."
+
+#~ msgid "Add Polish translation. Thank's to @olokelo."
+#~ msgstr "폴란드어 번역을 추가합니다. @olokelo님께 감사드립니다."
+
+#~ msgid "Add WebP support. Thank's to @olokelo."
+#~ msgstr "WebP 지원을 추가합니다. @olokelo님께 감사드립니다."
+
+#~ msgid "Add Croatian translation. Thank's to @milotype."
+#~ msgstr "크로아티아어 번역을 추가합니다. @milotype님께 감사드립니다."
+
+#~ msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
+#~ msgstr ""
+#~ "포르투갈어(브라질) 번역을 업데이트합니다. @ful vio-alve님께 감사드립니다."
+
+#~ msgid "Don't accept empty file. Thank's to @akozlovskiy119."
+#~ msgstr "빈 파일을 허용하지 않습니다. @akozlovskiy119님께 감사드립니다."
+
+#~ msgid "Better guess of extensions. Thank's to @akozlovskiy119."
+#~ msgstr "확장자를 더 잘 추측합니다. @akozlovskiy119님께 감사드립니다."
+
+#~ msgid ""
+#~ "Use correct file listing format for drag-and-drop. Thank's to "
+#~ "@akozlovskiy119."
+#~ msgstr ""
+#~ "드래그 앤 드롭에 올바른 파일 목록 형식을 사용합니다. @akozlovskyy119님께 "
+#~ "감사드립니다."
+
+#~ msgid "Fix directory handling. Thank's to @akozlovskiy119."
+#~ msgstr "디렉터리 처리를 수정합니다. @akozlovskyy119님께 감사드립니다."
+
+#~ msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
+#~ msgstr ""
+#~ "LXQt, MATE, XFCE(#76)에서 누락된 아이콘을 수정합니다. @apandada1님께 감사"
+#~ "드립니다."
+
+#~ msgid "An option to progressive encode jpegs. Thank's to @trst."
+#~ msgstr "JPEG를 점진적으로 인코딩하는 옵션입니다. @trst님께 감사드립니다."
+
+#~ msgid "Add Russian translation."
+#~ msgstr "러시아어 번역을 추가합니다."
+
+#~ msgid "Add Slovak translation."
+#~ msgstr "슬로바키아어 번역을 추가합니다."
+
+#~ msgid "Add Swedish translation."
+#~ msgstr "스웨덴어 번역을 추가합니다."
+
+#~ msgid "Better handling of existing files."
+#~ msgstr "기존 파일을 더 잘 처리합니다."
+
+#~ msgid "Better appdata summary."
+#~ msgstr "앱데이터 요약이 개선됩니다."
+
+#~ msgid "Update Spanish translation."
+#~ msgstr "스페인어 번역을 업데이트합니다."
+
+#~ msgid "Compress images with extensions in uppercase."
+#~ msgstr "확장자를 대문자로 하여 이미지를 압축합니다."
+
+#~ msgid "Center preferences window header switcher. Thank's to @andrenete."
+#~ msgstr "중앙 환경설정 창 헤더 전환도구입니다. @andrenete님께 감사드립니다."
+
+#~ msgid "Fix columns sorting. Thank's to @andrenete."
+#~ msgstr "열 정렬을 수정합니다. @andrenete님께 감사드립니다."
+
+#~ msgid ""
+#~ "Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
+#~ "@andrenete."
+#~ msgstr ""
+#~ "빈 접미사를 허용하지 않습니다(JPEG의 잘못된 압축). @andrenete님께 감사드립"
+#~ "니다."
+
+#~ msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
+#~ msgstr "새로운 이름. @bertob, @jannuary 및 @jimmac님께 감사드립니다."
+
+#~ msgid "A new icon designed by @jimmac."
+#~ msgstr "@jimmac님이 디자인한 새로운 아이콘입니다."
+
+#~ msgid "Support for dragging folders."
+#~ msgstr "폴더 드래그하기를 지원합니다."
+
+#~ msgid "Just fix a packaging file."
+#~ msgstr "패키징 파일만 수정합니다."
+
+#~ msgid "Just update GNOME runtime"
+#~ msgstr "GNOME 런타임을 업데이트하십시오"
+
+#~ msgid "Add Portuguese (Brazil) translation"
+#~ msgstr "포르투갈어(브라질) 번역을 추가합니다"
+
+#~ msgid "Don't use legacy path for metadata"
+#~ msgstr "메타데이터에 기존 경로를 사용하지 않음"
+
+#~ msgid "Fix compression of jpg files that produced 0b files"
+#~ msgstr "0바이트 파일을 생성한 jpg 파일의 압축 수정"
+
+#~ msgid "Add an option to whether keep or not metadata of images"
+#~ msgstr "이미지의 메타데이터를 유지할지 여부를 지정하는 옵션 추가하기"
+
+#~ msgid "Replace mozjpeg lib by jpegoptim"
+#~ msgstr "jpegoptim으로 mozjpeg lib 바꾸기"
+
+#~ msgid "Update translations"
+#~ msgstr "번역 업데이트하기"
+
+#~ msgid "Add a spinner to indicate the progress of the compression"
+#~ msgstr "압축 진행 상황을 나타내는 회전자 추가하기"
+
+#~ msgid "Using threads to compress images simultaneously"
+#~ msgstr "스레드를 사용하여 동시에 이미지 압축"
+
+#~ msgid "Simplification of certain sentences"
+#~ msgstr "특정 문장의 단순화"
+
+#~ msgid "Really don't block the UI anymore when performing compression"
+#~ msgstr "압축을 수행할 때 더 이상 UI를 차단하지 마십시오"
+
+#~ msgid "Add lossy compression features"
+#~ msgstr "손실 압축 기능 추가하기"
+
+#~ msgid "Add options to change compression levels"
+#~ msgstr "압축 수준을 변경하는 옵션 추가하기"
+
+#~ msgid "New layout for the preferences dialog"
+#~ msgstr "환경설정 대화상자의 새로운 레이아웃"
+
+#~ msgid "Don't permit higher resulting size"
+#~ msgstr "더 큰 결과 크기를 허용하지 않습니다"
+
+#~ msgid "Better displaying of the drag area"
+#~ msgstr "드래그 영역의 더 좋은 표시"
+
+#~ msgid "Catch errors in subprocess to avoid crashing the app"
+#~ msgstr "하위 프로세스에서 오류를 잡아 앱 충돌을 방지합니다"
+
+#~ msgid "Fix build"
+#~ msgstr "빌드 수정하기"
+
+#~ msgid "Fix opening files from file managers"
+#~ msgstr "파일 관리자에서 파일 열기 수정하기"
+
+#~ msgid "Add Italian translation"
+#~ msgstr "이탈리아어 번역을 추가합니다"
+
+#~ msgid "Toggle the suffix entry according to new file option"
+#~ msgstr "새 파일 옵션에 따라 접미사 항목 전환하기"
+
+#~ msgid "Scroll automatically to last compressed image in the list"
+#~ msgstr "목록에서 마지막으로 압축된 이미지로 자동 스크롤하기"
+
+#~ msgid "Add save info label also on homepage and displace it at bottom"
+#~ msgstr "홈페이지에도 정보 저장 레이블을 추가하고 하단에 위치시킵니다"
+
+#~ msgid "Improve handling of filenames to avoid some errors (e.g., folders)"
+#~ msgstr "일부 오류(예: 폴더)를 방지하기 위해 파일 이름 처리 개선하기"
+
+#~ msgid "Various fixes"
+#~ msgstr "다양한 수정 사항"
+
+#~ msgid "Add a setting to change the '-min' suffix"
+#~ msgstr "'-min' 접미사를 변경하는 설정 추가하기"
+
+#~ msgid "Add some explanations of applied settings"
+#~ msgstr "적용된 설정에 대한 설명 추가하기"
+
+#~ msgid "Add Ctrl+O shortcut to open files"
+#~ msgstr "파일을 열려면 Ctrl+O 단축키 추가하기"
+
+#~ msgid "Add Dutch and German translations"
+#~ msgstr "네덜란드어 및 독일어 번역을 추가합니다"
+
+#~ msgid "Display translators' names in about dialog"
+#~ msgstr "정보 대화상자에 번역자 이름 표시하기"
+
+#~ msgid "Don't block the UI anymore when performing compression"
+#~ msgstr "압축을 수행할 때 UI를 더 이상 차단하지 않음"
+
+#~ msgid "Fix size of the preferences window"
+#~ msgstr "환경설정 창의 크기 수정하기"
+
+#~ msgid "Add a preferences window with new-file and dark-theme options"
+#~ msgstr "새 파일 및 어두운 테마 옵션이 있는 환경설정 창 추가하기"
+
+#~ msgid "Various UI changes"
+#~ msgstr "다양한 UI 변경"
+
+#~ msgid "Permit to sort results by name or saving ratio"
+#~ msgstr "이름 또는 저장 비율별로 결과 정렬 허용하기"
+
+#~ msgid "Fix a crash when compressing an image with dots in its name"
+#~ msgstr "이름에 점이 있는 이미지를 압축할 때 충돌 수정하기"
+
+#~ msgid "Stick back and forward buttons"
+#~ msgstr "뒤로 및 앞으로 버튼 고정하기"
+
+#~ msgid "Various optimizations"
+#~ msgstr "다양한 최적화"
+
+#~ msgid "Improve error messages"
+#~ msgstr "오류 메시지 개선하기"
+
+#~ msgid "Improve some texts"
+#~ msgstr "일부 텍스트 개선하기"
+
+#~ msgid "Change description"
+#~ msgstr "설명 변경하기"
+
+#~ msgid "Initial version"
+#~ msgstr "초기 버전"
+
+#~ msgid "Enable dark theme"
+#~ msgstr "어두운 테마 활성화"
+
+#~ msgid "Use dark theme for the windows."
+#~ msgstr "창에 어두운 테마를 사용합니다."
+
+#~ msgid "Drag and drop your images here..."
+#~ msgstr "이미지를 여기에 끌어다 놓기..."
+
+#~ msgid "or"
+#~ msgstr "또는"
+
+#~ msgid ""
+#~ "PNG Lossless Compression Level\n"
+#~ "(the higher it is, the slower it is)"
+#~ msgstr ""
+#~ "PNG 무손실 압축 수준\n"
+#~ "(높을수록 더 느림)"
+
+#~ msgid ""
+#~ "WebP Lossless Compression Level\n"
+#~ "(the higher it is, the slower it is)"
+#~ msgstr ""
+#~ "WebP 무손실 압축 수준\n"
+#~ "(높을수록 더 느림)"
+
+#~ msgid "Advanced"
+#~ msgstr "고급"
+
+#~ msgid "File already exists"
+#~ msgstr "파일이 이미 있습니다"
+
+#~ msgid "Skip"
+#~ msgstr "건너뛰기"
+
+#~ msgid "Apply to all queue"
+#~ msgstr "모든 대기열에 적용하기"
+
+#~ msgid "Filename"
+#~ msgstr "파일이름"
+
+#~ msgid "Old Size"
+#~ msgstr "이전 크기"
+
+#~ msgid "New Size"
+#~ msgstr "새로운 크기"
+
+#~ msgid "Savings"
+#~ msgstr "절감"
+
+#~ msgid "Images are saved with <b>'{}' suffix</b>."
+#~ msgstr "이미지는 <b>'{}' 접미사</b>로 저장됩니다."
+
+#~ msgid "Images are <b>overwritten</b>."
+#~ msgstr "이미지를 <b>덮어씁니다</b>."
+
+#~ msgid "Format not supported"
+#~ msgstr "지원되지 않는 형식"
+
+#~ msgid "Path not valid"
+#~ msgstr "경로가 올바르지 않음"
+
+#~ msgid "Distributed under the GNU GPL(v3) license.\n"
+#~ msgstr "GNU GPL(v3) 라이선스에 따라 배포됩니다.\n"
+
+#~ msgid ""
+#~ "The file <b>{}</b> already exists.\n"
+#~ "Do you want to compress the image anyway?"
+#~ msgstr ""
+#~ "<b>{}</b> 파일이 이미 존재합니다.\n"
+#~ "그래도 이미지를 압축하시겠습니까?"
