@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-15 14:51+0000\n"
+"POT-Creation-Date: 2025-09-17 15:26+0000\n"
 "PO-Revision-Date: 2025-03-23 08:00+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -24,13 +24,13 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:4
 #: data/ui/window.ui:33
 msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
-#: data/com.github.huluti.Curtail.desktop.in:5
+#: data/com.github.huluti.Curtail.desktop.in:4
 msgid "Compress your images"
 msgstr "Görüntülerinizi sıkıştırın"
 
@@ -42,7 +42,7 @@ msgstr ""
 "Curtail, PNG, JPEG, WebP ve SVG dosya türlerini destekleyen kullanışlı bir "
 "görüntü sıkıştırıcıdır"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -51,7 +51,7 @@ msgstr ""
 "hem de kayıplı sıkıştırma kiplerini destekler"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.appdata.xml.in:16
 msgid "Hugo Posnic"
 msgstr "Hugo Posnic"
 
@@ -76,8 +76,7 @@ msgstr "Yeni dosya için metin ekleme kipini seç"
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
 msgstr ""
-"Yeni dosya için ek metnin (ön ya da son ek olarak) nasıl ekleneceğini "
-"ayarla."
+"Yeni dosya için ek metnin (ön ya da son ek olarak) nasıl ekleneceğini ayarla."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
@@ -350,15 +349,15 @@ msgstr "Görüntülerin üzerine yazılacak, dikkatli ilerleyin"
 msgid "Drop images here to compress them"
 msgstr "Sıkıştırmak için görüntüleri buraya bırakın"
 
-#: data/ui/window.ui:66
+#: data/ui/window.ui:67
 msgid "_Browse Files"
 msgstr "Dosyalara _Göz At"
 
-#: data/ui/window.ui:85
+#: data/ui/window.ui:82
 msgid "Lossless"
 msgstr "Kayıpsız"
 
-#: data/ui/window.ui:97
+#: data/ui/window.ui:88
 msgid "Lossy"
 msgstr "Kayıplı"
 
@@ -370,7 +369,7 @@ msgstr "Sıkıştırma, yapılandırılan {} saniyelik zaman aşımına ulaştı
 msgid "An unknown error has occurred"
 msgstr "Bilinmeyen hata oluştu"
 
-#: src/compressor.py:158
+#: src/compressor.py:161
 msgid "Can't find the compressed file"
 msgstr "Sıkıştırılmış dosya bulunamadı"
 
@@ -423,16 +422,6 @@ msgstr "Görüntü Aç"
 msgid "Show in Folder"
 msgstr "Klasörde Göster"
 
-#: src/window.py:257
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” suffix"
-msgstr "“{suffix_prefix}” son ekiyle güvenli kip"
-
-#: src/window.py:260
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” prefix"
-msgstr "“{suffix_prefix}” ön ekiyle güvenli kip"
-
 #: src/window.py:263
 msgid "Overwrite mode"
 msgstr "Üzerine yazma kipi"
@@ -477,16 +466,16 @@ msgstr "Dosya bulunamadı"
 msgid "This file doesn't exist."
 msgstr "Böyle bir dosya yok."
 
-#: src/window.py:418
+#: src/window.py:419
 msgid "Format of this file is not supported."
 msgstr "Bu dosyanın biçimi desteklenmiyor."
 
-#: src/window.py:474
+#: src/window.py:477
 msgid "translator-credits"
 msgstr ""
 "Sabri Ünal <yakushabb@gmail.com>\n"
 "Muhammet Emin Akalan <05akalan57@gmail.com>"
 
-#: src/window.py:478
+#: src/window.py:481
 msgid "Contributors"
 msgstr "Katkıda Bulunanlar"
