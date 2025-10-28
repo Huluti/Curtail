@@ -75,7 +75,7 @@ Curtail uses a number of open source projects to work properly:
 - [pngquant](https://pngquant.org)
 - [Jpegoptim](https://github.com/tjko/jpegoptim)
 - [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html)
-- [Scour](https://gitlab.com/inkscape/extras/scour)
+- [svgo](https://github.com/svg/svgo)
 
 ## Translations
 Translation of this project takes place on the GNOME translation platform,

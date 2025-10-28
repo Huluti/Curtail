@@ -238,20 +238,11 @@ class Compressor():
 
         return command
 
-    def build_svg_command(self, result_item):
-        # workaround for https://github.com/scour-project/scour/issues/129
-        temp_new_filename = result_item.new_filename
-        if not self.do_new_file:
-            temp_new_filename = '{}.temp'.format(result_item.new_filename)
+def build_svg_command(self, result_item):
+    command = f"svgo {quote(result_item.filename)} -o {quote(result_item.new_filename)}"
 
-        command = 'scour -i {} -o {}'.format(quote(result_item.filename), quote(temp_new_filename))
+    if self.svg_maximum_level:
+        command += " --multipass --pretty=false"
 
-        if self.svg_maximum_level:
-            command += ' --enable-viewboxing --enable-id-stripping'
-            command += ' --enable-comment-stripping --shorten-ids --indent=none'
-
-        if not self.do_new_file:
-            command += ' && mv {} {}'.format(quote(temp_new_filename), quote(result_item.new_filename))
-
-        return command
+    return command
 

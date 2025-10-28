@@ -175,10 +175,10 @@ def debug_infos():
 
     # Scour
     try:
-        scour = subprocess.check_output(['scour', '--version'])
-        scour = extract_version(scour.decode('utf-8'))
+        svgo = subprocess.check_output(['svgo', '--version'])
+        svgo = extract_version(svgo.decode('utf-8'))
     except Exception:
-        scour = _('Version not found')
+        svgo = _('Version not found')
 
     debug = '''Python: {}\n
 Gtk: {}\n
@@ -186,14 +186,14 @@ Jpegoptim: {}\n
 Oxipng: {}\n
 pngquant: {}\n
 Libwebp: {}\n
-Scour: {}\n'''.format(
+svgo: {}\n'''.format(
     python_version,
     gtk_version,
     jpegoptim,
     oxipng,
     pngquant,
     libwebp,
-    scour
+    svgo
 )
 
     return debug

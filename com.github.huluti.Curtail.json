@@ -4,7 +4,8 @@
     "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.rust-stable"
+        "org.freedesktop.Sdk.Extension.rust-stable",
+        "org.freedesktop.Sdk.Extension.node24"
     ],
     "command": "curtail",
     "finish-args": [
@@ -96,7 +97,35 @@
                 "pngquant-sources.json"
             ]
         },
-        "python3-scour.json",
+	{
+	    "name": "svgo",
+	    "buildsystem": "simple",
+	    "build-options": {
+		"append-path": "/usr/lib/sdk/node24/bin",
+		"env": {
+		    "XDG_CACHE_HOME": "/run/build/svgo/flatpak-node/cache"
+		},
+		"build-args": ["--share=network"]
+	    },
+	    "build-commands": [
+		"npm install",
+		"ls /usr/lib/sdk/node24/bin",
+		"install -Dm755 /usr/lib/sdk/node24/bin/svgo /app/bin/svgo"
+	    ],
+	    "sources": [
+		"svgo-sources.json",
+		{
+		    "type": "git",
+		    "url": "https://github.com/svg/svgo.git",
+		    "tag": "v4.0.0",
+		    "commit": "71e1f05a7efdb667ff61df53f621e8f3e48076fc",
+		    "x-checker-data": {
+		        "type": "git",
+		        "tag-pattern": "^v([\\d.]+)$"
+		    }
+		}
+	    ]
+	},
         {
             "name": "curtail",
             "buildsystem": "meson",

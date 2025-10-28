@@ -1,0 +1,254 @@
+[
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz",
+        "sha512": "25939203b328f6c34607cf948d283374bb68916024cb5cdbced3375912c26d9ef4ff771300d99098e751ef2da0f89d1ed965f2c32d724b8ebcb58f88aeea84c3",
+        "dest-filename": "9203b328f6c34607cf948d283374bb68916024cb5cdbced3375912c26d9ef4ff771300d99098e751ef2da0f89d1ed965f2c32d724b8ebcb58f88aeea84c3",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/25/93"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/commander/-/commander-11.1.0.tgz",
+        "sha512": "c8f55abdfc82711866a2b0bbad69641e7d796f8c03560566040ee457841506c17b92fffd4ca2406c05d54f1bd39f03fc1c72a34422430a529b7228984bba740d",
+        "dest-filename": "5abdfc82711866a2b0bbad69641e7d796f8c03560566040ee457841506c17b92fffd4ca2406c05d54f1bd39f03fc1c72a34422430a529b7228984bba740d",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/c8/f5"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz",
+        "sha512": "4e2cd3cd475d1bfc582c0dcd5e87453347d26cd8b35e338a86a890430be196ca5a759a249f5283cb4359152d30b84b9b218015e7f735fe502bd1369a157117cf",
+        "dest-filename": "d3cd475d1bfc582c0dcd5e87453347d26cd8b35e338a86a890430be196ca5a759a249f5283cb4359152d30b84b9b218015e7f735fe502bd1369a157117cf",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/4e/2c"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/css-tree/-/css-tree-2.2.1.tgz",
+        "sha512": "380d2620bcc67359023824897ab39ea83c434381ce87e1bc35b38914e4e0382ce9c3b7c206e6e4d1f132c69f0080e2ff8ef2e0600fee57470c6dee3712517524",
+        "dest-filename": "2620bcc67359023824897ab39ea83c434381ce87e1bc35b38914e4e0382ce9c3b7c206e6e4d1f132c69f0080e2ff8ef2e0600fee57470c6dee3712517524",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/38/0d"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/css-tree/-/css-tree-3.1.0.tgz",
+        "sha512": "d1e5b8e1318de524175359964a42b016cb48ff6d97d9b1b59d8cd94d83005a3ca5614461b1eef9d9881b1380b1e3a002f9b02f23efdd6133d19352ea4949eeeb",
+        "dest-filename": "b8e1318de524175359964a42b016cb48ff6d97d9b1b59d8cd94d83005a3ca5614461b1eef9d9881b1380b1e3a002f9b02f23efdd6133d19352ea4949eeeb",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/d1/e5"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/css-what/-/css-what-6.2.2.tgz",
+        "sha512": "bbf3b7bf06e9b7384cb372f57d013cd9948b1d041fb68e60c99cf0b5e54813279a63915ced1e1d6a917f06f46849815ea9f064e26d15d5569fab93e3bf6e70bc",
+        "dest-filename": "b7bf06e9b7384cb372f57d013cd9948b1d041fb68e60c99cf0b5e54813279a63915ced1e1d6a917f06f46849815ea9f064e26d15d5569fab93e3bf6e70bc",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/bb/f3"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/csso/-/csso-5.0.5.tgz",
+        "sha512": "d0baeb4ad3ce7498fe48f082ac6873af2c9c2e3c1c81448706dc4d03c6880f17f418bb1187570a621074d06775943392e32187ebdf92367d77f9359b54711315",
+        "dest-filename": "eb4ad3ce7498fe48f082ac6873af2c9c2e3c1c81448706dc4d03c6880f17f418bb1187570a621074d06775943392e32187ebdf92367d77f9359b54711315",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/d0/ba"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz",
+        "sha512": "c08900af28aab7f9d5e4440aa90a68dd24e848e57d2740e76c9ab02bb5affd3adcf76cc801867816532ef893c55b50df185b7cd594c21a00c469b7df5de2f226",
+        "dest-filename": "00af28aab7f9d5e4440aa90a68dd24e848e57d2740e76c9ab02bb5affd3adcf76cc801867816532ef893c55b50df185b7cd594c21a00c469b7df5de2f226",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/c0/89"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz",
+        "sha512": "38b113063eb0d0eb1a801c1d5e73dd37472731f17da2937af5ca3eed9adb7cf1ab7693d5341523d36b298ba07537bc0284b4223e7e02487ff326f5f0e7a8261f",
+        "dest-filename": "13063eb0d0eb1a801c1d5e73dd37472731f17da2937af5ca3eed9adb7cf1ab7693d5341523d36b298ba07537bc0284b4223e7e02487ff326f5f0e7a8261f",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/38/b1"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz",
+        "sha512": "720c25bffd621508859d4f7a5d78113a1f314de7adb272620ec4dced36022c577dfbf58d908a8f4f188cffca5277c548ae15c64dfd4dcb5ab586ab95a83241e7",
+        "dest-filename": "25bffd621508859d4f7a5d78113a1f314de7adb272620ec4dced36022c577dfbf58d908a8f4f188cffca5277c548ae15c64dfd4dcb5ab586ab95a83241e7",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/72/0c"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz",
+        "sha512": "ea464ac946a3943baa9472955f5c3b832b258fd30f217cc8162cffac6bb7e6e0b5c0c8be90c850c06865e25b7dba70bd55bf4836763d677fd9037f8584048b6b",
+        "dest-filename": "4ac946a3943baa9472955f5c3b832b258fd30f217cc8162cffac6bb7e6e0b5c0c8be90c850c06865e25b7dba70bd55bf4836763d677fd9037f8584048b6b",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/ea/46"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz",
+        "sha512": "5748631f87463e1f40a39a74328458e8156ab700a3873eaf2392d3f00279e47fb883dff8bdb1f1d48e787d2d17b9c94b8431c0acf40288c8c3c6368bf1f3f187",
+        "dest-filename": "631f87463e1f40a39a74328458e8156ab700a3873eaf2392d3f00279e47fb883dff8bdb1f1d48e787d2d17b9c94b8431c0acf40288c8c3c6368bf1f3f187",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/57/48"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.28.tgz",
+        "sha512": "6b294873b67dcb8cb31d800936e1121b785f842fb421ba7f30032268e66036fe29984745c9f6618619f2e0c36201f59d050d5143699f0d698cd71f12bc6ca9f2",
+        "dest-filename": "4873b67dcb8cb31d800936e1121b785f842fb421ba7f30032268e66036fe29984745c9f6618619f2e0c36201f59d050d5143699f0d698cd71f12bc6ca9f2",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/6b/29"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/mdn-data/-/mdn-data-2.12.2.tgz",
+        "sha512": "2049fea5e80fd5a31a9d9b9c91ecd608ef976500e9971d77eba2685614e9329041d6c3decbf49bbde650528b0a88a886623835c07e293253605db0a26208a140",
+        "dest-filename": "fea5e80fd5a31a9d9b9c91ecd608ef976500e9971d77eba2685614e9329041d6c3decbf49bbde650528b0a88a886623835c07e293253605db0a26208a140",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/20/49"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz",
+        "sha512": "96a8eb8e668ea009d67cc9813cbf97367ca7661dbeb30c625f7594134b38c841c8ea6f80c2b2b65193a2988465dd7ff841cb55a92f008998c5ab2386acc5dbff",
+        "dest-filename": "eb8e668ea009d67cc9813cbf97367ca7661dbeb30c625f7594134b38c841c8ea6f80c2b2b65193a2988465dd7ff841cb55a92f008998c5ab2386acc5dbff",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/96/a8"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+        "sha512": "c5c787dac9e1b5be4cf658aa0ec984c39ea57b7efa993664117fe311bfd1c4d1727a036e97b78db250973fd1438ff2dcbb45fc284c8c71e3f69eda5a1eb0c454",
+        "dest-filename": "87dac9e1b5be4cf658aa0ec984c39ea57b7efa993664117fe311bfd1c4d1727a036e97b78db250973fd1438ff2dcbb45fc284c8c71e3f69eda5a1eb0c454",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/c5/c7"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/sax/-/sax-1.4.1.tgz",
+        "sha512": "f9a58ecfbc9549c106a0a35de0f035d0b67cb24d00ff3e7e9d7406e608943b9ae9ad7f63818b13768bfda827216623c865ecdb647fa346eb7c9cfa1d1405f826",
+        "dest-filename": "8ecfbc9549c106a0a35de0f035d0b67cb24d00ff3e7e9d7406e608943b9ae9ad7f63818b13768bfda827216623c865ecdb647fa346eb7c9cfa1d1405f826",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/f9/a5"
+    },
+    {
+        "type": "file",
+        "url": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+        "sha512": "51758c2a12cec1529bef6f0852d40f5f17d853ebac7726ed52b2bff2e184f0240cbeb84ea70bf30c1c23d108522fb31073bbc8b084811bc550f3e203431a5f40",
+        "dest-filename": "8c2a12cec1529bef6f0852d40f5f17d853ebac7726ed52b2bff2e184f0240cbeb84ea70bf30c1c23d108522fb31073bbc8b084811bc550f3e203431a5f40",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/51/75"
+    },
+    {
+        "type": "inline",
+        "contents": "08feceb25c44c3acb21b39c988472901d8508491\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/commander/-/commander-11.1.0.tgz\", \"integrity\": \"sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==\", \"time\": 0, \"size\": 45767, \"metadata\": {\"url\": \"https://registry.npmjs.org/commander/-/commander-11.1.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "e5eadb31edb99a328216181baebf4ace396ad067d3ccecc837f4e04cfd91",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/b0/fa"
+    },
+    {
+        "type": "inline",
+        "contents": "0c7b715d8342ebd6f288a0358696ef1905450248\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/css-tree/-/css-tree-3.1.0.tgz\", \"integrity\": \"sha512-0eW44TGN5SQXU1mWSkKwFstI/22X2bG1nYzZTYMAWjylYURhse752YgbE4Cx46AC+bAvI+/dYTPRk1LqSUnu6w==\", \"time\": 0, \"size\": 308019, \"metadata\": {\"url\": \"https://registry.npmjs.org/css-tree/-/css-tree-3.1.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "efe3e5785a2b578d712f087bfc45b70abd8c0a0ac747b931c467c91f6de5",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/f5/9c"
+    },
+    {
+        "type": "inline",
+        "contents": "10419516d6bb216df6feb526abf888dbbbacbf81\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz\", \"integrity\": \"sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==\", \"time\": 0, \"size\": 39643, \"metadata\": {\"url\": \"https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "5ffc14023d00356e8d3736924d21aa118da210e1eda701aebcb7731f72d7",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/01/7e"
+    },
+    {
+        "type": "inline",
+        "contents": "21545acbe2d23fb8426c0d82e908c81378ca4dae\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/entities/-/entities-4.5.0.tgz\", \"integrity\": \"sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==\", \"time\": 0, \"size\": 77368, \"metadata\": {\"url\": \"https://registry.npmjs.org/entities/-/entities-4.5.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "06ccc91f5b90cd273774322616d2f8e79f0cefb46c235f8184f3fb60c1f5",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/ff/61"
+    },
+    {
+        "type": "inline",
+        "contents": "4164855810d915c9cc0f070aea727d285f1803bf\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/mdn-data/-/mdn-data-2.12.2.tgz\", \"integrity\": \"sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==\", \"time\": 0, \"size\": 93625, \"metadata\": {\"url\": \"https://registry.npmjs.org/mdn-data/-/mdn-data-2.12.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "e4283090e9d6269032180471e11d82c6235b708768b6f79eb8f26763528e",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/5b/a0"
+    },
+    {
+        "type": "inline",
+        "contents": "443ef1f0304d4f5bd6cb6989ed8319c4677d459a\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/csso/-/csso-5.0.5.tgz\", \"integrity\": \"sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==\", \"time\": 0, \"size\": 168159, \"metadata\": {\"url\": \"https://registry.npmjs.org/csso/-/csso-5.0.5.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "a74dda5e1b9f7c57a4af0683d3e1ac57143315c89c2e9d895a686317eb8b",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/1f/d2"
+    },
+    {
+        "type": "inline",
+        "contents": "719ea523cc47269953393542ba84568bc220dac4\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz\", \"integrity\": \"sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==\", \"time\": 0, \"size\": 35340, \"metadata\": {\"url\": \"https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "1018bd2617c9bf8a0c2742b8d6db95d9995670b0e195cb06cfea9d61c009",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/69/e3"
+    },
+    {
+        "type": "inline",
+        "contents": "7ab8c6d7389da2a21db177b4f8fbbf36bfcf8607\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.28.tgz\", \"integrity\": \"sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==\", \"time\": 0, \"size\": 86174, \"metadata\": {\"url\": \"https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.28.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "63f0a39b900c32defdf3827f12176318e5088b9aa684f0397538330d481a",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/cf/8e"
+    },
+    {
+        "type": "inline",
+        "contents": "8b57e40e4c73c2ea63928951101ed22315a9c4d1\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz\", \"integrity\": \"sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==\", \"time\": 0, \"size\": 2909, \"metadata\": {\"url\": \"https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "74fd9e0088cbe506aa447b73813ad76312f2f58c8bc4c03978dfc3eebb0c",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/30/e6"
+    },
+    {
+        "type": "inline",
+        "contents": "962c51fcfb62069b4f177d41095d81f4d39c7c62\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/sax/-/sax-1.4.1.tgz\", \"integrity\": \"sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==\", \"time\": 0, \"size\": 15623, \"metadata\": {\"url\": \"https://registry.npmjs.org/sax/-/sax-1.4.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "755cb88dba8bcec48a4410ad2e27ee9ef8ddba4ac1d4474d53327b7d6fbf",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/ac/be"
+    },
+    {
+        "type": "inline",
+        "contents": "9dd58a2436a36b4e793ec4b3f0357d831a3c1c8a\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz\", \"integrity\": \"sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==\", \"time\": 0, \"size\": 6820, \"metadata\": {\"url\": \"https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "327b2a42aca453f78ed2ad5e910699acc509dd2650a3e8b17c96ae024f33",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/5d/f5"
+    },
+    {
+        "type": "inline",
+        "contents": "a4d30eff6cd379ad7e36f2a905c06ed6eb47b728\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz\", \"integrity\": \"sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==\", \"time\": 0, \"size\": 8576, \"metadata\": {\"url\": \"https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "da2bbce756c0c5feab9837df723b4bd48ee7849efc390afe3c1f9e8207d5",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/54/4b"
+    },
+    {
+        "type": "inline",
+        "contents": "b83094f81a4ce0fb77a6ebad1b7966ee48cf465a\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz\", \"integrity\": \"sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==\", \"time\": 0, \"size\": 851, \"metadata\": {\"url\": \"https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "f7f5c2553e6c049b34101f73a757b48a2764e6eeaec39265c917bf2df693",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/cb/60"
+    },
+    {
+        "type": "inline",
+        "contents": "bc4ab5b15e5d1448c3f644228c5271285def3f72\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/css-tree/-/css-tree-2.2.1.tgz\", \"integrity\": \"sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==\", \"time\": 0, \"size\": 272816, \"metadata\": {\"url\": \"https://registry.npmjs.org/css-tree/-/css-tree-2.2.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "286ad82d7ab0722964f36e0e68e1a3a4f6f7270257da8a6fe641ab178eb0",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/89/79"
+    },
+    {
+        "type": "inline",
+        "contents": "cab86e6fe065d84d7a3978261276fb4bf42418ea\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz\", \"integrity\": \"sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==\", \"time\": 0, \"size\": 23891, \"metadata\": {\"url\": \"https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "8e8cfe7f4aa579e2a82d8b5264419760efd9ad71e92e401f8da767f44a85",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/34/ee"
+    },
+    {
+        "type": "inline",
+        "contents": "dec4fa36f7c4ab7cb0d2f0d60af0fb0f07fb1666\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz\", \"integrity\": \"sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==\", \"time\": 0, \"size\": 2625, \"metadata\": {\"url\": \"https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "c9aa1c46bf0c67511379e97bd07fca87532422f2506214f94db8861160d3",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/a1/5e"
+    },
+    {
+        "type": "inline",
+        "contents": "f874d3aafebd5a396210afe17a1fc426b1eb6d28\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/css-what/-/css-what-6.2.2.tgz\", \"integrity\": \"sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==\", \"time\": 0, \"size\": 11158, \"metadata\": {\"url\": \"https://registry.npmjs.org/css-what/-/css-what-6.2.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "60fe88011a8f0ba98f7a70150ea8d633acfcdc14dbc409ef0e58e7a07137",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/c7/c2"
+    },
+    {
+        "type": "inline",
+        "contents": "fae104693ae9c5b951698f38ed3cd9008a223215\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz\", \"integrity\": \"sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==\", \"time\": 0, \"size\": 12587, \"metadata\": {\"url\": \"https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "0ad9cdf560680695d501bb1e53b0a05ed94492e3f0cfad0c5e3a6f6d65f7",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/9e/2a"
+    },
+    {
+        "type": "script",
+        "commands": [
+            "version=$(node --version | sed \"s/^v//\")",
+            "nodedir=$(dirname \"$(dirname \"$(which node)\")\")",
+            "mkdir -p \"flatpak-node/cache/node-gyp/$version\"",
+            "ln -s \"$nodedir/include\" \"flatpak-node/cache/node-gyp/$version/include\"",
+            "echo 9 > \"flatpak-node/cache/node-gyp/$version/installVersion\""
+        ],
+        "dest-filename": "setup_sdk_node_headers.sh",
+        "dest": "flatpak-node"
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "bash flatpak-node/setup_sdk_node_headers.sh"
+        ]
+    }
+]
