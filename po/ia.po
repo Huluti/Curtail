@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
 "POT-Creation-Date: 2025-07-31 08:15+0000\n"
-"PO-Revision-Date: 2025-12-25 13:22-0300\n"
+"PO-Revision-Date: 2025-12-25 16:32-0300\n"
 "Last-Translator: Emilio Sepúlveda <emism.translations@gmail.com>\n"
 "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
 "Language: ia\n"
@@ -41,12 +41,16 @@ msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
+"Optimisa tu imagines con Curtail, un compressor de imagine utile que "
+"supporta typos de file PNG, JPEG, WebP e SVG."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
+"Il supporta ambe modos de compression con perdita e sin perdita con un "
+"option de si mantener o no le metadatos de imagines."
 
 #. developer_name tag deprecated with Appstream 1.0
 #: data/com.github.huluti.Curtail.appdata.xml.in:16
@@ -56,7 +60,7 @@ msgstr "Hugo Posnic"
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
 msgid "compress;optimize;image;photo;"
-msgstr ""
+msgstr "comprime;optimisa;imagine;photo"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -68,36 +72,40 @@ msgstr "Salva le imagine comprimite a un nove file."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
 msgid "Select the mode to append text for a new file"
-msgstr ""
+msgstr "Selige le modo pro adjunger texto a un nove file"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
 msgstr ""
+"Defini como adjunger le texto additional (como prefixo o suffixo) pro un "
+"nove file."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
-msgstr ""
+msgstr "Activa le compression recursive in dossieres"
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting enable compression in a recursive way in folders."
 msgstr ""
+"Iste parametro activa le compression in dossieres in un maniera recursive."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve metadata"
-msgstr ""
+msgstr "Preservar metadatos"
 
 #: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
-msgstr ""
+msgstr "Iste parametro preserva le metadatos de imagines."
 
 #: data/com.github.huluti.Curtail.gschema.xml:26
 msgid "Preserve file permissions and timestamps if possible"
-msgstr ""
+msgstr "Preservar permissiones de file e data e hora si possibile"
 
 #: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "This setting file permissions and timestamps of images if possible."
 msgstr ""
+"Isto defini le permissiones de file e data e hora del imagines si possibile."
 
 #: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
@@ -105,15 +113,15 @@ msgstr "Activar modo con perdita"
 
 #: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Use lossy mode to compress images."
-msgstr ""
+msgstr "Usar compression con perdita pro comprimer imagines."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
 msgid "Suffix/Prefix to append at new file"
-msgstr ""
+msgstr "Prefixo/suffixo a adjunger al nove file"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
 msgid "Suffix/Prefix to append at new file."
-msgstr ""
+msgstr "Prefixo/suffixo a adjunger al nove file"
 
 #: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossy Compression Level"
@@ -121,7 +129,7 @@ msgstr "Nivello de compression con perdita de PNG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossy compression level to use for PNG images."
-msgstr ""
+msgstr "Nivello de compression con perdita a usar pro imagines PNG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "PNG Lossless Compression Level"
@@ -129,7 +137,7 @@ msgstr "Nivello de compression sin perdita de PNG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossless compression level to use for PNG images."
-msgstr ""
+msgstr "Nivello de compression sin perdita a usar pro imagines PNG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "JPG Lossy Compression Level"
@@ -137,7 +145,7 @@ msgstr "Nivello de compression con perdita de JPG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for JPG images."
-msgstr ""
+msgstr "Nivello de compression con perdita a usar pro imagines JPG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossy Compression Level"
@@ -145,7 +153,7 @@ msgstr "Nivello de compression con perdita de WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossy compression level to use for WebP images."
-msgstr ""
+msgstr "Nivello de compression con perdita a usar pro imagines WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "WebP Lossless Compression Level"
@@ -153,31 +161,31 @@ msgstr "Nivello de compression sin perdita de WebP"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Lossless compression level to use for WebP images."
-msgstr ""
+msgstr "Nivello de compression sin perdita a usar pro imagines WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable progressive encoding for JPEG images"
-msgstr ""
+msgstr "Activar codification progressive pro imagines JPEG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Optionally encode jpeg images progressively."
-msgstr ""
+msgstr "Codifica optionalmente imagines jpeg progressivemente."
 
 #: data/com.github.huluti.Curtail.gschema.xml:71
 msgid "Enable maximum compression for SVG images"
-msgstr ""
+msgstr "Activar compression maxime pro imagines SVG"
 
 #: data/com.github.huluti.Curtail.gschema.xml:72
 msgid "Enable maximum cleaning of SVG images."
-msgstr ""
+msgstr "Activar nettage maxime de imagines SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
 msgid "Compression Timeout"
-msgstr ""
+msgstr "Limite de tempore de compression"
 
 #: data/com.github.huluti.Curtail.gschema.xml:77
 msgid "Compression timeout for each image."
-msgstr ""
+msgstr "Limite de tempore de compression pro cata imagine."
 
 #: data/ui/help_overlay.ui:11
 msgctxt "shortcut window"
@@ -222,23 +230,23 @@ msgstr "Salva le imagine comprimite a un nove file"
 
 #: data/ui/preferences.ui:21
 msgid "Naming Mode"
-msgstr ""
+msgstr "Modo de denomination"
 
 #: data/ui/preferences.ui:22
 msgid "Select between suffix and prefix"
-msgstr ""
+msgstr "Selige inter suffixo e prefixo"
 
 #: data/ui/preferences.ui:26
 msgid "Suffix"
-msgstr ""
+msgstr "Suffixo"
 
 #: data/ui/preferences.ui:27
 msgid "Prefix"
-msgstr ""
+msgstr "Prefixo"
 
 #: data/ui/preferences.ui:36
 msgid "New File Suffix/Prefix"
-msgstr ""
+msgstr "Nove suffixo/prefixo de file"
 
 #: data/ui/preferences.ui:41
 msgid "Recursive Compression"
@@ -246,29 +254,31 @@ msgstr "Compression recursive"
 
 #: data/ui/preferences.ui:42
 msgid "Enable or disable compression through subdirectories"
-msgstr ""
+msgstr "Activa o disactiva le compression per subdirectorios"
 
 #: data/ui/preferences.ui:47
 msgid "Keep Metadata"
-msgstr ""
+msgstr "Mantener metadatos"
 
 #: data/ui/preferences.ui:48
 msgid "Keep metadata chunks that do not affect rendering"
-msgstr ""
+msgstr "Mantener le segmentos de metadatos que non affice le rendition"
 
 #: data/ui/preferences.ui:53
 msgid "Keep File Attributes When Possible"
-msgstr ""
+msgstr "Mantener attributos de file quando sia possibile"
 
 #: data/ui/preferences.ui:54
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr ""
+"Assecura que le nove file ha le mesme permissiones e data e hora del file "
+"original"
 
 #: data/ui/preferences.ui:60
 msgid "Set the timeout between images"
-msgstr ""
+msgstr "Defini le limite de tempore inter imagines"
 
 #: data/ui/preferences.ui:78
 msgid "Formats"
@@ -282,7 +292,7 @@ msgstr "Compression con perdita"
 #: data/ui/preferences.ui:86 data/ui/preferences.ui:117
 #: data/ui/preferences.ui:141
 msgid "Set the quality of the generated image, 100 is the best quality"
-msgstr ""
+msgstr "Defini le qualitate del imagine generate, 100 es le melior qualitate"
 
 #: data/ui/preferences.ui:98 data/ui/preferences.ui:153
 msgid "Lossless Compression Level"
@@ -291,14 +301,15 @@ msgstr "Nivello de compression sin perdita"
 #: data/ui/preferences.ui:99 data/ui/preferences.ui:154
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr ""
+"Defini le nivello del compression, 6 es le nivello maxime sed plus lente"
 
 #: data/ui/preferences.ui:129
 msgid "Progressive Encode"
-msgstr ""
+msgstr "Codification progressive"
 
 #: data/ui/preferences.ui:130
 msgid "Enable incremental image rendering, going from blurry to clear"
-msgstr ""
+msgstr "Activa le rendition incremental de imagine, ab disfocalsate a clar"
 
 #: data/ui/preferences.ui:171
 msgid "Maximum Compression Level"
@@ -306,11 +317,11 @@ msgstr "Nivello maxime de compression"
 
 #: data/ui/preferences.ui:172
 msgid "This can be more destructive for the image"
-msgstr ""
+msgstr "Isto pote esser plus destructive pro le imagine"
 
 #: data/ui/menu.ui:6
 msgid "Bulk Compress Directory"
-msgstr ""
+msgstr "Directorio de compression in massa"
 
 #: data/ui/menu.ui:14
 msgid "Keyboard Shortcuts"
@@ -338,11 +349,11 @@ msgstr "_Cambiar modo"
 
 #: data/ui/window.ui:52
 msgid "Images will be overwritten, proceed carefully"
-msgstr ""
+msgstr "Le imagines essera superscribite, procede accuratemente"
 
 #: data/ui/window.ui:60
 msgid "Drop images here to compress them"
-msgstr ""
+msgstr "Depone imagines hic pro comprimer los"
 
 #: data/ui/window.ui:67
 msgid "_Browse Files"
@@ -359,6 +370,7 @@ msgstr "Con perdita"
 #: src/compressor.py:114
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr ""
+"Le compression ha attingite le tempore limite configurate de {} secundas."
 
 #: src/compressor.py:118
 msgid "An unknown error has occurred"
@@ -395,7 +407,7 @@ msgstr "Version non trovate"
 
 #: src/window.py:144
 msgid "Skipped"
-msgstr ""
+msgstr "Saltate"
 
 #: src/window.py:162
 msgid "More Information"
@@ -406,6 +418,8 @@ msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
+"Le compression esseva saltate perque le compression del file poterea "
+"resultar in dimension de file plus longe."
 
 #: src/window.py:232
 msgid "Open Image"
@@ -425,19 +439,23 @@ msgstr "Percurrer directorios"
 
 #: src/window.py:315 src/window.py:321
 msgid "Are you sure you want to compress images in these directories?"
-msgstr ""
+msgstr "Es tu secur que tu vole comprimer imagines in iste directorios?"
 
 #: src/window.py:316
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
+"Tote le imagines in le directorios seligite e lor subdirectorios essera "
+"comprimite. Le imagines original non essera modificate."
 
 #: src/window.py:322
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
+"Tote le imagines in le directorios seligite e lor subdirectorios essera "
+"comprimite e superscribite!"
 
 #: src/window.py:325
 msgid "Cancel"
