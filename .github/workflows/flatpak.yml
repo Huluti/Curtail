@@ -2,6 +2,8 @@ on:
   push:
     branches: [master]
   pull_request:
+  workflow_dispatch:
+
 name: Flatpak
 jobs:
   flatpak:
@@ -11,7 +13,7 @@ jobs:
       image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-49
       options: --privileged
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: curtail.flatpak
