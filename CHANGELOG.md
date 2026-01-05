@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.14.0 - 2026-01-05
+### Added
+- Add D-Bus service file. Thank's to @City-busz.
+- Add new preference to select between prefix and suffix for new files. Thank's to @rubenmvc.
+
+### Changed
+- Update jpegoptim.
+- Update to python 3.13.
+- Update GNOME Runtime to 49.
+- Update translations.
+
+## Fixed
+- Fix handling file not found error. Thank's to @City-busz.
+- Raise existing window instead of opening new one on activation. Thank's to @City-busz.
+- Prevent creation of new file when skipped. Thank's to @ARAKHN1D.
+
 ## 1.13.0 - 2025-03-24
 ### Added
 - Add multi-threading.

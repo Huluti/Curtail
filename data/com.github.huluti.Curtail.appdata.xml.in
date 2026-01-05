@@ -39,6 +39,22 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+   <release version="1.14.0" date="2026-01-05">
+      <description translate="no">
+        <p>Here's the changelog of this version:</p>
+        <ul>
+          <li>Add D-Bus service file. Thank's to @City-busz</li>
+          <li>Add new preference to select between prefix and suffix for new files. Thank's to @rubenmvc</li>
+          <li>Update jpegoptim</li>
+          <li>Update to python 3.13</li>
+          <li>Update GNOME Runtime to 49</li>
+          <li>Update translations</li>
+          <li>Fix handling file not found error. Thank's to @City-busz</li>
+          <li>Raise existing window instead of opening new one on activation. Thank's to @City-busz</li>
+          <li>Prevent creation of new file when skipped. Thank's to @ARAKHN1D</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.13.0" date="2025-03-24">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
