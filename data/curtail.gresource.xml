@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/huluti/Curtail/">
-    <file alias="gtk/help-overlay.ui">ui/help_overlay.ui</file>
+    <file alias="shortcuts-dialog.ui">ui/shortcuts-dialog.ui</file>
   </gresource>
   <gresource prefix="/com/github/huluti/Curtail/ui">
     <file alias="preferences.ui">ui/preferences.ui</file>
