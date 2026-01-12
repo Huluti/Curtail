@@ -16,7 +16,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 import subprocess
+import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 from urllib.parse import unquote
 from pathlib import Path
@@ -281,7 +283,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             else:
                 filenames = list()
                 for file in files:
-                    filenames.append(file.get_uri())
+                    filenames.append(file.get_path())
                 self.compress_filenames(filenames)
 
         dialog.open_multiple(self, None, handle_response)
@@ -337,41 +339,29 @@ class CurtailWindow(Adw.ApplicationWindow):
         if not files:
             return
 
-        filenames = []
+        paths = []
         for file in files:
-            filenames.append(file.get_uri())
-        self.compress_filenames(filenames)
+             paths.append(file.get_path())
+        self.compress_paths(paths)
 
-    def handle_filenames(self, filenames):
-        final_filenames = []
-        # Clean filenames
-        for filename in filenames:
-            filename = self.clean_filename(filename)
-
-            path = Path(filename)
+    def handle_paths(self, paths, recursive):
+        final_paths = []
+        for path in paths:
+            path = Path(path)
             if path.is_dir():
-                if self._settings.get_boolean('recursive'):
-                    images = get_image_files_from_folder_recursive(path)
+                if recursive:
+                    folder_paths = get_image_files_from_folder_recursive(path)
                 else:
-                    images = get_image_files_from_folder(path)
-                for image in images:
-                    image = self.clean_filename(image)
-                    final_filenames.append(image)
-            else:
-                final_filenames.append(filename)
+                    folder_paths = get_image_files_from_folder(path)
+                for image in folder_paths:
+                    final_paths.append(image)
+            elif path.is_file():
+                final_paths.append(path)
 
-        return final_filenames
+        return final_paths
 
-    def clean_filename(self, filename):
-        filename = str(filename)
-        if filename.startswith('file://'):  # drag&drop
-            filename = filename[7:]  # remove 'file://'
-            filename = unquote(filename)  # remove %20
-            filename = filename.strip('\r\n\x00')  # remove spaces
-        return filename
-
-    def check_format(self, filename):
-        file_type = get_file_type(filename)
+    def check_format(self, path):
+        file_type = get_file_type(path)
         if file_type:
             return file_type in ('png', 'jpg', 'webp', 'svg')
         else:
@@ -395,27 +385,32 @@ class CurtailWindow(Adw.ApplicationWindow):
             new_filename = str(path)
         return new_filename
 
-    def compress_filenames(self, filenames):
-        filenames = self.handle_filenames(filenames)
+    def compress_paths(self, paths):
+        threading.Thread(
+            target=self._prepare_paths_thread,
+            args=(paths,),
+            daemon=True
+        ).start()
 
+    def _prepare_paths_thread(self, paths):
+        recursive = self._settings.get_boolean('recursive')
+        paths = self.handle_paths(paths, recursive)
+        GLib.idle_add(self._compress_paths_ui, paths)
+
+    def _compress_paths_ui(self, paths):
         # No files found
-        if not filenames:
+        if not paths:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
-        for filename in filenames:
+        for path in paths:
             error_message = False
-            path = Path(filename)
-
-            # Check file
-            if not path.is_file():
-                error_message = _("This file doesn't exist.").format(filename)
 
             # Check format
             if not error_message:
                 size = path.stat().st_size
-                if not self.check_format(filename) or size <= 0:
+                if not self.check_format(path) or size <= 0:
                     error_message = _("Format of this file is not supported.").format(path.name)
             else:
                 size = 0
@@ -425,7 +420,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             else:
                 new_filename = ''
 
-            result_item = ResultItem(path.name, filename, new_filename, size)
+            result_item = ResultItem(path.name, path, new_filename, size)
 
             if not error_message:
                 result_items.append(result_item)
