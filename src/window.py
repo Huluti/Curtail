@@ -327,7 +327,7 @@ class CurtailWindow(Adw.ApplicationWindow):
                     self.show_view("loading")
                     paths = list()
                     for folder in folders:
-                        filenames.append(folder.get_path())
+                        paths.append(folder.get_path())
                     self.compress_paths(paths)
 
             try:
