@@ -16,7 +16,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-import sys
 import subprocess
 import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
