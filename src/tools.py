@@ -30,26 +30,26 @@ def sizeof_fmt(num):
 def add_filechooser_filters(dialog):
     all_images = Gtk.FileFilter()
     all_images.set_name(_("All images"))
-    all_images.add_mime_type('image/jpeg')
-    all_images.add_mime_type('image/png')
-    all_images.add_mime_type('image/webp')
-    all_images.add_mime_type('image/svg+xml')
+    all_images.add_mime_type("image/jpeg")
+    all_images.add_mime_type("image/png")
+    all_images.add_mime_type("image/webp")
+    all_images.add_mime_type("image/svg+xml")
 
     png_images = Gtk.FileFilter()
     png_images.set_name(_("PNG images"))
-    png_images.add_mime_type('image/png')
+    png_images.add_mime_type("image/png")
 
     jpeg_images = Gtk.FileFilter()
     jpeg_images.set_name(_("JPEG images"))
-    jpeg_images.add_mime_type('image/jpeg')
+    jpeg_images.add_mime_type("image/jpeg")
 
     webp_images = Gtk.FileFilter()
     webp_images.set_name(_("WebP images"))
-    webp_images.add_mime_type('image/webp')
+    webp_images.add_mime_type("image/webp")
 
     svg_images = Gtk.FileFilter()
     svg_images.set_name(_("SVG images"))
-    svg_images.add_mime_type('image/svg+xml')
+    svg_images.add_mime_type("image/svg+xml")
 
     file_filters = Gio.ListStore.new(Gtk.FileFilter)
     file_filters.append(all_images)
@@ -66,19 +66,19 @@ def get_file_type(filename):
     # and we'll check the file header to determine the file type if we can't by extension
     try:
         with open(filename, "rb") as image:
-            file_header = image.read(0xf)
+            file_header = image.read(0xF)
     except Exception as e:
         file_header = None
 
     content_type = Gio.content_type_guess(filename=str(filename), data=file_header)[0]
-    if content_type == 'image/jpeg':
-        return 'jpg'
-    elif content_type == 'image/png':
-        return 'png'
-    elif content_type == 'image/webp':
-        return 'webp'
-    elif content_type == 'image/svg+xml':
-        return 'svg'
+    if content_type == "image/jpeg":
+        return "jpg"
+    elif content_type == "image/png":
+        return "png"
+    elif content_type == "image/webp":
+        return "webp"
+    elif content_type == "image/svg+xml":
+        return "svg"
     else:
         return None
 
@@ -106,8 +106,9 @@ def create_image_from_file(filename, max_width, max_height):
         new_width = int(width * ratio)
         new_height = max_height
 
-    scaled_pixbuf = pixbuf.scale_simple(new_width, new_height,
-        GdkPixbuf.InterpType.BILINEAR)
+    scaled_pixbuf = pixbuf.scale_simple(
+        new_width, new_height, GdkPixbuf.InterpType.BILINEAR
+    )
 
     image = Gtk.Image.new_from_pixbuf(scaled_pixbuf)
     if new_width > new_height:
@@ -139,64 +140,61 @@ def get_image_files_from_folder_recursive(folder_path):
                 images.append(image_file.get_path())
     return images
 
+
 def debug_infos():
     python_version = platform.python_version()
 
-    gtk_version = '{}.{}.{}'.format(Gtk.get_major_version(),
-        Gtk.get_minor_version(), Gtk.get_micro_version())
+    gtk_version = "{}.{}.{}".format(
+        Gtk.get_major_version(), Gtk.get_minor_version(), Gtk.get_micro_version()
+    )
 
-     # Jpegoptim
+    # Jpegoptim
     try:
-        jpegoptim = subprocess.check_output(['jpegoptim', '--version'])
-        jpegoptim = extract_version(jpegoptim.decode('utf-8'))
+        jpegoptim = subprocess.check_output(["jpegoptim", "--version"])
+        jpegoptim = extract_version(jpegoptim.decode("utf-8"))
     except Exception:
-        jpegoptim = _('Version not found')
+        jpegoptim = _("Version not found")
 
     # Oxipng
     try:
-        oxipng = subprocess.check_output(['oxipng', '--version'])
-        oxipng = extract_version(oxipng.decode('utf-8'))
+        oxipng = subprocess.check_output(["oxipng", "--version"])
+        oxipng = extract_version(oxipng.decode("utf-8"))
     except Exception:
-        oxipng = _('Version not found')
+        oxipng = _("Version not found")
 
     # pngquant
     try:
-        pngquant = subprocess.check_output(['pngquant', '--version'])
-        pngquant = extract_version(pngquant.decode('utf-8'))
+        pngquant = subprocess.check_output(["pngquant", "--version"])
+        pngquant = extract_version(pngquant.decode("utf-8"))
     except Exception:
-        pngquant = _('Version not found')
+        pngquant = _("Version not found")
 
     # Libwebp
     try:
-        libwebp = subprocess.check_output(['cwebp', '-version'])
-        libwebp = extract_version(libwebp.decode('utf-8'))
+        libwebp = subprocess.check_output(["cwebp", "-version"])
+        libwebp = extract_version(libwebp.decode("utf-8"))
     except Exception:
-        libwebp = _('Version not found')
+        libwebp = _("Version not found")
 
     # Scour
     try:
-        scour = subprocess.check_output(['scour', '--version'])
-        scour = extract_version(scour.decode('utf-8'))
+        scour = subprocess.check_output(["scour", "--version"])
+        scour = extract_version(scour.decode("utf-8"))
     except Exception:
-        scour = _('Version not found')
+        scour = _("Version not found")
 
-    debug = '''Python: {}\n
+    debug = """Python: {}\n
 Gtk: {}\n
 Jpegoptim: {}\n
 Oxipng: {}\n
 pngquant: {}\n
 Libwebp: {}\n
-Scour: {}\n'''.format(
-    python_version,
-    gtk_version,
-    jpegoptim,
-    oxipng,
-    pngquant,
-    libwebp,
-    scour
-)
+Scour: {}\n""".format(
+        python_version, gtk_version, jpegoptim, oxipng, pngquant, libwebp, scour
+    )
 
     return debug
+
 
 def extract_version(text):
     # regular expression to match the version string,
@@ -205,7 +203,9 @@ def extract_version(text):
 
     match = re.search(version_regex, text)
     if match:
-        version_string = match.group(1) # extract the version string from the match object
+        version_string = match.group(
+            1
+        )  # extract the version string from the match object
         return version_string
     else:
-        return _('Version not found')
+        return _("Version not found")

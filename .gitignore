@@ -109,3 +109,5 @@ venv.bak/
 _build
 
 .flatpak-builder/
+
+uv.lock

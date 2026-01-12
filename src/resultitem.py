@@ -4,6 +4,7 @@ from gi.repository import GObject
 
 from .tools import sizeof_fmt
 
+
 class ResultItem(GObject.Object):
     name = GObject.Property(type=str)
     filename = GObject.Property(type=str)
@@ -11,12 +12,12 @@ class ResultItem(GObject.Object):
     original_filename = GObject.Property(type=str)
     size = GObject.Property(type=int)
     new_size = GObject.Property(type=int, default=0)
-    subtitle_label = GObject.Property(type=str, default='')
-    savings = GObject.Property(type=str, default='')
+    subtitle_label = GObject.Property(type=str, default="")
+    savings = GObject.Property(type=str, default="")
     running = GObject.Property(type=bool, default=True)
     skipped = GObject.Property(type=bool, default=False)
     error = GObject.Property(type=bool, default=False)
-    error_message = GObject.Property(type=str, default='')
+    error_message = GObject.Property(type=str, default="")
 
     def __init__(self, name, filename, new_filename, size):
         super().__init__()
