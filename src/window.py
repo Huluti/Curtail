@@ -311,10 +311,7 @@ class CurtailWindow(Adw.ApplicationWindow):
                 print("Could not open files: %s", err.message)
             else:
                 self.show_view("loading")
-                paths = list()
-                for file in files:
-                    paths.append(file.get_path())
-                self.compress_paths(paths)
+                self.compress_files(files)
 
         dialog.open_multiple(self, None, handle_response)
 
@@ -325,10 +322,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             def on_dir_dialog_response(warn_dialog, response):
                 if response == "compress":
                     self.show_view("loading")
-                    paths = list()
-                    for folder in folders:
-                        paths.append(folder.get_path())
-                    self.compress_paths(paths)
+                    self.compress_files(folders)
 
             try:
                 folders = dialog.select_multiple_folders_finish(result)
@@ -378,11 +372,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         files = value.get_files()
         if not files:
             return
-
-        paths = []
-        for file in files:
-            paths.append(file.get_path())
-        self.compress_paths(paths)
+        self.compress_files(files)
 
     def handle_paths(self, paths, recursive):
         results = []
@@ -449,18 +439,19 @@ class CurtailWindow(Adw.ApplicationWindow):
             new_filename = str(path)
         return new_filename
 
-    def compress_paths(self, paths):
+    def compress_files(self, files):
         threading.Thread(
-            target=self._prepare_paths_thread, args=(paths,), daemon=True
+            target=self._compress_files_ui, args=(files,), daemon=True
         ).start()
 
-    def _prepare_paths_thread(self, paths):
-        recursive = self._settings.get_boolean("recursive")
-        paths = self.handle_paths(paths, recursive)
-        GLib.idle_add(self._compress_paths_ui, paths)
+    def _compress_files_ui(self, files):
+        paths = []
+        for file in files:
+            paths.append(file.get_path())
 
-    def _compress_paths_ui(self, results):
-        # No files found
+        recursive = self._settings.get_boolean("recursive")
+        results = self.handle_paths(paths, recursive)
+
         if not results:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
