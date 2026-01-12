@@ -355,20 +355,40 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.compress_paths(paths)
 
     def handle_paths(self, paths, recursive):
-        final_paths = []
-        for path in paths:
-            path = Path(path)
+        results = []
+
+        for raw_path in paths:
+            path = Path(raw_path)
+
             if path.is_dir():
                 if recursive:
-                    folder_paths = get_image_files_from_folder_recursive(path)
+                    files = get_image_files_from_folder_recursive(path)
                 else:
-                    folder_paths = get_image_files_from_folder(path)
-                for image in folder_paths:
-                    final_paths.append(image)
+                    files = get_image_files_from_folder(path)
             elif path.is_file():
-                final_paths.append(path)
+                files = [path]
+            else:
+                continue
 
-        return final_paths
+            for file_path in files:
+                error_message = None
+                size = 0
+
+                try:
+                    size = file_path.stat().st_size
+
+                    if size <= 0 or not self.check_format(file_path):
+                        error_message = _("Format of this file is not supported.")
+                except OSError:
+                    error_message = _("Unable to read file information.")
+
+                results.append({
+                    "path": file_path,
+                    "size": size,
+                    "error_message": error_message,
+                })
+
+        return results
 
     def check_format(self, path):
         file_type = get_file_type(path)
@@ -407,23 +427,17 @@ class CurtailWindow(Adw.ApplicationWindow):
         paths = self.handle_paths(paths, recursive)
         GLib.idle_add(self._compress_paths_ui, paths)
 
-    def _compress_paths_ui(self, paths):
+    def _compress_paths_ui(self, results):
         # No files found
-        if not paths:
+        if not results:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
-        for path in paths:
-            error_message = False
-
-            # Check format
-            if not error_message:
-                size = path.stat().st_size
-                if not self.check_format(path) or size <= 0:
-                    error_message = _("Format of this file is not supported.").format(path.name)
-            else:
-                size = 0
+        for result in results:
+            path = result["path"]
+            size = result["size"]
+            error_message = result["error_message"]
 
             if not error_message:
                 new_filename = self.create_new_filename(path)
