@@ -52,6 +52,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     menu_button = Gtk.Template.Child()
     warning_banner = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
+    loadingbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
     resultbox = Gtk.Template.Child()
     scrolled_window = Gtk.Template.Child()
@@ -67,7 +68,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         self.build_ui()
         self.create_actions()
-        self.show_results(False)
+        self.show_view('home')
 
     def build_ui(self):
         # Set icons
@@ -123,18 +124,25 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.filechooser_button_headerbar.set_sensitive(enable)
         self.clear_button_headerbar.set_sensitive(enable)
 
-    def show_results(self, show):
-        if show:
+    def show_view(self, view):
+        if view == 'home':
+            self.homebox.set_visible(True)
+            self.loadingbox.set_visible(False)
+            self.resultbox.set_visible(False)
+            self.clear_button_headerbar.set_visible(False)
+        elif view == 'loading':
             self.homebox.set_visible(False)
+            self.loadingbox.set_visible(True)
+            self.resultbox.set_visible(False)
+            self.clear_button_headerbar.set_visible(False)
+        elif view == 'results':
+            self.homebox.set_visible(False)
+            self.loadingbox.set_visible(False)
             self.resultbox.set_visible(True)
             self.clear_button_headerbar.set_visible(True)
-        else:
-            self.resultbox.set_visible(False)
-            self.homebox.set_visible(True)
-            self.clear_button_headerbar.set_visible(False)
 
     def clear_results(self, *args):
-        self.show_results(False)
+        self.show_view('home')
         self.results_model.remove_all()
 
     def update_result_item(self, result_item, error, error_message):
@@ -281,10 +289,11 @@ class CurtailWindow(Adw.ApplicationWindow):
             except GLib.Error as err:
                 print("Could not open files: %s", err.message)
             else:
-                filenames = list()
+                self.show_view('loading')
+                paths = list()
                 for file in files:
-                    filenames.append(file.get_path())
-                self.compress_filenames(filenames)
+                    paths.append(file.get_path())
+                self.compress_paths(paths)
 
         dialog.open_multiple(self, None, handle_response)
 
@@ -294,10 +303,11 @@ class CurtailWindow(Adw.ApplicationWindow):
         def handle_response(dialog, result):
             def on_dir_dialog_response(warn_dialog, response):
                 if response == "compress":
-                    filenames = list()
+                    self.show_view('loading')
+                    paths = list()
                     for folder in folders:
                         filenames.append(folder.get_path())
-                    self.compress_filenames(filenames)
+                    self.compress_paths(paths)
 
             try:
                 folders = dialog.select_multiple_folders_finish(result)
@@ -335,6 +345,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         return dialog
 
     def on_dnd_drop(self, drop_target, value, x, y, user_data=None):
+        self.show_view('loading')
         files = value.get_files()
         if not files:
             return
@@ -433,7 +444,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.compress_images(result_items)
 
     def compress_images(self, result_items):
-        self.show_results(True)
+        self.show_view('results')
         self.enable_compression(False)
 
         compressor = Compressor(result_items, self.update_result_item, self.enable_compression)
