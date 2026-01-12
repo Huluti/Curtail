@@ -381,6 +381,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             path = Path(raw_path)
 
             if path.is_dir():
+                # Get image files from the directory
                 if recursive:
                     files = get_image_files_from_folder_recursive(path)
                 else:
@@ -394,13 +395,18 @@ class CurtailWindow(Adw.ApplicationWindow):
                 error_message = None
                 size = 0
 
-                try:
-                    size = file_path.stat().st_size
+                # Only compute size if it's a file
+                if file_path.is_file():
+                    try:
+                        size = file_path.stat().st_size
 
-                    if size <= 0 or not self.check_format(file_path):
-                        error_message = _("Format of this file is not supported.")
-                except OSError:
-                    error_message = _("Unable to read file information.")
+                        if size <= 0 or not self.check_format(file_path):
+                            error_message = _("Format of this file is not supported.")
+                    except OSError:
+                        error_message = _("Unable to read file information.")
+                else:
+                    # Optional: skip folders or mark as error
+                    error_message = _("This is a directory, not a file.")
 
                 results.append(
                     {

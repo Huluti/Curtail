@@ -20,6 +20,7 @@ import logging
 import platform
 import subprocess
 import os
+from pathlib import Path
 from gi.repository import Gtk, GLib, Gio, GdkPixbuf
 
 
@@ -122,11 +123,10 @@ def create_image_from_file(filename, max_width, max_height):
 def get_image_files_from_folder(folder_path):
     images = []
     for file in os.listdir(folder_path):
-        path = os.path.join(folder_path, file)
-        if os.path.isfile(path):
+        path = Path(folder_path) / file
+        if path.is_file():
             if get_file_type(path) is not None:
-                image_file = Gio.File.new_for_path(path)
-                images.append(image_file.get_path())
+                images.append(path)  # Return Path object directly
     return images
 
 
@@ -134,10 +134,9 @@ def get_image_files_from_folder_recursive(folder_path):
     images = []
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            path = os.path.join(root, file)
+            path = Path(root) / file
             if get_file_type(path) is not None:
-                image_file = Gio.File.new_for_path(path)
-                images.append(image_file.get_path())
+                images.append(path)  # Return Path object directly
     return images
 
 
