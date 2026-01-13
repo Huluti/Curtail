@@ -105,7 +105,7 @@
 									<object class="AdwStatusPage" id="loadingbox">
 										<property name="vexpand">true</property>
 										<property name="title" translatable="yes">Getting things ready</property>
-										<property name="description" translatable="yes">Preparing your images in the background...</property>
+										<property name="description" translatable="yes">Analyzing your images before compression...</property>
 									  <property name="paintable">spinner</property>
 									</object>
 								</child>
