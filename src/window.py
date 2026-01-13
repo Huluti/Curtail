@@ -539,4 +539,3 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def on_quit(self, *args):
         self.app.quit()
-
