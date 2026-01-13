@@ -404,9 +404,6 @@ class CurtailWindow(Adw.ApplicationWindow):
                             error_message = _("Format of this file is not supported.")
                     except OSError:
                         error_message = _("Unable to read file information.")
-                else:
-                    # Optional: skip folders or mark as error
-                    error_message = _("This is a directory, not a file.")
 
                 results.append(
                     {
@@ -542,3 +539,4 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def on_quit(self, *args):
         self.app.quit()
+
