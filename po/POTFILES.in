@@ -1,7 +1,7 @@
 data/com.github.huluti.Curtail.appdata.xml.in
 data/com.github.huluti.Curtail.desktop.in
 data/com.github.huluti.Curtail.gschema.xml
-data/ui/help_overlay.ui
+data/ui/shortcuts-dialog.ui
 data/ui/preferences.ui
 data/ui/menu.ui
 data/ui/window.ui
