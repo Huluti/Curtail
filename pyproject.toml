@@ -1,19 +1,7 @@
-[tool.poetry]
+[project]
 name = "curtail"
 version = "1.14.0"
 description = ""
-authors = ["Hugo Posnic <hugo.posnic@protonmail.com>"]
-license = "GPLv3"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.13"
-
-[tool.poetry.group.dev.dependencies]
-pylint = "^2.17.1"
-pyflakes = "^3.0.1"
-bandit = "^1.7.5"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.13"
+dependencies = []

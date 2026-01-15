@@ -28,10 +28,10 @@ from shlex import quote
 from .tools import get_file_type
 
 
-SETTINGS_SCHEMA = 'com.github.huluti.Curtail'
+SETTINGS_SCHEMA = "com.github.huluti.Curtail"
 
 
-class Compressor():
+class Compressor:
     _settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
     def __init__(self, result_items, c_update_result_item, c_enable_compression):
@@ -42,37 +42,38 @@ class Compressor():
         self.c_enable_compression = c_enable_compression
 
         # Options
-        self.do_new_file = self._settings.get_boolean('new-file')
-        self.compression_timeout = self._settings.get_int('compression-timeout')
-        self.lossy = self._settings.get_boolean('lossy')
-        self.metadata = self._settings.get_boolean('metadata')
-        self.file_attributes = self._settings.get_boolean('file-attributes')
+        self.do_new_file = self._settings.get_boolean("new-file")
+        self.compression_timeout = self._settings.get_int("compression-timeout")
+        self.lossy = self._settings.get_boolean("lossy")
+        self.metadata = self._settings.get_boolean("metadata")
+        self.file_attributes = self._settings.get_boolean("file-attributes")
 
         # Format options
-        self.png_lossy_level = self._settings.get_int('png-lossy-level')
-        self.png_lossless_level = self._settings.get_int('png-lossless-level')
+        self.png_lossy_level = self._settings.get_int("png-lossy-level")
+        self.png_lossless_level = self._settings.get_int("png-lossless-level")
 
-        self.jpg_lossy_level = self._settings.get_int('jpg-lossy-level')
-        self.jpg_progressive = self._settings.get_boolean('jpg-progressive')
+        self.jpg_lossy_level = self._settings.get_int("jpg-lossy-level")
+        self.jpg_progressive = self._settings.get_boolean("jpg-progressive")
 
-        self.webp_lossless_level = self._settings.get_int('webp-lossless-level')
-        self.webp_lossy_level = self._settings.get_int('webp-lossy-level')
+        self.webp_lossless_level = self._settings.get_int("webp-lossless-level")
+        self.webp_lossy_level = self._settings.get_int("webp-lossy-level")
 
-        self.svg_maximum_level = self._settings.get_boolean('svg-maximum-level')
+        self.svg_maximum_level = self._settings.get_boolean("svg-maximum-level")
 
     def create_tmp_result_item(self, result_item):
         # Creates a temporary copy of the file to be compressed rather than the original
         # The result_item's information is changed to point to the temporary file
         # This is done in case the output is larger than the input in overwrite mode
         index = result_item.filename.find(result_item.name)
-        tmp_filename = result_item.filename[:index] + "." + result_item.filename[index:] + ".tmp"
+        tmp_filename = (
+            result_item.filename[:index] + "." + result_item.filename[index:] + ".tmp"
+        )
         result_item.filename = tmp_filename
         result_item.new_filename = tmp_filename
         shutil.copy2(result_item.original_filename, result_item.filename)
 
     def compress_images(self):
-        thread = threading.Thread(target=self._compress_images)
-        thread.start()
+        thread = threading.Thread(target=self._compress_images, daemon=True).start()
 
     def _compress_images(self):
         cpu_count = os.cpu_count()
@@ -81,15 +82,15 @@ class Compressor():
         for result_item in self.result_items:
             file_type = get_file_type(result_item.filename)
             if file_type:
-                if file_type == 'png':
+                if file_type == "png":
                     command = self.build_png_command(result_item)
-                elif file_type == 'jpg':
+                elif file_type == "jpg":
                     command = self.build_jpg_command(result_item)
-                elif file_type == 'webp': # Must be manually skipped
+                elif file_type == "webp":  # Must be manually skipped
                     if not self.do_new_file:
                         self.create_tmp_result_item(result_item)
                     command = self.build_webp_command(result_item)
-                elif file_type == 'svg': # Must be manually skipped
+                elif file_type == "svg":  # Must be manually skipped
                     if not self.do_new_file:
                         self.create_tmp_result_item(result_item)
                     command = self.build_svg_command(result_item)
@@ -102,20 +103,24 @@ class Compressor():
 
     def run_command(self, command, result_item):
         error = False
-        error_message = ''
+        error_message = ""
         try:
-            output = subprocess.run(command,
-                             capture_output=True,
-                             check=True,
-                             shell=True,
-                             timeout=self.compression_timeout)
+            output = subprocess.run(
+                command,
+                capture_output=True,
+                check=True,
+                shell=True,
+                timeout=self.compression_timeout,
+            )
         except subprocess.TimeoutExpired as err:
             logging.error(str(err))
-            error_message = _('Compression has reached the configured timeout of {} seconds.').format(self.compression_timeout)
+            error_message = _(
+                "Compression has reached the configured timeout of {} seconds."
+            ).format(self.compression_timeout)
             error = True
         except Exception as err:
             logging.error(str(err))
-            error_message = _('An unknown error has occurred')
+            error_message = _("An unknown error has occurred")
             error = True
         finally:
             if not error:
@@ -135,7 +140,9 @@ class Compressor():
                             if not result_item.new_size > result_item.size:
                                 # Output is smaller than input in overwrite mode
                                 # Copy the compressed temporary file onto the uncompressed original file
-                                shutil.copy2(result_item.filename, result_item.original_filename)
+                                shutil.copy2(
+                                    result_item.filename, result_item.original_filename
+                                )
                             else:
                                 # Output is smaller than input in overwrite mode
                                 # Set file as skipped, since the temporary file was compressed
@@ -164,77 +171,93 @@ class Compressor():
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
 
     def build_png_command(self, result_item):
-        pngquant = 'pngquant --quality=0-{} -f {} --output {} --skip-if-larger'
-        oxipng = 'oxipng -o {} -i 1 {} --out {}'
+        pngquant = "pngquant --quality=0-{} -f {} --output {} --skip-if-larger"
+        oxipng = "oxipng -o {} -i 1 {} --out {}"
 
         if not self.metadata:
-            pngquant += ' --strip'
-            oxipng += ' --strip safe'
+            pngquant += " --strip"
+            oxipng += " --strip safe"
 
         if self.file_attributes:
-            oxipng += ' --preserve'
+            oxipng += " --preserve"
 
         if self.lossy:  # lossy compression
-            command = pngquant.format(self.png_lossy_level, quote(result_item.filename),
-                                      quote(result_item.new_filename))
-            command += ' && '
-            command += oxipng.format(self.png_lossless_level, quote(result_item.new_filename),
-                                      quote(result_item.new_filename))
-        else: # lossless compression
-            command = oxipng.format(self.png_lossless_level, quote(result_item.filename),
-                                     quote(result_item.new_filename))
+            command = pngquant.format(
+                self.png_lossy_level,
+                quote(result_item.filename),
+                quote(result_item.new_filename),
+            )
+            command += " && "
+            command += oxipng.format(
+                self.png_lossless_level,
+                quote(result_item.new_filename),
+                quote(result_item.new_filename),
+            )
+        else:  # lossless compression
+            command = oxipng.format(
+                self.png_lossless_level,
+                quote(result_item.filename),
+                quote(result_item.new_filename),
+            )
         return command
 
     def build_jpg_command(self, result_item):
         if self.do_new_file:
-            jpegoptim = 'jpegoptim --max={} -o --stdout {} > {}'
-            jpegoptim2 = 'jpegoptim -o --stdout {} > {}'
+            jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"
+            jpegoptim2 = "jpegoptim -o --stdout {} > {}"
         else:
-            jpegoptim = 'jpegoptim --max={} -o {}'
-            jpegoptim2 = 'jpegoptim -o {}'
+            jpegoptim = "jpegoptim --max={} -o {}"
+            jpegoptim2 = "jpegoptim -o {}"
 
         if self.jpg_progressive:
-            jpegoptim += ' --all-progressive'
-            jpegoptim2 += ' --all-progressive'
+            jpegoptim += " --all-progressive"
+            jpegoptim2 += " --all-progressive"
 
         if not self.metadata:
-            jpegoptim += ' --strip-all'
-            jpegoptim2 += ' --strip-all'
+            jpegoptim += " --strip-all"
+            jpegoptim2 += " --strip-all"
 
         if self.file_attributes:
-            jpegoptim += ' --preserve --preserve-perms'
-            jpegoptim2 += ' --preserve --preserve-perms'
+            jpegoptim += " --preserve --preserve-perms"
+            jpegoptim2 += " --preserve --preserve-perms"
 
         if self.lossy:  # lossy compression
             if self.do_new_file:
-                command = jpegoptim.format(self.jpg_lossy_level, quote(result_item.filename),
-                                           quote(result_item.new_filename))
+                command = jpegoptim.format(
+                    self.jpg_lossy_level,
+                    quote(result_item.filename),
+                    quote(result_item.new_filename),
+                )
             else:
-                command = jpegoptim.format(self.jpg_lossy_level, quote(result_item.filename))
+                command = jpegoptim.format(
+                    self.jpg_lossy_level, quote(result_item.filename)
+                )
         else:  # lossless compression
             if self.do_new_file:
-                command = jpegoptim2.format(quote(result_item.filename), quote(result_item.new_filename))
+                command = jpegoptim2.format(
+                    quote(result_item.filename), quote(result_item.new_filename)
+                )
             else:
                 command = jpegoptim2.format(quote(result_item.filename))
         return command
 
     def build_webp_command(self, result_item):
-        command = 'cwebp {}'.format(quote(result_item.filename))
+        command = "cwebp {}".format(quote(result_item.filename))
 
         # cwebp doesn't preserve any metadata by default
         if self.metadata:
-            command += ' -metadata all'
+            command += " -metadata all"
 
         if self.lossy:
             quality = self.webp_lossy_level
         else:
-            command += ' -lossless'
-            quality = 100   # maximum cpu power for lossless
+            command += " -lossless"
+            quality = 100  # maximum cpu power for lossless
 
         # multithreaded, (lossless) compression mode, quality, output
-        command += ' -mt -m {}'.format(self.webp_lossless_level)
-        command += ' -q {}'.format(quality)
-        command += ' -o {}'.format(quote(result_item.new_filename))
+        command += " -mt -m {}".format(self.webp_lossless_level)
+        command += " -q {}".format(quality)
+        command += " -o {}".format(quote(result_item.new_filename))
 
         return command
 
@@ -242,16 +265,19 @@ class Compressor():
         # workaround for https://github.com/scour-project/scour/issues/129
         temp_new_filename = result_item.new_filename
         if not self.do_new_file:
-            temp_new_filename = '{}.temp'.format(result_item.new_filename)
+            temp_new_filename = "{}.temp".format(result_item.new_filename)
 
-        command = 'scour -i {} -o {}'.format(quote(result_item.filename), quote(temp_new_filename))
+        command = "scour -i {} -o {}".format(
+            quote(result_item.filename), quote(temp_new_filename)
+        )
 
         if self.svg_maximum_level:
-            command += ' --enable-viewboxing --enable-id-stripping'
-            command += ' --enable-comment-stripping --shorten-ids --indent=none'
+            command += " --enable-viewboxing --enable-id-stripping"
+            command += " --enable-comment-stripping --shorten-ids --indent=none"
 
         if not self.do_new_file:
-            command += ' && mv {} {}'.format(quote(temp_new_filename), quote(result_item.new_filename))
+            command += " && mv {} {}".format(
+                quote(temp_new_filename), quote(result_item.new_filename)
+            )
 
         return command
-
