@@ -1,30 +1,30 @@
 # Georgian translation for Curtail.
-# Copyright (C) 2024 Curtail's COPYRIGHT HOLDER
+# Copyright (C) 2024 Curtail's authors
 # This file is distributed under the same license as the Curtail package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2024-2025.
+# Ekaterine Papava <papava.e@gtu.ge>, 2024-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-03-15 14:51+0000\n"
-"PO-Revision-Date: 2025-03-16 06:27+0100\n"
+"POT-Creation-Date: 2026-01-15 14:15+0000\n"
+"PO-Revision-Date: 2026-01-16 05:49+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:33
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
+#: data/ui/window.ui:36
 msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
-#: data/com.github.huluti.Curtail.desktop.in:5
+#: data/com.github.huluti.Curtail.desktop.in:4
 msgid "Compress your images"
 msgstr "შეკუმშეთ თქვენი სურათები"
 
@@ -36,18 +36,13 @@ msgstr ""
 "თქვენი სურათების ოპტიმიზაცია Curtail- ით, გამოსახულების სასარგებლო "
 "კომპრესორით, რომელიც მხარს უჭერს PNG, JPEG, WebP და SVG ფაილის ტიპებს."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
 "აქვს ორივე, კარგვის გარეშეც და კარგვითაც შეკუმშვის რეჟიმები არჩევნის "
 "საშუალებით, შევინარჩუნოთ გამოსახულების მეტამონაცემები, თუ არა."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
-msgid "Hugo Posnic"
-msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -180,28 +175,28 @@ msgstr "შეკუმშვის მოლოდინის ვდა"
 msgid "Compression timeout for each image."
 msgstr "შეკუმშვის მოლოდინის დრო თითოეული სურათისთვის."
 
-#: data/ui/help_overlay.ui:11
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
 msgid "General"
 msgstr "ზოგადი"
 
-#: data/ui/help_overlay.ui:14
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:9
+msgctxt "shortcuts dialog"
 msgid "Select File"
-msgstr "აირჩიეთ ფაილი"
+msgstr "ფაილის არჩევა"
 
-#: data/ui/help_overlay.ui:20
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:15
+msgctxt "shortcuts dialog"
 msgid "Preferences"
 msgstr "მორგება"
 
-#: data/ui/help_overlay.ui:26
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:21
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობები"
 
-#: data/ui/help_overlay.ui:32
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:27
+msgctxt "shortcuts dialog"
 msgid "Quit"
 msgstr "გასვლა"
 
@@ -324,31 +319,31 @@ msgstr "კლავიატურის მალსახმობები"
 msgid "About Curtail"
 msgstr "Curtail-ის შესახებ"
 
-#: data/ui/window.ui:19 src/window.py:273
+#: data/ui/window.ui:22 src/window.py:304
 msgid "Browse Files"
 msgstr "ფაილის არჩევა"
 
-#: data/ui/window.ui:26
+#: data/ui/window.ui:29
 msgid "Clear Results"
 msgstr "შედეგების გასუფთავება"
 
-#: data/ui/window.ui:40
+#: data/ui/window.ui:43
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
-#: data/ui/window.ui:51
+#: data/ui/window.ui:54
 msgid "_Change Mode"
 msgstr "რეჟიმის შე_ცვლა"
 
-#: data/ui/window.ui:52
+#: data/ui/window.ui:55
 msgid "Images will be overwritten, proceed carefully"
 msgstr "სურათებს თავზე გადაეწერება. გააგრძელეთ ყურადღებით"
 
-#: data/ui/window.ui:60
+#: data/ui/window.ui:63
 msgid "Drop images here to compress them"
 msgstr "დაყარეთ სურათები აქ, რომ შეკუმშოთ ისინი"
 
-#: data/ui/window.ui:66
+#: data/ui/window.ui:70
 msgid "_Browse Files"
 msgstr "ფაილის ა_რჩევა"
 
@@ -356,93 +351,91 @@ msgstr "ფაილის ა_რჩევა"
 msgid "Lossless"
 msgstr "კარგვის გარეშე"
 
-#: data/ui/window.ui:97
+#: data/ui/window.ui:91
 msgid "Lossy"
 msgstr "კარგვითი"
 
-#: src/compressor.py:114
+#: data/ui/window.ui:107
+msgid "Getting things ready"
+msgstr "მიმდინარეობს მომზადება"
+
+#: data/ui/window.ui:108
+msgid "Analyzing your images before compression..."
+msgstr "თქვენი გამოსახულებების შეკუმშვამდელი ანალიზი..."
+
+#: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "შეკუმშვამ მიაღწია მორგებულ მოლოდინის ვადას, რომელიც {} წამია."
 
-#: src/compressor.py:118
+#: src/compressor.py:123
 msgid "An unknown error has occurred"
 msgstr "ნაპოვნია უცნობი შეცდომა"
 
-#: src/compressor.py:158
+#: src/compressor.py:168
 msgid "Can't find the compressed file"
 msgstr "შეკუმშული ფაილი ვერ ვიპოვე"
 
-#: src/tools.py:32
+#: src/tools.py:33
 msgid "All images"
 msgstr "ყველა გამოსახულება"
 
-#: src/tools.py:39
+#: src/tools.py:40
 msgid "PNG images"
 msgstr "PNG გამოსახულებები"
 
-#: src/tools.py:43
+#: src/tools.py:44
 msgid "JPEG images"
 msgstr "JPEG გამოსახულებები"
 
-#: src/tools.py:47
+#: src/tools.py:48
 msgid "WebP images"
 msgstr "WEBP გამოსახულებები"
 
-#: src/tools.py:51
+#: src/tools.py:52
 msgid "SVG images"
 msgstr "SVG გამოსახულებები"
 
-#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
-#: src/tools.py:181 src/tools.py:211
+#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
+#: src/tools.py:183 src/tools.py:210
 msgid "Version not found"
 msgstr "ვერსია ვერ მოიძებნა"
 
-#: src/window.py:144
+#: src/window.py:161
 msgid "Skipped"
 msgstr "გამოტოვებულია"
 
-#: src/window.py:162
+#: src/window.py:182
 msgid "More Information"
 msgstr "მეტი ინფორმაცია"
 
-#: src/window.py:169
+#: src/window.py:191
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
 "შეკუმშვა გამოტოვებულია, რადგან შედეგად მიღებული ფაილი უფრო დიდი იქნებოდა."
 
-#: src/window.py:232
+#: src/window.py:261
 msgid "Open Image"
 msgstr "გამოსახულების გახსნა"
 
-#: src/window.py:233
+#: src/window.py:262
 msgid "Show in Folder"
 msgstr "საქაღალდეში ჩვენება"
 
-#: src/window.py:257
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” suffix"
-msgstr "უსაფრთხო რეჟიმი სუფიქსით “{suffix_prefix}”"
-
-#: src/window.py:260
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” prefix"
-msgstr "უსაფრთხო რეჟიმი პრეფიქსით “{suffix_prefix}”"
-
-#: src/window.py:263
+#: src/window.py:294
 msgid "Overwrite mode"
 msgstr "თავზე გადაწერის რეჟიმი"
 
-#: src/window.py:290
+#: src/window.py:319
 msgid "Browse Directories"
 msgstr "საქაღალდეების პოვნა"
 
-#: src/window.py:315 src/window.py:321
+#: src/window.py:342 src/window.py:351
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "მართლა გნებავთ ამ საქაღალდეებში არსებული გამოსახულებების შეკუმშვა?"
 
-#: src/window.py:316
+#: src/window.py:344
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -450,7 +443,7 @@ msgstr ""
 "ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში "
 "შეიკუმშება. ორიგინალი გამოსახულებები არ შეიცვლება."
 
-#: src/window.py:322
+#: src/window.py:353
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -458,33 +451,59 @@ msgstr ""
 "ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში შეიკუმშება "
 "და თავზე გადაეწერება!"
 
-#: src/window.py:325
+#: src/window.py:358
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: src/window.py:326
+#: src/window.py:359
 msgid "Compress"
 msgstr "შეკუმშვა"
 
-#: src/window.py:403
-msgid "No files found"
-msgstr "ფაილები ვერ მოიძებნა"
-
-#: src/window.py:413
-msgid "This file doesn't exist."
-msgstr "ეს ფაილი არ არსებობს."
-
-#: src/window.py:418
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "ამ ფაილის ფორმატი მხარდაჭერილი არაა."
 
-#: src/window.py:474
+#: src/window.py:406
+msgid "Unable to read file information."
+msgstr "ფაილის ინფორმაციის წაკითხვა შეუძლებელია."
+
+#: src/window.py:459
+msgid "No files found"
+msgstr "ფაილები ვერ მოიძებნა"
+
+#: src/window.py:522
 msgid "translator-credits"
 msgstr "Giorgi Maghlakelidze https://launchpad.net/~dracid"
 
-#: src/window.py:478
+#: src/window.py:526
 msgid "Contributors"
 msgstr "შემომწირავები"
+
+#~ msgid "Hugo Posnic"
+#~ msgstr "Hugo Posnic"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "ზოგადი"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "მორგება"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "კლავიატურის მალსახმობები"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” suffix"
+#~ msgstr "უსაფრთხო რეჟიმი სუფიქსით “{suffix_prefix}”"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” prefix"
+#~ msgstr "უსაფრთხო რეჟიმი პრეფიქსით “{suffix_prefix}”"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "ეს ფაილი არ არსებობს."
 
 #~ msgid "Safe mode with '{}' {}"
 #~ msgstr "უსაფრთხო რეჟიმი \"{}\" {}-ით"
