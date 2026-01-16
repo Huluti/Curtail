@@ -21,7 +21,6 @@ import logging
 import shutil
 import os
 import queue
-from concurrent.futures import ThreadPoolExecutor
 from gi.repository import GLib, Gio
 from pathlib import Path
 from shlex import quote
@@ -78,36 +77,17 @@ class Compressor:
 
     def _compress_images(self):
         q = queue.Queue()
-        cpu_count = os.cpu_count()
+        cpu_count = max(2, min(8, os.cpu_count() // 2))  # use between 2 and 8 threads
 
         # Fill the queue
         for result_item in self.result_items:
-            file_type = get_file_type(result_item.filename)
-            if not file_type:
-                continue
-
-            if file_type == "png":
-                command = self.build_png_command(result_item)
-            elif file_type == "jpg":
-                command = self.build_jpg_command(result_item)
-            elif file_type == "webp":
-                if not self.do_new_file:
-                    self.create_tmp_result_item(result_item)
-                command = self.build_webp_command(result_item)
-            elif file_type == "svg":
-                if not self.do_new_file:
-                    self.create_tmp_result_item(result_item)
-                command = self.build_svg_command(result_item)
-            else:
-                continue
-
-            q.put((command, result_item))
+            q.put((result_item))
 
         def worker():
             while not q.empty():
-                command, item = q.get()
+                result_item = q.get()
                 try:
-                    self.run_command(command, item)
+                    self.run_command(result_item)
                 finally:
                     q.task_done()
 
@@ -118,7 +98,8 @@ class Compressor:
 
         GLib.idle_add(self.c_enable_compression, True)
 
-    def run_command(self, command, result_item):
+    def run_command(self, result_item):
+        command = self.get_command(result_item)
         error = False
         error_message = ""
         try:
@@ -186,6 +167,24 @@ class Compressor:
                     error = True
 
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
+
+    def get_command(self, result_item):
+        file_type = get_file_type(result_item.filename)
+        if not file_type:
+            return None
+
+        if file_type == "png":
+            return self.build_png_command(result_item)
+        elif file_type == "jpg":
+            return self.build_jpg_command(result_item)
+        elif file_type == "webp":
+            if not self.do_new_file:
+                self.create_tmp_result_item(result_item)
+            return self.build_webp_command(result_item)
+        elif file_type == "svg":
+            if not self.do_new_file:
+                self.create_tmp_result_item(result_item)
+            return self.build_svg_command(result_item)
 
     def build_png_command(self, result_item):
         pngquant = "pngquant --quality=0-{} -f {} --output {} --skip-if-larger"
