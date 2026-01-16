@@ -20,6 +20,7 @@ import subprocess
 import logging
 import shutil
 import os
+import queue
 from concurrent.futures import ThreadPoolExecutor
 from gi.repository import GLib, Gio
 from pathlib import Path
@@ -76,29 +77,45 @@ class Compressor:
         thread = threading.Thread(target=self._compress_images, daemon=True).start()
 
     def _compress_images(self):
+        q = queue.Queue()
         cpu_count = os.cpu_count()
-        executor = ThreadPoolExecutor(max_workers=cpu_count)
-        futures = []
+
+        # Fill the queue
         for result_item in self.result_items:
             file_type = get_file_type(result_item.filename)
-            if file_type:
-                if file_type == "png":
-                    command = self.build_png_command(result_item)
-                elif file_type == "jpg":
-                    command = self.build_jpg_command(result_item)
-                elif file_type == "webp":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_webp_command(result_item)
-                elif file_type == "svg":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_svg_command(result_item)
-                future = executor.submit(self.run_command, command, result_item)
-                futures.append(future)
+            if not file_type:
+                continue
 
-        for future in futures:
-            future.result()
+            if file_type == "png":
+                command = self.build_png_command(result_item)
+            elif file_type == "jpg":
+                command = self.build_jpg_command(result_item)
+            elif file_type == "webp":
+                if not self.do_new_file:
+                    self.create_tmp_result_item(result_item)
+                command = self.build_webp_command(result_item)
+            elif file_type == "svg":
+                if not self.do_new_file:
+                    self.create_tmp_result_item(result_item)
+                command = self.build_svg_command(result_item)
+            else:
+                continue
+
+            q.put((command, result_item))
+
+        def worker():
+            while not q.empty():
+                command, item = q.get()
+                try:
+                    self.run_command(command, item)
+                finally:
+                    q.task_done()
+
+        threads = [threading.Thread(target=worker) for _ in range(cpu_count)]
+        for t in threads:
+            t.start()
+        q.join()  # Wait until all tasks are done
+
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, command, result_item):
