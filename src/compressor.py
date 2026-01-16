@@ -76,26 +76,37 @@ class Compressor:
         thread = threading.Thread(target=self._compress_images, daemon=True).start()
 
     def _compress_images(self):
-        q = queue.Queue()
-        cpu_count = max(2, min(8, os.cpu_count() // 2))  # use between 2 and 8 threads
+        cpu_count = max(
+            2, min(4, os.cpu_count() // 2)
+        )  # safe thread count for large batches
+        batch_size = 20  # number of images to process at once
 
-        # Fill the queue
-        for result_item in self.result_items:
-            q.put((result_item))
+        # Process images in batches
+        for batch_start in range(0, len(self.result_items), batch_size):
+            batch = self.result_items[batch_start : batch_start + batch_size]
+            q = queue.Queue()
 
-        def worker():
-            while not q.empty():
-                result_item = q.get()
-                try:
-                    self.run_command(result_item)
-                finally:
-                    q.task_done()
+            # Fill the queue for this batch
+            for result_item in batch:
+                q.put(result_item)
 
-        threads = [threading.Thread(target=worker) for _ in range(cpu_count)]
-        for t in threads:
-            t.start()
-        q.join()  # Wait until all tasks are done
+            def worker():
+                while not q.empty():
+                    result_item = q.get()
+                    try:
+                        self.run_command(result_item)
+                    finally:
+                        q.task_done()
 
+            # Start worker threads for this batch
+            threads = [threading.Thread(target=worker) for _ in range(cpu_count)]
+            for t in threads:
+                t.start()
+
+            # Wait until this batch is finished before starting next
+            q.join()
+
+        # All batches done
         GLib.idle_add(self.c_enable_compression, True)
 
     def run_command(self, result_item):
