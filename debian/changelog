@@ -1,3 +1,12 @@
+curtail (1.15.0) focal; urgency=medium
+
+  * Build path list in a background thread to prevent UI blocking
+  * Add a loading status page when dropping files
+  * Port GtkShortcutsWindow to AdwShortcutsDialog
+  * Update oxipng to v10
+
+-- Archisman Panigrahi <apandada1@gmail.com>  Fri, 16 Jan 2026 09:13 +0200
+
 curtail (1.14.0) focal; urgency=medium
 
   * Add D-Bus service file. Thank's to @City-busz
@@ -10,7 +19,7 @@ curtail (1.14.0) focal; urgency=medium
   * Raise existing window instead of opening new one on activation. Thank's to @City-busz
   * Prevent creation of new file when skipped. Thank's to @ARAKHN1D
 
--- Archisman Panigrahi <apandada1@gmail.com>  Mon, 05 Jan 2025 15:11 +0200
+-- Archisman Panigrahi <apandada1@gmail.com>  Mon, 05 Jan 2026 15:11 +0200
 
 curtail (1.13.0) focal; urgency=medium
 

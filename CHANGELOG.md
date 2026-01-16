@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.15.0 - 2026-01-16
+### Added
+- Build path list in a background thread to prevent UI blocking
+- Add a loading status page when dropping files
+
+### Changed
+- Port GtkShortcutsWindow to AdwShortcutsDialog
+- Update oxipng to v10
+
 ## 1.14.0 - 2026-01-05
 ### Added
 - Add D-Bus service file. Thank's to @City-busz.
