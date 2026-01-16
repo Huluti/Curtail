@@ -99,7 +99,7 @@ class Compressor:
                         q.task_done()
 
             # Start worker threads for this batch
-            threads = [threading.Thread(target=worker) for _ in range(cpu_count)]
+            threads = [threading.Thread(target=worker, daemon=True) for _ in range(cpu_count)]
             for t in threads:
                 t.start()
 
