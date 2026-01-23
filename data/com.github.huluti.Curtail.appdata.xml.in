@@ -27,11 +27,11 @@
   <screenshots>
     <screenshot type="default">
       <image type="source">
-        https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen1.png</image>
+        https://raw.githubusercontent.com/Huluti/Curtail/main/data/screenshots/screen1.png</image>
     </screenshot>
     <screenshot>
       <image type="source">
-        https://raw.githubusercontent.com/Huluti/Curtail/master/data/screenshots/screen2.png</image>
+        https://raw.githubusercontent.com/Huluti/Curtail/main/data/screenshots/screen2.png</image>
     </screenshot>
   </screenshots>
   <translation type="gettext">curtail</translation>
