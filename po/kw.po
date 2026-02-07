@@ -1,0 +1,487 @@
+# Cornish translation for Curtail.
+# Copyright (C) 2026 Curtail's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Curtail package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Curtail main\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2026-01-23 17:59+0000\n"
+"PO-Revision-Date: 2026-02-07 21:14+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-DL-VCS-Web: https://github.com/Huluti/Curtail\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: Curtail\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
+#: data/ui/window.ui:36
+msgid "Curtail"
+msgstr "Lettya"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
+#: data/com.github.huluti.Curtail.desktop.in:4
+msgid "Compress your images"
+msgstr "Gwaska dha avenyow"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"Gwaska dha avenyow gans Curtail, gwaskell aven gweresek skoodhya eghennow "
+"restren PNG, JPEG, WebP, ha SVG."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
+msgid ""
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Yth skoodhya an dhiw fordhow gwaskans ankollek ha kollek gans dewis mar "
+"gwitha metadata a avenyow."
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "gwaska;aven;skeusen;"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Sawya yn restren nowydh"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Sawya an restren gwaskys yn restren nowydh."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Select the mode to append text for a new file"
+msgstr "Dewis an fordh rag ystyn tekst rag restren nowydh"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr ""
+"Gorra fatel yllir ystyn an tekst keworransel (avel lostelven po ragelven) "
+"rag restren nowydh."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Enable recursive compression in folders"
+msgstr "Galloswegi gwaskans dasleverek yn restrenvaow"
+
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "An settyans ma gallosegi gwaskans yn agwedh dasleverek yn restrenvaow."
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve metadata"
+msgstr "Gwithan metadata"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting preserves metadata of images."
+msgstr "An settyans ma gwitha metadata a avenyow."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Gwithva grontys ha termynyow restren mars yw possybyl"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"An settyans ma gwitha grontys ha termynyow restren a avenyow mars yw "
+"possybyl."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
+msgid "Enable lossy mode"
+msgstr "Gallosegi fordh kollek"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Use lossy mode to compress images."
+msgstr "Devnydhya fordh kollek rag gwiska avenyow."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "Suffix/Prefix to append at new file"
+msgstr "Lostelven/Ragelven rag ystyn yn restren nowydh"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Suffix/Prefix to append at new file."
+msgstr "Lostelven/Ragelven rag ystyn yn restren nowydh."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "PNG Lossy Compression Level"
+msgstr "Nivel Gwaskans Kollek PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Lossy compression level to use for PNG images."
+msgstr "Nivel gwaskans kollek rag devnydh gans avenyow PNG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46
+msgid "PNG Lossless Compression Level"
+msgstr "Nivel Gwaskans Ankollek PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossless compression level to use for PNG images."
+msgstr "Nivel gwaskans ankollek rag devnydh gans avenyow PNG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
+msgid "JPG Lossy Compression Level"
+msgstr "Nivel Gwaskans Kollek JPG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossy compression level to use for JPG images."
+msgstr "Nivel gwaskans kollek rag devnydh gans avenyow JPG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
+msgid "WebP Lossy Compression Level"
+msgstr "Nivel Gwaskans Kollek WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Lossy compression level to use for WebP images."
+msgstr "Nivel gwaskans kollek rag devnydh gans avenyow WebP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "WebP Lossless Compression Level"
+msgstr "Nivel Gwaskans Ankollek WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Lossless compression level to use for WebP images."
+msgstr "Nivel gwaskans ankollek rag devnydh gans avenyow WebP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Gallosegi ow kodenni avonsek rag avenyow JPEG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Optionally encode jpeg images progressively."
+msgstr "Dre dhewis kodenni avenyow jpeg avonsek."
+
+#: data/com.github.huluti.Curtail.gschema.xml:71
+msgid "Enable maximum compression for SVG images"
+msgstr "Gallosegi gwaskans moyha rag avenyow SVG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:72
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Gallosegi karth moyha a avenyow SVG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
+msgid "Compression Timeout"
+msgstr "Termyn Yn-mes Gwaskans"
+
+#: data/com.github.huluti.Curtail.gschema.xml:77
+msgid "Compression timeout for each image."
+msgstr "Termyn yn-mes gwaskans rag pub aven."
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Ollgemmyn"
+
+#: data/ui/shortcuts-dialog.ui:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Dewis Restren"
+
+#: data/ui/shortcuts-dialog.ui:15
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Settyansow"
+
+#: data/ui/shortcuts-dialog.ui:21
+msgctxt "shortcuts dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Kesunyansow Bysowek"
+
+#: data/ui/shortcuts-dialog.ui:27
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Kwytya"
+
+#: data/ui/preferences.ui:4 data/ui/menu.ui:10
+msgid "Preferences"
+msgstr "Settyansow"
+
+#: data/ui/preferences.ui:8
+msgid "General"
+msgstr "Ollgemmyn"
+
+#: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr "Fordh Saw"
+
+#: data/ui/preferences.ui:15
+msgid "Save the compressed image in a new file"
+msgstr "Sawya an aven gwaskys yn restren nowydh"
+
+#: data/ui/preferences.ui:21
+msgid "Naming Mode"
+msgstr "Fordh Ow Henwel"
+
+#: data/ui/preferences.ui:22
+msgid "Select between suffix and prefix"
+msgstr "Dewis yntra lostelven ha ragelven"
+
+#: data/ui/preferences.ui:26
+msgid "Suffix"
+msgstr "Lostelven"
+
+#: data/ui/preferences.ui:27
+msgid "Prefix"
+msgstr "Ragelven"
+
+#: data/ui/preferences.ui:36
+msgid "New File Suffix/Prefix"
+msgstr "Restren Nowydh Lostelven/Ragelven"
+
+#: data/ui/preferences.ui:41
+msgid "Recursive Compression"
+msgstr "Gwaskans Dasleverek"
+
+#: data/ui/preferences.ui:42
+msgid "Enable or disable compression through subdirectories"
+msgstr "Gallosegi po ungallosegi gwaskans dres isrestrenvaow"
+
+#: data/ui/preferences.ui:47
+msgid "Keep Metadata"
+msgstr "Gwitha Metadata"
+
+#: data/ui/preferences.ui:48
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Gwitha darnow metadata na menni rendrans"
+
+#: data/ui/preferences.ui:53
+msgid "Keep File Attributes When Possible"
+msgstr "Gwitha Teythiennow Restren Mars Yw Possybyl"
+
+#: data/ui/preferences.ui:54
+msgid ""
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr ""
+"Surhe an restren nowydh kavos an grontys ha termynyow keth dell an restren "
+"gwreydhek"
+
+#: data/ui/preferences.ui:60
+msgid "Set the timeout between images"
+msgstr "Gorra an termyn yn-mes ynter avenyow"
+
+#: data/ui/preferences.ui:78
+msgid "Formats"
+msgstr "Furvasow"
+
+#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
+#: data/ui/preferences.ui:140
+msgid "Lossy Compression"
+msgstr "Gwaskans Kollek"
+
+#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
+#: data/ui/preferences.ui:141
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr "Gorra an kwalita a'n aven dinythys, 100 yw an kwalita gwella"
+
+#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
+msgid "Lossless Compression Level"
+msgstr "Nivel Gwaskans Ankollek"
+
+#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
+msgid "Set the level of the compression, 6 is the highest but slowest level"
+msgstr "Gorra an nivel a'n gwaskans, 6 yw an niver ughella mes syger"
+
+#: data/ui/preferences.ui:129
+msgid "Progressive Encode"
+msgstr "Kodenni Avonsek"
+
+#: data/ui/preferences.ui:130
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr "Gallosegi rendrans aven avonsek, ow mos a ankler dhe kler"
+
+#: data/ui/preferences.ui:171
+msgid "Maximum Compression Level"
+msgstr "Nivel Gwaskans Moyha"
+
+#: data/ui/preferences.ui:172
+msgid "This can be more destructive for the image"
+msgstr "Hemma a yll bos moy distruyansek rag an aven"
+
+#: data/ui/menu.ui:6
+msgid "Bulk Compress Directory"
+msgstr "Gwaska Braster Restrenva"
+
+#: data/ui/menu.ui:14
+msgid "Keyboard Shortcuts"
+msgstr "Kesunyansow Bysowek"
+
+#: data/ui/menu.ui:18
+msgid "About Curtail"
+msgstr "A-dro Lettya"
+
+#: data/ui/window.ui:22 src/window.py:304
+msgid "Browse Files"
+msgstr "Peuri Restrennow"
+
+#: data/ui/window.ui:29
+msgid "Clear Results"
+msgstr "Hedhi Sewyansow"
+
+#: data/ui/window.ui:43
+msgid "Main Menu"
+msgstr "Rol Chif"
+
+#: data/ui/window.ui:54
+msgid "_Change Mode"
+msgstr "Fordh _Chanj"
+
+#: data/ui/window.ui:55
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Avenyow a wra bos asleys, mos yn-rag gans rach"
+
+#: data/ui/window.ui:63
+msgid "Drop images here to compress them"
+msgstr "Droppya avenyow omma rag gwaska y's"
+
+#: data/ui/window.ui:70
+msgid "_Browse Files"
+msgstr "_Peuri Restrennow"
+
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "Ankollek"
+
+#: data/ui/window.ui:91
+msgid "Lossy"
+msgstr "Kollek"
+
+#: data/ui/window.ui:107
+msgid "Getting things ready"
+msgstr "Owth ombareusi"
+
+#: data/ui/window.ui:108
+msgid "Analyzing your images before compression..."
+msgstr "Ow dielvenna dha avenyow dherag gwaskans..."
+
+#: src/compressor.py:118
+msgid "Compression has reached the configured timeout of {} seconds."
+msgstr "Gwaskans re hedhys an termyn yn-mes selys a {} eylennow."
+
+#: src/compressor.py:123
+msgid "An unknown error has occurred"
+msgstr "Error ankoth re happys"
+
+#: src/compressor.py:168
+msgid "Can't find the compressed file"
+msgstr "Ny yllir kavos an restren gwaskys"
+
+#: src/tools.py:33
+msgid "All images"
+msgstr "Oll avenyow"
+
+#: src/tools.py:40
+msgid "PNG images"
+msgstr "Avenyow PNG"
+
+#: src/tools.py:44
+msgid "JPEG images"
+msgstr "Avenyow JPEG"
+
+#: src/tools.py:48
+msgid "WebP images"
+msgstr "Avenyow WebP"
+
+#: src/tools.py:52
+msgid "SVG images"
+msgstr "Avenyow SVG"
+
+#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
+#: src/tools.py:183 src/tools.py:210
+msgid "Version not found"
+msgstr "Versyon na kavas"
+
+#: src/window.py:161
+msgid "Skipped"
+msgstr "Skyppys"
+
+#: src/window.py:182
+msgid "More Information"
+msgstr "Kedhlow Moy"
+
+#: src/window.py:191
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Gwaskans yw skyppys dre reson ow gwaska an restren y fia sewys yn braster "
+"restren brassa."
+
+#: src/window.py:261
+msgid "Open Image"
+msgstr "Ygeri Aven"
+
+#: src/window.py:262
+msgid "Show in Folder"
+msgstr "Diskwedhes yn Restrenva"
+
+#: src/window.py:294
+msgid "Overwrite mode"
+msgstr "Fordh aslea"
+
+#: src/window.py:319
+msgid "Browse Directories"
+msgstr "Peuri Restrenvaow"
+
+#: src/window.py:342 src/window.py:351
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Os ta sur ty mynnes gwaska avenyow y'n restrenvaow ma?"
+
+#: src/window.py:344
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"Oll a'n avenyow y'n restrenvaow dewisys hag aga isrestrenvaow i a wra bos "
+"gwaskys. An avenyow gwreydhek ny wra bos chanjys."
+
+#: src/window.py:353
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"Oll a'n avenyow y'n restrenvaow dewisys hag aga isrestrenvaow i a wra bos "
+"gwaskys hag asleys!"
+
+#: src/window.py:358
+msgid "Cancel"
+msgstr "Hedhi"
+
+#: src/window.py:359
+msgid "Compress"
+msgstr "Gwaska"
+
+#: src/window.py:404
+msgid "Format of this file is not supported."
+msgstr "Furvas a'n restren ma yw anskoodhys."
+
+#: src/window.py:406
+msgid "Unable to read file information."
+msgstr "Anabel redya kedhlow restren."
+
+#: src/window.py:459
+msgid "No files found"
+msgstr "Restrennow kavas vyth"
+
+#: src/window.py:522
+msgid "translator-credits"
+msgstr "Flynn"
+
+#: src/window.py:526
+msgid "Contributors"
+msgstr "Kevriysi"
