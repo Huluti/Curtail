@@ -1,13 +1,13 @@
 # Basque translation for Curtail.
 # Copyright (C) 2025 Curtail's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Curtail package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>,  2025.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>,  2025, 2026.
 #
 msgid ""
 msgstr "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-04-22 15:24+0000\n"
-"PO-Revision-Date: 2025-02-15 20:47+0000\n"
+"POT-Creation-Date: 2026-01-23 17:59+0000\n"
+"PO-Revision-Date: 2026-02-22 20:47+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -16,13 +16,13 @@ msgstr "Project-Id-Version: Curtail master\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:3 data/ui/window.ui:4
-#: data/ui/window.ui:33
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
+#: data/ui/window.ui:36
 msgid "Curtail"
 msgstr "Curtail"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
-#: data/com.github.huluti.Curtail.desktop.in:5
+#: data/com.github.huluti.Curtail.desktop.in:4
 msgid "Compress your images"
 msgstr "Konprimatu irudiak"
 
@@ -37,11 +37,6 @@ msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr "Galerarik gabeko zein galeradun konpresioa onartzen du, eta irudien metadatuak gordetzeko aukera ere eskaintzen du."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/com.github.huluti.Curtail.appdata.xml.in:16
-msgid "Hugo Posnic"
-msgstr "Hugo Posnic"
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -169,28 +164,28 @@ msgstr "Konpresioaren denbora-muga"
 msgid "Compression timeout for each image."
 msgstr "Irudi bakoitzaren konpresioaren denbora-muga."
 
-#: data/ui/help_overlay.ui:11
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
 msgid "General"
 msgstr "Orokorra"
 
-#: data/ui/help_overlay.ui:14
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:9
+msgctxt "shortcuts dialog"
 msgid "Select File"
 msgstr "Hautatu fitxategia"
 
-#: data/ui/help_overlay.ui:20
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:15
+msgctxt "shortcuts dialog"
 msgid "Preferences"
 msgstr "Hobespenak"
 
-#: data/ui/help_overlay.ui:26
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:21
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Laster-teklak"
 
-#: data/ui/help_overlay.ui:32
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:27
+msgctxt "shortcuts dialog"
 msgid "Quit"
 msgstr "Irten"
 
@@ -310,159 +305,183 @@ msgstr "Laster-teklak"
 msgid "About Curtail"
 msgstr "Curtail aplikazioari buruz"
 
-#: data/ui/window.ui:19 src/window.py:273
+#: data/ui/window.ui:22 src/window.py:304
 msgid "Browse Files"
 msgstr "Arakatu fitxategiak"
 
-#: data/ui/window.ui:26
+#: data/ui/window.ui:29
 msgid "Clear Results"
 msgstr "Garbitu emaitzak"
 
-#: data/ui/window.ui:40
+#: data/ui/window.ui:43
 msgid "Main Menu"
 msgstr "Menu nagusia"
 
-#: data/ui/window.ui:51
+#: data/ui/window.ui:54
 msgid "_Change Mode"
 msgstr "_Aldatu modua"
 
-#: data/ui/window.ui:52
+#: data/ui/window.ui:55
 msgid "Images will be overwritten, proceed carefully"
 msgstr "Irudiak gainidatziko dira, ibili kontuz"
 
-#: data/ui/window.ui:60
+#: data/ui/window.ui:63
 msgid "Drop images here to compress them"
 msgstr "Jaregin irudiek hemen"
 
-#: data/ui/window.ui:67
+#: data/ui/window.ui:70
 msgid "_Browse Files"
 msgstr "A_rakatu fitxategiak"
 
-#: data/ui/window.ui:82
+#: data/ui/window.ui:85
 msgid "Lossless"
 msgstr "Galerarik gabea"
 
-#: data/ui/window.ui:88
+#: data/ui/window.ui:91
 msgid "Lossy"
 msgstr "Galeraduna"
 
-#: src/compressor.py:114
+#: data/ui/window.ui:107
+msgid "Getting things ready"
+msgstr "Gauzak prestatzen"
+
+#: data/ui/window.ui:108
+msgid "Analyzing your images before compression..."
+msgstr "Zure irudiak analizatzen konpresioari ekin baino lehen..."
+
+#: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Konpresioak konfiguratutako {} segundoen denbora-muga gainditu du."
 
-#: src/compressor.py:118
+#: src/compressor.py:123
 msgid "An unknown error has occurred"
 msgstr "Errore ezezaguna gertatu da"
 
-#: src/compressor.py:161
+#: src/compressor.py:168
 msgid "Can't find the compressed file"
 msgstr "Ezin da konprimatutako fitxategia aurkitu"
 
-#: src/tools.py:32
+#: src/tools.py:33
 msgid "All images"
 msgstr "Irudi guztiak"
 
-#: src/tools.py:39
+#: src/tools.py:40
 msgid "PNG images"
 msgstr "PNG irudiak"
 
-#: src/tools.py:43
+#: src/tools.py:44
 msgid "JPEG images"
 msgstr "JPEG irudiak"
 
-#: src/tools.py:47
+#: src/tools.py:48
 msgid "WebP images"
 msgstr "WebP irudiak"
 
-#: src/tools.py:51
+#: src/tools.py:52
 msgid "SVG images"
 msgstr "SVG irudiak"
 
-#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
-#: src/tools.py:181 src/tools.py:211
+#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
+#: src/tools.py:183 src/tools.py:210
 msgid "Version not found"
 msgstr "Bertsioa ez da aurkitu"
 
-#: src/window.py:144
+#: src/window.py:161
 msgid "Skipped"
 msgstr "Saltatua"
 
-#: src/window.py:162
+#: src/window.py:182
 msgid "More Information"
 msgstr "Informazio gehiago"
 
-#: src/window.py:169
+#: src/window.py:191
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr "Konpresioa saltatu da fitxategia konprimatzeak tamaina handiagoa sortuko lukeelako."
 
-#: src/window.py:232
+#: src/window.py:261
 msgid "Open Image"
 msgstr "Ireki irudia"
 
-#: src/window.py:233
+#: src/window.py:262
 msgid "Show in Folder"
 msgstr "Erakutsi karpetan"
 
-#: src/window.py:257
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” suffix"
-msgstr "Modu segurua “{suffix_prefix}” atzizkiarekin"
-
-#: src/window.py:260
-#, python-brace-format
-msgid "Safe mode with “{suffix_prefix}” prefix"
-msgstr "Modu segurua “{suffix_prefix}” aurrizkiarekin"
-
-#: src/window.py:263
+#: src/window.py:294
 msgid "Overwrite mode"
 msgstr "Gainidazteko modua"
 
-#: src/window.py:290
+#: src/window.py:319
 msgid "Browse Directories"
 msgstr "Arakatu direktorioak"
 
-#: src/window.py:315 src/window.py:321
+#: src/window.py:342 src/window.py:351
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ziur zaude irudiak direktorio hauetan konprimatu nahi dituzula?"
 
-#: src/window.py:316
+#: src/window.py:344
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr "Hautatutako direktorioko eta bere azpidirektorioetako irudi guztiak konprimatuko dira. Jatorrizko irudiak ez dira aldatuko."
 
-#: src/window.py:322
+#: src/window.py:353
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr "Hautatutako direktorioko eta bere azpidirektorioetako irudi guztiak konprimatu eta gainidatziko dira!"
 
-#: src/window.py:325
+#: src/window.py:358
 msgid "Cancel"
 msgstr "Utzi"
 
-#: src/window.py:326
+#: src/window.py:359
 msgid "Compress"
 msgstr "Konprimatu"
 
-#: src/window.py:403
-msgid "No files found"
-msgstr "Ez da fitxategirik aurkitu"
-
-#: src/window.py:413
-msgid "This file doesn't exist."
-msgstr "Fitxategi hau ez da existitzen."
-
-#: src/window.py:418
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Fitxategi honen formatua ez da onartzen."
 
-#: src/window.py:474
+#: src/window.py:406
+msgid "Unable to read file information."
+msgstr "Ezin da fitxategiaren informazioa irakurri."
+
+#: src/window.py:459
+msgid "No files found"
+msgstr "Ez da fitxategirik aurkitu"
+
+#: src/window.py:522
 msgid "translator-credits"
 msgstr "Asier Sarasua Garmendia <asiersarasua@ni.eus>"
 
-#: src/window.py:478
+#: src/window.py:526
 msgid "Contributors"
 msgstr "Laguntzaileak"
+
+#~ msgid "Hugo Posnic"
+#~ msgstr "Hugo Posnic"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Orokorra"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Hobespenak"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Laster-teklak"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” suffix"
+#~ msgstr "Modu segurua “{suffix_prefix}” atzizkiarekin"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” prefix"
+#~ msgstr "Modu segurua “{suffix_prefix}” aurrizkiarekin"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "Fitxategi hau ez da existitzen."
