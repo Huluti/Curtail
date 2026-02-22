@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2025-10-18 15:26+0000\n"
+"POT-Creation-Date: 2026-01-23 17:59+0000\n"
 "PO-Revision-Date: 2025-10-18 15:26+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Greek <Greek>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:4
-#: data/ui/window.ui:33
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
+#: data/ui/window.ui:36
 msgid "Curtail"
 msgstr "Curtail"
 
@@ -32,18 +32,17 @@ msgstr "Συμπιέστε τις εικόνες σας"
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
-msgstr "Βελτιστοποιήστε τις εικόνες σας με το Curtail, έναν χρήσιμο συμπιεστή εικόνων που υποστηρίζει τύπους αρχείων PNG, JPEG, WebP και SVG."
+msgstr ""
+"Βελτιστοποιήστε τις εικόνες σας με το Curtail, έναν χρήσιμο συμπιεστή "
+"εικόνων που υποστηρίζει τύπους αρχείων PNG, JPEG, WebP και SVG."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
-msgstr "Υποστηρίζει λειτουργίες συμπίεσης τόσο χωρίς απώλειες όσο και με απώλειες, με την επιλογή διατήρησης ή μη των μεταδεδομένων των εικόνων."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/com.github.huluti.Curtail.appdata.xml.in:16
-msgid "Hugo Posnic"
-msgstr "Hugo Posnic"
+msgstr ""
+"Υποστηρίζει λειτουργίες συμπίεσης τόσο χωρίς απώλειες όσο και με απώλειες, "
+"με την επιλογή διατήρησης ή μη των μεταδεδομένων των εικόνων."
 
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
@@ -65,7 +64,9 @@ msgstr "Επιλογή του τρόπου προσθήκης κειμένου �
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
-msgstr "Ορίστε πώς θα προστεθεί το επιπλέον κείμενο (ως επίθεμα ή πρόθεμα) για ένα νέο αρχείο."
+msgstr ""
+"Ορίστε πώς θα προστεθεί το επιπλέον κείμενο (ως επίθεμα ή πρόθεμα) για ένα "
+"νέο αρχείο."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
@@ -73,7 +74,8 @@ msgstr "Ενεργοποίηση αναδρομικής συμπίεσης σε 
 
 #: data/com.github.huluti.Curtail.gschema.xml:17
 msgid "This setting enable compression in a recursive way in folders."
-msgstr "Αυτή η ρύθμιση ενεργοποιεί τη συμπίεση με αναδρομικό τρόπο στους φακέλους."
+msgstr ""
+"Αυτή η ρύθμιση ενεργοποιεί τη συμπίεση με αναδρομικό τρόπο στους φακέλους."
 
 #: data/com.github.huluti.Curtail.gschema.xml:21
 msgid "Preserve metadata"
@@ -89,7 +91,9 @@ msgstr "Διατήρηση δικαιωμάτων αρχείου και χρον
 
 #: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "This setting file permissions and timestamps of images if possible."
-msgstr "Αυτή η ρύθμιση διατηρεί τα δικαιώματα αρχείου και τις χρονοσφραγίδες των εικόνων εάν είναι δυνατόν."
+msgstr ""
+"Αυτή η ρύθμιση διατηρεί τα δικαιώματα αρχείου και τις χρονοσφραγίδες των "
+"εικόνων εάν είναι δυνατόν."
 
 #: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
@@ -171,28 +175,28 @@ msgstr "Χρονικό Όριο Συμπίεσης"
 msgid "Compression timeout for each image."
 msgstr "Χρονικό όριο συμπίεσης για κάθε εικόνα."
 
-#: data/ui/help_overlay.ui:11
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
 msgid "General"
 msgstr "Γενικά"
 
-#: data/ui/help_overlay.ui:14
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:9
+msgctxt "shortcuts dialog"
 msgid "Select File"
-msgstr "Επιλογή Αρχείου"
+msgstr "Επιλογή αρχείου"
 
-#: data/ui/help_overlay.ui:20
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:15
+msgctxt "shortcuts dialog"
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: data/ui/help_overlay.ui:26
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:21
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
-msgstr "Συντομεύσεις Πληκτρολογίου"
+msgstr "Συντομεύσεις πληκτρολογίου"
 
-#: data/ui/help_overlay.ui:32
-msgctxt "shortcut window"
+#: data/ui/shortcuts-dialog.ui:27
+msgctxt "shortcuts dialog"
 msgid "Quit"
 msgstr "Έξοδος"
 
@@ -256,7 +260,9 @@ msgstr "Διατήρηση Χαρακτηριστικών Αρχείου Ότα�
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
-msgstr "Διασφάλιση ότι το νέο αρχείο έχει τα ίδια δικαιώματα και χρονοσφραγίδες με το αρχικό αρχείο"
+msgstr ""
+"Διασφάλιση ότι το νέο αρχείο έχει τα ίδια δικαιώματα και χρονοσφραγίδες με "
+"το αρχικό αρχείο"
 
 #: data/ui/preferences.ui:60
 msgid "Set the timeout between images"
@@ -274,7 +280,8 @@ msgstr "Συμπίεση με Απώλειες"
 #: data/ui/preferences.ui:86 data/ui/preferences.ui:117
 #: data/ui/preferences.ui:141
 msgid "Set the quality of the generated image, 100 is the best quality"
-msgstr "Ορίστε την ποιότητα της παραγόμενης εικόνας, το 100 είναι η καλύτερη ποιότητα"
+msgstr ""
+"Ορίστε την ποιότητα της παραγόμενης εικόνας, το 100 είναι η καλύτερη ποιότητα"
 
 #: data/ui/preferences.ui:98 data/ui/preferences.ui:153
 msgid "Lossless Compression Level"
@@ -282,7 +289,9 @@ msgstr "Επίπεδο Συμπίεσης χωρίς Απώλειες"
 
 #: data/ui/preferences.ui:99 data/ui/preferences.ui:154
 msgid "Set the level of the compression, 6 is the highest but slowest level"
-msgstr "Ορίστε το επίπεδο της συμπίεσης, το 6 είναι το υψηλότερο αλλά και το πιο αργό επίπεδο"
+msgstr ""
+"Ορίστε το επίπεδο της συμπίεσης, το 6 είναι το υψηλότερο αλλά και το πιο "
+"αργό επίπεδο"
 
 #: data/ui/preferences.ui:129
 msgid "Progressive Encode"
@@ -312,149 +321,182 @@ msgstr "Συντομεύσεις Πληκτρολογίου"
 msgid "About Curtail"
 msgstr "Σχετικά με το Curtail"
 
-#: data/ui/window.ui:19 src/window.py:273
+#: data/ui/window.ui:22 src/window.py:304
 msgid "Browse Files"
 msgstr "Αναζήτηση Αρχείων"
 
-#: data/ui/window.ui:26
+#: data/ui/window.ui:29
 msgid "Clear Results"
 msgstr "Εκκαθάριση Αποτελεσμάτων"
 
-#: data/ui/window.ui:40
+#: data/ui/window.ui:43
 msgid "Main Menu"
 msgstr "Κύριο Μενού"
 
-#: data/ui/window.ui:51
+#: data/ui/window.ui:54
 msgid "_Change Mode"
 msgstr "_Αλλαγή Λειτουργίας"
 
-#: data/ui/window.ui:52
+#: data/ui/window.ui:55
 msgid "Images will be overwritten, proceed carefully"
 msgstr "Οι εικόνες θα αντικατασταθούν, προχωρήστε με προσοχή"
 
-#: data/ui/window.ui:60
+#: data/ui/window.ui:63
 msgid "Drop images here to compress them"
 msgstr "Σύρετε εικόνες εδώ για να τις συμπιέσετε"
 
-#: data/ui/window.ui:67
+#: data/ui/window.ui:70
 msgid "_Browse Files"
 msgstr "_Αναζήτηση Αρχείων"
 
-#: data/ui/window.ui:82
+#: data/ui/window.ui:85
 msgid "Lossless"
 msgstr "Χωρίς Απώλειες"
 
-#: data/ui/window.ui:88
+#: data/ui/window.ui:91
 msgid "Lossy"
 msgstr "Με Απώλειες"
 
-#: src/compressor.py:114
+#: data/ui/window.ui:107
+msgid "Getting things ready"
+msgstr "Προετοιμασία"
+
+#: data/ui/window.ui:108
+msgid "Analyzing your images before compression..."
+msgstr "Ανάλυση των εικόνων σας πριν τη συμπίεση…"
+
+#: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Η συμπίεση έφτασε το καθορισμένο χρονικό όριο των {} δευτερολέπτων."
 
-#: src/compressor.py:118
+#: src/compressor.py:123
 msgid "An unknown error has occurred"
 msgstr "Προέκυψε ένα άγνωστο σφάλμα"
 
-#: src/compressor.py:161
+#: src/compressor.py:168
 msgid "Can't find the compressed file"
 msgstr "Δεν είναι δυνατή η εύρεση του συμπιεσμένου αρχείου"
 
-#: src/tools.py:32
+#: src/tools.py:33
 msgid "All images"
 msgstr "Όλες οι εικόνες"
 
-#: src/tools.py:39
+#: src/tools.py:40
 msgid "PNG images"
 msgstr "Εικόνες PNG"
 
-#: src/tools.py:43
+#: src/tools.py:44
 msgid "JPEG images"
 msgstr "Εικόνες JPEG"
 
-#: src/tools.py:47
+#: src/tools.py:48
 msgid "WebP images"
 msgstr "Εικόνες WebP"
 
-#: src/tools.py:51
+#: src/tools.py:52
 msgid "SVG images"
 msgstr "Εικόνες SVG"
 
-#: src/tools.py:153 src/tools.py:160 src/tools.py:167 src/tools.py:174
-#: src/tools.py:181 src/tools.py:211
+#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
+#: src/tools.py:183 src/tools.py:210
 msgid "Version not found"
 msgstr "Η έκδοση δεν βρέθηκε"
 
-#: src/window.py:144
+#: src/window.py:161
 msgid "Skipped"
 msgstr "Παραλείφθηκε"
 
-#: src/window.py:162
+#: src/window.py:182
 msgid "More Information"
 msgstr "Περισσότερες Πληροφορίες"
 
-#: src/window.py:169
+#: src/window.py:191
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
-msgstr "Η συμπίεση παραλείφθηκε επειδή η συμπίεση του αρχείου θα είχε ως αποτέλεσμα μεγαλύτερο μέγεθος αρχείου."
+msgstr ""
+"Η συμπίεση παραλείφθηκε επειδή η συμπίεση του αρχείου θα είχε ως αποτέλεσμα "
+"μεγαλύτερο μέγεθος αρχείου."
 
-#: src/window.py:232
+#: src/window.py:261
 msgid "Open Image"
 msgstr "Άνοιγμα Εικόνας"
 
-#: src/window.py:233
+#: src/window.py:262
 msgid "Show in Folder"
 msgstr "Εμφάνιση στο Φάκελο"
 
-#: src/window.py:263
+#: src/window.py:294
 msgid "Overwrite mode"
 msgstr "Λειτουργία αντικατάστασης"
 
-#: src/window.py:290
+#: src/window.py:319
 msgid "Browse Directories"
 msgstr "Αναζήτηση Καταλόγων"
 
-#: src/window.py:315 src/window.py:321
+#: src/window.py:342 src/window.py:351
 msgid "Are you sure you want to compress images in these directories?"
-msgstr "Είστε βέβαιοι ότι θέλετε να συμπιέσετε τις εικόνες σε αυτούς τους καταλόγους;"
+msgstr ""
+"Είστε βέβαιοι ότι θέλετε να συμπιέσετε τις εικόνες σε αυτούς τους καταλόγους;"
 
-#: src/window.py:316
+#: src/window.py:344
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
-msgstr "Όλες οι εικόνες στους επιλεγμένους καταλόγους και τους υποκαταλόγους τους θα συμπιεστούν. Οι πρωτότυπες εικόνες δεν θα τροποποιηθούν."
+msgstr ""
+"Όλες οι εικόνες στους επιλεγμένους καταλόγους και τους υποκαταλόγους τους θα "
+"συμπιεστούν. Οι πρωτότυπες εικόνες δεν θα τροποποιηθούν."
 
-#: src/window.py:322
+#: src/window.py:353
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
-msgstr "Όλες οι εικόνες στους επιλεγμένους καταλόγους και τους υποκαταλόγους τους θα συμπιεστούν και θα αντικατασταθούν!"
+msgstr ""
+"Όλες οι εικόνες στους επιλεγμένους καταλόγους και τους υποκαταλόγους τους θα "
+"συμπιεστούν και θα αντικατασταθούν!"
 
-#: src/window.py:325
+#: src/window.py:358
 msgid "Cancel"
 msgstr "Άκυρο"
 
-#: src/window.py:326
+#: src/window.py:359
 msgid "Compress"
 msgstr "Συμπίεση"
 
-#: src/window.py:403
-msgid "No files found"
-msgstr "Δεν βρέθηκαν αρχεία"
-
-#: src/window.py:413
-msgid "This file doesn't exist."
-msgstr "Αυτό το αρχείο δεν υπάρχει."
-
-#: src/window.py:419
+#: src/window.py:404
 msgid "Format of this file is not supported."
 msgstr "Η μορφή αυτού του αρχείου δεν υποστηρίζεται."
 
-#: src/window.py:477
-msgid "translator-credits"
-msgstr ""
+#: src/window.py:406
+msgid "Unable to read file information."
+msgstr "Αδυναμία ανάγνωσης πληροφοριών αρχείου."
 
-#: src/window.py:481
+#: src/window.py:459
+msgid "No files found"
+msgstr "Δεν βρέθηκαν αρχεία"
+
+#: src/window.py:522
+msgid "translator-credits"
+msgstr "Marios K. <mariosk@example.gr>"
+
+#: src/window.py:526
 msgid "Contributors"
-msgstr ""
+msgstr "Συντελεστές"
+
+#~ msgid "Hugo Posnic"
+#~ msgstr "Hugo Posnic"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Γενικά"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Προτιμήσεις"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Συντομεύσεις Πληκτρολογίου"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "Αυτό το αρχείο δεν υπάρχει."
