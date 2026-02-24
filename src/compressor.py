@@ -20,7 +20,7 @@ import subprocess
 import logging
 import shutil
 import os
-from concurrent.futures import ThreadPoolExecutor
+import queue
 from gi.repository import GLib, Gio
 from pathlib import Path
 from shlex import quote
@@ -76,32 +76,41 @@ class Compressor:
         thread = threading.Thread(target=self._compress_images, daemon=True).start()
 
     def _compress_images(self):
-        cpu_count = os.cpu_count()
-        executor = ThreadPoolExecutor(max_workers=cpu_count)
-        futures = []
-        for result_item in self.result_items:
-            file_type = get_file_type(result_item.filename)
-            if file_type:
-                if file_type == "png":
-                    command = self.build_png_command(result_item)
-                elif file_type == "jpg":
-                    command = self.build_jpg_command(result_item)
-                elif file_type == "webp":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_webp_command(result_item)
-                elif file_type == "svg":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_svg_command(result_item)
-                future = executor.submit(self.run_command, command, result_item)
-                futures.append(future)
+        cpu_count = max(
+            2, min(4, os.cpu_count() // 2)
+        )  # safe thread count for large batches
+        batch_size = 20  # number of images to process at once
 
-        for future in futures:
-            future.result()
+        # Process images in batches
+        for batch_start in range(0, len(self.result_items), batch_size):
+            batch = self.result_items[batch_start : batch_start + batch_size]
+            q = queue.Queue()
+
+            # Fill the queue for this batch
+            for result_item in batch:
+                q.put(result_item)
+
+            def worker():
+                while not q.empty():
+                    result_item = q.get()
+                    try:
+                        self.run_command(result_item)
+                    finally:
+                        q.task_done()
+
+            # Start worker threads for this batch
+            threads = [threading.Thread(target=worker, daemon=True) for _ in range(cpu_count)]
+            for t in threads:
+                t.start()
+
+            # Wait until this batch is finished before starting next
+            q.join()
+
+        # All batches done
         GLib.idle_add(self.c_enable_compression, True)
 
-    def run_command(self, command, result_item):
+    def run_command(self, result_item):
+        command = self.get_command(result_item)
         error = False
         error_message = ""
         try:
@@ -169,6 +178,24 @@ class Compressor:
                     error = True
 
             GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
+
+    def get_command(self, result_item):
+        file_type = get_file_type(result_item.filename)
+        if not file_type:
+            return None
+
+        if file_type == "png":
+            return self.build_png_command(result_item)
+        elif file_type == "jpg":
+            return self.build_jpg_command(result_item)
+        elif file_type == "webp":
+            if not self.do_new_file:
+                self.create_tmp_result_item(result_item)
+            return self.build_webp_command(result_item)
+        elif file_type == "svg":
+            if not self.do_new_file:
+                self.create_tmp_result_item(result_item)
+            return self.build_svg_command(result_item)
 
     def build_png_command(self, result_item):
         pngquant = "pngquant --quality=0-{} -f {} --output {} --skip-if-larger"
