@@ -1,3 +1,11 @@
+curtail (1.15.1) focal; urgency=medium
+
+  * Update oxipng to v10.1.0
+  * Fix "open with" feature
+  * Indicate mobile support in appdata
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Sat, 28 Feb 2026 12:47:00 +0200
+
 curtail (1.15.0) focal; urgency=medium
 
   * Build path list in a background thread to prevent UI blocking

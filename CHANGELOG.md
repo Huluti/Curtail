@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.15.1 - 2026-02-28
+### Changed
+- Update oxipng to v10.1.0
+- Indicate mobile support in appdata
+
+### Fixed
+- Fix "open with" feature
+
 ## 1.15.0 - 2026-01-16
 ### Added
 - Build path list in a background thread to prevent UI blocking
