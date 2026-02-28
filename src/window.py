@@ -19,7 +19,6 @@ import os
 import subprocess
 import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
-from urllib.parse import unquote
 from pathlib import Path
 
 from .resultitem import ResultItem

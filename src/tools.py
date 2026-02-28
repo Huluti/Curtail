@@ -68,7 +68,7 @@ def get_file_type(filename):
     try:
         with open(filename, "rb") as image:
             file_header = image.read(0xF)
-    except Exception as e:
+    except Exception:
         file_header = None
 
     content_type = Gio.content_type_guess(filename=str(filename), data=file_header)[0]

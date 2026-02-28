@@ -73,7 +73,7 @@ class Compressor:
         shutil.copy2(result_item.original_filename, result_item.filename)
 
     def compress_images(self):
-        thread = threading.Thread(target=self._compress_images, daemon=True).start()
+        threading.Thread(target=self._compress_images, daemon=True).start()
 
     def _compress_images(self):
         cpu_count = os.cpu_count()
