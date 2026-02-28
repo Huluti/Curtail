@@ -32,7 +32,7 @@ APP_ID = "com.github.huluti.Curtail"
 class Application(Adw.Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.win = None
+        self.win: CurtailWindow | None = None
 
     def do_startup(self):
         Adw.Application.do_startup(self)

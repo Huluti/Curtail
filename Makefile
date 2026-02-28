@@ -6,3 +6,6 @@ lint:
 
 analyze:
 	uv run ruff check
+
+types:
+	uv run ty check
