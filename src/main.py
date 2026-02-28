@@ -23,7 +23,7 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Gio, Adw  # noqa: E402
 
-from .window import CurtailWindow # noqa: E402
+from .window import CurtailWindow  # noqa: E402
 
 
 APP_ID = "com.github.huluti.Curtail"
@@ -44,11 +44,7 @@ class Application(Adw.Application):
 
     def do_open(self, g_file_list, amount, ukwn):
         self.do_activate()
-        filenames = []
-        for g_file in g_file_list:
-            filenames.append(g_file.get_uri())
-        final_filenames = self.win.handle_filenames(filenames)
-        self.win.compress_filenames(final_filenames)
+        self.win.compress_files(g_file_list)
 
 
 def main(version):
