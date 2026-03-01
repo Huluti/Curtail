@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
 "POT-Creation-Date: 2026-02-28 11:48+0000\n"
-"PO-Revision-Date: 2026-03-01 10:50+0100\n"
+"PO-Revision-Date: 2026-03-01 10:52+0100\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
 "Language: bg\n"
@@ -492,29 +492,3 @@ msgstr ""
 #: src/window.py:525
 msgid "Contributors"
 msgstr "Сътрудници"
-
-#~ msgid "Hugo Posnic"
-#~ msgstr "Hugo Posnic"
-
-#~ msgctxt "shortcut window"
-#~ msgid "General"
-#~ msgstr "Общи"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Preferences"
-#~ msgstr "Настройки"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Keyboard Shortcuts"
-#~ msgstr "Клавишни комбинации"
-
-#, python-brace-format
-#~ msgid "Safe mode with “{suffix_prefix}” suffix"
-#~ msgstr "Безопасен режим със суфикс „{suffix_prefix}“"
-
-#, python-brace-format
-#~ msgid "Safe mode with “{suffix_prefix}” prefix"
-#~ msgstr "Безопасен режим с префикс „{suffix_prefix}“"
-
-#~ msgid "This file doesn't exist."
-#~ msgstr "Файлът не съществува."
