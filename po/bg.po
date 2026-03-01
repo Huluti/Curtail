@@ -1,5 +1,5 @@
 # Bulgarian translation of curtail po-file.
-# Copyright twlvnn kraftwerk.
+# Copyright (C) 2024, 2025, 2026 twlvnn kraftwerk <kraft_werk@tutanota.com>.
 # This file is distributed under the same license as the curtail package.
 # twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024, 2025, 2026.
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
 "POT-Creation-Date: 2026-02-28 11:48+0000\n"
-"PO-Revision-Date: 2026-03-01 10:46+0100\n"
+"PO-Revision-Date: 2026-03-01 10:50+0100\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
 "Language: bg\n"
@@ -344,7 +344,7 @@ msgstr "_Промяна на режима"
 
 #: data/ui/window.ui:55
 msgid "Images will be overwritten, proceed carefully"
-msgstr "Изображенията ще се презапишат, действайте внимателно"
+msgstr "Изображенията ще бъдат презаписани, действайте внимателно"
 
 #: data/ui/window.ui:63
 msgid "Drop images here to compress them"
@@ -368,7 +368,7 @@ msgstr "Подготвяне"
 
 #: data/ui/window.ui:108
 msgid "Analyzing your images before compression..."
-msgstr "Анализиране на изображенията преди компресиране…"
+msgstr "Анализиране на изображенията преди компресиране..."
 
 #: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
@@ -445,7 +445,9 @@ msgstr "Сигурни ли сте, че искате да компресира�
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
-msgstr "Всички изображения в избраните папки и техните подпапки ще се компресират. Оригиналните изображения няма да се промененят."
+msgstr ""
+"Всички изображения в избраните папки и техните подпапки ще се компресират. "
+"Оригиналните изображения няма да бъдат променени."
 
 #: src/window.py:352
 msgid ""
@@ -469,7 +471,7 @@ msgstr "Форматът на този файл не се поддържа."
 
 #: src/window.py:405
 msgid "Unable to read file information."
-msgstr "Информацията за файла не може да се прочете."
+msgstr "Информацията за файла не може да бъде прочетена."
 
 #: src/window.py:458
 msgid "No files found"
@@ -490,3 +492,29 @@ msgstr ""
 #: src/window.py:525
 msgid "Contributors"
 msgstr "Сътрудници"
+
+#~ msgid "Hugo Posnic"
+#~ msgstr "Hugo Posnic"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Общи"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Настройки"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Клавишни комбинации"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” suffix"
+#~ msgstr "Безопасен режим със суфикс „{suffix_prefix}“"
+
+#, python-brace-format
+#~ msgid "Safe mode with “{suffix_prefix}” prefix"
+#~ msgstr "Безопасен режим с префикс „{suffix_prefix}“"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "Файлът не съществува."
