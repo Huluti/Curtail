@@ -22,7 +22,6 @@ import shutil
 import os
 from concurrent.futures import ThreadPoolExecutor
 from gi.repository import GLib, Gio
-from pathlib import Path
 from shlex import quote
 
 from .tools import get_file_type
@@ -80,22 +79,25 @@ class Compressor:
         executor = ThreadPoolExecutor(max_workers=cpu_count)
         futures = []
         for result_item in self.result_items:
-            file_type = get_file_type(result_item.filename)
-            if file_type:
-                if file_type == "png":
-                    command = self.build_png_command(result_item)
-                elif file_type == "jpg":
-                    command = self.build_jpg_command(result_item)
-                elif file_type == "webp":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_webp_command(result_item)
-                elif file_type == "svg":  # Must be manually skipped
-                    if not self.do_new_file:
-                        self.create_tmp_result_item(result_item)
-                    command = self.build_svg_command(result_item)
-                future = executor.submit(self.run_command, command, result_item)
-                futures.append(future)
+            file_type = get_file_type(result_item.file)
+
+            if not file_type:
+                continue
+
+            if file_type == 'png':
+                command = self.build_png_command(result_item)
+            elif file_type == 'jpeg':
+                command = self.build_jpg_command(result_item)
+            elif file_type == 'webp': # Must be manually skipped
+                if not self.do_new_file:
+                    self.create_tmp_result_item(result_item)
+                command = self.build_webp_command(result_item)
+            elif file_type == 'svg': # Must be manually skipped
+                if not self.do_new_file:
+                    self.create_tmp_result_item(result_item)
+                command = self.build_svg_command(result_item)
+            future = executor.submit(self.run_command, command, result_item)
+            futures.append(future)
 
         for future in futures:
             future.result()
@@ -124,17 +126,18 @@ class Compressor:
             error = True
         finally:
             if not error:
-                new_file_data = Path(result_item.new_filename)
-                if new_file_data.is_file():
-                    result_item.new_size = new_file_data.stat().st_size
+                new_file = Gio.File.new_for_path(result_item.new_filename)
+                new_file_info = new_file.query_info("standard::size", Gio.FileQueryInfoFlags.NONE)
+                if new_file.query_exists():
+                    result_item.new_size = new_file_info.get_size()
 
                     # Manually skip files if necessary (WebP or SVG)
-                    if get_file_type(result_item.original_filename) in ["webp", "svg"]:
+                    if get_file_type(result_item.file) in ["webp", "svg"]:
                         if self.do_new_file:
                             if result_item.new_size >= result_item.size:
                                 # Output is larger (or equal) than input in safe mode
                                 # Remove the new file
-                                Path(result_item.new_filename).unlink(True)
+                                new_file.delete()
                                 result_item.skipped = True
                         else:
                             if not result_item.new_size > result_item.size:
@@ -151,18 +154,20 @@ class Compressor:
 
                             # Remove temporary file that was created for overwrite mode
                             # Also set the result_item's information back to the original file
-                            Path(result_item.filename).unlink(True)
+                            result_item.file.delete()
                             result_item.filename = result_item.original_filename
                             result_item.new_filename = result_item.original_filename
-                            new_file_data = Path(result_item.new_filename)
-                            result_item.new_size = new_file_data.stat().st_size
+
+                            new_file = Gio.File.new_for_path(result_item.new_filename)
+                            new_file_info = new_file.query_info("standard::size", Gio.FileQueryInfoFlags.NONE)
+                            result_item.new_size = new_file_info.get_size()
                     elif result_item.size == result_item.new_size:
                         # File was automatically skipped by a compressor
                         result_item.skipped = True
 
                         # Remove new file if in safe mode
                         if self.do_new_file:
-                            Path(result_item.new_filename).unlink(True)
+                            new_file.delete()
                 else:
                     logging.error(str(output))
                     error_message = _("Can't find the compressed file")
