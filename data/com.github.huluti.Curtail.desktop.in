@@ -8,7 +8,7 @@ Categories=GNOME;GTK;Graphics;
 # Icon name, do not translate
 Icon=com.github.huluti.Curtail
 StartupWMClass=curtail
-MimeType=image/jpeg;image/png;
+MimeType=image/jpeg;image/png;image/webp;
 StartupNotify=true
 DBusActivatable=true
 # Keywords, do not translate
