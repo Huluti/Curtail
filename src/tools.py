@@ -61,28 +61,20 @@ def add_filechooser_filters(dialog):
 
     dialog.set_filters(file_filters)
 
+def get_file_type(file):
+    file_info = file.query_info("standard::content-type", Gio.FileQueryInfoFlags.NONE)
+    content_type = file_info.get_content_type()
 
-def get_file_type(filename):
-    # Open the file and read the first few bytes,
-    # and we'll check the file header to determine the file type if we can't by extension
-    try:
-        with open(filename, "rb") as image:
-            file_header = image.read(0xF)
-    except Exception:
-        file_header = None
-
-    content_type = Gio.content_type_guess(filename=str(filename), data=file_header)[0]
-    if content_type == "image/jpeg":
-        return "jpg"
-    elif content_type == "image/png":
-        return "png"
-    elif content_type == "image/webp":
-        return "webp"
-    elif content_type == "image/svg+xml":
-        return "svg"
+    if content_type == 'image/jpeg':
+        return 'jpeg'
+    elif content_type == 'image/png':
+        return 'png'
+    elif content_type == 'image/webp':
+        return 'webp'
+    elif content_type == 'image/svg+xml':
+        return 'svg'
     else:
         return None
-
 
 def create_image_from_file(filename, max_width, max_height):
     # Image preview
@@ -120,23 +112,34 @@ def create_image_from_file(filename, max_width, max_height):
     return image
 
 
-def get_image_files_from_folder(folder_path):
+def get_image_files_from_folder(files):
     images = []
-    for file in os.listdir(folder_path):
-        path = Path(folder_path) / file
-        if path.is_file():
-            if get_file_type(path) is not None:
-                images.append(path)  # Return Path object directly
+    enumerator = files.enumerate_children("standard::name", Gio.FileQueryInfoFlags.NONE)
+
+    while file_info := enumerator.next_file():
+        file_type = file_info.get_file_type()
+        if file_type == Gio.FileType.DIRECTORY:
+            continue
+
+        image_file = enumerator.get_child(file_info)
+        images.append(image_file)
+
     return images
 
 
-def get_image_files_from_folder_recursive(folder_path):
+def get_image_files_from_folder_recursive(files):
     images = []
-    for root, dirs, files in os.walk(folder_path):
-        for file in files:
-            path = Path(root) / file
-            if get_file_type(path) is not None:
-                images.append(path)  # Return Path object directly
+    enumerator = files.enumerate_children("standard::name", Gio.FileQueryInfoFlags.NONE)
+
+    while file_info := enumerator.next_file():
+        file_type = file_info.get_file_type()
+        image_file = enumerator.get_child(file_info)
+
+        if file_type == Gio.FileType.DIRECTORY:
+            images.extend(get_image_files_from_folder_recursive(image_file))
+        else:
+            images.append(image_file)
+
     return images
 
 
