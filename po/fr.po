@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-03-06 13:30+0000\n"
-"PO-Revision-Date: 2026-03-07 09:28+0100\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-07 19:41+0100\n"
 "Last-Translator: Guillaume Bernard <associations@guillaume-bernard.fr>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -366,11 +366,11 @@ msgid "Lossy"
 msgstr "Avec perte"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Préparation des images"
+msgid "Analyzing images"
+msgstr "Analyse des images"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
+msgid "Analyzing your images before compression…"
 msgstr "Analyse de vos images avant de les compresser…"
 
 #: src/compressor.py:118
@@ -490,6 +490,9 @@ msgstr ""
 #: src/window.py:525
 msgid "Contributors"
 msgstr "Contributeurs"
+
+#~ msgid "Getting things ready"
+#~ msgstr "Préparation des images"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
