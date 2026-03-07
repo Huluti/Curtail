@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-15 14:15+0000\n"
-"PO-Revision-Date: 2026-01-15 18:38+0100\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-08 00:35+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n%100<=4 ? 2 : 3);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7 data/com.github.huluti.Curtail.desktop.in:2
 #: data/ui/window.ui:7 data/ui/window.ui:36
@@ -306,7 +306,7 @@ msgstr "Tipkovne bližnjice"
 msgid "About Curtail"
 msgstr "O programu Stiskalnica"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "Prebrskaj datoteke"
 
@@ -343,11 +343,11 @@ msgid "Lossy"
 msgstr "Z izgubami"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Poteka pripravljanje stvari"
+msgid "Analyzing images"
+msgstr "Analiziranje slik"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
+msgid "Analyzing your images before compression…"
 msgstr "Analiziranje vaših slik pred stiskanjem …"
 
 #: src/compressor.py:118
@@ -386,75 +386,75 @@ msgstr "Slike SVG"
 msgid "Version not found"
 msgstr "Različice ni mogoče najti"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "Preskočeno"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "Več podrobnosti"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid "Compression was skipped because compressing the file would have resulted in a larger file size."
 msgstr "Stiskanje je bilo preskočeno, ker bi stiskanje datoteke povzročilo večjo velikost datoteke."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "Odpri sliko"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "Pokaži v mapi"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "Način prepisovanja"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "Prebrskaj mape"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ali ste prepričani, da želite stisniti slike v teh mapah?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will be compressed. The "
 "original images will not be modified."
 msgstr ""
 "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene. Izvirne slike ne bodo spremenjene."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will be compressed and "
 "overwritten!"
 msgstr "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene in prepisane!"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "Oblika zapisa te datoteke ni podprta."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "Ni mogoče prebrati podatkov o datoteki."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "Ni najdenih datotek"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "Avtorji prispevkov"
