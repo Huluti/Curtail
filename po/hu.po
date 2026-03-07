@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-23 17:59+0000\n"
-"PO-Revision-Date: 2026-02-21 18:19+0100\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-07 23:19+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
 #: data/ui/window.ui:36
 msgid "Curtail"
-msgstr "Curtail"
+msgstr "Nyirbáló"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:8
 #: data/com.github.huluti.Curtail.desktop.in:4
@@ -35,8 +35,8 @@ msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
-"Optimalizálja képeit a Curtaillel, egy hasznos képtömörítővel, amely "
-"támogatja a PNG, a JPEG, a WebP és az SVG fájltípusokat."
+"Optimalizálja képeit a Nyirbálóval, egy hasznos képtömörítővel, amely támogatj"
+"a a PNG, a JPEG, a WebP és az SVG fájltípusokat."
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
@@ -176,33 +176,26 @@ msgid "Compression timeout for each image."
 msgstr "Tömörítés időkorlátja minden egyes képhez."
 
 #: data/ui/shortcuts-dialog.ui:6
-#| msgid "General"
 msgctxt "shortcuts dialog"
 msgid "General"
 msgstr "Általános"
 
 #: data/ui/shortcuts-dialog.ui:9
-#| msgctxt "shortcut window"
-#| msgid "Select File"
 msgctxt "shortcuts dialog"
 msgid "Select File"
 msgstr "Fájl kiválasztása"
 
 #: data/ui/shortcuts-dialog.ui:15
-#| msgid "Preferences"
 msgctxt "shortcuts dialog"
 msgid "Preferences"
 msgstr "Beállítások"
 
 #: data/ui/shortcuts-dialog.ui:21
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Gyorsbillentyűk"
 
 #: data/ui/shortcuts-dialog.ui:27
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgctxt "shortcuts dialog"
 msgid "Quit"
 msgstr "Kilépés"
@@ -323,9 +316,9 @@ msgstr "Gyorsbillentyűk"
 
 #: data/ui/menu.ui:18
 msgid "About Curtail"
-msgstr "A Curtail névjegye"
+msgstr "A Nyirbáló névjegye"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "Fájlok tallózása"
 
@@ -362,11 +355,13 @@ msgid "Lossy"
 msgstr "Veszteséges"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "A dolgok előkészítése"
+#| msgid "All images"
+msgid "Analyzing images"
+msgstr "Képek elemzése"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
+#| msgid "Analyzing your images before compression..."
+msgid "Analyzing your images before compression…"
 msgstr "Képek elemzése a tömörítés előtt…"
 
 #: src/compressor.py:118
@@ -406,15 +401,15 @@ msgstr "SVG-képek"
 msgid "Version not found"
 msgstr "A verzió nem található"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "Kihagyva"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "További információk"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -422,27 +417,27 @@ msgstr ""
 "A tömörítés ki lett hagyva, mert a fájl tömörítése nagyobb fájlméretet "
 "eredményezett volna."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "Kép megnyitása"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "Megjelenítés mappában"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "Felülírási mód"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "Könyvtárak tallózása"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Biztosan tömöríteni szeretné az ezekben a könyvtárakban lévő képeket?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -450,7 +445,7 @@ msgstr ""
 "A kijelölt könyvtárakban és az alkönyvtáraikban lévő összes kép tömörítve "
 "lesz. Az eredeti képek nem lesznek módosítva."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -458,30 +453,30 @@ msgstr ""
 "A kijelölt könyvtárakban és az alkönyvtáraikban lévő összes kép tömörítve "
 "lesz és felül lesz írva!"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "Tömörítés"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "A fájl formátuma nem támogatott."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "Nem lehet olvasni a fájlinformációkat."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "Nem találhatók fájlok"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr "Meskó Balázs <mesko dot balazs at fsf dot hu>, 2025."
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "Közreműködők"
