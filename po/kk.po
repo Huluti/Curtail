@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-23 17:59+0000\n"
-"PO-Revision-Date: 2026-01-25 20:27+0500\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-08 11:07+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <Kazakh>\n"
 "Language: kk\n"
@@ -91,8 +91,8 @@ msgstr "Мүмкін болса, файл рұқсаттары мен уақыт
 #: data/com.github.huluti.Curtail.gschema.xml:27
 msgid "This setting file permissions and timestamps of images if possible."
 msgstr ""
-"Бұл параметр, мүмкін болса, суреттердің файл рұқсаттары мен уақыт "
-"белгілерін сақтайды."
+"Бұл параметр, мүмкін болса, суреттердің файл рұқсаттары мен уақыт белгілерін "
+"сақтайды."
 
 #: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
@@ -317,7 +317,7 @@ msgstr "Пернетақта жарлықтары"
 msgid "About Curtail"
 msgstr "Curtail туралы"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "Файлдарды шолу"
 
@@ -354,12 +354,12 @@ msgid "Lossy"
 msgstr "Шығынды"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Дайындау"
+msgid "Analyzing images"
+msgstr "Суреттерді анализдеу"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "Сығу алдында суреттеріңізді талдау..."
+msgid "Analyzing your images before compression…"
+msgstr "Сығу алдында суреттеріңізді анализдеу…"
 
 #: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
@@ -398,42 +398,42 @@ msgstr "SVG суреттері"
 msgid "Version not found"
 msgstr "Нұсқасы табылмады"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "Өткізілді"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "Көбірек ақпарат"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
 "Файлды сығу нәтижесінде оның өлшемі үлкейіп кететіндіктен, сығу өткізілді."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "Суретті ашу"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "Бумада көрсету"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "Үстінен жазу режимі"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "Бумаларды шолу"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Осы бумалардағы суреттерді сығуды қалайтыныңызға сенімдісіз бе?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -441,7 +441,7 @@ msgstr ""
 "Таңдалған бумалардағы және олардың ішкі бумаларындағы барлық суреттер "
 "сығылады. Түпнұсқа суреттер өзгертілмейді."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -449,30 +449,33 @@ msgstr ""
 "Таңдалған бумалардағы және олардың ішкі бумаларындағы барлық суреттер "
 "сығылып, үстінен жазылады!"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "Бас тарту"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "Сығу"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "Бұл файл пішіміне қолдау көрсетілмейді."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "Файл ақпаратын оқу мүмкін емес."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "Файлдар табылмады"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "Үлес қосушылар"
+
+#~ msgid "Getting things ready"
+#~ msgstr "Дайындау"
