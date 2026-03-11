@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-15 14:15+0000\n"
-"PO-Revision-Date: 2026-01-16 05:49+0100\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-11 06:04+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -319,7 +319,7 @@ msgstr "კლავიატურის მალსახმობები"
 msgid "About Curtail"
 msgstr "Curtail-ის შესახებ"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "ფაილის არჩევა"
 
@@ -356,12 +356,12 @@ msgid "Lossy"
 msgstr "კარგვითი"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "მიმდინარეობს მომზადება"
+msgid "Analyzing images"
+msgstr "გამოსახულებების ანალიზი"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "თქვენი გამოსახულებების შეკუმშვამდელი ანალიზი..."
+msgid "Analyzing your images before compression…"
+msgstr "თქვენი გამოსახულებების შეკუმშვამდელი ანალიზი…"
 
 #: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
@@ -400,42 +400,42 @@ msgstr "SVG გამოსახულებები"
 msgid "Version not found"
 msgstr "ვერსია ვერ მოიძებნა"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "გამოტოვებულია"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "მეტი ინფორმაცია"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
 "შეკუმშვა გამოტოვებულია, რადგან შედეგად მიღებული ფაილი უფრო დიდი იქნებოდა."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "გამოსახულების გახსნა"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "საქაღალდეში ჩვენება"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "თავზე გადაწერის რეჟიმი"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "საქაღალდეების პოვნა"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "მართლა გნებავთ ამ საქაღალდეებში არსებული გამოსახულებების შეკუმშვა?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -443,7 +443,7 @@ msgstr ""
 "ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში "
 "შეიკუმშება. ორიგინალი გამოსახულებები არ შეიცვლება."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -451,33 +451,36 @@ msgstr ""
 "ყველა გამოსახულება მონიშნულ საქაღალდეებში და მათ ქვესაქაღალდეებში შეიკუმშება "
 "და თავზე გადაეწერება!"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "შეკუმშვა"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "ამ ფაილის ფორმატი მხარდაჭერილი არაა."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "ფაილის ინფორმაციის წაკითხვა შეუძლებელია."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "ფაილები ვერ მოიძებნა"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr "Giorgi Maghlakelidze https://launchpad.net/~dracid"
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "შემომწირავები"
+
+#~ msgid "Getting things ready"
+#~ msgstr "მიმდინარეობს მომზადება"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
