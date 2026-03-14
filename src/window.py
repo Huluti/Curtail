@@ -8,7 +8,7 @@ from .compressors.webp_compressor import WEBPCompressor
 from .compressors.svg_compressor import SVGCompressor
 from .compression_manager import CompressionManager
 from .settings_manager import SettingsManager
-from .resultitem import ResultItem
+from .result_item import ResultItem
 from .preferences import CurtailPrefsDialog
 from .tools import (
     add_filechooser_filters,
