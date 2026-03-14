@@ -15,7 +15,7 @@ class Compressor(ABC):
         return ""
 
     @abstractmethod
-    def build_command(cls):
+    def build_command(cls, result_item):
         pass
 
     def create_tmp_result_item(self, result_item):
