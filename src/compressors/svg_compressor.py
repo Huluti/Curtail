@@ -5,7 +5,7 @@ from ..compressor import Compressor
 
 class SVGCompressor(Compressor):
     @classmethod
-    def get_file_type(cls):
+    def get_file_type(cls) -> str:
         return "svg"
 
     def build_command(self, result_item):

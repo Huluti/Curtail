@@ -11,8 +11,8 @@ class Compressor(ABC):
 
     @classmethod
     @abstractmethod
-    def get_file_type(cls):
-        pass
+    def get_file_type(cls) -> str:
+        return ""
 
     @abstractmethod
     def build_command(cls):
