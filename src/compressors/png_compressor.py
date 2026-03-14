@@ -5,7 +5,7 @@ from ..compressor import Compressor
 
 class PNGCompressor(Compressor):
     @classmethod
-    def get_file_type(cls):
+    def get_file_type(cls) -> str:
         return "png"
 
     def build_command(self, result_item):

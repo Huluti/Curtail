@@ -5,7 +5,7 @@ from ..compressor import Compressor
 
 class WEBPCompressor(Compressor):
     @classmethod
-    def get_file_type(cls):
+    def get_file_type(cls) -> str:
         return "webp"
 
     def build_command(self, result_item):
