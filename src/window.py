@@ -19,7 +19,6 @@ import os
 import subprocess
 import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
-from pathlib import Path
 
 from .resultitem import ResultItem
 from .preferences import CurtailPrefsDialog
@@ -310,6 +309,9 @@ class CurtailWindow(Adw.ApplicationWindow):
                 print("Could not open files: %s", err.message)
             else:
                 self.show_view("loading")
+                filenames = list()
+                for file in files:
+                    filenames.append(file.get_uri())
                 self.compress_files(files)
 
         dialog.open_multiple(self, None, handle_response)
@@ -321,7 +323,10 @@ class CurtailWindow(Adw.ApplicationWindow):
             def on_dir_dialog_response(warn_dialog, response):
                 if response == "compress":
                     self.show_view("loading")
-                    self.compress_files(folders)
+                    filenames = list()
+                    for folder in folders:
+                        filenames.append(folder)
+                    self.compress_files(filenames)
 
             try:
                 folders = dialog.select_multiple_folders_finish(result)
@@ -371,105 +376,91 @@ class CurtailWindow(Adw.ApplicationWindow):
         files = value.get_files()
         if not files:
             return
+
         self.compress_files(files)
 
-    def handle_paths(self, paths, recursive):
-        results = []
+    def handle_files(self, files):
+        final_files = []
+        for file in files:
+            file_type = file.query_file_type(Gio.FileQueryInfoFlags.NONE)
 
-        for raw_path in paths:
-            path = Path(raw_path)
-
-            if path.is_dir():
-                # Get image files from the directory
-                if recursive:
-                    files = get_image_files_from_folder_recursive(path)
+            if file_type == Gio.FileType.DIRECTORY:
+                if self._settings.get_boolean("recursive"):
+                    images = get_image_files_from_folder_recursive(file)
                 else:
-                    files = get_image_files_from_folder(path)
-            elif path.is_file():
-                files = [path]
+                    images = get_image_files_from_folder(file)
+                final_files.extend(images)
             else:
-                continue
+                final_files.append(file)
 
-            for file_path in files:
-                error_message = None
-                size = 0
+        return final_files
 
-                # Only compute size if it's a file
-                if file_path.is_file():
-                    try:
-                        size = file_path.stat().st_size
+    def check_format(self, file):
+        file_type = get_file_type(file)
 
-                        if size <= 0 or not self.check_format(file_path):
-                            error_message = _("Format of this file is not supported.")
-                    except OSError:
-                        error_message = _("Unable to read file information.")
-
-                results.append(
-                    {
-                        "path": file_path,
-                        "size": size,
-                        "error_message": error_message,
-                    }
-                )
-
-        return results
-
-    def check_format(self, path):
-        file_type = get_file_type(path)
-        if file_type:
-            return file_type in ("png", "jpg", "webp", "svg")
-        else:
-            return False
+        return file_type in ("png", "jpeg", "webp", "svg")
 
     def create_new_filename(self, path):
-        parent = path.parents[0]
-        stem = path.stem
+        new_filename = path
+        basename = os.path.basename(path)
+        splitext = os.path.splitext(basename)
+        parent = path.replace(basename, "")
+        stem = splitext[0]
+        extension = splitext[1]
         suffix_prefix = self._settings.get_string("suffix-prefix")
-        extension = path.suffix
 
         # Use new file or not
-        if self._settings.get_boolean("new-file"):
-            if self._settings.get_int("naming-mode") == 0:  # Suffix selected
-                new_filename = f"{parent}/{stem}{suffix_prefix}{extension}".format(
-                    parent, stem, suffix_prefix, extension
-                )
-            else:  # Prefix selected
-                new_filename = f"{parent}/{suffix_prefix}{stem}{extension}".format(
-                    parent, suffix_prefix, stem, extension
-                )
-        else:
-            new_filename = str(path)
+        if self._settings.get_boolean('new-file'):
+            if self._settings.get_int('naming-mode') == 0: # Suffix selected
+                new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
+            else: # Prefix selected
+                new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
+
         return new_filename
 
     def compress_files(self, files):
-        threading.Thread(
-            target=self._compress_files_ui, args=(files,), daemon=True
-        ).start()
-
-    def _compress_files_ui(self, files):
-        paths = []
-        for file in files:
-            paths.append(file.get_path())
-
-        recursive = self._settings.get_boolean("recursive")
-        results = self.handle_paths(paths, recursive)
-
-        if not results:
+        files = self.handle_files(files)
+        # No files found
+        if not files:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
-        for result in results:
-            path = result["path"]
-            size = result["size"]
-            error_message = result["error_message"]
+        for file in files:
+            error_message = False
+
+            # Check file
+            if not file.query_exists():
+                error_message = _("This file doesn't exist.")
+
+            # Get file info
+            file_info = file.query_info(
+                "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path",
+                Gio.FileQueryInfoFlags.NONE
+            )
+
+            # Get path by checking host path
+            host_path = file_info.get_attribute_string("xattr::document-portal.host-path")
+            path = host_path if host_path else file.get_path()
+
+            display_name = file_info.get_display_name()
+            filename = display_name if display_name else file.get_basename()
+
+            # Check format
+            if not error_message:
+                size = file_info.get_size()
+
+                if not self.check_format(file) or size <= 0:
+                    error_message = _("Format of this file is not supported.")
+            else:
+                size = 0
 
             if not error_message:
                 new_filename = self.create_new_filename(path)
             else:
                 new_filename = ""
 
-            result_item = ResultItem(path.name, path, new_filename, size)
+            result_item = ResultItem(file, filename, path, new_filename, size)
 
             if not error_message:
                 result_items.append(result_item)
