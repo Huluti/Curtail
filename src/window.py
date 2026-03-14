@@ -267,7 +267,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def set_saving_subtitle(self, new_file=None):
         if new_file is None:
-            new_file = self.settings.do_new_file
+            new_file = self.settings.new_file
         if new_file:
             suffix_prefix = self.settings.suffix_prefix
 
@@ -285,7 +285,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def show_warning_banner(self, show=None):
         if show is None:
-            show = not self.settings.do_new_file
+            show = not self.settings.new_file
 
         self.warning_banner.set_revealed(show)
 
@@ -332,7 +332,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def _create_warning_dialog(self):
         dialog = None
-        if self.settings.do_new_file:
+        if self.settings.new_file:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _(
@@ -353,7 +353,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if self.settings.do_new_file:
+        if self.settings.new_file:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(
@@ -401,7 +401,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         suffix_prefix = self.settings.suffix_prefix
 
         # Use new file or not
-        if self.settings.do_new_file:
+        if self.settings.new_file:
             if self.settings.naming_mode == 0:  # Suffix selected
                 new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
             else:  # Prefix selected
@@ -480,7 +480,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.settings.lossy = toggle.get_active_name() == "lossy"
 
     def banner_change_mode(self, *args):
-        self.settings.do_new_file = True
+        self.settings.new_file = True
         self.show_warning_banner()
         self.set_saving_subtitle()
 

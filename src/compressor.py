@@ -66,7 +66,7 @@ class Compressor(ABC):
 
                     # Manually skip files if necessary (WebP or SVG)
                     if self.get_file_type() in ["webp", "svg"]:
-                        if self.settings.do_new_file:
+                        if self.settings.new_file:
                             if result_item.new_size >= result_item.size:
                                 # Output is larger (or equal) than input in safe mode
                                 # Remove the new file
@@ -103,7 +103,7 @@ class Compressor(ABC):
                         result_item.skipped = True
 
                         # Remove new file if in safe mode
-                        if self.settings.do_new_file:
+                        if self.settings.new_file:
                             new_file.delete()
                 else:
                     logging.error(str(output))
