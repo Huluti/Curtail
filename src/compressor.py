@@ -1,7 +1,7 @@
 import subprocess
 import logging
 from abc import ABC, abstractmethod
-from gi.repository import Gio
+from gi.repository import Gio, GLib
 
 
 class Compressor(ABC):
@@ -33,7 +33,7 @@ class Compressor(ABC):
         dest = Gio.File.new_for_path(result_item.filename)
         source.copy(dest, Gio.FileCopyFlags.COPY_ALL_METADATA)
 
-    def run(self, result_item):
+    def run(self, result_item, c_update_result_item):
         error = False
         error_message = ""
         command = self.build_command(result_item)
@@ -65,7 +65,7 @@ class Compressor(ABC):
                     result_item.new_size = new_file_info.get_size()
 
                     # Manually skip files if necessary (WebP or SVG)
-                    if self.get_file_type(result_item.file) in ["webp", "svg"]:
+                    if self.get_file_type() in ["webp", "svg"]:
                         if self.settings.do_new_file:
                             if result_item.new_size >= result_item.size:
                                 # Output is larger (or equal) than input in safe mode
@@ -110,4 +110,4 @@ class Compressor(ABC):
                     error_message = _("Can't find the compressed file")
                     error = True
 
-            # GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
+            GLib.idle_add(c_update_result_item, result_item, error, error_message)

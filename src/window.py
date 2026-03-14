@@ -470,9 +470,10 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.enable_compression(False)
 
         GLib.idle_add(
-            self.manager.compress(
-                result_items, self.update_result_item, self.enable_compression
-            )
+            self.manager.compress,
+            result_items,
+            self.update_result_item,
+            self.enable_compression
         )
 
     def on_lossy_changed(self, toggle, state):
