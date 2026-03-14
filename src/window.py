@@ -473,7 +473,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             self.manager.compress,
             result_items,
             self.update_result_item,
-            self.enable_compression
+            self.enable_compression,
         )
 
     def on_lossy_changed(self, toggle, state):
