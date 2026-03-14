@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-15 14:15+0000\n"
-"PO-Revision-Date: 2026-01-16 16:25+0100\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-14 11:51+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
 #: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
@@ -47,7 +47,7 @@ msgstr ""
 #. Keywords, do not translate
 #: data/com.github.huluti.Curtail.desktop.in:15
 msgid "compress;optimize;image;photo;"
-msgstr "compression;optimizar;imatge;fòto;"
+msgstr "compression;compressar;comprimir;optimizar;imatge;fòto;"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -319,7 +319,7 @@ msgstr "Acorchis de clavièr"
 msgid "About Curtail"
 msgstr "A prepaus de Curtail"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "Percórrer los fichièrs"
 
@@ -356,12 +356,12 @@ msgid "Lossy"
 msgstr "Compression amb pèrda"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Preparacions de las causas"
+msgid "Analyzing images"
+msgstr "Analisi dels imatges…"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "Analisi de vòstres imatges abans compression..."
+msgid "Analyzing your images before compression…"
+msgstr "Analisi de vòstres imatges abans compression…"
 
 #: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
@@ -400,15 +400,15 @@ msgstr "imatges SVG"
 msgid "Version not found"
 msgstr "Version pas trobada"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "Ignorat"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "Mai d'informacions"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -416,27 +416,27 @@ msgstr ""
 "La compression es estada sautada perque compressar lo fichièr auriá creat un "
 "fichièr mai pesuc."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "Dobrir un imatge"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "Mostrar lo repertòri"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "Mòde espotiment"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "Percórrer los dossièrs"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Volètz vertadièrament compressar los imatges d’aquestes repertòris ?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -444,7 +444,7 @@ msgstr ""
 "Totes los imatges dels repertòris seleccionat e lors jos repertòris seràn "
 "compressats. Los imatges originals seràn pas modificats."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -452,33 +452,36 @@ msgstr ""
 "Totes los imatges dels repertòris seleccionat e lors jos repertòris seràn "
 "compressats e remplaçats !"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "Anullar"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "Compression"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "Lo format d’aqueste fichièr es pas pres en compte."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "Lectura impossibla de las informacions del fichièr."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "Cap de fichièr pas trobat"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr "Quentin PAGÈS"
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "Contributors"
+
+#~ msgid "Getting things ready"
+#~ msgstr "Preparacions de las causas"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
