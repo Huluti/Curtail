@@ -7,13 +7,26 @@ class SettingsManager:
     def __init__(self) -> None:
         self._settings = Gio.Settings.new(SETTINGS_SCHEMA)
 
+    # Genereic setters
+    def reset(self, key: str) -> None:
+        self._settings.reset(key)
+
+    def set_boolean(self, key: str, value: bool) -> None:
+        self._settings.set_boolean(key, value)
+
+    def set_int(self, key: str, value: int) -> None:
+        self._settings.set_int(key, value)
+
+    def set_string(self, key: str, value: str) -> None:
+        self._settings.set_string(key, value)
+
     # Options
     @property
-    def do_new_file(self) -> bool:
+    def new_file(self) -> bool:
         return self._settings.get_boolean("new-file")
 
-    @do_new_file.setter
-    def do_new_file(self, value: bool) -> None:
+    @new_file.setter
+    def new_file(self, value: bool) -> None:
         self._settings.set_boolean("new-file", value)
 
     @property

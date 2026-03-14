@@ -9,7 +9,7 @@ class JPEGCompressor(Compressor):
         return "jpeg"
 
     def build_command(self, result_item):
-        if self.settings.do_new_file:
+        if self.settings.new_file:
             jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"
             jpegoptim2 = "jpegoptim -o --stdout {} > {}"
         else:
@@ -29,7 +29,7 @@ class JPEGCompressor(Compressor):
             jpegoptim2 += " --preserve --preserve-perms"
 
         if self.settings.lossy:  # lossy compression
-            if self.settings.do_new_file:
+            if self.settings.new_file:
                 command = jpegoptim.format(
                     self.settings.jpg_lossy_level,
                     quote(result_item.filename),
@@ -40,7 +40,7 @@ class JPEGCompressor(Compressor):
                     self.settings.jpg_lossy_level, quote(result_item.filename)
                 )
         else:  # lossless compression
-            if self.settings.do_new_file:
+            if self.settings.new_file:
                 command = jpegoptim2.format(
                     quote(result_item.filename), quote(result_item.new_filename)
                 )
