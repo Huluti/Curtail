@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-03-07 08:33+0000\n"
-"PO-Revision-Date: 2026-03-08 00:35+0100\n"
+"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"PO-Revision-Date: 2026-03-14 22:35+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -306,7 +306,7 @@ msgstr "Tipkovne bližnjice"
 msgid "About Curtail"
 msgstr "O programu Stiskalnica"
 
-#: data/ui/window.ui:22 src/window.py:303
+#: data/ui/window.ui:22 src/window.py:302
 msgid "Browse Files"
 msgstr "Prebrskaj datoteke"
 
@@ -350,15 +350,15 @@ msgstr "Analiziranje slik"
 msgid "Analyzing your images before compression…"
 msgstr "Analiziranje vaših slik pred stiskanjem …"
 
-#: src/compressor.py:118
+#: src/compressor.py:122
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Stiskanje je doseglo nastavljeno časovno omejitev {} sekund."
 
-#: src/compressor.py:123
+#: src/compressor.py:127
 msgid "An unknown error has occurred"
 msgstr "Prišlo je do neznane napake"
 
-#: src/compressor.py:168
+#: src/compressor.py:175
 msgid "Can't find the compressed file"
 msgstr "Stisnjene datoteke ni mogoče najti"
 
@@ -382,79 +382,79 @@ msgstr "Slike WebP"
 msgid "SVG images"
 msgstr "Slike SVG"
 
-#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176 src/tools.py:183 src/tools.py:210
+#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179 src/tools.py:186 src/tools.py:213
 msgid "Version not found"
 msgstr "Različice ni mogoče najti"
 
-#: src/window.py:160
+#: src/window.py:159
 msgid "Skipped"
 msgstr "Preskočeno"
 
-#: src/window.py:181
+#: src/window.py:180
 msgid "More Information"
 msgstr "Več podrobnosti"
 
-#: src/window.py:190
+#: src/window.py:189
 msgid "Compression was skipped because compressing the file would have resulted in a larger file size."
 msgstr "Stiskanje je bilo preskočeno, ker bi stiskanje datoteke povzročilo večjo velikost datoteke."
 
-#: src/window.py:260
+#: src/window.py:259
 msgid "Open Image"
 msgstr "Odpri sliko"
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Show in Folder"
 msgstr "Pokaži v mapi"
 
-#: src/window.py:293
+#: src/window.py:292
 msgid "Overwrite mode"
 msgstr "Način prepisovanja"
 
-#: src/window.py:318
+#: src/window.py:320
 msgid "Browse Directories"
 msgstr "Prebrskaj mape"
 
-#: src/window.py:341 src/window.py:350
+#: src/window.py:346 src/window.py:355
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Ali ste prepričani, da želite stisniti slike v teh mapah?"
 
-#: src/window.py:343
+#: src/window.py:348
 msgid ""
 "All of the images in the directories selected and their subdirectories will be compressed. The "
 "original images will not be modified."
 msgstr ""
 "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene. Izvirne slike ne bodo spremenjene."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid ""
 "All of the images in the directories selected and their subdirectories will be compressed and "
 "overwritten!"
 msgstr "Vse slike v izbranih mapah in njihovih podmapah bodo stisnjene in prepisane!"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/window.py:358
+#: src/window.py:363
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/window.py:403
-msgid "Format of this file is not supported."
-msgstr "Oblika zapisa te datoteke ni podprta."
-
-#: src/window.py:405
-msgid "Unable to read file information."
-msgstr "Ni mogoče prebrati podatkov o datoteki."
-
-#: src/window.py:458
+#: src/window.py:425
 msgid "No files found"
 msgstr "Ni najdenih datotek"
 
-#: src/window.py:521
+#: src/window.py:434
+msgid "This file doesn't exist."
+msgstr "Datoteka ne obstaja."
+
+#: src/window.py:454
+msgid "Format of this file is not supported."
+msgstr "Oblika zapisa te datoteke ni podprta."
+
+#: src/window.py:512
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/window.py:525
+#: src/window.py:516
 msgid "Contributors"
 msgstr "Avtorji prispevkov"
