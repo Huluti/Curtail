@@ -1,5 +1,3 @@
-# resultitem.py
-
 from gi.repository import Gio, GObject
 
 from .tools import sizeof_fmt

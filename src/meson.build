@@ -21,10 +21,21 @@ curtail_sources = [
   '__init__.py',
   'main.py',
   'window.py',
+  'compression_manager.py',
+  'settings_manager.py',
   'compressor.py',
   'preferences.py',
   'resultitem.py',
   'tools.py'
 ]
 
+compressors_sources = [
+  'compressors/__init__.py',
+  'compressors/png_compressor.py',
+  'compressors/jpeg_compressor.py',
+  'compressors/webp_compressor.py',
+  'compressors/svg_compressor.py',
+]
+
 install_data(curtail_sources, install_dir: moduledir)
+install_data(compressors_sources, install_dir: moduledir / 'compressors')
