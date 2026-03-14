@@ -33,7 +33,9 @@ class CompressionManager:
                 # Must be manually skipped
                 if not self.do_new_file:
                     self.create_tmp_result_item(result_item)
-            future = executor.submit(self.compressors[file_type].run, result_item, c_update_result_item)
+            future = executor.submit(
+                self.compressors[file_type].run, result_item, c_update_result_item
+            )
             futures.append(future)
 
         for future in futures:
