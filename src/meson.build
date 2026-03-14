@@ -25,7 +25,7 @@ curtail_sources = [
   'settings_manager.py',
   'compressor.py',
   'preferences.py',
-  'resultitem.py',
+  'result_item.py',
   'tools.py'
 ]
 
