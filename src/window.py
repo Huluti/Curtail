@@ -1,28 +1,15 @@
-# window.py
-#
-# Copyright 2019 Hugo Posnic
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import os
 import subprocess
-import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 
-from .resultitem import ResultItem
+from .compressors.png_compressor import PNGCompressor
+from .compressors.jpeg_compressor import JPEGCompressor
+from .compressors.webp_compressor import WEBPCompressor
+from .compressors.svg_compressor import SVGCompressor
+from .compression_manager import CompressionManager
+from .settings_manager import SettingsManager
+from .result_item import ResultItem
 from .preferences import CurtailPrefsDialog
-from .compressor import Compressor
 from .tools import (
     add_filechooser_filters,
     get_file_type,
@@ -34,15 +21,11 @@ from .tools import (
 )
 
 CURTAIL_PATH = "/com/github/huluti/Curtail/"
-SETTINGS_SCHEMA = "com.github.huluti.Curtail"
 
 
 @Gtk.Template(resource_path=CURTAIL_PATH + "ui/window.ui")
 class CurtailWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CurtailWindow"
-
-    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
-    settings = Gtk.Settings.get_default()
 
     prefs_dialog = None
     apply_window = None
@@ -69,9 +52,17 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.set_default_icon_name("com.github.huluti.Curtail")
         self.app = kwargs["application"]
 
+        self.settings = SettingsManager()
+
         self.build_ui()
         self.create_actions()
         self.show_view("home")
+
+        self.manager = CompressionManager(self.settings)
+        self.manager.register_compressor(PNGCompressor)
+        self.manager.register_compressor(JPEGCompressor)
+        self.manager.register_compressor(WEBPCompressor)
+        self.manager.register_compressor(SVGCompressor)
 
     def build_ui(self):
         # Set icons
@@ -97,7 +88,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.mainbox.add_controller(drop_target_main)
 
         # Lossy toggle
-        self.toggle_lossy.set_active(self._settings.get_boolean("lossy"))
+        self.toggle_lossy.set_active(self.settings.lossy)
         self.toggle_lossy.connect("notify::active", self.on_lossy_changed)
 
         # Results
@@ -276,11 +267,11 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def set_saving_subtitle(self, new_file=None):
         if new_file is None:
-            new_file = self._settings.get_boolean("new-file")
+            new_file = self.settings.new_file
         if new_file:
-            suffix_prefix = self._settings.get_string("suffix-prefix")
+            suffix_prefix = self.settings.suffix_prefix
 
-            if self._settings.get_int("naming-mode") == 0:
+            if self.settings.naming_mode == 0:
                 label = _(f"Safe mode with “{suffix_prefix}” suffix").format(
                     suffix_prefix
                 )
@@ -294,7 +285,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def show_warning_banner(self, show=None):
         if show is None:
-            show = not self._settings.get_boolean("new-file")
+            show = not self.settings.new_file
 
         self.warning_banner.set_revealed(show)
 
@@ -341,7 +332,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def _create_warning_dialog(self):
         dialog = None
-        if self._settings.get_boolean("new-file"):
+        if self.settings.new_file:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _(
@@ -362,7 +353,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if self._settings.get_boolean("new-file"):
+        if self.settings.new_file:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(
@@ -385,7 +376,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             file_type = file.query_file_type(Gio.FileQueryInfoFlags.NONE)
 
             if file_type == Gio.FileType.DIRECTORY:
-                if self._settings.get_boolean("recursive"):
+                if self.settings.recursive:
                     images = get_image_files_from_folder_recursive(file)
                 else:
                     images = get_image_files_from_folder(file)
@@ -407,13 +398,13 @@ class CurtailWindow(Adw.ApplicationWindow):
         parent = path.replace(basename, "")
         stem = splitext[0]
         extension = splitext[1]
-        suffix_prefix = self._settings.get_string("suffix-prefix")
+        suffix_prefix = self.settings.suffix_prefix
 
         # Use new file or not
-        if self._settings.get_boolean('new-file'):
-            if self._settings.get_int('naming-mode') == 0: # Suffix selected
+        if self.settings.new_file:
+            if self.settings.naming_mode == 0:  # Suffix selected
                 new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
-            else: # Prefix selected
+            else:  # Prefix selected
                 new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
 
         return new_filename
@@ -436,11 +427,13 @@ class CurtailWindow(Adw.ApplicationWindow):
             # Get file info
             file_info = file.query_info(
                 "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path",
-                Gio.FileQueryInfoFlags.NONE
+                Gio.FileQueryInfoFlags.NONE,
             )
 
             # Get path by checking host path
-            host_path = file_info.get_attribute_string("xattr::document-portal.host-path")
+            host_path = file_info.get_attribute_string(
+                "xattr::document-portal.host-path"
+            )
             path = host_path if host_path else file.get_path()
 
             display_name = file_info.get_display_name()
@@ -476,16 +469,18 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.show_view("results")
         self.enable_compression(False)
 
-        compressor = Compressor(
-            result_items, self.update_result_item, self.enable_compression
+        GLib.idle_add(
+            self.manager.compress,
+            result_items,
+            self.update_result_item,
+            self.enable_compression,
         )
-        GLib.idle_add(compressor.compress_images)
 
     def on_lossy_changed(self, toggle, state):
-        self._settings.set_boolean("lossy", toggle.get_active_name() == "lossy")
+        self.settings.lossy = toggle.get_active_name() == "lossy"
 
     def banner_change_mode(self, *args):
-        self._settings.set_boolean("new-file", True)
+        self.settings.new_file = True
         self.show_warning_banner()
         self.set_saving_subtitle()
 
