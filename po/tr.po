@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-16 08:16+0000\n"
-"PO-Revision-Date: 2026-01-18 20:58+0300\n"
+"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"PO-Revision-Date: 2026-03-15 17:53+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Project-Style: gnome\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
@@ -320,7 +320,7 @@ msgstr "Klavye Kısayolları"
 msgid "About Curtail"
 msgstr "Curtail Hakkında"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:302
 msgid "Browse Files"
 msgstr "Dosyalara Göz At"
 
@@ -357,22 +357,22 @@ msgid "Lossy"
 msgstr "Kayıplı"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Hazırlanıyor"
+msgid "Analyzing images"
+msgstr "Görüntüler inceleniyor"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "Sıkıştırma öncesinde görüntüleriniz inceleniyor..."
+msgid "Analyzing your images before compression…"
+msgstr "Sıkıştırma öncesinde görüntüleriniz inceleniyor…"
 
-#: src/compressor.py:118
+#: src/compressor.py:122
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Sıkıştırma, yapılandırılan {} saniyelik zaman aşımına ulaştı."
 
-#: src/compressor.py:123
+#: src/compressor.py:127
 msgid "An unknown error has occurred"
 msgstr "Bilinmeyen hata oluştu"
 
-#: src/compressor.py:168
+#: src/compressor.py:175
 msgid "Can't find the compressed file"
 msgstr "Sıkıştırılmış dosya bulunamadı"
 
@@ -396,20 +396,20 @@ msgstr "WebP görüntüler"
 msgid "SVG images"
 msgstr "SVG görüntüler"
 
-#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
-#: src/tools.py:183 src/tools.py:210
+#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179
+#: src/tools.py:186 src/tools.py:213
 msgid "Version not found"
 msgstr "Sürüm bulunamadı"
 
-#: src/window.py:161
+#: src/window.py:159
 msgid "Skipped"
 msgstr "Atlandı"
 
-#: src/window.py:182
+#: src/window.py:180
 msgid "More Information"
 msgstr "Daha Çok Bilgi"
 
-#: src/window.py:191
+#: src/window.py:189
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -417,27 +417,27 @@ msgstr ""
 "Dosyanın sıkıştırılması daha büyük dosya boyutuyla sonuçlanacağından "
 "sıkıştırma atlandı."
 
-#: src/window.py:261
+#: src/window.py:259
 msgid "Open Image"
 msgstr "Görüntü Aç"
 
-#: src/window.py:262
+#: src/window.py:260
 msgid "Show in Folder"
 msgstr "Klasörde Göster"
 
-#: src/window.py:294
+#: src/window.py:292
 msgid "Overwrite mode"
 msgstr "Üzerine yazma kipi"
 
-#: src/window.py:319
+#: src/window.py:320
 msgid "Browse Directories"
 msgstr "Dizinlere Göz At"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:346 src/window.py:355
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Bu dizinlerdeki görüntüleri sıkıştırmak istediğinize emin misiniz?"
 
-#: src/window.py:344
+#: src/window.py:348
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -445,7 +445,7 @@ msgstr ""
 "Seçilen dizinlerdeki ve alt dizinlerindeki tüm görüntüler sıkıştırılacak. "
 "Özgün görüntüler değiştirilmeyecek."
 
-#: src/window.py:353
+#: src/window.py:357
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -453,32 +453,32 @@ msgstr ""
 "Seçilen dizinlerdeki ve alt dizinlerindeki tüm görüntüler sıkıştırılacak ve "
 "üzerine yazılacak!"
 
-#: src/window.py:358
+#: src/window.py:362
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Compress"
 msgstr "Sıkıştır"
 
-#: src/window.py:404
-msgid "Format of this file is not supported."
-msgstr "Bu dosyanın biçimi desteklenmiyor."
-
-#: src/window.py:406
-msgid "Unable to read file information."
-msgstr "Dosya bilgisi okunamıyor."
-
-#: src/window.py:459
+#: src/window.py:425
 msgid "No files found"
 msgstr "Dosya bulunamadı"
 
-#: src/window.py:522
+#: src/window.py:434
+msgid "This file doesn't exist."
+msgstr "Böyle bir dosya yok."
+
+#: src/window.py:454
+msgid "Format of this file is not supported."
+msgstr "Bu dosyanın biçimi desteklenmiyor."
+
+#: src/window.py:512
 msgid "translator-credits"
 msgstr ""
 "Sabri Ünal <yakushabb@gmail.com>\n"
 "Muhammet Emin Akalan <05akalan57@gmail.com>"
 
-#: src/window.py:526
+#: src/window.py:516
 msgid "Contributors"
 msgstr "Katkıda Bulunanlar"
