@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail master\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-02-28 11:48+0000\n"
-"PO-Revision-Date: 2026-03-04 14:12+0200\n"
+"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"PO-Revision-Date: 2026-03-19 14:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
 #: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
@@ -311,7 +311,7 @@ msgstr "קיצורי מקלדת"
 msgid "About Curtail"
 msgstr "על Curtail"
 
-#: data/ui/window.ui:22 src/window.py:303
+#: data/ui/window.ui:22 src/window.py:302
 msgid "Browse Files"
 msgstr "עיון בקבצים"
 
@@ -348,22 +348,22 @@ msgid "Lossy"
 msgstr "עם אובדן איכות"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "מתבצעות הכנות"
+msgid "Analyzing images"
+msgstr "התמונות נבחנות"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "התמונות שלך עוברות ניתוח לפני דחיסה…"
+msgid "Analyzing your images before compression…"
+msgstr "התמונות נבחנות לפי דחיסה…"
 
-#: src/compressor.py:118
+#: src/compressor.py:122
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "הדחיסה נמשכה עד זמן הסיום המוגדר על סך {} שניות."
 
-#: src/compressor.py:123
+#: src/compressor.py:127
 msgid "An unknown error has occurred"
 msgstr "אירעה שגיאה בלתי ידועה"
 
-#: src/compressor.py:168
+#: src/compressor.py:175
 msgid "Can't find the compressed file"
 msgstr "לא ניתן למצוא את הקובץ הדחוס"
 
@@ -387,46 +387,46 @@ msgstr "תמונות WebP"
 msgid "SVG images"
 msgstr "תמונות SVG"
 
-#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
-#: src/tools.py:183 src/tools.py:210
+#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179
+#: src/tools.py:186 src/tools.py:213
 msgid "Version not found"
 msgstr "הגרסה לא נמצאה"
 
-#: src/window.py:160
+#: src/window.py:159
 msgid "Skipped"
 msgstr "נפסח"
 
-#: src/window.py:181
+#: src/window.py:180
 msgid "More Information"
 msgstr "פרטים נוספים"
 
-#: src/window.py:190
+#: src/window.py:189
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr "הדחיסה נפסחה כיוון שדחיסת הקובץ הייתה גורמת להגדלת נפחו."
 
-#: src/window.py:260
+#: src/window.py:259
 msgid "Open Image"
 msgstr "פתיחת תמונה"
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Show in Folder"
 msgstr "הצגה בתיקייה"
 
-#: src/window.py:293
+#: src/window.py:292
 msgid "Overwrite mode"
 msgstr "מצב דריסה"
 
-#: src/window.py:318
+#: src/window.py:320
 msgid "Browse Directories"
 msgstr "עיון בתיקיות"
 
-#: src/window.py:341 src/window.py:350
+#: src/window.py:346 src/window.py:355
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "לדחוס תמונות בתיקיות האלו?"
 
-#: src/window.py:343
+#: src/window.py:348
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -434,39 +434,45 @@ msgstr ""
 "כל התמונות בתיקיות הנבחרות ותת־התיקיות שתחתן תידחסנה. התמונות המקוריות "
 "תישארנה כמו שהן."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr "כל התמונות בתיקיות הנבחרות ותת־התיקיות שתחתן תידחסנה ותשוכתבנה!"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/window.py:358
+#: src/window.py:363
 msgid "Compress"
 msgstr "דחיסה"
 
-#: src/window.py:403
-msgid "Format of this file is not supported."
-msgstr "תסדיר הקובץ הזה לא נתמך."
-
-#: src/window.py:405
-msgid "Unable to read file information."
-msgstr "לא ניתן לקרוא את פרטי הקובץ."
-
-#: src/window.py:458
+#: src/window.py:425
 msgid "No files found"
 msgstr "לא נמצאו קבצים"
 
-#: src/window.py:521
+#: src/window.py:434
+msgid "This file doesn't exist."
+msgstr "הקובץ לא קיים."
+
+#: src/window.py:454
+msgid "Format of this file is not supported."
+msgstr "תסדיר הקובץ הזה לא נתמך."
+
+#: src/window.py:512
 msgid "translator-credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
 
-#: src/window.py:525
+#: src/window.py:516
 msgid "Contributors"
 msgstr "מתנדבים"
+
+#~ msgid "Getting things ready"
+#~ msgstr "מתבצעות הכנות"
+
+#~ msgid "Unable to read file information."
+#~ msgstr "לא ניתן לקרוא את פרטי הקובץ."
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "הוגו פוסניק"
@@ -490,6 +496,3 @@ msgstr "מתנדבים"
 #, python-brace-format
 #~ msgid "Safe mode with “{suffix_prefix}” prefix"
 #~ msgstr "מצב בטוח עם הקידומת „{suffix_prefix}”"
-
-#~ msgid "This file doesn't exist."
-#~ msgstr "הקובץ לא קיים."
