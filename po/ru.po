@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-15 14:15+0000\n"
-"PO-Revision-Date: 2026-01-16 14:56+1000\n"
+"POT-Creation-Date: 2026-03-07 08:33+0000\n"
+"PO-Revision-Date: 2026-03-12 00:12+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -325,7 +325,7 @@ msgstr "Комбинации клавиш"
 msgid "About Curtail"
 msgstr "О приложении"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:303
 msgid "Browse Files"
 msgstr "Обзор файлов"
 
@@ -362,12 +362,12 @@ msgid "Lossy"
 msgstr "С потерями"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Подготовка"
+msgid "Analyzing images"
+msgstr "Анализ изображений"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "Анализ ваших изображений перед сжатием..."
+msgid "Analyzing your images before compression…"
+msgstr "Анализ ваших изображений перед сжатием…"
 
 #: src/compressor.py:118
 msgid "Compression has reached the configured timeout of {} seconds."
@@ -406,15 +406,15 @@ msgstr "Изображения SVG"
 msgid "Version not found"
 msgstr "Версия не найдена"
 
-#: src/window.py:161
+#: src/window.py:160
 msgid "Skipped"
 msgstr "Пропущено"
 
-#: src/window.py:182
+#: src/window.py:181
 msgid "More Information"
 msgstr "Дополнительная информация"
 
-#: src/window.py:191
+#: src/window.py:190
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -422,27 +422,27 @@ msgstr ""
 "Сжатие было пропущено, поскольку это действие могло привести к увеличению "
 "размера файла."
 
-#: src/window.py:261
+#: src/window.py:260
 msgid "Open Image"
 msgstr "Открыть изображение"
 
-#: src/window.py:262
+#: src/window.py:261
 msgid "Show in Folder"
 msgstr "Показать в папке"
 
-#: src/window.py:294
+#: src/window.py:293
 msgid "Overwrite mode"
 msgstr "Режим перезаписи"
 
-#: src/window.py:319
+#: src/window.py:318
 msgid "Browse Directories"
 msgstr "Укажите каталоги"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:341 src/window.py:350
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Вы уверены, что хотите сжать изображения в этих каталогах?"
 
-#: src/window.py:344
+#: src/window.py:343
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -450,7 +450,7 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты. Но "
 "исходные файлы не изменятся."
 
-#: src/window.py:353
+#: src/window.py:352
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -458,35 +458,38 @@ msgstr ""
 "Все изображения в выбранных каталогах и подкаталогах будут сжаты и "
 "перезаписаны!"
 
-#: src/window.py:358
+#: src/window.py:357
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Compress"
 msgstr "Сжать"
 
-#: src/window.py:404
+#: src/window.py:403
 msgid "Format of this file is not supported."
 msgstr "Формат этого файла не поддерживается."
 
-#: src/window.py:406
+#: src/window.py:405
 msgid "Unable to read file information."
 msgstr "Не удалось прочитать информацию о файле."
 
-#: src/window.py:459
+#: src/window.py:458
 msgid "No files found"
 msgstr "Файлы не найдены"
 
-#: src/window.py:522
+#: src/window.py:521
 msgid "translator-credits"
 msgstr ""
 "Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Ser82-png <savmail.as@gmail.com>"
 
-#: src/window.py:526
+#: src/window.py:525
 msgid "Contributors"
 msgstr "Участники"
+
+#~ msgid "Getting things ready"
+#~ msgstr "Подготовка"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
