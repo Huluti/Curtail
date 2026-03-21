@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-23 17:59+0000\n"
-"PO-Revision-Date: 2026-02-13 10:53+0100\n"
+"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"PO-Revision-Date: 2026-03-21 13:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: Catalan <Catalan>\n"
 "Language: ca\n"
@@ -322,7 +322,7 @@ msgstr "Dreceres de teclat"
 msgid "About Curtail"
 msgstr "Quant a l'Escurçador"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:302
 msgid "Browse Files"
 msgstr "Cerca fitxers"
 
@@ -359,22 +359,22 @@ msgid "Lossy"
 msgstr "Amb pèrdua"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "S'està preparant"
+msgid "Analyzing images"
+msgstr "S'estan analitzant les imatges"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
-msgstr "S'estan analitzant les imatges abans de la compressió..."
+msgid "Analyzing your images before compression…"
+msgstr "S'estan analitzant les imatges abans de la compressió…"
 
-#: src/compressor.py:118
+#: src/compressor.py:122
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "La compressió ha arribat al temps d'espera configurat de {} segons."
 
-#: src/compressor.py:123
+#: src/compressor.py:127
 msgid "An unknown error has occurred"
 msgstr "S'ha produït un error desconegut"
 
-#: src/compressor.py:168
+#: src/compressor.py:175
 msgid "Can't find the compressed file"
 msgstr "No s'ha pogut trobar el fitxer comprimit"
 
@@ -398,20 +398,20 @@ msgstr "Imatges WebP"
 msgid "SVG images"
 msgstr "Imatges SVG"
 
-#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
-#: src/tools.py:183 src/tools.py:210
+#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179
+#: src/tools.py:186 src/tools.py:213
 msgid "Version not found"
 msgstr "No s'ha trobat la versió"
 
-#: src/window.py:161
+#: src/window.py:159
 msgid "Skipped"
 msgstr "Omès"
 
-#: src/window.py:182
+#: src/window.py:180
 msgid "More Information"
 msgstr "Més informació"
 
-#: src/window.py:191
+#: src/window.py:189
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -419,27 +419,27 @@ msgstr ""
 "S'ha omès la compressió perquè comprimir el fitxer hauria donat lloc a una "
 "mida de fitxer més gran."
 
-#: src/window.py:261
+#: src/window.py:259
 msgid "Open Image"
 msgstr "Obre una imatge"
 
-#: src/window.py:262
+#: src/window.py:260
 msgid "Show in Folder"
 msgstr "Mostra a la carpeta"
 
-#: src/window.py:294
+#: src/window.py:292
 msgid "Overwrite mode"
 msgstr "Mode de sobreescriptura"
 
-#: src/window.py:319
+#: src/window.py:320
 msgid "Browse Directories"
 msgstr "Cerca directoris"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:346 src/window.py:355
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Esteu segur que voleu comprimir imatges en aquests directoris?"
 
-#: src/window.py:344
+#: src/window.py:348
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -447,7 +447,7 @@ msgstr ""
 "Totes les imatges dels directoris seleccionats i els seus subdirectoris es "
 "comprimiran. Les imatges originals no es modificaran."
 
-#: src/window.py:353
+#: src/window.py:357
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -455,33 +455,39 @@ msgstr ""
 "Totes les imatges dels directoris seleccionats i els seus subdirectoris "
 "seran comprimides i sobreescrites!"
 
-#: src/window.py:358
+#: src/window.py:362
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Compress"
 msgstr "Comprimeix"
 
-#: src/window.py:404
-msgid "Format of this file is not supported."
-msgstr "El format d'aquest fitxer no està admès."
-
-#: src/window.py:406
-msgid "Unable to read file information."
-msgstr "No s'ha pogut llegir la informació del fitxer."
-
-#: src/window.py:459
+#: src/window.py:425
 msgid "No files found"
 msgstr "No s'ha trobat cap fitxer"
 
-#: src/window.py:522
+#: src/window.py:434
+msgid "This file doesn't exist."
+msgstr "Aquest fitxer no existeix."
+
+#: src/window.py:454
+msgid "Format of this file is not supported."
+msgstr "El format d'aquest fitxer no està admès."
+
+#: src/window.py:512
 msgid "translator-credits"
 msgstr "Victor Dargallo <victordargallo@disroot.org>"
 
-#: src/window.py:526
+#: src/window.py:516
 msgid "Contributors"
 msgstr "Col·laboradors"
+
+#~ msgid "Getting things ready"
+#~ msgstr "S'està preparant"
+
+#~ msgid "Unable to read file information."
+#~ msgstr "No s'ha pogut llegir la informació del fitxer."
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
@@ -497,6 +503,3 @@ msgstr "Col·laboradors"
 #~ msgctxt "shortcut window"
 #~ msgid "Keyboard Shortcuts"
 #~ msgstr "Dreceres de teclat"
-
-#~ msgid "This file doesn't exist."
-#~ msgstr "Aquest fitxer no existeix."
