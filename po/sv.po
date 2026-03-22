@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-01-15 14:15+0000\n"
-"PO-Revision-Date: 2026-01-15 18:43+0100\n"
+"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"PO-Revision-Date: 2026-03-22 16:53+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -320,7 +320,7 @@ msgstr "Tangentbordsgenvägar"
 msgid "About Curtail"
 msgstr "Om Curtail"
 
-#: data/ui/window.ui:22 src/window.py:304
+#: data/ui/window.ui:22 src/window.py:302
 msgid "Browse Files"
 msgstr "Bläddra bland filer"
 
@@ -357,22 +357,22 @@ msgid "Lossy"
 msgstr "Förstörande"
 
 #: data/ui/window.ui:107
-msgid "Getting things ready"
-msgstr "Förbereder saker"
+msgid "Analyzing images"
+msgstr "Analyserar bilder"
 
 #: data/ui/window.ui:108
-msgid "Analyzing your images before compression..."
+msgid "Analyzing your images before compression…"
 msgstr "Analyserar dina bilder innan komprimering…"
 
-#: src/compressor.py:118
+#: src/compressor.py:122
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Komprimering har uppnått den konfigurerade tidsgränsen på {} sekunder."
 
-#: src/compressor.py:123
+#: src/compressor.py:127
 msgid "An unknown error has occurred"
 msgstr "Ett okänt fel har inträffat"
 
-#: src/compressor.py:168
+#: src/compressor.py:175
 msgid "Can't find the compressed file"
 msgstr "Kan inte hitta den komprimerade filen"
 
@@ -396,20 +396,20 @@ msgstr "WebP-bilder"
 msgid "SVG images"
 msgstr "SVG-bilder"
 
-#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
-#: src/tools.py:183 src/tools.py:210
+#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179
+#: src/tools.py:186 src/tools.py:213
 msgid "Version not found"
 msgstr "Version hittades inte"
 
-#: src/window.py:161
+#: src/window.py:159
 msgid "Skipped"
 msgstr "Hoppades över"
 
-#: src/window.py:182
+#: src/window.py:180
 msgid "More Information"
 msgstr "Mer information"
 
-#: src/window.py:191
+#: src/window.py:189
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -417,27 +417,27 @@ msgstr ""
 "Komprimering hoppades över för att komprimering av filen skulle ha gett en "
 "större filstorlek."
 
-#: src/window.py:261
+#: src/window.py:259
 msgid "Open Image"
 msgstr "Öppna bild"
 
-#: src/window.py:262
+#: src/window.py:260
 msgid "Show in Folder"
 msgstr "Visa i mapp"
 
-#: src/window.py:294
+#: src/window.py:292
 msgid "Overwrite mode"
 msgstr "Överskrivningsläge"
 
-#: src/window.py:319
+#: src/window.py:320
 msgid "Browse Directories"
 msgstr "Bläddra i kataloger"
 
-#: src/window.py:342 src/window.py:351
+#: src/window.py:346 src/window.py:355
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Är du säker att du vill komprimera bilder i dessa kataloger?"
 
-#: src/window.py:344
+#: src/window.py:348
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -445,7 +445,7 @@ msgstr ""
 "Alla bilderna i de markerade katalogerna och deras underkataloger kommer "
 "komprimeras. De ursprungliga bilderna kommer inte ändras."
 
-#: src/window.py:353
+#: src/window.py:357
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -453,36 +453,42 @@ msgstr ""
 "Alla bilderna i de markerade katalogerna och deras underkataloger kommer "
 "komprimeras och skrivas över!"
 
-#: src/window.py:358
+#: src/window.py:362
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Compress"
 msgstr "Komprimera"
 
-#: src/window.py:404
-msgid "Format of this file is not supported."
-msgstr "Formatet för denna fil stöds inte."
-
-#: src/window.py:406
-msgid "Unable to read file information."
-msgstr "Kunde inte läsa filinformation."
-
-#: src/window.py:459
+#: src/window.py:425
 msgid "No files found"
 msgstr "Inga filer hittades"
 
-#: src/window.py:522
+#: src/window.py:434
+msgid "This file doesn't exist."
+msgstr "Denna fil finns inte."
+
+#: src/window.py:454
+msgid "Format of this file is not supported."
+msgstr "Formatet för denna fil stöds inte."
+
+#: src/window.py:512
 msgid "translator-credits"
 msgstr ""
 "Åke Engelbrektson <eson@svenskasprakfiler.se>\n"
 "Luna Jernberg <droidbittin@gmail.com>\n"
 "Anders Jonsson <anders.jonsson@norsjovallen.se>"
 
-#: src/window.py:526
+#: src/window.py:516
 msgid "Contributors"
 msgstr "Bidragsgivare"
+
+#~ msgid "Unable to read file information."
+#~ msgstr "Kunde inte läsa filinformation."
+
+#~ msgid "Getting things ready"
+#~ msgstr "Förbereder saker"
 
 #~ msgid "Hugo Posnic"
 #~ msgstr "Hugo Posnic"
@@ -506,9 +512,6 @@ msgstr "Bidragsgivare"
 #, python-brace-format
 #~ msgid "Safe mode with “{suffix_prefix}” prefix"
 #~ msgstr "Säkert läge med ”{suffix_prefix}”-prefix"
-
-#~ msgid "This file doesn't exist."
-#~ msgstr "Denna fil finns inte."
 
 #~ msgid "Safe mode with '{}' {}"
 #~ msgstr "Säkert läge med ”{}” {}"
