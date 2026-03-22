@@ -33,9 +33,6 @@ class Compressor(ABC):
         The result_item's information is changed to point to the temporary file
         This is done in case the output is larger than the input in overwrite mode
         """
-        if self.has_native_skip_capacity() or self.settings.new_file:
-            return result_item
-
         base_dir, filename = os.path.split(result_item.filename)
         tmp_filename = os.path.join(base_dir, f".{filename}.tmp")
         result_item.filename = tmp_filename
@@ -52,7 +49,8 @@ class Compressor(ABC):
         error_message = ""
         command = self.build_command(result_item)
         try:
-            result_item = self.create_tmp_result_item(result_item)
+            if not self.has_native_skip_capacity() and self.settings.new_file:
+                result_item = self.create_tmp_result_item(result_item)
             output = subprocess.run(
                 command,
                 capture_output=True,
