@@ -2,6 +2,7 @@ import logging
 import os
 import subprocess
 from abc import ABC, abstractmethod
+from typing import Callable
 
 from gi.repository import Gio, GLib
 
@@ -20,7 +21,7 @@ class Compressor(ABC):
 
     @classmethod
     @abstractmethod
-    def is_skippable(cls) -> bool:
+    def has_native_skip_capacity(cls) -> bool:
         return False
 
     @abstractmethod
@@ -32,7 +33,7 @@ class Compressor(ABC):
         The result_item's information is changed to point to the temporary file
         This is done in case the output is larger than the input in overwrite mode
         """
-        if self.has_native_skip_capacity or self.settings.new_file:
+        if self.has_native_skip_capacity() or self.settings.new_file:
             return result_item
 
         base_dir, filename = os.path.split(result_item.filename)
@@ -46,7 +47,7 @@ class Compressor(ABC):
 
         return result_item
 
-    def run(self, result_item: ResultItem, c_update_result_item):
+    def run(self, result_item: ResultItem, c_update_result_item: Callable):
         error = False
         error_message = ""
         command = self.build_command(result_item)
@@ -75,14 +76,14 @@ class Compressor(ABC):
             return
 
         new_file = Gio.File.new_for_path(result_item.new_filename)
-        new_file_info = new_file.query_info(
-            "standard::size", Gio.FileQueryInfoFlags.NONE
-        )
         if new_file.query_exists():
+            new_file_info = new_file.query_info(
+                "standard::size", Gio.FileQueryInfoFlags.NONE
+            )
             result_item.new_size = new_file_info.get_size()
 
             # Manually skip files if necessary
-            if not self.has_native_skip_capacity:
+            if not self.has_native_skip_capacity():
                 # Safe mode
                 if self.settings.new_file:
                     if result_item.new_size >= result_item.size:
