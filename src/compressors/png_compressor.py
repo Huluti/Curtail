@@ -8,6 +8,10 @@ class PNGCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "png"
 
+    @classmethod
+    def has_native_skip_capacity(cls) -> bool:
+        return True
+
     def build_command(self, result_item):
         pngquant = "pngquant --quality=0-{} -f {} --output {} --skip-if-larger"
         oxipng = "oxipng -o {} -i 1 {} --out {}"

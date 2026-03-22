@@ -8,6 +8,10 @@ class WEBPCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "webp"
 
+    @classmethod
+    def has_native_skip_capacity(cls) -> bool:
+        return False
+
     def build_command(self, result_item):
         command = "cwebp {}".format(quote(result_item.filename))
 

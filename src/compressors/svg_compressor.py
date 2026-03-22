@@ -8,6 +8,10 @@ class SVGCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "svg"
 
+    @classmethod
+    def has_native_skip_capacity(cls) -> bool:
+        return False
+
     def build_command(self, result_item):
         # workaround for https://github.com/scour-project/scour/issues/129
         temp_new_filename = result_item.new_filename

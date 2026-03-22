@@ -8,6 +8,10 @@ class JPEGCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "jpeg"
 
+    @classmethod
+    def has_native_skip_capacity(cls) -> bool:
+        return True
+
     def build_command(self, result_item):
         if self.settings.new_file:
             jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"

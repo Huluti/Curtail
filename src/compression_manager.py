@@ -29,10 +29,6 @@ class CompressionManager:
         futures = []
         for result_item in result_items:
             file_type = get_file_type(result_item.file)
-            if file_type in ("svg", "webp"):
-                # Must be manually skipped
-                if not self.new_file:
-                    self.create_tmp_result_item(result_item)
             future = executor.submit(
                 self.compressors[file_type].run, result_item, c_update_result_item
             )
