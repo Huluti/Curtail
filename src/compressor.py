@@ -69,61 +69,62 @@ class Compressor(ABC):
             logging.error(str(err))
             error_message = _("An unknown error has occurred")
             error = True
-        finally:
-            if error:
-                GLib.idle_add(c_update_result_item, result_item, error, error_message)
 
-            new_file = Gio.File.new_for_path(result_item.new_filename)
-            new_file_info = new_file.query_info(
-                "standard::size", Gio.FileQueryInfoFlags.NONE
-            )
-            if new_file.query_exists():
-                result_item.new_size = new_file_info.get_size()
-
-                # Manually skip files if necessary
-                if not self.has_native_skip_capacity:
-                    # Safe mode
-                    if self.settings.new_file:
-                        if result_item.new_size >= result_item.size:
-                            # Output is larger (or equal) than input in safe mode
-                            # Remove the new file
-                            new_file.delete()
-                            result_item.skipped = True
-                    # Overwrite mode
-                    else:
-                        if result_item.new_size >= result_item.size:
-                            # Output is larger (or equal) than input in overwrite mode
-                            # Set file as skipped, since the temporary file was compressed
-                            # The original file was not changed
-                            result_item.skipped = True
-                        else:
-                            # Output is smaller than input in overwrite mode
-                            # Copy the compressed temporary file onto the uncompressed original file
-                            source = Gio.File.new_for_path(result_item.filename)
-                            dest = Gio.File.new_for_path(result_item.original_filename)
-                            source.copy(dest, Gio.FileCopyFlags.COPY_ALL_METADATA)
-
-                        # Remove temporary file that was created for overwrite mode
-                        # Also set the result_item's information back to the original file
-                        result_item.file.delete()
-                        result_item.filename = result_item.original_filename
-                        result_item.new_filename = result_item.original_filename
-
-                        new_file = Gio.File.new_for_path(result_item.new_filename)
-                        new_file_info = new_file.query_info(
-                            "standard::size", Gio.FileQueryInfoFlags.NONE
-                        )
-                        result_item.new_size = new_file_info.get_size()
-                elif result_item.size == result_item.new_size:
-                    # File was automatically skipped by a compressor
-                    result_item.skipped = True
-
-                    # Remove new file if in safe mode
-                    if self.settings.new_file:
-                        new_file.delete()
-            else:
-                logging.error(str(output))
-                error_message = _("Can't find the compressed file")
-                error = True
-
+        if error:
             GLib.idle_add(c_update_result_item, result_item, error, error_message)
+            return
+
+        new_file = Gio.File.new_for_path(result_item.new_filename)
+        new_file_info = new_file.query_info(
+            "standard::size", Gio.FileQueryInfoFlags.NONE
+        )
+        if new_file.query_exists():
+            result_item.new_size = new_file_info.get_size()
+
+            # Manually skip files if necessary
+            if not self.has_native_skip_capacity:
+                # Safe mode
+                if self.settings.new_file:
+                    if result_item.new_size >= result_item.size:
+                        # Output is larger (or equal) than input in safe mode
+                        # Remove the new file
+                        new_file.delete()
+                        result_item.skipped = True
+                # Overwrite mode
+                else:
+                    if result_item.new_size >= result_item.size:
+                        # Output is larger (or equal) than input in overwrite mode
+                        # Set file as skipped, since the temporary file was compressed
+                        # The original file was not changed
+                        result_item.skipped = True
+                    else:
+                        # Output is smaller than input in overwrite mode
+                        # Copy the compressed temporary file onto the uncompressed original file
+                        source = Gio.File.new_for_path(result_item.filename)
+                        dest = Gio.File.new_for_path(result_item.original_filename)
+                        source.copy(dest, Gio.FileCopyFlags.COPY_ALL_METADATA)
+
+                    # Remove temporary file that was created for overwrite mode
+                    # Also set the result_item's information back to the original file
+                    result_item.file.delete()
+                    result_item.filename = result_item.original_filename
+                    result_item.new_filename = result_item.original_filename
+
+                    new_file = Gio.File.new_for_path(result_item.new_filename)
+                    new_file_info = new_file.query_info(
+                        "standard::size", Gio.FileQueryInfoFlags.NONE
+                    )
+                    result_item.new_size = new_file_info.get_size()
+            elif result_item.size == result_item.new_size:
+                # File was automatically skipped by a compressor
+                result_item.skipped = True
+
+                # Remove new file if in safe mode
+                if self.settings.new_file:
+                    new_file.delete()
+        else:
+            logging.error(str(output))
+            error_message = _("Can't find the compressed file")
+            error = True
+
+        GLib.idle_add(c_update_result_item, result_item, error, error_message)
