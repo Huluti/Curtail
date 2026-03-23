@@ -12,7 +12,7 @@ class WEBPCompressor(Compressor):
     def has_native_skip_capacity(cls) -> bool:
         return False
 
-    def build_command(self, result_item):
+    def build_command(self, result_item) -> str:
         command = "cwebp {}".format(quote(result_item.filename))
 
         # cwebp doesn't preserve any metadata by default

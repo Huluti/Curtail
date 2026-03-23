@@ -12,7 +12,7 @@ class SVGCompressor(Compressor):
     def has_native_skip_capacity(cls) -> bool:
         return False
 
-    def build_command(self, result_item):
+    def build_command(self, result_item) -> str:
         # workaround for https://github.com/scour-project/scour/issues/129
         temp_new_filename = result_item.new_filename
         if not self.settings.new_file:

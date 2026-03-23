@@ -12,7 +12,7 @@ class JPEGCompressor(Compressor):
     def has_native_skip_capacity(cls) -> bool:
         return True
 
-    def build_command(self, result_item):
+    def build_command(self, result_item) -> str:
         if self.settings.new_file:
             jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"
             jpegoptim2 = "jpegoptim -o --stdout {} > {}"

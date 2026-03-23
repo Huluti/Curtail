@@ -25,10 +25,10 @@ class Compressor(ABC):
         return False
 
     @abstractmethod
-    def build_command(cls, result_item: ResultItem):
-        pass
+    def build_command(cls, result_item: ResultItem) -> str:
+        return ""
 
-    def create_tmp_result_item(self, result_item: ResultItem):
+    def create_tmp_result_item(self, result_item: ResultItem) -> ResultItem:
         """Creates a temporary copy of the file to be compressed rather than the original
         The result_item's information is changed to point to the temporary file
         This is done in case the output is larger than the input in overwrite mode
@@ -44,7 +44,7 @@ class Compressor(ABC):
 
         return result_item
 
-    def run(self, result_item: ResultItem, c_update_result_item: Callable):
+    def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
         error = False
         error_message = ""
         command = self.build_command(result_item)
