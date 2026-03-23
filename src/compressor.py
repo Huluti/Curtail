@@ -47,10 +47,10 @@ class Compressor(ABC):
     def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
         error = False
         error_message = ""
+        if not self.has_native_skip_capacity() and self.settings.new_file:
+            result_item = self.create_tmp_result_item(result_item)
         command = self.build_command(result_item)
         try:
-            if not self.has_native_skip_capacity() and self.settings.new_file:
-                result_item = self.create_tmp_result_item(result_item)
             output = subprocess.run(
                 command,
                 capture_output=True,
