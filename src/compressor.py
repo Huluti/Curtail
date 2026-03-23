@@ -1,6 +1,7 @@
 import logging
 import os
 import subprocess
+import html
 from abc import ABC, abstractmethod
 from typing import Callable
 
@@ -45,8 +46,6 @@ class Compressor(ABC):
         return result_item
 
     def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
-        error = False
-        error_message = ""
         if not self.has_native_skip_capacity() and self.settings.new_file:
             result_item = self.create_tmp_result_item(result_item)
         command = self.build_command(result_item)
@@ -60,17 +59,19 @@ class Compressor(ABC):
             )
         except subprocess.TimeoutExpired as err:
             logging.error(str(err))
-            error_message = _(
+            result_item.error_message = _(
                 "Compression has reached the configured timeout of {} seconds."
             ).format(self.settings.compression_timeout)
-            error = True
+            result_item.error = True
         except Exception as err:
-            logging.error(str(err))
-            error_message = _("An unknown error has occurred")
-            error = True
+            result_item.error_message = _("An unknown error has occurred.")
+            result_item.error_details_message = html.escape(str(err))
+            logging.error(result_item.error_details_message)
+            result_item.error = True
+            result_item.error_details = True
 
-        if error:
-            GLib.idle_add(c_update_result_item, result_item, error, error_message)
+        if result_item.error:
+            GLib.idle_add(c_update_result_item, result_item)
             return
 
         new_file = Gio.File.new_for_path(result_item.new_filename)
@@ -123,7 +124,7 @@ class Compressor(ABC):
                     new_file.delete()
         else:
             logging.error(str(output))
-            error_message = _("Can't find the compressed file")
-            error = True
+            result_item.error_message = _("Can't find the compressed file")
+            result_item.error = True
 
-        GLib.idle_add(c_update_result_item, result_item, error, error_message)
+        GLib.idle_add(c_update_result_item, result_item)

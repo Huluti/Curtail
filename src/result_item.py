@@ -17,6 +17,8 @@ class ResultItem(GObject.Object):
     skipped = GObject.Property(type=bool, default=False)
     error = GObject.Property(type=bool, default=False)
     error_message = GObject.Property(type=str, default="")
+    error_details = GObject.Property(type=bool, default=False)
+    error_details_message = GObject.Property(type=str, default="")
 
     def __init__(self, file, name, filename, new_filename, size):
         super().__init__()
