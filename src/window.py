@@ -416,11 +416,6 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         return final_files
 
-    def check_format(self, file):
-        file_type = get_file_type(file)
-
-        return file_type in ("png", "jpeg", "webp", "svg")
-
     def create_new_filename(self, path):
         new_filename = path
         basename = os.path.basename(path)
@@ -471,8 +466,9 @@ class CurtailWindow(Adw.ApplicationWindow):
             # Check format
             if not error_message:
                 size = file_info.get_size()
+                file_type = get_file_type(file)
 
-                if not self.check_format(file) or size <= 0:
+                if file_type not in ("png", "jpeg", "webp", "svg") or size <= 0:
                     error_message = _("Format of this file is not supported.")
             else:
                 size = 0
@@ -494,9 +490,6 @@ class CurtailWindow(Adw.ApplicationWindow):
                 result_item.error_message = error_message
                 GLib.idle_add(self.update_result_item, result_item)
 
-        self.compress_images(result_items)
-
-    def compress_images(self, result_items):
         self.show_view("results")
         self.enable_compression(False)
 
