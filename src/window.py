@@ -464,10 +464,9 @@ class CurtailWindow(Adw.ApplicationWindow):
             host_path = file_info.get_attribute_string(
                 "xattr::document-portal.host-path"
             )
-            path = host_path if host_path else file.get_path()
-
+            filename = host_path if host_path else file.get_path()
             display_name = file_info.get_display_name()
-            filename = display_name if display_name else file.get_basename()
+            name = display_name if display_name else file.get_basename()
 
             # Check format
             if not error_message:
@@ -479,11 +478,11 @@ class CurtailWindow(Adw.ApplicationWindow):
                 size = 0
 
             if not error_message:
-                new_filename = self.create_new_filename(path)
+                new_filename = self.create_new_filename(filename)
             else:
                 new_filename = ""
 
-            result_item = ResultItem(file, filename, path, new_filename, size)
+            result_item = ResultItem(file, name, filename, new_filename, size)
 
             if not error_message:
                 result_items.append(result_item)

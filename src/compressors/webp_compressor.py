@@ -8,10 +8,6 @@ class WEBPCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "webp"
 
-    @classmethod
-    def has_native_skip_capacity(cls) -> bool:
-        return False
-
     def build_command(self, result_item) -> str:
         command = "cwebp {}".format(quote(result_item.filename))
 
@@ -28,6 +24,6 @@ class WEBPCompressor(Compressor):
         # multithreaded, (lossless) compression mode, quality, output
         command += " -mt -m {}".format(self.settings.webp_lossless_level)
         command += " -q {}".format(quality)
-        command += " -o {}".format(quote(result_item.new_filename))
+        command += " -o {}".format(quote(result_item.tmp_filename))
 
         return command
