@@ -23,6 +23,7 @@ curtail_sources = [
   'window.py',
   'compression_manager.py',
   'settings_manager.py',
+  'result_item_manager.py',
   'compressor.py',
   'preferences.py',
   'result_item.py',

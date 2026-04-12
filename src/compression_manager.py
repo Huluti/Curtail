@@ -3,18 +3,26 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from gi.repository import GLib
 
-from .tools import get_file_type
-
 
 class CompressionManager:
     def __init__(self, settings_manager):
         self.settings = settings_manager
         self.compressors = {}
 
+    def mime_type_to_compressor_type(self, mime_type: str) -> str:
+        if mime_type == "image/jpeg":
+            return "jpeg"
+        elif mime_type == "image/png":
+            return "png"
+        elif mime_type == "image/jpeg":
+            return "jpg"
+        elif mime_type == "image/png":
+            return "png"
+
     def register_compressor(self, ConcreteCompressor):
-        mime_type = ConcreteCompressor.get_file_type()
-        if mime_type not in self.compressors:
-            self.compressors[mime_type] = ConcreteCompressor(self.settings)
+        file_type = ConcreteCompressor.get_file_type()
+        if file_type not in self.compressors:
+            self.compressors[file_type] = ConcreteCompressor(self.settings)
 
     def compress(self, result_items, c_update_result_item, c_enable_compression):
         threading.Thread(
@@ -28,9 +36,9 @@ class CompressionManager:
         executor = ThreadPoolExecutor(max_workers=cpu_count)
         futures = []
         for result_item in result_items:
-            file_type = get_file_type(result_item.file)
+            compressor_type = self.mime_type_to_compressor_type(result_item.mime_type)
             future = executor.submit(
-                self.compressors[file_type].run, result_item, c_update_result_item
+                self.compressors[compressor_type].run, result_item, c_update_result_item
             )
             futures.append(future)
 

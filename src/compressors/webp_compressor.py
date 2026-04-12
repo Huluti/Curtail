@@ -1,6 +1,7 @@
 from shlex import quote
 
 from ..compressor import Compressor
+from ..result_item import ResultItem
 
 
 class WEBPCompressor(Compressor):
@@ -8,7 +9,7 @@ class WEBPCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "webp"
 
-    def build_command(self, result_item) -> str:
+    def build_command(self, result_item: ResultItem) -> str:
         command = "cwebp {}".format(quote(result_item.filename))
 
         # cwebp doesn't preserve any metadata by default

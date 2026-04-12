@@ -43,22 +43,6 @@ def add_filechooser_filters(dialog):
     dialog.set_filters(file_filters)
 
 
-def get_file_type(file):
-    file_info = file.query_info("standard::content-type", Gio.FileQueryInfoFlags.NONE)
-    content_type = file_info.get_content_type()
-
-    if content_type == "image/jpeg":
-        return "jpeg"
-    elif content_type == "image/png":
-        return "png"
-    elif content_type == "image/webp":
-        return "webp"
-    elif content_type == "image/svg+xml":
-        return "svg"
-    else:
-        return None
-
-
 def create_image_from_file(filename, max_width, max_height):
     # Image preview
     try:

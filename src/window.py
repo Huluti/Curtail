@@ -9,10 +9,10 @@ from .compressors.svg_compressor import SVGCompressor
 from .compression_manager import CompressionManager
 from .settings_manager import SettingsManager
 from .result_item import ResultItem
+from .result_item_manager import ResultItemManager
 from .preferences import CurtailPrefsDialog
 from .tools import (
     add_filechooser_filters,
-    get_file_type,
     create_image_from_file,
     sizeof_fmt,
     debug_infos,
@@ -63,6 +63,8 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.manager.register_compressor(JPEGCompressor)
         self.manager.register_compressor(WEBPCompressor)
         self.manager.register_compressor(SVGCompressor)
+
+        self.result_item_manager = ResultItemManager(self.settings)
 
     def build_ui(self):
         # Set icons
@@ -256,7 +258,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     def on_results_right_click(self, gesture, button, x, y, user_data):
         row = self.listbox.get_row_at_y(y)
         filename = row.get_tooltip_text()
-        if not os.path.exists(filename):
+        if not filename or not os.path.exists(filename):
             return
 
         popover = Gtk.PopoverMenu()
@@ -416,79 +418,21 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         return final_files
 
-    def create_new_filename(self, path):
-        new_filename = path
-        basename = os.path.basename(path)
-        splitext = os.path.splitext(basename)
-        parent = path.replace(basename, "")
-        stem = splitext[0]
-        extension = splitext[1]
-        suffix_prefix = self.settings.suffix_prefix
-
-        # Use new file or not
-        if self.settings.new_file:
-            if self.settings.naming_mode == 0:  # Suffix selected
-                new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
-            else:  # Prefix selected
-                new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
-
-        return new_filename
-
     def compress_files(self, files):
         files = self.handle_files(files)
-        # No files found
         if not files:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
         for file in files:
-            error_message = False
-
-            # Check file
-            if not file.query_exists():
-                error_message = _("This file doesn't exist.")
-
-            # Get file info
-            file_info = file.query_info(
-                "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path",
-                Gio.FileQueryInfoFlags.NONE,
-            )
-
-            # Get path by checking host path
-            host_path = file_info.get_attribute_string(
-                "xattr::document-portal.host-path"
-            )
-            filename = host_path if host_path else file.get_path()
-            display_name = file_info.get_display_name()
-            name = display_name if display_name else file.get_basename()
-
-            # Check format
-            if not error_message:
-                size = file_info.get_size()
-                file_type = get_file_type(file)
-
-                if file_type not in ("png", "jpeg", "webp", "svg") or size <= 0:
-                    error_message = _("Format of this file is not supported.")
-            else:
-                size = 0
-
-            if not error_message:
-                new_filename = self.create_new_filename(filename)
-            else:
-                new_filename = ""
-
-            result_item = ResultItem(file, name, filename, new_filename, size)
-
-            if not error_message:
-                result_items.append(result_item)
-
+            result_item = self.result_item_manager.build(file)
             self.results_model.append(result_item)
 
-            if error_message:
-                result_item.error = True
-                result_item.error_message = error_message
+            if result_item.error:
                 GLib.idle_add(self.update_result_item, result_item)
+            else:
+                result_items.append(result_item)
 
         self.show_view("results")
         self.enable_compression(False)
