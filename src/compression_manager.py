@@ -14,10 +14,10 @@ class CompressionManager:
             return "jpeg"
         elif mime_type == "image/png":
             return "png"
-        elif mime_type == "image/jpeg":
-            return "jpg"
-        elif mime_type == "image/png":
-            return "png"
+        elif mime_type == "image/webp":
+            return "webp"
+        elif mime_type == "image/svg+xml":
+            return "svg"
 
     def register_compressor(self, ConcreteCompressor):
         file_type = ConcreteCompressor.get_file_type()
