@@ -56,14 +56,14 @@ class Compressor(ABC):
                 "standard::size", Gio.FileQueryInfoFlags.NONE
             )
             result_item.new_size = new_file_info.get_size()
-            print(result_item.new_size, result_item.size)
 
             if result_item.new_size >= result_item.size:
                 # Output is larger (or equal) than input
+                # Don't use compressed temp file
                 result_item.skipped = True
             else:
                 # Output is smaller than input
-                # Copy the compressed temporary file
+                # Copy the compressed temp file
                 final_path = (
                     result_item.new_filename
                     if self.settings.new_file
@@ -75,7 +75,7 @@ class Compressor(ABC):
                     dest, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA
                 )
 
-            # Remove the tmp file
+            # Remove the temp file
             new_file.delete()
         else:
             logging.error(str(output))
