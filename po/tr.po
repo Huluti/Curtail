@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-03-14 09:25+0000\n"
+"POT-Creation-Date: 2026-04-12 12:11+0000\n"
 "PO-Revision-Date: 2026-03-15 17:53+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -320,7 +320,7 @@ msgstr "Klavye Kısayolları"
 msgid "About Curtail"
 msgstr "Curtail Hakkında"
 
-#: data/ui/window.ui:22 src/window.py:302
+#: data/ui/window.ui:22 src/window.py:325
 msgid "Browse Files"
 msgstr "Dosyalara Göz At"
 
@@ -364,52 +364,52 @@ msgstr "Görüntüler inceleniyor"
 msgid "Analyzing your images before compression…"
 msgstr "Sıkıştırma öncesinde görüntüleriniz inceleniyor…"
 
-#: src/compressor.py:122
+#: src/compressor.py:39
 msgid "Compression has reached the configured timeout of {} seconds."
 msgstr "Sıkıştırma, yapılandırılan {} saniyelik zaman aşımına ulaştı."
 
-#: src/compressor.py:127
-msgid "An unknown error has occurred"
-msgstr "Bilinmeyen hata oluştu"
+#: src/compressor.py:43
+msgid "An unknown error has occurred."
+msgstr "Bilinmeyen hata oluştu."
 
-#: src/compressor.py:175
+#: src/compressor.py:82
 msgid "Can't find the compressed file"
 msgstr "Sıkıştırılmış dosya bulunamadı"
 
-#: src/tools.py:33
+#: src/tools.py:14
 msgid "All images"
 msgstr "Tüm görüntüler"
 
-#: src/tools.py:40
+#: src/tools.py:21
 msgid "PNG images"
 msgstr "PNG görüntüler"
 
-#: src/tools.py:44
+#: src/tools.py:25
 msgid "JPEG images"
 msgstr "JPEG görüntüler"
 
-#: src/tools.py:48
+#: src/tools.py:29
 msgid "WebP images"
 msgstr "WebP görüntüler"
 
-#: src/tools.py:52
+#: src/tools.py:33
 msgid "SVG images"
 msgstr "SVG görüntüler"
 
-#: src/tools.py:158 src/tools.py:165 src/tools.py:172 src/tools.py:179
-#: src/tools.py:186 src/tools.py:213
+#: src/tools.py:125 src/tools.py:132 src/tools.py:139 src/tools.py:146
+#: src/tools.py:153 src/tools.py:180
 msgid "Version not found"
 msgstr "Sürüm bulunamadı"
 
-#: src/window.py:159
+#: src/window.py:151
 msgid "Skipped"
 msgstr "Atlandı"
 
-#: src/window.py:180
+#: src/window.py:172 src/window.py:199
 msgid "More Information"
 msgstr "Daha Çok Bilgi"
 
-#: src/window.py:189
+#: src/window.py:181
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
@@ -417,27 +417,27 @@ msgstr ""
 "Dosyanın sıkıştırılması daha büyük dosya boyutuyla sonuçlanacağından "
 "sıkıştırma atlandı."
 
-#: src/window.py:259
+#: src/window.py:282
 msgid "Open Image"
 msgstr "Görüntü Aç"
 
-#: src/window.py:260
+#: src/window.py:283
 msgid "Show in Folder"
 msgstr "Klasörde Göster"
 
-#: src/window.py:292
+#: src/window.py:315
 msgid "Overwrite mode"
 msgstr "Üzerine yazma kipi"
 
-#: src/window.py:320
+#: src/window.py:343
 msgid "Browse Directories"
 msgstr "Dizinlere Göz At"
 
-#: src/window.py:346 src/window.py:355
+#: src/window.py:369 src/window.py:378
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Bu dizinlerdeki görüntüleri sıkıştırmak istediğinize emin misiniz?"
 
-#: src/window.py:348
+#: src/window.py:371
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -445,7 +445,7 @@ msgstr ""
 "Seçilen dizinlerdeki ve alt dizinlerindeki tüm görüntüler sıkıştırılacak. "
 "Özgün görüntüler değiştirilmeyecek."
 
-#: src/window.py:357
+#: src/window.py:380
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -453,32 +453,24 @@ msgstr ""
 "Seçilen dizinlerdeki ve alt dizinlerindeki tüm görüntüler sıkıştırılacak ve "
 "üzerine yazılacak!"
 
-#: src/window.py:362
+#: src/window.py:385
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/window.py:363
+#: src/window.py:386
 msgid "Compress"
 msgstr "Sıkıştır"
 
-#: src/window.py:425
+#: src/window.py:424
 msgid "No files found"
 msgstr "Dosya bulunamadı"
 
-#: src/window.py:434
-msgid "This file doesn't exist."
-msgstr "Böyle bir dosya yok."
-
-#: src/window.py:454
-msgid "Format of this file is not supported."
-msgstr "Bu dosyanın biçimi desteklenmiyor."
-
-#: src/window.py:512
+#: src/window.py:475
 msgid "translator-credits"
 msgstr ""
 "Sabri Ünal <yakushabb@gmail.com>\n"
 "Muhammet Emin Akalan <05akalan57@gmail.com>"
 
-#: src/window.py:516
+#: src/window.py:479
 msgid "Contributors"
-msgstr "Katkıda Bulunanlar"
+msgstr "Katkıcılar"
