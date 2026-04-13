@@ -113,9 +113,7 @@ def get_image_files_from_folder_recursive(files):
 def debug_infos():
     python_version = platform.python_version()
 
-    gtk_version = "{}.{}.{}".format(
-        Gtk.get_major_version(), Gtk.get_minor_version(), Gtk.get_micro_version()
-    )
+    gtk_version = f"{Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_version()}"
 
     # Jpegoptim
     try:
@@ -152,15 +150,13 @@ def debug_infos():
     except Exception:
         scour = _("Version not found")
 
-    debug = """Python: {}\n
-Gtk: {}\n
-Jpegoptim: {}\n
-Oxipng: {}\n
-pngquant: {}\n
-Libwebp: {}\n
-Scour: {}\n""".format(
-        python_version, gtk_version, jpegoptim, oxipng, pngquant, libwebp, scour
-    )
+    debug = f"""Python: {python_version}\n
+Gtk: {gtk_version}\n
+Jpegoptim: {jpegoptim}\n
+Oxipng: {oxipng}\n
+pngquant: {pngquant}\n
+Libwebp: {libwebp}\n
+Scour: {scour}\n"""
 
     return debug
 
