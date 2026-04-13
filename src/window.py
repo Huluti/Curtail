@@ -1,31 +1,18 @@
-# window.py
-#
-# Copyright 2019 Hugo Posnic
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import os
 import subprocess
-import threading
 from gi.repository import Gtk, Gdk, Gio, GLib, Adw, GObject
 
-from .resultitem import ResultItem
+from .compressors.png_compressor import PNGCompressor
+from .compressors.jpeg_compressor import JPEGCompressor
+from .compressors.webp_compressor import WEBPCompressor
+from .compressors.svg_compressor import SVGCompressor
+from .compression_manager import CompressionManager
+from .settings_manager import SettingsManager
+from .result_item import ResultItem
+from .result_item_manager import ResultItemManager
 from .preferences import CurtailPrefsDialog
-from .compressor import Compressor
 from .tools import (
     add_filechooser_filters,
-    get_file_type,
     create_image_from_file,
     sizeof_fmt,
     debug_infos,
@@ -34,15 +21,11 @@ from .tools import (
 )
 
 CURTAIL_PATH = "/com/github/huluti/Curtail/"
-SETTINGS_SCHEMA = "com.github.huluti.Curtail"
 
 
 @Gtk.Template(resource_path=CURTAIL_PATH + "ui/window.ui")
 class CurtailWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CurtailWindow"
-
-    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
-    settings = Gtk.Settings.get_default()
 
     prefs_dialog = None
     apply_window = None
@@ -69,9 +52,19 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.set_default_icon_name("com.github.huluti.Curtail")
         self.app = kwargs["application"]
 
+        self.settings = SettingsManager()
+
         self.build_ui()
         self.create_actions()
         self.show_view("home")
+
+        self.manager = CompressionManager(self.settings)
+        self.manager.register_compressor(PNGCompressor)
+        self.manager.register_compressor(JPEGCompressor)
+        self.manager.register_compressor(WEBPCompressor)
+        self.manager.register_compressor(SVGCompressor)
+
+        self.result_item_manager = ResultItemManager(self.settings)
 
     def build_ui(self):
         # Set icons
@@ -97,7 +90,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.mainbox.add_controller(drop_target_main)
 
         # Lossy toggle
-        self.toggle_lossy.set_active(self._settings.get_boolean("lossy"))
+        self.toggle_lossy.set_active(self.settings.lossy)
         self.toggle_lossy.connect("notify::active", self.on_lossy_changed)
 
         # Results
@@ -150,11 +143,10 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.show_view("home")
         self.results_model.remove_all()
 
-    def update_result_item(self, result_item, error, error_message):
+    def update_result_item(self, result_item):
         result_item.running = False
-        result_item.error = error
-        if error:
-            result_item.subtitle_label = error_message
+        if result_item.error:
+            result_item.subtitle_label = result_item.error_message
         elif result_item.skipped:
             result_item.savings = _("Skipped")
         else:
@@ -164,7 +156,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             )
             result_item.subtitle_label += " → " + sizeof_fmt(result_item.new_size)
 
-    def create_result_row(self, result_item):
+    def create_result_row(self, result_item: ResultItem):
         row = Adw.ActionRow()
         row.set_title(result_item.name)
         row.set_tooltip_text(result_item.new_filename)
@@ -182,25 +174,47 @@ class CurtailWindow(Adw.ApplicationWindow):
         skipped_info_button.add_css_class("flat")
         skipped_info_button.set_visible(False)
 
-        popover = Gtk.Popover()
-        popover_label = Gtk.Label()
-        popover_label.set_text(
+        skipped_popover = Gtk.Popover()
+        skipped_popover_label = Gtk.Label()
+        skipped_popover_label.set_text(
             _(
                 "Compression was skipped because compressing the file would have resulted in a larger file size."
             )
         )
-        popover_label.set_halign(Gtk.Align.CENTER)
-        popover_label.set_valign(Gtk.Align.CENTER)
-        popover_label.set_margin_bottom(6)
-        popover_label.set_margin_start(6)
-        popover_label.set_margin_end(6)
-        popover_label.set_margin_top(6)
-        popover_label.set_max_width_chars(50)
-        popover_label.set_wrap(True)
-        popover.set_child(popover_label)
+        skipped_popover_label.set_halign(Gtk.Align.CENTER)
+        skipped_popover_label.set_valign(Gtk.Align.CENTER)
+        skipped_popover_label.set_margin_bottom(6)
+        skipped_popover_label.set_margin_start(6)
+        skipped_popover_label.set_margin_end(6)
+        skipped_popover_label.set_margin_top(6)
+        skipped_popover_label.set_max_width_chars(50)
+        skipped_popover_label.set_wrap(True)
+        skipped_popover.set_child(skipped_popover_label)
 
-        skipped_info_button.set_popover(popover)
+        skipped_info_button.set_popover(skipped_popover)
         row.add_suffix(skipped_info_button)
+
+        error_info_button = Gtk.MenuButton()
+        error_info_button.set_valign(Gtk.Align.CENTER)
+        error_info_button.set_tooltip_text(_("More Information"))
+        error_info_button.set_icon_name("info-outline-symbolic")
+        error_info_button.add_css_class("flat")
+        error_info_button.set_visible(False)
+
+        error_popover = Gtk.Popover()
+        error_popover_label = Gtk.Label()
+        error_popover_label.set_halign(Gtk.Align.CENTER)
+        error_popover_label.set_valign(Gtk.Align.CENTER)
+        error_popover_label.set_margin_bottom(6)
+        error_popover_label.set_margin_start(6)
+        error_popover_label.set_margin_end(6)
+        error_popover_label.set_margin_top(6)
+        error_popover_label.set_max_width_chars(50)
+        error_popover_label.set_wrap(True)
+        error_popover.set_child(error_popover_label)
+
+        error_info_button.set_popover(error_popover)
+        row.add_suffix(error_info_button)
 
         savings_widget = Gtk.Label()
         savings_widget.add_css_class("success")
@@ -229,13 +243,22 @@ class CurtailWindow(Adw.ApplicationWindow):
         result_item.bind_property(
             "error", error_image, "visible", GObject.BindingFlags.DEFAULT
         )
+        result_item.bind_property(
+            "error_details", error_info_button, "visible", GObject.BindingFlags.DEFAULT
+        )
+        result_item.bind_property(
+            "error_details_message",
+            error_popover_label,
+            "label",
+            GObject.BindingFlags.DEFAULT,
+        )
 
         return row
 
     def on_results_right_click(self, gesture, button, x, y, user_data):
         row = self.listbox.get_row_at_y(y)
         filename = row.get_tooltip_text()
-        if not os.path.exists(filename):
+        if not filename or not os.path.exists(filename):
             return
 
         popover = Gtk.PopoverMenu()
@@ -276,11 +299,11 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def set_saving_subtitle(self, new_file=None):
         if new_file is None:
-            new_file = self._settings.get_boolean("new-file")
+            new_file = self.settings.new_file
         if new_file:
-            suffix_prefix = self._settings.get_string("suffix-prefix")
+            suffix_prefix = self.settings.suffix_prefix
 
-            if self._settings.get_int("naming-mode") == 0:
+            if self.settings.naming_mode == 0:
                 label = _(f"Safe mode with “{suffix_prefix}” suffix").format(
                     suffix_prefix
                 )
@@ -294,7 +317,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def show_warning_banner(self, show=None):
         if show is None:
-            show = not self._settings.get_boolean("new-file")
+            show = not self.settings.new_file
 
         self.warning_banner.set_revealed(show)
 
@@ -341,7 +364,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def _create_warning_dialog(self):
         dialog = None
-        if self._settings.get_boolean("new-file"):
+        if self.settings.new_file:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _(
@@ -362,7 +385,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if self._settings.get_boolean("new-file"):
+        if self.settings.new_file:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(
@@ -385,7 +408,7 @@ class CurtailWindow(Adw.ApplicationWindow):
             file_type = file.query_file_type(Gio.FileQueryInfoFlags.NONE)
 
             if file_type == Gio.FileType.DIRECTORY:
-                if self._settings.get_boolean("recursive"):
+                if self.settings.recursive:
                     images = get_image_files_from_folder_recursive(file)
                 else:
                     images = get_image_files_from_folder(file)
@@ -395,97 +418,37 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         return final_files
 
-    def check_format(self, file):
-        file_type = get_file_type(file)
-
-        return file_type in ("png", "jpeg", "webp", "svg")
-
-    def create_new_filename(self, path):
-        new_filename = path
-        basename = os.path.basename(path)
-        splitext = os.path.splitext(basename)
-        parent = path.replace(basename, "")
-        stem = splitext[0]
-        extension = splitext[1]
-        suffix_prefix = self._settings.get_string("suffix-prefix")
-
-        # Use new file or not
-        if self._settings.get_boolean('new-file'):
-            if self._settings.get_int('naming-mode') == 0: # Suffix selected
-                new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
-            else: # Prefix selected
-                new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
-
-        return new_filename
-
     def compress_files(self, files):
         files = self.handle_files(files)
-        # No files found
         if not files:
             self.toast_overlay.add_toast(Adw.Toast(title=_("No files found")))
             return
 
         result_items = []
         for file in files:
-            error_message = False
-
-            # Check file
-            if not file.query_exists():
-                error_message = _("This file doesn't exist.")
-
-            # Get file info
-            file_info = file.query_info(
-                "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path",
-                Gio.FileQueryInfoFlags.NONE
-            )
-
-            # Get path by checking host path
-            host_path = file_info.get_attribute_string("xattr::document-portal.host-path")
-            path = host_path if host_path else file.get_path()
-
-            display_name = file_info.get_display_name()
-            filename = display_name if display_name else file.get_basename()
-
-            # Check format
-            if not error_message:
-                size = file_info.get_size()
-
-                if not self.check_format(file) or size <= 0:
-                    error_message = _("Format of this file is not supported.")
-            else:
-                size = 0
-
-            if not error_message:
-                new_filename = self.create_new_filename(path)
-            else:
-                new_filename = ""
-
-            result_item = ResultItem(file, filename, path, new_filename, size)
-
-            if not error_message:
-                result_items.append(result_item)
-
+            result_item = self.result_item_manager.build(file)
             self.results_model.append(result_item)
 
-            if error_message:
-                GLib.idle_add(self.update_result_item, result_item, True, error_message)
+            if result_item.error:
+                GLib.idle_add(self.update_result_item, result_item)
+            else:
+                result_items.append(result_item)
 
-        self.compress_images(result_items)
-
-    def compress_images(self, result_items):
         self.show_view("results")
         self.enable_compression(False)
 
-        compressor = Compressor(
-            result_items, self.update_result_item, self.enable_compression
+        GLib.idle_add(
+            self.manager.compress,
+            result_items,
+            self.update_result_item,
+            self.enable_compression,
         )
-        GLib.idle_add(compressor.compress_images)
 
     def on_lossy_changed(self, toggle, state):
-        self._settings.set_boolean("lossy", toggle.get_active_name() == "lossy")
+        self.settings.lossy = toggle.get_active_name() == "lossy"
 
     def banner_change_mode(self, *args):
-        self._settings.set_boolean("new-file", True)
+        self.settings.new_file = True
         self.show_warning_banner()
         self.set_saving_subtitle()
 

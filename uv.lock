@@ -4,7 +4,7 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "curtail"
-version = "1.15.0"
+version = "1.15.1"
 source = { virtual = "." }
 
 [package.dev-dependencies]

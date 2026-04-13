@@ -1,25 +1,9 @@
-# preferences.py
-#
-# Copyright 2019 Hugo Posnic
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+from gi.repository import Gtk, Adw
 
-from gi.repository import Gtk, Gio, Adw
+from .settings_manager import SettingsManager
 
 
 UI_PATH = "/com/github/huluti/Curtail/ui/"
-SETTINGS_SCHEMA = "com.github.huluti.Curtail"
 
 
 @Gtk.Template(resource_path=UI_PATH + "preferences.ui")
@@ -41,10 +25,10 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
     toggle_jpg_progressive = Gtk.Template.Child()
     toggle_svg_maximum_level = Gtk.Template.Child()
 
-    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
-
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
+
+        self.settings = SettingsManager()
 
         self.parent = parent
         self.build_ui()
@@ -53,120 +37,110 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         # Compression settings
 
         # Recursive
-        self.toggle_recursive.set_active(self._settings.get_boolean("recursive"))
+        self.toggle_recursive.set_active(self.settings.recursive)
         self.toggle_recursive.connect(
             "notify::active", self.on_bool_changed, "recursive"
         )
 
         # Keep metadata
-        self.toggle_metadata.set_active(self._settings.get_boolean("metadata"))
+        self.toggle_metadata.set_active(self.settings.metadata)
         self.toggle_metadata.connect("notify::active", self.on_bool_changed, "metadata")
 
         # Preserve file attributes
-        self.toggle_file_attributes.set_active(
-            self._settings.get_boolean("file-attributes")
-        )
+        self.toggle_file_attributes.set_active(self.settings.file_attributes)
         self.toggle_file_attributes.connect(
             "notify::active", self.on_bool_changed, "file-attributes"
         )
 
         # Use new file
-        self.toggle_new_file.set_active(self._settings.get_boolean("new-file"))
+        self.toggle_new_file.set_active(self.settings.new_file)
         self.toggle_new_file.connect("notify::active", self.on_bool_changed, "new-file")
 
         # Naming mode
-        self.toggle_naming_mode.set_sensitive(self._settings.get_boolean("new-file"))
-        self.toggle_naming_mode.set_selected(self._settings.get_int("naming-mode"))
+        self.toggle_naming_mode.set_sensitive(self.settings.new_file)
+        self.toggle_naming_mode.set_selected(self.settings.naming_mode)
         self.toggle_naming_mode.connect(
             "notify::selected-item", self.on_selected_item, "naming-mode"
         )
 
         # Prefix-Suffix
-        self.entry_suffix_prefix.set_sensitive(self._settings.get_boolean("new-file"))
-        self.entry_suffix_prefix.set_text(self._settings.get_string("suffix-prefix"))
+        self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
+        self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
         self.entry_suffix_prefix.connect(
             "changed", self.on_string_changed, "suffix-prefix"
         )
 
         # Compression Timeout
-        self.spin_timeout.set_value(self._settings.get_int("compression-timeout"))
+        self.spin_timeout.set_value(self.settings.compression_timeout)
         self.spin_timeout.connect(
             "notify::value", self.on_int_changed, "compression-timeout"
         )
 
-        # PNG Lossy Compression Level
-        self.spin_png_lossy_level.set_value(self._settings.get_int("png-lossy-level"))
-        self.spin_png_lossy_level.connect(
-            "notify::value", self.on_int_changed, "png-lossy-level"
-        )
-
         # PNG Lossless Compression Level
-        self.spin_png_lossless_level.set_value(
-            self._settings.get_int("png-lossless-level")
-        )
+        self.spin_png_lossless_level.set_value(self.settings.png_lossless_level)
         self.spin_png_lossless_level.connect(
             "notify::value", self.on_int_changed, "png-lossless-level"
         )
 
-        # WebP Lossless Compression Level
-        self.spin_webp_lossless_level.set_value(
-            self._settings.get_int("webp-lossless-level")
+        # PNG Lossy Compression Level
+        self.spin_png_lossy_level.set_value(self.settings.png_lossy_level)
+        self.spin_png_lossy_level.connect(
+            "notify::value", self.on_int_changed, "png-lossy-level"
         )
+
+        # WebP Lossless Compression Level
+        self.spin_webp_lossless_level.set_value(self.settings.webp_lossless_level)
         self.spin_webp_lossless_level.connect(
             "notify::value", self.on_int_changed, "webp-lossless-level"
         )
 
-        # JPG Lossy Compression Level
-        self.spin_jpg_lossy_level.set_value(self._settings.get_int("jpg-lossy-level"))
-        self.spin_jpg_lossy_level.connect(
-            "notify::value", self.on_int_changed, "jpg-lossy-level"
-        )
-
         # WebP Lossy Compression Level
-        self.spin_webp_lossy_level.set_value(self._settings.get_int("webp-lossy-level"))
+        self.spin_webp_lossy_level.set_value(self.settings.webp_lossy_level)
         self.spin_webp_lossy_level.connect(
             "notify::value", self.on_int_changed, "webp-lossy-level"
         )
 
-        # Progressively Encode JPG
-        self.toggle_jpg_progressive.set_active(
-            self._settings.get_boolean("jpg-progressive")
+        # JPG Lossy Compression Level
+        self.spin_jpg_lossy_level.set_value(self.settings.jpg_lossy_level)
+        self.spin_jpg_lossy_level.connect(
+            "notify::value", self.on_int_changed, "jpg-lossy-level"
         )
+
+        # Progressively Encode JPG
+        self.toggle_jpg_progressive.set_active(self.settings.jpg_progressive)
         self.toggle_jpg_progressive.connect(
             "notify::active", self.on_bool_changed, "jpg-progressive"
         )
 
         # Maxium SVG compression
-        self.toggle_svg_maximum_level.set_active(
-            self._settings.get_boolean("svg-maximum-level")
-        )
+        self.toggle_svg_maximum_level.set_active(self.settings.svg_maximum_level)
         self.toggle_svg_maximum_level.connect(
             "notify::active", self.on_bool_changed, "svg-maximum-level"
         )
 
     def on_bool_changed(self, switch, state, key):
-        self._settings.set_boolean(key, switch.get_active())
+        self.settings.set_boolean(key, switch.get_active())
         # Additional actions
         if key == "new-file":
-            new_file = self._settings.get_boolean("new-file")
+            new_file = self.settings.new_file
             self.parent.set_saving_subtitle(new_file)
             self.parent.show_warning_banner(not new_file)
             self.toggle_naming_mode.set_sensitive(new_file)
             self.entry_suffix_prefix.set_sensitive(new_file)
 
     def on_selected_item(self, combo, _, key):
-        self._settings.set_int(key, combo.get_selected())
+        self.settings.set_int(key, combo.get_selected())
         if key == "naming-mode":
-            if not self._settings.get_int("naming-mode"):
-                self._settings.reset("naming-mode")
+            if not self.settings.naming_mode:
+                self.settings.reset("naming-mode")
             self.parent.set_saving_subtitle()
 
     def on_string_changed(self, entry, key):
-        self._settings.set_string(key, entry.get_text())
+        self.settings.set_string(key, entry.get_text())
         if key == "suffix-prefix":
-            if not self._settings.get_string("suffix-prefix"):
-                self._settings.reset("suffix-prefix")
+            if not self.settings.suffix_prefix:
+                self.settings.reset("suffix-prefix")
             self.parent.set_saving_subtitle()
 
     def on_int_changed(self, spin, _, key):
-        self._settings.set_int(key, spin.get_value())
+        self.settings.set_int(key, spin.get_value())

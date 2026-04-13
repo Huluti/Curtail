@@ -1,290 +1,85 @@
-# compressor.py
-#
-# Copyright 2019 Hugo Posnic
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-import threading
-import subprocess
 import logging
-import os
-from concurrent.futures import ThreadPoolExecutor
-from gi.repository import GLib, Gio
-from shlex import quote
+import subprocess
+import html
+from abc import ABC, abstractmethod
+from typing import Callable
 
-from .tools import get_file_type
+from gi.repository import Gio, GLib
+
+from .result_item import ResultItem
 
 
-SETTINGS_SCHEMA = "com.github.huluti.Curtail"
-
-
-class Compressor:
-    _settings = Gio.Settings.new(SETTINGS_SCHEMA)
-
-    def __init__(self, result_items, c_update_result_item, c_enable_compression):
+class Compressor(ABC):
+    def __init__(self, settings):
         super().__init__()
+        self.settings = settings
 
-        self.result_items = result_items
-        self.c_update_result_item = c_update_result_item
-        self.c_enable_compression = c_enable_compression
+    @classmethod
+    @abstractmethod
+    def get_file_type(cls) -> str:
+        return ""
 
-        # Options
-        self.do_new_file = self._settings.get_boolean("new-file")
-        self.compression_timeout = self._settings.get_int("compression-timeout")
-        self.lossy = self._settings.get_boolean("lossy")
-        self.metadata = self._settings.get_boolean("metadata")
-        self.file_attributes = self._settings.get_boolean("file-attributes")
+    @abstractmethod
+    def build_command(cls, result_item: ResultItem) -> str:
+        return ""
 
-        # Format options
-        self.png_lossy_level = self._settings.get_int("png-lossy-level")
-        self.png_lossless_level = self._settings.get_int("png-lossless-level")
-
-        self.jpg_lossy_level = self._settings.get_int("jpg-lossy-level")
-        self.jpg_progressive = self._settings.get_boolean("jpg-progressive")
-
-        self.webp_lossless_level = self._settings.get_int("webp-lossless-level")
-        self.webp_lossy_level = self._settings.get_int("webp-lossy-level")
-
-        self.svg_maximum_level = self._settings.get_boolean("svg-maximum-level")
-
-    def create_tmp_result_item(self, result_item):
-        # Creates a temporary copy of the file to be compressed rather than the original
-        # The result_item's information is changed to point to the temporary file
-        # This is done in case the output is larger than the input in overwrite mode
-        index = result_item.filename.find(result_item.name)
-        tmp_filename = (
-            result_item.filename[:index] + "." + result_item.filename[index:] + ".tmp"
-        )
-        result_item.filename = tmp_filename
-        result_item.new_filename = tmp_filename
-
-        source = Gio.File.new_for_path(result_item.original_filename)
-        dest = Gio.File.new_for_path(result_item.filename)
-        source.copy(dest, Gio.FileCopyFlags.COPY_ALL_METADATA)
-
-    def compress_images(self):
-        threading.Thread(target=self._compress_images, daemon=True).start()
-
-    def _compress_images(self):
-        cpu_count = os.cpu_count()
-        executor = ThreadPoolExecutor(max_workers=cpu_count)
-        futures = []
-        for result_item in self.result_items:
-            file_type = get_file_type(result_item.file)
-
-            if not file_type:
-                continue
-
-            if file_type == 'png':
-                command = self.build_png_command(result_item)
-            elif file_type == 'jpeg':
-                command = self.build_jpg_command(result_item)
-            elif file_type == 'webp': # Must be manually skipped
-                if not self.do_new_file:
-                    self.create_tmp_result_item(result_item)
-                command = self.build_webp_command(result_item)
-            elif file_type == 'svg': # Must be manually skipped
-                if not self.do_new_file:
-                    self.create_tmp_result_item(result_item)
-                command = self.build_svg_command(result_item)
-            future = executor.submit(self.run_command, command, result_item)
-            futures.append(future)
-
-        for future in futures:
-            future.result()
-        GLib.idle_add(self.c_enable_compression, True)
-
-    def run_command(self, command, result_item):
-        error = False
-        error_message = ""
+    def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
+        command = self.build_command(result_item)
         try:
             output = subprocess.run(
                 command,
                 capture_output=True,
                 check=True,
                 shell=True,
-                timeout=self.compression_timeout,
+                timeout=self.settings.compression_timeout,
             )
         except subprocess.TimeoutExpired as err:
             logging.error(str(err))
-            error_message = _(
+            result_item.error_message = _(
                 "Compression has reached the configured timeout of {} seconds."
-            ).format(self.compression_timeout)
-            error = True
+            ).format(self.settings.compression_timeout)
+            result_item.error = True
         except Exception as err:
-            logging.error(str(err))
-            error_message = _("An unknown error has occurred")
-            error = True
-        finally:
-            if not error:
-                new_file = Gio.File.new_for_path(result_item.new_filename)
-                new_file_info = new_file.query_info("standard::size", Gio.FileQueryInfoFlags.NONE)
-                if new_file.query_exists():
-                    result_item.new_size = new_file_info.get_size()
+            result_item.error_message = _("An unknown error has occurred.")
+            result_item.error_details_message = html.escape(str(err))
+            logging.error(result_item.error_details_message)
+            result_item.error = True
+            result_item.error_details = True
 
-                    # Manually skip files if necessary (WebP or SVG)
-                    if get_file_type(result_item.file) in ["webp", "svg"]:
-                        if self.do_new_file:
-                            if result_item.new_size >= result_item.size:
-                                # Output is larger (or equal) than input in safe mode
-                                # Remove the new file
-                                new_file.delete()
-                                result_item.skipped = True
-                        else:
-                            if not result_item.new_size > result_item.size:
-                                # Output is smaller than input in overwrite mode
-                                # Copy the compressed temporary file onto the uncompressed original file
-                                source = Gio.File.new_for_path(result_item.filename)
-                                dest = Gio.File.new_for_path(result_item.original_filename)
-                                source.copy(dest, Gio.FileCopyFlags.COPY_ALL_METADATA)
-                            else:
-                                # Output is smaller than input in overwrite mode
-                                # Set file as skipped, since the temporary file was compressed
-                                # The original file was not changed
-                                result_item.skipped = True
+        if result_item.error:
+            GLib.idle_add(c_update_result_item, result_item)
+            return
 
-                            # Remove temporary file that was created for overwrite mode
-                            # Also set the result_item's information back to the original file
-                            result_item.file.delete()
-                            result_item.filename = result_item.original_filename
-                            result_item.new_filename = result_item.original_filename
-
-                            new_file = Gio.File.new_for_path(result_item.new_filename)
-                            new_file_info = new_file.query_info("standard::size", Gio.FileQueryInfoFlags.NONE)
-                            result_item.new_size = new_file_info.get_size()
-                    elif result_item.size == result_item.new_size:
-                        # File was automatically skipped by a compressor
-                        result_item.skipped = True
-
-                        # Remove new file if in safe mode
-                        if self.do_new_file:
-                            new_file.delete()
-                else:
-                    logging.error(str(output))
-                    error_message = _("Can't find the compressed file")
-                    error = True
-
-            GLib.idle_add(self.c_update_result_item, result_item, error, error_message)
-
-    def build_png_command(self, result_item):
-        pngquant = "pngquant --quality=0-{} -f {} --output {} --skip-if-larger"
-        oxipng = "oxipng -o {} -i 1 {} --out {}"
-
-        if not self.metadata:
-            pngquant += " --strip"
-            oxipng += " --strip safe"
-
-        if self.file_attributes:
-            oxipng += " --preserve"
-
-        if self.lossy:  # lossy compression
-            command = pngquant.format(
-                self.png_lossy_level,
-                quote(result_item.filename),
-                quote(result_item.new_filename),
+        new_file = Gio.File.new_for_path(result_item.tmp_filename)
+        if new_file.query_exists():
+            new_file_info = new_file.query_info(
+                "standard::size", Gio.FileQueryInfoFlags.NONE
             )
-            command += " && "
-            command += oxipng.format(
-                self.png_lossless_level,
-                quote(result_item.new_filename),
-                quote(result_item.new_filename),
-            )
-        else:  # lossless compression
-            command = oxipng.format(
-                self.png_lossless_level,
-                quote(result_item.filename),
-                quote(result_item.new_filename),
-            )
-        return command
+            result_item.new_size = new_file_info.get_size()
 
-    def build_jpg_command(self, result_item):
-        if self.do_new_file:
-            jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"
-            jpegoptim2 = "jpegoptim -o --stdout {} > {}"
-        else:
-            jpegoptim = "jpegoptim --max={} -o {}"
-            jpegoptim2 = "jpegoptim -o {}"
-
-        if self.jpg_progressive:
-            jpegoptim += " --all-progressive"
-            jpegoptim2 += " --all-progressive"
-
-        if not self.metadata:
-            jpegoptim += " --strip-all"
-            jpegoptim2 += " --strip-all"
-
-        if self.file_attributes:
-            jpegoptim += " --preserve --preserve-perms"
-            jpegoptim2 += " --preserve --preserve-perms"
-
-        if self.lossy:  # lossy compression
-            if self.do_new_file:
-                command = jpegoptim.format(
-                    self.jpg_lossy_level,
-                    quote(result_item.filename),
-                    quote(result_item.new_filename),
-                )
+            if result_item.new_size >= result_item.size:
+                # Output is larger (or equal) than input
+                # Don't use compressed temp file
+                result_item.skipped = True
             else:
-                command = jpegoptim.format(
-                    self.jpg_lossy_level, quote(result_item.filename)
+                # Output is smaller than input
+                # Copy the compressed temp file
+                final_path = (
+                    result_item.new_filename
+                    if self.settings.new_file
+                    else result_item.filename
                 )
-        else:  # lossless compression
-            if self.do_new_file:
-                command = jpegoptim2.format(
-                    quote(result_item.filename), quote(result_item.new_filename)
+                source = Gio.File.new_for_path(result_item.tmp_filename)
+                dest = Gio.File.new_for_path(final_path)
+                source.copy(
+                    dest, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA
                 )
-            else:
-                command = jpegoptim2.format(quote(result_item.filename))
-        return command
 
-    def build_webp_command(self, result_item):
-        command = "cwebp {}".format(quote(result_item.filename))
-
-        # cwebp doesn't preserve any metadata by default
-        if self.metadata:
-            command += " -metadata all"
-
-        if self.lossy:
-            quality = self.webp_lossy_level
+            # Remove the temp file
+            new_file.delete()
         else:
-            command += " -lossless"
-            quality = 100  # maximum cpu power for lossless
+            logging.error(str(output))
+            result_item.error_message = _("Can't find the compressed file")
+            result_item.error = True
 
-        # multithreaded, (lossless) compression mode, quality, output
-        command += " -mt -m {}".format(self.webp_lossless_level)
-        command += " -q {}".format(quality)
-        command += " -o {}".format(quote(result_item.new_filename))
-
-        return command
-
-    def build_svg_command(self, result_item):
-        # workaround for https://github.com/scour-project/scour/issues/129
-        temp_new_filename = result_item.new_filename
-        if not self.do_new_file:
-            temp_new_filename = "{}.temp".format(result_item.new_filename)
-
-        command = "scour -i {} -o {}".format(
-            quote(result_item.filename), quote(temp_new_filename)
-        )
-
-        if self.svg_maximum_level:
-            command += " --enable-viewboxing --enable-id-stripping"
-            command += " --enable-comment-stripping --shorten-ids --indent=none"
-
-        if not self.do_new_file:
-            command += " && mv {} {}".format(
-                quote(temp_new_filename), quote(result_item.new_filename)
-            )
-
-        return command
+        GLib.idle_add(c_update_result_item, result_item)
