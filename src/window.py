@@ -304,13 +304,9 @@ class CurtailWindow(Adw.ApplicationWindow):
             suffix_prefix = self.settings.suffix_prefix
 
             if self.settings.naming_mode == 0:
-                label = _(f"Safe mode with “{suffix_prefix}” suffix").format(
-                    suffix_prefix
-                )
+                label = _(f"Safe mode with “{suffix_prefix}” suffix")
             else:
-                label = _(f"Safe mode with “{suffix_prefix}” prefix").format(
-                    suffix_prefix
-                )
+                label = _(f"Safe mode with “{suffix_prefix}” prefix")
         else:
             label = _("Overwrite mode")
         self.window_title.set_subtitle(label)

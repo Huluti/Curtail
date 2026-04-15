@@ -30,7 +30,8 @@ class ResultItemManager:
         result_item.filename = host_path if host_path else file.get_path()
 
         # Display name
-        result_item.name = file_info.get_display_name()
+        display_name = file_info.get_display_name()
+        result_item.name = display_name if display_name else file.get_basename()
 
         # Check format
         result_item.size = file_info.get_size()
