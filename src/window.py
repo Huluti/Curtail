@@ -35,7 +35,6 @@ class CurtailWindow(Adw.ApplicationWindow):
     toast_overlay = Gtk.Template.Child()
     filechooser_button_headerbar = Gtk.Template.Child()
     clear_button_headerbar = Gtk.Template.Child()
-    menu_button = Gtk.Template.Child()
     warning_banner = Gtk.Template.Child()
     mainbox = Gtk.Template.Child()
     loadingbox = Gtk.Template.Child()
@@ -70,11 +69,6 @@ class CurtailWindow(Adw.ApplicationWindow):
         # Set icons
         icon_theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
         icon_theme.add_resource_path(CURTAIL_PATH + "icons/")
-
-        # Headerbar
-        builder = Gtk.Builder.new_from_resource(CURTAIL_PATH + "ui/menu.ui")
-        window_menu = builder.get_object("window-menu")
-        self.menu_button.set_menu_model(window_menu)
 
         # Saving subtitle
         self.set_saving_subtitle()

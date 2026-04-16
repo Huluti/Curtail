@@ -1,0 +1,149 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CurtailPrefsDialog: Adw.PreferencesDialog {
+  title: _("Preferences");
+
+  Adw.PreferencesPage {
+    name: "general";
+    title: _("General");
+    icon-name: "applications-system-symbolic";
+
+    Adw.PreferencesGroup {
+      Adw.SwitchRow toggle_new_file {
+        title: _("Safe Mode");
+        subtitle: _("Save the compressed image in a new file");
+      }
+
+      Adw.ComboRow toggle_naming_mode {
+        title: _("Naming Mode");
+        subtitle: _("Select between suffix and prefix");
+
+        model: StringList {
+          strings [
+            _("Suffix"),
+            _("Prefix"),
+          ]
+        };
+      }
+
+      Adw.EntryRow entry_suffix_prefix {
+        title: _("New File Suffix/Prefix");
+      }
+
+      Adw.SwitchRow toggle_recursive {
+        title: _("Recursive Compression");
+        subtitle: _("Enable or disable compression through subdirectories");
+      }
+
+      Adw.SwitchRow toggle_metadata {
+        title: _("Keep Metadata");
+        subtitle: _("Keep metadata chunks that do not affect rendering");
+      }
+
+      Adw.SwitchRow toggle_file_attributes {
+        title: _("Keep File Attributes When Possible");
+        subtitle: _("Ensure the new file has the same permissions and timestamps as the original file");
+      }
+
+      Adw.SpinRow spin_timeout {
+        title: _("Compression Timeout");
+        subtitle: _("Set the timeout between images");
+
+        adjustment: Adjustment {
+          lower: 1;
+          upper: 300;
+          step-increment: 1;
+          page-increment: 10;
+        };
+      }
+    }
+  }
+
+  Adw.PreferencesPage {
+    name: "formats";
+    title: _("Formats");
+    icon-name: "image-x-generic-symbolic";
+
+    Adw.PreferencesGroup {
+      title: "PNG";
+
+      Adw.SpinRow spin_png_lossy_level {
+        title: _("Lossy Compression");
+        subtitle: _("Set the quality of the generated image, 100 is the best quality");
+
+        adjustment: Adjustment {
+          upper: 100;
+          step-increment: 1;
+          page-increment: 10;
+        };
+      }
+
+      Adw.SpinRow spin_png_lossless_level {
+        title: _("Lossless Compression");
+        subtitle: _("Set the level of compression, 6 is the highest but slowest level");
+
+        adjustment: Adjustment {
+          upper: 6;
+          step-increment: 1;
+          page-increment: 6;
+        };
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: "JPG";
+
+      Adw.SpinRow spin_jpg_lossy_level {
+        title: _("Lossy Compression");
+        subtitle: _("Set the quality of the generated image, 100 is the best quality");
+
+        adjustment: Adjustment {
+          upper: 100;
+          step-increment: 1;
+          page-increment: 10;
+        };
+      }
+
+      Adw.SwitchRow toggle_jpg_progressive {
+        title: _("Progressive Encode");
+        subtitle: _("Enable incremental image rendering, going from blurry to clear");
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: "WebP";
+
+      Adw.SpinRow spin_webp_lossy_level {
+        title: _("Lossy Compression");
+        subtitle: _("Set the quality of the generated image, 100 is the best quality");
+
+        adjustment: Adjustment {
+          upper: 100;
+          step-increment: 1;
+          page-increment: 10;
+        };
+      }
+
+      Adw.SpinRow spin_webp_lossless_level {
+        title: _("Lossless Compression");
+        subtitle: _("Set the level of compression, 6 is the highest but slowest level");
+
+        adjustment: Adjustment {
+          upper: 6;
+          step-increment: 1;
+          page-increment: 6;
+        };
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: "SVG";
+
+      Adw.SwitchRow toggle_svg_maximum_level {
+        title: _("Maximum Compression Level");
+        subtitle: _("This can be more destructive for the image");
+      }
+    }
+  }
+}

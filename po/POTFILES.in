@@ -1,9 +1,8 @@
 data/com.github.huluti.Curtail.appdata.xml.in
 data/com.github.huluti.Curtail.desktop.in
 data/com.github.huluti.Curtail.gschema.xml
-data/ui/shortcuts-dialog.ui
-data/ui/preferences.ui
-data/ui/menu.ui
+data/ui/preferences.blp
+data/ui/shortcuts-dialog.blp
 data/ui/window.ui
 src/compressor.py
 src/main.py

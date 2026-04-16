@@ -1,0 +1,28 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ShortcutsDialog shortcuts_dialog {
+  Adw.ShortcutsSection {
+    title: C_("shortcuts dialog", "General");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcuts dialog", "Select File");
+      action-name: "win.select-file";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcuts dialog", "Preferences");
+      action-name: "win.preferences";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcuts dialog", "Keyboard Shortcuts");
+      action-name: "app.shortcuts";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcuts dialog", "Quit");
+      action-name: "win.quit";
+    }
+  }
+}
