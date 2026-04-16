@@ -40,7 +40,6 @@ class CurtailWindow(Adw.ApplicationWindow):
     loadingbox = Gtk.Template.Child()
     homebox = Gtk.Template.Child()
     resultbox = Gtk.Template.Child()
-    scrolled_window = Gtk.Template.Child()
     listbox = Gtk.Template.Child()
     toggle_lossy = Gtk.Template.Child()
 

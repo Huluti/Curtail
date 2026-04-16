@@ -34,18 +34,18 @@ template $CurtailWindow: Adw.ApplicationWindow {
     child: Adw.ToolbarView {
       [top]
       Adw.HeaderBar headerbar {
-        Box {
-          Button filechooser_button_headerbar {
-            icon-name: "document-open-symbolic";
-            action-name: "win.select-file";
-            tooltip-text: _("Browse Files");
-          }
+        [start]
+        Button filechooser_button_headerbar {
+          icon-name: "document-open-symbolic";
+          action-name: "win.select-file";
+          tooltip-text: _("Browse Files");
+        }
 
-          Button clear_button_headerbar {
-            icon-name: "view-refresh-symbolic";
-            action-name: "win.clear-results";
-            tooltip-text: _("Clear Results");
-          }
+        [start]
+        Button clear_button_headerbar {
+          icon-name: "view-refresh-symbolic";
+          action-name: "win.clear-results";
+          tooltip-text: _("Clear Results");
         }
 
         [title]
@@ -123,26 +123,24 @@ template $CurtailWindow: Adw.ApplicationWindow {
           };
         }
 
-        Box resultbox {
-          ScrolledWindow scrolled_window {
-            vexpand: true;
-            hscrollbar-policy: never;
+        ScrolledWindow resultbox {
+          vexpand: true;
+          hscrollbar-policy: never;
 
-            Adw.Clamp {
-              margin-start: 10;
-              margin-end: 10;
-              margin-top: 20;
-              margin-bottom: 20;
+          Adw.Clamp {
+            margin-start: 10;
+            margin-end: 10;
+            margin-top: 20;
+            margin-bottom: 20;
 
-              ListBox listbox {
-                hexpand: true;
-                valign: start;
-                selection-mode: none;
+            ListBox listbox {
+              hexpand: true;
+              valign: start;
+              selection-mode: none;
 
-                styles [
-                  "boxed-list",
-                ]
-              }
+              styles [
+                "boxed-list",
+              ]
             }
           }
         }
