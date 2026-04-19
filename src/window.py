@@ -10,10 +10,10 @@ from .compression_manager import CompressionManager
 from .settings_manager import SettingsManager
 from .result_item import ResultItem
 from .result_item_manager import ResultItemManager
+from .result_item_row import CurtailResultItemRow
 from .preferences import CurtailPrefsDialog
 from .tools import (
     add_filechooser_filters,
-    create_image_from_file,
     sizeof_fmt,
     debug_infos,
     get_image_files_from_folder,
@@ -87,7 +87,9 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.toggle_lossy.connect("notify::active", self.on_lossy_changed)
 
         # Results
-        self.listbox.bind_model(self.results_model, self.create_result_row)
+        self.listbox.bind_model(
+                self.results_model, lambda result_item : CurtailResultItemRow(result_item)
+        )
 
         # Right click on results
         gesture = Gtk.GestureClick.new()
@@ -148,105 +150,6 @@ class CurtailWindow(Adw.ApplicationWindow):
                 + "%"
             )
             result_item.subtitle_label += " → " + sizeof_fmt(result_item.new_size)
-
-    def create_result_row(self, result_item: ResultItem):
-        row = Adw.ActionRow()
-        row.set_title(result_item.name)
-        row.set_tooltip_text(result_item.new_filename)
-        row.set_subtitle(result_item.subtitle_label)
-
-        if len(result_item.new_filename) > 0:
-            image = create_image_from_file(result_item.filename, 48, 48)
-            if image:
-                row.add_prefix(image)
-
-        skipped_info_button = Gtk.MenuButton()
-        skipped_info_button.set_valign(Gtk.Align.CENTER)
-        skipped_info_button.set_tooltip_text(_("More Information"))
-        skipped_info_button.set_icon_name("info-outline-symbolic")
-        skipped_info_button.add_css_class("flat")
-        skipped_info_button.set_visible(False)
-
-        skipped_popover = Gtk.Popover()
-        skipped_popover_label = Gtk.Label()
-        skipped_popover_label.set_text(
-            _(
-                "Compression was skipped because compressing the file would have resulted in a larger file size."
-            )
-        )
-        skipped_popover_label.set_halign(Gtk.Align.CENTER)
-        skipped_popover_label.set_valign(Gtk.Align.CENTER)
-        skipped_popover_label.set_margin_bottom(6)
-        skipped_popover_label.set_margin_start(6)
-        skipped_popover_label.set_margin_end(6)
-        skipped_popover_label.set_margin_top(6)
-        skipped_popover_label.set_max_width_chars(50)
-        skipped_popover_label.set_wrap(True)
-        skipped_popover.set_child(skipped_popover_label)
-
-        skipped_info_button.set_popover(skipped_popover)
-        row.add_suffix(skipped_info_button)
-
-        error_info_button = Gtk.MenuButton()
-        error_info_button.set_valign(Gtk.Align.CENTER)
-        error_info_button.set_tooltip_text(_("More Information"))
-        error_info_button.set_icon_name("info-outline-symbolic")
-        error_info_button.add_css_class("flat")
-        error_info_button.set_visible(False)
-
-        error_popover = Gtk.Popover()
-        error_popover_label = Gtk.Label()
-        error_popover_label.set_halign(Gtk.Align.CENTER)
-        error_popover_label.set_valign(Gtk.Align.CENTER)
-        error_popover_label.set_margin_bottom(6)
-        error_popover_label.set_margin_start(6)
-        error_popover_label.set_margin_end(6)
-        error_popover_label.set_margin_top(6)
-        error_popover_label.set_max_width_chars(50)
-        error_popover_label.set_wrap(True)
-        error_popover.set_child(error_popover_label)
-
-        error_info_button.set_popover(error_popover)
-        row.add_suffix(error_info_button)
-
-        savings_widget = Gtk.Label()
-        savings_widget.add_css_class("success")
-        row.add_suffix(savings_widget)
-
-        spinner = Adw.Spinner()
-        row.add_suffix(spinner)
-
-        error_image = Gtk.Image.new_from_icon_name("x-circular-symbolic")
-        error_image.set_visible(False)
-        error_image.add_css_class("error")
-        row.add_suffix(error_image)
-
-        result_item.bind_property(
-            "savings", savings_widget, "label", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "subtitle_label", row, "subtitle", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "running", spinner, "visible", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "skipped", skipped_info_button, "visible", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "error", error_image, "visible", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "error_details", error_info_button, "visible", GObject.BindingFlags.DEFAULT
-        )
-        result_item.bind_property(
-            "error_details_message",
-            error_popover_label,
-            "label",
-            GObject.BindingFlags.DEFAULT,
-        )
-
-        return row
 
     def on_results_right_click(self, gesture, button, x, y, user_data):
         row = self.listbox.get_row_at_y(y)

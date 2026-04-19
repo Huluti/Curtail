@@ -5,6 +5,7 @@
   </gresource>
   <gresource prefix="/com/github/huluti/Curtail/ui">
     <file preprocess="xml-stripblanks" alias="preferences.ui">ui/preferences.ui</file>
+    <file preprocess="xml-stripblanks" alias="result-item-row.ui">ui/result-item-row.ui</file>
     <file preprocess="xml-stripblanks" alias="window.ui">ui/window.ui</file>
   </gresource>
   <gresource prefix="/com/github/huluti/Curtail/icons/scalable/actions/">

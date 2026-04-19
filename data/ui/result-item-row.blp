@@ -1,0 +1,73 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CurtailResultItemRow: Adw.ActionRow {
+  [suffix]
+  MenuButton skipped_info_button {
+    valign: center;
+    tooltip-text: _("More Information");
+    icon-name: "info-outline-symbolic";
+    visible: false;
+
+    styles [
+      "flat",
+    ]
+
+    popover: Popover {
+      child: Label {
+        label: _("Compression was skipped because compressing the file would have resulted in a larger file size.");
+        halign: center;
+        valign: center;
+        margin-bottom: 6;
+        margin-top: 6;
+        margin-start: 6;
+        margin-end: 6;
+        max-width-chars: 50;
+        wrap: true;
+      };
+    };
+  }
+
+  [suffix]
+  MenuButton error_info_button {
+    valign: center;
+    tooltip-text: _("More Information");
+    icon-name: "info-outline-symbolic";
+    visible: false;
+
+    styles [
+      "flat",
+    ]
+
+    popover: Popover {
+      child: Label error_popover_label {
+        halign: center;
+        valign: center;
+        margin-bottom: 6;
+        margin-top: 6;
+        margin-start: 6;
+        margin-end: 6;
+        max-width-chars: 50;
+        wrap: true;
+      };
+    };
+  }
+
+  [suffix]
+  Label savings_label {
+    styles [
+      "success",
+    ]
+  }
+
+  Adw.Spinner spinner {}
+
+  Image error_image {
+    icon-name: "x-circular-symbolic";
+    visible: false;
+
+    styles [
+      "error",
+    ]
+  }
+}

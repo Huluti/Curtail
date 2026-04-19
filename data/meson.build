@@ -4,6 +4,7 @@ pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.proje
 blueprints = custom_target('blueprints',
   input: files(
     'ui/preferences.blp',
+    'ui/result-item-row.blp',
     'ui/shortcuts-dialog.blp',
     'ui/window.blp'
   ),
