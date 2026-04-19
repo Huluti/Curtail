@@ -3,7 +3,7 @@ data/com.github.huluti.Curtail.desktop.in
 data/com.github.huluti.Curtail.gschema.xml
 data/ui/preferences.blp
 data/ui/shortcuts-dialog.blp
-data/ui/window.ui
+data/ui/window.blp
 src/compressor.py
 src/main.py
 src/preferences.py
