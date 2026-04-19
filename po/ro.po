@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
 "POT-Creation-Date: 2026-04-13 15:54+0000\n"
-"PO-Revision-Date: 2026-04-18 16:48+0200\n"
+"PO-Revision-Date: 2026-04-19 11:41+0200\n"
 "Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -121,11 +121,11 @@ msgstr "Nivel de comprimare cu pierderi, de utilizat pentru imaginile PNG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "PNG Lossless Compression Level"
-msgstr "Nivel de comprimare PNG fără pierderi"
+msgstr "Nivelul comprimării PNG fără pierderi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossless compression level to use for PNG images."
-msgstr "Nivel de comprimare fără pierderi, de utilizat pentru imaginile PNG."
+msgstr "Nivelul comprimării fără pierderi, de utilizat pentru imaginile PNG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "JPG Lossy Compression Level"
@@ -145,11 +145,11 @@ msgstr "Nivel de comprimare cu pierderi, de utilizat pentru imaginile WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
 msgid "WebP Lossless Compression Level"
-msgstr "Nivel de comprimare WebP fără pierderi"
+msgstr "Nivelul comprimării WebP fără pierderi"
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
 msgid "Lossless compression level to use for WebP images."
-msgstr "Nivel de comprimare fără pierderi, de utilizat pentru imaginile WebP."
+msgstr "Nivelul comprimării fără pierderi, de utilizat pentru imaginile WebP."
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
 msgid "Enable progressive encoding for JPEG images"
@@ -169,11 +169,11 @@ msgstr "Activează curățarea maximă a imaginilor SVG."
 
 #: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
 msgid "Compression Timeout"
-msgstr ""
+msgstr "Durata comprimării"
 
 #: data/com.github.huluti.Curtail.gschema.xml:77
 msgid "Compression timeout for each image."
-msgstr ""
+msgstr "Limita de timp pentru comprimarea fiecărei imagini"
 
 #: data/ui/shortcuts-dialog.ui:6
 msgctxt "shortcuts dialog"
@@ -214,15 +214,15 @@ msgstr "Mod sigur"
 
 #: data/ui/preferences.ui:15
 msgid "Save the compressed image in a new file"
-msgstr ""
+msgstr "Salvează imaginea comprimată într-un fișier nou"
 
 #: data/ui/preferences.ui:21
 msgid "Naming Mode"
-msgstr ""
+msgstr "Denumirea"
 
 #: data/ui/preferences.ui:22
 msgid "Select between suffix and prefix"
-msgstr ""
+msgstr "Alege între sufix și prefix"
 
 #: data/ui/preferences.ui:26
 msgid "Suffix"
@@ -234,37 +234,37 @@ msgstr "Prefix"
 
 #: data/ui/preferences.ui:36
 msgid "New File Suffix/Prefix"
-msgstr ""
+msgstr "Sufix/Prefix nou"
 
 #: data/ui/preferences.ui:41
 msgid "Recursive Compression"
-msgstr ""
+msgstr "Comprimare recursivă"
 
 #: data/ui/preferences.ui:42
 msgid "Enable or disable compression through subdirectories"
-msgstr ""
+msgstr "Activează sau dezactivează comprimarea în subdosare"
 
 #: data/ui/preferences.ui:47
 msgid "Keep Metadata"
-msgstr ""
+msgstr "Păstrează metadatele"
 
 #: data/ui/preferences.ui:48
 msgid "Keep metadata chunks that do not affect rendering"
-msgstr ""
+msgstr "Păstrează unele metadate care nu afectează afișarea imaginii"
 
 #: data/ui/preferences.ui:53
 msgid "Keep File Attributes When Possible"
-msgstr ""
+msgstr "Păstrează înformațiile despre fișier, dacă e posibil"
 
 #: data/ui/preferences.ui:54
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
-msgstr ""
+msgstr "Fișierul nou va păstra permisiunile și data originalului"
 
 #: data/ui/preferences.ui:60
 msgid "Set the timeout between images"
-msgstr ""
+msgstr "Timpul de așteptare dintre imagini"
 
 #: data/ui/preferences.ui:78
 msgid "Formats"
@@ -273,40 +273,41 @@ msgstr "Formate"
 #: data/ui/preferences.ui:85 data/ui/preferences.ui:116
 #: data/ui/preferences.ui:140
 msgid "Lossy Compression"
-msgstr ""
+msgstr "Comprimare cu pierderi"
 
 #: data/ui/preferences.ui:86 data/ui/preferences.ui:117
 #: data/ui/preferences.ui:141
 msgid "Set the quality of the generated image, 100 is the best quality"
-msgstr ""
+msgstr "Stabilește calitatea imaginii generate, 100 este cea mai bună calitate"
 
 #: data/ui/preferences.ui:98 data/ui/preferences.ui:153
 msgid "Lossless Compression Level"
-msgstr ""
+msgstr "Nivelul comprimării fără pierderi"
 
 #: data/ui/preferences.ui:99 data/ui/preferences.ui:154
 msgid "Set the level of the compression, 6 is the highest but slowest level"
 msgstr ""
+"Stabilește nivelul comprimării, 6 este cel mai înalt, dar cel mai lent nivel"
 
 #: data/ui/preferences.ui:129
 msgid "Progressive Encode"
-msgstr ""
+msgstr "Codare progresivă"
 
 #: data/ui/preferences.ui:130
 msgid "Enable incremental image rendering, going from blurry to clear"
-msgstr ""
+msgstr "Activează afișarea treptată a imaginii, de la neclară la clară"
 
 #: data/ui/preferences.ui:171
 msgid "Maximum Compression Level"
-msgstr ""
+msgstr "Nivelul maxim de comprimare"
 
 #: data/ui/preferences.ui:172
 msgid "This can be more destructive for the image"
-msgstr ""
+msgstr "Acest lucru poate fi mai distructiv pentru imagine"
 
 #: data/ui/menu.ui:6
 msgid "Bulk Compress Directory"
-msgstr ""
+msgstr "Comprimă conținutul dosarului"
 
 #: data/ui/menu.ui:14
 msgid "Keyboard Shortcuts"
@@ -318,11 +319,11 @@ msgstr "Despre Curtail"
 
 #: data/ui/window.ui:22 src/window.py:321
 msgid "Browse Files"
-msgstr ""
+msgstr "Alege fișiere"
 
 #: data/ui/window.ui:29
 msgid "Clear Results"
-msgstr ""
+msgstr "Șterge rezultatele"
 
 #: data/ui/window.ui:43
 msgid "Main Menu"
@@ -334,39 +335,39 @@ msgstr "S_chimbă modul"
 
 #: data/ui/window.ui:55
 msgid "Images will be overwritten, proceed carefully"
-msgstr ""
+msgstr "Imaginile vor fi înlocuite"
 
 #: data/ui/window.ui:63
 msgid "Drop images here to compress them"
-msgstr ""
+msgstr "Așează aici imaginile de comprimat"
 
 #: data/ui/window.ui:70
 msgid "_Browse Files"
-msgstr ""
+msgstr "_Alege fișiere"
 
 #: data/ui/window.ui:85
 msgid "Lossless"
-msgstr ""
+msgstr "Fără pierderi"
 
 #: data/ui/window.ui:91
 msgid "Lossy"
-msgstr ""
+msgstr "Cu pierderi"
 
 #: data/ui/window.ui:107
 msgid "Analyzing images"
-msgstr ""
+msgstr "Analiza imaginilor"
 
 #: data/ui/window.ui:108
 msgid "Analyzing your images before compression…"
-msgstr ""
+msgstr "Se analizează imaginile înainte de comprimare…"
 
 #: src/compressor.py:43
 msgid "An unknown error has occurred."
-msgstr ""
+msgstr "A apărut o eroare necunoscută."
 
 #: src/compressor.py:82
 msgid "Can't find the compressed file"
-msgstr ""
+msgstr "Fișierul comprimat nu a fost găsit"
 
 #: src/tools.py:14
 msgid "All images"
@@ -374,28 +375,28 @@ msgstr "Toate imaginile"
 
 #: src/tools.py:21
 msgid "PNG images"
-msgstr ""
+msgstr "PNG"
 
 #: src/tools.py:25
 msgid "JPEG images"
-msgstr ""
+msgstr "JPEG"
 
 #: src/tools.py:29
 msgid "WebP images"
-msgstr ""
+msgstr "WebP"
 
 #: src/tools.py:33
 msgid "SVG images"
-msgstr ""
+msgstr "SVG"
 
 #: src/tools.py:123 src/tools.py:130 src/tools.py:137 src/tools.py:144
 #: src/tools.py:151 src/tools.py:176
 msgid "Version not found"
-msgstr ""
+msgstr "Versiune necunoscută"
 
 #: src/window.py:151
 msgid "Skipped"
-msgstr ""
+msgstr "Omisă"
 
 #: src/window.py:172 src/window.py:199
 msgid "More Information"
@@ -406,6 +407,8 @@ msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
+"Comprimarea a fost omisă deoarece fișierul comprimat ar fi fost mai mare "
+"decât originalul."
 
 #: src/window.py:282
 msgid "Open Image"
@@ -417,27 +420,31 @@ msgstr "Arată în dosar"
 
 #: src/window.py:311
 msgid "Overwrite mode"
-msgstr ""
+msgstr "Înlocuire"
 
 #: src/window.py:339
 msgid "Browse Directories"
-msgstr ""
+msgstr "Alege dosare"
 
 #: src/window.py:365 src/window.py:374
 msgid "Are you sure you want to compress images in these directories?"
-msgstr ""
+msgstr "Se dorește comprimarea imaginilor din aceste dosare?"
 
 #: src/window.py:367
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
+"Toate imaginile din dosarele alese și subdosarele lor vor fi comprimate. "
+"Imaginile originale nu vor fi modificate."
 
 #: src/window.py:376
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
+"Toate imaginile din dosarele alese și subdosarele lor vor fi comprimate și "
+"înlocuite!"
 
 #: src/window.py:381
 msgid "Cancel"
