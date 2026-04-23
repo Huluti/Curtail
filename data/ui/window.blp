@@ -1,0 +1,150 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu main_menu {
+  section {
+    item {
+      label: _("Bulk Compress Directory");
+      action: "win.convert-dir";
+    }
+
+    item {
+      label: _("Preferences");
+      action: "win.preferences";
+    }
+
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About Curtail");
+      action: "win.about";
+    }
+  }
+}
+
+template $CurtailWindow: Adw.ApplicationWindow {
+  title: _("Curtail");
+  default-width: 650;
+  default-height: 500;
+
+  content: Adw.ToastOverlay toast_overlay {
+    child: Adw.ToolbarView {
+      [top]
+      Adw.HeaderBar headerbar {
+        [start]
+        Button filechooser_button_headerbar {
+          icon-name: "document-open-symbolic";
+          action-name: "win.select-file";
+          tooltip-text: _("Browse Files");
+        }
+
+        [start]
+        Button clear_button_headerbar {
+          icon-name: "view-refresh-symbolic";
+          action-name: "win.clear-results";
+          tooltip-text: _("Clear Results");
+        }
+
+        [title]
+        Adw.WindowTitle window_title {
+          title: _("Curtail");
+        }
+
+        [end]
+        MenuButton {
+          icon-name: "open-menu-symbolic";
+          primary: true;
+          tooltip-text: _("Main Menu");
+
+          menu-model: main_menu;
+        }
+      }
+
+      content: Box mainbox {
+        orientation: vertical;
+
+        Adw.Banner warning_banner {
+          action-name: "win.banner-change-mode";
+          button-label: _("_Change Mode");
+          title: _("Images will be overwritten, proceed carefully");
+        }
+
+        Adw.StatusPage homebox {
+          vexpand: true;
+          icon-name: "com.github.huluti.Curtail";
+          title: _("Curtail");
+          description: _("Drop images here to compress them");
+
+          styles [
+            "icon-dropshadow",
+          ]
+
+          Box {
+            orientation: vertical;
+            spacing: 36;
+
+            Button {
+              label: _("_Browse Files");
+              halign: center;
+              action-name: "win.select-file";
+              use-underline: true;
+
+              styles [
+                "suggested-action",
+                "pill",
+              ]
+            }
+
+            Adw.ToggleGroup toggle_lossy {
+              halign: center;
+
+              Adw.Toggle {
+                label: _("Lossless");
+                name: "lossless";
+              }
+
+              Adw.Toggle {
+                label: _("Lossy");
+                name: "lossy";
+              }
+            }
+          }
+        }
+
+        Adw.StatusPage loadingbox {
+          vexpand: true;
+          title: _("Analyzing Images");
+          description: _("Analyzing your images before compression…");
+          paintable: Adw.SpinnerPaintable {
+            widget: loadingbox;
+          };
+        }
+
+        ScrolledWindow resultbox {
+          vexpand: true;
+          hscrollbar-policy: never;
+
+          Adw.Clamp {
+            margin-start: 10;
+            margin-end: 10;
+            margin-top: 20;
+            margin-bottom: 20;
+
+            ListBox listbox {
+              hexpand: true;
+              valign: start;
+              selection-mode: none;
+
+              styles [
+                "boxed-list",
+              ]
+            }
+          }
+        }
+      };
+    };
+  };
+}

@@ -1,6 +1,17 @@
 bindir = join_paths(get_option('prefix'), get_option('bindir'))
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 
+blueprints = custom_target('blueprints',
+  input: files(
+    'ui/preferences.blp',
+    'ui/result-item-row.blp',
+    'ui/shortcuts-dialog.blp',
+    'ui/window.blp'
+  ),
+  output: '.',
+  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+)
+
 gnome = import('gnome')
 
 gnome.compile_resources('curtail',
@@ -8,6 +19,7 @@ gnome.compile_resources('curtail',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
+  dependencies: blueprints,
 )
 
 desktop_file = i18n.merge_file(

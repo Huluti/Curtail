@@ -27,6 +27,7 @@ curtail_sources = [
   'compressor.py',
   'preferences.py',
   'result_item.py',
+  'result_item_row.py',
   'tools.py'
 ]
 
