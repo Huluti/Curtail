@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-04-13 15:54+0000\n"
-"PO-Revision-Date: 2026-04-19 11:41+0200\n"
+"POT-Creation-Date: 2026-04-20 21:38+0000\n"
+"PO-Revision-Date: 2026-04-24 11:08+0200\n"
 "Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Gtranslator 48.0\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
-#: data/ui/window.ui:36
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
 msgid "Curtail"
 msgstr "Curtail"
 
@@ -167,7 +167,7 @@ msgstr "Activează comprimarea maximă pentru imaginile SVG"
 msgid "Enable maximum cleaning of SVG images."
 msgstr "Activează curățarea maximă a imaginilor SVG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.blp:50
 msgid "Compression Timeout"
 msgstr "Durata comprimării"
 
@@ -175,189 +175,201 @@ msgstr "Durata comprimării"
 msgid "Compression timeout for each image."
 msgstr "Limita de timp pentru comprimarea fiecărei imagini"
 
-#: data/ui/shortcuts-dialog.ui:6
-msgctxt "shortcuts dialog"
-msgid "General"
-msgstr "Generale"
-
-#: data/ui/shortcuts-dialog.ui:9
-msgctxt "shortcuts dialog"
-msgid "Select File"
-msgstr "Alege fișierul"
-
-#: data/ui/shortcuts-dialog.ui:15
-msgctxt "shortcuts dialog"
+#: data/ui/preferences.blp:5 data/ui/window.blp:12
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: data/ui/shortcuts-dialog.ui:21
-msgctxt "shortcuts dialog"
-msgid "Keyboard Shortcuts"
-msgstr "Scurtături"
-
-#: data/ui/shortcuts-dialog.ui:27
-msgctxt "shortcuts dialog"
-msgid "Quit"
-msgstr "Închide"
-
-#: data/ui/preferences.ui:4 data/ui/menu.ui:10
-msgid "Preferences"
-msgstr "Preferințe"
-
-#: data/ui/preferences.ui:8
+#: data/ui/preferences.blp:9
 msgid "General"
 msgstr "Generale"
 
-#: data/ui/preferences.ui:14
+#: data/ui/preferences.blp:14
 msgid "Safe Mode"
 msgstr "Mod sigur"
 
-#: data/ui/preferences.ui:15
+#: data/ui/preferences.blp:15
 msgid "Save the compressed image in a new file"
 msgstr "Salvează imaginea comprimată într-un fișier nou"
 
-#: data/ui/preferences.ui:21
+#: data/ui/preferences.blp:19
 msgid "Naming Mode"
 msgstr "Denumirea"
 
-#: data/ui/preferences.ui:22
+#: data/ui/preferences.blp:20
 msgid "Select between suffix and prefix"
 msgstr "Alege între sufix și prefix"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.blp:24
 msgid "Suffix"
 msgstr "Sufix"
 
-#: data/ui/preferences.ui:27
+#: data/ui/preferences.blp:25
 msgid "Prefix"
 msgstr "Prefix"
 
-#: data/ui/preferences.ui:36
+#: data/ui/preferences.blp:31
 msgid "New File Suffix/Prefix"
 msgstr "Sufix/Prefix nou"
 
-#: data/ui/preferences.ui:41
+#: data/ui/preferences.blp:35
 msgid "Recursive Compression"
 msgstr "Comprimare recursivă"
 
-#: data/ui/preferences.ui:42
+#: data/ui/preferences.blp:36
 msgid "Enable or disable compression through subdirectories"
 msgstr "Activează sau dezactivează comprimarea în subdosare"
 
-#: data/ui/preferences.ui:47
+#: data/ui/preferences.blp:40
 msgid "Keep Metadata"
 msgstr "Păstrează metadatele"
 
-#: data/ui/preferences.ui:48
+#: data/ui/preferences.blp:41
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "Păstrează unele metadate care nu afectează afișarea imaginii"
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.blp:45
 msgid "Keep File Attributes When Possible"
 msgstr "Păstrează înformațiile despre fișier, dacă e posibil"
 
-#: data/ui/preferences.ui:54
+#: data/ui/preferences.blp:46
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr "Fișierul nou va păstra permisiunile și data originalului"
 
-#: data/ui/preferences.ui:60
+#: data/ui/preferences.blp:51
 msgid "Set the timeout between images"
 msgstr "Timpul de așteptare dintre imagini"
 
-#: data/ui/preferences.ui:78
+#: data/ui/preferences.blp:65
 msgid "Formats"
 msgstr "Formate"
 
-#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
-#: data/ui/preferences.ui:140
+#: data/ui/preferences.blp:72 data/ui/preferences.blp:98
+#: data/ui/preferences.blp:118
 msgid "Lossy Compression"
 msgstr "Comprimare cu pierderi"
 
-#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
-#: data/ui/preferences.ui:141
+#: data/ui/preferences.blp:73 data/ui/preferences.blp:99
+#: data/ui/preferences.blp:119
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "Stabilește calitatea imaginii generate, 100 este cea mai bună calitate"
 
-#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
-msgid "Lossless Compression Level"
-msgstr "Nivelul comprimării fără pierderi"
+#: data/ui/preferences.blp:83 data/ui/preferences.blp:129
+msgid "Lossless Compression"
+msgstr "Comprimare fără pierderi"
 
-#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
-msgid "Set the level of the compression, 6 is the highest but slowest level"
+#: data/ui/preferences.blp:84 data/ui/preferences.blp:130
+msgid "Set the level of compression, 6 is the highest but slowest level"
 msgstr ""
 "Stabilește nivelul comprimării, 6 este cel mai înalt, dar cel mai lent nivel"
 
-#: data/ui/preferences.ui:129
+#: data/ui/preferences.blp:109
 msgid "Progressive Encode"
 msgstr "Codare progresivă"
 
-#: data/ui/preferences.ui:130
+#: data/ui/preferences.blp:110
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr "Activează afișarea treptată a imaginii, de la neclară la clară"
 
-#: data/ui/preferences.ui:171
+#: data/ui/preferences.blp:144
 msgid "Maximum Compression Level"
 msgstr "Nivelul maxim de comprimare"
 
-#: data/ui/preferences.ui:172
+#: data/ui/preferences.blp:145
 msgid "This can be more destructive for the image"
 msgstr "Acest lucru poate fi mai distructiv pentru imagine"
 
-#: data/ui/menu.ui:6
-msgid "Bulk Compress Directory"
-msgstr "Comprimă conținutul dosarului"
+#: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
+msgid "More Information"
+msgstr "Alte informații"
 
-#: data/ui/menu.ui:14
+#: data/ui/result-item-row.blp:18
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Comprimarea a fost omisă deoarece fișierul comprimat ar fi fost mai mare "
+"decât originalul."
+
+#: data/ui/shortcuts-dialog.blp:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Generale"
+
+#: data/ui/shortcuts-dialog.blp:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Alege fișierul"
+
+#: data/ui/shortcuts-dialog.blp:14
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Preferințe"
+
+#: data/ui/shortcuts-dialog.blp:19
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Scurtături"
 
-#: data/ui/menu.ui:18
+#: data/ui/shortcuts-dialog.blp:24
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Închide"
+
+#: data/ui/window.blp:7
+msgid "Bulk Compress Directory"
+msgstr "Comprimă conținutul dosarului"
+
+#: data/ui/window.blp:17
+msgid "Keyboard Shortcuts"
+msgstr "Scurtături"
+
+#: data/ui/window.blp:22
 msgid "About Curtail"
 msgstr "Despre Curtail"
 
-#: data/ui/window.ui:22 src/window.py:321
+#: data/ui/window.blp:41 src/window.py:217
 msgid "Browse Files"
 msgstr "Alege fișiere"
 
-#: data/ui/window.ui:29
+#: data/ui/window.blp:48
 msgid "Clear Results"
 msgstr "Șterge rezultatele"
 
-#: data/ui/window.ui:43
+#: data/ui/window.blp:60
 msgid "Main Menu"
 msgstr "Opțiuni"
 
-#: data/ui/window.ui:54
+#: data/ui/window.blp:71
 msgid "_Change Mode"
 msgstr "S_chimbă modul"
 
-#: data/ui/window.ui:55
+#: data/ui/window.blp:72
 msgid "Images will be overwritten, proceed carefully"
 msgstr "Imaginile vor fi înlocuite"
 
-#: data/ui/window.ui:63
+#: data/ui/window.blp:79
 msgid "Drop images here to compress them"
 msgstr "Așează aici imaginile de comprimat"
 
-#: data/ui/window.ui:70
+#: data/ui/window.blp:90
 msgid "_Browse Files"
 msgstr "_Alege fișiere"
 
-#: data/ui/window.ui:85
+#: data/ui/window.blp:105
 msgid "Lossless"
 msgstr "Fără pierderi"
 
-#: data/ui/window.ui:91
+#: data/ui/window.blp:110
 msgid "Lossy"
 msgstr "Cu pierderi"
 
-#: data/ui/window.ui:107
-msgid "Analyzing images"
+#: data/ui/window.blp:119
+msgid "Analyzing Images"
 msgstr "Analiza imaginilor"
 
-#: data/ui/window.ui:108
+#: data/ui/window.blp:120
 msgid "Analyzing your images before compression…"
 msgstr "Se analizează imaginile înainte de comprimare…"
 
@@ -394,43 +406,31 @@ msgstr "SVG"
 msgid "Version not found"
 msgstr "Versiune necunoscută"
 
-#: src/window.py:151
+#: src/window.py:146
 msgid "Skipped"
 msgstr "Omisă"
 
-#: src/window.py:172 src/window.py:199
-msgid "More Information"
-msgstr "Alte informații"
-
-#: src/window.py:181
-msgid ""
-"Compression was skipped because compressing the file would have resulted in "
-"a larger file size."
-msgstr ""
-"Comprimarea a fost omisă deoarece fișierul comprimat ar fi fost mai mare "
-"decât originalul."
-
-#: src/window.py:282
+#: src/window.py:178
 msgid "Open Image"
 msgstr "Deschide imaginea"
 
-#: src/window.py:283
+#: src/window.py:179
 msgid "Show in Folder"
 msgstr "Arată în dosar"
 
-#: src/window.py:311
+#: src/window.py:207
 msgid "Overwrite mode"
 msgstr "Înlocuire"
 
-#: src/window.py:339
+#: src/window.py:235
 msgid "Browse Directories"
 msgstr "Alege dosare"
 
-#: src/window.py:365 src/window.py:374
+#: src/window.py:261 src/window.py:270
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Se dorește comprimarea imaginilor din aceste dosare?"
 
-#: src/window.py:367
+#: src/window.py:263
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -438,7 +438,7 @@ msgstr ""
 "Toate imaginile din dosarele alese și subdosarele lor vor fi comprimate. "
 "Imaginile originale nu vor fi modificate."
 
-#: src/window.py:376
+#: src/window.py:272
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -446,22 +446,22 @@ msgstr ""
 "Toate imaginile din dosarele alese și subdosarele lor vor fi comprimate și "
 "înlocuite!"
 
-#: src/window.py:381
+#: src/window.py:277
 msgid "Cancel"
 msgstr "Anulează"
 
-#: src/window.py:382
+#: src/window.py:278
 msgid "Compress"
 msgstr "Comprimă"
 
-#: src/window.py:420
+#: src/window.py:316
 msgid "No files found"
 msgstr "Niciun fișier"
 
-#: src/window.py:471
+#: src/window.py:367
 msgid "translator-credits"
 msgstr "Antonio Marin <gnmer.6qxyg@slmail.me>"
 
-#: src/window.py:475
+#: src/window.py:371
 msgid "Contributors"
 msgstr "Colaboratori"
