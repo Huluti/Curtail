@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-04-13 15:54+0000\n"
-"PO-Revision-Date: 2026-04-19 07:35+0800\n"
+"POT-Creation-Date: 2026-04-20 21:38+0000\n"
+"PO-Revision-Date: 2026-04-25 10:34+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -21,8 +21,8 @@ msgstr ""
 "X-Generator: Gtranslator 50.0\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
-#: data/ui/window.ui:36
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
 msgid "Curtail"
 msgstr "Curtail"
 
@@ -163,7 +163,7 @@ msgstr "为 SVG 图像启用最大压缩"
 msgid "Enable maximum cleaning of SVG images."
 msgstr "启用 SVG 图像的最大程度清理。"
 
-#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.blp:50
 msgid "Compression Timeout"
 msgstr "压缩超时"
 
@@ -171,188 +171,198 @@ msgstr "压缩超时"
 msgid "Compression timeout for each image."
 msgstr "每个图像的压缩超时。"
 
-#: data/ui/shortcuts-dialog.ui:6
-msgctxt "shortcuts dialog"
-msgid "General"
-msgstr "常规"
-
-#: data/ui/shortcuts-dialog.ui:9
-msgctxt "shortcuts dialog"
-msgid "Select File"
-msgstr "选择文件"
-
-#: data/ui/shortcuts-dialog.ui:15
-msgctxt "shortcuts dialog"
+#: data/ui/preferences.blp:5 data/ui/window.blp:12
 msgid "Preferences"
 msgstr "首选项"
 
-#: data/ui/shortcuts-dialog.ui:21
-msgctxt "shortcuts dialog"
-msgid "Keyboard Shortcuts"
-msgstr "键盘快捷键"
-
-#: data/ui/shortcuts-dialog.ui:27
-msgctxt "shortcuts dialog"
-msgid "Quit"
-msgstr "退出"
-
-#: data/ui/preferences.ui:4 data/ui/menu.ui:10
-msgid "Preferences"
-msgstr "首选项"
-
-#: data/ui/preferences.ui:8
+#: data/ui/preferences.blp:9
 msgid "General"
 msgstr "常规"
 
-#: data/ui/preferences.ui:14
+#: data/ui/preferences.blp:14
 msgid "Safe Mode"
 msgstr "安全模式"
 
-#: data/ui/preferences.ui:15
+#: data/ui/preferences.blp:15
 msgid "Save the compressed image in a new file"
 msgstr "将已压缩图像保存到新文件中"
 
-#: data/ui/preferences.ui:21
+#: data/ui/preferences.blp:19
 msgid "Naming Mode"
 msgstr "命名模式"
 
-#: data/ui/preferences.ui:22
+#: data/ui/preferences.blp:20
 msgid "Select between suffix and prefix"
 msgstr "在前缀和后缀间选择"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.blp:24
 msgid "Suffix"
 msgstr "后缀"
 
-#: data/ui/preferences.ui:27
+#: data/ui/preferences.blp:25
 msgid "Prefix"
 msgstr "前缀"
 
-#: data/ui/preferences.ui:36
+#: data/ui/preferences.blp:31
 msgid "New File Suffix/Prefix"
 msgstr "新文件前缀/后缀"
 
-#: data/ui/preferences.ui:41
+#: data/ui/preferences.blp:35
 msgid "Recursive Compression"
 msgstr "递归压缩"
 
-#: data/ui/preferences.ui:42
+#: data/ui/preferences.blp:36
 msgid "Enable or disable compression through subdirectories"
 msgstr "启用或禁用贯穿子目录的压缩"
 
-#: data/ui/preferences.ui:47
+#: data/ui/preferences.blp:40
 msgid "Keep Metadata"
 msgstr "保留元数据"
 
-#: data/ui/preferences.ui:48
+#: data/ui/preferences.blp:41
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "保留不影响渲染的元数据块"
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.blp:45
 msgid "Keep File Attributes When Possible"
 msgstr "尽可能保留文件属性"
 
-#: data/ui/preferences.ui:54
+#: data/ui/preferences.blp:46
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr "确保新文件与原始文件具有相同的权限和时间戳"
 
-#: data/ui/preferences.ui:60
+#: data/ui/preferences.blp:51
 msgid "Set the timeout between images"
 msgstr "设置图像之间的超时时间"
 
-#: data/ui/preferences.ui:78
+#: data/ui/preferences.blp:65
 msgid "Formats"
 msgstr "格式"
 
-#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
-#: data/ui/preferences.ui:140
+#: data/ui/preferences.blp:72 data/ui/preferences.blp:98
+#: data/ui/preferences.blp:118
 msgid "Lossy Compression"
 msgstr "有损压缩"
 
-#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
-#: data/ui/preferences.ui:141
+#: data/ui/preferences.blp:73 data/ui/preferences.blp:99
+#: data/ui/preferences.blp:119
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "设定生成图像的质量，100 是最好的质量"
 
-#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
-msgid "Lossless Compression Level"
-msgstr "无损压缩级别"
+#: data/ui/preferences.blp:83 data/ui/preferences.blp:129
+msgid "Lossless Compression"
+msgstr "无损压缩"
 
-#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
-msgid "Set the level of the compression, 6 is the highest but slowest level"
+#: data/ui/preferences.blp:84 data/ui/preferences.blp:130
+msgid "Set the level of compression, 6 is the highest but slowest level"
 msgstr "设定压缩级别，6 是最高但最慢的级别"
 
-#: data/ui/preferences.ui:129
+#: data/ui/preferences.blp:109
 msgid "Progressive Encode"
 msgstr "渐进式编码"
 
-#: data/ui/preferences.ui:130
+#: data/ui/preferences.blp:110
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr "启用图像从模糊到清晰的增量渲染"
 
-#: data/ui/preferences.ui:171
+#: data/ui/preferences.blp:144
 msgid "Maximum Compression Level"
 msgstr "最大压缩级别"
 
-#: data/ui/preferences.ui:172
+#: data/ui/preferences.blp:145
 msgid "This can be more destructive for the image"
 msgstr "这可能对图像更具破坏性"
 
-#: data/ui/menu.ui:6
-msgid "Bulk Compress Directory"
-msgstr "大批量压缩目录"
+#: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
+msgid "More Information"
+msgstr "更多信息"
 
-#: data/ui/menu.ui:14
+#: data/ui/result-item-row.blp:18
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr "压缩已跳过，因为压缩该文件会导致文件更大。"
+
+#: data/ui/shortcuts-dialog.blp:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "常规"
+
+#: data/ui/shortcuts-dialog.blp:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "选择文件"
+
+#: data/ui/shortcuts-dialog.blp:14
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "首选项"
+
+#: data/ui/shortcuts-dialog.blp:19
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
-#: data/ui/menu.ui:18
+#: data/ui/shortcuts-dialog.blp:24
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "退出"
+
+#: data/ui/window.blp:7
+msgid "Bulk Compress Directory"
+msgstr "大批量压缩目录"
+
+#: data/ui/window.blp:17
+msgid "Keyboard Shortcuts"
+msgstr "键盘快捷键"
+
+#: data/ui/window.blp:22
 msgid "About Curtail"
 msgstr "关于 Curtail"
 
-#: data/ui/window.ui:22 src/window.py:321
+#: data/ui/window.blp:41 src/window.py:217
 msgid "Browse Files"
 msgstr "浏览文件"
 
-#: data/ui/window.ui:29
+#: data/ui/window.blp:48
 msgid "Clear Results"
 msgstr "清除结果"
 
-#: data/ui/window.ui:43
+#: data/ui/window.blp:60
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: data/ui/window.ui:54
+#: data/ui/window.blp:71
 msgid "_Change Mode"
 msgstr "更改模式(_C)"
 
-#: data/ui/window.ui:55
+#: data/ui/window.blp:72
 msgid "Images will be overwritten, proceed carefully"
 msgstr "图像将被覆盖，请小心操作"
 
-#: data/ui/window.ui:63
+#: data/ui/window.blp:79
 msgid "Drop images here to compress them"
 msgstr "将图像拖放到此处进行压缩"
 
-#: data/ui/window.ui:70
+#: data/ui/window.blp:90
 msgid "_Browse Files"
 msgstr "浏览文件(_B)"
 
-#: data/ui/window.ui:85
+#: data/ui/window.blp:105
 msgid "Lossless"
 msgstr "无损"
 
-#: data/ui/window.ui:91
+#: data/ui/window.blp:110
 msgid "Lossy"
 msgstr "有损"
 
-#: data/ui/window.ui:107
-msgid "Analyzing images"
-msgstr "分析图像"
+#: data/ui/window.blp:119
+msgid "Analyzing Images"
+msgstr "正在分析图像"
 
-#: data/ui/window.ui:108
+#: data/ui/window.blp:120
 msgid "Analyzing your images before compression…"
 msgstr "在压缩前分析您的图像…"
 
@@ -389,72 +399,62 @@ msgstr "SVG 图像"
 msgid "Version not found"
 msgstr "未找到版本"
 
-#: src/window.py:151
+#: src/window.py:146
 msgid "Skipped"
 msgstr "已跳过"
 
-#: src/window.py:172 src/window.py:199
-msgid "More Information"
-msgstr "更多信息"
-
-#: src/window.py:181
-msgid ""
-"Compression was skipped because compressing the file would have resulted in "
-"a larger file size."
-msgstr "压缩已跳过，因为压缩该文件会导致文件更大。"
-
-#: src/window.py:282
+#: src/window.py:178
 msgid "Open Image"
 msgstr "打开图像"
 
-#: src/window.py:283
+#: src/window.py:179
 msgid "Show in Folder"
 msgstr "在文件夹中显示"
 
-#: src/window.py:311
+#: src/window.py:207
 msgid "Overwrite mode"
 msgstr "覆盖模式"
 
-#: src/window.py:339
+#: src/window.py:235
 msgid "Browse Directories"
 msgstr "浏览目录"
 
-#: src/window.py:365 src/window.py:374
+#: src/window.py:261 src/window.py:270
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "您确定要压缩这些目录中的图像吗？"
 
-#: src/window.py:367
+#: src/window.py:263
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr "所选目录及其子目录中的所有图像都将被压缩。原始图像不会被修改。"
 
-#: src/window.py:376
+#: src/window.py:272
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr "所选目录及其子目录中的所有图像都将被压缩并覆盖！"
 
-#: src/window.py:381
+#: src/window.py:277
 msgid "Cancel"
 msgstr "取消"
 
-#: src/window.py:382
+#: src/window.py:278
 msgid "Compress"
 msgstr "压缩"
 
-#: src/window.py:420
+#: src/window.py:316
 msgid "No files found"
 msgstr "未找到文件"
 
-#: src/window.py:471
+#: src/window.py:367
 msgid "translator-credits"
 msgstr ""
 "Hugo Posnic <hugo.posnic@protonmail.com>, 2019\n"
 "余航 <yuhldr@qq.com>, 2023\n"
 "lumingzh <lumingzh@qq.com>, 2024-2026"
 
-#: src/window.py:475
+#: src/window.py:371
 msgid "Contributors"
 msgstr "贡献者"
 
