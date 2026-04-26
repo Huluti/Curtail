@@ -2,18 +2,18 @@
 # Copyright (C) 2026 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
 # Hugo Posnic <hugo.posnic@gmail.com>, 2019 (first Author).
-# Juliano de Souza Camargo <julianosc@pm.me>, 2024.
 # Álvaro Burns, 2025.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024-2026.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-04-12 12:11+0000\n"
-"PO-Revision-Date: 2026-04-15 12:13-0300\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
+"POT-Creation-Date: 2026-04-20 21:38+0000\n"
+"PO-Revision-Date: 2026-04-26 11:55-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,8 +28,8 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
-#: data/ui/window.ui:36
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
 msgid "Curtail"
 msgstr "Curtail"
 
@@ -176,7 +176,7 @@ msgstr "Ativar compressão máxima para imagens SVG"
 msgid "Enable maximum cleaning of SVG images."
 msgstr "Ativa a limpeza máxima de imagens SVG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.blp:50
 msgid "Compression Timeout"
 msgstr "Tempo limite de compressão"
 
@@ -184,88 +184,63 @@ msgstr "Tempo limite de compressão"
 msgid "Compression timeout for each image."
 msgstr "Tempo limite de compressão para cada imagem."
 
-#: data/ui/shortcuts-dialog.ui:6
-msgctxt "shortcuts dialog"
-msgid "General"
-msgstr "Geral"
-
-#: data/ui/shortcuts-dialog.ui:9
-msgctxt "shortcuts dialog"
-msgid "Select File"
-msgstr "Seleciona o arquivo"
-
-#: data/ui/shortcuts-dialog.ui:15
-msgctxt "shortcuts dialog"
+#: data/ui/preferences.blp:5 data/ui/window.blp:12
 msgid "Preferences"
 msgstr "Preferências"
 
-#: data/ui/shortcuts-dialog.ui:21
-msgctxt "shortcuts dialog"
-msgid "Keyboard Shortcuts"
-msgstr "Atalhos de teclado"
-
-#: data/ui/shortcuts-dialog.ui:27
-msgctxt "shortcuts dialog"
-msgid "Quit"
-msgstr "Sai"
-
-#: data/ui/preferences.ui:4 data/ui/menu.ui:10
-msgid "Preferences"
-msgstr "Preferências"
-
-#: data/ui/preferences.ui:8
+#: data/ui/preferences.blp:9
 msgid "General"
 msgstr "Geral"
 
-#: data/ui/preferences.ui:14
+#: data/ui/preferences.blp:14
 msgid "Safe Mode"
 msgstr "Modo seguro"
 
-#: data/ui/preferences.ui:15
+#: data/ui/preferences.blp:15
 msgid "Save the compressed image in a new file"
 msgstr "Salva a imagem comprimida em um novo arquivo"
 
-#: data/ui/preferences.ui:21
+#: data/ui/preferences.blp:19
 msgid "Naming Mode"
 msgstr "Modo de nomenclatura"
 
-#: data/ui/preferences.ui:22
+#: data/ui/preferences.blp:20
 msgid "Select between suffix and prefix"
 msgstr "Seleciona entre sufixo ou prefixo"
 
-#: data/ui/preferences.ui:26
+#: data/ui/preferences.blp:24
 msgid "Suffix"
 msgstr "Sufixo"
 
-#: data/ui/preferences.ui:27
+#: data/ui/preferences.blp:25
 msgid "Prefix"
 msgstr "Prefixo"
 
-#: data/ui/preferences.ui:36
+#: data/ui/preferences.blp:31
 msgid "New File Suffix/Prefix"
 msgstr "Sufixo/Prefixo de novo arquivo"
 
-#: data/ui/preferences.ui:41
+#: data/ui/preferences.blp:35
 msgid "Recursive Compression"
 msgstr "Compressão recursiva"
 
-#: data/ui/preferences.ui:42
+#: data/ui/preferences.blp:36
 msgid "Enable or disable compression through subdirectories"
 msgstr "Ativa ou desativa compressão em subdiretórios"
 
-#: data/ui/preferences.ui:47
+#: data/ui/preferences.blp:40
 msgid "Keep Metadata"
 msgstr "Manter metadados"
 
-#: data/ui/preferences.ui:48
+#: data/ui/preferences.blp:41
 msgid "Keep metadata chunks that do not affect rendering"
 msgstr "Mantém pedaços de metadados que não afetam a renderização"
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.blp:45
 msgid "Keep File Attributes When Possible"
 msgstr "Preservar atributos do arquivo quando possível"
 
-#: data/ui/preferences.ui:54
+#: data/ui/preferences.blp:46
 msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
@@ -273,110 +248,142 @@ msgstr ""
 "Garante que o novo arquivo tenha as mesmas permissões e marcas de data e "
 "hora que o arquivo original"
 
-#: data/ui/preferences.ui:60
+#: data/ui/preferences.blp:51
 msgid "Set the timeout between images"
 msgstr "Define o tempo limite entre imagens"
 
-#: data/ui/preferences.ui:78
+#: data/ui/preferences.blp:65
 msgid "Formats"
 msgstr "Formatos"
 
-#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
-#: data/ui/preferences.ui:140
+#: data/ui/preferences.blp:72 data/ui/preferences.blp:98
+#: data/ui/preferences.blp:118
 msgid "Lossy Compression"
 msgstr "Compressão com perdas"
 
-#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
-#: data/ui/preferences.ui:141
+#: data/ui/preferences.blp:73 data/ui/preferences.blp:99
+#: data/ui/preferences.blp:119
 msgid "Set the quality of the generated image, 100 is the best quality"
 msgstr "Define a qualidade da imagem gerada, 100 é a melhor qualidade"
 
-#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
-msgid "Lossless Compression Level"
-msgstr "Nível de compressão sem perdas"
+#: data/ui/preferences.blp:83 data/ui/preferences.blp:129
+msgid "Lossless Compression"
+msgstr "Compressão sem perdas"
 
-#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
-msgid "Set the level of the compression, 6 is the highest but slowest level"
+#: data/ui/preferences.blp:84 data/ui/preferences.blp:130
+msgid "Set the level of compression, 6 is the highest but slowest level"
 msgstr ""
-"Define o nível da compressão, sendo 6 é o nível mais alto, mas mais mais "
-"lento"
+"Define o nível da compressão, sendo 6 o nível mais alto, mas o mais lento"
 
-#: data/ui/preferences.ui:129
+#: data/ui/preferences.blp:109
 msgid "Progressive Encode"
 msgstr "Codificação progressiva"
 
-#: data/ui/preferences.ui:130
+#: data/ui/preferences.blp:110
 msgid "Enable incremental image rendering, going from blurry to clear"
 msgstr ""
 "Ativar a renderização incremental da imagem, indo de desfocada para clara"
 
-#: data/ui/preferences.ui:171
+#: data/ui/preferences.blp:144
 msgid "Maximum Compression Level"
 msgstr "Nível máximo de compressão"
 
-#: data/ui/preferences.ui:172
+#: data/ui/preferences.blp:145
 msgid "This can be more destructive for the image"
 msgstr "Pode ser mais destrutivo para a imagem"
 
-#: data/ui/menu.ui:6
-msgid "Bulk Compress Directory"
-msgstr "Diretório de compressão em massa"
+#: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
+msgid "More Information"
+msgstr "Mais informação"
 
-#: data/ui/menu.ui:14
+#: data/ui/result-item-row.blp:18
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"A compressão foi ignorada porque a compressão do arquivo resultaria em um "
+"arquivo de grande tamanho."
+
+#: data/ui/shortcuts-dialog.blp:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Geral"
+
+#: data/ui/shortcuts-dialog.blp:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Seleciona o arquivo"
+
+#: data/ui/shortcuts-dialog.blp:14
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Preferências"
+
+#: data/ui/shortcuts-dialog.blp:19
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos de teclado"
 
-#: data/ui/menu.ui:18
+#: data/ui/shortcuts-dialog.blp:24
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Sai"
+
+#: data/ui/window.blp:7
+msgid "Bulk Compress Directory"
+msgstr "Diretório de compressão em massa"
+
+#: data/ui/window.blp:17
+msgid "Keyboard Shortcuts"
+msgstr "Atalhos de teclado"
+
+#: data/ui/window.blp:22
 msgid "About Curtail"
 msgstr "Sobre o Curtail"
 
-#: data/ui/window.ui:22 src/window.py:325
+#: data/ui/window.blp:41 src/window.py:217
 msgid "Browse Files"
 msgstr "Procura arquivos"
 
-#: data/ui/window.ui:29
+#: data/ui/window.blp:48
 msgid "Clear Results"
 msgstr "Apaga resultados"
 
-#: data/ui/window.ui:43
+#: data/ui/window.blp:60
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: data/ui/window.ui:54
+#: data/ui/window.blp:71
 msgid "_Change Mode"
 msgstr "_Alterar modo"
 
-#: data/ui/window.ui:55
+#: data/ui/window.blp:72
 msgid "Images will be overwritten, proceed carefully"
 msgstr "As imagens serão substituídas, prossiga com cuidado"
 
-#: data/ui/window.ui:63
+#: data/ui/window.blp:79
 msgid "Drop images here to compress them"
 msgstr "Solte as imagens aqui para comprimi-las"
 
-#: data/ui/window.ui:70
+#: data/ui/window.blp:90
 msgid "_Browse Files"
 msgstr "_Procurar arquivos"
 
-#: data/ui/window.ui:85
+#: data/ui/window.blp:105
 msgid "Lossless"
 msgstr "Sem perda"
 
-#: data/ui/window.ui:91
+#: data/ui/window.blp:110
 msgid "Lossy"
 msgstr "Com perda"
 
-#: data/ui/window.ui:107
-msgid "Analyzing images"
-msgstr "Analisando as imagens"
+#: data/ui/window.blp:119
+msgid "Analyzing Images"
+msgstr "Analisando imagens"
 
-#: data/ui/window.ui:108
+#: data/ui/window.blp:120
 msgid "Analyzing your images before compression…"
 msgstr "Analisando suas imagens antes da compressão…"
-
-#: src/compressor.py:39
-msgid "Compression has reached the configured timeout of {} seconds."
-msgstr "A compressão atingiu o tempo limite configurado de {} segundos."
 
 #: src/compressor.py:43
 msgid "An unknown error has occurred."
@@ -406,48 +413,36 @@ msgstr "Imagens WebP"
 msgid "SVG images"
 msgstr "Imagens SVG"
 
-#: src/tools.py:125 src/tools.py:132 src/tools.py:139 src/tools.py:146
-#: src/tools.py:153 src/tools.py:180
+#: src/tools.py:123 src/tools.py:130 src/tools.py:137 src/tools.py:144
+#: src/tools.py:151 src/tools.py:176
 msgid "Version not found"
 msgstr "Versão não encontrada"
 
-#: src/window.py:151
+#: src/window.py:146
 msgid "Skipped"
 msgstr "Ignorado"
 
-#: src/window.py:172 src/window.py:199
-msgid "More Information"
-msgstr "Mais informação"
-
-#: src/window.py:181
-msgid ""
-"Compression was skipped because compressing the file would have resulted in "
-"a larger file size."
-msgstr ""
-"A compressão foi ignorada porque a compressão do arquivo resultaria em um "
-"arquivo de grande tamanho."
-
-#: src/window.py:282
+#: src/window.py:178
 msgid "Open Image"
 msgstr "Abrir imagem"
 
-#: src/window.py:283
+#: src/window.py:179
 msgid "Show in Folder"
 msgstr "Mostrar na pasta"
 
-#: src/window.py:315
+#: src/window.py:207
 msgid "Overwrite mode"
 msgstr "Modo de substituição"
 
-#: src/window.py:343
+#: src/window.py:235
 msgid "Browse Directories"
 msgstr "Navegar nos diretórios"
 
-#: src/window.py:369 src/window.py:378
+#: src/window.py:261 src/window.py:270
 msgid "Are you sure you want to compress images in these directories?"
 msgstr "Tem certeza de que deseja comprimir imagens nestes diretórios?"
 
-#: src/window.py:371
+#: src/window.py:263
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
@@ -455,7 +450,7 @@ msgstr ""
 "Todas as imagens nos diretórios selecionados e seus subdiretórios serão "
 "comprimidas. As imagens originais não serão modificadas."
 
-#: src/window.py:380
+#: src/window.py:272
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -463,27 +458,30 @@ msgstr ""
 "Todas as imagens nos diretórios selecionados e seus subdiretórios serão "
 "comprimidas e substituídas!"
 
-#: src/window.py:385
+#: src/window.py:277
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/window.py:386
+#: src/window.py:278
 msgid "Compress"
 msgstr "Comprimir"
 
-#: src/window.py:424
+#: src/window.py:316
 msgid "No files found"
 msgstr "Nenhum arquivo encontrado"
 
-#: src/window.py:475
+#: src/window.py:367
 msgid "translator-credits"
 msgstr ""
 "Fúlvio Alves <fga.fulvio@gmail.com>\n"
 "Rafael Fontenelle <rafaelff@gnome.org>"
 
-#: src/window.py:479
+#: src/window.py:371
 msgid "Contributors"
 msgstr "Colaboradores"
+
+#~ msgid "Compression has reached the configured timeout of {} seconds."
+#~ msgstr "A compressão atingiu o tempo limite configurado de {} segundos."
 
 #~ msgid "Format of this file is not supported."
 #~ msgstr "O formato deste arquivo não é suportado."
