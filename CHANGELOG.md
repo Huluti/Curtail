@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.16.0 - 2026-05-03
+### Added
+- Add webp and svg to mime type data
+
+### Changed
+- Switch to Blueprint for UI
+- Better architecture for code
+- Update oxipng to v10.1.1
+- Update GNOME Runtime to 50
+- Update translations
+
 ## 1.15.1 - 2026-02-28
 ### Changed
 - Update oxipng to v10.1.0
@@ -378,4 +389,3 @@ All notable changes to this project will be documented in this file.
 ## [0.1] - 2019-10-08
 ### Added
 - Initial version.
-

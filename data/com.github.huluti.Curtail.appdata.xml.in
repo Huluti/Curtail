@@ -45,6 +45,19 @@
   <translation type="gettext">curtail</translation>
   <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
   <releases>
+  <release version="1.16.0" date="2026-05-03">
+    <description translate="no">
+      <p>Here's the changelog of this version:</p>
+      <ul>
+        <li>Add webp and svg to mime type data</li>
+        <li>Switch to Blueprint for UI</li>
+        <li>Better architecture for code</li>
+        <li>Update oxipng to v10.1.1</li>
+        <li>Update GNOME Runtime to 50</li>
+        <li>Update translations</li>
+      </ul>
+    </description>
+  </release>
     <release version="1.15.1" date="2026-02-28">
       <description translate="no">
         <p>Here's the changelog of this version:</p>
@@ -494,4 +507,3 @@
     <color type="primary" scheme_preference="dark">#a51d2d</color>
   </branding>
 </component>
-
