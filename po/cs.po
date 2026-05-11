@@ -3,226 +3,54 @@
 # This file is distributed under the same license as the curtail package.
 # vikdevelop <super-vik1@protonmail.com>, 2022 (first Author).
 # Písek Pískovec <pisekpiskovec@gmail.com>, 2023 (second Author).
+# Patrik Sivek <sivekpatrik@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 22:05\n"
-"PO-Revision-Date: 2023-05-13 17:38+0200\n"
-"Last-Translator: Písek Pískovec <pisekpiskovec@gmail.com>\n"
-"Language-Team: Czechia <>\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2026-04-20 21:38+0000\n"
+"PO-Revision-Date: 2026-05-11 20:42+0200\n"
+"Last-Translator: Patrik Sivek <sivekpatrik@gmail.com>\n"
+"Language-Team: Czech\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 50.0\n"
 
-#: data/com.github.huluti.Curtail.desktop.in:3
 #: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
 msgid "Curtail"
 msgstr "Curtail"
 
-#: data/com.github.huluti.Curtail.desktop.in:5
-#: data/com.github.huluti.Curtail.appdata.xml.in:8 src/ui/window.ui:213
-#: src/window.py:330
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
+#: data/com.github.huluti.Curtail.desktop.in:4
 msgid "Compress your images"
 msgstr "Komprimujte své obrázky"
 
 #: data/com.github.huluti.Curtail.appdata.xml.in:10
 msgid ""
-"Curtail is an useful image compressor, supporting PNG, JPEG and WebP file "
-"types."
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
 msgstr ""
-"Curtail je použitelný kompresor obrázků, popdporující PNG, JPEG a WebP soubory."
+"Optimalizujte vaše obrázky s Curtail, užitečným kompresorem obrázků, "
+"podporující soubory PNG, WebP a SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
 msgid ""
-"It support both lossless and lossy compression modes with an option to whether "
-"keep or not metadata of images."
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
 msgstr ""
 "Podporuje režimy bezeztrátové i ztrátové komprese s možností zachovat nebo "
 "nezachovat metadata obrázků."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
-msgid "Hugo Posnic"
-msgstr "Hugo Posnic"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:38
-#: data/com.github.huluti.Curtail.appdata.xml.in:54
-#: data/com.github.huluti.Curtail.appdata.xml.in:72
-#: data/com.github.huluti.Curtail.appdata.xml.in:82
-#: data/com.github.huluti.Curtail.appdata.xml.in:90
-#: data/com.github.huluti.Curtail.appdata.xml.in:98
-#: data/com.github.huluti.Curtail.appdata.xml.in:107
-#: data/com.github.huluti.Curtail.appdata.xml.in:115
-#: data/com.github.huluti.Curtail.appdata.xml.in:125
-#: data/com.github.huluti.Curtail.appdata.xml.in:136
-#: data/com.github.huluti.Curtail.appdata.xml.in:150
-#: data/com.github.huluti.Curtail.appdata.xml.in:158
-#: data/com.github.huluti.Curtail.appdata.xml.in:168
-#: data/com.github.huluti.Curtail.appdata.xml.in:180
-#: data/com.github.huluti.Curtail.appdata.xml.in:194
-#: data/com.github.huluti.Curtail.appdata.xml.in:203
-#: data/com.github.huluti.Curtail.appdata.xml.in:212
-#: data/com.github.huluti.Curtail.appdata.xml.in:221
-#: data/com.github.huluti.Curtail.appdata.xml.in:232
-msgid "Here's the changelog of this version:"
-msgstr "Zde je seznam změn této verze:"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:40
-msgid "Add WebP support. Thank's to @olokelo."
-msgstr "Přidána podpora WebP. Díky patří @olokelo."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:41
-msgid "Add Croatian translation. Thank's to @milotype."
-msgstr "Přidán chorvatský překlad. Díky patří @milotype."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:42
-msgid "Update Spanish translation. Thank's to @oscfdezdz."
-msgstr "Aktualizovaný španělský překlad. Díky patří @oscofdezdz."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:43
-msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
-msgstr "Aktualizovaný překlad portugalštiny (Brazílie). Díky @fulvio-alves."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:44
-msgid "Don't accept empty file. Thank's to @akozlovskiy119."
-msgstr "Prázdné soubory nejsou přijímány. Díky @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:45
-msgid "Better guess of extensions. Thank's to @akozlovskiy119."
-msgstr "Lepší uhodnutí rozšíření (guess). Díky patří @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:46
-msgid ""
-"Use correct file listing format for drag-and-drop. Thank's to @akozlovskiy119."
-msgstr ""
-"Je použit správný formát výpisu souborů pro přetahování. Díky @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:47
-msgid "Fix directory handling. Thank's to @akozlovskiy119."
-msgstr "Opraveno předávání adresáře. Díky patří @akozlovskiy119."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:48
-msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
-msgstr ""
-"Opraveny chybějící ikony v LXQt, MATE, XFCE (#76). Díky patří @apandada1."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:56
-msgid "An option to progressive encode jpegs. Thank's to @trst."
-msgstr "Možnost progresivně kódovat jpegy. Díky @trst."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:57
-msgid "Add Russian translation."
-msgstr "Přidán ruský překlad."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:58
-msgid "Add Slovak translation."
-msgstr "Přidán slovenský překlad."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:59
-msgid "Add Swedish translation."
-msgstr "Přidán švedský překlad."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:60
-msgid "Better handling of existing files."
-msgstr "Lepší práce s existujícími soubory."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:61
-msgid "Better appdata summary."
-msgstr "Lepší shrnutí appdat."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:62
-msgid "Update Spanish translation."
-msgstr "Aktualizovaný španělský překlad."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:63
-msgid "Compress images with extensions in uppercase."
-msgstr "Komprimujte obrázky s příponou s velkými písmeny."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:64
-msgid "Center preferences window header switcher. Thank's to @andrenete."
-msgstr "Vycentrován přepínač záhlaví okna předvoleb. Díky @andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:65
-msgid "Fix columns sorting. Thank's to @andrenete."
-msgstr "Opraveno třídění sloupců. Díky @andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:66
-msgid ""
-"Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
-"@andrenete."
-msgstr ""
-"Není povolena prázdná koncovka (nesprávná komprese pro JPEG). Díky patří "
-"@andrenete."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:74
-msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
-msgstr "Nové jméno. Díky patří @bertob, @jannuary und @jimmac."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:75
-msgid "A new icon designed by @jimmac."
-msgstr "Nová ikona navržená od @jimmac."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:76
-msgid "Support for dragging folders."
-msgstr "Podpora pro přetahování složek."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:84
-msgid "Just fix a packaging file."
-msgstr "Jen opraven balíkovací soubor."
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:92
-msgid "Just update GNOME runtime"
-msgstr "Jen aktualizován GNOME runtime"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:100
-msgid "Add Portuguese (Brazil) translation"
-msgstr "Přidán portugalský (Brazílie) překlad"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:101
-msgid "Don't use legacy path for metadata"
-msgstr "Již není použit starý umíštění pro metadata"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:109
-msgid "Fix compression of jpg files that produced 0b files"
-msgstr "Oprava komprese souborů jpg, která vytvářela soubory 0b"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:117
-msgid "Add an option to whether keep or not metadata of images"
-msgstr "Přidána možnost, zda zachovat nebo nezachovat metadata obrázků"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:118
-msgid "Replace mozjpeg lib by jpegoptim"
-msgstr "Nahrazena knihovna mozjpeg knihovnou jpegoptim"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:119
-#: data/com.github.huluti.Curtail.appdata.xml.in:143
-#: data/com.github.huluti.Curtail.appdata.xml.in:162
-msgid "Update translations"
-msgstr "Aktualizovány překlady"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:223
-msgid "Various optimizations"
-msgstr "Různé optimalizace"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:224
-msgid "Improve error messages"
-msgstr "Zlepšení chybových hlášení"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:225
-msgid "Improve some texts"
-msgstr "Zlepšení některých textů"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:226
-msgid "Change description"
-msgstr "Změněna popisku"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:234
-msgid "Initial version"
-msgstr "První verze"
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "komprese;optimalizace;obrázek;fotka;"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -232,243 +60,626 @@ msgstr "Uložit do nového souboru"
 msgid "Save the compressed image into a new file."
 msgstr "Uložit komprimovaný obrázek do nového souboru."
 
-#: data/com.github.huluti.Curtail.gschema.xml:11 src/ui/preferences.ui:135
-msgid "Keep metadata"
-msgstr "Zachovat metadata"
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Select the mode to append text for a new file"
+msgstr "Vyberte režim přidání textu do názvu nového souboru"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr ""
+"Nastavit, jak se přidá další text (jako předpona nebo přípona) k názvu "
+"nového souboru."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Enable recursive compression in folders"
+msgstr "Povolit rekurzivní kompresi ve složkách"
+
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "Toto nastavení umožňuje kompresi rekurzivním způsobem ve složkách."
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve metadata"
+msgstr "Zachovat metadata"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
 msgid "This setting preserves metadata of images."
 msgstr "Toto nastavení zachovává metadata obrázků."
 
-#: data/com.github.huluti.Curtail.gschema.xml:16
+#: data/com.github.huluti.Curtail.gschema.xml:26
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Pokud je to možné, zachovají se oprávnění k souborům a časová razítka"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Pokud je to možné, zachovají se oprávnění souboru a časová razítka obrázků."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
 msgid "Enable lossy mode"
 msgstr "Povolit ztrátový režim"
 
-#: data/com.github.huluti.Curtail.gschema.xml:17
+#: data/com.github.huluti.Curtail.gschema.xml:32
 msgid "Use lossy mode to compress images."
 msgstr "Povolit ztrátový režim pro komprimované obrázky."
 
-#: data/com.github.huluti.Curtail.gschema.xml:21 src/ui/preferences.ui:85
-msgid "Suffix to append at end of new file"
-msgstr "Přípona, která se připojí na konec nového souboru"
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "Suffix/Prefix to append at new file"
+msgstr "Přípona/předpona názvu nového souboru"
 
-#: data/com.github.huluti.Curtail.gschema.xml:22
-msgid "Suffix to append at end of new file."
-msgstr "Přípona, která se připojí na konec nového souboru."
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Suffix/Prefix to append at new file."
+msgstr "Přípona/předpona názvu nového souboru."
 
-#: data/com.github.huluti.Curtail.gschema.xml:26 src/ui/preferences.ui:177
+#: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossy Compression Level"
 msgstr "Úroveň ztrátové komprese PNG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:27
+#: data/com.github.huluti.Curtail.gschema.xml:42
 msgid "Lossy compression level to use for PNG images."
-msgstr "Úroveň ztrátové komprese, která se použije pro obrázky PNG."
+msgstr "Úroveň ztrátové komprese použitá pro obrázky PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:31
+#: data/com.github.huluti.Curtail.gschema.xml:46
 msgid "PNG Lossless Compression Level"
 msgstr "Úroveň bezztrátové komprese PNG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:32
+#: data/com.github.huluti.Curtail.gschema.xml:47
 msgid "Lossless compression level to use for PNG images."
-msgstr "Úroveň bezeztrátové komprese, která se použije pro obrázky PNG.."
+msgstr "Úroveň bezeztrátové komprese použitá pro obrázky PNG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:36
-msgid "WebP Lossless Compression Level"
-msgstr "Úroveň bezeztrátové komprese WebP"
-
-#: data/com.github.huluti.Curtail.gschema.xml:37
-msgid "Lossless compression level to use for WebP images."
-msgstr "Úroveň bezeztrátové komprese, která se použije pro obrázky WebP."
-
-#: data/com.github.huluti.Curtail.gschema.xml:41 src/ui/preferences.ui:204
+#: data/com.github.huluti.Curtail.gschema.xml:51
 msgid "JPG Lossy Compression Level"
 msgstr "Úroveň ztrátové komprese JPG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:42
+#: data/com.github.huluti.Curtail.gschema.xml:52
 msgid "Lossy compression level to use for JPG images."
-msgstr "Úroveň ztrátové komprese, která se použije pro obrázky JPG."
+msgstr "Úroveň ztrátové komprese použitá pro obrázky JPG."
 
-#: data/com.github.huluti.Curtail.gschema.xml:46 src/ui/preferences.ui:217
+#: data/com.github.huluti.Curtail.gschema.xml:56
 msgid "WebP Lossy Compression Level"
 msgstr "Úroveň ztrátové komprese WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:47
+#: data/com.github.huluti.Curtail.gschema.xml:57
 msgid "Lossy compression level to use for WebP images."
-msgstr "Úroveň ztrátové komprese, která se použije pro obrázky WebP."
+msgstr "Úroveň ztrátové komprese použitá pro obrázky WebP."
 
-#: data/com.github.huluti.Curtail.gschema.xml:51
-msgid "Enable progressive encoding for jpegs"
-msgstr "Povolit progresivní zakódovaní pro obrázky jpeg"
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "WebP Lossless Compression Level"
+msgstr "Úroveň bezeztrátové komprese WebP"
 
-#: data/com.github.huluti.Curtail.gschema.xml:52
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Lossless compression level to use for WebP images."
+msgstr "Úroveň bezeztrátové komprese použitá pro obrázky WebP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Povolit progresivní kódovaní pro obrázky JPEG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
 msgid "Optionally encode jpeg images progressively."
 msgstr "Volitelně můžete obrázky jpeg kódovat postupně."
 
-#: data/com.github.huluti.Curtail.gschema.xml:56 src/ui/preferences.ui:59
-msgid "Enable dark theme"
-msgstr "Povolit tmavý motiv"
+#: data/com.github.huluti.Curtail.gschema.xml:71
+msgid "Enable maximum compression for SVG images"
+msgstr "Povolit maximální kompresi pro obrázky SVG"
 
-#: data/com.github.huluti.Curtail.gschema.xml:57
-msgid "Use dark theme for the windows."
-msgstr "Použít tmavý motiv pro okna."
+#: data/com.github.huluti.Curtail.gschema.xml:72
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Povolit maximální čištění obrázků SVG."
 
-#: src/ui/window.ui:47
-msgid "Drag and drop your images here..."
-msgstr "Přetáhněte sem vaše obrázky..."
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.blp:50
+msgid "Compression Timeout"
+msgstr "Časový limit komprese"
 
-#: src/ui/window.ui:62
-msgid "or"
-msgstr "nebo"
+#: data/com.github.huluti.Curtail.gschema.xml:77
+msgid "Compression timeout for each image."
+msgstr "Časový limit komprese pro každý obrázek."
 
-#: src/ui/window.ui:75 src/window.py:173
-msgid "Browse your files"
-msgstr "Procházejte vaše soubory"
-
-#: src/ui/window.ui:100
-msgid "Lossless"
-msgstr "Bezztrátový"
-
-#: src/ui/window.ui:129
-msgid "Lossy"
-msgstr "Ztrátový"
-
-#: src/ui/preferences.ui:32 src/ui/menu.ui:6
+#: data/ui/preferences.blp:5 data/ui/window.blp:12
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: src/ui/preferences.ui:109
-msgid "Save the compressed image into a new file"
-msgstr "Uložit komprimovaný obrázek do nového souboru"
-
-#: src/ui/preferences.ui:158
+#: data/ui/preferences.blp:9
 msgid "General"
 msgstr "Obecné"
 
-#: src/ui/preferences.ui:255
-msgid "Compression"
-msgstr "Komprese"
+#: data/ui/preferences.blp:14
+msgid "Safe Mode"
+msgstr "Nouzový režim"
 
-#: src/ui/preferences.ui:288
+#: data/ui/preferences.blp:15
+msgid "Save the compressed image in a new file"
+msgstr "Uložit komprimovaný obrázek do nového souboru"
+
+#: data/ui/preferences.blp:19
+msgid "Naming Mode"
+msgstr "Režim pojmenovávání"
+
+#: data/ui/preferences.blp:20
+msgid "Select between suffix and prefix"
+msgstr "Vyberte mezi příponou a předponou"
+
+#: data/ui/preferences.blp:24
+msgid "Suffix"
+msgstr "Přípona"
+
+#: data/ui/preferences.blp:25
+msgid "Prefix"
+msgstr "Předpona"
+
+#: data/ui/preferences.blp:31
+msgid "New File Suffix/Prefix"
+msgstr "Přípona/předpona nového souboru"
+
+#: data/ui/preferences.blp:35
+msgid "Recursive Compression"
+msgstr "Rekurzivní komprese"
+
+#: data/ui/preferences.blp:36
+msgid "Enable or disable compression through subdirectories"
+msgstr "Povolit nebo zakázat kompresi prostřednictvím podadresářů"
+
+#: data/ui/preferences.blp:40
+msgid "Keep Metadata"
+msgstr "Zachovat metadata"
+
+#: data/ui/preferences.blp:41
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Uchovat části metadat, které neovlivňují vykreslování"
+
+#: data/ui/preferences.blp:45
+msgid "Keep File Attributes When Possible"
+msgstr "Pokud je to možné, ponechejte atributy souboru"
+
+#: data/ui/preferences.blp:46
 msgid ""
-"PNG Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
 msgstr ""
-"Úroveň bezeztrátové komprese PNG\n"
-"(čím vyšší, tím pomalejší)"
+"Nový soubor bude mít stejná oprávnění a časová razítka jako původní soubor"
 
-#: src/ui/preferences.ui:315
+#: data/ui/preferences.blp:51
+msgid "Set the timeout between images"
+msgstr "Nastavte časový limit mezi snímky"
+
+#: data/ui/preferences.blp:65
+msgid "Formats"
+msgstr "Formáty"
+
+#: data/ui/preferences.blp:72 data/ui/preferences.blp:98
+#: data/ui/preferences.blp:118
+msgid "Lossy Compression"
+msgstr "Ztrátová komprese"
+
+#: data/ui/preferences.blp:73 data/ui/preferences.blp:99
+#: data/ui/preferences.blp:119
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr "Nastavte kvalitu generovaného obrázku, 100 je nejlepší kvalita"
+
+#: data/ui/preferences.blp:83 data/ui/preferences.blp:129
+msgid "Lossless Compression"
+msgstr "Bezztrátová komprese"
+
+#: data/ui/preferences.blp:84 data/ui/preferences.blp:130
+msgid "Set the level of compression, 6 is the highest but slowest level"
+msgstr "Nastavte úroveň komprese, 6 je nejvyšší, ale nejpomalejší úroveň"
+
+#: data/ui/preferences.blp:109
+msgid "Progressive Encode"
+msgstr "Progresivní kódování"
+
+#: data/ui/preferences.blp:110
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr ""
+"Povolit přírůstkové vykreslování obrazu, přechod od rozmazaného k ostrému"
+
+#: data/ui/preferences.blp:144
+msgid "Maximum Compression Level"
+msgstr "Maximální úroveň komprese"
+
+#: data/ui/preferences.blp:145
+msgid "This can be more destructive for the image"
+msgstr "Může být pro obrázek více destruktivní"
+
+#: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
+msgid "More Information"
+msgstr "Další informace"
+
+#: data/ui/result-item-row.blp:18
 msgid ""
-"WebP Lossless Compression Level\n"
-"(the higher it is, the slower it is)"
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
 msgstr ""
-"Bezeztrátová komprese WebP\n"
-"(čím vyšší, tím pomalejší)"
+"Komprese byla přeskočena, protože komprimace souboru by měla za následek "
+"větší velikost souboru."
 
-#: src/ui/preferences.ui:329
-msgid "Progressive Encode JPG"
-msgstr "Progresivní kódování JPG"
+#: data/ui/shortcuts-dialog.blp:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Obecné"
 
-#: src/ui/preferences.ui:352
-msgid "Advanced"
-msgstr "Pokročilé"
+#: data/ui/shortcuts-dialog.blp:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Vybrat soubor"
 
-#: src/ui/apply.ui:7
-msgid "File already exists"
-msgstr "Soubor již existuje"
+#: data/ui/shortcuts-dialog.blp:14
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Předvolby"
 
-#: src/ui/apply.ui:26
-msgid "Compress"
-msgstr "Komprimovat"
+#: data/ui/shortcuts-dialog.blp:19
+msgctxt "shortcuts dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
 
-#: src/ui/apply.ui:39
-msgid "Skip"
-msgstr "Přeskočit"
+#: data/ui/shortcuts-dialog.blp:24
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Ukončit"
 
-#: src/ui/apply.ui:76
-msgid "Apply to all queue"
-msgstr "Použít pro všechny fronty"
+#: data/ui/window.blp:7
+msgid "Bulk Compress Directory"
+msgstr "Adresář hromadné komprese"
 
-#: src/ui/menu.ui:10
+#: data/ui/window.blp:17
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: data/ui/window.blp:22
 msgid "About Curtail"
 msgstr "O aplikaci Curtail"
 
-#: src/window.py:93
-msgid "Filename"
-msgstr "Název souboru"
+#: data/ui/window.blp:41 src/window.py:217
+msgid "Browse Files"
+msgstr "Procházet soubory"
 
-#: src/window.py:94
-msgid "Old Size"
-msgstr "Stará velikost"
+#: data/ui/window.blp:48
+msgid "Clear Results"
+msgstr "Vymazat výsledky"
 
-#: src/window.py:95
-msgid "New Size"
-msgstr "Nová velikost"
+#: data/ui/window.blp:60
+msgid "Main Menu"
+msgstr "Hlavní nabídka"
 
-#: src/window.py:96
-msgid "Savings"
-msgstr "Úspory"
+#: data/ui/window.blp:71
+msgid "_Change Mode"
+msgstr "_Změnit režim"
 
-#: src/window.py:160
-msgid "Images are saved with <b>'{}' suffix</b>."
-msgstr "Obrázky jsou uloženy a <b>'{}' příponou</b>."
+#: data/ui/window.blp:72
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Obrázky budou přepsány, postupujte opatrně"
 
-#: src/window.py:163
-msgid "Images are <b>overwritten</b>."
-msgstr "Obrázky jsou <b>přepsané</b>."
+#: data/ui/window.blp:79
+msgid "Drop images here to compress them"
+msgstr "Přetáhněte sem obrázky pro komprimaci"
 
-#: src/window.py:234
-msgid "Format not supported"
-msgstr "Formát není podporován"
+#: data/ui/window.blp:90
+msgid "_Browse Files"
+msgstr "_Procházet soubory"
 
-#: src/window.py:235
-msgid "The format of {} is not supported."
-msgstr "Formát {} není podporován."
+#: data/ui/window.blp:105
+msgid "Lossless"
+msgstr "Bezztrátová"
 
-#: src/window.py:239
-msgid "Path not valid"
-msgstr "Umíštění není správné"
+#: data/ui/window.blp:110
+msgid "Lossy"
+msgstr "Ztrátová"
 
-#: src/window.py:240
-msgid "{} doesn't exist."
-msgstr "{} neexistuje."
+#: data/ui/window.blp:119
+msgid "Analyzing Images"
+msgstr "Analyzování obrázků"
 
-#: src/window.py:329
-msgid "translator-credits"
-msgstr ""
-"vikdevelop\n"
-"Písek Pískovec"
+#: data/ui/window.blp:120
+msgid "Analyzing your images before compression…"
+msgstr "Analyzují se obrázky před kompresí…"
 
-#: src/window.py:331
-msgid "Distributed under the GNU GPL(v3) license.\n"
-msgstr "Šířeno pod licencí GNU GPL(v3).\n"
+#: src/compressor.py:43
+msgid "An unknown error has occurred."
+msgstr "Došlo k neznámé chybě"
 
-#: src/compressor.py:60
-msgid "An error has occurred"
-msgstr "Vyskytla se chyba"
+#: src/compressor.py:82
+msgid "Can't find the compressed file"
+msgstr "Nelze najít komprimovaný soubor"
 
-#: src/apply.py:49
-msgid ""
-"The file <b>{}</b> already exists.\n"
-"Do you want to compress the image anyway?"
-msgstr ""
-"Soubor <b>{}</b> již existuje.\n"
-"Přejete si obrázek komprimovat znovu?"
-
-#: src/tools.py:47
+#: src/tools.py:14
 msgid "All images"
 msgstr "Všechny obrázky"
 
-#: src/tools.py:53
+#: src/tools.py:21
 msgid "PNG images"
-msgstr "PNG obrázky"
+msgstr "Obrázky PNG"
 
-#: src/tools.py:57
+#: src/tools.py:25
 msgid "JPEG images"
-msgstr "JPEG obrázky"
+msgstr "Obrázky JPEG"
 
-#: src/tools.py:61
+#: src/tools.py:29
 msgid "WebP images"
-msgstr "WebP obrázky"
+msgstr "Obrázky WebP"
+
+#: src/tools.py:33
+msgid "SVG images"
+msgstr "Obrázky SVG"
+
+#: src/tools.py:123 src/tools.py:130 src/tools.py:137 src/tools.py:144
+#: src/tools.py:151 src/tools.py:176
+msgid "Version not found"
+msgstr "Verze nenalezena"
+
+#: src/window.py:146
+msgid "Skipped"
+msgstr "Přeskočeno"
+
+#: src/window.py:178
+msgid "Open Image"
+msgstr "Otevřít obrázek"
+
+#: src/window.py:179
+msgid "Show in Folder"
+msgstr "Zobrazit ve složce"
+
+#: src/window.py:207
+msgid "Overwrite mode"
+msgstr "Režim přepisování"
+
+#: src/window.py:235
+msgid "Browse Directories"
+msgstr "Procházet adresáře"
+
+#: src/window.py:261 src/window.py:270
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Opravdu chcete komprimovat obrázky v těchto adresářích?"
+
+#: src/window.py:263
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"Všechny obrázky ve vybraných adresářích a jejich podadresářích budou "
+"komprimovány. Původní obrázky nebudou upravovány."
+
+#: src/window.py:272
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"Všechny obrázky ve vybraných adresářích a jejich podadresářích budou "
+"komprimovány a přepsány!"
+
+#: src/window.py:277
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/window.py:278
+msgid "Compress"
+msgstr "Komprimovat"
+
+#: src/window.py:316
+msgid "No files found"
+msgstr "Nenalezeny žádné soubory"
+
+#: src/window.py:367
+msgid "translator-credits"
+msgstr ""
+"vikdevelop\n"
+"Písek Pískovec\n"
+"Václav Koterec"
+
+#: src/window.py:371
+msgid "Contributors"
+msgstr "Přispěvatelé"
+
+#~ msgid "Hugo Posnic"
+#~ msgstr "Hugo Posnic"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Obecné"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Předvolby"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Klávesové zkratky"
+
+#~ msgid "Compression has reached the configured timeout of {} seconds."
+#~ msgstr "Komprese dosáhla nakonfigurovaného časového limitu {} sekund."
+
+#~ msgid "Safe mode with '{}' suffix"
+#~ msgstr "Nouzový režim s příponou '{}'"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "Tento soubor neexistuje."
+
+#~ msgid "Format of this file is not supported."
+#~ msgstr "Formát tohoto souboru není podporován."
+
+#~ msgid "Here's the changelog of this version:"
+#~ msgstr "Zde je seznam změn této verze:"
+
+#~ msgid "Add WebP support. Thank's to @olokelo."
+#~ msgstr "Přidána podpora WebP. Díky patří @olokelo."
+
+#~ msgid "Add Croatian translation. Thank's to @milotype."
+#~ msgstr "Přidán chorvatský překlad. Díky patří @milotype."
+
+#~ msgid "Update Spanish translation. Thank's to @oscfdezdz."
+#~ msgstr "Aktualizovaný španělský překlad. Díky patří @oscofdezdz."
+
+#~ msgid "Update Portuguese (Brazil) translation. Thank's to @fulvio-alves."
+#~ msgstr "Aktualizovaný překlad portugalštiny (Brazílie). Díky @fulvio-alves."
+
+#~ msgid "Don't accept empty file. Thank's to @akozlovskiy119."
+#~ msgstr "Prázdné soubory nejsou přijímány. Díky @akozlovskiy119."
+
+#~ msgid "Better guess of extensions. Thank's to @akozlovskiy119."
+#~ msgstr "Lepší uhodnutí rozšíření (guess). Díky patří @akozlovskiy119."
+
+#~ msgid ""
+#~ "Use correct file listing format for drag-and-drop. Thank's to "
+#~ "@akozlovskiy119."
+#~ msgstr ""
+#~ "Je použit správný formát výpisu souborů pro přetahování. Díky "
+#~ "@akozlovskiy119."
+
+#~ msgid "Fix directory handling. Thank's to @akozlovskiy119."
+#~ msgstr "Opraveno předávání adresáře. Díky patří @akozlovskiy119."
+
+#~ msgid "Fix missing icon in LXQt, MATE, XFCE (#76). Thank's to @apandada1."
+#~ msgstr ""
+#~ "Opraveny chybějící ikony v LXQt, MATE, XFCE (#76). Díky patří @apandada1."
+
+#~ msgid "An option to progressive encode jpegs. Thank's to @trst."
+#~ msgstr "Možnost progresivně kódovat jpegy. Díky @trst."
+
+#~ msgid "Add Russian translation."
+#~ msgstr "Přidán ruský překlad."
+
+#~ msgid "Add Slovak translation."
+#~ msgstr "Přidán slovenský překlad."
+
+#~ msgid "Add Swedish translation."
+#~ msgstr "Přidán švedský překlad."
+
+#~ msgid "Better handling of existing files."
+#~ msgstr "Lepší práce s existujícími soubory."
+
+#~ msgid "Better appdata summary."
+#~ msgstr "Lepší shrnutí appdat."
+
+#~ msgid "Update Spanish translation."
+#~ msgstr "Aktualizovaný španělský překlad."
+
+#~ msgid "Compress images with extensions in uppercase."
+#~ msgstr "Komprimujte obrázky s příponou s velkými písmeny."
+
+#~ msgid "Center preferences window header switcher. Thank's to @andrenete."
+#~ msgstr "Vycentrován přepínač záhlaví okna předvoleb. Díky @andrenete."
+
+#~ msgid "Fix columns sorting. Thank's to @andrenete."
+#~ msgstr "Opraveno třídění sloupců. Díky @andrenete."
+
+#~ msgid ""
+#~ "Don't allow empty suffix (incorrect compression for JPEG). Thank's to "
+#~ "@andrenete."
+#~ msgstr ""
+#~ "Není povolena prázdná koncovka (nesprávná komprese pro JPEG). Díky patří "
+#~ "@andrenete."
+
+#~ msgid "A new name. Thank's to @bertob, @jannuary and @jimmac."
+#~ msgstr "Nové jméno. Díky patří @bertob, @jannuary und @jimmac."
+
+#~ msgid "A new icon designed by @jimmac."
+#~ msgstr "Nová ikona navržená od @jimmac."
+
+#~ msgid "Support for dragging folders."
+#~ msgstr "Podpora pro přetahování složek."
+
+#~ msgid "Just fix a packaging file."
+#~ msgstr "Jen opraven balíkovací soubor."
+
+#~ msgid "Just update GNOME runtime"
+#~ msgstr "Jen aktualizován GNOME runtime"
+
+#~ msgid "Add Portuguese (Brazil) translation"
+#~ msgstr "Přidán portugalský (Brazílie) překlad"
+
+#~ msgid "Don't use legacy path for metadata"
+#~ msgstr "Již není použit starý umíštění pro metadata"
+
+#~ msgid "Fix compression of jpg files that produced 0b files"
+#~ msgstr "Oprava komprese souborů jpg, která vytvářela soubory 0b"
+
+#~ msgid "Add an option to whether keep or not metadata of images"
+#~ msgstr "Přidána možnost, zda zachovat nebo nezachovat metadata obrázků"
+
+#~ msgid "Replace mozjpeg lib by jpegoptim"
+#~ msgstr "Nahrazena knihovna mozjpeg knihovnou jpegoptim"
+
+#~ msgid "Update translations"
+#~ msgstr "Aktualizovány překlady"
+
+#~ msgid "Various optimizations"
+#~ msgstr "Různé optimalizace"
+
+#~ msgid "Improve error messages"
+#~ msgstr "Zlepšení chybových hlášení"
+
+#~ msgid "Improve some texts"
+#~ msgstr "Zlepšení některých textů"
+
+#~ msgid "Initial version"
+#~ msgstr "První verze"
+
+#~ msgid "Enable dark theme"
+#~ msgstr "Povolit tmavý motiv"
+
+#~ msgid "Use dark theme for the windows."
+#~ msgstr "Použít tmavý motiv pro okna."
+
+#~ msgid "Drag and drop your images here..."
+#~ msgstr "Přetáhněte sem vaše obrázky..."
+
+#~ msgid "or"
+#~ msgstr "nebo"
+
+#~ msgid ""
+#~ "PNG Lossless Compression Level\n"
+#~ "(the higher it is, the slower it is)"
+#~ msgstr ""
+#~ "Úroveň bezeztrátové komprese PNG\n"
+#~ "(čím vyšší, tím pomalejší)"
+
+#~ msgid ""
+#~ "WebP Lossless Compression Level\n"
+#~ "(the higher it is, the slower it is)"
+#~ msgstr ""
+#~ "Bezeztrátová komprese WebP\n"
+#~ "(čím vyšší, tím pomalejší)"
+
+#~ msgid "Advanced"
+#~ msgstr "Pokročilé"
+
+#~ msgid "File already exists"
+#~ msgstr "Soubor již existuje"
+
+#~ msgid "Apply to all queue"
+#~ msgstr "Použít pro všechny fronty"
+
+#~ msgid "Filename"
+#~ msgstr "Název souboru"
+
+#~ msgid "Old Size"
+#~ msgstr "Stará velikost"
+
+#~ msgid "New Size"
+#~ msgstr "Nová velikost"
+
+#~ msgid "Savings"
+#~ msgstr "Úspory"
+
+#~ msgid "Images are <b>overwritten</b>."
+#~ msgstr "Obrázky jsou <b>přepsané</b>."
+
+#~ msgid "Format not supported"
+#~ msgstr "Formát není podporován"
+
+#~ msgid "Path not valid"
+#~ msgstr "Umíštění není správné"
+
+#~ msgid "Distributed under the GNU GPL(v3) license.\n"
+#~ msgstr "Šířeno pod licencí GNU GPL(v3).\n"
+
+#~ msgid ""
+#~ "The file <b>{}</b> already exists.\n"
+#~ "Do you want to compress the image anyway?"
+#~ msgstr ""
+#~ "Soubor <b>{}</b> již existuje.\n"
+#~ "Přejete si obrázek komprimovat znovu?"
 
 #~ msgid "Simple & useful image compressor."
 #~ msgstr "Jednoduchý a použitelný kompresor obrázků."
@@ -481,9 +692,6 @@ msgstr "WebP obrázky"
 
 #~ msgid "Nothing"
 #~ msgstr "Nic"
-
-#~ msgid "Compression not useful"
-#~ msgstr "Komprese není použitelná"
 
 #~ msgid "{} is already compressed at max with current options."
 #~ msgstr "{} je při současných možnostech již komprimován na maximum."
