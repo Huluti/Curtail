@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.16.1 - 2026-05-15
+### Changed
+- Fix translations
+
+### Fixed
+- Update translations
+
 ## 1.16.0 - 2026-05-03
 ### Added
 - Add webp and svg to mime type data
