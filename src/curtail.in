@@ -28,6 +28,7 @@ pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
 try:
 	locale.bindtextdomain('curtail', localedir)
+	locale.textdomain('curtail')
 except:
 	pass
 sys.path.insert(1, pkgdatadir)
