@@ -83,13 +83,6 @@ Translation of this project takes place on the GNOME translation platform,
 information on how to join a language team, or even to create one, please see
 [GNOME Translation Project wiki page](https://wiki.gnome.org/TranslationProject).
 
-## Donations
-
-Do you like the app? Would you like to support its development? Feel free to donate.
-
-[![Liberapay receiving](https://img.shields.io/liberapay/receives/hugoposnic)](https://liberapay.com/hugoposnic)
-[![Liberapay patrons](https://img.shields.io/liberapay/patrons/hugoposnic)](https://liberapay.com/hugoposnic)
-
 ## License
 
 GNU GENERAL PUBLIC LICENSE (v3)
