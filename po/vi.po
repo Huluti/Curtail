@@ -1,0 +1,474 @@
+# Vietnamese translation for Curtail.
+# Copyright (C) 2025 Curtail's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Curtail package.
+# Loc Huynh <huynhloc.contact@gmail.com>,  2025.
+# Cas Pascal <casboi86@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Curtail main\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2026-01-15 14:15+0000\n"
+"PO-Revision-Date: 2026-02-05 09:52+0700\n"
+"Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:7
+#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.ui:7
+#: data/ui/window.ui:36
+msgid "Curtail"
+msgstr "Curtail"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:8
+#: data/com.github.huluti.Curtail.desktop.in:4
+msgid "Compress your images"
+msgstr "Nén ảnh của bạn"
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:10
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"Tối ưu hóa hình ảnh của bạn bằng Curtail, một công cụ nén ảnh hữu ích hỗ trợ "
+"định dạng PNG, JPEG, WebP và SVG."
+
+#: data/com.github.huluti.Curtail.appdata.xml.in:12
+msgid ""
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Nó hỗ trợ cả hai chế độ nén không tổn hao (lossless) và nén có tổn hao "
+"(lossy), với tùy chọn giữ hoặc loại bỏ metadata của ảnh."
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "compress;optimize;image;photo;nen;anh;toi uu hoa;tối ưu hóa;"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Lưu vào tệp mới"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Lưu ảnh đã nén vào tệp mới."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Select the mode to append text for a new file"
+msgstr "Chọn chế độ để thêm văn bản cho tệp mới"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr "Đặt cách thêm văn bản bổ sung (như hậu tố hoặc tiền tố) cho tệp mới."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Enable recursive compression in folders"
+msgstr "Bật nén đệ quy trong thư mục"
+
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "Tùy chọn này kích hoạt nén theo cách đệ quy trong các thư mục."
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve metadata"
+msgstr "Giữ metadata"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting preserves metadata of images."
+msgstr "Tùy chọn này giữ lại metadata của ảnh."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Giữ quyền truy cập và dấu thời gian của tệp nếu có thể"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr "Tùy chọn này giữ quyền truy cập và dấu thời gian của ảnh nếu có thể."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
+msgid "Enable lossy mode"
+msgstr "Bật chế độ nén có tổn hao"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Use lossy mode to compress images."
+msgstr "Sử dụng chế độ nén có tổn hao (lossy) để nén ảnh."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "Suffix/Prefix to append at new file"
+msgstr "Hậu tố/Tiền tố để thêm vào tệp mới"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Suffix/Prefix to append at new file."
+msgstr "Hậu tố/Tiền tố để thêm vào tệp mới."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "PNG Lossy Compression Level"
+msgstr "Mức nén Lossy PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Lossy compression level to use for PNG images."
+msgstr "Mức nén tổn hao để sử dụng cho ảnh PNG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46
+msgid "PNG Lossless Compression Level"
+msgstr "Mức nén Lossless PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossless compression level to use for PNG images."
+msgstr "Mức nén không tổn hao để sử dụng cho ảnh PNG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
+msgid "JPG Lossy Compression Level"
+msgstr "Mức nén Lossy JPG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossy compression level to use for JPG images."
+msgstr "Mức nén tổn hao để sử dụng cho ảnh JPG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
+msgid "WebP Lossy Compression Level"
+msgstr "Mức nén Lossy WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Lossy compression level to use for WebP images."
+msgstr "Mức nén tổn hao để sử dụng cho ảnh WebP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "WebP Lossless Compression Level"
+msgstr "Mức nén Lossless WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Lossless compression level to use for WebP images."
+msgstr "Mức nén không tổn hao để sử dụng cho ảnh WebP."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Bật mã hóa progressive cho ảnh JPEG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Optionally encode jpeg images progressively."
+msgstr "Tùy chọn mã hóa ảnh JPEG theo dạng progressive."
+
+#: data/com.github.huluti.Curtail.gschema.xml:71
+msgid "Enable maximum compression for SVG images"
+msgstr "Bật nén tối đa cho ảnh SVG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:72
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Bật dọn tối đa cho ảnh SVG."
+
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.ui:59
+msgid "Compression Timeout"
+msgstr "Thời Gian Chờ Nén"
+
+#: data/com.github.huluti.Curtail.gschema.xml:77
+msgid "Compression timeout for each image."
+msgstr "Thời gian chờ nén cho mỗi ảnh."
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Chung"
+
+#: data/ui/shortcuts-dialog.ui:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Chọn Tệp"
+
+#: data/ui/shortcuts-dialog.ui:15
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Tùy Chọn"
+
+#: data/ui/shortcuts-dialog.ui:21
+msgctxt "shortcuts dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Phím Tắt"
+
+#: data/ui/shortcuts-dialog.ui:27
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Thoát"
+
+#: data/ui/preferences.ui:4 data/ui/menu.ui:10
+msgid "Preferences"
+msgstr "Tùy Chọn"
+
+#: data/ui/preferences.ui:8
+msgid "General"
+msgstr "Chung"
+
+#: data/ui/preferences.ui:14
+msgid "Safe Mode"
+msgstr "Chế Độ An Toàn"
+
+#: data/ui/preferences.ui:15
+msgid "Save the compressed image in a new file"
+msgstr "Lưu ảnh đã nén vào tệp mới"
+
+#: data/ui/preferences.ui:21
+msgid "Naming Mode"
+msgstr "Chế Độ Đặt Tên"
+
+#: data/ui/preferences.ui:22
+msgid "Select between suffix and prefix"
+msgstr "Chọn giữa hậu tố và tiền tố"
+
+#: data/ui/preferences.ui:26
+msgid "Suffix"
+msgstr "Hậu tố"
+
+#: data/ui/preferences.ui:27
+msgid "Prefix"
+msgstr "Tiền tố"
+
+#: data/ui/preferences.ui:36
+msgid "New File Suffix/Prefix"
+msgstr "Hậu Tố/tiền Tố Cho Tệp Mới"
+
+#: data/ui/preferences.ui:41
+msgid "Recursive Compression"
+msgstr "Nén Đệ Quy"
+
+#: data/ui/preferences.ui:42
+msgid "Enable or disable compression through subdirectories"
+msgstr "Bật hoặc tắt nén trong các thư mục con"
+
+#: data/ui/preferences.ui:47
+msgid "Keep Metadata"
+msgstr "Giữ metadata"
+
+#: data/ui/preferences.ui:48
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Giữ các khối metadata không ảnh hưởng đến hiển thị"
+
+#: data/ui/preferences.ui:53
+msgid "Keep File Attributes When Possible"
+msgstr "Giữ thuộc tính tệp khi có thểaGiữ Thuộc Tính Tệp Khi Có Thể"
+
+#: data/ui/preferences.ui:54
+msgid ""
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr "Đảm bảo tệp mới có cùng quyền và dấu thời gian với tệp gốc"
+
+#: data/ui/preferences.ui:60
+msgid "Set the timeout between images"
+msgstr "Đặt thời gian chờ giữa các ảnh"
+
+#: data/ui/preferences.ui:78
+msgid "Formats"
+msgstr "Định Dạng"
+
+#: data/ui/preferences.ui:85 data/ui/preferences.ui:116
+#: data/ui/preferences.ui:140
+msgid "Lossy Compression"
+msgstr "Nén Tổn Hao"
+
+#: data/ui/preferences.ui:86 data/ui/preferences.ui:117
+#: data/ui/preferences.ui:141
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr "Đặt chất lượng của ảnh tạo ra, 100 là chất lượng tốt nhất"
+
+#: data/ui/preferences.ui:98 data/ui/preferences.ui:153
+msgid "Lossless Compression Level"
+msgstr "Mức Nén Không Tổn Hao"
+
+#: data/ui/preferences.ui:99 data/ui/preferences.ui:154
+msgid "Set the level of the compression, 6 is the highest but slowest level"
+msgstr "Đặt mức nén, 6 là mức cao nhất nhưng chậm nhất"
+
+#: data/ui/preferences.ui:129
+msgid "Progressive Encode"
+msgstr "Mã Hóa Progressivea"
+
+#: data/ui/preferences.ui:130
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr "Bật hiển thị ảnh tăng dần, từ mờ đến rõ"
+
+#: data/ui/preferences.ui:171
+msgid "Maximum Compression Level"
+msgstr "Mức Nén Tối Đa"
+
+#: data/ui/preferences.ui:172
+msgid "This can be more destructive for the image"
+msgstr "Điều này có thể gây hư hại nhiều hơn cho ảnh"
+
+#: data/ui/menu.ui:6
+msgid "Bulk Compress Directory"
+msgstr "Nén Hàng Loạt Thư Mục"
+
+#: data/ui/menu.ui:14
+msgid "Keyboard Shortcuts"
+msgstr "Phím Tắt"
+
+#: data/ui/menu.ui:18
+msgid "About Curtail"
+msgstr "Giới thiệu Curtail"
+
+#: data/ui/window.ui:22 src/window.py:304
+msgid "Browse Files"
+msgstr "Duyệt Tệp"
+
+#: data/ui/window.ui:29
+msgid "Clear Results"
+msgstr "Xóa Kết Quả"
+
+#: data/ui/window.ui:43
+msgid "Main Menu"
+msgstr "Menu Chính"
+
+#: data/ui/window.ui:54
+msgid "_Change Mode"
+msgstr "_Thay đổi chế độ"
+
+#: data/ui/window.ui:55
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Ảnh sẽ bị ghi đè, thực hiện cẩn thận"
+
+#: data/ui/window.ui:63
+msgid "Drop images here to compress them"
+msgstr "Thả ảnh vào đây để nén chúng"
+
+#: data/ui/window.ui:70
+msgid "_Browse Files"
+msgstr "_Duyệt Tệp"
+
+#: data/ui/window.ui:85
+msgid "Lossless"
+msgstr "Không Tổn Hao"
+
+#: data/ui/window.ui:91
+msgid "Lossy"
+msgstr "Tổn Hao"
+
+#: data/ui/window.ui:107
+msgid "Getting things ready"
+msgstr "Đang chuẩn bị"
+
+#: data/ui/window.ui:108
+msgid "Analyzing your images before compression..."
+msgstr "Đang xử lý ảnh của bạn trước khi nén..."
+
+#: src/compressor.py:118
+msgid "Compression has reached the configured timeout of {} seconds."
+msgstr "Quá trình nén đã đạt thời gian chờ tối đa đã cấu hình là {} giây."
+
+#: src/compressor.py:123
+msgid "An unknown error has occurred"
+msgstr "Đã xảy ra lỗi không xác định"
+
+#: src/compressor.py:168
+msgid "Can't find the compressed file"
+msgstr "Không thể tìm thấy tệp đã nén"
+
+#: src/tools.py:33
+msgid "All images"
+msgstr "Tất cả ảnh"
+
+#: src/tools.py:40
+msgid "PNG images"
+msgstr "Ảnh PNG"
+
+#: src/tools.py:44
+msgid "JPEG images"
+msgstr "Ảnh JPEG"
+
+#: src/tools.py:48
+msgid "WebP images"
+msgstr "Ảnh WebP"
+
+#: src/tools.py:52
+msgid "SVG images"
+msgstr "Ảnh SVG"
+
+#: src/tools.py:155 src/tools.py:162 src/tools.py:169 src/tools.py:176
+#: src/tools.py:183 src/tools.py:210
+msgid "Version not found"
+msgstr "Không tìm thấy phiên bản"
+
+#: src/window.py:161
+msgid "Skipped"
+msgstr "Bị Bỏ Qua"
+
+#: src/window.py:182
+msgid "More Information"
+msgstr "Thông Tin Thêm"
+
+#: src/window.py:191
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr ""
+"Quá trình nén bị bỏ qua vì việc nén tệp sẽ dẫn đến kích thước tệp lớn hơn."
+
+#: src/window.py:261
+msgid "Open Image"
+msgstr "Mở Hình Ảnh"
+
+#: src/window.py:262
+msgid "Show in Folder"
+msgstr "Hiển Thị trong Thư Mục"
+
+#: src/window.py:294
+msgid "Overwrite mode"
+msgstr "Chế độ ghi đè"
+
+#: src/window.py:319
+msgid "Browse Directories"
+msgstr "Duyệt Thư Mục"
+
+#: src/window.py:342 src/window.py:351
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Bạn có chắc chắn muốn nén ảnh trong các thư mục này không?"
+
+#: src/window.py:344
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"Tất cả ảnh trong các thư mục được chọn và các thư mục con của chúng sẽ được "
+"nén. Ảnh gốc sẽ không bị thay đổi."
+
+#: src/window.py:353
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"Tất cả ảnh trong các thư mục được chọn và các thư mục con của chúng sẽ bị "
+"nén và ghi đè!"
+
+#: src/window.py:358
+msgid "Cancel"
+msgstr "Hủy"
+
+#: src/window.py:359
+msgid "Compress"
+msgstr "Nén"
+
+#: src/window.py:404
+msgid "Format of this file is not supported."
+msgstr "Định dạng của tệp này không được hỗ trợ."
+
+#: src/window.py:406
+msgid "Unable to read file information."
+msgstr "Gặp lỗi khi đọc thông tin tệp."
+
+#: src/window.py:459
+msgid "No files found"
+msgstr "Không tìm thấy tệp nào"
+
+#: src/window.py:522
+msgid "translator-credits"
+msgstr "Loc Huynh <huynhloc.contact@gmail.com>"
+
+#: src/window.py:526
+msgid "Contributors"
+msgstr "Người đóng góp"
