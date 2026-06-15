@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-05-15 20:01+0000\n"
-"PO-Revision-Date: 2026-05-25 15:31+0100\n"
+"POT-Creation-Date: 2026-05-25 09:13+0000\n"
+"PO-Revision-Date: 2026-06-15 10:38+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -36,15 +36,15 @@ msgstr "Lettya"
 msgid "Compress your images"
 msgstr "Gwaska agas skeusennow"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:10
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
-"Gwaska agas skeusennow gans Curtail, gwaskell skeusen gweresek a skoodh "
+"Gwaska agas skeusennow gans Curtail, gwaskell skeusen gweresek neb a skoodh "
 "eghennow restren PNG, JPEG, WebP, ha SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -67,7 +67,7 @@ msgstr "Sawya an restren waskys yn restren nowydh."
 
 #: data/com.github.huluti.Curtail.gschema.xml:11
 msgid "Select the mode to append text for a new file"
-msgstr "Dewis an fordh dhe ystyn tekst rag restren nowydh"
+msgstr "Dewis an fordh rag ystyn tekst rag restren nowydh"
 
 #: data/com.github.huluti.Curtail.gschema.xml:12
 msgid ""
@@ -243,7 +243,7 @@ msgid ""
 "Ensure the new file has the same permissions and timestamps as the original "
 "file"
 msgstr ""
-"Surhe yma dhe'n restren nowydh an gumyasow ha termynyow geth dell an restren "
+"Surhe yma dhe'n restren nowydh an keth kumyasow ha termynyow avel an restren "
 "wreydhek"
 
 #: data/ui/preferences.blp:51
@@ -318,7 +318,7 @@ msgstr "Dewisyow"
 #: data/ui/shortcuts-dialog.blp:19
 msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
-msgstr "Kesunyansow Vysowek"
+msgstr "Kesunyansow Bysowek"
 
 #: data/ui/shortcuts-dialog.blp:24
 msgctxt "shortcuts dialog"
@@ -331,7 +331,7 @@ msgstr "Gwaska Braster Restrenva"
 
 #: data/ui/window.blp:17
 msgid "Keyboard Shortcuts"
-msgstr "Kesunyansow Vysowek"
+msgstr "Kesunyansow Bysowek"
 
 #: data/ui/window.blp:22
 msgid "About Curtail"
