@@ -1,14 +1,15 @@
-# curtail.pot
+# Norwegian bokmål translation of Curtail
 # Copyright (C) 2021 Hugo Posnic
 # This file is distributed under the same license as the curtail package.
 # Brage <bragefuglseth@gnome.org>, 2024.
+# Kjartan Maraas <kmaraas@gnome.org>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-05-03 19:10+0000\n"
-"PO-Revision-Date: 2026-05-14 22:57+0200\n"
+"POT-Creation-Date: 2026-05-25 09:13+0000\n"
+"PO-Revision-Date: 2026-07-10 12:42+0200\n"
 "Last-Translator: Kjartan Maraas <kjartan.maraas@proton.me>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -28,7 +29,7 @@ msgstr "Curtail"
 msgid "Compress your images"
 msgstr "Komprimer bilder"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:10
+#: data/com.github.huluti.Curtail.appdata.xml.in:11
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
@@ -36,7 +37,7 @@ msgstr ""
 "Curtail lar deg lagre bildene dine mer plasseffektivt ved å optimalisere "
 "filstørrelsene deres, uansett om det er PNG-, JPEG-, WebP- eller SVG-filer."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:12
+#: data/com.github.huluti.Curtail.appdata.xml.in:14
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
@@ -100,16 +101,12 @@ msgid "Use lossy mode to compress images."
 msgstr "Godta kvalitetsreduksjon ved komprimering av bilder."
 
 #: data/com.github.huluti.Curtail.gschema.xml:36
-#, fuzzy
-#| msgid "Suffix to append at end of new file"
 msgid "Suffix/Prefix to append at new file"
-msgstr "Filsuffiks"
+msgstr "Suffiks/prefiks for ny fil"
 
 #: data/com.github.huluti.Curtail.gschema.xml:37
-#, fuzzy
-#| msgid "Suffix to append at end of new file."
 msgid "Suffix/Prefix to append at new file."
-msgstr "Suffiks som skal settes på slutten av nye filnavn."
+msgstr "Suffiks/prefiks som skal settes på ny fil."
 
 #: data/com.github.huluti.Curtail.gschema.xml:41
 msgid "PNG Lossy Compression Level"
@@ -273,7 +270,9 @@ msgstr "Tapsfri komprimering"
 
 #: data/ui/preferences.blp:84 data/ui/preferences.blp:130
 msgid "Set the level of compression, 6 is the highest but slowest level"
-msgstr "Komprimeringsnivået på bilder komprimert i tapsfri modus, på en skala fra 0 til 6. Høyere nivå gir økt tidsbruk."
+msgstr ""
+"Komprimeringsnivået på bilder komprimert i tapsfri modus, på en skala fra 0 "
+"til 6. Høyere nivå gir økt tidsbruk."
 
 #: data/ui/preferences.blp:109
 msgid "Progressive Encode"
@@ -472,7 +471,9 @@ msgstr "Fant ingen filer"
 
 #: src/window.py:367
 msgid "translator-credits"
-msgstr "Brage Fuglseth https://bragefuglseth.dev"
+msgstr ""
+"Brage Fuglseth https://bragefuglseth.dev\n"
+"Kjartan Maraas <kmaraas@gnome.org>"
 
 #: src/window.py:371
 msgid "Contributors"
