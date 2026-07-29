@@ -86,7 +86,7 @@ celerybeat-schedule
 env/
 venv/
 ENV/
-env.bak/
+ENV.bak/
 venv.bak/
 
 # Spyder project settings
@@ -111,3 +111,21 @@ _build
 .flatpak-builder/
 
 uv.lock
+
+# Debian packaging build artifacts
+*.deb
+*.ddeb
+*.build
+*.buildinfo
+*.changes
+debian/*.debhelper
+debian/*.substvars
+debian/files
+debian/curtail/
+.debhelper/
+
+# AppImage build artifacts
+*.AppImage
+appimagetool
+appdir/
+curtail-src/
