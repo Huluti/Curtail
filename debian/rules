@@ -1,10 +1,28 @@
 #!/usr/bin/make -f
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-
 %:
-	dh $@ --buildsystem=meson
+	dh $@
+
+override_dh_auto_configure:
+	meson setup builddir
+
+override_dh_auto_build:
+	meson compile -C builddir
 
 override_dh_auto_install:
-	dh_auto_install
-	find ./debian -type f -name "LICENSE" -delete
+	meson install -C builddir --destdir debian/curtail
+
+override_dh_auto_clean:
+	rm -rf builddir
+
+override_dh_install:
+	dh_install
+	# Install AppStream metainfo
+	install -Dm644 data/com.github.huluti.Curtail.metainfo.xml \
+		debian/curtail/usr/share/metainfo/com.github.huluti.Curtail.metainfo.xml
+	# Install desktop file
+	install -Dm644 data/com.github.huluti.Curtail.desktop \
+		debian/curtail/usr/share/applications/com.github.huluti.Curtail.desktop
+	# Install icon
+	install -Dm644 data/icons/hicolor/scalable/apps/com.github.huluti.Curtail.svg \
+		debian/curtail/usr/share/icons/hicolor/scalable/apps/com.github.huluti.Curtail.svg

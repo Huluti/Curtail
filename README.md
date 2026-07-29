@@ -27,7 +27,31 @@ Curtail is available as a Flatpak package.
 You can also install it by using the following command-line:
 
     flatpak install flathub com.github.huluti.Curtail
-    
+
+### Debian Package (.deb)
+
+A Debian package is available for Debian-based distributions (Ubuntu, Linux Mint, etc.). Download the latest `.deb` file from the [Actions page](https://github.com/Huluti/Curtail/actions) under the "Build deb package" workflow.
+
+**Installation:**
+
+```sh
+sudo dpkg -i curtail_*.deb
+```
+
+**Python Dependencies:**
+
+The deb package requires Python dependencies that are not bundled due to version compatibility. Install them with pip:
+
+```sh
+pip install --break-system-packages f3d Wand
+```
+
+**Note:** The `--break-system-packages` flag is used to install system-wide. Alternatively, you can use a virtual environment or `pipx` if preferred.
+
+**Troubleshooting:**
+
+If you encounter any issues during installation or runtime, please refer to the [PACKAGING_TROUBLESHOOTING.md](PACKAGING_TROUBLESHOOTING.md) guide for solutions to common problems.
+
 ### Distro packages
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/curtail.svg)](https://repology.org/project/curtail/versions)
@@ -78,6 +102,7 @@ Curtail uses a number of open source projects to work properly:
 - [Scour](https://gitlab.com/inkscape/extras/scour)
 
 ## Translations
+
 Translation of this project takes place on the GNOME translation platform,
 [Damned Lies](https://l10n.gnome.org/module/Curtail). For further
 information on how to join a language team, or even to create one, please see

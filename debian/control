@@ -2,15 +2,18 @@ Source: curtail
 Section: gnome
 Priority: optional
 Maintainer: Archisman Panigrahi <apandada1@gmail.com>
-Build-Depends: debhelper-compat(=10),
+Build-Depends: debhelper-compat (= 13),
 	desktop-file-utils,
 	gettext,
 	meson (>= 0.50),
 	pkg-config,
 	libglib2.0-dev,
 	appstream,
-	libadwaita-1-dev
-Standards-Version: 4.5.0
+	libadwaita-1-dev,
+	python3-gi,
+	gir1.2-gtk-4.0,
+	gir1.2-adw-1
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://github.com/Huluti/Curtail
 Vcs-Browser: https://github.com/Huluti/Curtail
@@ -19,13 +22,18 @@ Vcs-Git: https://github.com/Huluti/Curtail.git
 Package: curtail
 Architecture: all
 Depends: ${misc:Depends},
+	${python3:Depends},
+	gir1.2-gtk-4.0,
 	gir1.2-adw-1,
 	python3,
 	oxipng,
 	pngquant,
 	jpegoptim,
-	webp
+	webp,
+	scour
+Recommends: python3-pil
 Description: Compress your images
- Curtail (previously ImCompressor) is an useful image compressor, supporting PNG and JPEG file types.
- It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.
- It is inspired by Trimage and Image-Optimizer.
+ Curtail (previously ImCompressor) is an useful image compressor, supporting PNG, JPEG,
+ WebP and SVG file types. It support both lossless and lossy compression modes with an
+ option to whether keep or not metadata of images. It is inspired by Trimage and
+ Image-Optimizer.
