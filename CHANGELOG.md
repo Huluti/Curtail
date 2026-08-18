@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+### Fixed
+- Fix timestamps not being preserved for compressed images (#205)
+
 ## 1.16.2 - 2026-05-25
 ### Fixed
 - Fix JPG compression in non-safe mode

@@ -29,6 +29,14 @@ class ResultItemManager:
         host_path = file_info.get_attribute_string("xattr::document-portal.host-path")
         result_item.filename = host_path if host_path else file.get_path()
 
+        # Get original timestamps to restore them after compression if possible
+        try:
+            stat = os.stat(result_item.filename)
+            result_item.atime = stat.st_atime
+            result_item.mtime = stat.st_mtime
+        except OSError:
+            pass
+
         # Display name
         display_name = file_info.get_display_name()
         result_item.name = display_name if display_name else file.get_basename()

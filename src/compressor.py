@@ -1,4 +1,5 @@
 import logging
+import os
 import subprocess
 import html
 from abc import ABC, abstractmethod
@@ -74,6 +75,14 @@ class Compressor(ABC):
                 source.copy(
                     dest, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA
                 )
+                if self.settings.file_attributes:
+                    try:
+                        os.utime(
+                            final_path,
+                            (result_item.atime, result_item.mtime),
+                        )
+                    except OSError:
+                        pass
 
             # Remove the temp file
             new_file.delete()
