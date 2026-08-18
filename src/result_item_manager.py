@@ -5,7 +5,7 @@ from .result_item import ResultItem
 from .tools import sizeof_fmt
 
 
-ALLOWED_MIME_TYPES = {"image/jpeg", "image/png", "image/webp", "image/svg+xml"}
+ALLOWED_MIME_TYPES = {"image/jpeg", "image/png", "image/webp", "image/avif", "image/svg+xml"}
 
 
 class ResultItemManager:

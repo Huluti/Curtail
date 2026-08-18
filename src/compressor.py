@@ -1,6 +1,7 @@
 import logging
 import subprocess
 import html
+import os
 from abc import ABC, abstractmethod
 from typing import Callable
 
@@ -23,6 +24,9 @@ class Compressor(ABC):
     def build_command(
         self, result_item: ResultItem
     ) -> list[tuple[list[str], str | None]]:
+        return []
+
+    def get_intermediate_files(self, result_item: ResultItem) -> list[str]:
         return []
 
     def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
@@ -87,5 +91,11 @@ class Compressor(ABC):
             logging.error(str(output))
             result_item.error_message = _("Can't find the compressed file")
             result_item.error = True
+
+        for path in self.get_intermediate_files(result_item):
+            try:
+                os.remove(path)
+            except OSError:
+                pass
 
         GLib.idle_add(c_update_result_item, result_item)

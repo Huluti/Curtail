@@ -4,13 +4,13 @@
 
 ## Compress your images
 
-Curtail (previously ImCompressor) is an useful image compressor, supporting PNG, JPEG, WebP and SVG file types.
+Curtail (previously ImCompressor) is an useful image compressor, supporting PNG, JPEG, WebP, AVIF and SVG file types.
 It support both lossless and lossy compression modes with an option to whether keep or not metadata of images.
 It is inspired by [Trimage](https://github.com/Kilian/Trimage) and [Image-Optimizer](https://github.com/GijsGoudzwaard/Image-Optimizer).
 
 ### Supported formats
 
-PNG, JPEG, WebP, SVG
+PNG, JPEG, WebP, AVIF, SVG
 
 ## Screenshot
 
@@ -75,6 +75,7 @@ Curtail uses a number of open source projects to work properly:
 - [pngquant](https://pngquant.org)
 - [Jpegoptim](https://github.com/tjko/jpegoptim)
 - [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html)
+- [libavif](https://github.com/AOMediaCodec/libavif)
 - [Scour](https://gitlab.com/inkscape/extras/scour)
 
 ## Translations

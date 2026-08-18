@@ -138,6 +138,32 @@ template $CurtailPrefsDialog: Adw.PreferencesDialog {
     }
 
     Adw.PreferencesGroup {
+      title: "AVIF";
+
+      Adw.SpinRow spin_avif_lossy_level {
+        title: _("Lossy Compression");
+        subtitle: _("Set the quality of the generated image, 100 is the best quality");
+
+        adjustment: Adjustment {
+          upper: 100;
+          step-increment: 1;
+          page-increment: 10;
+        };
+      }
+
+      Adw.SpinRow spin_avif_lossless_level {
+        title: _("Lossless Compression");
+        subtitle: _("Set the level of compression, 10 is the highest but slowest level");
+
+        adjustment: Adjustment {
+          upper: 10;
+          step-increment: 1;
+          page-increment: 1;
+        };
+      }
+    }
+
+    Adw.PreferencesGroup {
       title: "SVG";
 
       Adw.SwitchRow toggle_svg_maximum_level {

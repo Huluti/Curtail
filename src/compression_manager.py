@@ -16,6 +16,8 @@ class CompressionManager:
             return "png"
         elif mime_type == "image/webp":
             return "webp"
+        elif mime_type == "image/avif":
+            return "avif"
         elif mime_type == "image/svg+xml":
             return "svg"
 

@@ -22,6 +22,8 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
     spin_webp_lossless_level = Gtk.Template.Child()
     spin_jpg_lossy_level = Gtk.Template.Child()
     spin_webp_lossy_level = Gtk.Template.Child()
+    spin_avif_lossy_level = Gtk.Template.Child()
+    spin_avif_lossless_level = Gtk.Template.Child()
     toggle_jpg_progressive = Gtk.Template.Child()
     toggle_svg_maximum_level = Gtk.Template.Child()
 
@@ -104,6 +106,18 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         self.spin_jpg_lossy_level.set_value(self.settings.jpg_lossy_level)
         self.spin_jpg_lossy_level.connect(
             "notify::value", self.on_int_changed, "jpg-lossy-level"
+        )
+
+        # AVIF Lossy Compression Level
+        self.spin_avif_lossy_level.set_value(self.settings.avif_lossy_level)
+        self.spin_avif_lossy_level.connect(
+            "notify::value", self.on_int_changed, "avif-lossy-level"
+        )
+
+        # AVIF Lossless Compression Level
+        self.spin_avif_lossless_level.set_value(self.settings.avif_lossless_level)
+        self.spin_avif_lossless_level.connect(
+            "notify::value", self.on_int_changed, "avif-lossless-level"
         )
 
         # Progressively Encode JPG
