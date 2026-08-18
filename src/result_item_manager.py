@@ -1,5 +1,5 @@
 import os
-from gi.repository import Gio
+from gi.repository import Gio, GLib
 
 from .result_item import ResultItem
 from .tools import sizeof_fmt
@@ -21,7 +21,7 @@ class ResultItemManager:
 
         # Get file info
         file_info = file.query_info(
-            "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path",
+            "standard::display-name,standard::size,standard::content-type,xattr::document-portal.host-path,time::modified,time::access",
             Gio.FileQueryInfoFlags.NONE,
         )
 
@@ -31,11 +31,15 @@ class ResultItemManager:
 
         # Get original timestamps to restore them after compression if possible
         try:
-            stat = os.stat(result_item.filename)
-            result_item.atime = stat.st_atime
-            result_item.mtime = stat.st_mtime
-        except OSError:
-            pass
+            result_item.atime = float(
+                file_info.get_attribute_uint64("time::access") or -1
+            )
+            result_item.mtime = float(
+                file_info.get_attribute_uint64("time::modified") or -1
+            )
+        except GLib.Error:
+            result_item.atime = -1.0
+            result_item.mtime = -1.0
 
         # Display name
         display_name = file_info.get_display_name()
