@@ -7,7 +7,9 @@ class WEBPCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "webp"
 
-    def build_command(self, result_item: ResultItem) -> list[tuple[list[str], str | None]]:
+    def build_command(
+        self, result_item: ResultItem
+    ) -> list[tuple[list[str], str | None]]:
         cwebp = []
 
         # cwebp doesn't preserve any metadata by default
