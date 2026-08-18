@@ -54,6 +54,19 @@ template $CurtailWindow: Adw.ApplicationWindow {
         }
 
         [end]
+        Adw.ToggleGroup toggle_lossy {
+          Adw.Toggle {
+            label: _("Lossless");
+            name: "lossless";
+          }
+
+          Adw.Toggle {
+            label: _("Lossy");
+            name: "lossy";
+          }
+        }
+
+        [end]
         MenuButton {
           icon-name: "open-menu-symbolic";
           primary: true;
@@ -96,20 +109,6 @@ template $CurtailWindow: Adw.ApplicationWindow {
                 "suggested-action",
                 "pill",
               ]
-            }
-
-            Adw.ToggleGroup toggle_lossy {
-              halign: center;
-
-              Adw.Toggle {
-                label: _("Lossless");
-                name: "lossless";
-              }
-
-              Adw.Toggle {
-                label: _("Lossy");
-                name: "lossy";
-              }
             }
           }
         }
