@@ -39,9 +39,12 @@ class CompressionManager:
         futures = []
         for result_item in result_items:
             compressor_type = self.mime_type_to_compressor_type(result_item.mime_type)
-            future = executor.submit(
-                self.compressors[compressor_type].run, result_item, c_update_result_item
-            )
+            compressor = self.compressors.get(compressor_type)
+            if compressor is None:
+                result_item.set_error(_("Format of this file is not supported."))
+                GLib.idle_add(c_update_result_item, result_item)
+                continue
+            future = executor.submit(compressor.run, result_item, c_update_result_item)
             futures.append(future)
 
         for future in futures:
