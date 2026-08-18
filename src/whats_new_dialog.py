@@ -1,10 +1,10 @@
 from gi.repository import Gtk, Adw, GLib
 
-from .release_notes import RELEASE_NOTES
+from .release_notes import RELEASE_NOTES, release_notes_since
 
 
 class WhatsNewDialog(Adw.Dialog):
-    def __init__(self, version, **kwargs):
+    def __init__(self, version, last_version="", **kwargs):
         super().__init__(**kwargs)
         self.set_title(_("What's New"))
         self.set_content_width(420)
@@ -29,7 +29,7 @@ class WhatsNewDialog(Adw.Dialog):
             margin_start=18,
             margin_end=18,
         )
-        label.set_markup(self._build_markup(version))
+        label.set_markup(self._build_markup(version, last_version))
 
         scrolled = Gtk.ScrolledWindow(vexpand=True)
         scrolled.set_child(label)
@@ -40,9 +40,12 @@ class WhatsNewDialog(Adw.Dialog):
         self.set_child(content)
 
     @staticmethod
-    def _build_markup(current_version):
+    def _build_markup(current_version, last_version):
+        notes = (
+            release_notes_since(last_version) if last_version else RELEASE_NOTES
+        )
         parts = []
-        for release in RELEASE_NOTES:
+        for release in notes:
             version = GLib.markup_escape_text(release["version"])
             if release["version"] == current_version:
                 header = f"<b><big>{version}</big></b>"

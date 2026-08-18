@@ -49,4 +49,22 @@ def load_release_notes():
     return notes
 
 
+def _version_key(version):
+    return tuple(int(part) for part in version.split("."))
+
+
+def release_notes_since(last_version):
+    if not last_version:
+        return list(RELEASE_NOTES)
+    try:
+        key = _version_key(last_version)
+    except ValueError:
+        return list(RELEASE_NOTES)
+    return [
+        release
+        for release in RELEASE_NOTES
+        if _version_key(release["version"]) > key
+    ]
+
+
 RELEASE_NOTES = load_release_notes()

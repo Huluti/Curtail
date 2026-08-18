@@ -349,10 +349,10 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.show_warning_banner()
         self.set_saving_subtitle()
 
-    def open_whats_new(self, *args):
+    def open_whats_new(self, *args, last_version=None):
         if self.whats_new_dialog is not None:
             self.whats_new_dialog.close()
-        self.whats_new_dialog = WhatsNewDialog(self.app.version)
+        self.whats_new_dialog = WhatsNewDialog(self.app.version, last_version or "")
         self.whats_new_dialog.present(self)
 
     def check_version_update(self, *args):
@@ -361,7 +361,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         last_version = self.settings.last_version
         if last_version != self.app.version:
             self.settings.last_version = self.app.version
-            self.open_whats_new()
+            self.open_whats_new(last_version=last_version)
         return False
 
     def on_preferences(self, *args):
