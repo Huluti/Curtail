@@ -12,6 +12,7 @@ from .result_item import ResultItem
 from .result_item_manager import ResultItemManager
 from .result_item_row import CurtailResultItemRow
 from .preferences import CurtailPrefsDialog
+from .whats_new_dialog import WhatsNewDialog
 from .tools import (
     add_filechooser_filters,
     sizeof_fmt,
@@ -29,6 +30,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     prefs_dialog = None
     apply_window = None
+    whats_new_dialog = None
 
     headerbar = Gtk.Template.Child()
     window_title = Gtk.Template.Child()
@@ -63,6 +65,8 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.manager.register_compressor(SVGCompressor)
 
         self.result_item_manager = ResultItemManager(self.settings)
+
+        GLib.idle_add(self.check_version_update)
 
     def build_ui(self):
         # Set icons
@@ -112,6 +116,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.create_simple_action("about", self.on_about)
         self.create_simple_action("quit", self.on_quit, "<Primary>q")
         self.create_simple_action("convert-dir", self.on_select_folder, "<Primary>d")
+        self.create_simple_action("whats-new", self.open_whats_new)
 
     def enable_compression(self, enable):
         self.filechooser_button_headerbar.set_sensitive(enable)
@@ -343,6 +348,21 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.settings.new_file = True
         self.show_warning_banner()
         self.set_saving_subtitle()
+
+    def open_whats_new(self, *args):
+        if self.whats_new_dialog is not None:
+            self.whats_new_dialog.close()
+        self.whats_new_dialog = WhatsNewDialog(self.app.version)
+        self.whats_new_dialog.present(self)
+
+    def check_version_update(self, *args):
+        if not self.app.version:
+            return False
+        last_version = self.settings.last_version
+        if last_version != self.app.version:
+            self.settings.last_version = self.app.version
+            self.open_whats_new()
+        return False
 
     def on_preferences(self, *args):
         if self.prefs_dialog is not None:

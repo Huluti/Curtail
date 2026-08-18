@@ -16,6 +16,7 @@ class Application(Adw.Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.win: CurtailWindow | None = None
+        self.version: str = ""
 
     def do_startup(self):
         Adw.Application.do_startup(self)
@@ -32,4 +33,5 @@ class Application(Adw.Application):
 
 def main(version):
     app = Application(application_id=APP_ID, flags=Gio.ApplicationFlags.HANDLES_OPEN)
+    app.version = version
     return app.run(sys.argv)
