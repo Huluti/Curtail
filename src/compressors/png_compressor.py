@@ -1,5 +1,3 @@
-from shlex import quote
-
 from ..compressor import Compressor
 
 
@@ -8,33 +6,30 @@ class PNGCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "png"
 
-    def build_command(self, result_item) -> str:
-        pngquant = "pngquant --quality=0-{} -f {} --output {}"
-        oxipng = "oxipng -o {} -i 1 {} --out {}"
-
-        if not self.settings.metadata:
-            pngquant += " --strip"
-            oxipng += " --strip safe"
-
-        if self.settings.file_attributes:
-            oxipng += " --preserve"
+    def build_command(self, result_item) -> list[tuple[list[str], str | None]]:
+        commands = []
 
         if self.settings.lossy:  # lossy compression
-            command = pngquant.format(
-                self.settings.png_lossy_level,
-                quote(result_item.filename),
-                quote(result_item.tmp_filename),
-            )
-            command += " && "
-            command += oxipng.format(
-                self.settings.png_lossless_level,
-                quote(result_item.tmp_filename),
-                quote(result_item.tmp_filename),
-            )
+            pngquant = [
+                "pngquant",
+                f"--quality=0-{self.settings.png_lossy_level}",
+                "-f",
+            ]
+            if not self.settings.metadata:
+                pngquant.append("--strip")
+            pngquant += [result_item.filename, "--output", result_item.tmp_filename]
+            commands.append((pngquant, None))
+
+        oxipng = ["oxipng", "-o", str(self.settings.png_lossless_level), "-i", "1"]
+        if not self.settings.metadata:
+            oxipng += ["--strip", "safe"]
+        if self.settings.file_attributes:
+            oxipng.append("--preserve")
+
+        if self.settings.lossy:
+            oxipng += [result_item.tmp_filename, "--out", result_item.tmp_filename]
         else:  # lossless compression
-            command = oxipng.format(
-                self.settings.png_lossless_level,
-                quote(result_item.filename),
-                quote(result_item.tmp_filename),
-            )
-        return command
+            oxipng += [result_item.filename, "--out", result_item.tmp_filename]
+
+        commands.append((oxipng, None))
+        return commands

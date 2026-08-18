@@ -20,19 +20,25 @@ class Compressor(ABC):
         return ""
 
     @abstractmethod
-    def build_command(cls, result_item: ResultItem) -> str:
-        return ""
+    def build_command(
+        self, result_item: ResultItem
+    ) -> list[tuple[list[str], str | None]]:
+        return []
 
     def run(self, result_item: ResultItem, c_update_result_item: Callable) -> None:
-        command = self.build_command(result_item)
+        commands = self.build_command(result_item)
+        output = None
         try:
-            output = subprocess.run(
-                command,
-                capture_output=True,
-                check=True,
-                shell=True,
-                timeout=self.settings.compression_timeout,
-            )
+            for argv, stdout_path in commands:
+                output = subprocess.run(
+                    argv,
+                    capture_output=True,
+                    check=True,
+                    timeout=self.settings.compression_timeout,
+                )
+                if stdout_path is not None:
+                    with open(stdout_path, "wb") as fp:
+                        fp.write(output.stdout)
         except subprocess.TimeoutExpired as err:
             logging.error(str(err))
             result_item.error_message = _(
