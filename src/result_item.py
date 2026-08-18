@@ -7,6 +7,7 @@ class ResultItem(GObject.Object):
     name = GObject.Property(type=str)
     filename = GObject.Property(type=str)
     new_filename = GObject.Property(type=str)
+    backup_filename = GObject.Property(type=str)
     tmp_filename = GObject.Property(type=str)
     size = GObject.Property(type=int, default=0)
     new_size = GObject.Property(type=int, default=0)

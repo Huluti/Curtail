@@ -15,6 +15,11 @@ template $CurtailPrefsDialog: Adw.PreferencesDialog {
         subtitle: _("Save the compressed image in a new file");
       }
 
+      Adw.SwitchRow toggle_backup {
+        title: _("Backup Original File");
+        subtitle: _("Save the original file to [filename].bak.[ext].");
+      }
+
       Adw.ComboRow toggle_naming_mode {
         title: _("Naming Mode");
         subtitle: _("Select between suffix and prefix");

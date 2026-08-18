@@ -14,6 +14,7 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
     toggle_metadata = Gtk.Template.Child()
     toggle_file_attributes = Gtk.Template.Child()
     toggle_new_file = Gtk.Template.Child()
+    toggle_backup = Gtk.Template.Child()
     toggle_naming_mode = Gtk.Template.Child()
     entry_suffix_prefix = Gtk.Template.Child()
     spin_timeout = Gtk.Template.Child()
@@ -55,6 +56,11 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         # Use new file
         self.toggle_new_file.set_active(self.settings.new_file)
         self.toggle_new_file.connect("notify::active", self.on_bool_changed, "new-file")
+
+        # Backup original file
+        self.toggle_backup.set_sensitive(not self.settings.new_file)
+        self.toggle_backup.set_active(self.settings.backup)
+        self.toggle_backup.connect("notify::active", self.on_bool_changed, "backup")
 
         # Naming mode
         self.toggle_naming_mode.set_sensitive(self.settings.new_file)
@@ -123,10 +129,21 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         # Additional actions
         if key == "new-file":
             new_file = self.settings.new_file
+            if new_file and self.settings.backup:
+                self.settings.backup = False
+                self.toggle_backup.set_active(False)
             self.parent.set_saving_subtitle(new_file)
             self.parent.show_warning_banner(not new_file)
             self.toggle_naming_mode.set_sensitive(new_file)
             self.entry_suffix_prefix.set_sensitive(new_file)
+            self.toggle_backup.set_sensitive(not new_file)
+        elif key == "backup":
+            if switch.get_active() and self.settings.new_file:
+                self.settings.new_file = False
+                self.toggle_new_file.set_active(False)
+            else:
+                self.parent.set_saving_subtitle()
+                self.parent.show_warning_banner()
 
     def on_selected_item(self, combo, _, key):
         self.settings.set_int(key, combo.get_selected())
