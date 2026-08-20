@@ -88,7 +88,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
         # Results
         self.listbox.bind_model(
-                self.results_model, lambda result_item : CurtailResultItemRow(result_item)
+            self.results_model, lambda result_item: CurtailResultItemRow(result_item)
         )
 
         # Right click on results
@@ -196,7 +196,28 @@ class CurtailWindow(Adw.ApplicationWindow):
     def set_saving_subtitle(self, new_file=None):
         if new_file is None:
             new_file = self.settings.new_file
-        if new_file:
+
+        is_custom_export = self.settings.export_dir_enabled and bool(
+            self.settings.export_dir
+        )
+        if is_custom_export:
+            export_folder_name = (
+                os.path.basename(self.settings.export_dir) or self.settings.export_dir
+            )
+            if new_file:
+                suffix_prefix = self.settings.suffix_prefix
+
+                if self.settings.naming_mode == 0:
+                    label = _(
+                        f"Export to “{export_folder_name}” with “{suffix_prefix}” suffix"
+                    )
+                else:
+                    label = _(
+                        f"Export to “{export_folder_name}” with “{suffix_prefix}” prefix"
+                    )
+            else:
+                label = _(f"Export to “{export_folder_name}”")
+        elif new_file:
             suffix_prefix = self.settings.suffix_prefix
 
             if self.settings.naming_mode == 0:
@@ -209,7 +230,10 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def show_warning_banner(self, show=None):
         if show is None:
-            show = not self.settings.new_file
+            is_custom_export = self.settings.export_dir_enabled and bool(
+                self.settings.export_dir
+            )
+            show = not self.settings.new_file and not is_custom_export
 
         self.warning_banner.set_revealed(show)
 
@@ -256,7 +280,10 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def _create_warning_dialog(self):
         dialog = None
-        if self.settings.new_file:
+        is_safe = self.settings.new_file or (
+            self.settings.export_dir_enabled and bool(self.settings.export_dir)
+        )
+        if is_safe:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _(
@@ -277,7 +304,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if self.settings.new_file:
+        if is_safe:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(
