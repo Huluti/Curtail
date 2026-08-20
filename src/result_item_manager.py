@@ -47,24 +47,37 @@ class ResultItemManager:
 
         # Tmp path
         base_dir, fname = os.path.split(result_item.new_filename)
+        if not os.path.exists(base_dir):
+            try:
+                os.makedirs(base_dir, exist_ok=True)
+            except Exception:
+                pass
         result_item.tmp_filename = os.path.join(base_dir, f".{fname}.tmp")
 
         return result_item
 
     def create_new_filename(self, path):
-        new_filename = path
         basename = os.path.basename(path)
         splitext = os.path.splitext(basename)
-        parent = path.replace(basename, "")
+        parent = os.path.dirname(path)
         stem = splitext[0]
         extension = splitext[1]
         suffix_prefix = self.settings.suffix_prefix
 
+        # Use custom export directory if enabled and set
+        if self.settings.export_dir_enabled and self.settings.export_dir:
+            parent = self.settings.export_dir
+
         # Use new file or not
         if self.settings.new_file:
             if self.settings.naming_mode == 0:  # Suffix selected
-                new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
+                new_filename = os.path.join(parent, f"{stem}{suffix_prefix}{extension}")
             else:  # Prefix selected
-                new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
+                new_filename = os.path.join(parent, f"{suffix_prefix}{stem}{extension}")
+        else:
+            if self.settings.export_dir_enabled and self.settings.export_dir:
+                new_filename = os.path.join(parent, basename)
+            else:
+                new_filename = path
 
         return new_filename

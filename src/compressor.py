@@ -1,3 +1,4 @@
+import os
 import logging
 import subprocess
 import html
@@ -64,11 +65,21 @@ class Compressor(ABC):
             else:
                 # Output is smaller than input
                 # Copy the compressed temp file
+                is_custom_export = self.settings.export_dir_enabled and bool(
+                    self.settings.export_dir
+                )
                 final_path = (
                     result_item.new_filename
-                    if self.settings.new_file
+                    if (self.settings.new_file or is_custom_export)
                     else result_item.filename
                 )
+                dest_dir = os.path.dirname(final_path)
+                if not os.path.exists(dest_dir):
+                    try:
+                        os.makedirs(dest_dir, exist_ok=True)
+                    except Exception:
+                        pass
+
                 source = Gio.File.new_for_path(result_item.tmp_filename)
                 dest = Gio.File.new_for_path(final_path)
                 source.copy(
