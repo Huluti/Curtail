@@ -26,6 +26,16 @@
       <summary>Preserve file permissions and timestamps if possible</summary>
       <description>This setting file permissions and timestamps of images if possible.</description>
     </key>
+	  <key type="b" name="export-dir-enabled">
+      <default>false</default>
+      <summary>Enable custom export directory</summary>
+      <description>Save compressed images into a specific directory.</description>
+    </key>
+	  <key type="s" name="export-dir">
+      <default>''</default>
+      <summary>Custom export directory</summary>
+      <description>Directory path where compressed images will be saved.</description>
+    </key>
 	  <key type="b" name="lossy">
       <default>false</default>
       <summary>Enable lossy mode</summary>
