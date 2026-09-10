@@ -10,6 +10,8 @@ class ResultItem(GObject.Object):
     tmp_filename = GObject.Property(type=str)
     size = GObject.Property(type=int, default=0)
     new_size = GObject.Property(type=int, default=0)
+    atime = GObject.Property(type=float, default=-1.0)
+    mtime = GObject.Property(type=float, default=-1.0)
     subtitle_label = GObject.Property(type=str, default="")
     savings = GObject.Property(type=str, default="")
     running = GObject.Property(type=bool, default=True)

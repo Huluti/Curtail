@@ -74,6 +74,11 @@ class Compressor(ABC):
                 source.copy(
                     dest, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA
                 )
+                if self.settings.file_attributes and (
+                    result_item.atime > 0 and result_item.mtime > 0
+                ):
+                    dest.set_attribute_uint64("time::modified", result_item.mtime, 0)
+                    dest.set_attribute_uint64("time::access", result_item.atime, 0)
 
             # Remove the temp file
             new_file.delete()
