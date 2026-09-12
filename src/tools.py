@@ -29,6 +29,10 @@ def add_filechooser_filters(dialog):
     webp_images.set_name(_("WebP images"))
     webp_images.add_mime_type("image/webp")
 
+    avif_images = Gtk.FileFilter()
+    avif_images.set_name(_("AVIF images"))
+    avif_images.add_mime_type("image/avif")
+
     svg_images = Gtk.FileFilter()
     svg_images.set_name(_("SVG images"))
     svg_images.add_mime_type("image/svg+xml")
@@ -38,6 +42,7 @@ def add_filechooser_filters(dialog):
     file_filters.append(png_images)
     file_filters.append(jpeg_images)
     file_filters.append(webp_images)
+    file_filters.append(avif_images)
     file_filters.append(svg_images)
 
     dialog.set_filters(file_filters)
@@ -143,6 +148,13 @@ def debug_infos():
     except Exception:
         libwebp = _("Version not found")
 
+    # Avifenc
+    try:
+        avifenc = subprocess.check_output(["avifenc", "--version"])
+        avifenc = extract_version(avifenc.decode("utf-8"))
+    except Exception:
+        avifenc = _("Version not found")
+
     # Scour
     try:
         scour = subprocess.check_output(["scour", "--version"])
@@ -156,6 +168,7 @@ Jpegoptim: {jpegoptim}\n
 Oxipng: {oxipng}\n
 pngquant: {pngquant}\n
 Libwebp: {libwebp}\n
+Avifenc: {avifenc}\n
 Scour: {scour}\n"""
 
     return debug

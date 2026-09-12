@@ -5,6 +5,7 @@ from gi.repository import Gtk, Gdk, Gio, GLib, Adw
 from .compressors.png_compressor import PNGCompressor
 from .compressors.jpeg_compressor import JPEGCompressor
 from .compressors.webp_compressor import WEBPCompressor
+from .compressors.avif_compressor import AVIFCompressor
 from .compressors.svg_compressor import SVGCompressor
 from .compression_manager import CompressionManager
 from .settings_manager import SettingsManager
@@ -60,6 +61,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         self.manager.register_compressor(PNGCompressor)
         self.manager.register_compressor(JPEGCompressor)
         self.manager.register_compressor(WEBPCompressor)
+        self.manager.register_compressor(AVIFCompressor)
         self.manager.register_compressor(SVGCompressor)
 
         self.result_item_manager = ResultItemManager(self.settings)

@@ -136,6 +136,23 @@ class SettingsManager:
     def webp_lossy_level(self, value: int) -> None:
         self._settings.set_int("webp-lossy-level", value)
 
+    # AVIF options
+    @property
+    def avif_lossy_level(self) -> int:
+        return self._settings.get_int("avif-lossy-level")
+
+    @avif_lossy_level.setter
+    def avif_lossy_level(self, value: int) -> None:
+        self._settings.set_int("avif-lossy-level", value)
+
+    @property
+    def avif_lossless_level(self) -> int:
+        return self._settings.get_int("avif-lossless-level")
+
+    @avif_lossless_level.setter
+    def avif_lossless_level(self, value: int) -> None:
+        self._settings.set_int("avif-lossless-level", value)
+
     # SVG options
     @property
     def svg_maximum_level(self) -> bool:

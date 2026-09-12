@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
+### Added
+- Add AVIF support
 
 ## 1.16.2 - 2026-05-25
 ### Fixed

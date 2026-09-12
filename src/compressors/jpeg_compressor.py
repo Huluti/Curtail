@@ -1,5 +1,3 @@
-from shlex import quote
-
 from ..compressor import Compressor
 
 
@@ -8,30 +6,21 @@ class JPEGCompressor(Compressor):
     def get_file_type(cls) -> str:
         return "jpeg"
 
-    def build_command(self, result_item) -> str:
-        jpegoptim = "jpegoptim --max={} -o --stdout {} > {}"
-        jpegoptim2 = "jpegoptim -o --stdout {} > {}"
-
-        if self.settings.jpg_progressive:
-            jpegoptim += " --all-progressive"
-            jpegoptim2 += " --all-progressive"
-
-        if not self.settings.metadata:
-            jpegoptim += " --strip-all --keep-icc"
-            jpegoptim2 += " --strip-all --keep-icc"
-
-        if self.settings.file_attributes:
-            jpegoptim += " --preserve --preserve-perms"
-            jpegoptim2 += " --preserve --preserve-perms"
+    def build_command(self, result_item) -> list[tuple[list[str], str | None]]:
+        jpegoptim = ["jpegoptim", "-o", "--stdout"]
 
         if self.settings.lossy:  # lossy compression
-            command = jpegoptim.format(
-                self.settings.jpg_lossy_level,
-                quote(result_item.filename),
-                quote(result_item.tmp_filename),
-            )
-        else:  # lossless compression
-            command = jpegoptim2.format(
-                quote(result_item.filename), quote(result_item.tmp_filename)
-            )
-        return command
+            jpegoptim += ["--max", str(self.settings.jpg_lossy_level)]
+
+        if self.settings.jpg_progressive:
+            jpegoptim.append("--all-progressive")
+
+        if not self.settings.metadata:
+            jpegoptim += ["--strip-all", "--keep-icc"]
+
+        if self.settings.file_attributes:
+            jpegoptim += ["--preserve", "--preserve-perms"]
+
+        jpegoptim.append(result_item.filename)
+
+        return [(jpegoptim, result_item.tmp_filename)]

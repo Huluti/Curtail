@@ -36,6 +36,7 @@ compressors_sources = [
   'compressors/png_compressor.py',
   'compressors/jpeg_compressor.py',
   'compressors/webp_compressor.py',
+  'compressors/avif_compressor.py',
   'compressors/svg_compressor.py',
 ]
 

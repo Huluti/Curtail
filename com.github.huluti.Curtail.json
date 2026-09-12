@@ -98,6 +98,30 @@
         },
         "scour-sources.json",
         {
+            "name": "libavif",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DAVIF_BUILD_APPS=ON",
+                "-DAVIF_CODEC_AOM=LOCAL",
+                "-DAVIF_BUILD_TESTS=OFF",
+                "-DAVIF_BUILD_EXAMPLES=OFF",
+                "-DAVIF_ENABLE_WERROR=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AOMediaCodec/libavif.git",
+                    "tag": "v1.4.2",
+                    "commit": "bd32fb40a3b2028eb555b67f769c57a32ed8a1b4",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
+                }
+            ]
+        },
+        {
             "name": "curtail",
             "buildsystem": "meson",
             "sources": [
