@@ -66,6 +66,22 @@ template $CurtailWindow: Adw.ApplicationWindow {
       content: Box mainbox {
         orientation: vertical;
 
+        Adw.ToggleGroup toggle_lossy {
+          halign: center;
+          margin-top: 12;
+          margin-bottom: 12;
+
+          Adw.Toggle {
+            label: _("Lossless");
+            name: "lossless";
+          }
+
+          Adw.Toggle {
+            label: _("Lossy");
+            name: "lossy";
+          }
+        }
+
         Adw.Banner warning_banner {
           action-name: "win.banner-change-mode";
           button-label: _("_Change Mode");
@@ -96,20 +112,6 @@ template $CurtailWindow: Adw.ApplicationWindow {
                 "suggested-action",
                 "pill",
               ]
-            }
-
-            Adw.ToggleGroup toggle_lossy {
-              halign: center;
-
-              Adw.Toggle {
-                label: _("Lossless");
-                name: "lossless";
-              }
-
-              Adw.Toggle {
-                label: _("Lossy");
-                name: "lossy";
-              }
             }
           }
         }

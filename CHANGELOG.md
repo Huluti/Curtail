@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
+### Added
+- Add lossy/lossless toggle to the main window header bar
 
 ## 1.16.2 - 2026-05-25
 ### Fixed
