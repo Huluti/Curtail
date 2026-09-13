@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
+### Added
+- Add option to save original images in a `.bak` file and overwrite them with the optimized version
 
 ## 1.16.2 - 2026-05-25
 ### Fixed

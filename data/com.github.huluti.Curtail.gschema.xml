@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <schemalist gettext-domain="curtail">
 	<schema id="com.github.huluti.Curtail" path="/com/github/huluti/Curtail/">
 	  <key type="b" name="new-file">
       <default>true</default>
       <summary>Save into a new file</summary>
       <description>Save the compressed image into a new file.</description>
+    </key>
+	  <key type="b" name="backup">
+      <default>false</default>
+      <summary>Backup original file</summary>
+      <description>Save the original file to [filename].bak.[ext].</description>
     </key>
 	  <key type="i" name="naming-mode">
       <default>0</default>

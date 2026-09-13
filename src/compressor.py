@@ -69,11 +69,30 @@ class Compressor(ABC):
                     if self.settings.new_file
                     else result_item.filename
                 )
-                source = Gio.File.new_for_path(result_item.tmp_filename)
-                dest = Gio.File.new_for_path(final_path)
-                source.copy(
-                    dest, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA
-                )
+
+                if self.settings.backup:
+                    backup_source = Gio.File.new_for_path(result_item.filename)
+                    backup_dest = Gio.File.new_for_path(result_item.backup_filename)
+                    try:
+                        backup_source.copy(
+                            backup_dest,
+                            Gio.FileCopyFlags.OVERWRITE
+                            | Gio.FileCopyFlags.ALL_METADATA,
+                        )
+                    except GLib.Error as err:
+                        result_item.error = True
+                        result_item.error_message = _("Can't backup the original file")
+                        result_item.error_details_message = html.escape(str(err))
+                        result_item.error_details = True
+                        logging.error(result_item.error_details_message)
+
+                if not result_item.error:
+                    source = Gio.File.new_for_path(result_item.tmp_filename)
+                    dest = Gio.File.new_for_path(final_path)
+                    source.copy(
+                        dest,
+                        Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.ALL_METADATA,
+                    )
 
             # Remove the temp file
             new_file.delete()

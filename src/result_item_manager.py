@@ -44,6 +44,7 @@ class ResultItemManager:
 
         # New path
         result_item.new_filename = self.create_new_filename(result_item.filename)
+        result_item.backup_filename = self.create_backup_filename(result_item.filename)
 
         # Tmp path
         base_dir, fname = os.path.split(result_item.new_filename)
@@ -61,10 +62,16 @@ class ResultItemManager:
         suffix_prefix = self.settings.suffix_prefix
 
         # Use new file or not
-        if self.settings.new_file:
+        if self.settings.new_file and not self.settings.backup:
             if self.settings.naming_mode == 0:  # Suffix selected
                 new_filename = f"{parent}/{stem}{suffix_prefix}{extension}"
             else:  # Prefix selected
                 new_filename = f"{parent}/{suffix_prefix}{stem}{extension}"
 
         return new_filename
+
+    def create_backup_filename(self, path):
+        basename = os.path.basename(path)
+        splitext = os.path.splitext(basename)
+        parent = path.replace(basename, "")
+        return f"{parent}/{splitext[0]}.bak{splitext[1]}"

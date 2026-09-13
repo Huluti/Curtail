@@ -203,13 +203,17 @@ class CurtailWindow(Adw.ApplicationWindow):
                 label = _(f"Safe mode with “{suffix_prefix}” suffix")
             else:
                 label = _(f"Safe mode with “{suffix_prefix}” prefix")
+        elif self.settings.backup:
+            label = _("Backup mode")
         else:
             label = _("Overwrite mode")
         self.window_title.set_subtitle(label)
 
     def show_warning_banner(self, show=None):
         if show is None:
-            show = not self.settings.new_file
+            show = not self.settings.new_file and not self.settings.backup
+        elif show and self.settings.backup:
+            show = False
 
         self.warning_banner.set_revealed(show)
 
@@ -265,6 +269,15 @@ class CurtailWindow(Adw.ApplicationWindow):
                     "be modified."
                 ),
             )
+        elif self.settings.backup:
+            dialog = Adw.AlertDialog.new(
+                _("Are you sure you want to compress images in these directories?"),
+                _(
+                    "All of the images in the directories selected and their "
+                    "subdirectories will be compressed and overwritten. A backup of "
+                    "the original images will be saved in .bak files."
+                ),
+            )
         else:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
@@ -277,7 +290,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if self.settings.new_file:
+        if self.settings.new_file or self.settings.backup:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(

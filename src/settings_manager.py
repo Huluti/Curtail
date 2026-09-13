@@ -30,6 +30,14 @@ class SettingsManager:
         self._settings.set_boolean("new-file", value)
 
     @property
+    def backup(self) -> bool:
+        return self._settings.get_boolean("backup")
+
+    @backup.setter
+    def backup(self, value: bool) -> None:
+        self._settings.set_boolean("backup", value)
+
+    @property
     def naming_mode(self) -> int:
         return self._settings.get_int("naming-mode")
 
