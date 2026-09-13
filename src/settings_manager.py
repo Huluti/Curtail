@@ -144,3 +144,12 @@ class SettingsManager:
     @svg_maximum_level.setter
     def svg_maximum_level(self, value: bool) -> None:
         self._settings.set_boolean("svg-maximum-level", value)
+
+    # Others
+    @property
+    def last_version(self) -> str:
+        return self._settings.get_string("last-version")
+
+    @last_version.setter
+    def last_version(self, value: str) -> None:
+        self._settings.set_string("last-version", value)

@@ -28,6 +28,8 @@ curtail_sources = [
   'preferences.py',
   'result_item.py',
   'result_item_row.py',
+  'release_notes.py',
+  'whats_new_dialog.py',
   'tools.py'
 ]
 
@@ -41,3 +43,4 @@ compressors_sources = [
 
 install_data(curtail_sources, install_dir: moduledir)
 install_data(compressors_sources, install_dir: moduledir / 'compressors')
+install_data('../CHANGELOG.md', install_dir: moduledir)

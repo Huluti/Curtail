@@ -76,5 +76,10 @@
       <summary>Compression Timeout</summary>
       <description>Compression timeout for each image.</description>
     </key>
+	  <key type="s" name="last-version">
+      <default>''</default>
+      <summary>Last version the release notes were shown for</summary>
+      <description>The app version for which the release notes were already shown to the user.</description>
+    </key>
 	</schema>
 </schemalist>
