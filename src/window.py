@@ -47,8 +47,8 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.set_default_icon_name("com.github.huluti.Curtail")
         self.app = kwargs["application"]
+        self.set_default_icon_name(self.app.get_application_id())
 
         self.settings = SettingsManager()
 
@@ -68,6 +68,9 @@ class CurtailWindow(Adw.ApplicationWindow):
         # Set icons
         icon_theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
         icon_theme.add_resource_path(CURTAIL_PATH + "icons/")
+
+        # Status page icon
+        self.homebox.set_icon_name(self.app.get_application_id())
 
         # Saving subtitle
         self.set_saving_subtitle()
@@ -353,7 +356,7 @@ class CurtailWindow(Adw.ApplicationWindow):
     def on_about(self, *args):
         about = Adw.AboutDialog(
             application_name="Curtail",
-            application_icon="com.github.huluti.Curtail",
+            application_icon=self.app.get_application_id(),
             developer_name="Hugo Posnic",
             license_type=Gtk.License.GPL_3_0,
             website="https://github.com/Huluti/Curtail",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop-application">
-  <id>com.github.huluti.Curtail</id>
+  <id>@appid@</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <content_rating type="oars-1.1" />
@@ -45,7 +45,7 @@
     </screenshot>
   </screenshots>
   <translation type="gettext">curtail</translation>
-  <launchable type="desktop-id">com.github.huluti.Curtail.desktop</launchable>
+  <launchable type="desktop-id">@appid@.desktop</launchable>
   <releases>
   <release version="1.16.2" date="2026-05-25">
       <description translate="no">

@@ -1,0 +1,115 @@
+{
+    "id": "com.github.huluti.Curtail.Devel",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "51",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "command": "curtail",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=home"
+    ],
+    "modules": [
+        {
+            "name": "jpegoptim",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.6.tar.gz",
+                    "sha256": "661a808dfffa933d78c6beb47a2937d572b9f03e94cbaaab3d4c0d72f410e9be",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1472,
+                        "url-template": "https://github.com/tjko/jpegoptim/archive/refs/tags/v$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gccfix",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ln -s /usr/bin/gcc /app/bin/aarch64-linux-gnu-gcc"
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
+        {
+            "name": "oxipng",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "install -Dm 755 target/release/oxipng -t /app/bin"
+            ],
+            "build-options": {
+                "append-path": "/usr/lib/sdk/rust-stable/bin",
+                "env": {
+                    "CARGO_HOME": "/run/build/oxipng/cargo"
+                }
+            },
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v10.2.1.tar.gz",
+                    "sha256": "460ccfcdcc9c3877b9f7fae1dfd4f2a3f93d3b2a2af3e3b62ca32b163f923cca",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 209796,
+                        "url-template": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v$version.tar.gz"
+                    }
+                },
+                "oxipng-sources.json"
+            ]
+        },
+        {
+            "name": "pngquant",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "install -Dm 755 target/release/pngquant -t /app/bin"
+            ],
+            "build-options": {
+                "append-path": "/usr/lib/sdk/rust-stable/bin",
+                "env": {
+                    "CARGO_HOME": "/run/build/pngquant/cargo"
+                }
+            },
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/kornelski/pngquant.git",
+                    "tag": "3.0.3",
+                    "commit": "53a332a58f44357b6b41842a54d74aa1e245913d",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
+                },
+                "pngquant-sources.json"
+            ]
+        },
+        "scour-sources.json",
+        {
+            "name": "curtail",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dprofile=development"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/Huluti/Curtail",
+                    "branch": "main"
+                }
+            ]
+        }
+    ]
+}
