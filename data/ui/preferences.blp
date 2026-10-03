@@ -31,6 +31,26 @@ template $CurtailPrefsDialog: Adw.PreferencesDialog {
         title: _("New File Suffix/Prefix");
       }
 
+      Adw.SwitchRow toggle_export_dir {
+        title: _("Custom Export Directory");
+        subtitle: _("Save compressed images in a specific directory");
+      }
+
+      Adw.ActionRow row_export_dir {
+        title: _("Export Directory");
+        subtitle: _("No directory selected");
+        activatable-widget: button_export_dir;
+
+        Button button_export_dir {
+          icon-name: "folder-open-symbolic";
+          valign: center;
+
+          styles [
+            "flat",
+          ]
+        }
+      }
+
       Adw.SwitchRow toggle_recursive {
         title: _("Recursive Compression");
         subtitle: _("Enable or disable compression through subdirectories");
