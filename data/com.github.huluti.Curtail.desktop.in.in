@@ -6,7 +6,7 @@ Terminal=false
 Type=Application
 Categories=GNOME;GTK;Graphics;
 # Icon name, do not translate
-Icon=com.github.huluti.Curtail
+Icon=@icon@
 StartupWMClass=curtail
 MimeType=image/jpeg;image/png;image/webp;image/svg+xml;
 StartupNotify=true
