@@ -1,5 +1,5 @@
-data/com.github.huluti.Curtail.appdata.xml.in
-data/com.github.huluti.Curtail.desktop.in
+data/com.github.huluti.Curtail.metainfo.xml.in.in
+data/com.github.huluti.Curtail.desktop.in.in
 data/com.github.huluti.Curtail.gschema.xml
 data/ui/preferences.blp
 data/ui/result-item-row.blp

@@ -9,9 +9,6 @@ from gi.repository import Gio, Adw  # noqa: E402
 from .window import CurtailWindow  # noqa: E402
 
 
-APP_ID = "com.github.huluti.Curtail"
-
-
 class Application(Adw.Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,6 +27,6 @@ class Application(Adw.Application):
         self.win.compress_files(g_file_list)
 
 
-def main(version):
-    app = Application(application_id=APP_ID, flags=Gio.ApplicationFlags.HANDLES_OPEN)
+def main(version, app_id):
+    app = Application(application_id=app_id, flags=Gio.ApplicationFlags.HANDLES_OPEN)
     return app.run(sys.argv)
