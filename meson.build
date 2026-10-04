@@ -1,5 +1,5 @@
 project('curtail',
-          version: '1.16.2',
+          version: '1.17.0',
     meson_version: '>= 1.1.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )

@@ -1,3 +1,15 @@
+curtail (1.17.0) focal; urgency=medium
+
+  * Fix JPG compression in non-safe mode
+  * Add devel profile (for possible nightly builds)
+  * Better thumbnail creation (less costly)
+  * Update GNOME Runtime to 51
+  * Update oxipng to v10.2.1
+  * Update translations
+  * Fix compression of files >= 2GB
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Sun, 04 October 2026 10:47:00 +0200
+
 curtail (1.16.2) focal; urgency=medium
 
   * Fix JPG compression in non-safe mode

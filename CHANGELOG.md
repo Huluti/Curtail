@@ -3,16 +3,27 @@ All notable changes to this project will be documented in this file.
 
 ## UNRELEASED
 
+## 1.17.0 - 2026-10-04
+### Added
+- Add devel profile (for possible nightly builds)
+
+### Changed
+- Better thumbnail creation (less costly)
+- Update GNOME Runtime to 51
+- Update oxipng to v10.2.1
+- Update translations
+
+### Fixed
+- Fix compression of files >= 2GB
+
 ## 1.16.2 - 2026-05-25
 ### Fixed
 - Fix JPG compression in non-safe mode
 
 ## 1.16.1 - 2026-05-15
 ### Changed
-- Fix translations
-
-### Fixed
 - Update translations
+- Fix translations
 
 ## 1.16.0 - 2026-05-03
 ### Added
@@ -400,3 +411,4 @@ All notable changes to this project will be documented in this file.
 ## [0.1] - 2019-10-08
 ### Added
 - Initial version.
+
