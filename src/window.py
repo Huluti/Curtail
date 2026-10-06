@@ -200,10 +200,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         if new_file is None:
             new_file = self.settings.new_file
 
-        is_custom_export = self.settings.export_dir_enabled and bool(
-            self.settings.export_dir
-        )
-        if is_custom_export:
+        if self.settings.is_custom_export:
             export_folder_name = (
                 os.path.basename(self.settings.export_dir) or self.settings.export_dir
             )
@@ -233,10 +230,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def show_warning_banner(self, show=None):
         if show is None:
-            is_custom_export = self.settings.export_dir_enabled and bool(
-                self.settings.export_dir
-            )
-            show = not self.settings.new_file and not is_custom_export
+            show = not self.settings.is_safe
 
         self.warning_banner.set_revealed(show)
 
@@ -283,10 +277,7 @@ class CurtailWindow(Adw.ApplicationWindow):
 
     def _create_warning_dialog(self):
         dialog = None
-        is_safe = self.settings.new_file or (
-            self.settings.export_dir_enabled and bool(self.settings.export_dir)
-        )
-        if is_safe:
+        if self.settings.is_safe:
             dialog = Adw.AlertDialog.new(
                 _("Are you sure you want to compress images in these directories?"),
                 _(
@@ -307,7 +298,7 @@ class CurtailWindow(Adw.ApplicationWindow):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("compress", _("Compress"))
 
-        if is_safe:
+        if self.settings.is_safe:
             dialog.set_response_appearance("compress", Adw.ResponseAppearance.SUGGESTED)
         else:
             dialog.set_response_appearance(

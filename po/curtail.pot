@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 15:13+0900\n"
+"POT-Creation-Date: 2026-10-06 13:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:8
-#: data/com.github.huluti.Curtail.desktop.in:4
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:8
+#: data/com.github.huluti.Curtail.desktop.in.in:4
 msgid "Compress your images"
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:11
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:14
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
+#: data/com.github.huluti.Curtail.desktop.in.in:2 data/ui/window.blp:29
 #: data/ui/window.blp:53 data/ui/window.blp:78
 msgid "Curtail"
 msgstr ""
 
 #. Keywords, do not translate
-#: data/com.github.huluti.Curtail.desktop.in:15
+#: data/com.github.huluti.Curtail.desktop.in.in:15
 msgid "compress;optimize;image;photo;"
 msgstr ""
 
@@ -348,7 +348,7 @@ msgstr ""
 msgid "About Curtail"
 msgstr ""
 
-#: data/ui/window.blp:41 src/window.py:241
+#: data/ui/window.blp:41 src/window.py:238
 msgid "Browse Files"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "An unknown error has occurred."
 msgstr ""
 
-#: src/compressor.py:93
+#: src/compressor.py:90
 msgid "Can't find the compressed file"
 msgstr ""
 
@@ -424,20 +424,20 @@ msgstr ""
 msgid "SVG images"
 msgstr ""
 
-#: src/tools.py:123 src/tools.py:130 src/tools.py:137 src/tools.py:144
-#: src/tools.py:151 src/tools.py:176
+#: src/tools.py:109 src/tools.py:116 src/tools.py:123 src/tools.py:130
+#: src/tools.py:137 src/tools.py:162
 msgid "Version not found"
 msgstr ""
 
-#: src/window.py:146
+#: src/window.py:149
 msgid "Skipped"
 msgstr ""
 
-#: src/window.py:178
+#: src/window.py:181
 msgid "Open Image"
 msgstr ""
 
-#: src/window.py:179
+#: src/window.py:182
 msgid "Show in Folder"
 msgstr ""
 
@@ -445,42 +445,42 @@ msgstr ""
 msgid "Overwrite mode"
 msgstr ""
 
-#: src/window.py:259
+#: src/window.py:256
 msgid "Browse Directories"
 msgstr ""
 
-#: src/window.py:288 src/window.py:297
+#: src/window.py:282 src/window.py:291
 msgid "Are you sure you want to compress images in these directories?"
 msgstr ""
 
-#: src/window.py:290
+#: src/window.py:284
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
 
-#: src/window.py:299
+#: src/window.py:293
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 
-#: src/window.py:304
+#: src/window.py:298
 msgid "Cancel"
 msgstr ""
 
-#: src/window.py:305
+#: src/window.py:299
 msgid "Compress"
 msgstr ""
 
-#: src/window.py:343
+#: src/window.py:337
 msgid "No files found"
 msgstr ""
 
-#: src/window.py:394
+#: src/window.py:388
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:398
+#: src/window.py:392
 msgid "Contributors"
 msgstr ""

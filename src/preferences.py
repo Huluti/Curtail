@@ -134,7 +134,7 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         if key == "new-file":
             new_file = self.settings.new_file
             self.parent.set_saving_subtitle(new_file)
-            self.parent.show_warning_banner(not new_file)
+            self.parent.show_warning_banner()
             self.toggle_naming_mode.set_sensitive(new_file)
             self.entry_suffix_prefix.set_sensitive(new_file)
 
@@ -187,6 +187,7 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
                     if path:
                         self.settings.export_dir = path
                         self._update_export_dir_row()
+                        self.parent.show_warning_banner()
                         self.parent.set_saving_subtitle()
 
         root = self.get_root()

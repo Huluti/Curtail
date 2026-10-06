@@ -65,7 +65,7 @@ class ResultItemManager:
         suffix_prefix = self.settings.suffix_prefix
 
         # Use custom export directory if enabled and set
-        if self.settings.export_dir_enabled and self.settings.export_dir:
+        if self.settings.is_custom_export:
             parent = self.settings.export_dir
 
         # Use new file or not
@@ -74,10 +74,9 @@ class ResultItemManager:
                 new_filename = os.path.join(parent, f"{stem}{suffix_prefix}{extension}")
             else:  # Prefix selected
                 new_filename = os.path.join(parent, f"{suffix_prefix}{stem}{extension}")
+        elif self.settings.is_custom_export:
+            new_filename = os.path.join(parent, basename)
         else:
-            if self.settings.export_dir_enabled and self.settings.export_dir:
-                new_filename = os.path.join(parent, basename)
-            else:
-                new_filename = path
+            new_filename = path
 
         return new_filename

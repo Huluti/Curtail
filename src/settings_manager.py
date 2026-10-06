@@ -101,6 +101,14 @@ class SettingsManager:
     def export_dir(self, value: str) -> None:
         self._settings.set_string("export-dir", value)
 
+    @property
+    def is_custom_export(self) -> bool:
+        return self.export_dir_enabled and bool(self.export_dir)
+
+    @property
+    def is_safe(self) -> bool:
+        return self.new_file or self.is_custom_export
+
     # PNG options
     @property
     def png_lossy_level(self) -> int:

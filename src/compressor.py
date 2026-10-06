@@ -65,12 +65,9 @@ class Compressor(ABC):
             else:
                 # Output is smaller than input
                 # Copy the compressed temp file
-                is_custom_export = self.settings.export_dir_enabled and bool(
-                    self.settings.export_dir
-                )
                 final_path = (
                     result_item.new_filename
-                    if (self.settings.new_file or is_custom_export)
+                    if self.settings.is_safe
                     else result_item.filename
                 )
                 dest_dir = os.path.dirname(final_path)
