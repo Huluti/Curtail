@@ -85,6 +85,38 @@ class SettingsManager:
     def file_attributes(self, value: bool) -> None:
         self._settings.set_boolean("file-attributes", value)
 
+    @property
+    def export_dir_enabled(self) -> bool:
+        return self._settings.get_boolean("export-dir-enabled")
+
+    @export_dir_enabled.setter
+    def export_dir_enabled(self, value: bool) -> None:
+        self._settings.set_boolean("export-dir-enabled", value)
+
+    @property
+    def export_dir(self) -> str:
+        return self._settings.get_string("export-dir")
+
+    @export_dir.setter
+    def export_dir(self, value: str) -> None:
+        self._settings.set_string("export-dir", value)
+
+    @property
+    def export_suffix_prefix(self) -> str:
+        return self._settings.get_string("export-suffix-prefix")
+
+    @export_suffix_prefix.setter
+    def export_suffix_prefix(self, value: str) -> None:
+        self._settings.set_string("export-suffix-prefix", value)
+
+    @property
+    def is_custom_export(self) -> bool:
+        return self.export_dir_enabled and bool(self.export_dir)
+
+    @property
+    def is_safe(self) -> bool:
+        return self.new_file or self.is_custom_export
+
     # PNG options
     @property
     def png_lossy_level(self) -> int:

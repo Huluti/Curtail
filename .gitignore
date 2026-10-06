@@ -107,6 +107,7 @@ venv.bak/
 
 # meson/ninja
 _build
+_install/
 
 .flatpak-builder/
 

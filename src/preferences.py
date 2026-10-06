@@ -1,4 +1,5 @@
-from gi.repository import Gtk, Adw
+import os
+from gi.repository import Gtk, Adw, Gio, GLib
 
 from .settings_manager import SettingsManager
 
@@ -16,6 +17,9 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
     toggle_new_file = Gtk.Template.Child()
     toggle_naming_mode = Gtk.Template.Child()
     entry_suffix_prefix = Gtk.Template.Child()
+    toggle_export_dir = Gtk.Template.Child()
+    row_export_dir = Gtk.Template.Child()
+    button_export_dir = Gtk.Template.Child()
     spin_timeout = Gtk.Template.Child()
     spin_png_lossy_level = Gtk.Template.Child()
     spin_png_lossless_level = Gtk.Template.Child()
@@ -53,22 +57,37 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         )
 
         # Use new file
-        self.toggle_new_file.set_active(self.settings.new_file)
         self.toggle_new_file.connect("notify::active", self.on_bool_changed, "new-file")
 
         # Naming mode
-        self.toggle_naming_mode.set_sensitive(self.settings.new_file)
         self.toggle_naming_mode.set_selected(self.settings.naming_mode)
         self.toggle_naming_mode.connect(
             "notify::selected-item", self.on_selected_item, "naming-mode"
         )
 
         # Prefix-Suffix
-        self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
-        self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
         self.entry_suffix_prefix.connect(
             "changed", self.on_string_changed, "suffix-prefix"
         )
+
+        if self.settings.export_dir_enabled:
+            self.toggle_new_file.set_active(True)
+            self.toggle_new_file.set_sensitive(False)
+            self.toggle_naming_mode.set_sensitive(True)
+            self.entry_suffix_prefix.set_sensitive(True)
+            self.entry_suffix_prefix.set_text(self.settings.export_suffix_prefix)
+        else:
+            self.toggle_new_file.set_active(self.settings.new_file)
+            self.toggle_new_file.set_sensitive(True)
+            self.toggle_naming_mode.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
+
+        # Custom Export Directory
+        self.toggle_export_dir.set_active(self.settings.export_dir_enabled)
+        self.toggle_export_dir.connect("notify::active", self.on_export_dir_toggled)
+        self._update_export_dir_row()
+        self.button_export_dir.connect("clicked", self.on_select_export_dir)
 
         # Compression Timeout
         self.spin_timeout.set_value(self.settings.compression_timeout)
@@ -119,12 +138,14 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         )
 
     def on_bool_changed(self, switch, state, key):
+        if key == "new-file" and self.settings.export_dir_enabled:
+            return
         self.settings.set_boolean(key, switch.get_active())
         # Additional actions
         if key == "new-file":
             new_file = self.settings.new_file
             self.parent.set_saving_subtitle(new_file)
-            self.parent.show_warning_banner(not new_file)
+            self.parent.show_warning_banner()
             self.toggle_naming_mode.set_sensitive(new_file)
             self.entry_suffix_prefix.set_sensitive(new_file)
 
@@ -136,11 +157,69 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
             self.parent.set_saving_subtitle()
 
     def on_string_changed(self, entry, key):
-        self.settings.set_string(key, entry.get_text())
         if key == "suffix-prefix":
-            if not self.settings.suffix_prefix:
-                self.settings.reset("suffix-prefix")
+            text = entry.get_text()
+            if self.settings.export_dir_enabled:
+                self.settings.export_suffix_prefix = text
+            else:
+                self.settings.set_string(key, text)
+                if not self.settings.suffix_prefix:
+                    self.settings.reset("suffix-prefix")
             self.parent.set_saving_subtitle()
 
     def on_int_changed(self, spin, _, key):
         self.settings.set_int(key, spin.get_value())
+
+    def _update_export_dir_row(self):
+        is_enabled = self.settings.export_dir_enabled
+        self.row_export_dir.set_sensitive(is_enabled)
+        export_dir = self.settings.export_dir
+        if export_dir:
+            self.row_export_dir.set_subtitle(export_dir)
+        else:
+            self.row_export_dir.set_subtitle(_("No directory selected"))
+
+    def on_export_dir_toggled(self, switch, state):
+        is_export = switch.get_active()
+        self.settings.export_dir_enabled = is_export
+        self._update_export_dir_row()
+
+        if is_export:
+            self.toggle_new_file.set_active(True)
+            self.toggle_new_file.set_sensitive(False)
+            self.toggle_naming_mode.set_sensitive(True)
+            self.entry_suffix_prefix.set_sensitive(True)
+            self.entry_suffix_prefix.set_text(self.settings.export_suffix_prefix)
+        else:
+            self.toggle_new_file.set_sensitive(True)
+            self.toggle_new_file.set_active(self.settings.new_file)
+            self.toggle_naming_mode.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
+
+        self.parent.show_warning_banner()
+        self.parent.set_saving_subtitle()
+
+    def on_select_export_dir(self, *args):
+        dialog = Gtk.FileDialog(title=_("Select Export Directory"))
+
+        if self.settings.export_dir and os.path.isdir(self.settings.export_dir):
+            dialog.set_initial_folder(Gio.File.new_for_path(self.settings.export_dir))
+
+        def handle_response(dialog, result):
+            try:
+                folder = dialog.select_folder_finish(result)
+            except GLib.Error as err:
+                print("Could not select folder: %s", err.message)
+            else:
+                if folder:
+                    path = folder.get_path()
+                    if path:
+                        self.settings.export_dir = path
+                        self._update_export_dir_row()
+                        self.parent.show_warning_banner()
+                        self.parent.set_saving_subtitle()
+
+        root = self.get_root()
+        parent_window = root if isinstance(root, Gtk.Window) else self.parent
+        dialog.select_folder(parent_window, None, handle_response)
