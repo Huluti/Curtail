@@ -204,9 +204,8 @@ class CurtailWindow(Adw.ApplicationWindow):
             export_folder_name = (
                 os.path.basename(self.settings.export_dir) or self.settings.export_dir
             )
-            if new_file:
-                suffix_prefix = self.settings.suffix_prefix
-
+            suffix_prefix = self.settings.export_suffix_prefix
+            if suffix_prefix:
                 if self.settings.naming_mode == 0:
                     label = _(
                         f"Export to “{export_folder_name}” with “{suffix_prefix}” suffix"

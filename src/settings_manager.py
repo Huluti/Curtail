@@ -102,6 +102,14 @@ class SettingsManager:
         self._settings.set_string("export-dir", value)
 
     @property
+    def export_suffix_prefix(self) -> str:
+        return self._settings.get_string("export-suffix-prefix")
+
+    @export_suffix_prefix.setter
+    def export_suffix_prefix(self, value: str) -> None:
+        self._settings.set_string("export-suffix-prefix", value)
+
+    @property
     def is_custom_export(self) -> bool:
         return self.export_dir_enabled and bool(self.export_dir)
 

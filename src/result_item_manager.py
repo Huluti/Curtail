@@ -64,18 +64,26 @@ class ResultItemManager:
         extension = splitext[1]
         suffix_prefix = self.settings.suffix_prefix
 
-        # Use custom export directory if enabled and set
         if self.settings.is_custom_export:
             parent = self.settings.export_dir
-
-        # Use new file or not
-        if self.settings.new_file:
+            suffix_prefix = self.settings.export_suffix_prefix
+            if suffix_prefix:
+                if self.settings.naming_mode == 0:  # Suffix selected
+                    new_filename = os.path.join(
+                        parent, f"{stem}{suffix_prefix}{extension}"
+                    )
+                else:  # Prefix selected
+                    new_filename = os.path.join(
+                        parent, f"{suffix_prefix}{stem}{extension}"
+                    )
+            else:
+                new_filename = os.path.join(parent, basename)
+        elif self.settings.new_file:
+            suffix_prefix = self.settings.suffix_prefix
             if self.settings.naming_mode == 0:  # Suffix selected
                 new_filename = os.path.join(parent, f"{stem}{suffix_prefix}{extension}")
             else:  # Prefix selected
                 new_filename = os.path.join(parent, f"{suffix_prefix}{stem}{extension}")
-        elif self.settings.is_custom_export:
-            new_filename = os.path.join(parent, basename)
         else:
             new_filename = path
 

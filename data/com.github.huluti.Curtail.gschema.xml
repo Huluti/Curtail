@@ -36,6 +36,11 @@
       <summary>Custom export directory</summary>
       <description>Directory path where compressed images will be saved.</description>
     </key>
+	  <key type="s" name="export-suffix-prefix">
+      <default>''</default>
+      <summary>Suffix/Prefix to append in custom export directory</summary>
+      <description>Suffix/Prefix to append at new file when exporting to a custom directory.</description>
+    </key>
 	  <key type="b" name="lossy">
       <default>false</default>
       <summary>Enable lossy mode</summary>

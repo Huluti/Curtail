@@ -57,22 +57,31 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         )
 
         # Use new file
-        self.toggle_new_file.set_active(self.settings.new_file)
         self.toggle_new_file.connect("notify::active", self.on_bool_changed, "new-file")
 
         # Naming mode
-        self.toggle_naming_mode.set_sensitive(self.settings.new_file)
         self.toggle_naming_mode.set_selected(self.settings.naming_mode)
         self.toggle_naming_mode.connect(
             "notify::selected-item", self.on_selected_item, "naming-mode"
         )
 
         # Prefix-Suffix
-        self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
-        self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
         self.entry_suffix_prefix.connect(
             "changed", self.on_string_changed, "suffix-prefix"
         )
+
+        if self.settings.export_dir_enabled:
+            self.toggle_new_file.set_active(True)
+            self.toggle_new_file.set_sensitive(False)
+            self.toggle_naming_mode.set_sensitive(True)
+            self.entry_suffix_prefix.set_sensitive(True)
+            self.entry_suffix_prefix.set_text(self.settings.export_suffix_prefix)
+        else:
+            self.toggle_new_file.set_active(self.settings.new_file)
+            self.toggle_new_file.set_sensitive(True)
+            self.toggle_naming_mode.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
 
         # Custom Export Directory
         self.toggle_export_dir.set_active(self.settings.export_dir_enabled)
@@ -129,6 +138,8 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
         )
 
     def on_bool_changed(self, switch, state, key):
+        if key == "new-file" and self.settings.export_dir_enabled:
+            return
         self.settings.set_boolean(key, switch.get_active())
         # Additional actions
         if key == "new-file":
@@ -146,10 +157,14 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
             self.parent.set_saving_subtitle()
 
     def on_string_changed(self, entry, key):
-        self.settings.set_string(key, entry.get_text())
         if key == "suffix-prefix":
-            if not self.settings.suffix_prefix:
-                self.settings.reset("suffix-prefix")
+            text = entry.get_text()
+            if self.settings.export_dir_enabled:
+                self.settings.export_suffix_prefix = text
+            else:
+                self.settings.set_string(key, text)
+                if not self.settings.suffix_prefix:
+                    self.settings.reset("suffix-prefix")
             self.parent.set_saving_subtitle()
 
     def on_int_changed(self, spin, _, key):
@@ -165,8 +180,23 @@ class CurtailPrefsDialog(Adw.PreferencesDialog):
             self.row_export_dir.set_subtitle(_("No directory selected"))
 
     def on_export_dir_toggled(self, switch, state):
-        self.settings.export_dir_enabled = switch.get_active()
+        is_export = switch.get_active()
+        self.settings.export_dir_enabled = is_export
         self._update_export_dir_row()
+
+        if is_export:
+            self.toggle_new_file.set_active(True)
+            self.toggle_new_file.set_sensitive(False)
+            self.toggle_naming_mode.set_sensitive(True)
+            self.entry_suffix_prefix.set_sensitive(True)
+            self.entry_suffix_prefix.set_text(self.settings.export_suffix_prefix)
+        else:
+            self.toggle_new_file.set_sensitive(True)
+            self.toggle_new_file.set_active(self.settings.new_file)
+            self.toggle_naming_mode.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_sensitive(self.settings.new_file)
+            self.entry_suffix_prefix.set_text(self.settings.suffix_prefix)
+
         self.parent.show_warning_banner()
         self.parent.set_saving_subtitle()
 

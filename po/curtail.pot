@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: curtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 13:31+0900\n"
+"POT-Creation-Date: 2026-10-06 13:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,82 +102,91 @@ msgid "Directory path where compressed images will be saved."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:41
-msgid "Enable lossy mode"
+msgid "Suffix/Prefix to append in custom export directory"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:42
-msgid "Use lossy mode to compress images."
+msgid ""
+"Suffix/Prefix to append at new file when exporting to a custom directory."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:46
-msgid "Suffix/Prefix to append at new file"
+msgid "Enable lossy mode"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:47
-msgid "Suffix/Prefix to append at new file."
+msgid "Use lossy mode to compress images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:51
-msgid "PNG Lossy Compression Level"
+msgid "Suffix/Prefix to append at new file"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:52
-msgid "Lossy compression level to use for PNG images."
+msgid "Suffix/Prefix to append at new file."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:56
-msgid "PNG Lossless Compression Level"
+msgid "PNG Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:57
-msgid "Lossless compression level to use for PNG images."
+msgid "Lossy compression level to use for PNG images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:61
-msgid "JPG Lossy Compression Level"
+msgid "PNG Lossless Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:62
-msgid "Lossy compression level to use for JPG images."
+msgid "Lossless compression level to use for PNG images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:66
-msgid "WebP Lossy Compression Level"
+msgid "JPG Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:67
-msgid "Lossy compression level to use for WebP images."
+msgid "Lossy compression level to use for JPG images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:71
-msgid "WebP Lossless Compression Level"
+msgid "WebP Lossy Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:72
-msgid "Lossless compression level to use for WebP images."
+msgid "Lossy compression level to use for WebP images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:76
-msgid "Enable progressive encoding for JPEG images"
+msgid "WebP Lossless Compression Level"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:77
-msgid "Optionally encode jpeg images progressively."
+msgid "Lossless compression level to use for WebP images."
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:81
-msgid "Enable maximum compression for SVG images"
+msgid "Enable progressive encoding for JPEG images"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:82
-msgid "Enable maximum cleaning of SVG images."
+msgid "Optionally encode jpeg images progressively."
 msgstr ""
 
-#: data/com.github.huluti.Curtail.gschema.xml:86 data/ui/preferences.blp:70
-msgid "Compression Timeout"
+#: data/com.github.huluti.Curtail.gschema.xml:86
+msgid "Enable maximum compression for SVG images"
 msgstr ""
 
 #: data/com.github.huluti.Curtail.gschema.xml:87
+msgid "Enable maximum cleaning of SVG images."
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:91 data/ui/preferences.blp:70
+msgid "Compression Timeout"
+msgstr ""
+
+#: data/com.github.huluti.Curtail.gschema.xml:92
 msgid "Compression timeout for each image."
 msgstr ""
 
@@ -229,7 +238,7 @@ msgstr ""
 msgid "Export Directory"
 msgstr ""
 
-#: data/ui/preferences.blp:41 src/preferences.py:165
+#: data/ui/preferences.blp:41 src/preferences.py:180
 msgid "No directory selected"
 msgstr ""
 
@@ -348,7 +357,7 @@ msgstr ""
 msgid "About Curtail"
 msgstr ""
 
-#: data/ui/window.blp:41 src/window.py:238
+#: data/ui/window.blp:41 src/window.py:237
 msgid "Browse Files"
 msgstr ""
 
@@ -400,7 +409,7 @@ msgstr ""
 msgid "Can't find the compressed file"
 msgstr ""
 
-#: src/preferences.py:174
+#: src/preferences.py:204
 msgid "Select Export Directory"
 msgstr ""
 
@@ -441,46 +450,46 @@ msgstr ""
 msgid "Show in Folder"
 msgstr ""
 
-#: src/window.py:228
+#: src/window.py:227
 msgid "Overwrite mode"
 msgstr ""
 
-#: src/window.py:256
+#: src/window.py:255
 msgid "Browse Directories"
 msgstr ""
 
-#: src/window.py:282 src/window.py:291
+#: src/window.py:281 src/window.py:290
 msgid "Are you sure you want to compress images in these directories?"
 msgstr ""
 
-#: src/window.py:284
+#: src/window.py:283
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
 
-#: src/window.py:293
+#: src/window.py:292
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
 msgstr ""
 
-#: src/window.py:298
+#: src/window.py:297
 msgid "Cancel"
 msgstr ""
 
-#: src/window.py:299
+#: src/window.py:298
 msgid "Compress"
 msgstr ""
 
-#: src/window.py:337
+#: src/window.py:336
 msgid "No files found"
 msgstr ""
 
-#: src/window.py:388
+#: src/window.py:387
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:392
+#: src/window.py:391
 msgid "Contributors"
 msgstr ""
