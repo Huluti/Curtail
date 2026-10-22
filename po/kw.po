@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Curtail main\n"
 "Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
-"POT-Creation-Date: 2026-05-25 09:13+0000\n"
-"PO-Revision-Date: 2026-06-15 10:38+0100\n"
+"POT-Creation-Date: 2026-10-09 12:08+0000\n"
+"PO-Revision-Date: 2026-10-22 02:02+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
-"Language-Team: kw\n"
+"Language-Team: Cornish\n"
 "Language: kw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,39 +23,38 @@ msgstr ""
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 50.0\n"
+"X-Generator: Gtranslator 51.0\n"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:7
-#: data/com.github.huluti.Curtail.desktop.in:2 data/ui/window.blp:29
-#: data/ui/window.blp:53 data/ui/window.blp:78
-msgid "Curtail"
-msgstr "Lettya"
-
-#: data/com.github.huluti.Curtail.appdata.xml.in:8
-#: data/com.github.huluti.Curtail.desktop.in:4
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:8
+#: data/com.github.huluti.Curtail.desktop.in.in:4
 msgid "Compress your images"
 msgstr "Gwaska agas skeusennow"
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:11
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:11
 msgid ""
 "Optimize your images with Curtail, a useful image compressor that supports "
 "PNG, JPEG, WebP and SVG file types."
 msgstr ""
-"Gwaska agas skeusennow gans Curtail, gwaskell skeusen gweresek neb a skoodh "
+"Gwaska agas skeusennow gans Dibenna, gwaskell skeusen gweresek neb a skoodh "
 "eghennow restren PNG, JPEG, WebP, ha SVG."
 
-#: data/com.github.huluti.Curtail.appdata.xml.in:14
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:14
 msgid ""
 "It supports both lossless and lossy compression modes with an option to "
 "whether keep or not metadata of images."
 msgstr ""
-"Y a skoodh an dhiw fordhow a waskans, ankollek ha kollek, gans dewis mar "
-"kwitha metadata a'n skeusennow."
+"Ev a skoodh an dhiw fordhow a waskans, ankollek ha kollek, gans dewis mar "
+"kwitha metadata an skeusennow."
+
+#: data/com.github.huluti.Curtail.desktop.in.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
+msgid "Curtail"
+msgstr "Dibenna"
 
 #. Keywords, do not translate
-#: data/com.github.huluti.Curtail.desktop.in:15
+#: data/com.github.huluti.Curtail.desktop.in.in:15
 msgid "compress;optimize;image;photo;"
-msgstr "gwaska;aven;skeusen;imach;"
+msgstr "gwaska;aven;skeusen;imach;dibenna;"
 
 #: data/com.github.huluti.Curtail.gschema.xml:6
 msgid "Save into a new file"
@@ -73,8 +72,8 @@ msgstr "Dewis an fordh rag ystyn tekst rag restren nowydh"
 msgid ""
 "Set how to append the additional text (as suffix or prefix) for a new file."
 msgstr ""
-"Gorra fatel yllir ystyn an tekst keworransel (avel lostelven po ragelven) "
-"rag restren nowydh."
+"Gorra fatel ystyn an tekst keworransel (avel lostelven po ragelven) rag "
+"restren nowydh."
 
 #: data/com.github.huluti.Curtail.gschema.xml:16
 msgid "Enable recursive compression in folders"
@@ -200,7 +199,7 @@ msgstr "Sawya an skeusen waskys yn restren nowydh"
 
 #: data/ui/preferences.blp:19
 msgid "Naming Mode"
-msgstr "Fordh Henwyn"
+msgstr "Fordh Henwel"
 
 #: data/ui/preferences.blp:20
 msgid "Select between suffix and prefix"
@@ -224,7 +223,7 @@ msgstr "Gwaskans Dasleverek"
 
 #: data/ui/preferences.blp:36
 msgid "Enable or disable compression through subdirectories"
-msgstr "Byw po marowhe gwaskans dres isrestrenvaow"
+msgstr "Bywhe po marowhe gwaskans dres isrestrenvaow"
 
 #: data/ui/preferences.blp:40
 msgid "Keep Metadata"
@@ -262,7 +261,7 @@ msgstr "Gwaskans Kollek"
 #: data/ui/preferences.blp:73 data/ui/preferences.blp:99
 #: data/ui/preferences.blp:119
 msgid "Set the quality of the generated image, 100 is the best quality"
-msgstr "Gorra an kwalita a'n skeusen dhinythys, 100 yw an gwella kwalita"
+msgstr "Gorra kwalita an skeusen dhinythys, 100 yw an gwella kwalita"
 
 #: data/ui/preferences.blp:83 data/ui/preferences.blp:129
 msgid "Lossless Compression"
@@ -270,11 +269,11 @@ msgstr "Gwaskans Ankollek"
 
 #: data/ui/preferences.blp:84 data/ui/preferences.blp:130
 msgid "Set the level of compression, 6 is the highest but slowest level"
-msgstr "Gorra an nivel a'n gwaskans, 6 yw an ughella mes syger"
+msgstr "Gorra an nivel a waskans, 6 yw an ughella mes sygerra"
 
 #: data/ui/preferences.blp:109
 msgid "Progressive Encode"
-msgstr "Kodenni Avonsek"
+msgstr "Kodenni yn Avonsek"
 
 #: data/ui/preferences.blp:110
 msgid "Enable incremental image rendering, going from blurry to clear"
@@ -290,14 +289,14 @@ msgstr "Hemma a yll bos moy distruyansek rag an skeusen"
 
 #: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
 msgid "More Information"
-msgstr "Moy Kedhlow"
+msgstr "Kedhlow Pella"
 
 #: data/ui/result-item-row.blp:18
 msgid ""
 "Compression was skipped because compressing the file would have resulted in "
 "a larger file size."
 msgstr ""
-"Gwaskans o skyppys drefen ow kwaska an restren y fia sewys yn braster "
+"Gwaskans o skyppys dre reson ow kwaska an restren y fia sewys yn braster "
 "restren vrassa."
 
 #: data/ui/shortcuts-dialog.blp:6
@@ -335,9 +334,9 @@ msgstr "Kesunyansow Bysowek"
 
 #: data/ui/window.blp:22
 msgid "About Curtail"
-msgstr "A-dro dhe Lettya"
+msgstr "A-dro dhe Dhibenna"
 
-#: data/ui/window.blp:41 src/window.py:217
+#: data/ui/window.blp:41 src/window.py:220
 msgid "Browse Files"
 msgstr "Peuri Restrennow"
 
@@ -355,7 +354,7 @@ msgstr "Fordh _Janj"
 
 #: data/ui/window.blp:72
 msgid "Images will be overwritten, proceed carefully"
-msgstr "Skeusenn a vydh asleys, mos yn-rag gans rach"
+msgstr "Skeusennow a vydh asleys, kewgh yn-rag gans rach"
 
 #: data/ui/window.blp:79
 msgid "Drop images here to compress them"
@@ -383,7 +382,7 @@ msgstr "Ow tielvenna agas skeusennow kyns gwaskans..."
 
 #: src/compressor.py:43
 msgid "An unknown error has occurred."
-msgstr "Yth esa kamm ankoth."
+msgstr "Yth esa gwall ankoth."
 
 #: src/compressor.py:82
 msgid "Can't find the compressed file"
@@ -409,44 +408,44 @@ msgstr "Skeusennow WebP"
 msgid "SVG images"
 msgstr "Skeusennow SVG"
 
-#: src/tools.py:123 src/tools.py:130 src/tools.py:137 src/tools.py:144
-#: src/tools.py:151 src/tools.py:176
+#: src/tools.py:109 src/tools.py:116 src/tools.py:123 src/tools.py:130
+#: src/tools.py:137 src/tools.py:162
 msgid "Version not found"
-msgstr "Versyon nag yw kevys"
+msgstr "Nyns yw kevys dyllans"
 
-#: src/window.py:146
+#: src/window.py:149
 msgid "Skipped"
 msgstr "Skyppys"
 
-#: src/window.py:178
+#: src/window.py:181
 msgid "Open Image"
 msgstr "Ygeri Skeusen"
 
-#: src/window.py:179
+#: src/window.py:182
 msgid "Show in Folder"
 msgstr "Diskwedhes yn Restrenva"
 
-#: src/window.py:207
+#: src/window.py:210
 msgid "Overwrite mode"
 msgstr "Fordh aslea"
 
-#: src/window.py:235
+#: src/window.py:238
 msgid "Browse Directories"
 msgstr "Peuri Restrenvaow"
 
-#: src/window.py:261 src/window.py:270
+#: src/window.py:264 src/window.py:273
 msgid "Are you sure you want to compress images in these directories?"
-msgstr "Owgh hwi sur hwi a vynn gwaska skeusennow y'n restrenvaow ma?"
+msgstr "Owgh hwi sur y mynnowgh gwaska skeusennow y'n restrenvaow ma?"
 
-#: src/window.py:263
+#: src/window.py:266
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed. The original images will not be modified."
 msgstr ""
 "Oll a'n skeusennow y'n restrenvaow dewisys hag aga isrestrenvaow a vydh "
-"gwaskys. An skeusennow gwreydhek ny vydh chanjys."
+"gwaskys. Ny vydh chanjys an skeusennow gwreydhek."
 
-#: src/window.py:272
+#: src/window.py:275
 msgid ""
 "All of the images in the directories selected and their subdirectories will "
 "be compressed and overwritten!"
@@ -454,23 +453,23 @@ msgstr ""
 "Oll a'n skeusennow y'n restrenvaow dewisys hag aga isrestrenvaow a vydh "
 "gwaskys hag asleys!"
 
-#: src/window.py:277
+#: src/window.py:280
 msgid "Cancel"
 msgstr "Hedhi"
 
-#: src/window.py:278
+#: src/window.py:281
 msgid "Compress"
 msgstr "Gwaska"
 
-#: src/window.py:316
+#: src/window.py:319
 msgid "No files found"
 msgstr "Restrennow kevys vyth"
 
-#: src/window.py:367
+#: src/window.py:370
 msgid "translator-credits"
 msgstr "Flynn"
 
-#: src/window.py:371
+#: src/window.py:374
 msgid "Contributors"
 msgstr "Kevriysi"
 
