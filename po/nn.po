@@ -1,0 +1,463 @@
+# Norwegian Nynorsk translation for Curtail.
+# Copyright (C) 2026 Curtail's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Curtail package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Curtail main\n"
+"Report-Msgid-Bugs-To: https://github.com/Huluti/Curtail/issues\n"
+"POT-Creation-Date: 2026-10-09 12:08+0000\n"
+"PO-Revision-Date: 2026-10-23 11:31+0200\n"
+"Last-Translator: Roy-Magne Mo <rmo@sunnmore.net>\n"
+"Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:8
+#: data/com.github.huluti.Curtail.desktop.in.in:4
+msgid "Compress your images"
+msgstr "Komprimer bileta dine"
+
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:11
+msgid ""
+"Optimize your images with Curtail, a useful image compressor that supports "
+"PNG, JPEG, WebP and SVG file types."
+msgstr ""
+"Optimaliser bileta dine med Curtail, eit nyttig program for "
+"biletkomprimering som støttar filtypane PNG, JPEG, WebP og SVG."
+
+#: data/com.github.huluti.Curtail.metainfo.xml.in.in:14
+msgid ""
+"It supports both lossless and lossy compression modes with an option to "
+"whether keep or not metadata of images."
+msgstr ""
+"Det støttar både tapsfri og tapsbasert komprimering, med val om metadata i "
+"bileta skal behaldast eller ikkje."
+
+#: data/com.github.huluti.Curtail.desktop.in.in:2 data/ui/window.blp:29
+#: data/ui/window.blp:53 data/ui/window.blp:78
+msgid "Curtail"
+msgstr "Curtail"
+
+#. Keywords, do not translate
+#: data/com.github.huluti.Curtail.desktop.in.in:15
+msgid "compress;optimize;image;photo;"
+msgstr "komprimer;optimer;bilete;foto;"
+
+#: data/com.github.huluti.Curtail.gschema.xml:6
+msgid "Save into a new file"
+msgstr "Lagre i ei ny fil"
+
+#: data/com.github.huluti.Curtail.gschema.xml:7
+msgid "Save the compressed image into a new file."
+msgstr "Lagre det komprimerte biletet i ei ny fil."
+
+#: data/com.github.huluti.Curtail.gschema.xml:11
+msgid "Select the mode to append text for a new file"
+msgstr "Vel modus for å leggje til tekst i ei ny fil"
+
+#: data/com.github.huluti.Curtail.gschema.xml:12
+msgid ""
+"Set how to append the additional text (as suffix or prefix) for a new file."
+msgstr ""
+"Set korleis den ekstra teksten skal leggjast til (som suffiks eller prefiks)"
+" for ei ny fil."
+
+#: data/com.github.huluti.Curtail.gschema.xml:16
+msgid "Enable recursive compression in folders"
+msgstr "Slå på rekursiv komprimering i mapper"
+
+#: data/com.github.huluti.Curtail.gschema.xml:17
+msgid "This setting enable compression in a recursive way in folders."
+msgstr "Denne innstillinga slår på rekursiv komprimering i mapper."
+
+#: data/com.github.huluti.Curtail.gschema.xml:21
+msgid "Preserve metadata"
+msgstr "Behald metadata"
+
+#: data/com.github.huluti.Curtail.gschema.xml:22
+msgid "This setting preserves metadata of images."
+msgstr "Denne innstillinga beheld metadata for bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:26
+msgid "Preserve file permissions and timestamps if possible"
+msgstr "Behald filløyve og tidsstempel om mogleg"
+
+#: data/com.github.huluti.Curtail.gschema.xml:27
+msgid "This setting file permissions and timestamps of images if possible."
+msgstr ""
+"Denne innstillinga beheld filløyve og tidsstempel for bilete om mogleg."
+
+#: data/com.github.huluti.Curtail.gschema.xml:31
+msgid "Enable lossy mode"
+msgstr "Slå på tapsbasert modus"
+
+#: data/com.github.huluti.Curtail.gschema.xml:32
+msgid "Use lossy mode to compress images."
+msgstr "Bruk tapsbasert modus for å komprimere bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:36
+msgid "Suffix/Prefix to append at new file"
+msgstr "Suffiks/prefiks som skal leggjast til ei ny fil"
+
+#: data/com.github.huluti.Curtail.gschema.xml:37
+msgid "Suffix/Prefix to append at new file."
+msgstr "Suffiks/prefiks som skal leggjast til ei ny fil."
+
+#: data/com.github.huluti.Curtail.gschema.xml:41
+msgid "PNG Lossy Compression Level"
+msgstr "Tapsbasert komprimeringsnivå for PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:42
+msgid "Lossy compression level to use for PNG images."
+msgstr "Tapsbasert komprimeringsnivå som skal brukast for PNG-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:46
+msgid "PNG Lossless Compression Level"
+msgstr "Tapsfritt komprimeringsnivå for PNG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:47
+msgid "Lossless compression level to use for PNG images."
+msgstr "Tapsfritt komprimeringsnivå som skal brukast for PNG-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:51
+msgid "JPG Lossy Compression Level"
+msgstr "Tapsbasert komprimeringsnivå for JPG"
+
+#: data/com.github.huluti.Curtail.gschema.xml:52
+msgid "Lossy compression level to use for JPG images."
+msgstr "Tapsbasert komprimeringsnivå som skal brukast for JPG-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:56
+msgid "WebP Lossy Compression Level"
+msgstr "Tapsbasert komprimeringsnivå for WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:57
+msgid "Lossy compression level to use for WebP images."
+msgstr "Tapsbasert komprimeringsnivå som skal brukast for WebP-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:61
+msgid "WebP Lossless Compression Level"
+msgstr "Tapsfritt komprimeringsnivå for WebP"
+
+#: data/com.github.huluti.Curtail.gschema.xml:62
+msgid "Lossless compression level to use for WebP images."
+msgstr "Tapsfritt komprimeringsnivå som skal brukast for WebP-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:66
+msgid "Enable progressive encoding for JPEG images"
+msgstr "Slå på progressiv koding for JPEG-bilete"
+
+#: data/com.github.huluti.Curtail.gschema.xml:67
+msgid "Optionally encode jpeg images progressively."
+msgstr "Valfritt: kod JPEG-bilete progressivt."
+
+#: data/com.github.huluti.Curtail.gschema.xml:71
+msgid "Enable maximum compression for SVG images"
+msgstr "Slå på maksimal komprimering for SVG-bilete"
+
+#: data/com.github.huluti.Curtail.gschema.xml:72
+msgid "Enable maximum cleaning of SVG images."
+msgstr "Slå på maksimal opprydding av SVG-bilete."
+
+#: data/com.github.huluti.Curtail.gschema.xml:76 data/ui/preferences.blp:50
+msgid "Compression Timeout"
+msgstr "Tidsavbrot for komprimering"
+
+#: data/com.github.huluti.Curtail.gschema.xml:77
+msgid "Compression timeout for each image."
+msgstr "Tidsavbrot for komprimering av kvart bilete."
+
+#: data/ui/preferences.blp:5 data/ui/window.blp:12
+msgid "Preferences"
+msgstr "Innstillingar"
+
+#: data/ui/preferences.blp:9
+msgid "General"
+msgstr "Generelt"
+
+#: data/ui/preferences.blp:14
+msgid "Safe Mode"
+msgstr "Trygg modus"
+
+#: data/ui/preferences.blp:15
+msgid "Save the compressed image in a new file"
+msgstr "Lagre det komprimerte biletet i ei ny fil"
+
+#: data/ui/preferences.blp:19
+msgid "Naming Mode"
+msgstr "Namnemodus"
+
+#: data/ui/preferences.blp:20
+msgid "Select between suffix and prefix"
+msgstr "Vel mellom suffiks og prefiks"
+
+#: data/ui/preferences.blp:24
+msgid "Suffix"
+msgstr "Suffiks"
+
+#: data/ui/preferences.blp:25
+msgid "Prefix"
+msgstr "Prefiks"
+
+#: data/ui/preferences.blp:31
+msgid "New File Suffix/Prefix"
+msgstr "Suffiks/prefiks for ny fil"
+
+#: data/ui/preferences.blp:35
+msgid "Recursive Compression"
+msgstr "Rekursiv komprimering"
+
+#: data/ui/preferences.blp:36
+msgid "Enable or disable compression through subdirectories"
+msgstr "Slå komprimering gjennom undermapper på eller av"
+
+#: data/ui/preferences.blp:40
+msgid "Keep Metadata"
+msgstr "Behald metadata"
+
+#: data/ui/preferences.blp:41
+msgid "Keep metadata chunks that do not affect rendering"
+msgstr "Behald metadatabitar som ikkje påverkar korleis biletet vert vist"
+
+#: data/ui/preferences.blp:45
+msgid "Keep File Attributes When Possible"
+msgstr "Behald filattributtar når det er mogleg"
+
+#: data/ui/preferences.blp:46
+msgid ""
+"Ensure the new file has the same permissions and timestamps as the original "
+"file"
+msgstr ""
+"Sjå til at den nye fila har same løyve og tidsstempel som den opphavlege "
+"fila"
+
+#: data/ui/preferences.blp:51
+msgid "Set the timeout between images"
+msgstr "Set tidsavbrotet mellom bilete"
+
+#: data/ui/preferences.blp:65
+msgid "Formats"
+msgstr "Format"
+
+#: data/ui/preferences.blp:72 data/ui/preferences.blp:98
+#: data/ui/preferences.blp:118
+msgid "Lossy Compression"
+msgstr "Tapsbasert komprimering"
+
+#: data/ui/preferences.blp:73 data/ui/preferences.blp:99
+#: data/ui/preferences.blp:119
+msgid "Set the quality of the generated image, 100 is the best quality"
+msgstr "Set kvaliteten på det genererte biletet, 100 er best kvalitet"
+
+#: data/ui/preferences.blp:83 data/ui/preferences.blp:129
+msgid "Lossless Compression"
+msgstr "Tapsfri komprimering"
+
+#: data/ui/preferences.blp:84 data/ui/preferences.blp:130
+msgid "Set the level of compression, 6 is the highest but slowest level"
+msgstr "Set nivået for komprimering, 6 er det høgaste, men langsamaste nivået"
+
+#: data/ui/preferences.blp:109
+msgid "Progressive Encode"
+msgstr "Progressiv koding"
+
+#: data/ui/preferences.blp:110
+msgid "Enable incremental image rendering, going from blurry to clear"
+msgstr "Slå på gradvis biletvising, frå uskarp til klar"
+
+#: data/ui/preferences.blp:144
+msgid "Maximum Compression Level"
+msgstr "Maksimalt komprimeringsnivå"
+
+#: data/ui/preferences.blp:145
+msgid "This can be more destructive for the image"
+msgstr "Dette kan vere meir øydeleggjande for biletet"
+
+#: data/ui/result-item-row.blp:8 data/ui/result-item-row.blp:34
+msgid "More Information"
+msgstr "Meir informasjon"
+
+#: data/ui/result-item-row.blp:18
+msgid ""
+"Compression was skipped because compressing the file would have resulted in "
+"a larger file size."
+msgstr "Komprimering vart hoppa over fordi fila ville vorte større."
+
+#: data/ui/shortcuts-dialog.blp:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Generelt"
+
+#: data/ui/shortcuts-dialog.blp:9
+msgctxt "shortcuts dialog"
+msgid "Select File"
+msgstr "Vel ei fil"
+
+#: data/ui/shortcuts-dialog.blp:14
+msgctxt "shortcuts dialog"
+msgid "Preferences"
+msgstr "Innstillingar"
+
+#: data/ui/shortcuts-dialog.blp:19
+msgctxt "shortcuts dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Tastatursnarvegar"
+
+#: data/ui/shortcuts-dialog.blp:24
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Avslutt"
+
+#: data/ui/window.blp:7
+msgid "Bulk Compress Directory"
+msgstr "Komprimer mappe i bulk"
+
+#: data/ui/window.blp:17
+msgid "Keyboard Shortcuts"
+msgstr "Tastatursnarvegar"
+
+#: data/ui/window.blp:22
+msgid "About Curtail"
+msgstr "Om Curtail"
+
+#: data/ui/window.blp:41 src/window.py:220
+msgid "Browse Files"
+msgstr "Bla gjennom filer"
+
+#: data/ui/window.blp:48
+msgid "Clear Results"
+msgstr "Tøm resultat"
+
+#: data/ui/window.blp:60
+msgid "Main Menu"
+msgstr "Hovudmeny"
+
+#: data/ui/window.blp:71
+msgid "_Change Mode"
+msgstr "_Endre modus"
+
+#: data/ui/window.blp:72
+msgid "Images will be overwritten, proceed carefully"
+msgstr "Bileta vert overskrivne, gå fram med varsemd"
+
+#: data/ui/window.blp:79
+msgid "Drop images here to compress them"
+msgstr "Slepp bilete her for å komprimere dei"
+
+#: data/ui/window.blp:90
+msgid "_Browse Files"
+msgstr "_Bla gjennom filer"
+
+#: data/ui/window.blp:105
+msgid "Lossless"
+msgstr "Tapsfri"
+
+#: data/ui/window.blp:110
+msgid "Lossy"
+msgstr "Tapsbasert"
+
+#: data/ui/window.blp:119
+msgid "Analyzing Images"
+msgstr "Analyserer bilete"
+
+#: data/ui/window.blp:120
+msgid "Analyzing your images before compression…"
+msgstr "Analyserer bileta dine før komprimering …"
+
+#: src/compressor.py:43
+msgid "An unknown error has occurred."
+msgstr "Det har oppstått ein ukjend feil."
+
+#: src/compressor.py:82
+msgid "Can't find the compressed file"
+msgstr "Fann ikkje den komprimerte fila"
+
+#: src/tools.py:14
+msgid "All images"
+msgstr "Alle bilete"
+
+#: src/tools.py:21
+msgid "PNG images"
+msgstr "PNG-bilete"
+
+#: src/tools.py:25
+msgid "JPEG images"
+msgstr "JPEG-bilete"
+
+#: src/tools.py:29
+msgid "WebP images"
+msgstr "WebP-bilete"
+
+#: src/tools.py:33
+msgid "SVG images"
+msgstr "SVG-bilete"
+
+#: src/tools.py:109 src/tools.py:116 src/tools.py:123 src/tools.py:130
+#: src/tools.py:137 src/tools.py:162
+msgid "Version not found"
+msgstr "Fann ikkje versjonen"
+
+#: src/window.py:149
+msgid "Skipped"
+msgstr "Hoppa over"
+
+#: src/window.py:181
+msgid "Open Image"
+msgstr "Opne bilete"
+
+#: src/window.py:182
+msgid "Show in Folder"
+msgstr "Vis i mappa"
+
+#: src/window.py:210
+msgid "Overwrite mode"
+msgstr "Overskrivingsmodus"
+
+#: src/window.py:238
+msgid "Browse Directories"
+msgstr "Bla gjennom mapper"
+
+#: src/window.py:264 src/window.py:273
+msgid "Are you sure you want to compress images in these directories?"
+msgstr "Er du sikker på at du vil komprimere bilete i desse mappene?"
+
+#: src/window.py:266
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed. The original images will not be modified."
+msgstr ""
+"Alle bileta i dei valde mappene og undermappene vert komprimerte. Dei "
+"opphavlege bileta vert ikkje endra."
+
+#: src/window.py:275
+msgid ""
+"All of the images in the directories selected and their subdirectories will "
+"be compressed and overwritten!"
+msgstr ""
+"Alle bileta i dei valde mappene og undermappene vert komprimerte og "
+"overskrivne!"
+
+#: src/window.py:280
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/window.py:281
+msgid "Compress"
+msgstr "Komprimer"
+
+#: src/window.py:319
+msgid "No files found"
+msgstr "Fann ingen filer"
+
+#: src/window.py:370
+msgid "translator-credits"
+msgstr "Roy-Magne Mo <rmo@sunnmore.net>"
+
+#: src/window.py:374
+msgid "Contributors"
+msgstr "Bidragsytarar"
